@@ -788,6 +788,10 @@ const moduleContent = {
     title: 'Amazon Web Services',
     icon: '☁️',
     description: 'Servicios en la nube: EC2, RDS, S3, Lambda y despliegue profesional',
+    hasLexicon: true,
+    lexiconLink: '/aws/lexico',
+    hasTest: true,
+    testLink: '/aws/evaluacion',
     sections: [
       {
         id: 'fundamentales',
@@ -1000,6 +1004,80 @@ export function ModulePage({ moduleId }) {
           </div>
         </div>
       </div>
+
+      {(content.hasLexicon || content.hasTest) && (
+        <div style={{
+          backgroundColor: '#f5f5f5',
+          padding: '2rem',
+          marginBottom: '2rem',
+          borderTop: '2px solid #e0e0e0'
+        }}>
+          <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
+            {content.hasLexicon && (
+              <Link
+                to={content.lexiconLink}
+                style={{
+                  backgroundColor: '#FF9900',
+                  color: '#ffffff',
+                  padding: '1.5rem',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  fontWeight: '700',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(255, 153, 0, 0.2)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 153, 0, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 153, 0, 0.2)';
+                }}
+              >
+                <span style={{ fontSize: '1.8rem' }}>📚</span>
+                <span>Léxico {content.title}</span>
+              </Link>
+            )}
+            {content.hasTest && (
+              <Link
+                to={content.testLink}
+                style={{
+                  backgroundColor: '#2196F3',
+                  color: '#ffffff',
+                  padding: '1.5rem',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  fontWeight: '700',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(33, 150, 243, 0.2)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(33, 150, 243, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(33, 150, 243, 0.2)';
+                }}
+              >
+                <span style={{ fontSize: '1.8rem' }}>✅</span>
+                <span>Test {content.title}</span>
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="container">
         <div className="module-content">
