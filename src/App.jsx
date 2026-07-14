@@ -112,6 +112,10 @@ import { LessonAWSIAM } from './pages/LessonAWSIAM';
 import { LessonAWSPricing } from './pages/LessonAWSPricing';
 import { LessonAWSS3 } from './pages/LessonAWSS3';
 import { LessonAWSEC2 } from './pages/LessonAWSEC2';
+import { LexicoAWS } from './pages/LexicoAWS';
+import { LexicoGeneral } from './pages/LexicoGeneral';
+import { EvaluacionAWS } from './pages/EvaluacionAWS';
+import { EvaluacionGeneral } from './pages/EvaluacionGeneral';
 import { LessonDefinicionProyecto } from './pages/LessonDefinicionProyecto';
 import { LessonProyectoRequisitos } from './pages/LessonProyectoRequisitos';
 import { LessonProyectoArquitectura } from './pages/LessonProyectoArquitectura';
@@ -265,6 +269,12 @@ function AppContent() {
           <Route path="/aws/operaciones/seguridad" element={<LessonPlaceholder />} />
           <Route path="/aws/operaciones/backup" element={<LessonPlaceholder />} />
           <Route path="/aws/operaciones/practicas" element={<LessonPlaceholder />} />
+
+          {/* Léxico y Evaluaciones */}
+          <Route path="/lexico" element={<LexicoGeneral />} />
+          <Route path="/aws/lexico" element={<LexicoAWS />} />
+          <Route path="/evaluacion" element={<EvaluacionGeneral />} />
+          <Route path="/aws/evaluacion" element={<EvaluacionAWS />} />
 
           {/* Lecciones - DevOps & Deployment (referencias de Entornos) */}
           <Route path="/entornos/devops/docker" element={<LessonDocker />} />

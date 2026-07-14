@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { LessonTemplate, CodeBlock, Table, InfoBox } from '../components';
 import { LessonNavigation } from '../components/LessonNavigation';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../hooks/useLessonNavigation';
 
 export function LessonAWSIntro() {
+  const navigate = useNavigate();
   const breadcrumbs = useBreadcrumb();
   const nav = useLessonNavigation();
 
@@ -59,6 +61,80 @@ export function LessonAWSIntro() {
   ];
 
   const sections = [
+    {
+      title: 'Accesos Rápidos',
+      content: (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
+          <button
+            onClick={() => navigate('/aws/lexico')}
+            style={{
+              backgroundColor: '#FF9900',
+              color: '#ffffff',
+              border: 'none',
+              padding: '2rem',
+              borderRadius: '12px',
+              fontSize: '1.1rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 12px rgba(255, 153, 0, 0.2)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '1rem'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(255, 153, 0, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 153, 0, 0.2)';
+            }}
+          >
+            <span style={{ fontSize: '2.5rem' }}>📚</span>
+            <div>
+              <div style={{ marginBottom: '0.5rem' }}>Léxico AWS</div>
+              <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Terminología, conceptos y definiciones</div>
+            </div>
+          </button>
+
+          <button
+            onClick={() => navigate('/aws/evaluacion')}
+            style={{
+              backgroundColor: '#2196F3',
+              color: '#ffffff',
+              border: 'none',
+              padding: '2rem',
+              borderRadius: '12px',
+              fontSize: '1.1rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 12px rgba(33, 150, 243, 0.2)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '1rem'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(33, 150, 243, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(33, 150, 243, 0.2)';
+            }}
+          >
+            <span style={{ fontSize: '2.5rem' }}>✅</span>
+            <div>
+              <div style={{ marginBottom: '0.5rem' }}>Test & Evaluación</div>
+              <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Autoevaluación de conocimientos</div>
+            </div>
+          </button>
+        </div>
+      )
+    },
     {
       title: 'AWS en 5 Minutos',
       content: (
