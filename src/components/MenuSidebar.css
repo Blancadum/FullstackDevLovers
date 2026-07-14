@@ -1,0 +1,144 @@
+.menu-sidebar {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: flex-start;
+}
+
+.menu-sidebar-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-shrink: 0;
+  min-width: 200px;
+}
+
+.menu-sidebar-option {
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  padding-left: 1rem;
+}
+
+.menu-sidebar-option:hover {
+  color: #ff006e;
+  border-left-color: #ff006e;
+  padding-left: 1.2rem;
+}
+
+.menu-sidebar-option.active {
+  color: #ff006e;
+  font-weight: 700;
+  border-left-color: #ff006e;
+  padding-left: 1.2rem;
+}
+
+.menu-sidebar-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-sidebar-content h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 0.8rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ff006e;
+}
+
+.menu-sidebar-content p {
+  margin: 0.8rem 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.menu-sidebar-content ul,
+.menu-sidebar-content ol {
+  margin: 0.8rem 0;
+  padding-left: 2rem;
+}
+
+.menu-sidebar-content li {
+  margin: 0.4rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.menu-sidebar-content code {
+  font-family: 'Courier New', monospace;
+  background-color: #fafafa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  color: #d63384;
+  font-size: 0.9rem;
+}
+
+.menu-sidebar-content pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0.8rem 0;
+}
+
+.menu-sidebar-content pre code {
+  background-color: transparent;
+  color: #d4d4d4;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-sidebar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .menu-sidebar-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: unset;
+    gap: 0.5rem;
+  }
+
+  .menu-sidebar-option {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding-left: 1rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .menu-sidebar-option:hover {
+    border-left: none;
+    border-bottom-color: #ff006e;
+    padding-left: 1rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .menu-sidebar-option.active {
+    border-left: none;
+    border-bottom-color: #ff006e;
+    padding-left: 1rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .menu-sidebar-content {
+    width: 100%;
+  }
+}

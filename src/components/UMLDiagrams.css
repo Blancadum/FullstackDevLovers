@@ -1,0 +1,121 @@
+/* Contenedor principal del diagrama */
+.uml-diagram {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1.5rem 0 0.5rem 0;
+  border: 1px solid #e0e0e0;
+}
+
+/* Clase UML */
+.uml-class {
+  border: 1.5px solid #333;
+  border-radius: 4px;
+  background-color: white;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: inline-block;
+  min-width: 200px;
+}
+
+.uml-class-header {
+  background-color: #e3f2fd;
+  border-bottom: 1px solid #333;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.uml-class-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.uml-class-section {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.uml-class-section:last-child {
+  border-bottom: none;
+}
+
+.uml-class-section p {
+  margin: 0.4rem 0;
+  color: #333;
+}
+
+/* Interfaz UML */
+.uml-interface {
+  border: 2px solid #0277bd;
+  border-radius: 4px;
+  background-color: #e1f5fe;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  min-width: 240px;
+}
+
+.uml-interface-label {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #0277bd;
+  margin-bottom: 0.25rem;
+}
+
+.uml-interface-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0277bd;
+  margin-bottom: 0.5rem;
+}
+
+.uml-interface-method {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* Factory box */
+.uml-factory {
+  border: 2px solid #f57c00;
+  border-radius: 4px;
+  background-color: #fff3e0;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  min-width: 300px;
+}
+
+.uml-factory-header {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #f57c00;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f57c00;
+  margin-bottom: 0.75rem;
+}
+
+.uml-factory-method {
+  font-size: 0.85rem;
+  color: #333;
+  margin: 0.4rem 0;
+}
+
+/* Grid de implementaciones */
+.uml-implementations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Diagram de flujo */
+.uml-diagram-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

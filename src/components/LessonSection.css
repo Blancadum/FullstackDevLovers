@@ -1,0 +1,80 @@
+.lesson-section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.lesson-section h2,
+.lesson-section h3,
+.lesson-section h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.lesson-section h2 {
+  font-size: 1.8rem;
+}
+
+.lesson-section h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.lesson-section p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.lesson-section ul,
+.lesson-section ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.lesson-section strong {
+  color: #2c3e50;
+}
+
+@media (prefers-color-scheme: dark) {
+  .lesson-section {
+    background: #1e293b;
+    border-top-color: #ff006e;
+  }
+
+  .lesson-section h2,
+  .lesson-section h3,
+  .lesson-section h4,
+  .lesson-section strong {
+    color: #e2e8f0;
+  }
+
+  .lesson-section p,
+  .lesson-section li {
+    color: #cbd5e1;
+  }
+}
+
+@media (max-width: 768px) {
+  .lesson-section {
+    padding: 1.5rem;
+  }
+
+  .lesson-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .lesson-section h3 {
+    font-size: 1.1rem;
+  }
+}

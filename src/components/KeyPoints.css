@@ -1,0 +1,52 @@
+.key-points {
+  background: linear-gradient(135deg, #ff006e 0%, #ffffff 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.key-points h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.key-points ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.key-points li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.key-points li:last-child {
+  margin-bottom: 0;
+}
+
+.point-number {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.point-text {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .key-points {
+    padding: 1.5rem;
+  }
+
+  .key-points h3 {
+    font-size: 1.1rem;
+  }
+
+  .key-points li {
+    margin-bottom: 0.75rem;
+  }
+
+}

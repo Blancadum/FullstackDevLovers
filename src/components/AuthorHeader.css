@@ -1,0 +1,219 @@
+.author-header {
+  margin: 0.8rem 0 1rem 0;
+  background:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="dev" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23667eea" opacity="0.1"/><circle cx="50" cy="30" r="1.5" fill="%23667eea" opacity="0.08"/><circle cx="80" cy="60" r="2" fill="%23667eea" opacity="0.1"/><path d="M20,20 L30,30 M60,40 L70,50" stroke="%23667eea" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="%23f8f9fa"/><rect width="100%" height="100%" fill="url(%23dev)"/></svg>'),
+    linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  background-size: 100px 100px, 100%;
+  border: 1px solid #ff006e;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.author-header:hover {
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.1);
+  border-color: #ff006e;
+}
+
+.author-header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.author-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.author-photo {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #ff006e;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.author-header:hover .author-photo {
+  transform: scale(1.05);
+}
+
+.author-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.author-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.author-name::before {
+  content: '✍️';
+  font-size: 0.9rem;
+}
+
+.author-bio {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0.3rem 0 0.8rem 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.author-contact {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #ff006e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 4px;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+  background: rgba(255, 107, 107, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.15);
+}
+
+.contact-link:active {
+  transform: translateY(0);
+}
+
+.contact-icon {
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.author-divider {
+  display: none;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .author-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: #334155;
+  }
+
+  .author-header:hover {
+    border-color: #a5b4fc;
+  }
+
+  .author-name {
+    color: #e2e8f0;
+  }
+
+  .author-bio {
+    color: #cbd5e1;
+  }
+
+  .contact-link {
+    color: #a5b4fc;
+    background: rgba(255, 107, 107, 0.2);
+  }
+
+  .contact-link:hover {
+    color: #c4b5fd;
+    background: rgba(255, 107, 107, 0.3);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .author-header {
+    padding: 0.8rem 1rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .author-header-content {
+    gap: 0.8rem;
+  }
+
+  .author-photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .author-name {
+    font-size: 0.95rem;
+  }
+
+  .author-bio {
+    font-size: 0.8rem;
+    margin: 0.15rem 0 0.5rem 0;
+  }
+
+  .author-contact {
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .contact-icon {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .author-header {
+    padding: 0.7rem 0.8rem;
+    margin: 0.8rem 0 1rem 0;
+  }
+
+  .author-header-content {
+    gap: 0.6rem;
+  }
+
+  .author-photo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .author-name {
+    font-size: 0.9rem;
+  }
+
+  .author-name::before {
+    font-size: 0.85rem;
+  }
+
+  .author-bio {
+    font-size: 0.75rem;
+  }
+
+  .contact-link {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .contact-icon {
+    font-size: 0.75rem;
+  }
+
+  .author-divider {
+    margin-top: 0.8rem;
+  }
+}

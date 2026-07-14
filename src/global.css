@@ -1,0 +1,177 @@
+/* Global Styles - Terminal Font & Compact Spacing */
+
+:root {
+  --terminal-font: 'Courier New', 'Courier', monospace;
+  --code-font: 'Courier New', 'Courier', monospace;
+  --base-spacing: 0.75rem;
+}
+
+/* Terminal/Console Typography */
+pre, code {
+  font-family: var(--terminal-font);
+}
+
+pre {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+code {
+  font-size: 1.05rem;
+}
+
+/* Reduce overall spacing - less "air" */
+body {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+h3 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+h4, h5, h6 {
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+ul, ol {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+li {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+table {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+td, th {
+  padding: 0.4rem 0.6rem;
+}
+
+/* Terminal/Shell styling */
+.terminal,
+.console,
+.shell {
+  font-family: var(--terminal-font);
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Compact form elements */
+input,
+textarea,
+select,
+button {
+  font-size: 0.95rem;
+  padding: 0.6rem 0.8rem;
+  margin: 0.3rem 0;
+}
+
+/* Less padding in containers */
+.container,
+.lesson-layout,
+.content-area {
+  padding: 1rem;
+}
+
+/* Link styling */
+a {
+  color: #ff006e;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0d9970;
+  text-decoration: underline;
+}
+
+/* Details/Summary styling (for expandable sections) */
+details {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+summary {
+  cursor: pointer;
+  padding: 0.4rem 0;
+  font-weight: 500;
+}
+
+summary:hover {
+  color: #ff006e;
+}
+
+/* Blockquotes with less space */
+blockquote {
+  border-left: 4px solid #ff006e;
+  padding-left: 0.8rem;
+  margin: 0.6rem 0;
+  color: #666;
+}
+
+/* Image margins */
+img {
+  margin: 0.8rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  pre {
+    font-size: 0.85rem;
+  }
+
+  .container,
+  .lesson-layout {
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}

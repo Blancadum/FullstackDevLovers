@@ -1,0 +1,125 @@
+.code-block {
+  background: #282a36;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.code-block code {
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f8f8f2;
+  word-break: break-word;
+  display: block;
+}
+
+/* IDE-style syntax highlighting (VS Code / IntelliJ inspired) */
+
+/* Keywords: if, for, while, class, public, private, static, etc. */
+.hljs-keyword {
+  color: #FF79C6;
+  font-weight: 600;
+}
+
+/* Built-in types and classes: String, int, ArrayList, System, etc. */
+.hljs-type {
+  color: #8BE9FD;
+}
+
+.hljs-built_in {
+  color: #8BE9FD;
+}
+
+/* Function and method names */
+.hljs-title {
+  color: #50FA7B;
+  font-weight: 500;
+}
+
+.hljs-function .hljs-title {
+  color: #50FA7B;
+}
+
+/* String literals - text values */
+.hljs-string {
+  color: #F1FA8C;
+}
+
+/* Numeric literals */
+.hljs-number {
+  color: #BD93F9;
+}
+
+/* Boolean and null literals */
+.hljs-literal {
+  color: #FF79C6;
+}
+
+/* Object properties and attributes */
+.hljs-attr {
+  color: #8BE9FD;
+}
+
+/* Comments - documentation and notes */
+.hljs-comment {
+  color: #a6a6a6;
+  font-style: normal;
+}
+
+/* Operators and punctuation */
+.hljs-operator {
+  color: #F8F8F2;
+}
+
+.hljs-punctuation {
+  color: #F8F8F2;
+}
+
+/* Identifiers and variables */
+.hljs-variable {
+  color: #F8F8F2;
+}
+
+/* Bash-specific highlighting */
+.hljs-meta {
+  color: #50FA7B;
+}
+
+.hljs-shell {
+  color: #F8F8F2;
+}
+
+.hljs-subst {
+  color: #F8F8F2;
+}
+
+/* Ensure text wraps in terminal/bash blocks */
+.code-block pre {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Default text color for plain text (when no syntax highlighting) */
+.code-block .hljs {
+  color: #f8f8f2;
+}
+
+@media (max-width: 768px) {
+  .code-block {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .code-block code {
+    font-size: 0.8rem;
+  }
+}

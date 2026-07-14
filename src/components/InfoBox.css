@@ -1,0 +1,155 @@
+.info-box {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid;
+  background-color: #F9F8F3;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Container with icon and body */
+.info-box-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.info-box-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.info-box-icon img,
+.info-box-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.info-box-body {
+  flex: 1;
+}
+
+.info-box-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.info-box-content {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.info-box-content p {
+  margin: 0.5rem 0;
+}
+
+.info-box-content ul,
+.info-box-content ol {
+  margin: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.info-box-content li {
+  margin: 0.3rem 0;
+}
+
+/* Type variants */
+.info-box-info {
+  border-left-color: #0EA5E9;
+  background-color: #F9F8F3;
+}
+
+.info-box-info .info-box-icon svg {
+  color: #0EA5E9;
+}
+
+.info-box-info .info-box-title {
+  color: #0EA5E9;
+}
+
+.info-box-success {
+  border-left-color: #10B981;
+  background-color: #F9F8F3;
+}
+
+.info-box-success .info-box-icon svg {
+  color: #10B981;
+}
+
+.info-box-success .info-box-title {
+  color: #10B981;
+}
+
+.info-box-warning {
+  border-left-color: #F59E0B;
+  background-color: #F9F8F3;
+}
+
+.info-box-warning .info-box-icon svg {
+  color: #F59E0B;
+}
+
+.info-box-warning .info-box-title {
+  color: #F59E0B;
+}
+
+.info-box-error {
+  border-left-color: #EF4444;
+  background-color: #F9F8F3;
+}
+
+.info-box-error .info-box-icon svg {
+  color: #EF4444;
+}
+
+.info-box-error .info-box-title {
+  color: #EF4444;
+}
+
+.info-box-tip {
+  border-left-color: #8B5CF6;
+  background-color: #F9F8F3;
+}
+
+.info-box-tip .info-box-icon svg {
+  color: #8B5CF6;
+}
+
+.info-box-tip .info-box-title {
+  color: #8B5CF6;
+}
+
+.info-box-important {
+  border-left-color: #FF006E;
+  background-color: #F9F8F3;
+}
+
+.info-box-important .info-box-icon svg {
+  color: #FF006E;
+}
+
+.info-box-important .info-box-title {
+  color: #FF006E;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-box {
+    padding: 1rem;
+  }
+
+  .info-box-title {
+    font-size: 0.95rem;
+  }
+}

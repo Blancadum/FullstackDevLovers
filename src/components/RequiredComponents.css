@@ -1,0 +1,186 @@
+.required-components {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  min-height: 350px;
+}
+
+.comp-tabs {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  border-right: 2px solid #e5e7eb;
+  width: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #fafafa;
+}
+
+.comp-tabs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comp-tabs::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+
+.comp-tabs::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.comp-tab {
+  padding: 18px 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-right: 4px solid transparent;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.comp-tab:hover {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+.comp-tab.active {
+  background-color: #fff;
+  color: #1f2937;
+  font-weight: 600;
+  border-right: 4px solid #1f2937;
+}
+
+.comp-content {
+  flex: 1;
+  padding: 24px 32px;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.comp-title {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.comp-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comp-items li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Responsive - Tablets */
+@media (max-width: 768px) {
+  .comp-tabs {
+    width: 180px;
+  }
+
+  .comp-tab {
+    padding: 16px 14px;
+    font-size: 13px;
+  }
+
+  .comp-content {
+    padding: 20px 24px;
+  }
+
+  .comp-title {
+    font-size: 16px;
+  }
+
+  .comp-items li {
+    font-size: 13px;
+  }
+}
+
+/* Responsive - Móvil: Cambiar a horizontal */
+@media (max-width: 620px) {
+  .required-components {
+    flex-direction: column;
+  }
+
+  .comp-tabs {
+    width: 100%;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .comp-tab {
+    border-right: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 16px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    font-size: 12px;
+  }
+
+  .comp-tab.active {
+    border-right: none;
+    border-bottom: 2px solid #1f2937;
+  }
+
+  .comp-content {
+    padding: 16px 20px;
+  }
+
+  .comp-title {
+    font-size: 14px;
+  }
+
+  .comp-items li {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .comp-tab {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .comp-content {
+    padding: 12px 16px;
+  }
+
+  .comp-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .comp-items li {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+}

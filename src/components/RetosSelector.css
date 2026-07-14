@@ -1,0 +1,160 @@
+.retos-container {
+  padding: 0;
+}
+
+.retos-selector {
+  margin-bottom: 24px;
+}
+
+.reto-content {
+  background-color: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reto-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.reto-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.reto-header p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.reto-info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.info-badge {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+}
+
+.info-badge .label {
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.info-badge .value {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.reto-solution {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.reto-solution::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.reto-solution::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.reto-solution::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.reto-solution::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reto-content {
+    padding: 16px;
+  }
+
+  .reto-header h3 {
+    font-size: 16px;
+  }
+
+  .reto-header p {
+    font-size: 13px;
+  }
+
+  .reto-info {
+    gap: 12px;
+  }
+
+  .info-badge {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .reto-solution {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reto-content {
+    padding: 12px;
+  }
+
+  .reto-header h3 {
+    font-size: 14px;
+  }
+
+  .reto-header p {
+    font-size: 12px;
+  }
+
+  .reto-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-badge {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .reto-solution {
+    padding: 10px;
+    font-size: 12px;
+  }
+}

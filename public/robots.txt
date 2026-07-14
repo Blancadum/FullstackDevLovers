@@ -1,0 +1,26 @@
+# Robots.txt para Java Backend Learning
+# Permite que Google y otros buscadores indexen el sitio
+
+User-agent: *
+Allow: /
+
+# Específicamente permitir indexación de páginas principales
+Allow: /
+Allow: /git
+Allow: /java-fundamentos
+Allow: /java-poo
+Allow: /java-avanzado
+Allow: /java-bd
+Allow: /spring-boot
+Allow: /entornos
+Allow: /practicas-arquitectura
+
+# Disallow archivos y carpetas que no queremos indexar
+Disallow: /admin
+Disallow: /.git
+
+# Sitemap
+Sitemap: https://javabackendlearning.com/sitemap.xml
+
+# Especificar rastreo responsable
+Crawl-delay: 1

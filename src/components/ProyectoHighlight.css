@@ -1,0 +1,289 @@
+.proyecto-highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 4rem 2rem;
+  margin: 3rem 0;
+  border-radius: 12px;
+}
+
+.proyecto-highlight .container {
+  max-width: 1200px;
+}
+
+.proyecto-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.proyecto-content {
+  color: white;
+}
+
+.proyecto-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.proyecto-content h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.proyecto-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.proyecto-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+.proyecto-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 1.3rem;
+}
+
+.proyecto-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Visual Diagram */
+.proyecto-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.proyecto-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.diagram-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.step-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.step-label {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.diagram-arrow {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Stats */
+.proyecto-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .proyecto-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .proyecto-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .proyecto-description {
+    font-size: 0.95rem;
+  }
+
+  .proyecto-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proyecto-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .proyecto-diagram {
+    gap: 0.5rem;
+  }
+
+  .diagram-step {
+    width: 70px;
+    height: 70px;
+  }
+
+  .diagram-arrow {
+    transform: rotate(90deg);
+    margin: 0.5rem 0;
+  }
+
+  .proyecto-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .stat {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .proyecto-highlight {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+  }
+
+  .proyecto-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .proyecto-features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .diagram-step {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+  }
+
+  .proyecto-stats {
+    grid-template-columns: 1fr;
+  }
+}

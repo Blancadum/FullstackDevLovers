@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Desktop: Minimal lateral margins */
+@media (min-width: 1400px) {
+  body {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
+@media (min-width: 1600px) {
+  body {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
+
+@media (min-width: 1900px) {
+  body {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.8;
+}
+
+/* Global: Remover subrayados en links */
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+a:visited {
+  text-decoration: none !important;
+}
+
+a:focus {
+  text-decoration: none !important;
+}

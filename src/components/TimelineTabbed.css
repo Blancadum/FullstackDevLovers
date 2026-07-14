@@ -1,0 +1,255 @@
+.timeline-tabbed {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  min-height: 400px;
+}
+
+.timeline-tabs {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  border-right: 2px solid #e5e7eb;
+  width: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #fafafa;
+}
+
+.timeline-tabs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-tabs::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+
+.timeline-tabs::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.timeline-tabs::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.timeline-tab {
+  flex: 0 0 auto;
+  padding: 18px 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-right: 4px solid transparent;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  text-align: left;
+  white-space: normal;
+  position: relative;
+}
+
+.timeline-tab:hover {
+  background-color: #f9fafb;
+}
+
+.timeline-tab.active {
+  background-color: #fff;
+  font-weight: 600;
+  border-right: 4px solid #1f2937;
+}
+
+.timeline-tab .tab-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  display: block;
+}
+
+.timeline-tab .tab-weeks {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.timeline-tab.active .tab-weeks {
+  color: #4b5563;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 24px 32px;
+  animation: fadeIn 0.3s ease;
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.timeline-header {
+  margin-bottom: 16px;
+}
+
+.timeline-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.timeline-subtitle {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.timeline-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.timeline-bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Responsive - Tablets */
+@media (max-width: 768px) {
+  .timeline-tabs {
+    width: 180px;
+  }
+
+  .timeline-tab {
+    padding: 16px 14px;
+    font-size: 12px;
+  }
+
+  .timeline-tab .tab-label {
+    font-size: 13px;
+  }
+
+  .timeline-tab .tab-weeks {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .timeline-content {
+    padding: 20px 24px;
+  }
+
+  .timeline-title {
+    font-size: 16px;
+  }
+
+  .timeline-subtitle {
+    font-size: 12px;
+  }
+
+  .timeline-item {
+    font-size: 13px;
+  }
+}
+
+/* Responsive - Móvil: Cambiar a horizontal */
+@media (max-width: 620px) {
+  .timeline-tabbed {
+    flex-direction: column;
+  }
+
+  .timeline-tabs {
+    width: 100%;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .timeline-tab {
+    border-right: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 16px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    font-size: 12px;
+  }
+
+  .timeline-tab.active {
+    border-right: none;
+    border-bottom: 2px solid #1f2937;
+  }
+
+  .timeline-content {
+    padding: 16px 20px;
+  }
+
+  .timeline-title {
+    font-size: 14px;
+  }
+
+  .timeline-subtitle {
+    font-size: 11px;
+  }
+
+  .timeline-item {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-tab {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .timeline-tab .tab-label {
+    font-size: 11px;
+  }
+
+  .timeline-tab .tab-weeks {
+    display: none;
+  }
+
+  .timeline-content {
+    padding: 12px 16px;
+  }
+
+  .timeline-title {
+    font-size: 13px;
+  }
+
+  .timeline-subtitle {
+    font-size: 10px;
+  }
+
+  .timeline-item {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+}

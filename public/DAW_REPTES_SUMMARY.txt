@@ -1,0 +1,346 @@
+================================================================================
+DAW MODULE 0616 - CHALLENGES EXTRACTION SUMMARY
+Projecte Intermodular de Desenvolupament d'Aplicacions Web
+Academic Year: 2025-26
+================================================================================
+
+EXTRACTION COMPLETE - 8 CHALLENGES FULLY DOCUMENTED
+
+================================================================================
+FILES CREATED IN /Users/admin/Desktop/backend-learning-react/
+================================================================================
+
+1. DAW_REPTES_EXTRACTION.md (COMPREHENSIVE - 45+ KB)
+   - Complete extraction of ALL 8 Reptes
+   - Full task descriptions
+   - Evaluation criteria
+   - Example solutions and templates
+   - Learning outcomes
+   - Submission requirements
+   - BEST FOR: Deep understanding of each challenge
+
+2. DAW_REPTES_INDEX.md (STRUCTURED REFERENCE - 25+ KB)
+   - Quick reference for each Repte
+   - File locations and sizes
+   - Key information summaries
+   - Contents breakdown
+   - Example projects
+   - Timeline overview
+   - BEST FOR: Navigation and quick lookups
+
+3. DAW_REPTES_QUICK_GUIDE.md (PRACTICAL CHECKLIST - 20+ KB)
+   - What each Repte asks for
+   - Checklists for each challenge
+   - Submission filing instructions
+   - Technology stack recommendations
+   - SCRUM terminology
+   - Success criteria
+   - Common mistakes to avoid
+   - BEST FOR: Day-to-day reference and planning
+
+4. DAW_REPTES_SUMMARY.txt (THIS FILE)
+   - High-level overview
+   - Quick reference
+   - File locations
+   - Document map
+
+================================================================================
+ORIGINAL DOCUMENT LOCATIONS
+================================================================================
+
+Source Directory: /Users/admin/Desktop/DAW PROJECTE/
+
+Individual Challenges (Reptes 1-3):
+├─ DAW_M0616_Repte1_Ejemplo.docx (320 KB)  - Project Proposal Planning
+├─ DAW_M0616_Repte2_Ejemplo.docx (3.1 MB)  - Technical Design & Prototyping
+└─ DAW_M0616_Repte3_Ejemplo.docx (308 KB)  - Elevator Pitch Presentation
+
+Group Challenges (Reptes 4-8):
+├─ DAW_M0616_Repte4_Ejemplo.docx (314 KB)  - Team Organization & Planning
+├─ DAW_0616_Repte5_Ejemplo.docx (635 KB)   - Agile Methodologies & SCRUM
+├─ DAW_0616_Repte6_Ejemplo.docx (546 KB)   - First Sprint Development
+├─ DAW_0616_Repte7_Ejemplo.pdf (455 KB)    - Second Sprint Development
+└─ DAW_0616_Repte8_Ejemplo.docx (478 KB)   - Final Sprint & Completion
+
+================================================================================
+CHALLENGE OVERVIEW
+================================================================================
+
+REPTE 1: PROJECT PROPOSAL PLANNING (Individual)
+- Deadline: October 8, 2025
+- Points: 10
+- Focus: Business case, competition, costs, GDPR
+- Output: Detailed project proposal document
+- Learning: Identify sector needs and propose suitable projects
+
+REPTE 2: TECHNICAL DESIGN (Individual)
+- Deadline: November 5, 2025
+- Points: 10
+- Focus: Technology stack, tools, working prototypes
+- Output: Technical specifications + 3-5 working prototype screens
+- Learning: Design projects with explicit phase development
+
+REPTE 3: ELEVATOR PITCH (Individual)
+- Deadline: November 17-26, 2025
+- Points: 10
+- Focus: 1-minute investor pitch + peer feedback
+- Output: Video presentation + forum participation
+- Learning: Communicate project value proposition
+
+REPTE 4: TEAM ORGANIZATION (Group - 2-3 members)
+- Deadline: December 17, 2025
+- Focus: Team structure, communication, roles
+- Output: Organized team with clear processes
+- Learning: Plan project execution with documentation
+
+REPTE 5: AGILE METHODOLOGIES (Group)
+- Focus: SCRUM framework, tools, planning
+- Output: Taiga configuration + EPICs + User Stories
+- Learning: Apply agile methodologies systematically
+
+REPTE 6: FIRST SPRINT (Group)
+- Deadline: March 18, 2026
+- Points: 10
+- Focus: Working authentication + product listing
+- Output: Functional product increment + demo videos
+- Learning: Design and develop iteratively
+
+REPTE 7: SECOND SPRINT (Group)
+- Deadline: April 15, 2026
+- Points: 10
+- Focus: Working shopping cart + admin features
+- Output: Enhanced product + improved documentation
+- Learning: Continue development with feedback
+
+REPTE 8: FINAL SPRINT & COMPLETION (Group)
+- Focus: Complete features, documentation, deployment
+- Output: Complete project + professional documentation + presentation
+- Learning: Finalize and reflect on project development
+
+================================================================================
+KEY STATISTICS
+================================================================================
+
+Total Challenges: 8
+Individual Challenges: 3 (Reptes 1-3)
+Group Challenges: 5 (Reptes 4-8)
+Total Points: 80 (approximately)
+Total Duration: October 2025 - May 2026 (8 months)
+
+Timeline:
+- Individual Phase: October - November 2025 (8 weeks)
+- Planning Phase: December 2025 - January 2026 (6 weeks)
+- Development Phase: March - May 2026 (12 weeks)
+
+Team Size: 2-3 students per group
+Minimum Requirements: HTML5, CSS3, JavaScript, Java/Node.js, MySQL, Git/GitHub
+
+================================================================================
+WHAT STUDENTS WILL DELIVER
+================================================================================
+
+By End of Course:
+1. Project proposal document (Repte 1)
+2. Technical design & working prototypes (Repte 2)
+3. 1-minute investor pitch video (Repte 3)
+4. Team organization plan (Repte 4)
+5. SCRUM framework setup in Taiga (Repte 5)
+6. Working web application with:
+   - User authentication system (Sprint 1)
+   - Product catalog & shopping cart (Sprint 2)
+   - Complete checkout & admin panel (Sprint 3)
+7. Complete GitHub repository with clean code
+8. Professional technical documentation
+9. User and admin manuals
+10. Project evaluation & future roadmap
+
+================================================================================
+DOCUMENT QUICK LINKS
+================================================================================
+
+FOR UNDERSTANDING OVERVIEW:
+→ Start with: DAW_REPTES_SUMMARY.txt (this file)
+
+FOR DETAILED SPECIFICATIONS:
+→ Use: DAW_REPTES_EXTRACTION.md
+
+FOR QUICK NAVIGATION:
+→ Reference: DAW_REPTES_INDEX.md
+
+FOR CHECKLISTS & PLANNING:
+→ Follow: DAW_REPTES_QUICK_GUIDE.md
+
+================================================================================
+KEY TECHNOLOGIES REQUIRED
+================================================================================
+
+Development:
+- Visual Studio Code
+- Git + GitHub
+- Node.js or Java 17
+- MySQL 8.0 + MySQL Workbench
+- Apache Tomcat 10
+
+Project Management:
+- Taiga (SCRUM/Kanban)
+- GitHub for version control
+
+Prototyping:
+- Figma (recommended)
+- Balsamiq or Canva (alternatives)
+
+Video/Documentation:
+- VokoScreen, Loom, or Kazam (recording)
+- OBS, Kdenlive, or OpenShot (editing)
+
+================================================================================
+SUBMISSION REQUIREMENTS
+================================================================================
+
+File Format:
+- ODT (OpenDocument) or PDF
+- NOT Microsoft Word .docx
+
+File Naming:
+- DAW_M0616_Repte#_Surname1_InitialSurname2.odt
+- Example: DAW_M0616_Repte1_Lujan_S.odt
+- Surnames WITHOUT accents
+
+Submission:
+- Via course virtual classroom
+- "Lliurament" (Submission) section
+- Automatic deadline enforcement
+- NO late submissions allowed
+
+Group Documents:
+- All team members submit identical document
+- Each with their own name in filename
+
+================================================================================
+SUCCESS INDICATORS
+================================================================================
+
+Individual Challenges Success = Well-researched proposals
+- Market analysis complete
+- Technology choices justified
+- Prototypes functional
+- Presentation compelling
+
+Team Success = Coordinated development
+- Clear processes documented
+- Weekly communication recorded
+- Balanced task distribution
+- Regular code commits
+
+SCRUM Success = Agile methodology practiced
+- Taiga properly maintained
+- User Stories well-defined
+- Sprints deliver functionality
+- Retrospectives conducted
+
+Project Success = Working application
+- Features tested and functional
+- Code clean and documented
+- Database properly designed
+- Deployed and accessible
+
+================================================================================
+CRITICAL DEADLINES
+================================================================================
+
+2025:
+Oct 8   - Repte 1 Deadline
+Nov 5   - Repte 2 Deadline
+Nov 17  - Repte 3 Activity 1 Deadline
+Nov 26  - Repte 3 Activity 2 + Results
+Dec 9   - Group Formation Deadline
+Dec 17  - Repte 4 Deadline
+
+2026:
+Jan 9   - Repte 4 Results
+Mar 18  - Repte 6 Deadline
+Mar 25  - Repte 6 Results
+Apr 15  - Repte 7 Deadline
+Apr 22  - Repte 7 Results
+May TBD - Repte 8 Final Deadline
+
+================================================================================
+EXTRACTED CONTENT QUALITY
+================================================================================
+
+All 8 Challenges Fully Extracted:
+✓ Repte 1: Complete (DOCX)
+✓ Repte 2: Complete (DOCX)
+✓ Repte 3: Complete (DOCX)
+✓ Repte 4: Complete (DOCX)
+✓ Repte 5: Complete (DOCX)
+✓ Repte 6: Complete (DOCX)
+✓ Repte 7: Complete (PDF)
+✓ Repte 8: Complete (DOCX)
+
+Contents Extracted:
+✓ Learning outcomes
+✓ Evaluation criteria
+✓ Task descriptions
+✓ Scoring breakdown
+✓ Submission requirements
+✓ Example solutions
+✓ Templates and guides
+✓ Technology recommendations
+
+Documentation Created:
+✓ Comprehensive extraction (DAW_REPTES_EXTRACTION.md)
+✓ Structured index (DAW_REPTES_INDEX.md)
+✓ Quick reference guide (DAW_REPTES_QUICK_GUIDE.md)
+✓ Summary document (DAW_REPTES_SUMMARY.txt)
+
+================================================================================
+HOW TO USE THESE DOCUMENTS
+================================================================================
+
+1. INITIAL UNDERSTANDING (Week 1):
+   - Read this summary (DAW_REPTES_SUMMARY.txt)
+   - Skim DAW_REPTES_EXTRACTION.md for overview
+   - Bookmark all documents for reference
+
+2. INDIVIDUAL CHALLENGES (Oct-Nov 2025):
+   - Repte 1: Use DAW_REPTES_EXTRACTION.md Section 1
+   - Repte 2: Use DAW_REPTES_EXTRACTION.md Section 2
+   - Repte 3: Use DAW_REPTES_EXTRACTION.md Section 3
+   - Reference DAW_REPTES_QUICK_GUIDE.md checklists
+
+3. TEAM FORMATION (Dec 2025):
+   - Repte 4: Use DAW_REPTES_EXTRACTION.md Section 4
+   - Coordinate with team members
+   - Establish communication processes
+
+4. PLANNING PHASE (Dec 2025 - Jan 2026):
+   - Repte 5: Use DAW_REPTES_EXTRACTION.md Section 5
+   - Set up Taiga project
+   - Define EPICs and User Stories
+
+5. DEVELOPMENT PHASE (Mar-May 2026):
+   - Reptes 6-8: Reference respective sections
+   - Use DAW_REPTES_QUICK_GUIDE.md for daily work
+   - Track progress using Taiga
+   - Document in GitHub
+
+================================================================================
+RECOMMENDATION FOR STUDENTS
+================================================================================
+
+1. Read this summary to understand the big picture
+2. Start with Repte 1 using the comprehensive extraction
+3. Keep the quick guide open during work
+4. Use the index for finding specific information
+5. Reference the comprehensive extraction for detailed requirements
+6. Follow the checklists in the quick guide
+7. Bookmark these documents for continuous reference
+8. Organize your work according to the timeline
+
+================================================================================
+EXTRACTED BY: Claude Code Analysis
+DATE: July 6, 2026
+SOURCE: Official DAW Module 0616 Documents (2025-26 Academic Year)
+STATUS: COMPLETE AND READY FOR USE
+================================================================================

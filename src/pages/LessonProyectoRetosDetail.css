@@ -1,0 +1,309 @@
+.reto-detail {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Header Section */
+.reto-header-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+}
+
+.breadcrumb-link {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: white;
+  transform: translateX(-4px);
+}
+
+.reto-header-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Reto Badge */
+.reto-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.reto-badge .label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.reto-badge .number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Header Info */
+.reto-header-info {
+  flex: 1;
+}
+
+.reto-header-info h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.reto-description-main {
+  margin: 0 0 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Meta Grid */
+.reto-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-item .label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.meta-item .value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Solution Section */
+.reto-solution-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reto-solution-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Navigation Section */
+.reto-navigation {
+  padding: 3rem 2rem;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #667eea;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  border-color: #764ba2;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  transform: translateY(-2px);
+}
+
+.nav-btn .arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.nav-btn .label {
+  flex: 1;
+}
+
+.nav-prev .arrow {
+  order: -1;
+}
+
+.nav-next .arrow {
+  order: 1;
+}
+
+.nav-next {
+  justify-content: flex-end;
+}
+
+.nav-btn.disabled {
+  border-color: #ddd;
+  background: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.nav-back {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-back:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+/* Not Found */
+.reto-not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.reto-not-found h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.reto-not-found p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reto-header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reto-header-info h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .reto-description-main {
+    text-align: center;
+  }
+
+  .reto-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-buttons {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-next {
+    justify-content: center;
+  }
+
+  .reto-solution-section {
+    padding: 2rem 1rem;
+  }
+
+  .reto-navigation {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reto-header-section {
+    padding: 2rem 1rem;
+  }
+
+  .reto-badge {
+    width: 80px;
+    height: 80px;
+  }
+
+  .reto-badge .number {
+    font-size: 2rem;
+  }
+
+  .reto-header-info h1 {
+    font-size: 1.3rem;
+  }
+
+  .reto-description-main {
+    font-size: 0.95rem;
+  }
+
+  .meta-item .value {
+    font-size: 1.1rem;
+  }
+
+  .reto-solution-section h2 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,102 @@
+.code-example {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.code-example-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.code-example-content h4 {
+  margin-top: 0;
+}
+
+.code-example-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.code-example-content ul,
+.code-example-content ol {
+  margin-bottom: 1rem;
+}
+
+.code-example-block {
+  flex: 0 0 auto;
+  min-width: 280px;
+}
+
+/* Variante lado a lado forzado */
+.code-example-side-by-side {
+  flex-direction: row;
+}
+
+.code-example-side-by-side .code-example-content {
+  flex: 1;
+}
+
+.code-example-side-by-side .code-example-block {
+  flex: 0 1 auto;
+  min-width: 300px;
+}
+
+/* Variante apilado forzado */
+.code-example-stacked {
+  flex-direction: column;
+}
+
+.code-example-stacked .code-example-content {
+  flex: 1 1 100%;
+}
+
+.code-example-stacked .code-example-block {
+  flex: 1 1 100%;
+}
+
+/* Tablet: dos columnas, pero más espacio para el contenido */
+@media (max-width: 1024px) {
+  .code-example {
+    flex-direction: column;
+  }
+
+  .code-example-content,
+  .code-example-block {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .code-example-block {
+    margin-top: 1rem;
+  }
+
+  .code-example-side-by-side {
+    flex-direction: column;
+  }
+
+  .code-example-side-by-side .code-example-content,
+  .code-example-side-by-side .code-example-block {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+/* Mobile: siempre apilado */
+@media (max-width: 640px) {
+  .code-example {
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .code-example-content {
+    min-width: unset;
+  }
+
+  .code-example-block {
+    min-width: unset;
+    width: 100%;
+  }
+}

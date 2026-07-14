@@ -1,0 +1,250 @@
+.section-content-categories {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  min-height: 600px;
+}
+
+/* Sidebar with Categories */
+.categories-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.category-button {
+  padding: 0.9rem 1.2rem;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-button:hover {
+  background-color: #f5f5f5;
+  border-color: #ff006e;
+}
+
+.category-button.active {
+  background: linear-gradient(135deg, #ff006e 0%, #ff4d8f 100%);
+  color: white;
+  border-color: #ff006e;
+  font-weight: 600;
+}
+
+/* Main Content Area */
+.categories-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.category-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #ff006e;
+}
+
+.category-header h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.category-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Numbered Lessons List */
+.lessons-numbered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lesson-numbered-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.lesson-numbered-item:hover {
+  border-color: #ff006e;
+  box-shadow: 0 4px 12px rgba(255, 0, 110, 0.15);
+  transform: translateX(4px);
+}
+
+.lesson-number {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff006e 0%, #ff4d8f 100%);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.lesson-title {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.lesson-arrow {
+  color: #ff006e;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.lesson-numbered-item:hover .lesson-arrow {
+  opacity: 1;
+}
+
+/* Navigation */
+.navigation-section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background: white;
+  color: #ff006e;
+  border: 2px solid #ff006e;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-back:hover {
+  background-color: #ff006e;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section-content-categories {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .categories-sidebar {
+    width: 100%;
+    position: static;
+    sticky: unset;
+  }
+
+  .categories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .category-button {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-content-categories {
+    padding: 1rem 0;
+  }
+
+  .categories-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.8rem;
+  }
+
+  .category-button {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .category-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .lesson-numbered-item {
+    padding: 1rem 1.2rem;
+    gap: 1rem;
+  }
+
+  .lesson-number {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .lesson-title {
+    font-size: 0.95rem;
+  }
+
+  .navigation-section {
+    margin-top: 2rem;
+  }
+
+  .btn-back {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-list {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-numbered-item {
+    gap: 0.8rem;
+  }
+
+  .lesson-title {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,237 @@
+.lesson-layout {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  padding-top: calc(1.5rem + 60px);
+  margin-left: 35px;
+}
+
+.lesson-header {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.lesson-header h1 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.2;
+}
+
+.lesson-main {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.lesson-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.lesson-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  flex: 1;
+  min-width: 0;
+  max-width: 1200px;
+}
+
+.theory-section {
+  margin: 1.2rem 0;
+}
+
+.theory-section h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 1.2rem 0 0.6rem 0;
+  padding-bottom: 0.4rem;
+  }
+
+.theory-section h4 {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  margin: 1rem 0 0.4rem 0;
+  font-weight: 600;
+}
+
+.theory-content p {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+}
+
+.theory-content pre {
+  background-color: #282a36;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', 'Courier', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0.8rem 0;
+  }
+
+.lesson-body p code,
+.lesson-body li code {
+  font-family: 'Courier New', 'Courier', monospace;
+  background-color: #efefef;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: #d63384;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.theory-content code {
+  font-family: 'Courier New', 'Courier', monospace;
+  background-color: #efefef;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: #d63384;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.theory-content pre code {
+  background-color: transparent;
+  color: #f8f8f2;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.theory-content ul {
+  margin: 0.8rem 0;
+  padding-left: 2rem;
+  list-style: disc;
+}
+
+.theory-content ol {
+  margin: 0.8rem 0;
+  padding-left: 2rem;
+  list-style: decimal;
+}
+
+.theory-content li {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+  color: #555;
+  display: list-item;
+}
+
+/* Asegurar que todos los li sean verticales */
+.lesson-body li {
+  display: list-item !important;
+}
+
+.theory-content blockquote {
+    padding-left: 1rem;
+  margin: 1rem 0;
+  color: #666;
+  font-style: italic;
+}
+
+/* Layout responsivo global para CodeBlocks - solo para divs y elementos específicos */
+.lesson-body > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Contenido que no es CodeBlock - EXCEPTO listas */
+.lesson-body > div > *:not(.code-block):not(ul):not(ol) {
+  flex: 1 1 auto;
+  min-width: 280px;
+}
+
+/* Las listas deben ocupar el ancho completo */
+.lesson-body > ul,
+.lesson-body > ol {
+  flex-basis: 100%;
+  display: block !important;
+  flex: none !important;
+  margin: 1.5rem 0 !important;
+  padding-left: 2.5rem !important;
+}
+
+/* CodeBlocks - se adaptan al lado */
+.lesson-body .code-block {
+  flex: 0 0 auto;
+  min-width: 300px;
+  margin: 0;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Elementos después del CodeBlock - ancho completo */
+.lesson-body .code-block ~ *:not(.code-block) {
+  flex-basis: 100%;
+  min-width: unset;
+}
+
+@media (max-width: 1024px) {
+  .lesson-body > div {
+    flex-direction: column;
+  }
+
+  .lesson-body > div > *:not(.code-block) {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .lesson-body .code-block {
+    flex: 1 1 100%;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .lesson-layout {
+    padding: 1rem;
+    margin-left: 35px;
+  }
+
+  .lesson-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .lesson-main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lesson-body > div {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .lesson-body > div > *:not(.code-block) {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .lesson-body .code-block {
+    flex: 1 1 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .theory-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .theory-section h4 {
+    font-size: 0.95rem;
+  }
+}

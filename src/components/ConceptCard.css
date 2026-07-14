@@ -1,0 +1,61 @@
+.concept-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-left: 4px solid #ff006e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 107, 107, 0.2);
+}
+
+.concept-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.concept-card h4 {
+  margin: 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.concept-definition,
+.concept-example {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.concept-definition strong,
+.concept-example strong {
+  color: #ff006e;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.concept-definition p,
+.concept-example p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .concept-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  }
+
+  .concept-card h4,
+  .concept-definition p,
+  .concept-example p {
+    color: #e2e8f0;
+  }
+
+  .concept-definition strong,
+  .concept-example strong {
+    color: #60a5fa;
+  }
+}
