@@ -1093,7 +1093,7 @@ export function ModulePage({ moduleId }) {
                       }}
                     >
                       <span className="faq-title">{item.question}</span>
-                      <span className="faq-toggle">+</span>
+                      <span className="faq-toggle"></span>
                     </button>
                     <div className="faq-answer">
                       <p>{item.answer}</p>
