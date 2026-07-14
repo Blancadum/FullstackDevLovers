@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { LessonTemplate } from '../components';
 import { LessonNavigation } from '../components/LessonNavigation';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../hooks/useLessonNavigation';
 
 export function LexicoAWS() {
+  const [selectedCategory, setSelectedCategory] = useState(0);
   const breadcrumbs = useBreadcrumb();
   const nav = useLessonNavigation();
 
@@ -231,74 +233,124 @@ export function LexicoAWS() {
     }
   ];
 
+  const selectedCategoryData = lexicoTerms[selectedCategory];
+
   return (
     <>
       <LessonTemplate
         breadcrumbs={breadcrumbs}
         sections={[
           {
-            title: 'Léxico AWS: Terminología Completa',
+            title: 'Léxico AWS: Terminología por Temas',
             content: (
               <>
                 <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem', color: '#666' }}>
-                  Aquí encontrarás todos los términos, conceptos y definiciones esenciales para trabajar con AWS.
-                  Cada término incluye explicación clara y ejemplos prácticos.
+                  Explora todos los términos de AWS organizados por categorías.
+                  Selecciona una categoría del desplegable para ver los términos relacionados.
                 </p>
 
-                {lexicoTerms.map((category, categoryIdx) => (
-                  <div key={`lex-category-${categoryIdx}`} style={{ marginBottom: '3rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                      <span style={{ fontSize: '2rem' }}>{category.icon}</span>
-                      <h2 style={{ margin: 0, color: category.color, fontSize: '1.5rem', fontWeight: '700' }}>
-                        {category.category}
-                      </h2>
-                    </div>
+                {/* Selector de categorías - Desplegable */}
+                <div style={{
+                  backgroundColor: '#f9f9f9',
+                  border: '2px solid #e0e0e0',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  marginBottom: '2rem'
+                }}>
+                  <label style={{ display: 'block', marginBottom: '1rem', fontWeight: '700', color: '#333', fontSize: '1.05rem' }}>
+                    📂 Selecciona una categoría:
+                  </label>
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(parseInt(e.target.value))}
+                    style={{
+                      padding: '1rem',
+                      fontSize: '1rem',
+                      fontWeight: '700',
+                      border: `2px solid ${lexicoTerms[selectedCategory].color}`,
+                      backgroundColor: '#ffffff',
+                      color: '#333',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      minWidth: '300px',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = `0 2px 8px ${lexicoTerms[selectedCategory].color}25`;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    {lexicoTerms.map((category, idx) => (
+                      <option key={idx} value={idx}>
+                        {category.icon} {category.category} ({category.terms.length} términos)
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-                    <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                      gap: '1.5rem'
-                    }}>
-                      {category.terms.map((item, termIdx) => (
-                        <div key={`term-${categoryIdx}-${termIdx}`} style={{
-                          backgroundColor: '#ffffff',
-                          border: `2px solid ${category.color}20`,
-                          borderLeft: `5px solid ${category.color}`,
-                          borderRadius: '8px',
-                          padding: '1.5rem',
-                          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                          transition: 'all 0.3s ease'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.boxShadow = `0 4px 16px ${category.color}20`;
-                          e.currentTarget.style.transform = 'translateY(-2px)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
-                          e.currentTarget.style.transform = 'translateY(0)';
-                        }}>
-                          <h3 style={{ margin: '0 0 0.8rem 0', color: category.color, fontSize: '1.1rem', fontWeight: '700' }}>
-                            {item.term}
-                          </h3>
-                          <p style={{ margin: '0 0 1rem 0', fontSize: '0.95rem', color: '#555', lineHeight: '1.6' }}>
-                            {item.definition}
-                          </p>
-                          <div style={{
-                            backgroundColor: '#f5f5f5',
-                            padding: '1rem',
-                            borderRadius: '6px',
-                            borderLeft: `3px solid ${category.color}`,
-                            fontSize: '0.9rem',
-                            color: '#333'
-                          }}>
-                            <p style={{ margin: '0', fontWeight: '600', marginBottom: '0.3rem' }}>💡 Ejemplo:</p>
-                            <p style={{ margin: 0 }}>{item.example}</p>
-                          </div>
-                        </div>
-                      ))}
+                {/* Términos de la categoría seleccionada */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                    <span style={{ fontSize: '2.5rem' }}>{selectedCategoryData.icon}</span>
+                    <div>
+                      <h2 style={{ margin: '0 0 0.5rem 0', color: selectedCategoryData.color, fontSize: '1.8rem', fontWeight: '700' }}>
+                        {selectedCategoryData.category}
+                      </h2>
+                      <p style={{ margin: 0, color: '#666', fontSize: '0.95rem' }}>
+                        {selectedCategoryData.terms.length} términos disponibles
+                      </p>
                     </div>
                   </div>
-                ))}
+
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
+                    gap: '1.5rem'
+                  }}>
+                    {selectedCategoryData.terms.map((item, idx) => (
+                      <div key={`term-${selectedCategory}-${idx}`} style={{
+                        backgroundColor: '#ffffff',
+                        border: `2px solid ${selectedCategoryData.color}20`,
+                        borderLeft: `5px solid ${selectedCategoryData.color}`,
+                        borderRadius: '12px',
+                        padding: '1.8rem',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                        transition: 'all 0.3s ease',
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = `0 6px 20px ${selectedCategoryData.color}25`;
+                        e.currentTarget.style.transform = 'translateY(-3px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                      }}>
+                        <h3 style={{ margin: '0 0 0.8rem 0', color: selectedCategoryData.color, fontSize: '1.1rem', fontWeight: '700' }}>
+                          {item.term}
+                        </h3>
+                        <p style={{ margin: '0 0 1rem 0', fontSize: '0.95rem', color: '#555', lineHeight: '1.6', flex: 1 }}>
+                          {item.definition}
+                        </p>
+                        <div style={{
+                          backgroundColor: '#f5f5f5',
+                          padding: '1rem',
+                          borderRadius: '8px',
+                          borderLeft: `3px solid ${selectedCategoryData.color}`,
+                          fontSize: '0.9rem',
+                          color: '#333'
+                        }}>
+                          <p style={{ margin: '0 0 0.3rem 0', fontWeight: '600' }}>💡 Ejemplo:</p>
+                          <p style={{ margin: 0 }}>{item.example}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </>
             )
           }
