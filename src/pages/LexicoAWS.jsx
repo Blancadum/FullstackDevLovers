@@ -120,6 +120,26 @@ export function LexicoAWS() {
           term: 'Elastic IP',
           definition: 'Dirección IP estática que puedes reasignar. No cambia cuando reinicia instancia.',
           example: 'Garantizar IP fija para un servidor web'
+        },
+        {
+          term: 'Elastic Load Balancer (ELB)',
+          definition: 'Distribuye automáticamente tráfico entrante entre múltiples instancias. Hay 3 tipos: Classic (CLB), Application (ALB), Network (NLB).',
+          example: 'ALB distribuye tráfico HTTP/HTTPS entre instancias web en múltiples AZ'
+        },
+        {
+          term: 'Subnet',
+          definition: 'Segmento de red dentro de una VPC. Puede ser pública (acceso a internet) o privada (sin acceso directo a internet).',
+          example: 'Subnet pública 10.0.1.0/24 para web servers, Subnet privada 10.0.2.0/24 para base de datos'
+        },
+        {
+          term: 'Internet Gateway',
+          definition: 'Componente VPC que permite comunicación entre instancias en VPC e internet.',
+          example: 'Sin IGW, tus instancias EC2 no pueden conectarse a internet ni recibir tráfico externo'
+        },
+        {
+          term: 'NAT Gateway',
+          definition: 'Permite que instancias en subnets privadas accedan a internet sin exponerse públicamente.',
+          example: 'Instancia privada puede descargar actualizaciones de internet a través del NAT Gateway'
         }
       ]
     },
@@ -147,6 +167,16 @@ export function LexicoAWS() {
           term: 'MFA (Multi-Factor Authentication)',
           definition: 'Autenticación de dos factores: contraseña + código temporal del teléfono.',
           example: 'Contraseña + código Google Authenticator para acceso a cuenta root'
+        },
+        {
+          term: 'KMS (Key Management Service)',
+          definition: 'Servicio para crear y gestionar claves de encriptación. Controla quién puede encriptar/desencriptar datos.',
+          example: 'Encriptar datos en S3 o RDS con claves manejadas por AWS KMS'
+        },
+        {
+          term: 'Secrets Manager',
+          definition: 'Servicio para almacenar secretos seguros: contraseñas de BD, API keys, tokens.',
+          example: 'Guardar contraseña de RDS en Secrets Manager en lugar de hardcodearla en código'
         }
       ]
     },
@@ -169,6 +199,11 @@ export function LexicoAWS() {
           term: 'CloudFormation',
           definition: 'Infrastructure as Code. Define tus recursos AWS en archivos JSON/YAML y deploya todo con 1 comando.',
           example: 'Crear 10 instancias EC2, VPC, RDS, S3 con template CloudFormation'
+        },
+        {
+          term: 'VPC Flow Logs',
+          definition: 'Herramienta de auditoría que captura información sobre tráfico IP en tu VPC.',
+          example: 'Detectar patrones de tráfico sospechoso o depurar conectividad entre servicios'
         }
       ]
     },
