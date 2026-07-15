@@ -144,12 +144,138 @@
 }
 
 /* Responsive */
+
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
   .info-box {
-    padding: 1rem;
+    padding: 0.9rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+
+  .info-box-container {
+    gap: 0.85rem;
+  }
+
+  .info-box-icon {
+    width: 28px;
+    height: 28px;
   }
 
   .info-box-title {
     font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .info-box-content {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .info-box {
+    padding: 0.8rem 1rem;
+    margin: 1rem 0;
+    border-left: 3px solid;
+  }
+
+  .info-box-container {
+    gap: 0.75rem;
+  }
+
+  .info-box-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .info-box-title {
+    font-size: 0.9rem;
+  }
+
+  .info-box-content {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small phones (480px - 599px) */
+@media (max-width: 599px) {
+  .info-box {
+    padding: 0.75rem 0.9rem;
+    margin: 0.85rem 0;
+  }
+
+  .info-box-container {
+    gap: 0.7rem;
+  }
+
+  .info-box-icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+  }
+
+  .info-box-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .info-box-content {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .info-box-content p {
+    margin: 0.3rem 0;
+  }
+}
+
+/* Very small phones (375px - 479px) */
+@media (max-width: 479px) {
+  .info-box {
+    padding: 0.65rem 0.8rem;
+    margin: 0.75rem 0;
+  }
+
+  .info-box-container {
+    gap: 0.6rem;
+  }
+
+  .info-box-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .info-box-title {
+    font-size: 0.8rem;
+  }
+
+  .info-box-content {
+    font-size: 0.7rem;
+  }
+}
+
+/* Tiny screens (320px - 374px) */
+@media (max-width: 374px) {
+  .info-box {
+    padding: 0.6rem 0.75rem;
+    margin: 0.6rem 0;
+    border-left: 2px solid;
+  }
+
+  .info-box-container {
+    gap: 0.5rem;
+  }
+
+  .info-box-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .info-box-title {
+    font-size: 0.75rem;
+  }
+
+  .info-box-content {
+    font-size: 0.65rem;
   }
 }

@@ -44,19 +44,109 @@
   color: #cccccc;
 }
 
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
   .breadcrumb {
-    padding: 0.4rem 1rem;
+    padding: 0.35rem 0.9rem;
   }
 
   .breadcrumb-list {
-    padding: 0;
-    font-size: 0.85rem;
-    margin-left: 0;
+    gap: 0.4rem;
+  }
+
+  .breadcrumb-item {
+    font-size: 0.8rem;
   }
 
   .breadcrumb-item:not(:last-child)::after {
     margin-left: 0.25rem;
+    margin-right: 0.1rem;
+  }
+}
+
+/* Mobile (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .breadcrumb {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .breadcrumb-list {
+    gap: 0.35rem;
+  }
+
+  .breadcrumb-item {
+    font-size: 0.75rem;
+  }
+
+  .breadcrumb-item a {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small phones (480px - 599px) */
+@media (max-width: 599px) {
+  .breadcrumb {
+    padding: 0.25rem 0.7rem;
+  }
+
+  .breadcrumb-list {
+    gap: 0.3rem;
+  }
+
+  .breadcrumb-item {
+    font-size: 0.7rem;
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    margin-left: 0.15rem;
+    margin-right: 0.05rem;
+  }
+}
+
+/* Very small phones (375px - 479px) */
+@media (max-width: 479px) {
+  .breadcrumb {
+    padding: 0.2rem 0.6rem;
+  }
+
+  .breadcrumb-list {
+    gap: 0.25rem;
+  }
+
+  .breadcrumb-item {
+    font-size: 0.65rem;
+  }
+
+  .breadcrumb-current {
+    font-size: 0.65rem;
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    margin-left: 0.1rem;
+  }
+}
+
+/* Tiny screens (320px - 374px) */
+@media (max-width: 374px) {
+  .breadcrumb {
+    padding: 0.2rem 0.5rem;
+  }
+
+  .breadcrumb-list {
+    gap: 0.2rem;
+  }
+
+  .breadcrumb-item {
+    font-size: 0.6rem;
+  }
+
+  .breadcrumb-item a {
+    font-size: 0.6rem;
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    margin-left: 0.05rem;
+    margin-right: 0;
   }
 }
 

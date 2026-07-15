@@ -43,6 +43,124 @@
   line-height: 1.5;
 }
 
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .concept-card {
+    padding: 1rem;
+    margin: 0.75rem 0;
+  }
+
+  .concept-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .concept-card h4 {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+  }
+
+  .concept-definition,
+  .concept-example {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .concept-card {
+    padding: 0.85rem;
+    border-radius: 6px;
+  }
+
+  .concept-icon {
+    font-size: 1.5rem;
+  }
+
+  .concept-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .concept-definition,
+  .concept-example {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small phones (480px - 599px) */
+@media (max-width: 599px) {
+  .concept-card {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-left: 3px solid #ff006e;
+  }
+
+  .concept-icon {
+    font-size: 1.5rem;
+  }
+
+  .concept-card h4 {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+  }
+
+  .concept-definition,
+  .concept-example {
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+  }
+
+  .concept-definition strong,
+  .concept-example strong {
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* Very small phones (375px - 479px) */
+@media (max-width: 479px) {
+  .concept-card {
+    padding: 0.65rem;
+    border-left: 3px solid #ff006e;
+  }
+
+  .concept-icon {
+    font-size: 1.3rem;
+  }
+
+  .concept-card h4 {
+    font-size: 0.85rem;
+  }
+
+  .concept-definition,
+  .concept-example {
+    font-size: 0.7rem;
+  }
+}
+
+/* Tiny screens (320px - 374px) */
+@media (max-width: 374px) {
+  .concept-card {
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    border-left: 2px solid #ff006e;
+  }
+
+  .concept-icon {
+    font-size: 1.25rem;
+  }
+
+  .concept-card h4 {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+  }
+
+  .concept-definition,
+  .concept-example {
+    font-size: 0.65rem;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .concept-card {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);

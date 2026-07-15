@@ -76,18 +76,144 @@
   }
 }
 
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
+  .tab-box {
+    margin: 1.5rem 0;
+  }
+
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+
   .tab-button {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
     min-width: 100px;
+    flex: 1 1 auto;
+  }
+
+  .tab-icon {
+    font-size: 1rem;
   }
 
   .tab-content {
     padding: 1rem;
   }
+}
+
+/* Mobile (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .tab-button {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.85rem;
+    min-width: 90px;
+  }
+
+  .tab-icon {
+    font-size: 0.95rem;
+  }
+
+  .tab-content {
+    padding: 0.85rem;
+  }
+}
+
+/* Small phones (480px - 599px) */
+@media (max-width: 599px) {
+  .tab-box {
+    margin: 1.2rem 0;
+    border-radius: 6px;
+  }
 
   .tab-buttons {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .tab-button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tab-icon {
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+  }
+
+  .tab-label {
+    font-size: 0.75rem;
+  }
+
+  .tab-content {
+    padding: 0.75rem;
+  }
+}
+
+/* Very small phones (375px - 479px) */
+@media (max-width: 479px) {
+  .tab-button {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.75rem;
+    min-width: 70px;
+    height: 42px;
+  }
+
+  .tab-icon {
+    font-size: 0.85rem;
+  }
+
+  .tab-content {
+    padding: 0.65rem;
+  }
+
+  .tab-button.active::after {
+    height: 2px;
+    bottom: -1px;
+  }
+}
+
+/* Tiny screens (320px - 374px) */
+@media (max-width: 374px) {
+  .tab-box {
+    margin: 1rem 0;
+    border-radius: 5px;
+  }
+
+  .tab-buttons {
+    border-bottom: 1px solid #e0e0e0;
     gap: 0;
+  }
+
+  .tab-button {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
+    min-width: 60px;
+    height: 40px;
+    flex: 1;
+  }
+
+  .tab-icon {
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
+  }
+
+  .tab-label {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .tab-content {
+    padding: 0.55rem;
+  }
+
+  .tab-button.active::after {
+    height: 1px;
   }
 }
