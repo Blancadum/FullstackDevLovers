@@ -1140,7 +1140,7 @@ echo "✅ Limpieza completada"`}
         {/* Conceptos, Ejercicios y Puntos Clave */}
         <div style={{ marginTop: '3rem', marginBottom: '3rem' }}>
           <LessonTemplate
-            breadcrumbs={[]}
+            breadcrumbs={breadcrumbs}
             concepts={concepts}
             exercises={exercises}
             keyPoints={keyPoints}

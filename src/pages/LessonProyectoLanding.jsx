@@ -11,6 +11,31 @@ export function LessonProyectoLanding() {
   return (
     <>
       <div className="proyecto-landing">
+      {breadcrumbs && breadcrumbs.length > 0 && (
+        <div style={{
+          padding: '0 20px',
+          marginTop: '1rem',
+          marginBottom: '1rem',
+          fontSize: '0.9rem',
+          color: '#7f8c8d',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem'
+        }}>
+          {breadcrumbs.map((crumb, index) => (
+            <span key={index} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              {index > 0 && <span style={{ color: '#bdc3c7' }}>›</span>}
+              <a href={crumb.url || '#'} style={{
+                color: '#3498db',
+                textDecoration: 'none',
+                fontWeight: index === breadcrumbs.length - 1 ? 'bold' : 'normal'
+              }}>
+                {crumb.label}
+              </a>
+            </span>
+          ))}
+        </div>
+      )}
       {/* Hero Section */}
       <section className="proyecto-hero">
         <div className="container">

@@ -1,4 +1,5 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
 
 const sections = [
   {
@@ -141,11 +142,13 @@ const sections = [
 ];
 
 export function LessonProyectoReto3() {
+  const breadcrumbs = useBreadcrumb();
   return (
     <LessonProyectoRetoGeneric
       retoNumber={3}
       title="REPTE 3: Elevator Pitch"
       sections={sections}
+      breadcrumbs={breadcrumbs}
     />
   );
 }

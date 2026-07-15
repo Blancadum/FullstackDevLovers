@@ -39,6 +39,29 @@ export function LessonProyectoRetos() {
   return (
     <>
       <div style={{ padding: '0 20px' }}>
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <div style={{
+            marginBottom: '1rem',
+            fontSize: '0.9rem',
+            color: '#7f8c8d',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            {breadcrumbs.map((crumb, index) => (
+              <span key={index} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                {index > 0 && <span style={{ color: '#bdc3c7' }}>›</span>}
+                <a href={crumb.url || '#'} style={{
+                  color: '#3498db',
+                  textDecoration: 'none',
+                  fontWeight: index === breadcrumbs.length - 1 ? 'bold' : 'normal'
+                }}>
+                  {crumb.label}
+                </a>
+              </span>
+            ))}
+          </div>
+        )}
         <Link to="/proyecto/retos" style={{ color: '#8B5CF6', textDecoration: 'none', fontSize: '0.95rem' }}>
           ← Volver a Retos
         </Link>

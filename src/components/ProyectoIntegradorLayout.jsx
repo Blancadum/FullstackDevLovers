@@ -8,7 +8,7 @@ import { RetosSelector } from './RetosSelector';
 import { ejemplosTFCData } from '../data/ejemplosTFCData';
 import { InfoBox } from './index';
 
-export function ProyectoIntegradorLayout() {
+export function ProyectoIntegradorLayout({ breadcrumbs }) {
   const [selectedTab, setSelectedTab] = useState('planificacion');
   const [selectedProjectId, setSelectedProjectId] = useState(null);
 
@@ -370,6 +370,31 @@ RELACIONES:
 
   return (
     <div className="proyecto-layout">
+      {breadcrumbs && breadcrumbs.length > 0 && (
+        <div style={{
+          padding: '0 20px',
+          marginTop: '0.5rem',
+          marginBottom: '0.5rem',
+          fontSize: '0.9rem',
+          color: '#7f8c8d',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem'
+        }}>
+          {breadcrumbs.map((crumb, index) => (
+            <span key={index} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              {index > 0 && <span style={{ color: '#bdc3c7' }}>›</span>}
+              <a href={crumb.url || '#'} style={{
+                color: '#3498db',
+                textDecoration: 'none',
+                fontWeight: index === breadcrumbs.length - 1 ? 'bold' : 'normal'
+              }}>
+                {crumb.label}
+              </a>
+            </span>
+          ))}
+        </div>
+      )}
       <div className="proyecto-header">
         <h1>Proyecto Integrador</h1>
         <p>Proyecto final integrando Java Backend, Spring Boot, Bases de Datos y más</p>

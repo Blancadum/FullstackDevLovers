@@ -14,9 +14,11 @@ import { PROYECTOS } from '../config/proyectosData';
 export function LessonProyectoRetoGeneric({
   retoNumber,
   title,
-  sections = []
+  sections = [],
+  breadcrumbs: propBreadcrumbs
 }) {
-  const breadcrumbs = useBreadcrumb();
+  const hookBreadcrumbs = useBreadcrumb();
+  const breadcrumbs = propBreadcrumbs || hookBreadcrumbs;
   const nav = useLessonNavigation();
   const [proyectoSeleccionado, setProyectoSeleccionado] = useState('ecomarket');
 

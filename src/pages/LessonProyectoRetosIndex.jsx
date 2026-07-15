@@ -12,6 +12,29 @@ export function LessonProyectoRetosIndex() {
   return (
     <>
       <div style={{ padding: '2rem' }}>
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <div style={{
+            marginBottom: '1.5rem',
+            fontSize: '0.9rem',
+            color: '#7f8c8d',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            {breadcrumbs.map((crumb, index) => (
+              <span key={index} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                {index > 0 && <span style={{ color: '#bdc3c7' }}>›</span>}
+                <a href={crumb.url || '#'} style={{
+                  color: '#3498db',
+                  textDecoration: 'none',
+                  fontWeight: index === breadcrumbs.length - 1 ? 'bold' : 'normal'
+                }}>
+                  {crumb.label}
+                </a>
+              </span>
+            ))}
+          </div>
+        )}
         <h1 style={{ marginBottom: '1rem' }}>Retos DAW</h1>
         <p style={{ fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2rem', maxWidth: '700px' }}>
           Los 8 retos que evalúan cada fase de tu proyecto integrador. Una guía completa con especificaciones y soluciones para cada reto del currículo. Desde la planificación inicial hasta el despliegue en producción.
