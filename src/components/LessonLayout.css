@@ -174,26 +174,73 @@
   min-width: unset;
 }
 
-@media (max-width: 1024px) {
-  .lesson-body > div {
-    flex-direction: column;
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .lesson-layout {
+    max-width: 1300px;
+    padding: 2rem 2rem;
+    margin-left: 50px;
   }
 
-  .lesson-body > div > *:not(.code-block) {
-    flex: 1 1 100%;
-    min-width: unset;
+  .lesson-header h1 {
+    font-size: 1.8rem;
   }
 
-  .lesson-body .code-block {
-    flex: 1 1 100%;
-    min-width: unset;
-    width: 100%;
+  .lesson-body {
+    font-size: 1rem;
+  }
+
+  .theory-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .theory-section h4 {
+    font-size: 1.1rem;
   }
 }
 
-@media (max-width: 768px) {
+/* Large Tablet (1024px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1024px) {
   .lesson-layout {
-    padding: 1rem;
+    padding: 1.75rem 2rem;
+    margin-left: 40px;
+  }
+
+  .lesson-header {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .lesson-body {
+    font-size: 0.95rem;
+  }
+
+  .theory-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .theory-section h4 {
+    font-size: 1rem;
+  }
+
+  .lesson-body > div {
+    gap: 1.8rem;
+  }
+
+  .theory-section {
+    margin: 1.1rem 0;
+  }
+}
+
+/* Medium Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .lesson-layout {
+    padding: 1.5rem 1.5rem;
+    padding-top: calc(1.5rem + 60px);
     margin-left: 35px;
   }
 
@@ -203,17 +250,28 @@
   }
 
   .lesson-header h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
-  .lesson-main {
-    flex-direction: column;
-    gap: 1rem;
+  .lesson-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .lesson-body {
+    font-size: 0.9rem;
+  }
+
+  .theory-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .theory-section h4 {
+    font-size: 0.95rem;
   }
 
   .lesson-body > div {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.4rem;
   }
 
   .lesson-body > div > *:not(.code-block) {
@@ -227,11 +285,294 @@
     width: 100%;
   }
 
+  .theory-content p {
+    margin: 0.7rem 0;
+  }
+
+  .theory-content pre {
+    font-size: 0.85rem;
+    margin: 0.7rem 0;
+    padding: 0.9rem;
+  }
+
+  .lesson-body p code,
+  .lesson-body li code {
+    font-size: 0.85rem;
+  }
+
+  .theory-content code {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Landscape (640px - 767px) */
+@media (max-width: 767px) and (min-width: 640px) {
+  .lesson-layout {
+    padding: 1.25rem 1rem;
+    padding-top: calc(1.25rem + 60px);
+    margin-left: 30px;
+  }
+
+  .lesson-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .lesson-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .lesson-body {
+    font-size: 0.85rem;
+  }
+
   .theory-section h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem 0;
   }
 
   .theory-section h4 {
+    font-size: 0.9rem;
+    margin: 0.85rem 0 0.35rem 0;
+  }
+
+  .lesson-body > div {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .lesson-body > div > *:not(.code-block) {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .lesson-body .code-block {
+    flex: 1 1 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .theory-content p {
+    margin: 0.6rem 0;
+  }
+
+  .theory-content pre {
+    font-size: 0.8rem;
+    margin: 0.6rem 0;
+    padding: 0.8rem;
+  }
+
+  .theory-content ul {
+    margin: 0.6rem 0;
+    padding-left: 1.8rem;
+  }
+
+  .theory-content ol {
+    margin: 0.6rem 0;
+    padding-left: 1.8rem;
+  }
+
+  .theory-content li {
+    margin: 0.35rem 0;
+  }
+
+  .lesson-body p code,
+  .lesson-body li code {
+    font-size: 0.8rem;
+  }
+
+  .theory-content code {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile (480px - 639px) */
+@media (max-width: 639px) and (min-width: 480px) {
+  .lesson-layout {
+    padding: 1rem 0.85rem;
+    padding-top: calc(1rem + 60px);
+    margin-left: 25px;
+  }
+
+  .lesson-header {
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .lesson-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .lesson-body {
+    font-size: 0.8rem;
+  }
+
+  .theory-section h3 {
     font-size: 0.95rem;
+    margin: 0.9rem 0 0.45rem 0;
+  }
+
+  .theory-section h4 {
+    font-size: 0.85rem;
+    margin: 0.75rem 0 0.3rem 0;
+  }
+
+  .lesson-body > div {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lesson-body > div > *:not(.code-block) {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .lesson-body .code-block {
+    flex: 1 1 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .theory-content p {
+    margin: 0.5rem 0;
+  }
+
+  .theory-content pre {
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+  }
+
+  .theory-content ul {
+    margin: 0.5rem 0;
+    padding-left: 1.6rem;
+  }
+
+  .theory-content ol {
+    margin: 0.5rem 0;
+    padding-left: 1.6rem;
+  }
+
+  .theory-content li {
+    margin: 0.3rem 0;
+  }
+
+  .lesson-body p code,
+  .lesson-body li code {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .theory-content code {
+    font-size: 0.75rem;
+  }
+
+  .theory-content blockquote {
+    padding-left: 0.7rem;
+    margin: 0.8rem 0;
+  }
+}
+
+/* Small Mobile (<480px) */
+@media (max-width: 479px) {
+  .lesson-layout {
+    padding: 0.85rem 0.75rem;
+    padding-top: calc(0.85rem + 60px);
+    margin-left: 20px;
+  }
+
+  .lesson-header {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .lesson-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .lesson-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .lesson-body {
+    font-size: 0.75rem;
+  }
+
+  .theory-section {
+    margin: 0.9rem 0;
+  }
+
+  .theory-section h3 {
+    font-size: 0.9rem;
+    margin: 0.8rem 0 0.4rem 0;
+  }
+
+  .theory-section h4 {
+    font-size: 0.8rem;
+    margin: 0.7rem 0 0.25rem 0;
+  }
+
+  .lesson-body > div {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .lesson-body > div > *:not(.code-block) {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .lesson-body .code-block {
+    flex: 1 1 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .theory-content p {
+    margin: 0.4rem 0;
+  }
+
+  .theory-content pre {
+    font-size: 0.7rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+
+  .theory-content ul {
+    margin: 0.4rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .theory-content ol {
+    margin: 0.4rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .theory-content li {
+    margin: 0.25rem 0;
+  }
+
+  .lesson-body p code,
+  .lesson-body li code {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .theory-content code {
+    font-size: 0.7rem;
+  }
+
+  .theory-content blockquote {
+    padding-left: 0.6rem;
+    margin: 0.7rem 0;
   }
 }

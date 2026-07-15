@@ -4,6 +4,8 @@
   --terminal-font: 'Courier New', 'Courier', monospace;
   --code-font: 'Courier New', 'Courier', monospace;
   --base-spacing: 0.75rem;
+  --base-font-size: 0.95rem;
+  --base-line-height: 1.5;
 }
 
 /* Terminal/Console Typography */
@@ -14,6 +16,7 @@ pre, code {
 pre {
   font-size: 1.05rem;
   line-height: 1.6;
+  overflow-x: auto;
 }
 
 code {
@@ -22,11 +25,13 @@ code {
 
 /* Reduce overall spacing - less "air" */
 body {
-  line-height: 1.5;
-  font-size: 0.95rem;
+  line-height: var(--base-line-height);
+  font-size: var(--base-font-size);
   background-color: #fafafa;
   color: #1a1a1a;
   font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
@@ -149,7 +154,70 @@ img {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  body {
+    font-size: 1rem;
+  }
+
+  pre {
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet (1024px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1024px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  pre {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Medium Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
   body {
     font-size: 0.9rem;
   }
@@ -158,20 +226,335 @@ img {
     font-size: 0.85rem;
   }
 
+  pre code {
+    font-size: 0.85rem;
+  }
+
   .container,
   .lesson-layout {
-    padding: 0.75rem;
+    padding: 1rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   h3 {
     font-size: 1.1rem;
+  }
+
+  h4 {
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  td, th {
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+/* Mobile Landscape (640px - 767px) */
+@media (max-width: 767px) and (min-width: 640px) {
+  body {
+    font-size: 0.88rem;
+  }
+
+  pre {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+
+  pre code {
+    font-size: 0.8rem;
+  }
+
+  code {
+    font-size: 0.8rem;
+  }
+
+  .container,
+  .lesson-layout,
+  .content-area {
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h4, h5, h6 {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.6rem;
+    margin: 0.2rem 0;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  td, th {
+    padding: 0.3rem 0.4rem;
+  }
+
+  ul, ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  li {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  blockquote {
+    padding-left: 0.6rem;
+    margin: 0.5rem 0;
+  }
+
+  img {
+    margin: 0.6rem 0;
+  }
+}
+
+/* Mobile (480px - 639px) */
+@media (max-width: 639px) and (min-width: 480px) {
+  body {
+    font-size: 0.85rem;
+  }
+
+  pre {
+    font-size: 0.75rem;
+    padding: 0.6rem;
+  }
+
+  pre code {
+    font-size: 0.75rem;
+  }
+
+  code {
+    font-size: 0.75rem;
+  }
+
+  .container,
+  .lesson-layout,
+  .content-area {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  h4, h5, h6 {
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+  }
+
+  p {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.55rem;
+    margin: 0.15rem 0;
+  }
+
+  table {
+    font-size: 0.75rem;
+  }
+
+  td, th {
+    padding: 0.25rem 0.35rem;
+  }
+
+  ul, ol {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  li {
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+  }
+
+  blockquote {
+    padding-left: 0.5rem;
+    margin: 0.4rem 0;
+  }
+
+  img {
+    margin: 0.5rem 0;
+  }
+
+  details {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  summary {
+    padding: 0.3rem 0;
+  }
+}
+
+/* Small Mobile (<480px) */
+@media (max-width: 479px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  pre {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+
+  pre code {
+    font-size: 0.7rem;
+  }
+
+  code {
+    font-size: 0.7rem;
+  }
+
+  .container,
+  .lesson-layout,
+  .content-area {
+    padding: 0.4rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.25rem;
+  }
+
+  h4, h5, h6 {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.15rem;
+  }
+
+  p {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.5rem;
+    margin: 0.1rem 0;
+  }
+
+  table {
+    font-size: 0.7rem;
+  }
+
+  td, th {
+    padding: 0.2rem 0.3rem;
+  }
+
+  ul, ol {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  li {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  blockquote {
+    padding-left: 0.4rem;
+    margin: 0.3rem 0;
+  }
+
+  img {
+    margin: 0.4rem 0;
+  }
+
+  details {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  summary {
+    padding: 0.2rem 0;
   }
 }
