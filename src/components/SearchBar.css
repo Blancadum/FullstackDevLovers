@@ -18,15 +18,22 @@
   font-size: 0.9rem;
   border: 1px solid #ffffff;
   border-radius: 6px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   font-family: inherit;
   background-color: white;
+  min-height: 2.75rem;
 }
 
 .search-input:focus {
   outline: none;
   border-color: #ff006e;
   box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.08);
+}
+
+.search-input:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 .search-input::placeholder {
@@ -43,12 +50,22 @@
   font-size: 1rem;
   cursor: pointer;
   color: #bbb;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
   padding: 0.4rem;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .clear-btn:hover {
   color: #ff006e;
+}
+
+.clear-btn:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 2px;
 }
 
 .filter-box {
@@ -63,9 +80,10 @@
   border-radius: 6px;
   background-color: white;
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   font-family: inherit;
   color: #666;
+  min-height: 2.75rem;
 }
 
 .filter-select:focus {
@@ -74,8 +92,39 @@
   box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.08);
 }
 
+.filter-select:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
 .filter-select:hover {
   border-color: #ff006e;
+}
+
+/* Landscape orientation optimization */
+@media (orientation: landscape) and (max-height: 600px) {
+  .search-container {
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .search-input {
+    padding: 0.4rem 0.7rem 0.4rem 1.8rem;
+    font-size: 0.8rem;
+    min-height: 2.2rem;
+  }
+
+  .filter-select {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+    min-height: 2.2rem;
+  }
+
+  .clear-btn {
+    min-height: 2.2rem;
+    min-width: 2.2rem;
+  }
 }
 
 /* Tablet (768px and below) */

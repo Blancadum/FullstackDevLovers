@@ -12,18 +12,29 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
   animation: slideUp 0.3s ease;
 }
 
 .scroll-to-top:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
 }
 
-.scroll-to-top:active {
-  transform: translateY(-2px);
+/* Only transform on desktop */
+@media (min-width: 768px) and (hover: hover) {
+  .scroll-to-top:hover {
+    transform: translateY(-5px);
+  }
+
+  .scroll-to-top:active {
+    transform: translateY(-2px);
+  }
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 
 /* Triángulo apuntando hacia arriba */
@@ -128,7 +139,27 @@
     border-bottom: 9px solid white;
   }
 
-  .scroll-to-top:hover {
-    transform: translateY(-3px);
+}
+
+/* Landscape orientation - adjust position */
+@media (orientation: landscape) and (max-height: 600px) {
+  .scroll-to-top {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-to-top::before {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 11px solid white;
+  }
+}
+
+/* Reduce animations on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    animation: none;
   }
 }

@@ -88,7 +88,7 @@
   border: 2px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   text-align: left;
   font-size: 0.95rem;
   color: #333;
@@ -176,7 +176,7 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   cursor: pointer;
   border: 2px solid;
   font-size: 0.95rem;

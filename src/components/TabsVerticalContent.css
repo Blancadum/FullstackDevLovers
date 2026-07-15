@@ -36,7 +36,7 @@
   border: 2px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   text-align: left;
   font-size: 0.95rem;
   color: #333;

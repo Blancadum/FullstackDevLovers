@@ -23,15 +23,27 @@
   text-decoration: none;
   color: inherit;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   border: 1px solid #f5f5f5;
+  min-height: 120px;
 }
 
 .access-item:hover {
   background-color: #f9f9f9;
   border-color: #e0e0e0;
-  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Only transform on desktop */
+@media (min-width: 768px) and (hover: hover) {
+  .access-item:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.access-item:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 4px;
 }
 
 .access-icon {

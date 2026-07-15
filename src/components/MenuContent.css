@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   text-align: left;
   font-size: 1rem;
   font-weight: 600;
@@ -42,7 +42,7 @@
 
 .menu-content-icon {
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   font-size: 0.9rem;
   display: flex;
   align-items: center;

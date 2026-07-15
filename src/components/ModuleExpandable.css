@@ -4,7 +4,7 @@
   margin-bottom: 2rem;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   border: 1px solid #f0f0f0;
 }
 
@@ -46,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   cursor: pointer;
 }
 
@@ -75,7 +75,7 @@
   box-shadow: 0 4px 12px rgba(0, 217, 255, 0.2);
   overflow: hidden;
   border: none;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .module-expandable:nth-child(1) .module-icon-circle {
@@ -116,7 +116,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   cursor: pointer;
 }
 
@@ -169,7 +169,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   color: #999999;
   flex-shrink: 0;
   width: 44px;
@@ -185,7 +185,7 @@
 .expand-icon {
   font-size: 1.2rem;
   color: inherit;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   flex-shrink: 0;
 }
 
@@ -229,7 +229,7 @@
   color: #1a1a1a;
   text-decoration: none;
   border-left: 3px solid transparent;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   font-size: 0.95rem;
   font-weight: 500;
   margin: 0.3rem 0;
@@ -257,7 +257,7 @@
   font-weight: 700;
   flex-shrink: 0;
   font-family: Arial, sans-serif;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .module-expandable:nth-child(1) .lesson-number {

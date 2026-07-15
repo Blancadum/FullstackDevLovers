@@ -6,6 +6,17 @@
   --base-spacing: 0.75rem;
   --base-font-size: 0.95rem;
   --base-line-height: 1.5;
+
+  /* Responsive animation duration */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Safe area for notched devices */
+  --safe-area-inset-top: env(safe-area-inset-top, 0);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0);
+  --safe-area-inset-left: env(safe-area-inset-left, 0);
+  --safe-area-inset-right: env(safe-area-inset-right, 0);
 }
 
 /* Terminal/Console Typography */
@@ -29,9 +40,13 @@ body {
   font-size: var(--base-font-size);
   background-color: #fafafa;
   color: #1a1a1a;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Respect prefers-reduced-motion */
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
 }
 
 p {
@@ -123,12 +138,28 @@ button {
 a {
   color: #ff006e;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
   color: #0d9970;
   text-decoration: underline;
+}
+
+/* Enhanced focus styles for accessibility */
+a:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Reduce animations on motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Details/Summary styling (for expandable sections) */
@@ -141,10 +172,17 @@ summary {
   cursor: pointer;
   padding: 0.4rem 0;
   font-weight: 500;
+  transition: color var(--transition-fast);
 }
 
 summary:hover {
   color: #ff006e;
+}
+
+summary:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Blockquotes with less space */
@@ -160,9 +198,153 @@ img {
   margin: 0.8rem 0;
   max-width: 100%;
   height: auto;
+  /* High DPI optimization */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  nav, .navbar, footer, .hamburger-menu {
+    display: none !important;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  p, ul, ol, blockquote {
+    orphans: 3;
+    widows: 3;
+  }
 }
 
 /* Responsive adjustments */
+
+/* Accessibility: High contrast mode */
+@media (prefers-contrast: more) {
+  body {
+    font-weight: 600;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  button, input, textarea, select {
+    border-width: 2px;
+  }
+}
+
+/* Accessibility: Forced colors mode (Windows High Contrast) */
+@media (forced-colors: active) {
+  body {
+    background-color: Canvas;
+    color: CanvasText;
+  }
+
+  a {
+    color: LinkText;
+  }
+
+  button, input, textarea, select {
+    border-color: ButtonBorder;
+    background-color: ButtonFace;
+    color: ButtonText;
+  }
+
+  a:focus-visible, summary:focus-visible {
+    outline: 3px solid Highlight;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  blockquote {
+    border-left-color: #ff006e;
+    color: #999;
+  }
+
+  .terminal,
+  .console,
+  .shell {
+    background-color: #0d0d0d;
+    color: #d4d4d4;
+  }
+}
+
+/* Landscape orientation - optimize for shorter height */
+@media (orientation: landscape) and (max-height: 600px) {
+  body {
+    line-height: 1.4;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+
+  p {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  ul, ol {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  li {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    min-height: 2.2rem;
+    padding: 0.4rem 0.6rem;
+    margin: 0.1rem 0;
+  }
+
+  button {
+    padding: 0.45rem 0.9rem;
+  }
+}
+
+/* High DPI/Retina optimization */
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  a {
+    border-bottom: 1px solid transparent;
+  }
+
+  input, textarea, select, button {
+    border-width: 1px;
+  }
+}
 
 /* Large Desktop (1400px+) */
 @media (min-width: 1400px) {
@@ -227,6 +409,11 @@ img {
 
 /* Medium Tablet (768px - 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
+  :root {
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+  }
+
   body {
     font-size: 0.9rem;
   }
@@ -279,6 +466,11 @@ img {
 
 /* Mobile Landscape (640px - 767px) */
 @media (max-width: 767px) and (min-width: 640px) {
+  :root {
+    --transition-fast: 0.12s ease;
+    --transition-normal: 0.15s ease;
+  }
+
   body {
     font-size: 0.88rem;
   }
@@ -377,6 +569,11 @@ img {
 
 /* Mobile (480px - 639px) */
 @media (max-width: 639px) and (min-width: 480px) {
+  :root {
+    --transition-fast: 0.1s ease;
+    --transition-normal: 0.13s ease;
+  }
+
   body {
     font-size: 0.85rem;
   }
@@ -484,6 +681,11 @@ img {
 
 /* Very small mobile (375px - 479px) */
 @media (max-width: 479px) and (min-width: 375px) {
+  :root {
+    --transition-fast: 0.08s ease;
+    --transition-normal: 0.1s ease;
+  }
+
   body {
     font-size: 0.8rem;
   }
@@ -591,6 +793,11 @@ img {
 
 /* Tiny screens (<375px) */
 @media (max-width: 374px) {
+  :root {
+    --transition-fast: 0.08s ease;
+    --transition-normal: 0.1s ease;
+  }
+
   body {
     font-size: 0.75rem;
   }

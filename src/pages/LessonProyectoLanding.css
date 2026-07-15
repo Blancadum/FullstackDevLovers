@@ -63,7 +63,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .learning-block:hover {
@@ -90,7 +90,7 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .link-btn:hover {
@@ -198,7 +198,7 @@
   border-radius: 8px;
   text-decoration: none;
   color: #333;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .quick-link:hover {

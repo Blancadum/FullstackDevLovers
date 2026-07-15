@@ -25,7 +25,7 @@
 .breadcrumb-item a {
   color: #666666;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .breadcrumb-item a:hover {

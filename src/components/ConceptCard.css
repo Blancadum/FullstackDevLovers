@@ -4,12 +4,23 @@
   padding: 1.5rem;
   margin: 1rem 0;
   border-left: 4px solid #ff006e;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .concept-card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(255, 107, 107, 0.2);
+}
+
+/* Only transform on desktop */
+@media (min-width: 768px) and (hover: hover) {
+  .concept-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.concept-card:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 4px;
 }
 
 .concept-icon {
@@ -158,6 +169,30 @@
   .concept-definition,
   .concept-example {
     font-size: 0.65rem;
+  }
+}
+
+/* Landscape orientation optimization */
+@media (orientation: landscape) and (max-height: 600px) {
+  .concept-card {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+  }
+
+  .concept-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .concept-card h4 {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+  }
+
+  .concept-definition,
+  .concept-example {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
   }
 }
 

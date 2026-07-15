@@ -118,7 +118,7 @@
   border-radius: 0;
   text-decoration: none;
   color: #2c3e50;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   position: relative;
   overflow: visible;
 }
@@ -176,7 +176,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   font-size: 1rem;
 }
 
@@ -186,7 +186,7 @@
 }
 
 .arrow {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   display: inline-block;
 }
 
@@ -220,7 +220,7 @@
   padding: 0.75rem 1.5rem;
   color: #2c3e50;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   border-left: 4px solid transparent;
 }
 
@@ -267,7 +267,7 @@
   justify-content: center;
   gap: 0.3rem;
   min-height: 110px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--transition-fast), box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -341,7 +341,7 @@
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   border: 2px solid #ff006e;
   cursor: pointer;
   font-size: 0.95rem;

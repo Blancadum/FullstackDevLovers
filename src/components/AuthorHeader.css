@@ -8,7 +8,7 @@
   border-radius: 6px;
   padding: 0.7rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .author-header:hover {
@@ -33,7 +33,7 @@
   border: 2px solid #ff006e;
   object-fit: cover;
   box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .author-header:hover .author-photo {
@@ -82,7 +82,7 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   padding: 0.4rem 0.9rem;
   background: rgba(255, 107, 107, 0.1);
   border-radius: 4px;

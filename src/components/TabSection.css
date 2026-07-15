@@ -65,17 +65,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   text-align: left;
   font-size: 1rem;
   font-weight: 600;
   color: #2c3e50;
+  min-height: 2.75rem;
 }
 
 .timeline-header:hover {
   border-color: #ff006e;
   background: #fff;
   box-shadow: 0 2px 8px rgba(255, 0, 110, 0.1);
+}
+
+.timeline-header:focus-visible {
+  outline: 2px solid #ff006e;
+  outline-offset: 2px;
 }
 
 .timeline-header.expanded {
@@ -92,7 +98,7 @@
 
 .timeline-icon {
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   color: #ff006e;
   font-size: 0.9rem;
   display: flex;

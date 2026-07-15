@@ -47,7 +47,7 @@
   cursor: pointer;
   border-left: 4px solid transparent;
   border-bottom: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   text-align: left;
   white-space: normal;
   position: relative;
@@ -122,7 +122,7 @@
   padding: 16px;
   background-color: #f9fafb;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   border-left: 4px solid #ff006e;
 }
 

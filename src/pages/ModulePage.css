@@ -41,7 +41,7 @@
   cursor: pointer;
   font-weight: 500;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .module-dropdown-toggle:hover {
@@ -75,7 +75,7 @@
   color: #333;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .dropdown-item:hover {
@@ -158,7 +158,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: #999;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   white-space: normal;
   text-align: center;
   max-width: 220px;
@@ -1075,7 +1075,7 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 95px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -1175,7 +1175,7 @@
   border-radius: 0;
   text-decoration: none;
   color: #2c3e50;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   position: relative;
   overflow: visible;
 }
@@ -1314,7 +1314,7 @@
   border: none;
   border-radius: 0;
   overflow: visible;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .faq-item:hover {
@@ -1349,7 +1349,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.75rem;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   text-align: left;
   font-size: 0.9rem;
   color: #2c3e50;
@@ -1371,7 +1371,7 @@
 .faq-toggle {
   font-size: 1rem;
   color: #ff006e;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   flex-shrink: 0;
   margin-top: 0.1rem;
   margin-right: 0.5rem;
@@ -1384,7 +1384,7 @@
 .faq-answer {
   display: none;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   width: 100%;
   box-sizing: border-box;
 }
@@ -1436,7 +1436,7 @@
   color: #ff006e;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -1488,7 +1488,7 @@
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   border: 2px solid #ff006e;
   cursor: pointer;
   font-size: 0.95rem;

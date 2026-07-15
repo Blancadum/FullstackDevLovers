@@ -26,7 +26,7 @@
   border-radius: 6px;
   background-color: #fff;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   font-weight: 500;
   color: #1f2937;
 }

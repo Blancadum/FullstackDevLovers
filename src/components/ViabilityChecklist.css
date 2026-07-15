@@ -33,7 +33,7 @@
   cursor: pointer;
   border-right: 4px solid transparent;
   border-bottom: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   text-align: left;
   font-size: 14px;
   font-weight: 500;
