@@ -112,6 +112,16 @@ import { LessonAWSIAM } from './pages/LessonAWSIAM';
 import { LessonAWSPricing } from './pages/LessonAWSPricing';
 import { LessonAWSS3 } from './pages/LessonAWSS3';
 import { LessonAWSEC2 } from './pages/LessonAWSEC2';
+import { LessonAWSRDS } from './pages/LessonAWSRDS';
+import { LessonAWSLambda } from './pages/LessonAWSLambda';
+import { LessonAWSVPC } from './pages/LessonAWSVPC';
+import { LessonAWSCloudWatch } from './pages/LessonAWSCloudWatch';
+import { LessonAWSDynamoDB } from './pages/LessonAWSDynamoDB';
+import { LessonAWSDeployment } from './pages/LessonAWSDeployment';
+import { LessonAWSArquitectura } from './pages/LessonAWSArquitectura';
+import { LessonAWSAlmacenamiento } from './pages/LessonAWSAlmacenamiento';
+import { LessonAWSJava } from './pages/LessonAWSJava';
+import { LessonAWSProyecto } from './pages/LessonAWSProyecto';
 import { LexicoAWS } from './pages/LexicoAWS';
 import { LexicoGeneral } from './pages/LexicoGeneral';
 import { EvaluacionAWS } from './pages/EvaluacionAWS';
@@ -254,21 +264,27 @@ function AppContent() {
 
           {/* Lecciones - AWS (nuevo módulo principal) */}
           <Route path="/aws/fundamentales/intro" element={<LessonAWSIntro />} />
+          <Route path="/aws/fundamentales/arquitectura" element={<LessonAWSArquitectura />} />
           <Route path="/aws/fundamentales/conceptos" element={<LessonAWSConceptos />} />
           <Route path="/aws/fundamentales/iam" element={<LessonAWSIAM />} />
           <Route path="/aws/fundamentales/pricing" element={<LessonAWSPricing />} />
           <Route path="/aws/servicios/ec2" element={<LessonAWSEC2 />} />
-          <Route path="/aws/servicios/rds" element={<LessonPlaceholder />} />
+          <Route path="/aws/servicios/rds" element={<LessonAWSRDS />} />
           <Route path="/aws/servicios/s3" element={<LessonAWSS3 />} />
-          <Route path="/aws/servicios/dynamodb" element={<LessonPlaceholder />} />
+          <Route path="/aws/servicios/lambda" element={<LessonAWSLambda />} />
+          <Route path="/aws/servicios/dynamodb" element={<LessonAWSDynamoDB />} />
+          <Route path="/aws/servicios/almacenamiento" element={<LessonAWSAlmacenamiento />} />
+          <Route path="/aws/redes/vpc" element={<LessonAWSVPC />} />
+          <Route path="/aws/deployment/cicd" element={<LessonAWSDeployment />} />
           <Route path="/aws/deployment/beanstalk" element={<LessonPlaceholder />} />
           <Route path="/aws/deployment/ecs" element={<LessonPlaceholder />} />
-          <Route path="/aws/deployment/lambda" element={<LessonPlaceholder />} />
           <Route path="/aws/deployment/cloudfront" element={<LessonPlaceholder />} />
-          <Route path="/aws/operaciones/cloudwatch" element={<LessonPlaceholder />} />
+          <Route path="/aws/operaciones/cloudwatch" element={<LessonAWSCloudWatch />} />
           <Route path="/aws/operaciones/seguridad" element={<LessonPlaceholder />} />
           <Route path="/aws/operaciones/backup" element={<LessonPlaceholder />} />
           <Route path="/aws/operaciones/practicas" element={<LessonPlaceholder />} />
+          <Route path="/aws/integracion/java" element={<LessonAWSJava />} />
+          <Route path="/aws/proyecto/final" element={<LessonAWSProyecto />} />
 
           {/* Léxico y Evaluaciones */}
           <Route path="/lexico" element={<LexicoGeneral />} />

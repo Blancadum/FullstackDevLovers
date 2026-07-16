@@ -263,6 +263,320 @@ export function LexicoAWS() {
           term: 'SLA (Service Level Agreement)',
           definition: 'Garantía de disponibilidad y rendimiento. AWS ofrece 99.99% de uptime para servicios gestionados.',
           example: 'Si RDS está down > 4.4 minutos/mes, AWS reembolsa crédito'
+        },
+        {
+          term: 'RPO (Recovery Point Objective)',
+          definition: 'Máximo tiempo de pérdida de datos tolerable. Define cada cuánto hacer backups.',
+          example: 'RPO de 1 hora = máximo 1 hora de datos perdidos si ocurre desastre'
+        },
+        {
+          term: 'RTO (Recovery Time Objective)',
+          definition: 'Tiempo máximo para recuperarse de un desastre. Cuánto tiempo toleras que el sistema esté down.',
+          example: 'RTO de 30 minutos = recuperar sistema completo en máximo 30 minutos'
+        }
+      ]
+    },
+    {
+      category: 'Cómputo Avanzado',
+      icon: '⚡',
+      color: '#A8D8EA',
+      terms: [
+        {
+          term: 'Auto Scaling (Horizontal)',
+          definition: 'Escalar aumentando número de instancias. Mejora capacidad de manejo de tráfico.',
+          example: 'De 2 a 10 instancias EC2 cuando tráfico sube'
+        },
+        {
+          term: 'Vertical Scaling',
+          definition: 'Escalar cambiar tipo de instancia (más potente). Requiere downtime.',
+          example: 'Cambiar de t2.micro a t2.large'
+        },
+        {
+          term: 'ECS (Elastic Container Service)',
+          definition: 'Orquestación de contenedores Docker. AWS gestiona el cluster.',
+          example: 'Desplegar múltiples contenedores Docker con balanceo automático'
+        },
+        {
+          term: 'Fargate',
+          definition: 'Computación serverless para contenedores. No gestiona servidores, solo containers.',
+          example: 'Desplegar Docker sin pensar en EC2 instances'
+        },
+        {
+          term: 'Lightsail',
+          definition: 'Computación virtual simplificada para principiantes. Precios predecibles.',
+          example: 'Servidor web WordPress con IP estática por $3.5/mes'
+        },
+        {
+          term: 'Batch',
+          definition: 'Servicio para ejecutar trabajos en lote (batch jobs) de forma administrada.',
+          example: 'Procesar 1 millón de imágenes automáticamente'
+        },
+        {
+          term: 'SnapStart (Lambda)',
+          definition: 'Inicia Lambda desde snapshot pre-inicializado. Reduce cold start dramáticamente.',
+          example: 'Lambda Java de 6 segundos a 100ms en cold start'
+        }
+      ]
+    },
+    {
+      category: 'Almacenamiento Avanzado',
+      icon: '📦',
+      color: '#AA96DA',
+      terms: [
+        {
+          term: 'EFS (Elastic File System)',
+          definition: 'Sistema de archivos NFS para compartir entre múltiples EC2 instancias.',
+          example: 'Múltiples instancias EC2 leyendo/escribiendo archivos compartidos'
+        },
+        {
+          term: 'Glacier',
+          definition: 'Almacenamiento de archivo de bajo costo. Tiempo de recuperación: horas o días.',
+          example: 'Backups de 1 año atrás a $0.004/GB/mes'
+        },
+        {
+          term: 'Backup (AWS Backup)',
+          definition: 'Servicio centralizado para backups de EC2, RDS, EBS, EFS, DynamoDB.',
+          example: 'Una política de backup para todos tus recursos'
+        },
+        {
+          term: 'FSx',
+          definition: 'Sistemas de archivos administrados (Windows File Server, Lustre).',
+          example: 'Windows File Server completamente gestionado sin hardware'
+        },
+        {
+          term: 'S3 Glacier Deep Archive',
+          definition: 'Almacenamiento ultra-barato para datos raros. Recuperación en 12 horas.',
+          example: 'Cumplimiento legal: guardar datos 10 años por $0.00099/GB/mes'
+        },
+        {
+          term: 'S3 Intelligent-Tiering',
+          definition: 'Mueve automáticamente objetos entre access tiers según patrones de acceso.',
+          example: 'Ahorro automático sin cambiar código'
+        }
+      ]
+    },
+    {
+      category: 'Networking Avanzado',
+      icon: '🌍',
+      color: '#FCBAD3',
+      terms: [
+        {
+          term: 'Route 53',
+          definition: 'DNS gestionado y health checking. Distribuye tráfico entre regiones.',
+          example: 'www.example.com → 50% us-east, 50% eu-west con failover automático'
+        },
+        {
+          term: 'CloudFront',
+          definition: 'CDN (Content Delivery Network). Cachea contenido en edge locations globales.',
+          example: 'Usuario en Japón descarga video desde edge en Tokyo, no desde Virginia'
+        },
+        {
+          term: 'API Gateway',
+          definition: 'Crea, publica y gestiona APIs REST y WebSocket. Integra con Lambda, EC2, RDS.',
+          example: 'API pública sin exponer tu backend directamente'
+        },
+        {
+          term: 'Direct Connect',
+          definition: 'Conexión dedicada privada entre tu data center y AWS.',
+          example: 'Conexión directa con banda garantizada entre oficina y AWS'
+        },
+        {
+          term: 'VPN (Virtual Private Network)',
+          definition: 'Conexión encriptada entre tu red on-premise y AWS VPC.',
+          example: 'Acceso seguro a instancias privadas desde home office'
+        },
+        {
+          term: 'Transit Gateway',
+          definition: 'Hub central para conectar múltiples VPCs, on-premise y redes remotas.',
+          example: 'Conectar 10 VPCs diferentes a través de un hub'
+        },
+        {
+          term: 'Endpoint (VPC)',
+          definition: 'Conexión privada sin internet. Conectar EC2 privada a S3 sin NAT Gateway.',
+          example: 'EC2 privada → S3 sin salir de la red AWS'
+        }
+      ]
+    },
+    {
+      category: 'Bases de Datos Avanzado',
+      icon: '🔑',
+      color: '#FFFACD',
+      terms: [
+        {
+          term: 'Read Replica (RDS)',
+          definition: 'Copia de lectura sincrónica de BD principal. Distribuye lecturas.',
+          example: 'RDS Master en us-east, Read Replica en eu-west'
+        },
+        {
+          term: 'Multi-AZ (RDS)',
+          definition: 'Replica de standby sincrónica en otra AZ. Failover automático en 1-2 minutos.',
+          example: 'RDS en us-east-1a con standby en us-east-1b'
+        },
+        {
+          term: 'Aurora',
+          definition: 'Base de datos relacional MySQL/PostgreSQL compatible. 3x más rápida que RDS estándar.',
+          example: 'Compatible con MySQL pero con rendimiento de base de datos proprietaria'
+        },
+        {
+          term: 'DocumentDB',
+          definition: 'MongoDB compatible completamente gestionado. No administras nada.',
+          example: 'Usar código MongoDB existente en AWS sin cambios'
+        },
+        {
+          term: 'Neptune',
+          definition: 'Base de datos de grafos gestionada para relaciones complejas.',
+          example: 'Redes sociales: encontrar amigos de amigos en milisegundos'
+        },
+        {
+          term: 'Redshift',
+          definition: 'Data warehouse columnar para análisis masivos. Petabytes de datos.',
+          example: 'Analizar 10 años de datos de ventas en segundos'
+        },
+        {
+          term: 'DAX (DynamoDB Accelerator)',
+          definition: 'Cache en memoria para DynamoDB. Reduce latencia de milisegundos a microsegundos.',
+          example: 'DynamoDB normalmente 50ms → con DAX 200 microsegundos'
+        },
+        {
+          term: 'Global Secondary Index (GSI)',
+          definition: 'Índice alternativo en DynamoDB con diferentes Partition Key y Sort Key.',
+          example: 'Tabla por usuario-id, GSI por email para buscar por email'
+        }
+      ]
+    },
+    {
+      category: 'Gestión de Costos',
+      icon: '💰',
+      color: '#B4F8C8',
+      terms: [
+        {
+          term: 'Pricing Calculator',
+          definition: 'Herramienta para estimar costos antes de desplegar.',
+          example: 'Calcular costo de 10 EC2 + RDS + S3 antes de crear'
+        },
+        {
+          term: 'Cost Explorer',
+          definition: 'Analiza gastos actuales por servicio, región, etiqueta.',
+          example: 'Descubrir que DynamoDB gasta 60% del presupuesto'
+        },
+        {
+          term: 'Budgets',
+          definition: 'Alertas cuando gastos alcanzan límite definido.',
+          example: 'Notificación cuando alcanzas el 80% del budget mensual'
+        },
+        {
+          term: 'Savings Plans',
+          definition: 'Compromiso flexible de 1-3 años. Descuento 30-50% vs On-Demand.',
+          example: 'Comprometerse a $100/mes por 1 año con descuento significativo'
+        },
+        {
+          term: 'Compute Savings Plans',
+          definition: 'Descuento en EC2, Fargate, Lambda con compromiso 1-3 años.',
+          example: 'Mismo descuento si cambias de EC2 a Fargate'
+        },
+        {
+          term: 'Trusted Advisor',
+          definition: 'Auditor automático que recomienda optimizaciones para ahorrar dinero y mejorar seguridad.',
+          example: 'Alertar sobre instancias EC2 subutilizadas, bases de datos sin backup'
+        },
+        {
+          term: 'Rightsizing',
+          definition: 'Usar instancia del tamaño correcto. No oversizing ni undersizing.',
+          example: 'Cambiar de m5.xlarge a t3.medium si no necesitas poder'
+        }
+      ]
+    },
+    {
+      category: 'Compliance & Gobernanza',
+      icon: '✅',
+      color: '#FFB6C1',
+      terms: [
+        {
+          term: 'Organizations',
+          definition: 'Gestiona múltiples cuentas AWS bajo estructura centralizada.',
+          example: 'Empresa con 50 cuentas AWS: Dev, Staging, Prod, etc.'
+        },
+        {
+          term: 'Config',
+          definition: 'Audita configuración de recursos. Detecta cambios no autorizados.',
+          example: 'Alerta si alguien abre Security Group a 0.0.0.0/0'
+        },
+        {
+          term: 'Systems Manager',
+          definition: 'Gestiona múltiples instancias EC2 de forma centralizada.',
+          example: 'Aplicar patch de seguridad a 1000 instancias con 1 comando'
+        },
+        {
+          term: 'Compliance',
+          definition: 'Cumplimiento regulatorio: HIPAA, PCI-DSS, GDPR, FedRAMP.',
+          example: 'AWS cumple con RGPD para datos de usuarios en Europa'
+        },
+        {
+          term: 'GuardDuty',
+          definition: 'Detección de amenazas con ML. Busca actividad anómala automáticamente.',
+          example: 'Detectar brute force SSH, data exfiltration, patrones sospechosos'
+        },
+        {
+          term: 'Security Hub',
+          definition: 'Centro centralizado de seguridad. Agrega hallazgos de múltiples servicios.',
+          example: 'Tablero único con todos los hallazgos de seguridad'
+        },
+        {
+          term: 'Macie',
+          definition: 'Descubre y protege datos sensibles en S3 usando ML.',
+          example: 'Encontrar automáticamente números de tarjeta de crédito en S3'
+        },
+        {
+          term: 'WAF (Web Application Firewall)',
+          definition: 'Protege aplicaciones web contra SQL injection, XSS, DDoS.',
+          example: 'Bloquear requests con patrones maliciosos'
+        }
+      ]
+    },
+    {
+      category: 'Integraciones & Machine Learning',
+      icon: '🤖',
+      color: '#DDA0DD',
+      terms: [
+        {
+          term: 'SQS (Simple Queue Service)',
+          definition: 'Cola de mensajes para desacoplar componentes. FIFO o estándar.',
+          example: 'API recibe pedido → SQS → Lambda procesa asincrónico'
+        },
+        {
+          term: 'SNS (Simple Notification Service)',
+          definition: 'Servicio de mensajería publish-subscribe. Fan-out a múltiples suscriptores.',
+          example: 'Evento en RDS → SNS notifica a Lambda, SQS y Email'
+        },
+        {
+          term: 'EventBridge',
+          definition: 'Bus de eventos. Conecta aplicaciones usando eventos en lugar de APIs.',
+          example: 'EC2 lanzada → evento → Lambda, SNS, SQS reaccionan'
+        },
+        {
+          term: 'Step Functions',
+          definition: 'Orquestar flujos de trabajo complejos con Lambda, ECS, etc.',
+          example: 'Workflow: validar datos → procesar → guardar → notificar'
+        },
+        {
+          term: 'SageMaker',
+          definition: 'Servicio completo de ML. Entrenar, ajustar e implementar modelos.',
+          example: 'Crear modelo de predicción sin expertise en ML'
+        },
+        {
+          term: 'Rekognition',
+          definition: 'ML para visión: detectar objetos, rostros, texto en imágenes.',
+          example: 'Detectar si persona usa máscara en foto'
+        },
+        {
+          term: 'Comprehend',
+          definition: 'ML para procesar lenguaje natural: sentimiento, entidades, sintaxis.',
+          example: 'Analizar reviews de clientes para extraer sentimientos'
+        },
+        {
+          term: 'Translate',
+          definition: 'Traducción neural automática entre idiomas.',
+          example: 'Traducir contenido web automáticamente a 100 idiomas'
         }
       ]
     }
