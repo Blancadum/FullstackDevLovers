@@ -359,6 +359,38 @@ export function LessonAWSEC2() {
           </div>
         </>
       )
+    },
+
+    {
+      title: 'Caso Práctico: StreamFlow',
+      content: (
+        <>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            ¿Quieres ver cómo una startup de video streaming (StreamFlow) escaló de 100 a 500K usuarios usando EC2 con Auto Scaling?
+          </p>
+          <div style={{
+            backgroundColor: '#e8f4f8',
+            border: '2px solid #0066cc',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            textAlign: 'center'
+          }}>
+            <a href="/aws/casos-reales/ec2" style={{
+              display: 'inline-block',
+              backgroundColor: '#0066cc',
+              color: '#ffffff',
+              padding: '0.75rem 2rem',
+              borderRadius: '6px',
+              textDecoration: 'none',
+              fontSize: '1rem',
+              fontWeight: '600',
+              transition: 'background-color 0.3s'
+            }}>
+              Ver Caso Real: StreamFlow
+            </a>
+          </div>
+        </>
+      )
     }
   ];
 

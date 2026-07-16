@@ -649,6 +649,38 @@ aws s3 cp s3://guttman-processed/photo.jpg.metadata.json - | cat`}
           </CodeBlock>
         </>
       )
+    },
+
+    {
+      title: 'Caso Práctico: PhotoSharing',
+      content: (
+        <>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            ¿Quieres ver cómo una plataforma de fotos (PhotoSharing) pasó de procesar fotos en 48 horas a 5 minutos usando Lambda y S3 Triggers?
+          </p>
+          <div style={{
+            backgroundColor: '#e8f4f8',
+            border: '2px solid #0066cc',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            textAlign: 'center'
+          }}>
+            <a href="/aws/casos-reales/lambda" style={{
+              display: 'inline-block',
+              backgroundColor: '#0066cc',
+              color: '#ffffff',
+              padding: '0.75rem 2rem',
+              borderRadius: '6px',
+              textDecoration: 'none',
+              fontSize: '1rem',
+              fontWeight: '600',
+              transition: 'background-color 0.3s'
+            }}>
+              Ver Caso Real: PhotoSharing
+            </a>
+          </div>
+        </>
+      )
     }
   ];
 

@@ -635,6 +635,38 @@ public class RDSConnectionTest {
           </ul>
         </>
       )
+    },
+
+    {
+      title: 'Caso Práctico: EcommercePro',
+      content: (
+        <>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            ¿Quieres ver cómo una tienda online (EcommercePro) escaló de 1M a 100M transacciones/mes migrando a RDS Multi-AZ?
+          </p>
+          <div style={{
+            backgroundColor: '#e8f4f8',
+            border: '2px solid #0066cc',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            textAlign: 'center'
+          }}>
+            <a href="/aws/casos-reales/rds" style={{
+              display: 'inline-block',
+              backgroundColor: '#0066cc',
+              color: '#ffffff',
+              padding: '0.75rem 2rem',
+              borderRadius: '6px',
+              textDecoration: 'none',
+              fontSize: '1rem',
+              fontWeight: '600',
+              transition: 'background-color 0.3s'
+            }}>
+              Ver Caso Real: EcommercePro
+            </a>
+          </div>
+        </>
+      )
     }
   ];
 

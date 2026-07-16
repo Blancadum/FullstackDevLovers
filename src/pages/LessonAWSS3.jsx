@@ -307,6 +307,38 @@ export function LessonAWSS3() {
           </div>
         </>
       )
+    },
+
+    {
+      title: 'Caso Práctico: DataAnalytics',
+      content: (
+        <>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            ¿Quieres ver cómo una plataforma de análisis de datos (DataAnalytics) garantizó durabilidad de 11-nines con 500TB de datos usando S3 Lifecycle y Glacier?
+          </p>
+          <div style={{
+            backgroundColor: '#e8f4f8',
+            border: '2px solid #0066cc',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            textAlign: 'center'
+          }}>
+            <a href="/aws/casos-reales/s3" style={{
+              display: 'inline-block',
+              backgroundColor: '#0066cc',
+              color: '#ffffff',
+              padding: '0.75rem 2rem',
+              borderRadius: '6px',
+              textDecoration: 'none',
+              fontSize: '1rem',
+              fontWeight: '600',
+              transition: 'background-color 0.3s'
+            }}>
+              Ver Caso Real: DataAnalytics
+            </a>
+          </div>
+        </>
+      )
     }
   ];
 

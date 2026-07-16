@@ -133,6 +133,9 @@ import { LandingDocker } from './pages/LandingDocker';
 import { LandingJava } from './pages/LandingJava';
 import { LandingSpringBoot } from './pages/LandingSpringBoot';
 import { LandingGit } from './pages/LandingGit';
+import { LandingHerramientas } from './pages/LandingHerramientas';
+import { LandingArquitectura } from './pages/LandingArquitectura';
+import { LandingBuildTools } from './pages/LandingBuildTools';
 import { LexicoAWS } from './pages/LexicoAWS';
 import { LexicoGeneral } from './pages/LexicoGeneral';
 import { EvaluacionAWS } from './pages/EvaluacionAWS';
@@ -324,6 +327,11 @@ function AppContent() {
           <Route path="/java/landing" element={<LandingJava />} />
           <Route path="/spring-boot/landing" element={<LandingSpringBoot />} />
           <Route path="/git/landing" element={<LandingGit />} />
+
+          {/* Landing Pages - Subsecciones Entornos */}
+          <Route path="/entornos/herramientas" element={<LandingHerramientas />} />
+          <Route path="/entornos/arquitectura" element={<LandingArquitectura />} />
+          <Route path="/entornos/build" element={<LandingBuildTools />} />
 
           {/* Lecciones - SQL Básico */}
           <Route path="/sql/basicos/introduccion" element={<LessonSQLIntroduccion />} />

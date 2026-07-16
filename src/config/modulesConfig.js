@@ -11,6 +11,7 @@ export const modulesWithLessons = [
     name: 'Amazon Web Services',
     icon: '☁️',
     description: 'Servicios en la nube: EC2, RDS, S3, Lambda y despliegue profesional',
+    landingPage: '/aws/landing',
     sections: [
       {
         id: 'fundamentales',
@@ -122,6 +123,7 @@ export const modulesWithLessons = [
     name: 'Docker',
     icon: '🐳',
     description: 'Containerización, deployment y orquestación profesional',
+    landingPage: '/docker/landing',
     sections: [
       {
         id: 'fundamentales',
@@ -194,6 +196,7 @@ export const modulesWithLessons = [
     name: 'Git',
     icon: gitLogoImg,
     description: 'Control de versiones y colaboración',
+    landingPage: '/git/landing',
     sections: [
       {
         id: 'basicos',
@@ -261,6 +264,7 @@ export const modulesWithLessons = [
     name: 'Java',
     icon: '☕',
     description: 'Domina Java: desde fundamentos hasta patrones avanzados y persistencia de datos',
+    landingPage: '/java/landing',
     sections: [
       {
         id: 'basico',
@@ -409,6 +413,7 @@ export const modulesWithLessons = [
     name: 'Spring Boot',
     icon: '🚀',
     description: 'Aplicaciones web profesionales con Spring Boot',
+    landingPage: '/spring-boot/landing',
     sections: [
       {
         id: 'fundamentos',
@@ -459,6 +464,7 @@ export const modulesWithLessons = [
         name: 'Herramientas',
         icon: '🔧',
         description: 'IDEs, editores y herramientas esenciales de desarrollo',
+        landingPage: '/entornos/herramientas',
         lessons: [
           { title: 'Concepto de Entorno de Desarrollo', link: '/entornos/herramientas/concepto', icon: '🎯' },
           { title: 'IDEs y Editores', link: '/entornos/herramientas/ides', icon: '💻' },
@@ -470,6 +476,7 @@ export const modulesWithLessons = [
         name: 'Arquitectura y Patrones',
         icon: '🏗️',
         description: 'Arquitectura de software, patrones y mejores prácticas',
+        landingPage: '/entornos/arquitectura',
         lessons: [
           { title: 'UML y Diagramas', link: '/entornos/arquitectura/uml', icon: '📐' },
           { title: 'Patrones de Diseño', link: '/entornos/arquitectura/patrones', icon: '🎯' },
@@ -483,6 +490,7 @@ export const modulesWithLessons = [
         name: 'Build & Herramientas',
         icon: '🔨',
         description: 'Maven, Gradle y construcción de proyectos profesionales',
+        landingPage: '/entornos/build',
         lessons: [
           { title: 'Maven - Gestión de Proyectos', link: '/entornos/build/maven', icon: '📦' },
           { title: 'Gradle - Build Avanzado', link: '/entornos/build/gradle', icon: '⚙️' },

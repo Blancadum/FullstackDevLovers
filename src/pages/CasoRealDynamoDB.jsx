@@ -97,8 +97,7 @@ export const CasoRealDynamoDB = () => {
         </table>
 
         <h3>Arquitectura DynamoDB</h3>
-        <CodeBlock language="text" title="MobileGame DynamoDB Architecture">
-{`┌─────────────────────────────────────────────────────────┐
+        <CodeBlock language="text" title="MobileGame DynamoDB Architecture" code={`┌─────────────────────────────────────────────────────────┐
 │   Mobile Game Client (1M simultáneos)                 │
 │   • Updates score cuando mata enemigos                │
 │   • Quiere ver su ranking global                      │
@@ -122,12 +121,10 @@ export const CasoRealDynamoDB = () => {
       │  3. Leaderboards Table  │
       │  4. Friendships Table   │
       └─────────────────────────┘
-`}
-        </CodeBlock>
+`} />
 
         <h3>Diseño de Tablas DynamoDB</h3>
-        <CodeBlock language="json" title="DynamoDB Tables Schema">
-{`{
+        <CodeBlock language="json" title="DynamoDB Tables Schema" code={`{
   "PlayersTable": {
     "TableName": "players",
     "KeySchema": [
@@ -214,12 +211,10 @@ export const CasoRealDynamoDB = () => {
       "Enabled": true
     }
   }
-}`}
-        </CodeBlock>
+}`} />
 
         <h3>Estrategia de Partition Keys</h3>
-        <CodeBlock language="text" title="DynamoDB Partition Key Strategy">
-{`Problema: DynamoDB distribuye datos por PARTITION KEY.
+        <CodeBlock language="text" title="DynamoDB Partition Key Strategy" code={`Problema: DynamoDB distribuye datos por PARTITION KEY.
 Si partition key es mala, algunos shards se sobrecargan.
 
 Ejemplo MALO:
@@ -255,16 +250,14 @@ Implementación MobileGameStudio:
     - Cache en Redis: top 100 se actualiza cada 2 min
 
 Resultado: P99 latencia = 5-10ms (vs 500ms en RDS)
-`}
-        </CodeBlock>
+`} />
       </section>
 
       <section className="lesson-section">
         <h2>🔧 Implementación: API en Java + DynamoDB</h2>
 
         <h3>Service para Actualizar Score del Jugador</h3>
-        <CodeBlock language="java" title="Player Score Update Service">
-{`import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
+        <CodeBlock language="java" title="Player Score Update Service" code={`import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.*;
 import java.time.Instant;
 import java.util.HashMap;
@@ -332,12 +325,10 @@ public class PlayerScoreService {
       throw e;
     }
   }
-}`}
-        </CodeBlock>
+`} />
 
         <h3>Service para Leaderboard (con GSI)</h3>
-        <CodeBlock language="java" title="Leaderboard Query Service">
-{`@Service
+        <CodeBlock language="java" title="Leaderboard Query Service" code={`@Service
 public class LeaderboardService {
 
   @Autowired
@@ -429,12 +420,10 @@ public class LeaderboardService {
       notifyFriendsOfRankChange(userId, newRank, region);
     }
   }
-}`}
-        </CodeBlock>
+`} />
 
         <h3>Configuración con Terraform</h3>
-        <CodeBlock language="hcl" title="DynamoDB Infrastructure as Code">
-{`resource "aws_dynamodb_table" "players" {
+        <CodeBlock language="hcl" title="DynamoDB Infrastructure as Code" code={`resource "aws_dynamodb_table" "players" {
   name           = "players"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "user_id"
@@ -521,8 +510,7 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
     target_utilization = 70.0
   }
 }
-`}
-        </CodeBlock>
+`} />
       </section>
 
       <section className="lesson-section">
@@ -695,7 +683,7 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
         </div>
 
         <div style={{ backgroundColor: '#fffbea', border: '2px solid #ff9800', borderRadius: '8px', padding: '1.5rem', marginTop: '1rem' }}>
-          <h4 style={{ marginTop: 0 }}>5. PAY_PER_REQUEST > PROVISIONED para startups</h4>
+          <h4 style={{ marginTop: 0 }}>5. PAY_PER_REQUEST ≥ PROVISIONED para startups</h4>
           <p>
             DynamoDB tiene dos modos: Provisioned (paga mínimo) vs On-Demand (paga por uso).
             MobileGameStudio usó On-Demand. Costo sube/baja automáticamente con usuarios. Con Provisioned
@@ -721,6 +709,48 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
           El resultado: de una startup que perdía usuarios en picos a una que generaba $2.5M/mes.
           Y curiosamente, gastaban menos en infraestructura. Win-win.
         </p>
+      </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/aws/servicios/dynamodb" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f0f0f0',
+            color: '#333',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #ddd'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e0e0e0'} onMouseOut={(e) => e.target.style.backgroundColor = '#f0f0f0'}>
+            ← Volver a DynamoDB
+          </a>
+          <a href="/aws/casos-reales/ec2" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#0066cc',
+            color: '#ffffff',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#0052a3'} onMouseOut={(e) => e.target.style.backgroundColor = '#0066cc'}>
+            Volver al inicio (EC2) →
+          </a>
+        </div>
       </section>
     </div>
   );
