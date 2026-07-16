@@ -103,6 +103,7 @@ import { LessonDockerJava } from './pages/LessonDockerJava';
 import { LessonDockerFrontend } from './pages/LessonDockerFrontend';
 import { LessonDockerNodejs } from './pages/LessonDockerNodejs';
 import { LessonDockerCompose } from './pages/LessonDockerCompose';
+import { ComparisonS3VsDocker } from './pages/ComparisonS3VsDocker';
 import { LessonCICD } from './pages/LessonCICD';
 import { LessonGitHubActions } from './pages/LessonGitHubActions';
 import { LessonCloudDeployment } from './pages/LessonCloudDeployment';
@@ -275,6 +276,7 @@ function AppContent() {
           <Route path="/docker/frameworks/java" element={<LessonDockerJava />} />
           <Route path="/docker/frameworks/frontend" element={<LessonDockerFrontend />} />
           <Route path="/docker/frameworks/nodejs" element={<LessonDockerNodejs />} />
+          <Route path="/docker/comparacion-s3-vs-docker" element={<ComparisonS3VsDocker />} />
 
           {/* Lecciones - AWS (nuevo módulo principal) */}
           <Route path="/aws/fundamentales/intro" element={<LessonAWSIntro />} />

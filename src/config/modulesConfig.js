@@ -135,6 +135,7 @@ export const modulesWithLessons = [
           { title: 'Conceptos: Imágenes, Contenedores, Volúmenes', link: '/docker/fundamentales/conceptos', icon: '📦' },
           { title: 'Tu primer Dockerfile', link: '/docker/fundamentales/dockerfile', icon: '📝' },
           { title: 'Comandos Esenciales de Docker', link: '/docker/fundamentales/comandos', icon: '⌨️' },
+          { title: 'Comparación: S3 vs Docker (Aclarando Confusiones)', link: '/docker/comparacion-s3-vs-docker', icon: '🔄' },
         ],
       },
       {
@@ -178,6 +179,7 @@ export const modulesWithLessons = [
       { title: 'Conceptos: Imágenes, Contenedores, Volúmenes y Capas', link: '/docker/fundamentales/conceptos' },
       { title: 'Tu primer Dockerfile - Instrucciones principales', link: '/docker/fundamentales/dockerfile' },
       { title: 'Comandos Esenciales de Docker - Build, Run, Logs', link: '/docker/fundamentales/comandos' },
+      { title: 'Comparación: S3 vs Docker (Aclarando Confusiones)', link: '/docker/comparacion-s3-vs-docker' },
       { title: 'Docker Compose: Orquestación de Múltiples Contenedores', link: '/docker/composicion/compose' },
       { title: 'Networking y DNS Interno entre Contenedores', link: '/docker/composicion/networking' },
       { title: 'Volúmenes: Persistencia de Datos (Named vs Bind)', link: '/docker/composicion/volumenes' },

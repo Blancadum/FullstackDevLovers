@@ -339,6 +339,73 @@ export function LessonAWSS3() {
           </div>
         </>
       )
+    },
+
+    {
+      title: 'Preguntas Frecuentes (FAQ)',
+      content: (
+        <>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '1.5rem'
+          }}>
+            {[
+              {
+                q: '¿Cuál es la diferencia entre un bucket de S3 y un contenedor de Docker?',
+                shortAnswer: 'Son completamente diferentes: un bucket es una carpeta para guardar archivos; un contenedor Docker es una máquina embalada para ejecutar aplicaciones.',
+                actionText: '📖 Leer guía completa de comparación',
+                actionLink: '/docker/comparacion-s3-vs-docker'
+              }
+            ].map((faq, idx) => (
+              <div key={idx} style={{
+                backgroundColor: '#fffbf0',
+                border: '2px solid #ff9800',
+                borderRadius: '8px',
+                padding: '1.5rem',
+                transition: 'all 0.3s ease'
+              }}>
+                <p style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: '700', color: '#333' }}>
+                  ❓ {faq.q}
+                </p>
+                <p style={{ margin: '0 0 1rem 0', fontSize: '0.95rem', lineHeight: '1.6', color: '#555' }}>
+                  {faq.shortAnswer}
+                </p>
+                <a href={faq.actionLink} style={{
+                  display: 'inline-block',
+                  backgroundColor: '#ff9800',
+                  color: '#ffffff',
+                  padding: '0.6rem 1.5rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  fontWeight: '600',
+                  transition: 'background-color 0.3s'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#fb8c00'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#ff9800'}>
+                  {faq.actionText}
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            backgroundColor: '#e3f2fd',
+            border: '2px solid #2196F3',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            marginTop: '2rem'
+          }}>
+            <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem', color: '#1976d2' }}>
+              💡 Consejo:
+            </p>
+            <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6', color: '#0d47a1' }}>
+              Si mientras aprendes AWS y Docker las confundes frecuentemente, no te preocupes: es muy común. La guía de comparación que enlazamos arriba es exactamente para eso. ¡Léela, y nunca más te confundirás!
+            </p>
+          </div>
+        </>
+      )
     }
   ];
 
