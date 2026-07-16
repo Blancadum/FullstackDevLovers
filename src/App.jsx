@@ -122,6 +122,17 @@ import { LessonAWSArquitectura } from './pages/LessonAWSArquitectura';
 import { LessonAWSAlmacenamiento } from './pages/LessonAWSAlmacenamiento';
 import { LessonAWSJava } from './pages/LessonAWSJava';
 import { LessonAWSProyecto } from './pages/LessonAWSProyecto';
+import { CasoRealEC2 } from './pages/CasoRealEC2';
+import { CasoRealRDS } from './pages/CasoRealRDS';
+import { CasoRealLambda } from './pages/CasoRealLambda';
+import { CasoRealS3 } from './pages/CasoRealS3';
+import { CasoRealDynamoDB } from './pages/CasoRealDynamoDB';
+import { LandingDevOps } from './pages/LandingDevOps';
+import { LandingAWS } from './pages/LandingAWS';
+import { LandingDocker } from './pages/LandingDocker';
+import { LandingJava } from './pages/LandingJava';
+import { LandingSpringBoot } from './pages/LandingSpringBoot';
+import { LandingGit } from './pages/LandingGit';
 import { LexicoAWS } from './pages/LexicoAWS';
 import { LexicoGeneral } from './pages/LexicoGeneral';
 import { EvaluacionAWS } from './pages/EvaluacionAWS';
@@ -286,6 +297,13 @@ function AppContent() {
           <Route path="/aws/integracion/java" element={<LessonAWSJava />} />
           <Route path="/aws/proyecto/final" element={<LessonAWSProyecto />} />
 
+          {/* Casos Reales - Profundidad en servicios */}
+          <Route path="/aws/casos-reales/ec2" element={<CasoRealEC2 />} />
+          <Route path="/aws/casos-reales/rds" element={<CasoRealRDS />} />
+          <Route path="/aws/casos-reales/lambda" element={<CasoRealLambda />} />
+          <Route path="/aws/casos-reales/s3" element={<CasoRealS3 />} />
+          <Route path="/aws/casos-reales/dynamodb" element={<CasoRealDynamoDB />} />
+
           {/* Léxico y Evaluaciones */}
           <Route path="/lexico" element={<LexicoGeneral />} />
           <Route path="/aws/lexico" element={<LexicoAWS />} />
@@ -293,11 +311,19 @@ function AppContent() {
           <Route path="/aws/evaluacion" element={<EvaluacionAWS />} />
 
           {/* Lecciones - DevOps & Deployment (referencias de Entornos) */}
+          <Route path="/entornos/devops" element={<LandingDevOps />} />
           <Route path="/entornos/devops/docker" element={<LessonDocker />} />
           <Route path="/entornos/devops/docker-compose" element={<LessonDockerCompose />} />
           <Route path="/entornos/devops/cicd" element={<LessonCICD />} />
           <Route path="/entornos/devops/github-actions" element={<LessonGitHubActions />} />
           <Route path="/entornos/devops/cloud-deployment" element={<LessonCloudDeployment />} />
+
+          {/* Landing Pages - Categorías Principales */}
+          <Route path="/aws/landing" element={<LandingAWS />} />
+          <Route path="/docker/landing" element={<LandingDocker />} />
+          <Route path="/java/landing" element={<LandingJava />} />
+          <Route path="/spring-boot/landing" element={<LandingSpringBoot />} />
+          <Route path="/git/landing" element={<LandingGit />} />
 
           {/* Lecciones - SQL Básico */}
           <Route path="/sql/basicos/introduccion" element={<LessonSQLIntroduccion />} />
