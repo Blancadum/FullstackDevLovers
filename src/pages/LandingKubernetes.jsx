@@ -4,6 +4,7 @@ import { useBreadcrumb } from '../hooks/useBreadcrumb';
 
 export function LandingKubernetes() {
   const [activeTab, setActiveTab] = useState('fundamentales');
+  const [expandedLesson, setExpandedLesson] = useState(null);
   const navigate = useNavigate();
   const breadcrumbs = useBreadcrumb();
 
@@ -95,63 +96,133 @@ export function LandingKubernetes() {
             <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', fontStyle: 'italic', lineHeight: '1.6' }}>
               Comienza aquí: qué es Kubernetes, arquitectura, conceptos clave. Todo lo que necesitas saber para entender cómo Kubernetes gestiona contenedores.
             </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-              gap: '2rem'
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
-                { num: 1, title: 'Introducción: Qué es Kubernetes', link: '/kubernetes/fundamentales/intro', desc: 'Conceptos básicos, arquitectura y por qué necesitas K8s' },
-                { num: 2, title: 'Pods: La unidad más pequeña', link: '/kubernetes/fundamentales/pods', desc: 'Entiende qué es un Pod y cómo funcionan' },
-                { num: 3, title: 'Deployments: Gestión de réplicas', link: '/kubernetes/fundamentales/deployments', desc: 'Cómo desplegar y escalar automáticamente tu app' }
+                {
+                  num: 1,
+                  title: 'Introducción: Qué es Kubernetes',
+                  link: '/kubernetes/fundamentales/intro',
+                  desc: 'Conceptos básicos, arquitectura y por qué necesitas K8s',
+                  preview: 'Kubernetes es un orquestador de contenedores que automatiza el despliegue, escalado y gestión de aplicaciones. Descubre la arquitectura con Control Plane y Nodes, y conceptos clave como Pods, Deployments, Services, ConfigMaps, Secrets e Ingress.'
+                },
+                {
+                  num: 2,
+                  title: 'Pods: La unidad más pequeña',
+                  link: '/kubernetes/fundamentales/pods',
+                  desc: 'Entiende qué es un Pod y cómo funcionan',
+                  preview: 'Un Pod es la unidad más pequeña en Kubernetes. Es un contenedor (o un grupo de contenedores) empaquetado juntos que corren en el mismo Node. En 99% de los casos, un Pod = un contenedor Docker. Aprende cómo crear Pods de forma imperativa y declarativa, y entiende su ciclo de vida.'
+                },
+                {
+                  num: 3,
+                  title: 'Deployments: Gestión de réplicas',
+                  link: '/kubernetes/fundamentales/deployments',
+                  desc: 'Cómo desplegar y escalar automáticamente tu app',
+                  preview: 'Un Deployment es la forma recomendada de desplegar tu app en Kubernetes. Define cuántas réplicas quieres, qué imagen Docker usar, qué recursos necesita. Kubernetes crea y gestiona los Pods automáticamente y realiza rolling updates sin downtime.'
+                }
               ].map((lesson) => (
-                <div
-                  key={lesson.num}
-                  onClick={() => navigate(lesson.link)}
-                  style={{
-                    display: 'flex',
-                    gap: '1.5rem',
-                    cursor: 'pointer',
-                    padding: '1.5rem',
-                    backgroundColor: '#f9f9f9',
-                    borderRadius: '8px',
-                    transition: 'all 0.3s',
-                    border: '1px solid #e0e0e0'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f0f0f0';
-                    e.currentTarget.style.transform = 'translateX(4px)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 0, 110, 0.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f9f9f9';
-                    e.currentTarget.style.transform = 'translateX(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '50px',
-                    height: '50px',
-                    minWidth: '50px',
-                    background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-                    color: '#fff',
-                    borderRadius: '50%',
-                    fontWeight: '700',
-                    fontSize: '1.3rem'
-                  }}>
-                    {lesson.num}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <p style={{ margin: '0 0 0.5rem 0', fontWeight: '600', fontSize: '0.95rem', color: '#333' }}>
-                      {lesson.title}
-                    </p>
-                    <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', lineHeight: '1.5' }}>
-                      {lesson.desc}
-                    </p>
-                  </div>
+                <div key={lesson.num}>
+                  <button
+                    onClick={() => setExpandedLesson(expandedLesson === lesson.num ? null : lesson.num)}
+                    style={{
+                      width: '100%',
+                      display: 'flex',
+                      gap: '1.5rem',
+                      alignItems: 'center',
+                      cursor: 'pointer',
+                      padding: '1.5rem',
+                      backgroundColor: expandedLesson === lesson.num ? '#f0f0f0' : '#f9f9f9',
+                      borderRadius: '8px',
+                      transition: 'all 0.3s',
+                      border: expandedLesson === lesson.num ? '2px solid #ff006e' : '1px solid #e0e0e0',
+                      outline: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (expandedLesson !== lesson.num) {
+                        e.currentTarget.style.backgroundColor = '#f0f0f0';
+                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 110, 0.1)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (expandedLesson !== lesson.num) {
+                        e.currentTarget.style.backgroundColor = '#f9f9f9';
+                        e.currentTarget.style.boxShadow = 'none';
+                      }
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '50px',
+                      height: '50px',
+                      minWidth: '50px',
+                      background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
+                      color: '#fff',
+                      borderRadius: '50%',
+                      fontWeight: '700',
+                      fontSize: '1.3rem'
+                    }}>
+                      {lesson.num}
+                    </div>
+                    <div style={{ flex: 1, textAlign: 'left' }}>
+                      <p style={{ margin: '0 0 0.5rem 0', fontWeight: '600', fontSize: '0.95rem', color: '#333' }}>
+                        {lesson.title}
+                      </p>
+                      <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', lineHeight: '1.5' }}>
+                        {lesson.desc}
+                      </p>
+                    </div>
+                    <div style={{
+                      fontSize: '1.2rem',
+                      color: '#ff006e',
+                      transition: 'transform 0.3s',
+                      transform: expandedLesson === lesson.num ? 'rotate(180deg)' : 'rotate(0deg)',
+                      minWidth: '24px'
+                    }}>
+                      ▼
+                    </div>
+                  </button>
+
+                  {expandedLesson === lesson.num && (
+                    <div style={{
+                      backgroundColor: '#fafafa',
+                      border: '2px solid #ff006e',
+                      borderTop: 'none',
+                      borderRadius: '0 0 8px 8px',
+                      padding: '2rem',
+                      marginBottom: '0.5rem'
+                    }}>
+                      <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: '#555', marginBottom: '1.5rem' }}>
+                        {lesson.preview}
+                      </p>
+                      <button
+                        onClick={() => navigate(lesson.link)}
+                        style={{
+                          background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
+                          color: '#fff',
+                          border: 'none',
+                          padding: '0.75rem 1.5rem',
+                          fontSize: '0.9rem',
+                          fontWeight: '600',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.backgroundColor = '#c2004d';
+                          e.target.style.transform = 'translateY(-2px)';
+                          e.target.style.boxShadow = '0 4px 12px rgba(255, 0, 110, 0.3)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.background = 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)';
+                          e.target.style.transform = 'translateY(0)';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                      >
+                        Ver lección completa →
+                      </button>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -166,61 +237,119 @@ export function LandingKubernetes() {
             <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', fontStyle: 'italic', lineHeight: '1.6' }}>
               Entiende las diferencias entre Kubernetes y otras herramientas, y cuándo usar qué.
             </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-              gap: '2rem'
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
-                { num: 1, title: 'Docker vs Kubernetes: ¿Cuál es la diferencia?', link: '/docker/comparacion-docker-vs-kubernetes', desc: 'Entiende cuándo usar Docker y cuándo Kubernetes' }
+                {
+                  num: 1,
+                  title: 'Docker vs Kubernetes: ¿Cuál es la diferencia?',
+                  link: '/docker/comparacion-docker-vs-kubernetes',
+                  desc: 'Entiende cuándo usar Docker y cuándo Kubernetes',
+                  preview: 'Docker es un contenedor - une tu código, dependencias y configuración en una imagen. Kubernetes es un orquestador - gestiona muchos contenedores Docker en múltiples servidores. Docker es para desarrollo, testing y despliegue de contenedores individuales. Kubernetes es para producción a escala empresarial con múltiples instancias, auto-escalado y alta disponibilidad.'
+                }
               ].map((lesson) => (
-                <div
-                  key={lesson.num}
-                  onClick={() => navigate(lesson.link)}
-                  style={{
-                    display: 'flex',
-                    gap: '1.5rem',
-                    cursor: 'pointer',
-                    padding: '1.5rem',
-                    backgroundColor: '#f9f9f9',
-                    borderRadius: '8px',
-                    transition: 'all 0.3s',
-                    border: '1px solid #e0e0e0'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f0f0f0';
-                    e.currentTarget.style.transform = 'translateX(4px)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 0, 110, 0.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f9f9f9';
-                    e.currentTarget.style.transform = 'translateX(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '50px',
-                    height: '50px',
-                    minWidth: '50px',
-                    background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-                    color: '#fff',
-                    borderRadius: '50%',
-                    fontWeight: '700',
-                    fontSize: '1.3rem'
-                  }}>
-                    {lesson.num}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <p style={{ margin: '0 0 0.5rem 0', fontWeight: '600', fontSize: '0.95rem', color: '#333' }}>
-                      {lesson.title}
-                    </p>
-                    <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', lineHeight: '1.5' }}>
-                      {lesson.desc}
-                    </p>
-                  </div>
+                <div key={lesson.num}>
+                  <button
+                    onClick={() => setExpandedLesson(expandedLesson === `comp-${lesson.num}` ? null : `comp-${lesson.num}`)}
+                    style={{
+                      width: '100%',
+                      display: 'flex',
+                      gap: '1.5rem',
+                      alignItems: 'center',
+                      cursor: 'pointer',
+                      padding: '1.5rem',
+                      backgroundColor: expandedLesson === `comp-${lesson.num}` ? '#f0f0f0' : '#f9f9f9',
+                      borderRadius: '8px',
+                      transition: 'all 0.3s',
+                      border: expandedLesson === `comp-${lesson.num}` ? '2px solid #ff006e' : '1px solid #e0e0e0',
+                      outline: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (expandedLesson !== `comp-${lesson.num}`) {
+                        e.currentTarget.style.backgroundColor = '#f0f0f0';
+                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 110, 0.1)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (expandedLesson !== `comp-${lesson.num}`) {
+                        e.currentTarget.style.backgroundColor = '#f9f9f9';
+                        e.currentTarget.style.boxShadow = 'none';
+                      }
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '50px',
+                      height: '50px',
+                      minWidth: '50px',
+                      background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
+                      color: '#fff',
+                      borderRadius: '50%',
+                      fontWeight: '700',
+                      fontSize: '1.3rem'
+                    }}>
+                      {lesson.num}
+                    </div>
+                    <div style={{ flex: 1, textAlign: 'left' }}>
+                      <p style={{ margin: '0 0 0.5rem 0', fontWeight: '600', fontSize: '0.95rem', color: '#333' }}>
+                        {lesson.title}
+                      </p>
+                      <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', lineHeight: '1.5' }}>
+                        {lesson.desc}
+                      </p>
+                    </div>
+                    <div style={{
+                      fontSize: '1.2rem',
+                      color: '#ff006e',
+                      transition: 'transform 0.3s',
+                      transform: expandedLesson === `comp-${lesson.num}` ? 'rotate(180deg)' : 'rotate(0deg)',
+                      minWidth: '24px'
+                    }}>
+                      ▼
+                    </div>
+                  </button>
+
+                  {expandedLesson === `comp-${lesson.num}` && (
+                    <div style={{
+                      backgroundColor: '#fafafa',
+                      border: '2px solid #ff006e',
+                      borderTop: 'none',
+                      borderRadius: '0 0 8px 8px',
+                      padding: '2rem',
+                      marginBottom: '0.5rem'
+                    }}>
+                      <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: '#555', marginBottom: '1.5rem' }}>
+                        {lesson.preview}
+                      </p>
+                      <button
+                        onClick={() => navigate(lesson.link)}
+                        style={{
+                          background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
+                          color: '#fff',
+                          border: 'none',
+                          padding: '0.75rem 1.5rem',
+                          fontSize: '0.9rem',
+                          fontWeight: '600',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.backgroundColor = '#c2004d';
+                          e.target.style.transform = 'translateY(-2px)';
+                          e.target.style.boxShadow = '0 4px 12px rgba(255, 0, 110, 0.3)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.background = 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)';
+                          e.target.style.transform = 'translateY(0)';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                      >
+                        Ver comparativa completa →
+                      </button>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
