@@ -104,6 +104,13 @@ import { LessonDockerFrontend } from './pages/LessonDockerFrontend';
 import { LessonDockerNodejs } from './pages/LessonDockerNodejs';
 import { LessonDockerCompose } from './pages/LessonDockerCompose';
 import { ComparisonS3VsDocker } from './pages/ComparisonS3VsDocker';
+import { ComparisonEC2VsLambda } from './pages/ComparisonEC2VsLambda';
+import { ComparisonRDSVsDynamoDB } from './pages/ComparisonRDSVsDynamoDB';
+import { ComparisonDockerVsKubernetes } from './pages/ComparisonDockerVsKubernetes';
+import { LandingKubernetes } from './pages/LandingKubernetes';
+import { LessonKubernetesIntro } from './pages/LessonKubernetesIntro';
+import { LessonKubernetesPods } from './pages/LessonKubernetesPods';
+import { LessonKubernetesDeployments } from './pages/LessonKubernetesDeployments';
 import { LessonCICD } from './pages/LessonCICD';
 import { LessonGitHubActions } from './pages/LessonGitHubActions';
 import { LessonCloudDeployment } from './pages/LessonCloudDeployment';
@@ -277,6 +284,14 @@ function AppContent() {
           <Route path="/docker/frameworks/frontend" element={<LessonDockerFrontend />} />
           <Route path="/docker/frameworks/nodejs" element={<LessonDockerNodejs />} />
           <Route path="/docker/comparacion-s3-vs-docker" element={<ComparisonS3VsDocker />} />
+          <Route path="/docker/comparacion-docker-vs-kubernetes" element={<ComparisonDockerVsKubernetes />} />
+
+          {/* Lecciones - Kubernetes */}
+          <Route path="/kubernetes/landing" element={<LandingKubernetes />} />
+          <Route path="/kubernetes" element={<LandingKubernetes />} />
+          <Route path="/kubernetes/fundamentales/intro" element={<LessonKubernetesIntro />} />
+          <Route path="/kubernetes/fundamentales/pods" element={<LessonKubernetesPods />} />
+          <Route path="/kubernetes/fundamentales/deployments" element={<LessonKubernetesDeployments />} />
 
           {/* Lecciones - AWS (nuevo módulo principal) */}
           <Route path="/aws/fundamentales/intro" element={<LessonAWSIntro />} />
@@ -288,7 +303,9 @@ function AppContent() {
           <Route path="/aws/servicios/rds" element={<LessonAWSRDS />} />
           <Route path="/aws/servicios/s3" element={<LessonAWSS3 />} />
           <Route path="/aws/servicios/lambda" element={<LessonAWSLambda />} />
+          <Route path="/aws/comparacion-ec2-vs-lambda" element={<ComparisonEC2VsLambda />} />
           <Route path="/aws/servicios/dynamodb" element={<LessonAWSDynamoDB />} />
+          <Route path="/aws/comparacion-rds-vs-dynamodb" element={<ComparisonRDSVsDynamoDB />} />
           <Route path="/aws/servicios/almacenamiento" element={<LessonAWSAlmacenamiento />} />
           <Route path="/aws/redes/vpc" element={<LessonAWSVPC />} />
           <Route path="/aws/deployment/cicd" element={<LessonAWSDeployment />} />
