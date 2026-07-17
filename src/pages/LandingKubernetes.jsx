@@ -357,42 +357,113 @@ export function LandingKubernetes() {
         )}
       </div>
 
-      {/* CTA */}
-      <div style={{
-        textAlign: 'center',
-        padding: '2rem',
-        backgroundColor: '#f5f5f5',
-        borderRadius: '12px'
-      }}>
-        <h2 style={{ margin: '0 0 1rem 0', fontSize: '1.5rem', color: '#333' }}>
-          Listo para comenzar?
+      {/* FAQ */}
+      <div style={{ marginTop: '4rem' }}>
+        <h2 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: '#333', textAlign: 'center' }}>
+          Preguntas Frecuentes
         </h2>
-        <button
-          onClick={() => navigate('/kubernetes/fundamentales/intro')}
-          style={{
-            background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-            color: '#fff',
-            border: 'none',
-            padding: '1rem 2.5rem',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'all 0.3s'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = '#c2004d';
-            e.target.style.transform = 'translateY(-2px)';
-            e.target.style.boxShadow = '0 6px 20px rgba(255, 0, 110, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = '#ff006e';
-            e.target.style.transform = 'translateY(0)';
-            e.target.style.boxShadow = 'none';
-          }}
-        >
-          Comenzar Lección
-        </button>
+        <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', textAlign: 'center', fontStyle: 'italic', lineHeight: '1.6' }}>
+          Respuestas rápidas a las dudas más comunes sobre Kubernetes
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {[
+            {
+              id: 'faq-1',
+              question: '¿Cuál es la diferencia entre Kubernetes y Docker?',
+              answer: 'Docker es una plataforma de containerización que empaqueta tu aplicación y sus dependencias en un contenedor. Kubernetes es un orquestador que gestiona múltiples contenedores Docker (u otros) en múltiples servidores, proporcionando escalado automático, actualizaciones sin tiempo de inactividad y auto-recuperación. Docker es para desarrollo y despliegue individual; Kubernetes es para producción a escala empresarial.'
+            },
+            {
+              id: 'faq-2',
+              question: '¿Necesito Kubernetes para mi proyecto?',
+              answer: 'Depende de tu escala y complejidad. Si tienes una aplicación pequeña corriendo en un servidor, probablemente no lo necesites. Kubernetes es ideal cuando: necesitas alta disponibilidad, múltiples instancias, auto-escalado, o gestión centralizada de múltiples servicios. Comienza con Docker local, luego considera Kubernetes cuando tu infraestructura se complique.'
+            },
+            {
+              id: 'faq-3',
+              question: '¿Cuánto cuesta ejecutar Kubernetes?',
+              answer: 'Kubernetes en sí es open source y gratuito. El costo viene de la infraestructura (servidores/cloud). Servicios gestionados como Amazon EKS, Google GKE o Azure AKS simplifican la operación pero tienen costos. Para desarrollo puedes usar Minikube o KinD (locales y gratuitos). En producción, los costos dependen del tamaño del clúster, no de Kubernetes.'
+            },
+            {
+              id: 'faq-4',
+              question: '¿Cómo empiezo a aprender Kubernetes?',
+              answer: 'Comienza por entender Docker y contenedores, luego aprende los conceptos básicos de Kubernetes: Pods, Deployments, Services. Usa Minikube o Docker Desktop para practicar en local. Esta plataforma tiene lecciones estructuradas que te guían desde conceptos básicos hasta operación en producción. Practica construyendo ejemplos simples e incrementa la complejidad gradualmente.'
+            },
+            {
+              id: 'faq-5',
+              question: '¿Kubernetes solo funciona con Docker?',
+              answer: 'No. Kubernetes es agnóstico a contenedores. Aunque Docker es el más popular, Kubernetes también soporta otros runtimes como containerd, CRI-O, Podman y más. Lo importante es que Kubernetes orquesta contenedores, sin importar su origen. Docker es solo una opción, aunque la más común en equipos.'
+            }
+          ].map((faq) => (
+            <div key={faq.id}>
+              <button
+                onClick={() => setExpandedLesson(expandedLesson === faq.id ? null : faq.id)}
+                style={{
+                  width: '100%',
+                  textAlign: 'left',
+                  padding: '1.25rem',
+                  backgroundColor: expandedLesson === faq.id ? '#f0f0f0' : '#f9f9f9',
+                  border: expandedLesson === faq.id ? '2px solid #ff006e' : '1px solid #e0e0e0',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s',
+                  outline: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '1rem'
+                }}
+                onMouseEnter={(e) => {
+                  if (expandedLesson !== faq.id) {
+                    e.currentTarget.style.backgroundColor = '#f0f0f0';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 110, 0.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (expandedLesson !== faq.id) {
+                    e.currentTarget.style.backgroundColor = '#f9f9f9';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }
+                }}
+              >
+                <span style={{
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  flex: 1
+                }}>
+                  {faq.question}
+                </span>
+                <div style={{
+                  fontSize: '1.2rem',
+                  color: '#ff006e',
+                  transition: 'transform 0.3s',
+                  transform: expandedLesson === faq.id ? 'rotate(180deg)' : 'rotate(0deg)',
+                  minWidth: '24px',
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}>
+                  ▼
+                </div>
+              </button>
+
+              {expandedLesson === faq.id && (
+                <div style={{
+                  backgroundColor: '#fafafa',
+                  border: '2px solid #ff006e',
+                  borderTop: 'none',
+                  borderRadius: '0 0 8px 8px',
+                  padding: '1.5rem',
+                  marginBottom: '0.5rem',
+                  fontSize: '0.9rem',
+                  lineHeight: '1.7',
+                  color: '#555'
+                }}>
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
