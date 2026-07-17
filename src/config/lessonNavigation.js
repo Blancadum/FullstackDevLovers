@@ -713,6 +713,26 @@ export const lessonNavigationMap = {
     next: null,
     nextTitle: null
   },
+
+  // Kubernetes - Fundamentales
+  '/kubernetes/fundamentales/intro': {
+    previous: '/kubernetes',
+    previousTitle: 'Volver a Kubernetes',
+    next: '/kubernetes/fundamentales/pods',
+    nextTitle: 'Pods: La unidad más pequeña'
+  },
+  '/kubernetes/fundamentales/pods': {
+    previous: '/kubernetes/fundamentales/intro',
+    previousTitle: 'Introducción: Qué es Kubernetes',
+    next: '/kubernetes/fundamentales/deployments',
+    nextTitle: 'Deployments: Gestión de réplicas'
+  },
+  '/kubernetes/fundamentales/deployments': {
+    previous: '/kubernetes/fundamentales/pods',
+    previousTitle: 'Pods: La unidad más pequeña',
+    next: null,
+    nextTitle: null
+  },
 };
 
 /**
