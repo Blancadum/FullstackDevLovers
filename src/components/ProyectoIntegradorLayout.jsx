@@ -396,8 +396,8 @@ RELACIONES:
         </div>
       )}
       <div className="proyecto-header">
-        <h1>Proyecto Integrador</h1>
-        <p>Proyecto final integrando Java Backend, Spring Boot, Bases de Datos y más</p>
+        <h1>TFC</h1>
+        <p>Trabajo Fin de Ciclo integrando Java Backend, Spring Boot, Bases de Datos y más</p>
       </div>
 
       <div className="proyecto-container">

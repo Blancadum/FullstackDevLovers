@@ -39,8 +39,8 @@ export function LessonProyectoLanding() {
       {/* Hero Section */}
       <section className="proyecto-hero">
         <div className="container">
-          <h1>Proyecto Integrador</h1>
-          <p className="subtitle">Crea tu propio proyecto web profesional desde cero hasta producción</p>
+          <h1>TFC</h1>
+          <p className="subtitle">Crea tu Trabajo Fin de Ciclo desde cero hasta producción</p>
           <p className="description">
             Una guía completa que te enseña a planificar, desarrollar, testear y desplegar un proyecto web full-stack.
             Basado en metodología SCRUM con 8 retos prácticos del currículo DAW.

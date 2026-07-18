@@ -538,9 +538,9 @@ const moduleContent = {
     ],
   },
   proyecto: {
-    title: 'Proyecto Integrador',
+    title: 'TFC',
     icon: '🎯',
-    description: 'Proyecto final integrando Java Backend, Spring Boot, Bases de Datos y más',
+    description: 'Trabajo Fin de Ciclo integrando Java Backend, Spring Boot, Bases de Datos y más',
     sections: [
       {
         id: 'planificacion',

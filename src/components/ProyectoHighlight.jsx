@@ -8,9 +8,9 @@ export function ProyectoHighlight() {
         <div className="proyecto-card">
           <div className="proyecto-content">
             <div className="proyecto-badge">✨ NUEVO</div>
-            <h2>Proyecto Integrador</h2>
+            <h2>TFC</h2>
             <p className="proyecto-subtitle">
-              Crea tu propio proyecto de final de curso o TFC
+              Crea tu Trabajo Fin de Ciclo
             </p>
             <p className="proyecto-description">
               Guía completa para planificar, desarrollar y desplegar un proyecto web profesional.

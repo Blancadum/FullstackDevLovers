@@ -62,8 +62,8 @@ export const moduleCategories = [
     description: 'Proyectos integrados y casos de uso real',
     projects: [
       {
-        id: 'proyecto-final-java',
-        name: 'Proyecto Final: Sistema de Gestión Integral',
+        id: 'tfc-java',
+        name: 'TFC: Sistema de Gestión Integral',
         description: 'Aplicación completa con Java, Spring Boot, SQL y despliegue',
         technologies: ['java', 'spring-boot', 'sql', 'docker', 'aws'],
         difficulty: 'advanced',

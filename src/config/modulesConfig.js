@@ -87,11 +87,11 @@ export const modulesWithLessons = [
       },
       {
         id: 'proyecto',
-        name: 'Proyecto Final',
+        name: 'TFC',
         icon: '🎓',
         description: 'Arquitectura completa integrada del Laboratorio Guttman',
         lessons: [
-          { title: 'Proyecto Final: Arquitectura del Laboratorio Guttman', link: '/aws/proyecto/final', icon: '🏆' },
+          { title: 'TFC: Arquitectura del Laboratorio Guttman', link: '/aws/proyecto/final', icon: '🏆' },
         ],
       },
     ],
@@ -119,7 +119,7 @@ export const modulesWithLessons = [
       { title: 'Backup y Recuperación', link: '/aws/operaciones/backup' },
       { title: 'Mejores Prácticas en AWS', link: '/aws/operaciones/practicas' },
       { title: 'AWS SDK v2 con Java & Spring Boot', link: '/aws/integracion/java' },
-      { title: 'Proyecto Final: Arquitectura del Laboratorio Guttman', link: '/aws/proyecto/final' },
+      { title: 'TFC: Arquitectura del Laboratorio Guttman', link: '/aws/proyecto/final' },
     ],
   },
   {
@@ -566,9 +566,9 @@ export const modulesWithLessons = [
   },
   {
     id: 'proyecto',
-    name: 'Proyecto Integrador',
+    name: 'TFC',
     icon: '🚀',
-    description: 'Proyecto final integrando Java Backend, Spring Boot, Bases de Datos y más',
+    description: 'Trabajo Fin de Ciclo integrando Java Backend, Spring Boot, Bases de Datos y más',
     sections: [
       {
         id: 'planificacion',
