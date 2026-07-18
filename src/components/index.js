@@ -56,3 +56,4 @@ export { TabsVerticalContent } from './TabsVerticalContent';
 export { CasesPracticalCard } from './CasesPracticalCard';
 export { MethodologyCard } from './MethodologyCard';
 export { ProjectSectionsGrid } from './ProjectSectionsGrid';
+export { CategorySectionsGrid } from './CategorySectionsGrid';
