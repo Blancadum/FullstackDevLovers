@@ -42,8 +42,9 @@ export const moduleCategories = [
     name: 'Cloud & Infraestructura',
     icon: '☁️',
     color: '#FF9900',
-    description: 'AWS, DevOps, CI/CD e infraestructura en la nube',
+    description: 'Servicios en la nube, DevOps, CI/CD e infraestructura',
     modules: ['aws'],
+    devopsTopics: ['devops', 'ci-cd', 'infrastructure-as-code']
   },
   {
     id: 'herramientas',
