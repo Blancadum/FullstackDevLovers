@@ -51,3 +51,7 @@ export { CodeExample } from './CodeExample';
 export { MenuContent } from './MenuContent';
 export { MenuSidebar } from './MenuSidebar';
 export { TabsVerticalContent } from './TabsVerticalContent';
+
+// Nuevas categorías
+export { CasesPracticalCard } from './CasesPracticalCard';
+export { MethodologyCard } from './MethodologyCard';
