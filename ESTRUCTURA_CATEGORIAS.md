@@ -217,7 +217,26 @@ Cuando actualices `moduleCategories.js`:
 
 ---
 
+## 📖 Metodología de Segmentación
+
+**Ver:** `METODOLOGIA_SEGMENTACION.md` para entender cómo se crean componentes de categorías reutilizables.
+
+Este documento explica:
+- Estructura base de datos para categorías
+- Patrón de componentes replicable
+- Paleta de colores y tipografía
+- Cómo crear nuevas segmentaciones
+
+**Componentes que usan este patrón:**
+- ModulesSection.jsx (categorías principales)
+- ProjectSectionsGrid.jsx (secciones del TFC)
+- MethodologyCard.jsx (metodologías)
+- CasesPracticalCard.jsx (proyectos)
+
+---
+
 **Referencia rápida:**
 - Archivo config: `src/config/moduleCategories.js`
 - Componente principal: `src/components/ModulesSection.jsx`
 - Estilos: `src/components/ModulesSection.css`
+- Metodología: `METODOLOGIA_SEGMENTACION.md`
