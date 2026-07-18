@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingDevOps = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -71,9 +74,11 @@ export const LandingDevOps = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
-        <h1>🚀 DevOps & Deployment</h1>
+        <h1>DevOps & Deployment</h1>
         <p className="lesson-intro">
           Automatización, containerización y despliegue profesional. Aprende a llevar aplicaciones a producción de forma segura y eficiente
         </p>
@@ -302,13 +307,57 @@ export const LandingDevOps = () => {
           Si eres nuevo en DevOps, te recomendamos este orden:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Docker - Containerización</strong> → Entiende cómo empaquetar aplicaciones</li>
-          <li><strong>2. Docker Compose</strong> → Coordina múltiples contenedores localmente</li>
-          <li><strong>3. CI/CD - Automatización</strong> → Automatiza el flujo de desarrollo</li>
-          <li><strong>4. GitHub Actions</strong> → Implementa CI/CD en tu repositorio</li>
-          <li><strong>5. Despliegue en Cloud</strong> → Lleva tu aplicación a producción</li>
+          <li><strong>Docker - Containerización</strong> → Entiende cómo empaquetar aplicaciones</li>
+          <li><strong>Docker Compose</strong> → Coordina múltiples contenedores localmente</li>
+          <li><strong>CI/CD - Automatización</strong> → Automatiza el flujo de desarrollo</li>
+          <li><strong>GitHub Actions</strong> → Implementa CI/CD en tu repositorio</li>
+          <li><strong>Despliegue en Cloud</strong> → Lleva tu aplicación a producción</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/entornos/build/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f3e5f5',
+            color: '#4a148c',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #9c27b0'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
+            ← Volver a Build Tools
+          </a>
+          <a href="/aws/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff3e0',
+            color: '#e65100',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #ff9800'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#ffe0b2'} onMouseOut={(e) => e.target.style.backgroundColor = '#fff3e0'}>
+            AWS →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

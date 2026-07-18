@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingHerramientas = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -37,9 +40,11 @@ export const LandingHerramientas = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
-        <h1>🛠️ Herramientas de Desarrollo</h1>
+        <h1>Herramientas de Desarrollo</h1>
         <p className="lesson-intro">
           Domina los IDEs, editores y herramientas esenciales para ser un desarrollador productivo
         </p>
@@ -193,6 +198,50 @@ export const LandingHerramientas = () => {
           <li><strong>Codeium</strong> → Opcional pero recomendado (IA para autocompletar)</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/proyecto/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e8f5e9',
+            color: '#1b5e20',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #4caf50'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#c8e6c9'} onMouseOut={(e) => e.target.style.backgroundColor = '#e8f5e9'}>
+            ← Volver a Proyecto
+          </a>
+          <a href="/entornos/arquitectura/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e0f2f1',
+            color: '#004d40',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #009688'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
+            Arquitectura →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

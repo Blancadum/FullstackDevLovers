@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingSpringBoot = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -105,7 +108,9 @@ export const LandingSpringBoot = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Backend Moderno con Spring Boot</h1>
         <p className="lesson-intro">
@@ -362,17 +367,61 @@ Flujo Ejemplo: GET /api/usuarios/123
           Recomendamos este camino de aprendizaje:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Introducción</strong> → Entiende qué es Spring Boot y sus beneficios</li>
-          <li><strong>2. Setup</strong> → Crea tu primer proyecto con Spring Boot</li>
-          <li><strong>3. Controllers</strong> → Construye tu primer endpoint REST</li>
-          <li><strong>4. Servicios</strong> → Separa lógica en capas profesionales</li>
-          <li><strong>5. JPA y Hibernate</strong> → Persiste datos en base de datos</li>
-          <li><strong>6. Validación</strong> → Valida datos correctamente</li>
-          <li><strong>7. Spring Security</strong> → Asegura tu API</li>
-          <li><strong>8. JWT y OAuth2</strong> → Implementa autenticación moderna</li>
-          <li><strong>9. Testing</strong> → Escribe tests unitarios e integration</li>
+          <li><strong>Introducción</strong> → Entiende qué es Spring Boot y sus beneficios</li>
+          <li><strong>Setup</strong> → Crea tu primer proyecto con Spring Boot</li>
+          <li><strong>Controllers</strong> → Construye tu primer endpoint REST</li>
+          <li><strong>Servicios</strong> → Separa lógica en capas profesionales</li>
+          <li><strong>JPA y Hibernate</strong> → Persiste datos en base de datos</li>
+          <li><strong>Validación</strong> → Valida datos correctamente</li>
+          <li><strong>Spring Security</strong> → Asegura tu API</li>
+          <li><strong>JWT y OAuth2</strong> → Implementa autenticación moderna</li>
+          <li><strong>Testing</strong> → Escribe tests unitarios e integration</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/java/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff3e0',
+            color: '#e65100',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #ff9800'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#ffe0b2'} onMouseOut={(e) => e.target.style.backgroundColor = '#fff3e0'}>
+            ← Volver a Java
+          </a>
+          <a href="/git/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f3e5f5',
+            color: '#4a148c',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #9c27b0'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
+            Git →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

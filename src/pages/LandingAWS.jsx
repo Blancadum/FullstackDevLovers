@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingAWS = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -123,7 +126,9 @@ export const LandingAWS = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Cloud Computing with AWS</h1>
         <p className="lesson-intro">
@@ -370,16 +375,59 @@ export const LandingAWS = () => {
           Si eres nuevo en AWS, sigue este orden recomendado:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Introducción a AWS</strong> → Entiende qué es AWS y sus servicios principales</li>
-          <li><strong>2. Conceptos Fundamentales</strong> → Regiones, zonas y modelos de computación</li>
-          <li><strong>3. EC2</strong> → Despliega tu primera aplicación en servidor virtual</li>
-          <li><strong>4. RDS o DynamoDB</strong> → Conecta una base de datos a tu aplicación</li>
-          <li><strong>5. S3</strong> → Aprende a almacenar archivos en la nube</li>
-          <li><strong>6. VPC e IAM</strong> → Configura seguridad y redes</li>
-          <li><strong>7. Lambda</strong> → Experimenta con serverless computing</li>
-          <li><strong>8. CloudWatch</strong> → Monitorea y optimiza costos</li>
+          <li><strong>Introducción a AWS</strong> → Entiende qué es AWS y sus servicios principales</li>
+          <li><strong>Conceptos Fundamentales</strong> → Regiones, zonas y modelos de computación</li>
+          <li><strong>EC2</strong> → Despliega tu primera aplicación en servidor virtual</li>
+          <li><strong>RDS o DynamoDB</strong> → Conecta una base de datos a tu aplicación</li>
+          <li><strong>S3</strong> → Aprende a almacenar archivos en la nube</li>
+          <li><strong>VPC e IAM</strong> → Configura seguridad y redes</li>
+          <li><strong>Lambda</strong> → Experimenta con serverless computing</li>
+          <li><strong>CloudWatch</strong> → Monitorea y optimiza costos</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/proyecto/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e8f5e9',
+            color: '#1b5e20',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #4caf50'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#c8e6c9'} onMouseOut={(e) => e.target.style.backgroundColor = '#e8f5e9'}>
+            ← Volver a Proyecto
+          </a>
+          <a href="/entornos/herramientas/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#ff9800',
+            color: '#ffffff',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#f57c00'} onMouseOut={(e) => e.target.style.backgroundColor = '#ff9800'}>
+            Herramientas →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

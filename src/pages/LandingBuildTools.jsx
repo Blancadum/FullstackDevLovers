@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingBuildTools = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -35,9 +38,11 @@ export const LandingBuildTools = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
-        <h1>🔨 Build & Herramientas</h1>
+        <h1>Build & Herramientas</h1>
         <p className="lesson-intro">
           Automatiza compilación, testing y despliegue con Maven y Gradle
         </p>
@@ -256,6 +261,50 @@ mvn deploy             → Sube a repositorio remoto
 mvn spring-boot:run    → Ejecuta aplicación directamente`}
         </pre>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/entornos/arquitectura/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e0f2f1',
+            color: '#004d40',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #009688'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
+            ← Volver a Arquitectura
+          </a>
+          <a href="/entornos/devops/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fce4ec',
+            color: '#880e4f',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #c2185b'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#f8bbd0'} onMouseOut={(e) => e.target.style.backgroundColor = '#fce4ec'}>
+            DevOps →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

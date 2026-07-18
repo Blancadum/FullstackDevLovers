@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingSQL = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -113,7 +116,9 @@ export const LandingSQL = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>SQL - Bases de Datos</h1>
         <p className="lesson-intro">
@@ -336,14 +341,14 @@ export const LandingSQL = () => {
           Si eres nuevo en SQL, te recomendamos este orden para aprender de forma progresiva:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Introducción a SQL y Bases de Datos</strong> → Entiende qué es una BD relacional</li>
-          <li><strong>2. DDL - Data Definition Language</strong> → Crea y modifica tablas</li>
-          <li><strong>3. DML - Data Manipulation Language</strong> → Inserta, actualiza y consulta datos</li>
-          <li><strong>4. JOINs - Combinando Tablas</strong> → Relaciona datos de múltiples tablas</li>
-          <li><strong>5. Consultas Avanzadas</strong> → GROUP BY, HAVING y subconsultas</li>
-          <li><strong>6. MySQL o PostgreSQL</strong> → Practica en un motor SQL real</li>
-          <li><strong>7. Gestión y Usuarios</strong> → Administración profesional</li>
-          <li><strong>8. NoSQL (MongoDB)</strong> → Entiende la alternativa moderna</li>
+          <li><strong>Introducción a SQL y Bases de Datos</strong> → Entiende qué es una BD relacional</li>
+          <li><strong>DDL - Data Definition Language</strong> → Crea y modifica tablas</li>
+          <li><strong>DML - Data Manipulation Language</strong> → Inserta, actualiza y consulta datos</li>
+          <li><strong>JOINs - Combinando Tablas</strong> → Relaciona datos de múltiples tablas</li>
+          <li><strong>Consultas Avanzadas</strong> → GROUP BY, HAVING y subconsultas</li>
+          <li><strong>MySQL o PostgreSQL</strong> → Practica en un motor SQL real</li>
+          <li><strong>Gestión y Usuarios</strong> → Administración profesional</li>
+          <li><strong>NoSQL (MongoDB)</strong> → Entiende la alternativa moderna</li>
         </ol>
       </section>
 
@@ -360,6 +365,50 @@ export const LandingSQL = () => {
           consultas eficientes vale mucho más que uno que solo escribe código correcto.
         </p>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/git/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f3e5f5',
+            color: '#4a148c',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #9c27b0'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
+            ← Volver a Git
+          </a>
+          <a href="/metodologias/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e0f2f1',
+            color: '#004d40',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #009688'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
+            Metodologías →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

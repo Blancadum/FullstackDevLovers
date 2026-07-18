@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingGit = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -123,7 +126,9 @@ export const LandingGit = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Control de Versiones con Git</h1>
         <p className="lesson-intro">
@@ -368,18 +373,62 @@ export const LandingGit = () => {
           Sigue este orden para aprender Git profundamente:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Configuración Inicial</strong> → Instala Git y configúrate</li>
-          <li><strong>2. Crear y Clonar Repos</strong> → Tu primer repositorio local</li>
-          <li><strong>3. Commits</strong> → Registra cambios con mensajes claros</li>
-          <li><strong>4. Branches</strong> → Trabaja en paralelo sin miedo</li>
-          <li><strong>5. Merge</strong> → Fusiona ramas y resuelve conflictos</li>
-          <li><strong>6. Push/Pull/Fetch</strong> → Sincroniza con repositorio remoto</li>
-          <li><strong>7. GitHub</strong> → Aloha tu código en la nube</li>
-          <li><strong>8. Pull Requests</strong> → Colabora profesionalmente</li>
-          <li><strong>9. Workflow</strong> → Aprende estrategias de branching</li>
-          <li><strong>10. Alias y Trucos</strong> → Domina Git como profesional</li>
+          <li><strong>Configuración Inicial</strong> → Instala Git y configúrate</li>
+          <li><strong>Crear y Clonar Repos</strong> → Tu primer repositorio local</li>
+          <li><strong>Commits</strong> → Registra cambios con mensajes claros</li>
+          <li><strong>Branches</strong> → Trabaja en paralelo sin miedo</li>
+          <li><strong>Merge</strong> → Fusiona ramas y resuelve conflictos</li>
+          <li><strong>Push/Pull/Fetch</strong> → Sincroniza con repositorio remoto</li>
+          <li><strong>GitHub</strong> → Aloha tu código en la nube</li>
+          <li><strong>Pull Requests</strong> → Colabora profesionalmente</li>
+          <li><strong>Workflow</strong> → Aprende estrategias de branching</li>
+          <li><strong>Alias y Trucos</strong> → Domina Git como profesional</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/spring-boot/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e8f5e9',
+            color: '#1b5e20',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #4caf50'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#c8e6c9'} onMouseOut={(e) => e.target.style.backgroundColor = '#e8f5e9'}>
+            ← Volver a Spring Boot
+          </a>
+          <a href="/sql/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f3e5f5',
+            color: '#4a148c',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #9c27b0'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
+            SQL →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

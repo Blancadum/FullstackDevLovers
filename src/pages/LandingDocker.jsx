@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingDocker = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -123,7 +126,9 @@ export const LandingDocker = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Containerización con Docker</h1>
         <p className="lesson-intro">
@@ -363,16 +368,59 @@ export const LandingDocker = () => {
           Sigue esta ruta de aprendizaje progresivo:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Introducción</strong> → Entiende qué es Docker y cómo funciona</li>
-          <li><strong>2. Conceptos Fundamentales</strong> → Imágenes, contenedores y registros</li>
-          <li><strong>3. Dockerfile</strong> → Aprende a escribir Dockerfiles</li>
-          <li><strong>4. Comandos de Docker</strong> → Domina los comandos esenciales</li>
-          <li><strong>5. Docker Compose</strong> → Orquesta múltiples contenedores localmente</li>
-          <li><strong>6. Networking</strong> → Conecta contenedores entre sí</li>
-          <li><strong>7. Optimización</strong> → Reduce tamaño y mejora rendimiento</li>
-          <li><strong>8. Frameworks</strong> → Containeriza tus aplicaciones reales (Java, Node, etc.)</li>
+          <li><strong>Introducción</strong> → Entiende qué es Docker y cómo funciona</li>
+          <li><strong>Conceptos Fundamentales</strong> → Imágenes, contenedores y registros</li>
+          <li><strong>Dockerfile</strong> → Aprende a escribir Dockerfiles</li>
+          <li><strong>Comandos de Docker</strong> → Domina los comandos esenciales</li>
+          <li><strong>Docker Compose</strong> → Orquesta múltiples contenedores localmente</li>
+          <li><strong>Networking</strong> → Conecta contenedores entre sí</li>
+          <li><strong>Optimización</strong> → Reduce tamaño y mejora rendimiento</li>
+          <li><strong>Frameworks</strong> → Containeriza tus aplicaciones reales (Java, Node, etc.)</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/aws/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff3e0',
+            color: '#e65100',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #ff9800'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#ffe0b2'} onMouseOut={(e) => e.target.style.backgroundColor = '#fff3e0'}>
+            ← Volver a AWS
+          </a>
+          <a href="/kubernetes/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#2196f3',
+            color: '#ffffff',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#1976d2'} onMouseOut={(e) => e.target.style.backgroundColor = '#2196f3'}>
+            Kubernetes →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

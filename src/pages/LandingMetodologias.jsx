@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingMetodologias = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -131,7 +134,9 @@ export const LandingMetodologias = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Metodologías & Procesos</h1>
         <p className="lesson-intro">
@@ -408,14 +413,14 @@ export const LandingMetodologias = () => {
           Te recomendamos este orden para convertirte en un desarrollador profesional:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Introducción a Agile</strong> → Entiende la mentalidad ágil</li>
-          <li><strong>2. SCRUM Framework</strong> → Aprende los roles y ceremonias</li>
-          <li><strong>3. Sprints y Planning</strong> → Planifica y estima trabajo real</li>
-          <li><strong>4. Nombres Significativos</strong> → Escribe código legible desde el inicio</li>
-          <li><strong>5. Funciones Limpias</strong> → Diseña funciones pequeñas y enfocadas</li>
-          <li><strong>6. Testing Unitario</strong> → Automatiza pruebas desde el inicio</li>
-          <li><strong>7. SOLID y Refactorización</strong> → Diseña software escalable</li>
-          <li><strong>8. Testing Integración & DevOps</strong> → Automatiza todo el ciclo</li>
+          <li><strong>Introducción a Agile</strong> → Entiende la mentalidad ágil</li>
+          <li><strong>SCRUM Framework</strong> → Aprende los roles y ceremonias</li>
+          <li><strong>Sprints y Planning</strong> → Planifica y estima trabajo real</li>
+          <li><strong>Nombres Significativos</strong> → Escribe código legible desde el inicio</li>
+          <li><strong>Funciones Limpias</strong> → Diseña funciones pequeñas y enfocadas</li>
+          <li><strong>Testing Unitario</strong> → Automatiza pruebas desde el inicio</li>
+          <li><strong>SOLID y Refactorización</strong> → Diseña software escalable</li>
+          <li><strong>Testing Integración & DevOps</strong> → Automatiza todo el ciclo</li>
         </ol>
       </section>
 
@@ -431,6 +436,50 @@ export const LandingMetodologias = () => {
           Domina estas metodologías y serás invaluable. Agile no es solo reuniones; es una <strong>mentalidad de mejora continua</strong>.
         </p>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/sql/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f3e5f5',
+            color: '#4a148c',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #9c27b0'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
+            ← Volver a SQL
+          </a>
+          <a href="/proyecto/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e8f5e9',
+            color: '#1b5e20',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #4caf50'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#c8e6c9'} onMouseOut={(e) => e.target.style.backgroundColor = '#e8f5e9'}>
+            Proyecto →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

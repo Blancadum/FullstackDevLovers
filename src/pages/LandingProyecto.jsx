@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingProyecto = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     // Planificación
@@ -273,7 +276,9 @@ export const LandingProyecto = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Trabajo Fin de Ciclo (TFC)</h1>
         <p className="lesson-intro">
@@ -498,18 +503,18 @@ export const LandingProyecto = () => {
           Sigue este orden para desarrollar un TFC profesional desde cero:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Definición del Proyecto</strong> → Idea clara y alcance definido</li>
-          <li><strong>2. Requisitos y Especificaciones</strong> → Qué debe hacer tu proyecto</li>
-          <li><strong>3. Arquitectura y Diseño</strong> → Cómo lo vas a construir</li>
-          <li><strong>4. Ejemplos de Proyectos TFC</strong> → Inspírate con 12+ ideas viables</li>
-          <li><strong>5. Setup del Proyecto</strong> → Configura tu ambiente de desarrollo</li>
-          <li><strong>6. Agile y SCRUM</strong> → Organiza el trabajo en sprints</li>
-          <li><strong>7. Desarrollo Backend</strong> → Implementa con Java + Spring Boot</li>
-          <li><strong>8. Base de Datos</strong> → Diseña e implementa tu BD</li>
-          <li><strong>9. APIs REST</strong> → Crea endpoints para frontend</li>
-          <li><strong>10. Testing</strong> → Pruebas unitarias e integración</li>
-          <li><strong>11. Documentación</strong> → README, API docs, manual</li>
-          <li><strong>12. Despliegue</strong> → Publica en cloud (Heroku, AWS)</li>
+          <li><strong>Definición del Proyecto</strong> → Idea clara y alcance definido</li>
+          <li><strong>Requisitos y Especificaciones</strong> → Qué debe hacer tu proyecto</li>
+          <li><strong>Arquitectura y Diseño</strong> → Cómo lo vas a construir</li>
+          <li><strong>Ejemplos de Proyectos TFC</strong> → Inspírate con 12+ ideas viables</li>
+          <li><strong>Setup del Proyecto</strong> → Configura tu ambiente de desarrollo</li>
+          <li><strong>Agile y SCRUM</strong> → Organiza el trabajo en sprints</li>
+          <li><strong>Desarrollo Backend</strong> → Implementa con Java + Spring Boot</li>
+          <li><strong>Base de Datos</strong> → Diseña e implementa tu BD</li>
+          <li><strong>APIs REST</strong> → Crea endpoints para frontend</li>
+          <li><strong>Testing</strong> → Pruebas unitarias e integración</li>
+          <li><strong>Documentación</strong> → README, API docs, manual</li>
+          <li><strong>Despliegue</strong> → Publica en cloud (Heroku, AWS)</li>
         </ol>
       </section>
 
@@ -529,6 +534,50 @@ export const LandingProyecto = () => {
           Recuerda: las empresas no solo ven el código; ven tu capacidad de comunicación, organización y profesionalismo.
         </p>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/metodologias/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e0f2f1',
+            color: '#004d40',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #009688'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
+            ← Volver a Metodologías
+          </a>
+          <a href="/entornos/herramientas/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff3e0',
+            color: '#e65100',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #ff9800'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#ffe0b2'} onMouseOut={(e) => e.target.style.backgroundColor = '#fff3e0'}>
+            Herramientas →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

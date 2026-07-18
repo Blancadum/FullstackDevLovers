@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingJava = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -123,7 +126,9 @@ export const LandingJava = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Programación en Java</h1>
         <p className="lesson-intro">
@@ -394,18 +399,62 @@ animal.hacer_ruido(); // Perro: Guau`}
           Aprende Java en este orden progresivo:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Funcionamiento de Java</strong> → Entiende JVM, bytecode y compilation</li>
-          <li><strong>2. Tipos de Datos</strong> → Primitivos, referencias, operaciones básicas</li>
-          <li><strong>3. Control de Flujo</strong> → if, loops, switch statements</li>
-          <li><strong>4. Strings y Arrays</strong> → Manipulación de datos</li>
-          <li><strong>5. Clases y Objetos</strong> → Comienzo de POO</li>
-          <li><strong>6. Herencia y Polimorfismo</strong> → POO avanzada</li>
-          <li><strong>7. Interfaces y Abstracción</strong> → Diseño flexible</li>
-          <li><strong>8. Collections</strong> → Listas, Maps, Sets</li>
-          <li><strong>9. Lambdas y Streams</strong> → Programación funcional moderna</li>
-          <li><strong>10. Excepciones</strong> → Manejo robusto de errores</li>
+          <li><strong>Funcionamiento de Java</strong> → Entiende JVM, bytecode y compilation</li>
+          <li><strong>Tipos de Datos</strong> → Primitivos, referencias, operaciones básicas</li>
+          <li><strong>Control de Flujo</strong> → if, loops, switch statements</li>
+          <li><strong>Strings y Arrays</strong> → Manipulación de datos</li>
+          <li><strong>Clases y Objetos</strong> → Comienzo de POO</li>
+          <li><strong>Herencia y Polimorfismo</strong> → POO avanzada</li>
+          <li><strong>Interfaces y Abstracción</strong> → Diseño flexible</li>
+          <li><strong>Collections</strong> → Listas, Maps, Sets</li>
+          <li><strong>Lambdas y Streams</strong> → Programación funcional moderna</li>
+          <li><strong>Excepciones</strong> → Manejo robusto de errores</li>
         </ol>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/kubernetes/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f3e5f5',
+            color: '#4a148c',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #9c27b0'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
+            ← Volver a Kubernetes
+          </a>
+          <a href="/spring-boot/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#e8f5e9',
+            color: '#1b5e20',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #4caf50'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#c8e6c9'} onMouseOut={(e) => e.target.style.backgroundColor = '#e8f5e9'}>
+            Spring Boot →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };
