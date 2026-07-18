@@ -176,38 +176,28 @@ PROYECTO EJEMPLO: PONPAPERConnect
 
           <h3>Formato de Historias de Usuario</h3>
           <p>
-            Una historia de usuario sigue este formato: <strong>"Como [TIPO DE USUARIO], quiero [ACCIÓN], para que
-            [BENEFICIO]"</strong>. Veamos algunos ejemplos reales:
+            Una historia de usuario sigue este formato simple: <strong>"Como [TIPO DE USUARIO], quiero [ACCIÓN], para que [BENEFICIO]"</strong>
+          </p>
+
+          <p style={{ marginTop: '1.5rem' }}>
+            <strong>Ejemplo 1 — Autenticación:</strong> Como usuario, quiero registrarme con email y contraseña, para que pueda acceder al sistema y crear mi cuenta personal.
           </p>
 
           <p>
-            <strong>Ejemplo 1 - Autenticación:</strong> "Como usuario, quiero registrarme con email y contraseña,
-            para que pueda acceder al sistema y crear mi cuenta personal."
+            <strong>Ejemplo 2 — Reportes:</strong> Como administrador, quiero ver reportes de usuarios activos, para que pueda monitorear la salud de la plataforma y tomar decisiones basadas en datos.
           </p>
 
           <p>
-            <strong>Ejemplo 2 - Reportes:</strong> "Como administrador, quiero ver reportes de usuarios activos,
-            para que pueda monitorear la salud de la plataforma y tomar decisiones basadas en datos."
+            <strong>Ejemplo 3 — Gestión de Contenido:</strong> Como vendedor, quiero cargar fotos de productos, para que los clientes puedan ver cómo se ven los artículos antes de comprarlos.
+          </p>
+
+          <h3>Requisitos Funcionales Comunes</h3>
+          <p>
+            Aunque cada proyecto es único, la mayoría de las aplicaciones web modernas comparten ciertos requisitos funcionales. <strong>Autenticación</strong> es fundamental — usuarios deben poder registrarse y hacer login de forma segura. Las operaciones <strong>CRUD (Crear, Leer, Actualizar, Eliminar)</strong> son la base de cualquier aplicación que gestione datos.
           </p>
 
           <p>
-            <strong>Ejemplo 3 - Gestión de Contenido:</strong> "Como vendedor, quiero cargar fotos de productos,
-            para que los clientes puedan ver cómo se ven los artículos antes de comprarlos."
-          </p>
-
-          <h3>Requisitos Funcionales Típicos</h3>
-          <p>
-            Aunque cada proyecto es único, la mayoría de las aplicaciones web modernas comparten ciertos requisitos
-            funcionales comunes. <strong>Autenticación</strong> es casi siempre necesario; usuarios deben poder registrarse
-            y hacer login de forma segura. Las operaciones <strong>CRUD (Crear, Leer, Actualizar, Eliminar)</strong> son
-            fundamentales para cualquier aplicación que gestione datos. La <strong>búsqueda y filtrado</strong> es crucial
-            cuando hay muchos datos; sin esto, los usuarios se frustran.
-          </p>
-
-          <p>
-            <strong>Reportes y estadísticas</strong> ayudan a los administradores a entender lo que está pasando en el
-            sistema. Las <strong>notificaciones</strong> mantienen a los usuarios informados sobre eventos importantes.
-            Finalmente, la capacidad de <strong>exportar datos</strong> (a Excel, PDF, etc.) es útil para análisis posterior.
+            La <strong>búsqueda y filtrado</strong> es crucial cuando hay muchos datos; sin esto, los usuarios se frustran intentando encontrar lo que necesitan. <strong>Reportes y estadísticas</strong> ayudan a los administradores a entender lo que está pasando en el sistema. Las <strong>notificaciones</strong> mantienen a los usuarios informados sobre eventos importantes. Finalmente, la capacidad de <strong>exportar datos</strong> (a Excel, PDF, etc.) es útil para análisis posterior y tomas de decisiones.
           </p>
         </>
       )
@@ -218,51 +208,32 @@ PROYECTO EJEMPLO: PONPAPERConnect
       content: (
         <>
           <p>
-            Los <strong>requisitos no funcionales</strong> son características de <strong>calidad</strong> que NO
-            describen funcionalidad en sí, sino propiedades y atributos del sistema. Mientras que los requisitos
-            funcionales responden "¿QUÉ hace el sistema?", los no funcionales responden "¿CÓMO debe comportarse?"
+            Los <strong>requisitos no funcionales</strong> son características de <strong>calidad</strong> que NO describen funcionalidad en sí, sino propiedades del sistema. Mientras que los requisitos funcionales responden "¿QUÉ hace el sistema?", los no funcionales responden "¿CÓMO debe comportarse?".
           </p>
 
           <h3>Rendimiento</h3>
           <p>
-            El rendimiento es crítico para la experiencia del usuario. Las páginas deben cargar en <strong>menos de
-            2 segundos</strong>, o los usuarios las abandonarán. Las APIs deben responder en <strong>menos de 500ms</strong>
-            para no sentirse lentas. Si tu aplicación será popular, debe soportar <strong>10.000 usuarios simultáneos</strong>
-            o más sin degradarse. Esto requiere optimizaciones en base de datos, caché, y arquitectura.
+            El rendimiento es crítico para la experiencia del usuario. Las páginas deben cargar en menos de 2 segundos, o los usuarios las abandonarán. Las APIs deben responder en menos de 500ms para no sentirse lentas. Si tu aplicación será popular, debe soportar 10.000 usuarios simultáneos o más sin degradarse. Esto requiere optimizaciones en base de datos, caché y arquitectura bien planificada.
           </p>
 
           <h3>Seguridad</h3>
           <p>
-            La seguridad protege a tus usuarios y su confianza. Las <strong>contraseñas deben encriptarse</strong> con
-            algoritmos como bcrypt; nunca almacenar en texto plano. Todas las conexiones deben usar <strong>HTTPS</strong>
-            para proteger datos en tránsito. Debes <strong>validar toda entrada</strong> para prevenir ataques como SQL
-            injection y XSS. Los <strong>tokens JWT</strong> (para autenticación) deben expirar después de cierto tiempo,
-            típicamente 1 hora, para limitar el daño si alguien los roba.
+            La seguridad protege a tus usuarios y su confianza. Las contraseñas deben encriptarse con algoritmos como bcrypt; nunca almacenarlas en texto plano. Todas las conexiones deben usar HTTPS para proteger datos en tránsito. Debes validar toda entrada para prevenir ataques como SQL injection y XSS. Los tokens JWT (para autenticación) deben expirar después de cierto tiempo, típicamente 1 hora, para limitar el daño si alguien los roba.
           </p>
 
           <h3>Disponibilidad</h3>
           <p>
-            La disponibilidad mide cuánto tiempo tu aplicación está en línea y funcionando. Un objetivo común es
-            <strong>99.9% uptime</strong>, lo que significa máximo 43 minutos de inactividad por mes. Para lograr esto,
-            necesitas <strong>backups automáticos diarios</strong> para no perder datos, y planes de <strong>recuperación
-            ante fallos en menos de 1 hora</strong>. Si el servidor cae a las 3 AM, debe estar de vuelta en línea antes
-            de que la mayoría de usuarios se despierte.
+            La disponibilidad mide cuánto tiempo tu aplicación está en línea y funcionando. Un objetivo común es 99.9% uptime, lo que significa máximo 43 minutos de inactividad por mes. Para lograr esto, necesitas backups automáticos diarios para no perder datos, y planes de recuperación ante fallos en menos de 1 hora. Si el servidor cae a las 3 AM, debe estar de vuelta en línea antes de que la mayoría de usuarios se despierte.
           </p>
 
           <h3>Escalabilidad</h3>
           <p>
-            La escalabilidad es la capacidad de crecer. Tu <strong>base de datos debe poder manejar hasta 1 millón de
-            registros</strong> sin ralentizarse. Debes poder <strong>agregar más servidores horizontalmente</strong> cuando
-            aumenta la demanda. Implementar <strong>caché</strong> (con Redis, por ejemplo) para datos frecuentes reduce
-            la carga en base de datos significativamente.
+            La escalabilidad es la capacidad de crecer. Tu base de datos debe poder manejar hasta 1 millón de registros sin ralentizarse. Debes poder agregar más servidores horizontalmente cuando aumenta la demanda. Implementar caché (con Redis, por ejemplo) para datos frecuentes reduce la carga en base de datos significativamente, mejorando velocidad y experiencia.
           </p>
 
           <h3>Usabilidad</h3>
           <p>
-            La usabilidad se trata de qué tan fácil es usar la aplicación. Una <strong>interfaz intuitiva</strong> no
-            requiere entrenamiento; los usuarios entienden cómo usarla simplemente explorando. La aplicación debe ser
-            <strong>compatible con móviles</strong> y tablets, no solo desktop. Finalmente, debe ser <strong>accesible
-            para usuarios con discapacidades</strong>, siguiendo estándares como WCAG 2.1, para incluir a todos.
+            La usabilidad se trata de qué tan fácil es usar la aplicación. Una interfaz intuitiva no requiere entrenamiento; los usuarios entienden cómo usarla simplemente explorando. La aplicación debe ser compatible con móviles y tablets, no solo desktop. Finalmente, debe ser accesible para usuarios con discapacidades, siguiendo estándares como WCAG 2.1, para incluir a todos en tu plataforma.
           </p>
         </>
       )
@@ -273,49 +244,172 @@ PROYECTO EJEMPLO: PONPAPERConnect
       content: (
         <>
           <p>
-            La <strong>arquitectura</strong> define cómo se estructura tu aplicación. Una buena arquitectura separa
-            responsabilidades, facilita el testing, y permite que múltiples desarrolladores trabajen sin conflictos.
+            La <strong>arquitectura</strong> define cómo se estructura tu aplicación. Una buena arquitectura separa responsabilidades, facilita el testing, y permite que múltiples desarrolladores trabajen sin conflictos. La arquitectura en capas es la más común para aplicaciones web backend y es la recomendada para este curso.
           </p>
 
           <h3>Arquitectura en Capas</h3>
           <p>
-            La arquitectura en capas es la más común para aplicaciones web backend. Imagina tu aplicación como un edificio
-            de 5 pisos, donde cada piso tiene responsabilidades específicas. En la parte superior está la <strong>Presentation
-            Layer (Frontend)</strong>, que es lo que el usuario ve (HTML, CSS, JavaScript). Cuando el usuario hace algo,
-            envía una petición HTTP.
+            Imagina tu aplicación como un edificio de 5 pisos, donde cada piso tiene responsabilidades específicas. En la parte superior está la <strong>Presentation Layer (Frontend)</strong>, que es lo que el usuario ve: HTML, CSS, JavaScript. Cuando el usuario hace algo, envía una petición HTTP que viaja hacia abajo a través de las capas.
           </p>
 
           <p>
-            Esa petición llega a la <strong>API Layer (Controllers)</strong>, que es como la recepción del edificio. El
-            Controller recibe el request, valida que sea correcto, y decide a quién pasárselo. Luego pasa a la <strong>Business
-            Logic (Services)</strong>, que es donde ocurre la "magia". El Service contiene la lógica de negocio: ¿Es válido
-            este usuario? ¿Tiene permiso? ¿Qué cálculos debo hacer?
+            Esa petición llega a la <strong>API Layer (Controllers)</strong>, que es como la recepción del edificio. El Controller recibe el request, valida que sea correcto, y decide a quién pasárselo. Luego pasa a la <strong>Business Logic (Services)</strong>, que es donde ocurre la "magia". El Service contiene la lógica de negocio: ¿es válido este usuario? ¿tiene permiso? ¿qué cálculos debo hacer?
           </p>
 
           <p>
-            Después, el Service llama al <strong>Data Access Layer (Repositories)</strong>, que es especialista en hablar con
-            la base de datos. El Repository ejecuta queries SQL y retorna datos. Finalmente, en el sótano está la
-            <strong>Database Layer</strong> (MySQL, PostgreSQL), donde se almacenan todos los datos.
+            Después, el Service llama al <strong>Data Access Layer (Repositories)</strong>, que es especialista en hablar con la base de datos. El Repository ejecuta queries SQL y retorna datos. Finalmente, en el sótano está la <strong>Database Layer</strong> (MySQL, PostgreSQL), donde se almacenan todos los datos. Esta separación en capas hace que cada componente sea independiente y fácil de mantener.
           </p>
 
-          <h3>Patrón MVC</h3>
+          <svg viewBox="0 0 500 450" style={{ width: '100%', maxWidth: '500px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* Presentation Layer */}
+            <rect x="20" y="20" width="460" height="70" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="5"/>
+            <text x="250" y="40" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#1565C0">Presentation Layer (Frontend)</text>
+            <text x="250" y="60" textAnchor="middle" fontSize="12" fill="#555">HTML, CSS, JavaScript, React</text>
+            <text x="250" y="77" textAnchor="middle" fontSize="11" fill="#777">Lo que el usuario ve</text>
+
+            {/* Arrow */}
+            <line x1="250" y1="90" x2="250" y2="110" stroke="#999" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <text x="270" y="105" fontSize="11" fill="#999">HTTP/JSON</text>
+
+            {/* API Layer */}
+            <rect x="20" y="110" width="460" height="70" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="5"/>
+            <text x="250" y="130" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#6A1B9A">API Layer (Controllers)</text>
+            <text x="250" y="150" textAnchor="middle" fontSize="12" fill="#555">@RestController, REST endpoints</text>
+            <text x="250" y="167" textAnchor="middle" fontSize="11" fill="#777">Recibe requests HTTP</text>
+
+            {/* Arrow */}
+            <line x1="250" y1="180" x2="250" y2="200" stroke="#999" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+
+            {/* Business Logic Layer */}
+            <rect x="20" y="200" width="460" height="70" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="5"/>
+            <text x="250" y="220" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#2E7D32">Business Logic (Services)</text>
+            <text x="250" y="240" textAnchor="middle" fontSize="12" fill="#555">@Service, lógica de negocio</text>
+            <text x="250" y="257" textAnchor="middle" fontSize="11" fill="#777">Validación, cálculos, reglas</text>
+
+            {/* Arrow */}
+            <line x1="250" y1="270" x2="250" y2="290" stroke="#999" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+
+            {/* Data Access Layer */}
+            <rect x="20" y="290" width="460" height="70" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="5"/>
+            <text x="250" y="310" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#E65100">Data Access Layer (Repositories)</text>
+            <text x="250" y="330" textAnchor="middle" fontSize="12" fill="#555">@Repository, JPA, SQL queries</text>
+            <text x="250" y="347" textAnchor="middle" fontSize="11" fill="#777">Habla con la base de datos</text>
+
+            {/* Arrow */}
+            <line x1="250" y1="360" x2="250" y2="380" stroke="#999" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <text x="270" y="375" fontSize="11" fill="#999">SQL</text>
+
+            {/* Database Layer */}
+            <rect x="20" y="380" width="460" height="60" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="5"/>
+            <text x="250" y="400" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#C62828">Database Layer</text>
+            <text x="250" y="420" textAnchor="middle" fontSize="12" fill="#555">MySQL, PostgreSQL</text>
+
+            {/* Arrow marker definition */}
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#999" />
+              </marker>
+            </defs>
+          </svg>
+
+          <h3>Patrón MVC: Model, View, Controller</h3>
           <p>
-            MVC son las siglas de Model-View-Controller, y es fundamental en desarrollo backend. El <strong>Model</strong>
-            representa tus datos (Usuario, Producto, Pedido). El <strong>View</strong> es cómo presentas esos datos
-            (JSON en APIs REST, HTML en aplicaciones clásicas). El <strong>Controller</strong> es el orquestador que recibe
-            requests, consulta Models mediante Services, y retorna Views.
+            MVC es fundamental en desarrollo backend. El <strong>Model</strong> representa tus datos — las entidades Java como Usuario, Producto, Pedido. El <strong>View</strong> es cómo presentas esos datos — JSON en APIs REST o HTML en aplicaciones clásicas. El <strong>Controller</strong> es el orquestador que recibe requests HTTP, consulta los Models mediante Services, procesa la lógica, y retorna Views al cliente.
           </p>
 
           <h3>Flujo Completo de una Petición</h3>
           <p>
-            Veamos cómo funciona todo junto. Imagina que un usuario hace clic en "Ver Productos" en tu aplicación e-commerce.
-            El navegador hace una petición GET a <code>/api/productos</code>. El <strong>ProductController</strong> recibe esa
-            petición. El Controller llama al <strong>ProductService</strong> para obtener los productos. El Service llama al
-            <strong>ProductRepository</strong>, que ejecuta una query SQL como <code>SELECT * FROM productos</code>. La base de
-            datos retorna los productos. El Repository los devuelve al Service, el Service al Controller, y el Controller
-            responde con JSON retornando un array de objetos con propiedades id, nombre, precio. El frontend recibe ese
-            JSON y renderiza los productos en la pantalla.
+            Veamos cómo funciona todo junto con un ejemplo real. Imagina que un usuario hace clic en "Ver Productos" en tu aplicación e-commerce. El navegador hace una petición GET a <code>/api/productos</code>. El ProductController recibe esa petición HTTP. El Controller llama al ProductService para obtener los productos. El Service llama al ProductRepository, que ejecuta una query SQL como <code>SELECT * FROM productos</code>. La base de datos retorna los datos de productos. El Repository los devuelve al Service, el Service al Controller, y el Controller responde con JSON retornando un array de objetos con propiedades como id, nombre, precio. El frontend recibe ese JSON y renderiza los productos en la pantalla para que el usuario los vea.
           </p>
+
+          <svg viewBox="0 0 600 500" style={{ width: '100%', maxWidth: '600px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* Step 1: Frontend */}
+            <rect x="30" y="20" width="140" height="60" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="5"/>
+            <text x="100" y="40" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#1565C0">Frontend</text>
+            <text x="100" y="58" textAnchor="middle" fontSize="11" fill="#555">Usuario hace clic</text>
+
+            {/* Arrow 1 */}
+            <line x1="170" y1="50" x2="220" y2="50" stroke="#1976D2" strokeWidth="2" markerEnd="url(#arrow-blue)"/>
+            <text x="195" y="35" textAnchor="middle" fontSize="10" fill="#1976D2" fontWeight="bold">1</text>
+
+            {/* Step 2: Controller */}
+            <rect x="220" y="20" width="140" height="60" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="5"/>
+            <text x="290" y="40" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#6A1B9A">Controller</text>
+            <text x="290" y="58" textAnchor="middle" fontSize="11" fill="#555">GET /api/productos</text>
+
+            {/* Arrow 2 */}
+            <line x1="360" y1="50" x2="410" y2="50" stroke="#7B1FA2" strokeWidth="2" markerEnd="url(#arrow-purple)"/>
+            <text x="385" y="35" textAnchor="middle" fontSize="10" fill="#7B1FA2" fontWeight="bold">2</text>
+
+            {/* Step 3: Service */}
+            <rect x="410" y="20" width="140" height="60" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="5"/>
+            <text x="480" y="40" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#2E7D32">Service</text>
+            <text x="480" y="58" textAnchor="middle" fontSize="11" fill="#555">Lógica de negocio</text>
+
+            {/* Arrow 3: down */}
+            <line x1="480" y1="80" x2="480" y2="130" stroke="#388E3C" strokeWidth="2" markerEnd="url(#arrow-green)"/>
+            <text x="495" y="110" fontSize="10" fill="#388E3C" fontWeight="bold">3</text>
+
+            {/* Step 4: Repository */}
+            <rect x="410" y="130" width="140" height="60" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="5"/>
+            <text x="480" y="150" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#E65100">Repository</text>
+            <text x="480" y="168" textAnchor="middle" fontSize="11" fill="#555">SQL Query</text>
+
+            {/* Arrow 4: down */}
+            <line x1="480" y1="190" x2="480" y2="240" stroke="#F57C00" strokeWidth="2" markerEnd="url(#arrow-orange)"/>
+            <text x="495" y="220" fontSize="10" fill="#F57C00" fontWeight="bold">4</text>
+
+            {/* Step 5: Database */}
+            <rect x="410" y="240" width="140" height="60" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="5"/>
+            <text x="480" y="260" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#C62828">Database</text>
+            <text x="480" y="278" textAnchor="middle" fontSize="11" fill="#555">Retorna datos</text>
+
+            {/* Return arrow: up right */}
+            <line x1="410" y1="270" x2="360" y2="270" stroke="#D32F2F" strokeWidth="2" markerEnd="url(#arrow-red)"/>
+            <text x="385" y="255" fontSize="10" fill="#D32F2F" fontWeight="bold">5</text>
+
+            {/* Step 6: Response */}
+            <rect x="220" y="240" width="140" height="60" fill="#E0F2F1" stroke="#00897B" strokeWidth="2" rx="5"/>
+            <text x="290" y="260" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#00695C">Response</text>
+            <text x="290" y="278" textAnchor="middle" fontSize="11" fill="#555">JSON Array</text>
+
+            {/* Return arrow: up left */}
+            <line x1="220" y1="270" x2="170" y2="270" stroke="#00897B" strokeWidth="2" markerEnd="url(#arrow-teal)"/>
+            <text x="195" y="255" fontSize="10" fill="#00897B" fontWeight="bold">6</text>
+
+            {/* Step 7: Render */}
+            <rect x="30" y="240" width="140" height="60" fill="#FCE4EC" stroke="#C2185B" strokeWidth="2" rx="5"/>
+            <text x="100" y="260" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#A91751">Render</text>
+            <text x="100" y="278" textAnchor="middle" fontSize="11" fill="#555">Muestra productos</text>
+
+            {/* Title and legend */}
+            <text x="300" y="380" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#333">Ciclo completo de una petición</text>
+
+            <text x="50" y="420" fontSize="11" fill="#555">Usuario → Frontend → Controller → Service → Repository → Database</text>
+            <text x="50" y="440" fontSize="11" fill="#555">Database → Repository → Service → Controller → Response → Frontend → Usuario ve datos</text>
+
+            {/* Arrow marker definitions */}
+            <defs>
+              <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#1976D2" />
+              </marker>
+              <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#7B1FA2" />
+              </marker>
+              <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#388E3C" />
+              </marker>
+              <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#F57C00" />
+              </marker>
+              <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#D32F2F" />
+              </marker>
+              <marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#00897B" />
+              </marker>
+            </defs>
+          </svg>
         </>
       )
     },
@@ -383,18 +477,11 @@ PROYECTO EJEMPLO: PONPAPERConnect
     'Buena planificación = código limpio y mantenible'
   ];
 
-  const summary = `La planificación es el 50% del éxito:
+  const summary = `La planificación es el 50% del éxito de cualquier proyecto. Comienza definiendo claramente tu proyecto: qué es, para quién es, por qué existe y cuál es su alcance. Define tus requisitos funcionales usando historias de usuario que mantengan la perspectiva del usuario. Especifica los requisitos no funcionales: rendimiento, seguridad, escalabilidad y disponibilidad que tu sistema debe cumplir.
 
-• Define proyecto: qué, para quién, por qué, alcance
-• Requisitos funcionales: historias de usuario
-• Requisitos no funcionales: rendimiento, seguridad, escalabilidad
-• Arquitectura en capas: separación de responsabilidades
-• Diseño BD: entidades, relaciones, PK/FK
-• MVC: Model, View, Controller
-• Diagrama: visualiza estructura antes de codificar
-• Buena planificación ahorra tiempo de desarrollo
-• Documentación clara facilita onboarding
-• Proyecto exitoso = planificación + ejecución`;
+Diseña una arquitectura en capas que separe claramente las responsabilidades entre presentación, APIs, lógica de negocio, acceso a datos y base de datos. Crea un modelo entidad-relación que visualice tus entidades, atributos y relaciones (PK/FK). Aplica el patrón MVC para organizar tu código: Models para datos, Views para respuestas, Controllers para orquestar.
+
+Una buena planificación y documentación clara facilitan el onboarding de nuevos desarrolladores y acelera el desarrollo. Un proyecto exitoso es la combinación de planificación sólida y ejecución disciplinada.`;
 
       return (
     <>

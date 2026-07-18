@@ -158,16 +158,98 @@ CMD ["node", "server.js"]`
             Docker estandarizó esto creando el equivalente al <strong>contenedor marítimo de acero</strong> para el software. Al servidor ya no le importa si dentro hay Java, Python o MySQL. Solo necesita saber cómo levantar, apilar y transportar contenedores estándar.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div className="border border-slate-200 p-4 rounded-lg bg-slate-50">
-              <div className="text-3xl mb-2">📦</div>
-              <h5 className="font-bold mb-2">Empaquetado Universal</h5>
-              <p className="text-sm">Lleva tu código, librerías y configuración en un solo paquete cerrado.</p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '1rem',
+            marginBottom: '2rem'
+          }}>
+            <div style={{
+              backgroundColor: '#FFF8E1',
+              border: '2px solid #FFA726',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(255, 167, 38, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(255, 167, 38, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 167, 38, 0.1)';
+            }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem', textAlign: 'center' }}>📦</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#E65100', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Empaquetado Universal</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', textAlign: 'center', margin: 0 }}>Lleva tu código, librerías y configuración en un solo paquete cerrado.</p>
             </div>
-            <div className="border border-slate-200 p-4 rounded-lg bg-slate-50">
-              <div className="text-3xl mb-2">🛡️</div>
-              <h5 className="font-bold mb-2">Aislamiento Total</h5>
-              <p className="text-sm">Lo que pasa en un contenedor no afecta al sistema ni a otros contenedores.</p>
+
+            <div style={{
+              backgroundColor: '#F3E5F5',
+              border: '2px solid #9C27B0',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(156, 39, 176, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(156, 39, 176, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(156, 39, 176, 0.1)';
+            }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem', textAlign: 'center' }}>🛡️</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#6A1B9A', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Aislamiento Total</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', textAlign: 'center', margin: 0 }}>Lo que pasa en un contenedor no afecta al sistema ni a otros contenedores.</p>
+            </div>
+
+            <div style={{
+              backgroundColor: '#E0F2F1',
+              border: '2px solid #00897B',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(0, 137, 123, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 137, 123, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 137, 123, 0.1)';
+            }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem', textAlign: 'center' }}>⚡</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#004D47', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Arranque Rápido</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', textAlign: 'center', margin: 0 }}>Inicia en milisegundos, no en minutos como VMs.</p>
+            </div>
+
+            <div style={{
+              backgroundColor: '#E8F5E9',
+              border: '2px solid #388E3C',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(56, 142, 60, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(56, 142, 60, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(56, 142, 60, 0.1)';
+            }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem', textAlign: 'center' }}>💾</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#1B5E20', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Ligero y Escalable</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', textAlign: 'center', margin: 0 }}>Megabytes en lugar de Gigabytes, 100+ contenedores simultáneamente.</p>
             </div>
           </div>
 
@@ -182,37 +264,113 @@ CMD ["node", "server.js"]`
       title: 'Contenedores vs. Máquinas Virtuales',
       content: (
         <>
-          <p className="mb-6">
+          <p style={{ fontSize: '1.05rem', marginBottom: '1.5rem', color: '#555' }}>
             Es muy común confundir Docker con VM, pero resuelven el problema de forma distinta. La diferencia fundamental está en <strong>qué parte del sistema virtualizan</strong>.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <h5 className="font-bold text-center mb-3 bg-slate-100 py-2 rounded">Máquina Virtual Clásica</h5>
-              <div className="border border-slate-200 rounded p-3 space-y-2">
-                <div className="bg-red-100 text-red-800 p-2 text-center rounded text-sm">App 1 + App 2</div>
-                <div className="bg-orange-100 text-orange-800 p-2 text-center rounded text-sm">Binarios/Librerías</div>
-                <div className="bg-yellow-100 text-yellow-800 p-3 text-center rounded font-bold">Guest OS (Pesado)</div>
-                <div className="bg-slate-300 p-2 text-center rounded text-xs">Hypervisor</div>
-                <div className="bg-slate-700 text-white p-2 text-center rounded text-xs">Host OS</div>
-              </div>
-            </div>
+          <svg viewBox="0 0 1000 500" style={{ width: '100%', height: 'auto', minHeight: '500px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* MÁQUINAS VIRTUALES */}
+            <text x="250" y="40" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#D32F2F">Máquinas Virtuales (VM)</text>
 
-            <div>
-              <h5 className="font-bold text-center mb-3 bg-blue-50 py-2 rounded text-blue-700">Contenedores Docker</h5>
-              <div className="border-2 border-blue-400 rounded p-3 space-y-2">
-                <div className="bg-blue-500 text-white p-2 text-center rounded text-sm">App 1 | App 2 | App 3</div>
-                <div className="bg-blue-100 text-blue-800 p-2 text-center rounded text-sm">Binarios/Librerías</div>
-                <div className="border-2 border-dashed border-slate-300 p-3 text-center text-sm text-slate-500">Comparte el kernel del Host</div>
-                <div className="bg-slate-300 p-2 text-center rounded text-xs">Docker Engine</div>
-                <div className="bg-slate-700 text-white p-2 text-center rounded text-xs">Host OS</div>
-              </div>
+            <rect x="50" y="60" width="400" height="400" fill="none" stroke="#D32F2F" strokeWidth="3" strokeDasharray="8,5" rx="8"/>
+
+            <text x="250" y="100" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#333">Host OS</text>
+
+            <g>
+              <rect x="80" y="120" width="340" height="70" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="5"/>
+              <text x="250" y="160" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#C62828">Hypervisor (VirtualBox, VMware)</text>
+            </g>
+
+            {/* VM 1 */}
+            <g>
+              <rect x="80" y="210" width="160" height="230" fill="#FFE0B2" stroke="#F57C00" strokeWidth="3" rx="5"/>
+              <text x="160" y="235" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#E65100">VM 1</text>
+              <rect x="100" y="255" width="120" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="160" y="285" textAnchor="middle" fontSize="12" fill="#333">Guest OS</text>
+              <rect x="100" y="310" width="120" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="160" y="340" textAnchor="middle" fontSize="12" fill="#333">App + Libs</text>
+              <text x="160" y="390" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#E65100">~1-2 GB</text>
+            </g>
+
+            {/* VM 2 */}
+            <g>
+              <rect x="260" y="210" width="160" height="230" fill="#E1BEE7" stroke="#7B1FA2" strokeWidth="3" rx="5"/>
+              <text x="340" y="235" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#6A1B9A">VM 2</text>
+              <rect x="280" y="255" width="120" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="340" y="285" textAnchor="middle" fontSize="12" fill="#333">Guest OS</text>
+              <rect x="280" y="310" width="120" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="340" y="340" textAnchor="middle" fontSize="12" fill="#333">App + Libs</text>
+              <text x="340" y="390" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#6A1B9A">~1-2 GB</text>
+            </g>
+
+            {/* CONTENEDORES DOCKER */}
+            <text x="750" y="40" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#388E3C">Contenedores Docker</text>
+
+            <rect x="550" y="60" width="400" height="400" fill="none" stroke="#388E3C" strokeWidth="3" strokeDasharray="8,5" rx="8"/>
+
+            <text x="750" y="100" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#333">Host OS + Kernel Compartido</text>
+
+            <g>
+              <rect x="580" y="120" width="340" height="70" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="5"/>
+              <text x="750" y="160" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#2E7D32">Docker Engine</text>
+            </g>
+
+            {/* Container 1 */}
+            <g>
+              <rect x="580" y="210" width="95" height="230" fill="#C8E6C9" stroke="#388E3C" strokeWidth="3" rx="5"/>
+              <text x="628" y="235" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1B5E20">C1</text>
+              <rect x="595" y="255" width="65" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="628" y="285" textAnchor="middle" fontSize="11" fill="#333">App</text>
+              <rect x="595" y="310" width="65" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="628" y="340" textAnchor="middle" fontSize="11" fill="#333">Libs</text>
+              <text x="628" y="390" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#2E7D32">~100 MB</text>
+            </g>
+
+            {/* Container 2 */}
+            <g>
+              <rect x="685" y="210" width="95" height="230" fill="#C8E6C9" stroke="#388E3C" strokeWidth="3" rx="5"/>
+              <text x="733" y="235" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1B5E20">C2</text>
+              <rect x="700" y="255" width="65" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="733" y="285" textAnchor="middle" fontSize="11" fill="#333">App</text>
+              <rect x="700" y="310" width="65" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="733" y="340" textAnchor="middle" fontSize="11" fill="#333">Libs</text>
+              <text x="733" y="390" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#2E7D32">~100 MB</text>
+            </g>
+
+            {/* Container 3 */}
+            <g>
+              <rect x="790" y="210" width="95" height="230" fill="#C8E6C9" stroke="#388E3C" strokeWidth="3" rx="5"/>
+              <text x="838" y="235" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1B5E20">C3</text>
+              <rect x="805" y="255" width="65" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="838" y="285" textAnchor="middle" fontSize="11" fill="#333">App</text>
+              <rect x="805" y="310" width="65" height="45" fill="#fff" stroke="#999" strokeWidth="2" rx="3"/>
+              <text x="838" y="340" textAnchor="middle" fontSize="11" fill="#333">Libs</text>
+              <text x="838" y="390" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#2E7D32">~100 MB</text>
+            </g>
+          </svg>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ backgroundColor: '#FFEBEE', padding: '1rem', borderRadius: '8px', border: '2px solid #D32F2F' }}>
+              <h4 style={{ marginTop: 0, color: '#D32F2F', marginBottom: '1rem' }}>Máquinas Virtuales</h4>
+              <ul style={{ fontSize: '0.9rem', margin: 0, paddingLeft: '1.2rem' }}>
+                <li>Empacan un SO completo (pesado)</li>
+                <li>1-2 GB por VM</li>
+                <li>Minutos en arrancar</li>
+                <li>Caras en recursos</li>
+                <li>5-10 VMs por host</li>
+              </ul>
+            </div>
+            <div style={{ backgroundColor: '#E8F5E9', padding: '1rem', borderRadius: '8px', border: '2px solid #388E3C' }}>
+              <h4 style={{ marginTop: 0, color: '#388E3C', marginBottom: '1rem' }}>Contenedores Docker</h4>
+              <ul style={{ fontSize: '0.9rem', margin: 0, paddingLeft: '1.2rem' }}>
+                <li>Comparten el kernel del host</li>
+                <li>50-300 MB por contenedor</li>
+                <li>Milisegundos en arrancar</li>
+                <li>Ligeros en recursos</li>
+                <li>100+ contenedores por host</li>
+              </ul>
             </div>
           </div>
-
-          <InfoBox type="warning">
-            <strong>La gran diferencia:</strong> Una VM empaqueta un sistema operativo completo (Gigabytes, minutos en arrancar). Los contenedores comparten el kernel del host (Megabytes, milisegundos en arrancar). Puedes ejecutar 100+ contenedores donde cabrían 5-10 VMs.
-          </InfoBox>
         </>
       )
     },
@@ -221,51 +379,106 @@ CMD ["node", "server.js"]`
       title: 'Vocabulario Técnico',
       content: (
         <>
-          <p className="mb-6">Términos que usarás a diario al trabajar con contenedores:</p>
+          <p style={{ fontSize: '1rem', marginBottom: '1.5rem', color: '#666' }}>
+            Términos esenciales que usarás a diario al trabajar con contenedores:
+          </p>
 
-          <div className="space-y-4">
-            <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-              <div className="flex gap-3 mb-2">
-                <span className="text-2xl">📄</span>
-                <div>
-                  <h5 className="font-bold">Dockerfile</h5>
-                  <p className="text-sm text-slate-600">Archivo de texto plano con instrucciones para construir una imagen.</p>
-                  <p className="text-xs text-slate-500 mt-1 italic">Analogía: receta de cocina o planos arquitectónicos.</p>
-                </div>
-              </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1rem',
+            marginBottom: '2rem'
+          }}>
+            <div style={{
+              backgroundColor: '#FFF3E0',
+              border: '2px solid #F57C00',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(245, 124, 0, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(245, 124, 0, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(245, 124, 0, 0.1)';
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem', textAlign: 'center' }}>📄</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.4rem', color: '#E65100', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Dockerfile</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', marginBottom: '0.5rem', textAlign: 'center', margin: 0 }}>Archivo de texto con instrucciones para construir una imagen.</p>
+              <p style={{ fontSize: '0.75rem', color: '#F57C00', fontStyle: 'italic', textAlign: 'center', margin: 0 }}>Analogía: receta de cocina</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-              <div className="flex gap-3 mb-2">
-                <span className="text-2xl">💿</span>
-                <div>
-                  <h5 className="font-bold">Imagen (Image)</h5>
-                  <p className="text-sm text-slate-600">Plantilla inmutable de solo lectura con tu aplicación y dependencias.</p>
-                  <p className="text-xs text-slate-500 mt-1 italic">Analogía: CD-ROM de instalación o molde de pastel.</p>
-                </div>
-              </div>
+            <div style={{
+              backgroundColor: '#E3F2FD',
+              border: '2px solid #1976D2',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(25, 118, 210, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(25, 118, 210, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(25, 118, 210, 0.1)';
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem', textAlign: 'center' }}>📦</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.4rem', color: '#1565C0', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Imagen (Image)</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', marginBottom: '0.5rem', textAlign: 'center', margin: 0 }}>Plantilla inmutable con tu aplicación y dependencias.</p>
+              <p style={{ fontSize: '0.75rem', color: '#1976D2', fontStyle: 'italic', textAlign: 'center', margin: 0 }}>Analogía: molde de pastel</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-              <div className="flex gap-3 mb-2">
-                <span className="text-2xl">🏃</span>
-                <div>
-                  <h5 className="font-bold">Contenedor (Container)</h5>
-                  <p className="text-sm text-slate-600">Instancia en ejecución, viva y efímera, creada a partir de una Imagen.</p>
-                  <p className="text-xs text-slate-500 mt-1 italic">Analogía: pastel ya horneado o programa ejecutándose en RAM.</p>
-                </div>
-              </div>
+            <div style={{
+              backgroundColor: '#E8F5E9',
+              border: '2px solid #388E3C',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(56, 142, 60, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(56, 142, 60, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(56, 142, 60, 0.1)';
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem', textAlign: 'center' }}>🐳</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.4rem', color: '#2E7D32', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Contenedor (Container)</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', marginBottom: '0.5rem', textAlign: 'center', margin: 0 }}>Instancia viva y efímera de una Imagen ejecutándose.</p>
+              <p style={{ fontSize: '0.75rem', color: '#388E3C', fontStyle: 'italic', textAlign: 'center', margin: 0 }}>Analogía: programa en RAM</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-              <div className="flex gap-3 mb-2">
-                <span className="text-2xl">💾</span>
-                <div>
-                  <h5 className="font-bold">Volumen (Volume)</h5>
-                  <p className="text-sm text-slate-600">Almacenamiento persistente fuera del contenedor para no perder datos.</p>
-                  <p className="text-xs text-slate-500 mt-1 italic">Analogía: disco duro externo USB conectado.</p>
-                </div>
-              </div>
+            <div style={{
+              backgroundColor: '#F3E5F5',
+              border: '2px solid #7B1FA2',
+              borderRadius: '8px',
+              padding: '1rem',
+              transition: 'all 0.3s ease',
+              cursor: 'default',
+              boxShadow: '0 2px 8px rgba(123, 31, 162, 0.1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(123, 31, 162, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(123, 31, 162, 0.1)';
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem', textAlign: 'center' }}>💾</div>
+              <h5 style={{ fontWeight: 'bold', marginBottom: '0.4rem', color: '#6A1B9A', fontSize: '0.95rem', textAlign: 'center', margin: 0 }}>Volumen (Volume)</h5>
+              <p style={{ fontSize: '0.8rem', color: '#555', lineHeight: '1.4', marginBottom: '0.5rem', textAlign: 'center', margin: 0 }}>Almacenamiento persistente fuera del contenedor.</p>
+              <p style={{ fontSize: '0.75rem', color: '#7B1FA2', fontStyle: 'italic', textAlign: 'center', margin: 0 }}>Analogía: disco duro USB</p>
             </div>
           </div>
         </>
@@ -276,43 +489,122 @@ CMD ["node", "server.js"]`
       title: 'El Ciclo de Vida de Docker',
       content: (
         <>
-          <p className="mb-6">El uso de Docker sigue un orden estricto. Saltarse un paso rompe el proceso:</p>
+          <p style={{ marginBottom: '2rem', color: '#666' }}>El uso de Docker sigue un orden estricto. Saltarse un paso rompe el proceso:</p>
 
-          <div className="space-y-6 border-l-2 border-blue-500 pl-6 ml-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm -ml-9">1</div>
-                <h4 className="text-lg font-bold">Configurar (Código)</h4>
+          <div style={{ display: 'space-y', gap: '1.5rem' }}>
+            <div style={{
+              display: 'flex',
+              gap: '1.5rem',
+              marginBottom: '2rem',
+              padding: '1.25rem',
+              backgroundColor: '#FFF3E0',
+              border: '2px solid #FF9800',
+              borderRadius: '8px'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '50px',
+                height: '50px',
+                minWidth: '50px',
+                backgroundColor: '#FF9800',
+                color: 'white',
+                borderRadius: '50%',
+                fontSize: '1.5rem',
+                fontWeight: 'bold'
+              }}>1</div>
+              <div style={{ flex: 1 }}>
+                <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.05rem', fontWeight: 'bold', color: '#E65100' }}>Configurar (Código)</h4>
+                <p style={{ margin: '0 0 0.5rem 0', color: '#666', fontSize: '0.95rem' }}>Creas un documento de texto declarando qué SO base usar, qué carpetas copiar y qué comandos ejecutar.</p>
+                <p style={{ margin: 0, color: '#FF9800', fontSize: '0.95rem', fontFamily: 'monospace', fontWeight: '500' }}>📄 Archivo: <strong>Dockerfile</strong></p>
               </div>
-              <p className="text-sm text-slate-600 bg-slate-50 p-2 rounded mb-2">Archivo: <code>Dockerfile</code></p>
-              <p>Creas un documento de texto declarando qué SO base usar, qué carpetas copiar y qué comandos ejecutar.</p>
             </div>
 
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm -ml-9">2</div>
-                <h4 className="text-lg font-bold">Construir (Empaquetar)</h4>
+            <div style={{
+              display: 'flex',
+              gap: '1.5rem',
+              marginBottom: '2rem',
+              padding: '1.25rem',
+              backgroundColor: '#E3F2FD',
+              border: '2px solid #2196F3',
+              borderRadius: '8px'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '50px',
+                height: '50px',
+                minWidth: '50px',
+                backgroundColor: '#2196F3',
+                color: 'white',
+                borderRadius: '50%',
+                fontSize: '1.5rem',
+                fontWeight: 'bold'
+              }}>2</div>
+              <div style={{ flex: 1 }}>
+                <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.05rem', fontWeight: 'bold', color: '#1565C0' }}>Construir (Empaquetar)</h4>
+                <p style={{ margin: '0 0 0.5rem 0', color: '#666', fontSize: '0.95rem' }}>Docker lee tu Dockerfile y crea una <strong>Imagen</strong> estática. Similar a compilar código fuente en ejecutable.</p>
+                <p style={{ margin: 0, color: '#2196F3', fontSize: '0.95rem', fontFamily: 'monospace', fontWeight: '500' }}>⚙️ Comando: <strong>docker build</strong></p>
               </div>
-              <p className="text-sm text-slate-600 bg-slate-50 p-2 rounded mb-2">Comando: <code>docker build</code></p>
-              <p>Docker lee tu Dockerfile y crea una <strong>Imagen</strong> estática. Similar a compilar código fuente en ejecutable.</p>
             </div>
 
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm -ml-9">3</div>
-                <h4 className="text-lg font-bold">Ejecutar (Cobrar vida)</h4>
+            <div style={{
+              display: 'flex',
+              gap: '1.5rem',
+              marginBottom: '2rem',
+              padding: '1.25rem',
+              backgroundColor: '#E8F5E9',
+              border: '2px solid #4CAF50',
+              borderRadius: '8px'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '50px',
+                height: '50px',
+                minWidth: '50px',
+                backgroundColor: '#4CAF50',
+                color: 'white',
+                borderRadius: '50%',
+                fontSize: '1.5rem',
+                fontWeight: 'bold'
+              }}>3</div>
+              <div style={{ flex: 1 }}>
+                <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.05rem', fontWeight: 'bold', color: '#2E7D32' }}>Ejecutar (Cobrar vida)</h4>
+                <p style={{ margin: '0 0 0.5rem 0', color: '#666', fontSize: '0.95rem' }}>Docker crea una instancia viva: un <strong>Contenedor</strong>. Aquí tu aplicación empieza a procesar datos.</p>
+                <p style={{ margin: 0, color: '#4CAF50', fontSize: '0.95rem', fontFamily: 'monospace', fontWeight: '500' }}>▶️ Comando: <strong>docker run</strong></p>
               </div>
-              <p className="text-sm text-slate-600 bg-slate-50 p-2 rounded mb-2">Comando: <code>docker run</code></p>
-              <p>Docker crea una instancia viva: un <strong>Contenedor</strong>. Aquí tu aplicación empieza a procesar datos.</p>
             </div>
 
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-full bg-slate-400 text-white flex items-center justify-center font-bold text-sm -ml-9">4</div>
-                <h4 className="text-lg font-bold">Distribuir (Opcional)</h4>
+            <div style={{
+              display: 'flex',
+              gap: '1.5rem',
+              padding: '1.25rem',
+              backgroundColor: '#F3E5F5',
+              border: '2px solid #9C27B0',
+              borderRadius: '8px'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '50px',
+                height: '50px',
+                minWidth: '50px',
+                backgroundColor: '#9C27B0',
+                color: 'white',
+                borderRadius: '50%',
+                fontSize: '1.5rem',
+                fontWeight: 'bold'
+              }}>4</div>
+              <div style={{ flex: 1 }}>
+                <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.05rem', fontWeight: 'bold', color: '#6A1B9A' }}>Distribuir (Opcional)</h4>
+                <p style={{ margin: '0 0 0.5rem 0', color: '#666', fontSize: '0.95rem' }}>Subes la Imagen a Docker Hub o a un registro privado para que otros desarrolladores puedan descargarla y ejecutarla.</p>
+                <p style={{ margin: 0, color: '#9C27B0', fontSize: '0.95rem', fontFamily: 'monospace', fontWeight: '500' }}>📤 Comando: <strong>docker push / pull</strong></p>
               </div>
-              <p className="text-sm text-slate-600 bg-slate-50 p-2 rounded mb-2">Comando: <code>docker push / pull</code></p>
-              <p>Subes la Imagen a Docker Hub o a un registro privado para que otros desarrolladores puedan descargarla y ejecutarla.</p>
             </div>
           </div>
         </>
@@ -323,66 +615,39 @@ CMD ["node", "server.js"]`
       title: 'Comandos Esenciales',
       content: (
         <>
-          <p className="mb-4">La interacción con Docker se realiza a través de la terminal (CLI). Haz clic en los botones para ver la salida simulada:</p>
+          <p className="mb-6">La interacción con Docker se realiza a través de la terminal (CLI). Los comandos básicos son:</p>
 
-          <div className="flex flex-wrap gap-2 mb-4">
-            <button
-              onClick={() => executeCommand('docker run hello-world')}
-              className="px-3 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 text-sm font-mono rounded transition-colors"
-            >
-              docker run hello-world
-            </button>
-            <button
-              onClick={() => executeCommand('docker ps')}
-              className="px-3 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 text-sm font-mono rounded transition-colors"
-            >
-              docker ps
-            </button>
-            <button
-              onClick={() => executeCommand('docker images')}
-              className="px-3 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 text-sm font-mono rounded transition-colors"
-            >
-              docker images
-            </button>
-            <button
-              onClick={() => setTerminalOutput(['$ # Consola limpia'])}
-              className="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-700 text-sm font-bold rounded ml-auto transition-colors"
-            >
-              Limpiar
-            </button>
-          </div>
+          <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem', fontSize: '1.05rem', fontWeight: 'bold' }}>docker run — Ejecutar un contenedor</h4>
+          <p style={{ marginBottom: '1rem', color: '#666' }}>Crea e inicia un nuevo contenedor a partir de una imagen.</p>
+          <CodeBlock language="bash" code={`docker run hello-world`} />
+          <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.75rem' }}>Descarga la imagen, la ejecuta y muestra un mensaje de confirmación.</p>
 
-          <div className="bg-slate-900 border-2 border-slate-700 rounded-lg shadow-2xl overflow-hidden">
-            <div className="bg-slate-800 border-b border-slate-700 px-4 py-3 flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <span className="text-xs text-slate-400 ml-3 font-mono">user@docker:~</span>
-            </div>
-            <div className="bg-slate-950 text-slate-300 p-4 font-mono text-sm overflow-auto" style={{maxHeight: '300px', minHeight: '150px'}}>
-              {terminalOutput.map((line, idx) => (
-                <div key={idx} className="leading-relaxed">
-                  {line.startsWith('$') ? (
-                    <>
-                      <span className="text-green-400">{line.substring(0, 1)}</span>
-                      <span className="text-slate-400">{line.substring(1)}</span>
-                    </>
-                  ) : line.includes('Hello') || line.includes('Status') ? (
-                    <span className="text-yellow-300">{line}</span>
-                  ) : line.includes('Error') ? (
-                    <span className="text-red-400">{line}</span>
-                  ) : (
-                    <span>{line}</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem', fontSize: '1.05rem', fontWeight: 'bold' }}>docker ps — Listar contenedores en ejecución</h4>
+          <p style={{ marginBottom: '1rem', color: '#666' }}>Muestra todos los contenedores actualmente corriendo con sus detalles.</p>
+          <CodeBlock language="bash" code={`docker ps`} />
+          <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.75rem', marginBottom: '1rem' }}>Para incluir también contenedores detenidos:</p>
+          <CodeBlock language="bash" code={`docker ps -a`} />
+
+          <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem', fontSize: '1.05rem', fontWeight: 'bold' }}>docker images — Listar todas las imágenes locales</h4>
+          <p style={{ marginBottom: '1rem', color: '#666' }}>Muestra todas las imágenes Docker que tienes descargadas, incluyendo tamaño.</p>
+          <CodeBlock language="bash" code={`docker images`} />
+          <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.75rem', marginBottom: '1rem' }}>Para filtrar por nombre:</p>
+          <CodeBlock language="bash" code={`docker images | grep mi-app`} />
+
+          <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem', fontSize: '1.05rem', fontWeight: 'bold' }}>docker build — Construir una imagen</h4>
+          <p style={{ marginBottom: '1rem', color: '#666' }}>Construye una imagen a partir de un Dockerfile.</p>
+          <CodeBlock language="bash" code={`docker build -t mi-app:1.0 .`} />
+          <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.75rem', marginBottom: '1rem' }}>Sin usar caché (rebuild completo):</p>
+          <CodeBlock language="bash" code={`docker build --no-cache -t mi-app:1.0 .`} />
+
+          <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem', fontSize: '1.05rem', fontWeight: 'bold' }}>docker stop/rm — Detener y eliminar</h4>
+          <p style={{ marginBottom: '1rem', color: '#666' }}>Detiene un contenedor en ejecución o lo elimina completamente.</p>
+          <CodeBlock language="bash" code={`docker stop id-contenedor       # Detiene gracefully
+docker rm id-contenedor          # Elimina el contenedor
+docker rmi nombre-imagen         # Elimina la imagen`} />
 
           <InfoBox type="info" className="mt-6">
-            <code>docker run</code> es inteligente: si le pides ejecutar una imagen que no tienes, primero hace un <code>pull</code> (descarga) automático desde Docker Hub.
+            <code>docker run</code> es inteligente: si le pides ejecutar una imagen que no tienes, primero hace un <code>pull</code> automático desde Docker Hub.
           </InfoBox>
 
           <CodeBlock
@@ -496,29 +761,29 @@ services:
       title: 'Volúmenes: Persistencia',
       content: (
         <>
-          <p className="mb-6">
+          <p style={{ fontSize: '1.05rem', marginBottom: '2rem', color: '#555' }}>
             Los contenedores borran todo al ser destruidos. Para guardar datos de forma permanente, usamos <strong>Volúmenes</strong>.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="border border-slate-200 rounded-lg p-4">
-              <h5 className="font-bold mb-3 flex items-center gap-2">
+            <div className="border-2 border-blue-300 rounded-lg p-5 bg-blue-50">
+              <h3 className="font-bold mb-3 flex items-center gap-2 text-lg text-blue-900">
                 <span className="text-2xl">📦</span> Named Volumes
-              </h5>
-              <p className="text-sm mb-3">Docker los gestiona 100%. Tú das un nombre (ej. mysql_data) y Docker lo guarda en una ubicación oculta.</p>
-              <p className="text-xs text-green-600">✓ Máximo rendimiento</p>
-              <p className="text-xs text-green-600">✓ Independiente del SO</p>
-              <p className="text-xs font-bold text-purple-600 mt-2">CASO: Bases de datos en producción</p>
+              </h3>
+              <p style={{ fontSize: '0.95rem', marginBottom: '1rem', color: '#555', lineHeight: '1.5' }}>Docker los gestiona 100%. Tú das un nombre (ej. mysql_data) y Docker lo guarda en una ubicación oculta.</p>
+              <p style={{ fontSize: '0.9rem', color: '#059669', marginBottom: '0.5rem', fontWeight: '500' }}>✓ Máximo rendimiento</p>
+              <p style={{ fontSize: '0.9rem', color: '#059669', marginBottom: '1.25rem', fontWeight: '500' }}>✓ Independiente del SO</p>
+              <p style={{ fontSize: '0.9rem', fontWeight: 'bold', color: '#7C3AED', backgroundColor: '#F3E8FF', padding: '0.5rem 0.75rem', borderRadius: '4px' }}>📋 CASO: Bases de datos en producción</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4">
-              <h5 className="font-bold mb-3 flex items-center gap-2">
+            <div className="border-2 border-orange-300 rounded-lg p-5 bg-orange-50">
+              <h3 className="font-bold mb-3 flex items-center gap-2 text-lg text-orange-900">
                 <span className="text-2xl">📁</span> Bind Mounts
-              </h5>
-              <p className="text-sm mb-3">Tú decides la ruta exacta. Conecta tu ordenador directamente al contenedor.</p>
-              <p className="text-xs text-green-600">✓ Sincronización en tiempo real</p>
-              <p className="text-xs text-red-600">✗ Depende de rutas locales</p>
-              <p className="text-xs font-bold text-orange-600 mt-2">CASO: Live-reload en desarrollo</p>
+              </h3>
+              <p style={{ fontSize: '0.95rem', marginBottom: '1rem', color: '#555', lineHeight: '1.5' }}>Tú decides la ruta exacta. Conecta tu ordenador directamente al contenedor.</p>
+              <p style={{ fontSize: '0.9rem', color: '#059669', marginBottom: '0.5rem', fontWeight: '500' }}>✓ Sincronización en tiempo real</p>
+              <p style={{ fontSize: '0.9rem', color: '#DC2626', marginBottom: '1.25rem', fontWeight: '500' }}>✗ Depende de rutas locales</p>
+              <p style={{ fontSize: '0.9rem', fontWeight: 'bold', color: '#EA580C', backgroundColor: '#FFEDD5', padding: '0.5rem 0.75rem', borderRadius: '4px' }}>🔄 CASO: Live-reload en desarrollo</p>
             </div>
           </div>
 
@@ -543,49 +808,102 @@ volumes:
       title: 'Buenas Prácticas',
       content: (
         <>
-          <p className="mb-6">
+          <p style={{ fontSize: '1.05rem', marginBottom: '2rem', color: '#555' }}>
             Cualquiera puede hacer que un contenedor funcione, pero las imágenes mal optimizadas pesan gigabytes y son lentas. Sigue estas prácticas:
           </p>
 
-          <div className="space-y-4">
-            <div className="border border-slate-200 rounded-lg p-4">
-              <div className="flex gap-3">
-                <span className="text-3xl">🪶</span>
-                <div>
-                  <h5 className="font-bold">Usa imágenes base ligeras</h5>
-                  <p className="text-sm text-slate-600">Prefiere <code className="bg-slate-100 px-1">node:18-alpine</code> (170MB) sobre <code className="bg-slate-100 px-1">node:18</code> (1GB+). Alpine es ultra minimalista.</p>
-                </div>
-              </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1.5rem',
+            marginBottom: '2rem'
+          }}>
+            <div style={{
+              backgroundColor: '#FFF3E0',
+              border: '2px solid #F57C00',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              cursor: 'default'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 16px rgba(245, 124, 0, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(245, 124, 0, 0.1)';
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🪶</div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.75rem', color: '#E65100', margin: 0 }}>Imágenes Ligeras</h3>
+              <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: '1.5', margin: 0 }}>Prefiere <code style={{ backgroundColor: '#fff', padding: '0.2rem 0.4rem', borderRadius: '3px', fontFamily: 'monospace' }}>node:18-alpine</code> (170MB) sobre <code style={{ backgroundColor: '#fff', padding: '0.2rem 0.4rem', borderRadius: '3px', fontFamily: 'monospace' }}>node:18</code> (1GB+).</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4">
-              <div className="flex gap-3">
-                <span className="text-3xl">🙈</span>
-                <div>
-                  <h5 className="font-bold">Usa .dockerignore</h5>
-                  <p className="text-sm text-slate-600">Al igual que .gitignore, evita copiar node_modules, .git, logs al contenedor.</p>
-                </div>
-              </div>
+            <div style={{
+              backgroundColor: '#F3E5F5',
+              border: '2px solid #9C27B0',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              cursor: 'default'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 16px rgba(156, 39, 176, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(156, 39, 176, 0.1)';
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🙈</div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.75rem', color: '#6A1B9A', margin: 0 }}>.dockerignore</h3>
+              <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: '1.5', margin: 0 }}>Evita copiar node_modules, .git, logs al contenedor como .gitignore.</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4">
-              <div className="flex gap-3">
-                <span className="text-3xl">🧍</span>
-                <div>
-                  <h5 className="font-bold">Un contenedor = Un proceso</h5>
-                  <p className="text-sm text-slate-600">No instales Apache y MySQL en el mismo Dockerfile. Mantén servicios separados para escalarlos individualmente.</p>
-                </div>
-              </div>
+            <div style={{
+              backgroundColor: '#E8F5E9',
+              border: '2px solid #388E3C',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              cursor: 'default'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 16px rgba(56, 142, 60, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(56, 142, 60, 0.1)';
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🧍</div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.75rem', color: '#2E7D32', margin: 0 }}>Un Proceso</h3>
+              <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: '1.5', margin: 0 }}>Un contenedor = una responsabilidad. No mezcles Apache con MySQL en el mismo Dockerfile.</p>
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4">
-              <div className="flex gap-3">
-                <span className="text-3xl">🔐</span>
-                <div>
-                  <h5 className="font-bold">Multi-Stage Builds</h5>
-                  <p className="text-sm text-slate-600">Compila en grande (Etapa 1) y copia solo lo necesario a pequeño (Etapa 2). Reduce de 1GB a 30MB.</p>
-                </div>
-              </div>
+            <div style={{
+              backgroundColor: '#E0F2F1',
+              border: '2px solid #00897B',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              cursor: 'default'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 137, 123, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 137, 123, 0.1)';
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔐</div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.75rem', color: '#004D47', margin: 0 }}>Multi-Stage</h3>
+              <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: '1.5', margin: 0 }}>Compila pesado, empaquet ligero. Reduce de 1GB a 30MB sin perder funcionalidad.</p>
             </div>
           </div>
 
@@ -614,12 +932,12 @@ EXPOSE 80`}
       title: 'Frameworks Populares',
       content: (
         <>
-          <p className="mb-6">Docker cambia cómo empaques diferentes tecnologías:</p>
+          <p className="mb-6" style={{ fontSize: '1.05rem', color: '#555' }}>Docker cambia cómo empaques diferentes tecnologías:</p>
 
           <div className="space-y-6">
-            <div className="border border-slate-200 rounded-lg p-4 bg-red-50">
-              <h5 className="font-bold text-red-900 mb-2">Python + venv</h5>
-              <p className="text-sm mb-2">Con Docker desaparece la necesidad de venv. El contenedor es el entorno aislado definitivo. Instala librerías directamente sin conflictos.</p>
+            <div className="border-2 border-red-300 rounded-lg p-5 bg-red-50">
+              <h3 className="font-bold text-red-900 mb-3 text-lg">🐍 Python + venv</h3>
+              <p style={{ fontSize: '0.95rem', marginBottom: '1rem', color: '#555', lineHeight: '1.5' }}>Con Docker desaparece la necesidad de venv. El contenedor es el entorno aislado definitivo. Instala librerías directamente sin conflictos.</p>
               <CodeBlock
                 language="dockerfile"
                 code={`FROM python:3.10-slim
@@ -638,9 +956,9 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0"]`}
               />
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4 bg-purple-50">
-              <h5 className="font-bold text-purple-900 mb-2">Java + Spring Boot</h5>
-              <p className="text-sm mb-2">Spring Boot embebe un servidor (Tomcat) dentro del JAR. Docker solo necesita Java y ejecutar el JAR. Simple y elegante.</p>
+            <div className="border-2 border-purple-300 rounded-lg p-5 bg-purple-50">
+              <h3 className="font-bold text-purple-900 mb-3 text-lg">☕ Java + Spring Boot</h3>
+              <p style={{ fontSize: '0.95rem', marginBottom: '1rem', color: '#555', lineHeight: '1.5' }}>Spring Boot embebe un servidor (Tomcat) dentro del JAR. Docker solo necesita Java y ejecutar el JAR. Simple y elegante.</p>
               <CodeBlock
                 language="dockerfile"
                 code={`FROM openjdk:11-jre-slim
@@ -655,9 +973,9 @@ ENTRYPOINT ["java", "-jar", "app.jar"]`}
               />
             </div>
 
-            <div className="border border-slate-200 rounded-lg p-4 bg-blue-50">
-              <h5 className="font-bold text-blue-900 mb-2">Frontend (React/Angular) - Multi-Stage</h5>
-              <p className="text-sm mb-2">Compila el frontend (etapa 1, pesada), luego sirve archivos estáticos con Nginx (etapa 2, ligera). Resultado: 20-30MB.</p>
+            <div className="border-2 border-blue-300 rounded-lg p-5 bg-blue-50">
+              <h3 className="font-bold text-blue-900 mb-3 text-lg">⚛️ Frontend (React/Angular) - Multi-Stage</h3>
+              <p style={{ fontSize: '0.95rem', marginBottom: '1rem', color: '#555', lineHeight: '1.5' }}>Compila el frontend (etapa 1, pesada), luego sirve archivos estáticos con Nginx (etapa 2, ligera). Resultado: 20-30MB.</p>
               <CodeBlock
                 language="dockerfile"
                 code={`# Etapa 1: Builder
@@ -683,53 +1001,143 @@ EXPOSE 80`}
       title: 'Ponte a Prueba',
       content: (
         <>
-          <p className="mb-6">Lee estas situaciones e intenta responder. Haz clic para ver la solución.</p>
+          <p style={{ fontSize: '1.05rem', marginBottom: '2rem', color: '#555' }}>Lee estas situaciones e intenta responder. Haz clic para ver la solución.</p>
 
-          <div className="space-y-4">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
             <div
-              className="border-2 border-slate-200 rounded-lg overflow-hidden cursor-pointer hover:border-blue-400 transition-colors"
+              style={{
+                backgroundColor: '#E3F2FD',
+                border: '2px solid #2196F3',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(33, 150, 243, 0.2)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
               onClick={() => setExpandedQuiz(expandedQuiz === 1 ? null : 1)}
             >
-              <div className="bg-white p-4">
-                <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded mb-2">Escenario 1</span>
-                <p className="font-medium">Modificas una línea de código en tu app. ¿Basta reiniciar el contenedor o debes construir una nueva Imagen?</p>
+              <div style={{ padding: '1.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '50px',
+                  height: '50px',
+                  minWidth: '50px',
+                  backgroundColor: '#2196F3',
+                  color: 'white',
+                  borderRadius: '50%',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold'
+                }}>1</div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 'bold', color: '#1565C0' }}>🔄 Código Modificado</h4>
+                  <p style={{ margin: 0, fontSize: '0.95rem', color: '#555' }}>Modificas una línea de código en tu app. ¿Basta reiniciar el contenedor o debes construir una nueva Imagen?</p>
+                </div>
               </div>
               {expandedQuiz === 1 && (
-                <div className="bg-slate-800 text-white p-4 border-t-2 border-slate-800">
-                  <h5 className="text-green-400 font-bold mb-2">✓ Debes construir una nueva Imagen (docker build)</h5>
-                  <p className="text-sm">Los contenedores son efímeros. Se crean a partir de imágenes inmutables. Si el código cambia, la receta debe volver a cocinarse.</p>
+                <div style={{ backgroundColor: '#1E88E5', color: 'white', padding: '1.5rem', borderTop: '2px solid #2196F3' }}>
+                  <h5 style={{ margin: '0 0 0.75rem 0', fontSize: '1rem', fontWeight: 'bold', color: '#4FC3F7' }}>✓ Debes construir una nueva Imagen</h5>
+                  <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>Los contenedores son efímeros. Se crean a partir de imágenes <strong>inmutables</strong>. Si el código cambia, la receta debe volver a cocinarse con <code style={{ backgroundColor: 'rgba(0,0,0,0.2)', padding: '0.2rem 0.4rem', borderRadius: '3px' }}>docker build</code>.</p>
                 </div>
               )}
             </div>
 
             <div
-              className="border-2 border-slate-200 rounded-lg overflow-hidden cursor-pointer hover:border-yellow-400 transition-colors"
+              style={{
+                backgroundColor: '#FFF3E0',
+                border: '2px solid #FF9800',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(255, 152, 0, 0.2)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
               onClick={() => setExpandedQuiz(expandedQuiz === 2 ? null : 2)}
             >
-              <div className="bg-white p-4">
-                <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded mb-2">Escenario 2</span>
-                <p className="font-medium">Tu contenedor de base de datos se detiene y es eliminado. Sin volumen configurado, ¿qué ocurre con los datos?</p>
+              <div style={{ padding: '1.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '50px',
+                  height: '50px',
+                  minWidth: '50px',
+                  backgroundColor: '#FF9800',
+                  color: 'white',
+                  borderRadius: '50%',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold'
+                }}>2</div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 'bold', color: '#E65100' }}>💾 Datos Perdidos</h4>
+                  <p style={{ margin: 0, fontSize: '0.95rem', color: '#555' }}>Tu contenedor de base de datos se detiene y es eliminado. Sin volumen configurado, ¿qué ocurre con los datos?</p>
+                </div>
               </div>
               {expandedQuiz === 2 && (
-                <div className="bg-slate-800 text-white p-4 border-t-2 border-slate-800">
-                  <h5 className="text-red-400 font-bold mb-2">✗ Se pierden para siempre</h5>
-                  <p className="text-sm">Por defecto, los datos viven en una "capa temporal" atada a ese contenedor. Al eliminarse, desaparece todo. Por eso es OBLIGATORIO usar Volúmenes para bases de datos.</p>
+                <div style={{ backgroundColor: '#FB8C00', color: 'white', padding: '1.5rem', borderTop: '2px solid #FF9800' }}>
+                  <h5 style={{ margin: '0 0 0.75rem 0', fontSize: '1rem', fontWeight: 'bold', color: '#FFE0B2' }}>✗ Se pierden para siempre</h5>
+                  <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>Por defecto, los datos viven en una "capa temporal" atada a ese contenedor. Al eliminarse, <strong>desaparece todo</strong>. Por eso es OBLIGATORIO usar <strong>Volúmenes</strong> para bases de datos en producción.</p>
                 </div>
               )}
             </div>
 
             <div
-              className="border-2 border-slate-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-colors"
+              style={{
+                backgroundColor: '#E8F5E9',
+                border: '2px solid #4CAF50',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(76, 175, 80, 0.2)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
               onClick={() => setExpandedQuiz(expandedQuiz === 3 ? null : 3)}
             >
-              <div className="bg-white p-4">
-                <span className="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded mb-2">Escenario 3</span>
-                <p className="font-medium">Tienes un Dockerfile que genera una imagen de 1.5GB. ¿Cuál es la técnica para reducirla a 50MB sin perder funcionalidad?</p>
+              <div style={{ padding: '1.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '50px',
+                  height: '50px',
+                  minWidth: '50px',
+                  backgroundColor: '#4CAF50',
+                  color: 'white',
+                  borderRadius: '50%',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold'
+                }}>3</div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 'bold', color: '#2E7D32' }}>⚖️ Imagen Gigante</h4>
+                  <p style={{ margin: 0, fontSize: '0.95rem', color: '#555' }}>Tienes un Dockerfile que genera una imagen de 1.5GB. ¿Cuál es la técnica para reducirla a 50MB sin perder funcionalidad?</p>
+                </div>
               </div>
               {expandedQuiz === 3 && (
-                <div className="bg-slate-800 text-white p-4 border-t-2 border-slate-800">
-                  <h5 className="text-green-400 font-bold mb-2">✓ Multi-Stage Builds</h5>
-                  <p className="text-sm">Etapa 1 (builder): Compila/construye con herramientas pesadas. Etapa 2 (runtime): Copia solo lo necesario a imagen ligera. Descarta el builder. Resultado: 1.5GB → 50MB.</p>
+                <div style={{ backgroundColor: '#388E3C', color: 'white', padding: '1.5rem', borderTop: '2px solid #4CAF50' }}>
+                  <h5 style={{ margin: '0 0 0.75rem 0', fontSize: '1rem', fontWeight: 'bold', color: '#C8E6C9' }}>✓ Multi-Stage Builds</h5>
+                  <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>Etapa 1 (builder): Compila/construye con herramientas pesadas. Etapa 2 (runtime): Copia solo lo necesario a imagen ligera. Descarta el builder automáticamente. Resultado: <strong>1.5GB → 50MB</strong>.</p>
                 </div>
               )}
             </div>

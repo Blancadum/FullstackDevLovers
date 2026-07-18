@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import { LessonLayout, CodeBlock } from '../../../components';
 import { LessonNavigation } from '../../../components/LessonNavigation';
 import { useBreadcrumb } from '../../../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../../../hooks/useLessonNavigation';
-import './LessonGitPracticaRamas.css';
 
 export function LessonGitPracticaRamas() {
   const breadcrumbs = useBreadcrumb();
   const nav = useLessonNavigation();
-  const [expandedExercise, setExpandedExercise] = useState(null);
 
   const exercises = [
     {
@@ -92,10 +89,6 @@ git push origin --delete feature/login`,
     }
   ];
 
-  const toggleExercise = (id) => {
-    setExpandedExercise(expandedExercise === id ? null : id);
-  };
-
   return (
     <>
       <LessonLayout
@@ -115,41 +108,35 @@ git push origin --delete feature/login`,
         <div className="exercises-practice-container">
           {exercises.map((exercise) => (
             <div key={exercise.id} className="exercise-practice-item">
-              <button
-                className={`exercise-practice-header ${expandedExercise === exercise.id ? 'expanded' : ''}`}
-                onClick={() => toggleExercise(exercise.id)}
-              >
+              <div className="exercise-practice-header">
                 <span className="exercise-practice-number">Ejercicio {exercise.id}</span>
                 <span className="exercise-practice-title">{exercise.title}</span>
-                <span className="exercise-practice-icon">▼</span>
-              </button>
+              </div>
 
-              {expandedExercise === exercise.id && (
-                <div className="exercise-practice-content">
-                  <div className="exercise-section">
-                    <h4>Descripción</h4>
-                    <p>{exercise.description}</p>
-                  </div>
-
-                  <div className="exercise-section">
-                    <h4>Pista</h4>
-                    <p>{exercise.hint}</p>
-                  </div>
-
-                  <div className="exercise-section">
-                    <h4>Solución</h4>
-                    <CodeBlock
-                      language="bash"
-                      code={exercise.solution}
-                    />
-                  </div>
-
-                  <div className="exercise-section">
-                    <h4>Verificación</h4>
-                    <p>{exercise.verification}</p>
-                  </div>
+              <div className="exercise-practice-content">
+                <div className="exercise-section">
+                  <h4>Descripción</h4>
+                  <p>{exercise.description}</p>
                 </div>
-              )}
+
+                <div className="exercise-section">
+                  <h4>Pista</h4>
+                  <p>{exercise.hint}</p>
+                </div>
+
+                <div className="exercise-section">
+                  <h4>Solución</h4>
+                  <CodeBlock
+                    language="bash"
+                    code={exercise.solution}
+                  />
+                </div>
+
+                <div className="exercise-section">
+                  <h4>Verificación</h4>
+                  <p>{exercise.verification}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

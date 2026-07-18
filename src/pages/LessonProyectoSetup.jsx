@@ -47,6 +47,75 @@ export function LessonProyectoSetup() {
 
   const sections = [
     {
+      title: 'Stack Tecnológico - Herramientas Organizadas',
+      content: (
+        <>
+          <p>
+            El <strong>technology stack</strong> es el conjunto de herramientas y tecnologías que usarás. Está organizado en capas:
+            Frontend (lo que ve el usuario), Backend (lógica del servidor), Database (almacenamiento), y DevOps (infraestructura).
+          </p>
+
+          <svg viewBox="0 0 700 420" style={{ width: '100%', maxWidth: '700px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* Frontend Layer */}
+            <g>
+              <rect x="20" y="20" width="660" height="90" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="5"/>
+              <text x="40" y="45" fontSize="12" fontWeight="bold" fill="#1565C0">FRONTEND (Cliente)</text>
+              <text x="60" y="68" fontSize="10" fill="#333">React 18 | JavaScript/TypeScript | HTML5/CSS3 | Axios (HTTP)</text>
+              <text x="60" y="85" fontSize="10" fill="#333">State: Redux | Components: Material-UI | Build: Webpack | Testing: Jest</text>
+              <text x="60" y="100" fontSize="9" fill="#666">Responsivo (mobile-first) | PWA capable</text>
+            </g>
+
+            {/* Connection arrow */}
+            <line x1="350" y1="110" x2="350" y2="130" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <text x="370" y="122" fontSize="9" fill="#666">HTTP/JSON</text>
+
+            {/* Backend Layer */}
+            <g>
+              <rect x="20" y="130" width="660" height="100" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="5"/>
+              <text x="40" y="155" fontSize="12" fontWeight="bold" fill="#6A1B9A">BACKEND (Servidor)</text>
+              <text x="60" y="178" fontSize="10" fill="#333">Java 17 | Spring Boot 3.0 | Spring MVC (Controllers)</text>
+              <text x="60" y="195" fontSize="10" fill="#333">Spring Data JPA (ORM) | Spring Security (Auth) | REST APIs</text>
+              <text x="60" y="212" fontSize="10" fill="#333">Build: Maven | Testing: JUnit 5 + Mockito | Server: Tomcat 10</text>
+              <text x="60" y="228" fontSize="9" fill="#666">Separado en capas: Controllers → Services → Repositories</text>
+            </g>
+
+            {/* Connection arrow */}
+            <line x1="350" y1="230" x2="350" y2="250" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <text x="365" y="242" fontSize="9" fill="#666">SQL</text>
+
+            {/* Database Layer */}
+            <g>
+              <rect x="20" y="250" width="660" height="80" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="5"/>
+              <text x="40" y="275" fontSize="12" fontWeight="bold" fill="#2E7D32">DATABASE (Almacenamiento)</text>
+              <text x="60" y="298" fontSize="10" fill="#333">MySQL 8.0 (Relacional) | Schema: Tablas, relaciones, índices</text>
+              <text x="60" y="315" fontSize="10" fill="#333">Migrations: Flyway | Backup automático | Replicación</text>
+              <text x="60" y="328" fontSize="9" fill="#666">Hosted en servidor RDS o máquina virtual</text>
+            </g>
+
+            {/* DevOps Layer */}
+            <g>
+              <rect x="20" y="360" width="660" height="50" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="5"/>
+              <text x="40" y="378" fontSize="12" fontWeight="bold" fill="#E65100">DEVOPS (Infraestructura)</text>
+              <text x="60" y="398" fontSize="10" fill="#333">Git/GitHub | Docker (contenedores) | CI/CD: GitHub Actions | Cloud: AWS/Heroku | Monitoring: Datadog</text>
+            </g>
+
+            {/* Arrow marker definition */}
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#666" />
+              </marker>
+            </defs>
+          </svg>
+
+          <p>
+            Este stack es típico para 2025. Las herramientas están seleccionadas por popularidad, documentación, comunidad,
+            y compatibilidad. Cambiar cualquier parte requiere reconsideración cuidadosa (cambiar de React a Vue, o MySQL a PostgreSQL).
+          </p>
+        </>
+      )
+    },
+
+    {
       title: 'Iniciación del Proyecto',
       content: (
         <>

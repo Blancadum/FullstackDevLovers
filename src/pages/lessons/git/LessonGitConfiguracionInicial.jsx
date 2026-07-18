@@ -1,4 +1,4 @@
-import { LessonLayout, ExerciseSection, CodeBlock, TabsVerticalContent } from '../../../components';
+import { LessonLayout, Exercise, CodeBlock, TabsVerticalContent } from '../../../components';
 import { LessonNavigation } from '../../../components/LessonNavigation';
 import { useBreadcrumb } from '../../../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../../../hooks/useLessonNavigation';
@@ -310,7 +310,17 @@ which nano  # o vim, o code
 # Si no existe, instálalo o usa otro editor`}
         />
 
-        <ExerciseSection title="Práctica: Configura tu Git" exercises={exercises} />
+        <h2>Práctica: Configura tu Git</h2>
+        {exercises.map((exercise, idx) => (
+          <Exercise
+            key={idx}
+            number={idx + 1}
+            title={exercise.title}
+            description={exercise.description}
+            code={exercise.solution}
+            language="bash"
+          />
+        ))}
       </LessonLayout>
 
       <LessonNavigation

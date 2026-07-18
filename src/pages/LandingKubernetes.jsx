@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export const LandingKubernetes = () => {
   const navigate = useNavigate();
+  const breadcrumbs = useBreadcrumb();
 
   const lessons = [
     {
@@ -65,7 +68,9 @@ export const LandingKubernetes = () => {
   ];
 
   return (
-    <div className="lesson-container">
+    <>
+      <Breadcrumb items={breadcrumbs} />
+      <div className="lesson-container">
       <div className="lesson-header">
         <h1>Kubernetes</h1>
         <p className="lesson-intro">
@@ -300,12 +305,12 @@ export const LandingKubernetes = () => {
           Si eres nuevo en Kubernetes, te recomendamos este orden:
         </p>
         <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Domina Docker primero</strong> → Entiende contenedores completamente</li>
-          <li><strong>2. Introducción: Qué es Kubernetes</strong> → Aprende la arquitectura</li>
-          <li><strong>3. Pods: La unidad más pequeña</strong> → Entiende los bloques básicos</li>
-          <li><strong>4. Deployments: Gestión de réplicas</strong> → Despliegues automáticos</li>
-          <li><strong>5. Docker vs Kubernetes</strong> → Clarifica cuándo usar cada uno</li>
-          <li><strong>6. Práctica local</strong> → Usa Minikube o Docker Desktop para practicar</li>
+          <li><strong>Domina Docker primero</strong> → Entiende contenedores completamente</li>
+          <li><strong>Introducción: Qué es Kubernetes</strong> → Aprende la arquitectura</li>
+          <li><strong>Pods: La unidad más pequeña</strong> → Entiende los bloques básicos</li>
+          <li><strong>Deployments: Gestión de réplicas</strong> → Despliegues automáticos</li>
+          <li><strong>Docker vs Kubernetes</strong> → Clarifica cuándo usar cada uno</li>
+          <li><strong>Práctica local</strong> → Usa Minikube o Docker Desktop para practicar</li>
         </ol>
       </section>
 
@@ -325,6 +330,49 @@ export const LandingKubernetes = () => {
           Elige lo que se adapte a tu escala y necesidades reales.
         </p>
       </section>
+
+      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '1rem'
+        }}>
+          <a href="/docker/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#f0f0f0',
+            color: '#333',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s',
+            border: '2px solid #ddd'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e0e0e0'} onMouseOut={(e) => e.target.style.backgroundColor = '#f0f0f0'}>
+            ← Volver a Docker
+          </a>
+          <a href="/docker/landing" style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#9c27b0',
+            color: '#ffffff',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: '600',
+            transition: 'background-color 0.3s'
+          }} onMouseOver={(e) => e.target.style.backgroundColor = '#7b1fa2'} onMouseOut={(e) => e.target.style.backgroundColor = '#9c27b0'}>
+            Más sobre Docker →
+          </a>
+        </div>
+      </section>
     </div>
+    </>
   );
 };

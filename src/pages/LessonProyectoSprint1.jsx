@@ -66,99 +66,193 @@ D. DEFINICIÓN SPRINT 2 (1 punto)
       content: (
         <>
           <h3>US#1: User Registration</h3>
-          <CodeBlock
-            language="text"
-            code={`Como cliente nuevo, quiero registrarme en JoMa,
-para que pueda crear una cuenta y acceder a la plataforma.
+          <p>
+            <strong>Historia:</strong> Como cliente nuevo, quiero registrarme en JoMa, para que pueda crear una cuenta y acceder
+            a la plataforma.
+          </p>
 
-CRITERIOS DE ACEPTACIÓN:
-✓ Formulario con campos: email, password, nombre, apellido
-✓ Validación cliente-side: email válido, password >= 8 caracteres
-✓ Validación servidor-side: email único en BD
-✓ Password encriptado con bcrypt
-✓ Email de confirmación enviado
-✓ Usuario puede loguearse después del registro
-✓ Mensaje de error claro si datos inválidos
+          <p>
+            <strong>Criterios de Aceptación:</strong>
+          </p>
+          <ul>
+            <li>Formulario con campos: email, password, nombre, apellido</li>
+            <li>Validación cliente-side: email válido, password &gt;= 8 caracteres</li>
+            <li>Validación servidor-side: email único en BD</li>
+            <li>Password encriptado con bcrypt</li>
+            <li>Email de confirmación enviado</li>
+            <li>Usuario puede loguearse después del registro</li>
+            <li>Mensaje de error claro si datos inválidos</li>
+          </ul>
 
-ESTIMACIÓN: 5 puntos (4-8 horas)
+          <p>
+            <strong>Estimación:</strong> 5 puntos (4-8 horas)
+          </p>
 
-CONTEXTO:
-- Punto de entrada para nuevos clientes
-- Base para sistema de seguridad
-- Datos personales deben protegerse (GDPR)`}
-          />
+          <p>
+            <strong>Contexto:</strong> Punto de entrada para nuevos clientes, base para sistema de seguridad, datos personales
+            deben protegerse (GDPR).
+          </p>
 
           <h3>US#2: User Login</h3>
-          <CodeBlock
-            language="text"
-            code={`Como usuario registrado, quiero hacer login,
-para que pueda acceder a mi cuenta y hacer compras.
+          <p>
+            <strong>Historia:</strong> Como usuario registrado, quiero hacer login, para que pueda acceder a mi cuenta y hacer
+            compras.
+          </p>
 
-CRITERIOS DE ACEPTACIÓN:
-✓ Formulario con email y contraseña
-✓ Validar credenciales contra BD
-✓ Si válidas: generar JWT token
-✓ Almacenar token en localStorage
-✓ Token con expiración 1 hora
-✓ Redirigir a dashboard/catálogo si login exitoso
-✓ Mostrar error si credenciales incorrectas
-✓ Link "¿Olvidaste la contraseña?"
+          <p>
+            <strong>Criterios de Aceptación:</strong>
+          </p>
+          <ul>
+            <li>Formulario con email y contraseña</li>
+            <li>Validar credenciales contra BD</li>
+            <li>Si válidas: generar JWT token</li>
+            <li>Almacenar token en localStorage</li>
+            <li>Token con expiración 1 hora</li>
+            <li>Redirigir a dashboard/catálogo si login exitoso</li>
+            <li>Mostrar error si credenciales incorrectas</li>
+            <li>Link "¿Olvidaste la contraseña?"</li>
+          </ul>
 
-ESTIMACIÓN: 5 puntos (4-8 horas)
+          <p>
+            <strong>Estimación:</strong> 5 puntos (4-8 horas)
+          </p>
 
-CONTEXTO:
-- Esencial para acceso a áreas restringidas
-- Permite personalización de experiencia
-- Base para carrito y órdenes personalizadas`}
-          />
+          <p>
+            <strong>Contexto:</strong> Esencial para acceso a áreas restringidas, permite personalización de experiencia, base
+            para carrito y órdenes personalizadas.
+          </p>
 
           <h3>US#3: Product Catalog Display</h3>
-          <CodeBlock
-            language="text"
-            code={`Como cliente, quiero ver el catálogo de productos,
-para que pueda navegar y seleccionar qué comprar.
+          <p>
+            <strong>Historia:</strong> Como cliente, quiero ver el catálogo de productos, para que pueda navegar y seleccionar
+            qué comprar.
+          </p>
 
-CRITERIOS DE ACEPTACIÓN:
-✓ Mostrar grid de productos (3 columnas en desktop, responsive)
-✓ Cada producto muestra: imagen, nombre, descripción, precio
-✓ Stock disponible visible (agregar "En stock" o cantidad)
-✓ Paginación: máximo 12 productos por página
-✓ Botón "Agregar al carrito" en cada producto
-✓ Cargar en < 2 segundos
-✓ Responsive: móvil (1 col), tablet (2 col), desktop (3 col)
-✓ Link a detalle del producto
+          <p>
+            <strong>Criterios de Aceptación:</strong>
+          </p>
+          <ul>
+            <li>Mostrar grid de productos (3 columnas en desktop, responsive)</li>
+            <li>Cada producto muestra: imagen, nombre, descripción, precio</li>
+            <li>Stock disponible visible (agregar "En stock" o cantidad)</li>
+            <li>Paginación: máximo 12 productos por página</li>
+            <li>Botón "Agregar al carrito" en cada producto</li>
+            <li>Cargar en &lt; 2 segundos</li>
+            <li>Responsive: móvil (1 col), tablet (2 col), desktop (3 col)</li>
+            <li>Link a detalle del producto</li>
+          </ul>
 
-ESTIMACIÓN: 8 puntos (5-8 horas)
+          <p>
+            <strong>Estimación:</strong> 8 puntos (5-8 horas)
+          </p>
 
-CONTEXTO:
-- Funcionalidad principal del proyecto
-- Primer punto de interacción del cliente
-- Performance crítica (UX importante)`}
-          />
+          <p>
+            <strong>Contexto:</strong> Funcionalidad principal del proyecto, primer punto de interacción del cliente, performance
+            crítica (UX importante).
+          </p>
 
           <h3>US#4: Main Interface & Navigation</h3>
-          <CodeBlock
-            language="text"
-            code={`Como usuario, quiero una interfaz intuitiva con navegación clara,
-para que pueda encontrar fácilmente lo que busco.
+          <p>
+            <strong>Historia:</strong> Como usuario, quiero una interfaz intuitiva con navegación clara, para que pueda encontrar
+            fácilmente lo que busco.
+          </p>
 
-CRITERIOS DE ACEPTACIÓN:
-✓ Header con: logo, buscador, carrito, usuario
-✓ Footer con: contacto, redes, términos
-✓ Menú de navegación visible en todos los dispositivos
-✓ Menú hamburguesa en móvil
-✓ Breadcrumbs para navegación clara
-✓ Diseño consistente en todas las páginas
-✓ Colores y tipografía profesionales
-✓ Accesibilidad WCAG básica (contraste, alt text)
+          <p>
+            <strong>Criterios de Aceptación:</strong>
+          </p>
+          <ul>
+            <li>Header con: logo, buscador, carrito, usuario</li>
+            <li>Footer con: contacto, redes, términos</li>
+            <li>Menú de navegación visible en todos los dispositivos</li>
+            <li>Menú hamburguesa en móvil</li>
+            <li>Breadcrumbs para navegación clara</li>
+            <li>Diseño consistente en todas las páginas</li>
+            <li>Colores y tipografía profesionales</li>
+            <li>Accesibilidad WCAG básica (contraste, alt text)</li>
+          </ul>
 
-ESTIMACIÓN: 8 puntos (5-8 horas)
+          <p>
+            <strong>Estimación:</strong> 8 puntos (5-8 horas)
+          </p>
 
-CONTEXTO:
-- Crea identidad visual del proyecto
-- Facilita navegación intuitiva
-- Primera impresión del cliente`}
-          />
+          <p>
+            <strong>Contexto:</strong> Crea identidad visual del proyecto, facilita navegación intuitiva, primera impresión del
+            cliente.
+          </p>
+        </>
+      )
+    },
+
+    {
+      title: 'Tablero Kanban - Visualización del Sprint',
+      content: (
+        <>
+          <p>
+            Un <strong>tablero Kanban</strong> visualiza el progreso del sprint. Cada tarea se mueve a través de columnas:
+            <strong>"To Do"</strong> (no iniciada), <strong>"In Progress"</strong> (en desarrollo), <strong>"Done"</strong> (completada).
+            Esto permite que todo el equipo vea el estado en tiempo real, identifique cuellos de botella, y colabore mejor.
+          </p>
+
+          <svg viewBox="0 0 700 350" style={{ width: '100%', maxWidth: '700px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* Column headers */}
+            <text x="100" y="30" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#333">To Do</text>
+            <text x="350" y="30" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#333">In Progress</text>
+            <text x="600" y="30" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#333">Done</text>
+
+            {/* Column backgrounds */}
+            <rect x="20" y="45" width="160" height="290" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="5" opacity="0.3"/>
+            <rect x="270" y="45" width="160" height="290" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="5" opacity="0.3"/>
+            <rect x="520" y="45" width="160" height="290" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="5" opacity="0.3"/>
+
+            {/* TO DO Column */}
+            {/* Task 1 */}
+            <rect x="30" y="60" width="140" height="60" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="4"/>
+            <text x="100" y="78" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#333">US#1: Registration</text>
+            <text x="100" y="93" textAnchor="middle" fontSize="9" fill="#666">5 puntos</text>
+            <text x="100" y="105" textAnchor="middle" fontSize="8" fill="#999">Jonathan</text>
+
+            {/* Task 2 */}
+            <rect x="30" y="135" width="140" height="60" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="4"/>
+            <text x="100" y="153" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#333">US#2: Login</text>
+            <text x="100" y="168" textAnchor="middle" fontSize="9" fill="#666">5 puntos</text>
+            <text x="100" y="180" textAnchor="middle" fontSize="8" fill="#999">Jonathan</text>
+
+            {/* Task 3 */}
+            <rect x="30" y="210" width="140" height="60" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="4"/>
+            <text x="100" y="228" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#333">US#3: Catalog UI</text>
+            <text x="100" y="243" textAnchor="middle" fontSize="9" fill="#666">8 puntos</text>
+            <text x="100" y="255" textAnchor="middle" fontSize="8" fill="#999">Marc</text>
+
+            {/* IN PROGRESS Column */}
+            {/* Task moving */}
+            <rect x="280" y="60" width="140" height="60" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="4"/>
+            <text x="350" y="78" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#333">Main Interface</text>
+            <text x="350" y="93" textAnchor="middle" fontSize="9" fill="#666">8 puntos</text>
+            <text x="350" y="105" textAnchor="middle" fontSize="8" fill="#999">Marc</text>
+
+            {/* Task moving 2 */}
+            <rect x="280" y="135" width="140" height="60" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="4"/>
+            <text x="350" y="153" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#333">DB Schema</text>
+            <text x="350" y="168" textAnchor="middle" fontSize="9" fill="#666">4 puntos</text>
+            <text x="350" y="180" textAnchor="middle" fontSize="8" fill="#999">Jonathan</text>
+
+            {/* DONE Column */}
+            {/* Task 1 complete */}
+            <rect x="530" y="60" width="140" height="60" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="4"/>
+            <text x="600" y="78" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#333">Project Setup</text>
+            <text x="600" y="93" textAnchor="middle" fontSize="9" fill="#666">✓ Done</text>
+            <text x="600" y="108" textAnchor="middle" fontSize="8" fill="#999">Semana 1</text>
+
+            {/* Metrics footer */}
+            <text x="100" y="350" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#333">To Do: 3 tareas</text>
+            <text x="350" y="350" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#333">In Progress: 2 tareas</text>
+            <text x="600" y="350" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#333">Done: 1 tarea</text>
+          </svg>
+
+          <p>
+            Este Kanban muestra un snapshot del sprint. Las tareas fluyen de izquierda a derecha conforme se completan.
+            Limita WIP (Work In Progress) a máximo 2 tareas por persona en "In Progress" para evitar multitarea caótica.
+          </p>
         </>
       )
     },
@@ -168,132 +262,56 @@ CONTEXTO:
       content: (
         <>
           <h3>Frontend Tasks (Marc López)</h3>
-          <CodeBlock
-            language="text"
-            code={`TASK 1: Main Interface Design
-Descripción:
-- Crear estructura HTML5 base (header, nav, main, footer)
-- Implementar CSS3 con Flexbox/Grid
-- Responsive design: mobile-first
-- Font Awesome para iconos
-- Google Fonts para tipografía
 
-Contexto:
-- Establece identidad visual
-- Facilita navegación del sitio
+          <p>
+            <strong>TASK 1: Main Interface Design</strong> - Crear estructura HTML5 base (header, nav, main, footer),
+            implementar CSS3 con Flexbox/Grid, responsive design mobile-first, Font Awesome para iconos, Google Fonts para
+            tipografía. Contexto: establece identidad visual, facilita navegación del sitio. Estimación: 4 horas.
+          </p>
 
-Estimación: 4 horas
+          <p>
+            <strong>TASK 2: Product Catalog UI</strong> - Crear componentes React para grid de productos, tarjetas con imagen,
+            nombre, precio, botón "Agregar", paginación con controles, filtros básicos (opcional para Sprint 1). Contexto:
+            funcionalidad central visible para usuario, requiere integración con API backend. Estimación: 6 horas.
+          </p>
 
----
+          <p>
+            <strong>TASK 3: Login/Register Forms</strong> - Formularios HTML con validaciones cliente-side, JavaScript para
+            interactividad, integración con APIs de backend, manejo de errores y estados. Contexto: punto de entrada para
+            usuarios, crítico para seguridad. Estimación: 4 horas.
+          </p>
 
-TASK 2: Product Catalog UI
-Descripción:
-- Crear componentes React para grid de productos
-- Tarjetas con imagen, nombre, precio, botón "Agregar"
-- Paginación con controles
-- Filtros básicos (opcional para Sprint 1)
-
-Contexto:
-- Funcionalidad central visible para usuario
-- Requiere integración con API backend
-
-Estimación: 6 horas
-
----
-
-TASK 3: Login/Register Forms
-Descripción:
-- Formularios HTML con validaciones cliente-side
-- JavaScript para interactividad
-- Integración con APIs de backend
-- Manejo de errores y estados
-
-Contexto:
-- Punto de entrada para usuarios
-- Crítico para seguridad
-
-Estimación: 4 horas
-
----
-
-TASK 4: Navigation & User Menu
-Descripción:
-- Header responsivo con menú
-- Hamburguesa en móvil
-- Dropdown para usuario logueado
-- Links a dashboard, logout
-
-Contexto:
-- Usabilidad del sitio
-- Acceso rápido a funciones principales
-
-Estimación: 3 horas`}
-          />
+          <p>
+            <strong>TASK 4: Navigation & User Menu</strong> - Header responsivo con menú, hamburguesa en móvil, dropdown para
+            usuario logueado, links a dashboard y logout. Contexto: usabilidad del sitio, acceso rápido a funciones principales.
+            Estimación: 3 horas.
+          </p>
 
           <h3>Backend Tasks (Jonathan Reina)</h3>
-          <CodeBlock
-            language="text"
-            code={`TASK 1: Authentication System - Registration
-Descripción:
-- Endpoint POST /api/auth/register
-- Validación de email y contraseña
-- Hash de password con bcrypt
-- Creación de usuario en BD
-- Respuesta JSON con usuario creado
 
-Contexto:
-- Base del sistema de seguridad
-- Datos personales deben protegerse (GDPR)
+          <p>
+            <strong>TASK 1: Authentication System - Registration</strong> - Endpoint POST /api/auth/register, validación de email
+            y contraseña, hash de password con bcrypt, creación de usuario en BD, respuesta JSON con usuario creado. Contexto:
+            base del sistema de seguridad, datos personales deben protegerse (GDPR). Estimación: 5 horas.
+          </p>
 
-Estimación: 5 horas
+          <p>
+            <strong>TASK 2: Authentication System - Login</strong> - Endpoint POST /api/auth/login, validar credenciales contra BD,
+            generar JWT token, token con expiración 1h, respuesta JSON con token. Contexto: autenticación en cada request, JWT para
+            sessionless auth (mejor para APIs). Estimación: 5 horas.
+          </p>
 
----
+          <p>
+            <strong>TASK 3: Products API</strong> - Endpoint GET /api/products (paginado), GET /api/products/:id (detalle),
+            GET /api/products?category=X (filtrar), respuestas JSON normalizadas, documentación de endpoints. Contexto: frontend
+            depende de estos datos, performance crítica. Estimación: 6 horas.
+          </p>
 
-TASK 2: Authentication System - Login
-Descripción:
-- Endpoint POST /api/auth/login
-- Validar credenciales contra BD
-- Generar JWT token
-- Token con expiración 1h
-- Respuesta JSON con token
-
-Contexto:
-- Autenticación en cada request
-- JWT para sessionless auth (mejor para APIs)
-
-Estimación: 5 horas
-
----
-
-TASK 3: Products API
-Descripción:
-- Endpoint GET /api/products (paginado)
-- Endpoint GET /api/products/:id (detalle)
-- Endpoint GET /api/products?category=X (filtrar)
-- Respuestas JSON normalizadas
-- Documentación de endpoints
-
-Contexto:
-- Frontend depende de estos datos
-- Performance crítica
-
-Estimación: 6 horas
-
----
-
-TASK 4: Database Schema
-Descripción:
-- Tablas: users, products, categories
-- Primary/Foreign keys
-- Indexes en campos buscables
-- Data migration/seeding con datos de prueba
-
-Contexto:
-- Foundación de todo el sistema
-- Diseño correcto previene problemas después
-
-Estimación: 4 horas`}
-          />
+          <p>
+            <strong>TASK 4: Database Schema</strong> - Tablas: users, products, categories, primary/foreign keys, indexes en campos
+            buscables, data migration/seeding con datos de prueba. Contexto: foundación de todo el sistema, diseño correcto previene
+            problemas después. Estimación: 4 horas.
+          </p>
         </>
       )
     },
@@ -303,81 +321,91 @@ Estimación: 4 horas`}
       content: (
         <>
           <h3>Semana 1: Setup & Database</h3>
-          <CodeBlock
-            language="text"
-            code={`SEMANA 1 - Preparación
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Ambos miembros:
-□ Clonar repositorio de GitHub
-□ Instalar dependencias (npm install, mvn install)
-□ Crear base de datos local
-□ Configurar .env con credenciales
+          <p>
+            <strong>Ambos miembros:</strong>
+          </p>
+          <ul>
+            <li>Clonar repositorio de GitHub</li>
+            <li>Instalar dependencias (npm install, mvn install)</li>
+            <li>Crear base de datos local</li>
+            <li>Configurar .env con credenciales</li>
+          </ul>
 
-Jonathan (Backend):
-□ Crear estructura Maven/Spring Boot
-□ Configurar JPA/Hibernate
-□ Crear tablas: users, products, categories
-□ Crear User y Product entities
-□ Seed data: 10-20 productos de prueba
+          <p>
+            <strong>Jonathan (Backend):</strong>
+          </p>
+          <ul>
+            <li>Crear estructura Maven/Spring Boot</li>
+            <li>Configurar JPA/Hibernate</li>
+            <li>Crear tablas: users, products, categories</li>
+            <li>Crear User y Product entities</li>
+            <li>Seed data: 10-20 productos de prueba</li>
+          </ul>
 
-Marc (Frontend):
-□ Crear estructura React
-□ Instalar dependencias (axios, react-router, etc)
-□ Crear estructura de carpetas
-□ Setup de estilos (Bootstrap o CSS modules)`}
-          />
+          <p>
+            <strong>Marc (Frontend):</strong>
+          </p>
+          <ul>
+            <li>Crear estructura React</li>
+            <li>Instalar dependencias (axios, react-router, etc)</li>
+            <li>Crear estructura de carpetas</li>
+            <li>Setup de estilos (Bootstrap o CSS modules)</li>
+          </ul>
 
           <h3>Semana 2: Authentication & Products</h3>
-          <CodeBlock
-            language="text"
-            code={`SEMANA 2 - Funcionalidades Principales
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Jonathan:
-□ Implementar UserRepository y UserService
-□ Crear AuthController con endpoints:
-  - POST /api/auth/register
-  - POST /api/auth/login
-  - POST /api/auth/logout
-□ JWT token generation y validation
-□ Password hashing con bcrypt
-□ Role-based access control (admin, user)
-□ Tests unitarios para autenticación
+          <p>
+            <strong>Jonathan:</strong>
+          </p>
+          <ul>
+            <li>Implementar UserRepository y UserService</li>
+            <li>Crear AuthController con endpoints: POST /api/auth/register, POST /api/auth/login, POST /api/auth/logout</li>
+            <li>JWT token generation y validation</li>
+            <li>Password hashing con bcrypt</li>
+            <li>Role-based access control (admin, user)</li>
+            <li>Tests unitarios para autenticación</li>
+          </ul>
 
-Commits esperados:
-✓ feat: authentication system with JWT
-✓ feat: password hashing with bcrypt
-✓ feat: role-based access control`}
-          />
+          <p>
+            <strong>Commits esperados:</strong> feat: authentication system with JWT, feat: password hashing with bcrypt,
+            feat: role-based access control
+          </p>
 
           <h3>Semana 3: Integration & Polish</h3>
-          <CodeBlock
-            language="text"
-            code={`SEMANA 3 - Integración y Finalización
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Marc:
-□ Conectar forms a API de Jonathan
-□ Error handling y validaciones
-□ Loading states (spinners, skeletons)
-□ Responsive testing en múltiples dispositivos
-□ Accesibilidad básica (alt text, labels)
-□ Performance optimizations (lazy loading)
+          <p>
+            <strong>Marc:</strong>
+          </p>
+          <ul>
+            <li>Conectar forms a API de Jonathan</li>
+            <li>Error handling y validaciones</li>
+            <li>Loading states (spinners, skeletons)</li>
+            <li>Responsive testing en múltiples dispositivos</li>
+            <li>Accesibilidad básica (alt text, labels)</li>
+            <li>Performance optimizations (lazy loading)</li>
+          </ul>
 
-Jonathan:
-□ Documentación de API endpoints
-□ Testing de endpoints
-□ Optimización de queries
-□ Cors configuration
-□ Environment variables por entorno
+          <p>
+            <strong>Jonathan:</strong>
+          </p>
+          <ul>
+            <li>Documentación de API endpoints</li>
+            <li>Testing de endpoints</li>
+            <li>Optimización de queries</li>
+            <li>Cors configuration</li>
+            <li>Environment variables por entorno</li>
+          </ul>
 
-Ambos:
-□ Weekly SCRUM meeting
-□ Code review cruzado
-□ Fix de bugs encontrados
-□ Preparación de videos demostrativos`}
-          />
+          <p>
+            <strong>Ambos:</strong>
+          </p>
+          <ul>
+            <li>Weekly SCRUM meeting</li>
+            <li>Code review cruzado</li>
+            <li>Fix de bugs encontrados</li>
+            <li>Preparación de videos demostrativos</li>
+          </ul>
 
           <h3>Entregables Sprint 1</h3>
           <Table
@@ -411,45 +439,43 @@ Ambos:
           </p>
 
           <h3>Ejemplo: Sprint 2 Proposal (JoMa)</h3>
-          <CodeBlock
-            language="text"
-            code={`NUEVO PRODUCT OWNER: Marc López
 
-SPRINT 2 PRIORIDADES:
-━━━━━━━━━━━━━━━━━━━━━━━
+          <p>
+            <strong>Nuevo Product Owner:</strong> Marc López
+          </p>
 
-1. Shopping Cart Implementation (MUST HAVE)
-   ├─ Agregar/remover productos del carrito
-   ├─ Actualizar cantidades
-   ├─ Persistencia en BD
-   └─ Cálculo automático de totales
+          <p>
+            <strong>Sprint 2 Prioridades:</strong>
+          </p>
 
-2. Products API Enhancement (HIGH)
-   ├─ Búsqueda por nombre
-   ├─ Filtros por categoría
-   ├─ Sorting (precio, popularidad)
-   └─ Documentación mejorada
+          <p>
+            <strong>1. Shopping Cart Implementation (MUST HAVE)</strong> - Agregar/remover productos del carrito, actualizar
+            cantidades, persistencia en BD, cálculo automático de totales.
+          </p>
 
-3. Admin Panel Básico (MEDIUM)
-   ├─ Listado de productos
-   ├─ Crear/editar/eliminar productos
-   ├─ Gestión de categorías
-   └─ Control de stock
+          <p>
+            <strong>2. Products API Enhancement (HIGH)</strong> - Búsqueda por nombre, filtros por categoría, sorting (precio,
+            popularidad), documentación mejorada.
+          </p>
 
-4. Security Middleware (MUST HAVE)
-   ├─ Rutas protegidas (requieren autenticación)
-   ├─ Validación de permisos (admin-only)
-   ├─ CORS configuración
-   └─ Rate limiting en endpoints
+          <p>
+            <strong>3. Admin Panel Básico (MEDIUM)</strong> - Listado de productos, crear/editar/eliminar productos, gestión de
+            categorías, control de stock.
+          </p>
 
-JUSTIFICACIÓN:
-La autenticación y catálogo establecen la base. Ahora necesitamos
-la funcionalidad de compra (carrito) para que customers puedan
-interactuar. El admin panel es crítico para gestión interna.
+          <p>
+            <strong>4. Security Middleware (MUST HAVE)</strong> - Rutas protegidas (requieren autenticación), validación de
+            permisos (admin-only), CORS configuración, rate limiting en endpoints.
+          </p>
 
-DURACIÓN: 3 semanas (similar a Sprint 1)
-ESFUERZO ESTIMADO: 30-40 puntos`}
-          />
+          <p>
+            <strong>Justificación:</strong> La autenticación y catálogo establecen la base. Ahora necesitamos la funcionalidad
+            de compra (carrito) para que customers puedan interactuar. El admin panel es crítico para gestión interna.
+          </p>
+
+          <p>
+            <strong>Duración:</strong> 3 semanas (similar a Sprint 1). <strong>Esfuerzo Estimado:</strong> 30-40 puntos.
+          </p>
         </>
       )
     },

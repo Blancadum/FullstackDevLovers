@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import { CodeBlock, InfoBox } from '../components';
 import { LessonNavigation } from '../components/LessonNavigation';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../hooks/useLessonNavigation';
@@ -87,7 +86,21 @@ export function LessonProyectoRetos() {
         </div>
 
         <h2 style={{ marginBottom: '1.5rem', marginTop: '2rem' }}>Solución y Especificaciones</h2>
-        <CodeBlock language="text" code={reto.solution} />
+        <div style={{
+          backgroundColor: '#f5f5f5',
+          border: '1px solid #ddd',
+          borderRadius: '8px',
+          padding: '1.5rem',
+          fontFamily: 'monospace',
+          fontSize: '0.9rem',
+          lineHeight: '1.6',
+          overflow: 'auto',
+          whiteSpace: 'pre-wrap',
+          wordBreak: 'break-word',
+          color: '#333'
+        }}>
+          {reto.solution}
+        </div>
 
         <div style={{ marginTop: '4rem', padding: '2rem 0', borderTop: '1px solid #eee' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>

@@ -1,9 +1,10 @@
 .breadcrumb {
-  background-color: #ffffff;
-  padding: 0.5rem 2rem;
+  background-color: #eeeeee;
+  padding: 0.8rem 2rem;
+  margin-top: 2rem;
   margin-bottom: 0;
-  position: relative;
-  z-index: 50;
+  position: static;
+  border-bottom: 1px solid #ccc;
 }
 
 .breadcrumb-list {

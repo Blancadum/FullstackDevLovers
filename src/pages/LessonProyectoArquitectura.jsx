@@ -157,70 +157,116 @@ GET    /api/admin/orders     - Todas las órdenes (admin)`
             múltiples Órdenes (relación 1:N). Cada Orden contiene múltiples Productos (relación N:N). Por eso necesitas tabla
             intermedia PedidoDetalle. Cada Producto pertenece a una Categoría (relación 1:N).
           </p>
-          <CodeBlock
-            language="text"
-            code={`USUARIOS
-┌──────────────────────┐
-│ id (PK)              │
-│ email (UNIQUE)       │
-│ password (hash)      │
-│ nombre               │
-│ apellido             │
-│ rol (admin/client)   │
-│ created_at           │
-│ updated_at           │
-└──────────────────────┘
-        │ 1:N
-        │
-        ├──────→ ÓRDENES
-        │        ┌──────────────────────┐
-        │        │ id (PK)              │
-        │        │ usuario_id (FK)      │
-        │        │ total_amount         │
-        │        │ estado               │
-        │        │ created_at           │
-        │        └──────────────────────┘
-        │                │ 1:N
-        │                │
-        │                ├──→ ORDEN_ITEMS
-        │                │    ┌──────────────────────┐
-        │                │    │ id (PK)              │
-        │                │    │ orden_id (FK)        │
-        │                │    │ producto_id (FK)     │
-        │                │    │ cantidad             │
-        │                │    │ precio_unitario      │
-        │                │    └──────────────────────┘
-        │
-        └──────→ CARRITO
-                 ┌──────────────────────┐
-                 │ id (PK)              │
-                 │ usuario_id (FK)      │
-                 │ producto_id (FK)     │
-                 │ cantidad             │
-                 │ added_at             │
-                 └──────────────────────┘
 
-PRODUCTOS
-┌──────────────────────┐
-│ id (PK)              │
-│ nombre               │
-│ descripción          │
-│ precio               │
-│ stock                │
-│ imagen_url           │
-│ categoria_id (FK)    │
-│ created_at           │
-│ updated_at           │
-└──────────────────────┘
-        │ N:1
-        │
-        └──→ CATEGORÍAS
-             ┌──────────────────────┐
-             │ id (PK)              │
-             │ nombre               │
-             │ descripción          │
-             └──────────────────────┘`}
-          />
+          <svg viewBox="0 0 700 400" style={{ width: '100%', maxWidth: '700px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* USUARIOS Table */}
+            <g>
+              <rect x="30" y="50" width="120" height="100" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="4"/>
+              <text x="90" y="70" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#1565C0">USUARIOS</text>
+              <line x="30" y="80" x2="150" y2="80" stroke="#1976D2" strokeWidth="1"/>
+              <text x="40" y="95" fontSize="10" fill="#333">id (PK)</text>
+              <text x="40" y="110" fontSize="10" fill="#333">email</text>
+              <text x="40" y="125" fontSize="10" fill="#333">password</text>
+              <text x="40" y="140" fontSize="10" fill="#333">nombre</text>
+            </g>
+
+            {/* ÓRDENES Table */}
+            <g>
+              <rect x="280" y="50" width="120" height="100" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="4"/>
+              <text x="340" y="70" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#6A1B9A">ÓRDENES</text>
+              <line x="280" y="80" x2="400" y2="80" stroke="#7B1FA2" strokeWidth="1"/>
+              <text x="290" y="95" fontSize="10" fill="#333">id (PK)</text>
+              <text x="290" y="110" fontSize="10" fill="#333">usuario_id (FK)</text>
+              <text x="290" y="125" fontSize="10" fill="#333">total</text>
+              <text x="290" y="140" fontSize="10" fill="#333">estado</text>
+            </g>
+
+            {/* PRODUCTOS Table */}
+            <g>
+              <rect x="530" y="50" width="130" height="100" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="4"/>
+              <text x="595" y="70" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#2E7D32">PRODUCTOS</text>
+              <line x="530" y="80" x2="660" y2="80" stroke="#388E3C" strokeWidth="1"/>
+              <text x="540" y="95" fontSize="10" fill="#333">id (PK)</text>
+              <text x="540" y="110" fontSize="10" fill="#333">nombre</text>
+              <text x="540" y="125" fontSize="10" fill="#333">precio</text>
+              <text x="540" y="140" fontSize="10" fill="#333">categoria_id</text>
+            </g>
+
+            {/* ORDEN_ITEMS Table (N:N) */}
+            <g>
+              <rect x="405" y="220" width="130" height="80" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="4"/>
+              <text x="470" y="240" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#E65100">ORDEN_ITEMS</text>
+              <line x="405" y="250" x2="535" y2="250" stroke="#F57C00" strokeWidth="1"/>
+              <text x="415" y="265" fontSize="10" fill="#333">orden_id (FK)</text>
+              <text x="415" y="280" fontSize="10" fill="#333">producto_id (FK)</text>
+              <text x="415" y="295" fontSize="10" fill="#333">cantidad</text>
+            </g>
+
+            {/* Relationships - 1:N USUARIOS to ÓRDENES */}
+            <line x1="150" y1="100" x2="280" y2="100" stroke="#555" strokeWidth="1.5" strokeDasharray="5,5"/>
+            <text x="215" y="90" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#555">1:N</text>
+
+            {/* Relationship - 1:N ÓRDENES to ORDEN_ITEMS */}
+            <line x1="340" y1="150" x2="455" y2="220" stroke="#555" strokeWidth="1.5" strokeDasharray="5,5"/>
+            <text x="360" y="180" fontSize="10" fontWeight="bold" fill="#555">1:N</text>
+
+            {/* Relationship - 1:N PRODUCTOS to ORDEN_ITEMS */}
+            <line x1="595" y1="150" x2="520" y2="220" stroke="#555" strokeWidth="1.5" strokeDasharray="5,5"/>
+            <text x="575" y="180" fontSize="10" fontWeight="bold" fill="#555">N:1</text>
+
+            {/* CATEGORÍAS Table */}
+            <g>
+              <rect x="30" y="270" width="130" height="80" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="4"/>
+              <text x="95" y="290" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#C62828">CATEGORÍAS</text>
+              <line x="30" y="300" x2="160" y2="300" stroke="#D32F2F" strokeWidth="1"/>
+              <text x="40" y="315" fontSize="10" fill="#333">id (PK)</text>
+              <text x="40" y="330" fontSize="10" fill="#333">nombre</text>
+              <text x="40" y="345" fontSize="10" fill="#333">descripción</text>
+            </g>
+
+            {/* Relationship - 1:N CATEGORÍAS to PRODUCTOS */}
+            <line x1="160" y1="310" x2="530" y2="100" stroke="#555" strokeWidth="1.5" strokeDasharray="5,5"/>
+            <text x="300" y="200" fontSize="10" fontWeight="bold" fill="#555">1:N</text>
+
+            {/* Legend */}
+            <text x="30" y="380" fontSize="11" fill="#666"><strong>PK:</strong> Primary Key (identificador único)</text>
+            <text x="320" y="380" fontSize="11" fill="#666"><strong>FK:</strong> Foreign Key (referencia a otra tabla)</text>
+          </svg>
+
+          <p>
+            <strong>Tabla USUARIOS:</strong> Almacena información de usuarios con campos como id (PK), email (UNIQUE),
+            password (hash), nombre, apellido, rol (admin/client), created_at, y updated_at. Esta tabla es la base de toda
+            autenticación y autorización.
+          </p>
+
+          <p>
+            <strong>Tabla ÓRDENES:</strong> Cada usuario puede tener múltiples órdenes (relación 1:N desde USUARIOS).
+            Contiene id (PK), usuario_id (FK que referencia USUARIOS), total_amount (monto total), estado (pendiente,
+            procesada, cancelada), y created_at para auditoría.
+          </p>
+
+          <p>
+            <strong>Tabla ORDEN_ITEMS:</strong> Relación N:N entre ÓRDENES y PRODUCTOS. Una orden contiene múltiples items,
+            cada uno referencia una orden específica y un producto específico. Campos: id (PK), orden_id (FK), producto_id (FK),
+            cantidad (cuántos del producto), y precio_unitario (precio al momento de compra).
+          </p>
+
+          <p>
+            <strong>Tabla CARRITO:</strong> Permite que usuarios mantengan un carrito de compras activo. Relación con USUARIOS
+            (1:N) y con PRODUCTOS. Campos: id (PK), usuario_id (FK), producto_id (FK), cantidad, y added_at para saber cuándo
+            se agregó el item.
+          </p>
+
+          <p>
+            <strong>Tabla PRODUCTOS:</strong> Catálogo de productos. Contiene id (PK), nombre, descripción, precio, stock
+            (cantidad disponible), imagen_url, categoria_id (FK que referencia CATEGORÍAS), created_at, y updated_at. El
+            campo categoria_id establece una relación N:1 con la tabla CATEGORÍAS.
+          </p>
+
+          <p>
+            <strong>Tabla CATEGORÍAS:</strong> Clasificación de productos. Campos simples: id (PK), nombre (ej: "Libros", "Electrónica"),
+            y descripción. Múltiples productos pueden pertenecer a la misma categoría (relación N:1).
+          </p>
 
           <h3>Índices para Rendimiento</h3>
           <p>
@@ -558,106 +604,83 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             Lista <strong>Consideraciones de Seguridad</strong>: HTTPS, JWT tokens, password hashing, input validation. Finalmente,
             explica planes de <strong>Escalabilidad</strong>: cómo escalarás cuando lleguen 1 millón de usuarios.
           </p>
-          <CodeBlock
-            language="markdown"
-            code={`# Documentación de Arquitectura - JoMa E-commerce
 
-## 1. Visión General
-Este documento describe la arquitectura técnica del sistema JoMa.
-- Tipo: E-commerce de eventos
-- Usuarios: 1000+ concurrentes
-- Tiempo de respuesta objetivo: <500ms
+          <h3>Ejemplo: Documentación de Arquitectura - JoMa E-commerce</h3>
 
-## 2. Stack Tecnológico
-### Frontend
-- React 18
-- Axios para HTTP
-- Redux para state management
-- Material-UI para componentes
+          <h4>1. Visión General</h4>
+          <p>
+            Este documento describe la arquitectura técnica del sistema JoMa. Es un e-commerce de eventos que espera manejar
+            1000+ usuarios concurrentes con un tiempo de respuesta objetivo menor a 500ms.
+          </p>
 
-### Backend
-- Java 17
-- Spring Boot 3.0
-- JPA/Hibernate
-- JWT para autenticación
+          <h4>2. Stack Tecnológico</h4>
+          <p>
+            <strong>Frontend:</strong> React 18 con Axios para HTTP, Redux para state management, y Material-UI para componentes
+            reutilizables.
+          </p>
+          <p>
+            <strong>Backend:</strong> Java 17 con Spring Boot 3.0, JPA/Hibernate para ORM, y JWT para autenticación.
+          </p>
+          <p>
+            <strong>Base de Datos:</strong> MySQL 8.0 como base de datos principal, Redis para caché en memoria, Elasticsearch
+            para búsquedas avanzadas.
+          </p>
+          <p>
+            <strong>Infraestructura:</strong> Docker para contenedores, Kubernetes para orquestación, AWS EC2 para hosting de servidores,
+            CloudFront como CDN para distribución de assets estáticos.
+          </p>
 
-### Base de Datos
-- MySQL 8.0
-- Redis para caché
-- Elasticsearch para búsquedas
+          <h4>3. Capas de la Aplicación</h4>
+          <p>
+            <strong>Presentation Layer (Frontend):</strong> Ubicada en /src, contiene React components, CSS modules, Redux store, y cliente
+            HTTP (axios) para comunicarse con el backend.
+          </p>
+          <p>
+            <strong>API Layer (Controllers):</strong> Ubicada en /src/main/java/com/joma/controllers, contiene ProductController, UserController,
+            OrderController, y AuthController que reciben peticiones HTTP y orquestan la lógica de negocio.
+          </p>
+          <p>
+            <strong>Business Logic Layer (Services):</strong> Ubicada en /src/main/java/com/joma/services, contiene ProductService, AuthService,
+            OrderService, y PaymentService que contienen la lógica de negocio centralizada y reutilizable.
+          </p>
+          <p>
+            <strong>Data Access Layer (Repositories):</strong> Ubicada en /src/main/java/com/joma/repositories, contiene ProductRepository,
+            UserRepository, y OrderRepository que abstraen las operaciones de base de datos.
+          </p>
+          <p>
+            <strong>Database:</strong> MySQL con 8 tablas principales y índices en campos frecuentemente buscados para optimizar rendimiento.
+          </p>
 
-### Infraestructura
-- Docker para contenedores
-- Kubernetes para orquestación
-- AWS EC2 para hosting
-- CloudFront para CDN
+          <h4>5. Decisiones Arquitectónicas Principales</h4>
+          <p>
+            <strong>Decisión 1: REST vs GraphQL</strong> - Elegimos REST por su simplicidad, soporte de caché HTTP nativo, y porque
+            el equipo estaba más familiarizado con REST.
+          </p>
+          <p>
+            <strong>Decisión 2: Monolito vs Microservicios</strong> - Elegimos arquitectura monolítica (con posibilidad de separación futura)
+            para desarrollo más rápido y menor complejidad operacional.
+          </p>
 
-## 3. Capas de la Aplicación
+          <h4>6. Patrones Utilizados</h4>
+          <p>
+            <strong>MVC</strong> para separación clara de responsabilidades. <strong>Repository</strong> para abstracción de datos y permitir
+            cambiar de base de datos sin afectar el resto del código. <strong>Service</strong> para lógica de negocio centralizada. <strong>DTO</strong>
+            para transferencia de datos sin exponer modelos internos al cliente.
+          </p>
 
-### Presentation Layer (Frontend)
-Ubicación: /src en raíz del proyecto
-- React components
-- CSS modules
-- Redux store
-- API client (axios)
+          <h4>7. Consideraciones de Seguridad</h4>
+          <p>
+            HTTPS en todas las conexiones, JWT tokens con expiración para autenticación stateless, password hashing con bcrypt para
+            proteger credenciales, CORS configurado para dominios específicos evitando ataques de origen cruzado, y rate limiting en
+            endpoints críticos como login para prevenir fuerza bruta.
+          </p>
 
-### API Layer (Backend Controllers)
-Ubicación: /src/main/java/com/joma/controllers
-- ProductController
-- UserController
-- OrderController
-- AuthController
-
-### Business Logic Layer (Services)
-Ubicación: /src/main/java/com/joma/services
-- ProductService
-- AuthService
-- OrderService
-- PaymentService
-
-### Data Access Layer (Repositories)
-Ubicación: /src/main/java/com/joma/repositories
-- ProductRepository
-- UserRepository
-- OrderRepository
-
-### Database
-- MySQL con 8 tablas principales
-- Indexes en campos frecuentemente buscados
-
-## 4. Diagrama de Flujo
-
-[Incluir diagrama ASCII o imagen]
-
-## 5. Decisiones Arquitectónicas
-
-### Decisión 1: REST vs GraphQL
-**Selección:** REST
-**Razón:** Simplicidad, caché HTTP, equipo familiar
-
-### Decisión 2: Monolito vs Microservicios
-**Selección:** Monolito (con posibilidad de separación futura)
-**Razón:** Desarrollo más rápido, menor complejidad operacional
-
-## 6. Patrones Utilizados
-- MVC para separación de responsabilidades
-- Repository para abstracción de datos
-- Service para lógica de negocio
-- DTO para transferencia de datos
-
-## 7. Consideraciones de Seguridad
-- HTTPS en todas las conexiones
-- JWT tokens con expiración
-- Password hashing con bcrypt
-- CORS configurado para dominios específicos
-- Rate limiting en endpoints críticos
-
-## 8. Escalabilidad
-- Horizontal: Múltiples instancias en load balancer
-- Vertical: Aumentar recursos de servidor
-- Caché: Redis para datos frecuentes
-- CDN: CloudFront para assets estáticos`}
-          />
+          <h4>8. Escalabilidad</h4>
+          <p>
+            <strong>Horizontal:</strong> Múltiples instancias de la aplicación detrás de un load balancer. <strong>Vertical:</strong> Aumentar
+            recursos (CPU, RAM) de los servidores. <strong>Caché:</strong> Redis para cachear datos frecuentes. <strong>CDN:</strong> CloudFront
+            para distribuir assets estáticos geográficamente.
+          </p>
 
           <InfoBox type="success">
             Una buena documentación arquitectónica te ahorra horas cuando cambios equipo,

@@ -74,6 +74,104 @@ Criterios de aceptación:
 
   const sections = [
     {
+      title: 'Flujo de User Story - De Backlog a Done',
+      content: (
+        <>
+          <p>
+            Una <strong>User Story</strong> pasa por varios estados antes de estar completada. Este flujo visual muestra
+            cómo una historia se mueve desde "Product Backlog" (idea), a "Sprint Backlog" (seleccionada), luego a "Development",
+            "Testing", y finalmente "Done" (aceptada).
+          </p>
+
+          <svg viewBox="0 0 700 300" style={{ width: '100%', maxWidth: '700px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* Stage 1: Product Backlog */}
+            <g>
+              <rect x="20" y="50" width="110" height="80" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="5"/>
+              <text x="75" y="70" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#C62828">Product</text>
+              <text x="75" y="87" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#C62828">Backlog</text>
+              <text x="75" y="110" textAnchor="middle" fontSize="10" fill="#666">(Idea)</text>
+              <text x="75" y="125" textAnchor="middle" fontSize="9" fill="#999">No priorizada</text>
+            </g>
+
+            {/* Arrow 1 */}
+            <line x1="130" y1="90" x2="160" y2="90" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead-gray)"/>
+            <text x="145" y="80" textAnchor="middle" fontSize="9" fill="#666">Priorizar</text>
+
+            {/* Stage 2: Sprint Backlog */}
+            <g>
+              <rect x="160" y="50" width="110" height="80" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="5"/>
+              <text x="215" y="70" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#E65100">Sprint</text>
+              <text x="215" y="87" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#E65100">Backlog</text>
+              <text x="215" y="110" textAnchor="middle" fontSize="10" fill="#666">(Seleccionada)</text>
+              <text x="215" y="125" textAnchor="middle" fontSize="9" fill="#999">Sprint Planning</text>
+            </g>
+
+            {/* Arrow 2 */}
+            <line x1="270" y1="90" x2="300" y2="90" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead-gray)"/>
+            <text x="285" y="80" textAnchor="middle" fontSize="9" fill="#666">Empezar</text>
+
+            {/* Stage 3: In Development */}
+            <g>
+              <rect x="300" y="50" width="110" height="80" fill="#E3F2FD" stroke="#1976D2" strokeWidth="2" rx="5"/>
+              <text x="355" y="70" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1565C0">In</text>
+              <text x="355" y="87" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1565C0">Development</text>
+              <text x="355" y="110" textAnchor="middle" fontSize="10" fill="#666">(Coding)</text>
+              <text x="355" y="125" textAnchor="middle" fontSize="9" fill="#999">Equipo trabaja</text>
+            </g>
+
+            {/* Arrow 3 */}
+            <line x1="410" y1="90" x2="440" y2="90" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead-gray)"/>
+            <text x="425" y="80" textAnchor="middle" fontSize="9" fill="#666">Probar</text>
+
+            {/* Stage 4: Testing */}
+            <g>
+              <rect x="440" y="50" width="110" height="80" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="5"/>
+              <text x="495" y="70" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#6A1B9A">Testing &</text>
+              <text x="495" y="87" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#6A1B9A">Review</text>
+              <text x="495" y="110" textAnchor="middle" fontSize="10" fill="#666">(QA)</text>
+              <text x="495" y="125" textAnchor="middle" fontSize="9" fill="#999">Code review</text>
+            </g>
+
+            {/* Arrow 4 */}
+            <line x1="550" y1="90" x2="580" y2="90" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead-gray)"/>
+            <text x="565" y="80" textAnchor="middle" fontSize="9" fill="#666">Aceptar</text>
+
+            {/* Stage 5: Done */}
+            <g>
+              <rect x="580" y="50" width="100" height="80" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="5"/>
+              <text x="630" y="75" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#2E7D32">✓</text>
+              <text x="630" y="97" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#2E7D32">Done</text>
+              <text x="630" y="120" textAnchor="middle" fontSize="9" fill="#999">Completada</text>
+            </g>
+
+            {/* Criteria section */}
+            <g>
+              <rect x="20" y="170" width="660" height="110" fill="#f5f5f5" stroke="#ccc" strokeWidth="1" rx="3"/>
+              <text x="30" y="190" fontSize="11" fontWeight="bold" fill="#333">Criterios de Aceptación:</text>
+
+              <text x="40" y="210" fontSize="10" fill="#555">✓ Funcionalidad completada según especificación</text>
+              <text x="40" y="228" fontSize="10" fill="#555">✓ Code review aprobado por otro developer</text>
+              <text x="40" y="246" fontSize="10" fill="#555">✓ Tests unitarios e integración pasados (70%+ coverage)</text>
+              <text x="40" y="264" fontSize="10" fill="#555">✓ Documentación actualizada (README, Wiki, código comentado)</text>
+            </g>
+
+            {/* Arrow marker definition */}
+            <defs>
+              <marker id="arrowhead-gray" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#666" />
+              </marker>
+            </defs>
+          </svg>
+
+          <p>
+            Cada stage tiene criterios específicos. Una historia no puede pasar de "In Development" a "Done" sin pasar
+            primero por "Testing". Este control de calidad asegura que solo código probado llega a producción.
+          </p>
+        </>
+      )
+    },
+
+    {
       title: 'Definir Requisitos Funcionales',
       content: (
         <>
@@ -212,30 +310,25 @@ Criterios de aceptación:
             nuevos pueden ser productivos inmediatamente.
           </p>
 
-          <CodeBlock
-            language="text"
-            code={`EJEMPLO: Especificación NO FUNCIONAL
+          <h4>Requisito: Rendimiento de Búsqueda</h4>
+          <p>
+            Las búsquedas deben devolver resultados en menos de 1000ms. Máximo 50 productos por página con pagination
+            automática para resultados mayores a 50. Implementar caché de búsquedas frecuentes. Crear índices en base de datos
+            para campos buscables.
+          </p>
 
-Requisito: Rendimiento de Búsqueda
-- Las búsquedas deben devolver resultados en <1000ms
-- Máximo 50 productos por página
-- Pagination automática para resultados >50
-- Caché de búsquedas frecuentes
-- Índices en base de datos para campos buscables
+          <h4>Requisito: Seguridad de Pagos</h4>
+          <p>
+            No almacenar números de tarjeta, usar gateway externo en su lugar. Cumplir con PCI DSS compliance level 1.
+            Validar SSL certificate en cada transacción. Implementar rate limiting: máximo 5 intentos de login por minuto.
+            Encriptar datos sensibles en tránsito.
+          </p>
 
-Requisito: Seguridad de Pagos
-- No almacenar números de tarjeta (usar gateway externo)
-- PCI DSS compliance level 1
-- Validar SSL certificate en cada transacción
-- Rate limiting: máximo 5 intentos de login por minuto
-- Encriptar datos sensibles en tránsito
-
-Requisito: Disponibilidad
-- RTO (Recovery Time Objective): 1 hora
-- RPO (Recovery Point Objective): 1 día
-- Backup a múltiples ubicaciones geográficas
-- Servidor de standby para failover automático`}
-          />
+          <h4>Requisito: Disponibilidad</h4>
+          <p>
+            RTO (Recovery Time Objective): 1 hora máxima. RPO (Recovery Point Objective): 1 día. Hacer backup a múltiples
+            ubicaciones geográficas. Contar con servidor de standby para failover automático.
+          </p>
         </>
       )
     },

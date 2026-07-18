@@ -17,6 +17,98 @@ export function LessonProyectoAPIs() {
             y cómo el backend responde. Una buena API REST es intuitiva, consistente, y fácil de documentar.
           </p>
 
+          <h3>Mapeo de Verbos HTTP a Operaciones CRUD</h3>
+          <p>
+            REST mapea los verbos HTTP (GET, POST, PUT, DELETE) a las operaciones CRUD (Create, Read, Update, Delete).
+            Este mapeo estándar hace que las APIs sean predecibles e intuitivas.
+          </p>
+
+          <svg viewBox="0 0 700 420" style={{ width: '100%', maxWidth: '700px', margin: '2rem auto', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+            {/* HTTP VERBS - Left column */}
+            <text x="50" y="30" fontSize="12" fontWeight="bold" fill="#333">Verbo HTTP</text>
+
+            <rect x="20" y="45" width="120" height="50" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="4"/>
+            <text x="80" y="65" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#2E7D32">GET</text>
+            <text x="80" y="82" textAnchor="middle" fontSize="9" fill="#555">Leer datos</text>
+
+            <rect x="20" y="115" width="120" height="50" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="4"/>
+            <text x="80" y="135" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#E65100">POST</text>
+            <text x="80" y="152" textAnchor="middle" fontSize="9" fill="#555">Crear nuevo</text>
+
+            <rect x="20" y="185" width="120" height="50" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="4"/>
+            <text x="80" y="205" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#6A1B9A">PUT</text>
+            <text x="80" y="222" textAnchor="middle" fontSize="9" fill="#555">Actualizar</text>
+
+            <rect x="20" y="255" width="120" height="50" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="4"/>
+            <text x="80" y="275" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#C62828">DELETE</text>
+            <text x="80" y="292" textAnchor="middle" fontSize="9" fill="#555">Eliminar</text>
+
+            {/* CRUD - Middle column */}
+            <text x="200" y="30" fontSize="12" fontWeight="bold" fill="#333">Operación CRUD</text>
+
+            <rect x="165" y="45" width="120" height="50" fill="#E8F5E9" stroke="#388E3C" strokeWidth="2" rx="4"/>
+            <text x="225" y="65" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#2E7D32">READ</text>
+            <text x="225" y="82" textAnchor="middle" fontSize="9" fill="#555">Lectura</text>
+
+            <rect x="165" y="115" width="120" height="50" fill="#FFF3E0" stroke="#F57C00" strokeWidth="2" rx="4"/>
+            <text x="225" y="135" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#E65100">CREATE</text>
+            <text x="225" y="152" textAnchor="middle" fontSize="9" fill="#555">Creación</text>
+
+            <rect x="165" y="185" width="120" height="50" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="2" rx="4"/>
+            <text x="225" y="205" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#6A1B9A">UPDATE</text>
+            <text x="225" y="222" textAnchor="middle" fontSize="9" fill="#555">Actualización</text>
+
+            <rect x="165" y="255" width="120" height="50" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="2" rx="4"/>
+            <text x="225" y="275" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#C62828">DELETE</text>
+            <text x="225" y="292" textAnchor="middle" fontSize="9" fill="#555">Eliminación</text>
+
+            {/* Arrows */}
+            <line x1="140" y1="70" x2="165" y2="70" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <line x1="140" y1="140" x2="165" y2="140" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <line x1="140" y1="210" x2="165" y2="210" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <line x1="140" y1="280" x2="165" y2="280" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+
+            {/* ENDPOINT - Right column */}
+            <text x="380" y="30" fontSize="12" fontWeight="bold" fill="#333">Endpoint Ejemplo</text>
+
+            <rect x="310" y="45" width="180" height="50" fill="#E8F5E9" stroke="#388E3C" strokeWidth="1.5" rx="4"/>
+            <text x="400" y="60" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#333">GET /api/productos</text>
+            <text x="400" y="77" textAnchor="middle" fontSize="8" fill="#555">o GET /api/productos/:id</text>
+
+            <rect x="310" y="115" width="180" height="50" fill="#FFF3E0" stroke="#F57C00" strokeWidth="1.5" rx="4"/>
+            <text x="400" y="135" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#333">POST /api/productos</text>
+            <text x="400" y="152" textAnchor="middle" fontSize="8" fill="#555">con JSON en body</text>
+
+            <rect x="310" y="185" width="180" height="50" fill="#F3E5F5" stroke="#7B1FA2" strokeWidth="1.5" rx="4"/>
+            <text x="400" y="205" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#333">PUT /api/productos/:id</text>
+            <text x="400" y="222" textAnchor="middle" fontSize="8" fill="#555">actualiza completo</text>
+
+            <rect x="310" y="255" width="180" height="50" fill="#FFEBEE" stroke="#D32F2F" strokeWidth="1.5" rx="4"/>
+            <text x="400" y="275" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#333">DELETE /api/productos/:id</text>
+            <text x="400" y="292" textAnchor="middle" fontSize="8" fill="#555">elimina recurso</text>
+
+            {/* Arrows to endpoint */}
+            <line x1="285" y1="70" x2="310" y2="70" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <line x1="285" y1="140" x2="310" y2="140" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <line x1="285" y1="210" x2="310" y2="210" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+            <line x1="285" y1="280" x2="310" y2="280" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)"/>
+
+            {/* Response codes - Bottom */}
+            <g>
+              <text x="50" y="350" fontSize="11" fontWeight="bold" fill="#333">Status Codes típicos:</text>
+              <text x="50" y="370" fontSize="9" fill="#555">200 OK (lectura/actualización exitosa) | 201 Created (creación exitosa)</text>
+              <text x="50" y="385" fontSize="9" fill="#555">204 No Content (eliminación exitosa) | 400 Bad Request (datos inválidos)</text>
+              <text x="50" y="400" fontSize="9" fill="#555">401 Unauthorized (sin autenticación) | 403 Forbidden (sin permisos) | 404 Not Found (recurso no existe)</text>
+            </g>
+
+            {/* Arrow marker definition */}
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#666" />
+              </marker>
+            </defs>
+          </svg>
+
           <h3>Principios de Diseño REST</h3>
           <p>
             REST (Representational State Transfer) tiene principios fundamentales. <strong>Recursos como URIs</strong>: cada cosa

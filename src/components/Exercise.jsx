@@ -1,53 +1,23 @@
-import { useState } from 'react';
+import { CodeBlock } from './CodeBlock';
 import './Exercise.css';
 
-export function Exercise({ title, description, difficulty, hint, solution }) {
-  const [showHint, setShowHint] = useState(false);
-  const [showSolution, setShowSolution] = useState(false);
-
+export function Exercise({ number, title, description, code, language = 'bash' }) {
   return (
     <div className="exercise">
       <div className="exercise-header">
-        <div>
-          <h4>📝 {title}</h4>
-        </div>
-        <span className={`difficulty difficulty-${difficulty.toLowerCase()}`}>{difficulty}</span>
+        <span className="exercise-number">Ejercicio {number}</span>
+        <span className="exercise-title">{title}</span>
       </div>
 
-      <div className="exercise-description">
-        <p>{description}</p>
-      </div>
-
-      <div className="exercise-buttons">
-        {hint && (
-          <button
-            className={`btn-exercise ${showHint ? 'active' : ''}`}
-            onClick={() => setShowHint(!showHint)}
-          >
-            💡 {showHint ? 'Ocultar Pista' : 'Mostrar Pista'}
-          </button>
-        )}
-        {solution && (
-          <button
-            className={`btn-exercise ${showSolution ? 'active' : ''}`}
-            onClick={() => setShowSolution(!showSolution)}
-          >
-            ✅ {showSolution ? 'Ocultar Solución' : 'Ver Solución'}
-          </button>
-        )}
-      </div>
-
-      {showHint && hint && (
-        <div className="exercise-hint">
-          <strong>💡 Pista</strong>
-          <p>{hint}</p>
+      {description && (
+        <div className="exercise-description">
+          <p>{description}</p>
         </div>
       )}
 
-      {showSolution && solution && (
-        <div className="exercise-solution">
-          <strong>✅ Solución</strong>
-          <pre>{solution}</pre>
+      {code && (
+        <div className="exercise-code">
+          <CodeBlock language={language} code={code} />
         </div>
       )}
     </div>
