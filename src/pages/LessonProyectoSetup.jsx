@@ -51,10 +51,49 @@ export function LessonProyectoSetup() {
       content: (
         <>
           <p>
-            El setup correcto es fundamental para que todo el equipo trabaje bajo las mismas condiciones.
+            El <strong>setup correcto del proyecto</strong> es fundamental. Si configuras todo bien al inicio, todo tu equipo
+            trabajará bajo las mismas condiciones, tendrá las mismas herramientas, y no habrá conflictos como "en mi máquina funciona
+            pero en la tuya no". Es como preparar un sitio de construcción: necesitas herramientas, permisos, materiales, y un plan.
           </p>
+
+          <h3>Herramientas Esenciales</h3>
+          <p>
+            <strong>Java 17 LTS</strong> es el lenguaje. Instálalo correctamente y verifica con <code>java -version</code>.
+            <strong>Maven o Gradle</strong> es el gestor de dependencias y build. Maven es más tradicional, Gradle más moderno.
+            Para este curso, Maven es suficiente. <strong>IDE</strong> es tu editor: IntelliJ IDEA (recomendado, de pago pero tiene versión
+            community gratuita) o VSCode (gratuito, requiere más configuración). <strong>MySQL o PostgreSQL</strong> para la base de datos.
+            Instala localmente para desarrollo. <strong>Git</strong> para control de versiones. Configura con GitHub para colaborar.
+          </p>
+
+          <h3>Estructura del Proyecto</h3>
+          <p>
+            Crea un proyecto Maven bien estructurado. El código fuente va en <code>src/main/java</code>. Los tests en <code>src/test/java</code>.
+            Recursos (properties, archivos de configuración) en <code>src/main/resources</code>. El <code>pom.xml</code> define dependencias.
+            Spring Boot genera automáticamente esta estructura cuando creas un proyecto starter.
+          </p>
+
+          <h3>Configuración del Entorno</h3>
+          <p>
+            Crea un archivo <code>application.properties</code> (o <code>application.yml</code>) para configurar la base de datos, el puerto del
+            servidor, y otros parámetros. Crea configuraciones por entorno: <code>application-dev.properties</code> para desarrollo (localhost),
+            <code>application-prod.properties</code> para producción (servidor remoto). En desarrollo, podrías usar:
+          </p>
+
+          <p>
+            <code>spring.datasource.url=jdbc:mysql://localhost:3306/joma_dev</code><br/>
+            <code>spring.datasource.username=root</code><br/>
+            <code>spring.datasource.password=password</code><br/>
+            <code>server.port=8080</code>
+          </p>
+
+          <p>
+            <strong>Configura .gitignore</strong> para no subir archivos sensibles (application-prod.properties con credenciales reales,
+            archivos .class compilados, IDE settings). Una buena regla: si contiene secretos o es autogenerado, está en .gitignore.
+          </p>
+
           <InfoBox type="info">
-            Documentar el setup previene problemas cuando nuevos desarrolladores se incorporan.
+            <strong>Documenta el setup en un README.md</strong> con pasos claros: qué instalar, cómo clonar el repo, cómo crear la BD local,
+            cómo ejecutar. Esto evita preguntas repetidas de nuevos desarrolladores.
           </InfoBox>
         </>
       )

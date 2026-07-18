@@ -51,14 +51,29 @@ class UserServiceTest {
         );
     }
 }`} />
-          <h3>Best Practices:</h3>
-          <ul>
-            <li>Una aserción por test (idealmente)</li>
-            <li>Usar mocks para dependencias externas</li>
-            <li>AAA pattern: Arrange, Act, Assert</li>
-            <li>Nombres descriptivos: testMethod_Condition_ExpectedResult()</li>
-            <li>Target: 70-80% code coverage</li>
-          </ul>
+          <h3>Best Practices en Testing Unitario</h3>
+          <p>
+            Escribe tests que sean <strong>aislados</strong>. Cada test prueba una cosa. Si falla, sabes exactamente qué está mal.
+            Usa <strong>mocks</strong> para reemplazar dependencias externas (Repository, otros Services). En lugar de hablar con BD real,
+            el mock retorna datos fijos. Esto acelera tests y evita efectos secundarios.
+          </p>
+
+          <p>
+            Sigue el <strong>patrón AAA: Arrange, Act, Assert</strong>. <strong>Arrange:</strong> prepara datos para el test.
+            <strong>Act:</strong> ejecuta el método siendo testado. <strong>Assert:</strong> verifica el resultado. Es estructura clara
+            que facilita leer el test.
+          </p>
+
+          <p>
+            Usa <strong>nombres descriptivos</strong> para tests. Incorrecto: testUser(). Correcto: testRegisterUser_DuplicateEmail_ThrowsException().
+            El nombre debería describir qué condición testa y qué resultado espera. Cuando falla, el nombre te dice qué falló.
+          </p>
+
+          <p>
+            Apunta a <strong>70-80% code coverage</strong>. Coverage es porcentaje de líneas ejecutadas por tests. 100% es perfeccionismo
+            excesivo (algunas líneas de error son imposibles de testear). 0% es negligencia. 70-80% es equilibrio: cubre casos importantes
+            sin ser obsesivo.
+          </p>
         </>
       )
     },

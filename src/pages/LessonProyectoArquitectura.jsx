@@ -112,8 +112,11 @@ GET    /api/admin/orders     - Todas las órdenes (admin)`
       content: (
         <>
           <p>
-            Antes de empezar el desarrollo, debes tomar decisiones arquitectónicas que afectarán
-            toda la estructura del proyecto. Estas decisiones deben documentarse claramente.
+            Antes de escribir una sola línea de código, necesitas tomar <strong>decisiones arquitectónicas</strong> que
+            afectarán toda la estructura del proyecto. Estas decisiones son como elegir si construir una casa de uno o dos
+            pisos, de madera o ladrillos. Son difíciles de cambiar después, así que debes pensarlas cuidadosamente.
+            <strong>Documenta cada decisión</strong> explicando por qué la tomaste, para que en el futuro (cuando otros
+            desarrolladores se unan) entiendan el razonamiento detrás.
           </p>
 
           <h3>Technology Stack</h3>
@@ -142,11 +145,18 @@ GET    /api/admin/orders     - Todas las órdenes (admin)`
       content: (
         <>
           <p>
-            El diseño de la base de datos es crítico. Debe soportar todos los requisitos funcionales
-            con buen rendimiento y escalabilidad.
+            El diseño de la base de datos es <strong>crítico</strong>. Una mala estructura de datos hace que todo sea lento
+            y difícil de mantener. Un buen diseño soporta todos tus requisitos funcionales con rendimiento excelente y
+            escalabilidad para crecer. El primer paso es crear un <strong>Diagrama Entidad-Relación (MER)</strong>, que es
+            un plano de cómo se relacionan tus datos.
           </p>
 
-          <h3>Ejemplo: Diagrama Entidad-Relación (E-commerce)</h3>
+          <h3>Ejemplo: Estructura de E-commerce</h3>
+          <p>
+            Imagina un sistema de tienda online. Necesitas guardar Usuarios, Productos, Órdenes. Cada Usuario puede hacer
+            múltiples Órdenes (relación 1:N). Cada Orden contiene múltiples Productos (relación N:N). Por eso necesitas tabla
+            intermedia PedidoDetalle. Cada Producto pertenece a una Categoría (relación 1:N).
+          </p>
           <CodeBlock
             language="text"
             code={`USUARIOS
@@ -213,27 +223,23 @@ PRODUCTOS
           />
 
           <h3>Índices para Rendimiento</h3>
-          <CodeBlock
-            language="sql"
-            code={`-- Índices principales para búsquedas frecuentes
-CREATE INDEX idx_usuarios_email ON usuarios(email);
-CREATE INDEX idx_usuarios_rol ON usuarios(rol);
+          <p>
+            Una vez que tienes tu estructura básica, necesitas pensar en <strong>índices</strong>. Un índice es como el índice
+            de un libro: en lugar de leer página por página, saltas directo a la página que necesitas. Sin índices, cada búsqueda
+            examina millones de registros. Con índices, encontramos datos en milisegundos.
+          </p>
 
-CREATE INDEX idx_productos_categoria ON productos(categoria_id);
-CREATE INDEX idx_productos_nombre ON productos(nombre);
+          <p>
+            <strong>¿Dónde poner índices?</strong> En campos que buscas frecuentemente. Si buscas usuarios por email para login,
+            crea un índice en usuarios(email). Si filtras productos por categoría, crea índice en productos(categoria_id). Si
+            filtras órdenes por estado o usuario, crea índices ahí. Los <strong>índices compuestos</strong> combinan múltiples
+            columnas: si siempre buscas órdenes de un usuario en una fecha específica, índice en (usuario_id, created_at) es ideal.
+          </p>
 
-CREATE INDEX idx_ordenes_usuario ON ordenes(usuario_id);
-CREATE INDEX idx_ordenes_estado ON ordenes(estado);
-
-CREATE INDEX idx_carrito_usuario ON carrito(usuario_id);
-
--- Índices compuestos para filtrados
-CREATE INDEX idx_ordenes_usuario_fecha
-  ON ordenes(usuario_id, created_at);
-
-CREATE INDEX idx_orden_items_orden_producto
-  ON orden_items(orden_id, producto_id);`}
-          />
+          <p>
+            <strong>Cuidado:</strong> Más índices = búsquedas más rápidas, pero inserciones/actualizaciones más lentas. Balancea según
+            tu patrón de uso. En e-commerce, lees mucho y escribes poco, así que muchos índices son buenos.
+          </p>
         </>
       )
     },
@@ -243,10 +249,17 @@ CREATE INDEX idx_orden_items_orden_producto
       content: (
         <>
           <p>
-            El patrón MVC organiza el código en tres capas separadas con responsabilidades claras.
+            El patrón <strong>MVC (Model-View-Controller)</strong> organiza el código en tres capas separadas, cada una con
+            responsabilidades claras. Esto permite que múltiples desarrolladores trabajen sin conflictos, facilita testing, y
+            hace el código mantenible.
           </p>
 
           <h3>Model (Modelos - Entidades)</h3>
+          <p>
+            El <strong>Model</strong> representa tus datos. Son las clases que mapean a tablas en la base de datos. Un Model
+            User tiene propiedades como id, email, nombre, password. Un Model Product tiene id, nombre, precio, stock. Los Models
+            son "tontos" en el sentido que solo guardan datos; no contienen lógica de negocio. Son como esqueletos de información.
+          </p>
           <CodeBlock
             language="java"
             code={`// src/models/User.java
@@ -271,6 +284,11 @@ public class User {
           />
 
           <h3>Controller (Controladores - Endpoints)</h3>
+          <p>
+            El <strong>Controller</strong> es el orquestador. Recibe peticiones HTTP del cliente, decide qué hacer, llama
+            al Service apropiado, y retorna una respuesta. Por ejemplo, ProductController recibe GET /api/products/5, llama
+            ProductService.getProductById(5), recibe los datos, y retorna JSON. El Controller es el "gerente" que coordina todo.
+          </p>
           <CodeBlock
             language="java"
             code={`// src/controllers/ProductController.java
@@ -306,6 +324,12 @@ public class ProductController {
           />
 
           <h3>Service (Servicios - Lógica de Negocio)</h3>
+          <p>
+            El <strong>Service</strong> contiene la lógica de negocio - las reglas que hacen que tu aplicación funcione. Por ejemplo,
+            cuando creas un producto, el Service valida que el precio sea positivo, que la categoría exista, encripta datos si
+            es necesario, y luego llama al Repository. Aquí es donde ocurre la "magia". Controllers son flacos (poca lógica),
+            Services son gordos (mucha lógica). Esto facilita testing: testa Services sin tocar Controllers ni Database.
+          </p>
           <CodeBlock
             language="java"
             code={`// src/services/ProductService.java
@@ -358,6 +382,11 @@ public class ProductService {
           />
 
           <h3>Repository (Acceso a Datos)</h3>
+          <p>
+            El <strong>Repository</strong> es especialista en hablar con la base de datos. Service dice "dame todos los productos
+            de la categoría 'Libros'", y Repository sabe cómo escribir esa query SQL. Repository abstrae los detalles de base de datos,
+            permitiendo cambiar de MySQL a PostgreSQL sin tocar Service. Es como un intermediario entre el código y la BD.
+          </p>
           <CodeBlock
             language="java"
             code={`// src/repositories/ProductRepository.java
@@ -378,41 +407,38 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
           />
 
           <h3>Flujo Completo de una Petición</h3>
-          <CodeBlock
-            language="text"
-            code={`1. REQUEST
-   Cliente: GET /api/products?category=books
+          <p>
+            Veamos cómo todo funciona junto. Un cliente hace una petición: <strong>GET /api/products?category=books</strong>,
+            queriendo ver todos los libros disponibles.
+          </p>
 
-2. CONTROLLER (ProductController.java)
-   @GetMapping
-   public List<ProductDTO> getProductsByCategory(@RequestParam String category) {
-       return productService.getProductsByCategory(category);
-   }
+          <p>
+            <strong>Paso 1 - Controller</strong>: ProductController recibe la petición. Ve que es un GET a /api/products y hay un
+            parámetro ?category=books. Extrae ese parámetro y llama al ProductService.getProductsByCategory("books").
+          </p>
 
-3. SERVICE (ProductService.java)
-   public List<ProductDTO> getProductsByCategory(String categoryName) {
-       Category cat = categoryRepository.findByNombre(categoryName);
-       List<Product> products = productRepository.findByCategoria(cat);
-       return convertToDTOs(products);
-   }
+          <p>
+            <strong>Paso 2 - Service</strong>: ProductService recibe la categoría "books". Primero valida que la categoría exista
+            llamando categoryRepository.findByNombre("books"). Luego llama productRepository.findByCategoria(cat) para obtener todos
+            los productos de esa categoría. Convierte los Products a DTOs (Data Transfer Objects) para no exponer detalles internos
+            al cliente.
+          </p>
 
-4. REPOSITORY (ProductRepository.java)
-   List<Product> findByCategoria(Category categoria);
-   ↓
-   [Ejecuta en Base de Datos]
-   SELECT * FROM productos WHERE categoria_id = 5
+          <p>
+            <strong>Paso 3 - Repository</strong>: ProductRepository ejecuta la query SQL:
+            <code>SELECT * FROM productos WHERE categoria_id = 5</code>. La base de datos retorna una lista de productos.
+          </p>
 
-5. DATABASE
-   Retorna: [Producto1, Producto2, Producto3]
+          <p>
+            <strong>Paso 4 - Response</strong>: El Service recibe los datos, los convierte a DTOs, y retorna al Controller. El Controller
+            retorna JSON al cliente con un array de objetos, cada uno con propiedades id, nombre, y precio. El navegador recibe ese JSON
+            y lo muestra al usuario.
+          </p>
 
-6. RESPONSE
-   Controller devuelve JSON:
-   [
-       { "id": 1, "nombre": "Java 101", "precio": 29.99, ... },
-       { "id": 2, "nombre": "Spring Boot", "precio": 39.99, ... },
-       ...
-   ]`}
-          />
+          <p>
+            Note la separación clara: Controller no toca base de datos. Service no toca HTTP. Repository no contiene lógica de negocio.
+            Cada capa tiene una responsabilidad. Si hay un bug en cómo filtrar por categoría, sabes exactamente dónde mirar: Service.
+          </p>
         </>
       )
     },
@@ -427,31 +453,28 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
           </p>
 
           <h3>Convenciones REST</h3>
-          <CodeBlock
-            language="text"
-            code={`RECURSOS = SUSTANTIVOS (plural)
-✓ /api/products       (no /getProducts)
-✓ /api/users          (no /getAllUsers)
-✓ /api/orders         (no /fetchOrders)
+          <p>
+            REST es una arquitectura para APIs. La clave es usar <strong>sustantivos en URLs, no verbos</strong>. El verbo lo
+            proporciona HTTP. Incorrecto: GET /api/getProducts o /api/getAllUsers. Correcto: GET /api/products, GET /api/users.
+            Las URLs son recursos, no acciones.
+          </p>
 
-OPERACIONES = VERBOS HTTP
-GET    /api/products         ← Obtener lista
-GET    /api/products/5       ← Obtener específico
-POST   /api/products         ← Crear nuevo
-PUT    /api/products/5       ← Actualizar completo
-PATCH  /api/products/5       ← Actualizar parcial
-DELETE /api/products/5       ← Eliminar
+          <p>
+            <strong>GET</strong> obtiene datos sin efectos secundarios. GET /api/products retorna lista de todos. GET /api/products/5
+            retorna el producto con id 5. <strong>POST</strong> crea nuevo recurso. POST /api/products con JSON en el body crea un
+            producto nuevo y retorna 201 Created. <strong>PUT</strong> actualiza un recurso existente completamente. PUT /api/products/5
+            reemplaza el producto 5. <strong>PATCH</strong> actualiza parcialmente (útil si solo cambias precio, no nombre). <strong>DELETE</strong>
+            elimina. DELETE /api/products/5 borra el producto 5 y retorna 204 No Content.
+          </p>
 
-STATUS CODES
-200 OK               ← Success, retorna data
-201 Created          ← Resource created successfully
-204 No Content       ← Success, sin retorno
-400 Bad Request      ← Validación fallida
-401 Unauthorized     ← Falta autenticación
-403 Forbidden        ← Sin permisos
-404 Not Found        ← Recurso no existe
-500 Server Error     ← Error interno`}
-          />
+          <p>
+            Los <strong>status codes</strong> comunican qué pasó. <strong>200 OK</strong> significa suceso, retorna datos. <strong>201
+            Created</strong> significa recurso creado exitosamente. <strong>204 No Content</strong> significa suceso pero sin datos para
+            retornar. <strong>400 Bad Request</strong> significa que el cliente envió datos inválidos. <strong>401 Unauthorized</strong>
+            significa falta autenticación (usuario no logged in). <strong>403 Forbidden</strong> significa usuario autenticado pero sin
+            permisos (admin panel, pero no eres admin). <strong>404 Not Found</strong> significa recurso no existe. <strong>500 Server Error</strong>
+            significa fallo en el servidor.
+          </p>
 
           <h3>Ejemplo: Especificación de Endpoints</h3>
           <Table
@@ -515,11 +538,26 @@ STATUS CODES
       content: (
         <>
           <p>
-            La arquitectura debe estar documentada para que otros desarrolladores la entiendan.
-            Usa diagramas y descripciones claras.
+            La arquitectura debe estar <strong>documentada</strong> para que otros desarrolladores (o tú mismo en 3 meses) la
+            entiendan sin preguntarte. Una buena documentación de arquitectura es como un mapa de carreteras: te muestra cómo está
+            organizado todo. Debe incluir: visión general, stack tecnológico, capas, decisiones y justificaciones, patrones utilizados,
+            consideraciones de seguridad, y planes de escalabilidad.
           </p>
 
-          <h3>Contenido de Documentación de Arquitectura</h3>
+          <h3>Estructura de Documentación</h3>
+          <p>
+            Comienza con una <strong>Visión General</strong>: qué es el proyecto, cuántos usuarios esperas, qué objetivos de rendimiento
+            tienes. Documenta tu <strong>Stack Tecnológico</strong>: Frontend (React, Angular?), Backend (Java Spring Boot?), Database
+            (MySQL?), y por qué elegiste cada uno. Describe tus <strong>Capas</strong>: Frontend con React, API Layer con Controllers,
+            Service Layer con lógica, Data Access con Repositories, Database con MySQL.
+          </p>
+
+          <p>
+            Registra tus <strong>Decisiones Arquitectónicas</strong> importantes y por qué las tomaste. Ej: "Elegimos REST sobre GraphQL
+            porque el equipo es pequeño y REST es más simple". Documenta <strong>Patrones</strong> que usas: MVC, Repository, DTO, etc.
+            Lista <strong>Consideraciones de Seguridad</strong>: HTTPS, JWT tokens, password hashing, input validation. Finalmente,
+            explica planes de <strong>Escalabilidad</strong>: cómo escalarás cuando lleguen 1 millón de usuarios.
+          </p>
           <CodeBlock
             language="markdown"
             code={`# Documentación de Arquitectura - JoMa E-commerce

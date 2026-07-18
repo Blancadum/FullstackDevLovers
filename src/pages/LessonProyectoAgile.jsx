@@ -123,22 +123,23 @@ B. Planificación SCRUM (6 puntos)
           />
 
           <h3>Cuándo usar Agile</h3>
-          <ul>
-            <li>Requisitos no completamente claros al inicio</li>
-            <li>Cliente disponible para feedback frecuente</li>
-            <li>Equipo pequeño (2-10 personas)</li>
-            <li>Proyecto web/mobile con cambios rápidos</li>
-            <li>Startup o producto MVP (Minimum Viable Product)</li>
-          </ul>
+          <p>
+            Agile funciona mejor cuando <strong>requisitos no están completamente claros</strong> al inicio. Web projects evolucionan;
+            necesitas flexibilidad. Agile requiere <strong>cliente disponible para feedback</strong> frecuente; si tu cliente está siempre
+            ocupado, no es ideal. Agile funciona mejor con <strong>equipos pequeños</strong> (2-10 personas); mucha comunicación es fácil.
+            Es excelente para <strong>proyectos web/mobile que cambian rápidamente</strong> según tendencias de mercado. Si eres
+            <strong>startup o construyes MVP (Minimum Viable Product)</strong>, Agile es perfecto porque necesitas iterar rápido.
+          </p>
 
           <h3>Cuándo usar Waterfall</h3>
-          <ul>
-            <li>Requisitos muy claros y estables</li>
-            <li>Proyecto regulado o crítico</li>
-            <li>Cliente no disponible frecuentemente</li>
-            <li>Equipo grande distribuido geográficamente</li>
-            <li>Presupuesto y timeline fijo</li>
-          </ul>
+          <p>
+            Waterfall funciona cuando <strong>requisitos son muy claros y estables</strong>. Ej: un proyecto de infraestructura donde
+            sabes exactamente qué necesitas. Waterfall es obligatorio para <strong>proyectos regulados o críticos</strong> como sistemas
+            bancarios o médicos, donde necesitas documentación exhaustiva y auditoría. Si tu <strong>cliente no está disponible frecuentemente</strong>,
+            Waterfall es mejor; defines todo upfront, entregas al final. Waterfall es mejor para <strong>equipos grandes distribuidos
+            geográficamente</strong> donde mucha comunicación síncrona es difícil. Si tienes <strong>presupuesto y timeline fijo</strong>,
+            Waterfall es más fácil de estimar.
+          </p>
         </>
       )
     },
@@ -360,28 +361,29 @@ Tamaño de esfuerzo: 8 puntos (aprox 5-8 horas)`}
       content: (
         <>
           <h3>Product Owner (PO)</h3>
-          <ul>
-            <li><strong>Responsabilidad:</strong> Maximizar valor del producto</li>
-            <li><strong>Tareas:</strong> Priorizar backlog, clarificar requisitos, aceptar/rechazar trabajo</li>
-            <li><strong>En Sprints:</strong> Designado al inicio (rotativo recomendado)</li>
-            <li><strong>Ejemplo JoMa:</strong> Jonathan Reina en Sprint 1, Marc López en Sprint 3</li>
-          </ul>
+          <p>
+            El <strong>Product Owner</strong> tiene responsabilidad de <strong>maximizar valor del producto</strong>. Sus tareas:
+            <strong>priorizar backlog</strong> (qué es más importante), <strong>clarificar requisitos</strong> (asegurar que Development
+            Team entienda), <strong>aceptar o rechazar</strong> trabajo completado. En el curso, el PO es designado al inicio de cada sprint,
+            preferentemente rotando. Esto desarrolla habilidades en todo el equipo. En proyectos reales, el PO es típicamente el cliente
+            o su representante.
+          </p>
 
           <h3>Scrum Master (SM)</h3>
-          <ul>
-            <li><strong>Responsabilidad:</strong> Facilitar proceso SCRUM</li>
-            <li><strong>Tareas:</strong> Eliminar obstáculos, facilitar reuniones, coaching del equipo</li>
-            <li><strong>En Curso:</strong> Típicamente el profesor/mentor</li>
-            <li><strong>NO es:</strong> Jefe del equipo ni micro-manager</li>
-          </ul>
+          <p>
+            El <strong>Scrum Master</strong> facilita el proceso SCRUM, no dirige. Responsabilidad: <strong>eliminar obstáculos</strong>
+            (si alguien está bloqueado, SM resuelve), <strong>facilitar reuniones</strong> (asegurar que sean productivas, no largas),
+            <strong>coaching del equipo</strong> (enseña SCRUM, mejora hábitos). En el curso, típicamente es el profesor o mentor. El SM
+            NO es jefe ni micro-manager. El equipo es autoorganizado; SM solo remueve barreras.
+          </p>
 
           <h3>Development Team</h3>
-          <ul>
-            <li><strong>Responsabilidad:</strong> Entregar incremento de producto funcional</li>
-            <li><strong>Tareas:</strong> Estimar, desarrollar, testear, documentar</li>
-            <li><strong>Autoorganizado:</strong> Decide cómo realizar el trabajo</li>
-            <li><strong>Tamaño ideal:</strong> 3-9 personas (en curso: 2-3)</li>
-          </ul>
+          <p>
+            El <strong>Development Team</strong> es responsable de <strong>entregar incremento de producto funcional</strong> cada sprint.
+            Tareas: <strong>estimar</strong> esfuerzo de User Stories, <strong>desarrollar</strong> código, <strong>testear</strong> su trabajo,
+            <strong>documentar</strong>. El team es <strong>autoorganizado</strong>: decide cómo realizar el trabajo, no PO diciéndoles qué hacer.
+            Tamaño ideal: 3-9 personas en proyectos reales. En el curso, típicamente 2-3 personas.
+          </p>
 
           <h3>Rotación de Product Owner</h3>
           <CodeBlock

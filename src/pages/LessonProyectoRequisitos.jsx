@@ -84,49 +84,54 @@ Criterios de aceptación:
           </p>
 
           <h3>Estructura de una Historia de Usuario</h3>
-          <CodeBlock
-            language="text"
-            code={`FORMATO ESTÁNDAR:
-"Como [ACTOR/ROL], quiero [ACCIÓN], para que [BENEFICIO]"
+          <p>
+            Una historia de usuario sigue una estructura estándar: <strong>"Como [ACTOR/ROL], quiero [ACCIÓN], para que
+            [BENEFICIO]"</strong>. Cada parte tiene un propósito específico. La parte <strong>"Como"</strong> identifica
+            quién usa el sistema: ¿es un cliente normal, un administrador, un vendedor? La parte <strong>"quiero"</strong>
+            describe la acción específica que desea realizar: buscar, comprar, crear, editar, eliminar. La parte <strong>"para
+            que"</strong> explica el beneficio o el por qué: ahorrar tiempo, obtener información, mejorar la experiencia.
+          </p>
 
-DESGLOSE:
-- "Como" = ¿Quién usa el sistema? (cliente, admin, vendedor)
-- "quiero" = ¿Qué acción realiza? (buscar, comprar, crear)
-- "para que" = ¿Cuál es el beneficio? (ahorrar tiempo, obtener info, etc)
+          <p>
+            <strong>Ejemplo 1 - Búsqueda:</strong> "Como usuario, quiero buscar libros por título, para que encuentre
+            rápidamente lo que busco sin scrollear por miles de libros."
+          </p>
 
-EJEMPLOS REALES:
+          <p>
+            <strong>Ejemplo 2 - Reportes:</strong> "Como administrador, quiero ver reportes de ventas por período, para que
+            pueda monitorear el desempeño del negocio y tomar decisiones estratégicas."
+          </p>
 
-Como usuario, quiero buscar libros por título,
-para que encuentre rápidamente lo que busco.
-
-Como administrador, quiero ver reportes de ventas,
-para que pueda monitorear el negocio.
-
-Como vendedor, quiero actualizar el stock de productos,
-para que los clientes vean disponibilidad correcta.`}
-          />
+          <p>
+            <strong>Ejemplo 3 - Inventario:</strong> "Como vendedor, quiero actualizar el stock de productos desde un panel,
+            para que los clientes siempre vean disponibilidad correcta y no compren productos sin stock."
+          </p>
 
           <h3>Criterios de Aceptación</h3>
           <p>
-            Cada historia de usuario debe tener <strong>criterios de aceptación</strong> específicos.
-            Son las condiciones que deben cumplirse para que la historia se considere "lista".
+            Cada historia de usuario debe tener <strong>criterios de aceptación</strong> específicos. Estos son las
+            condiciones exactas que deben cumplirse para que la historia se considere completa y "lista". Sin criterios
+            de aceptación claros, diferentes personas tendrán diferentes expectativas de cuándo está "done" una tarea.
           </p>
 
-          <CodeBlock
-            language="text"
-            code={`EJEMPLO: Búsqueda de Productos
+          <p>
+            Consideremos la historia "Como cliente, quiero buscar productos por nombre, para que encuentre lo que necesito
+            rápidamente." Sus criterios de aceptación podrían ser:
+          </p>
 
-Historia: Como cliente, quiero buscar productos por nombre,
-para que encuentre lo que necesito rápidamente.
+          <ul>
+            <li>El campo de búsqueda debe aceptar mínimo 2 caracteres antes de buscar (evita búsquedas triviales)</li>
+            <li>Los resultados deben aparecer en menos de 2 segundos (requisito de rendimiento)</li>
+            <li>Mostrar el número total de resultados encontrados (contexto para el usuario)</li>
+            <li>Si no hay resultados, mostrar un mensaje claro: "No se encontraron productos"</li>
+            <li>Permitir al usuario presionar ENTER para buscar, no solo hacer clic en botón</li>
+            <li>La búsqueda debe funcionar correctamente en dispositivos móviles y desktop (responsive)</li>
+          </ul>
 
-Criterios de Aceptación:
-✓ El campo de búsqueda debe aceptar mínimo 2 caracteres
-✓ Los resultados deben aparecer en <2 segundos
-✓ Mostrar número total de resultados encontrados
-✓ Si no hay resultados, mostrar "No se encontraron productos"
-✓ Permitir presionar ENTER para buscar
-✓ Funcionar en dispositivos móviles y desktop`}
-          />
+          <p>
+            Note que cada criterio es comprobable: puedes verificar si se cumple o no. No son vagos como "debe funcionar bien"
+            sino específicos como "en menos de 2 segundos".
+          </p>
         </>
       )
     },
@@ -163,49 +168,49 @@ Criterios de Aceptación:
             No son funcionalidades en sí, sino características de calidad.
           </p>
 
-          <h3>Categorías Principales</h3>
+          <h3>Rendimiento</h3>
+          <p>
+            El rendimiento es sobre velocidad. Los usuarios tienen paciencia limitada. Las <strong>páginas deben cargar
+            en menos de 2 segundos</strong>, o verás a usuarios saltando a competidores. Las <strong>APIs deben responder
+            en menos de 500ms</strong> para no sentirse lenta la interacción. Si tu aplicación será popular, debe
+            <strong>soportar 1000 usuarios simultáneos</strong> sin fallar. Las <strong>búsquedas deben devolver resultados
+            en menos de 1 segundo</strong>, de lo contrario es frustrante.
+          </p>
 
-          <h4>1. Rendimiento</h4>
-          <ul>
-            <li>Las páginas deben cargar en menos de 2 segundos</li>
-            <li>Las APIs deben responder en menos de 500ms</li>
-            <li>El sistema debe soportar 1000 usuarios simultáneos</li>
-            <li>Las búsquedas deben devolver resultados en menos de 1 segundo</li>
-          </ul>
+          <h3>Seguridad</h3>
+          <p>
+            La seguridad protege datos sensitivos. <strong>Todas las contraseñas deben encriptarse</strong> con algoritmos
+            como bcrypt; nunca almacenar en texto plano. <strong>HTTPS en todas las conexiones</strong> asegura que los datos
+            en tránsito no sean interceptados. <strong>Validar toda entrada</strong> previene ataques como SQL injection y XSS.
+            <strong>Tokens JWT con expiración de 1 hora</strong> limita el daño si alguien roba un token. <strong>Roles y permisos
+            diferenciados</strong> aseguran que un usuario normal no pueda hacer operaciones de admin.
+          </p>
 
-          <h4>2. Seguridad</h4>
-          <ul>
-            <li>Todas las contraseñas encriptadas con bcrypt o similar</li>
-            <li>HTTPS en todas las conexiones (SSL/TLS)</li>
-            <li>Validación de entrada para prevenir SQL injection y XSS</li>
-            <li>Tokens JWT con expiración de 1 hora</li>
-            <li>Roles y permisos para acceso diferenciado (Admin, Usuario, Vendedor)</li>
-          </ul>
+          <h3>Disponibilidad</h3>
+          <p>
+            La disponibilidad mide confiabilidad. Un objetivo común es <strong>99.9% uptime</strong> (máximo 43 minutos de
+            inactividad por mes). Para lograrlo, necesitas <strong>backup automático diario</strong> de la base de datos para
+            no perder datos. Necesitas planes de <strong>recuperación ante fallos en menos de 1 hora</strong>. <strong>Monitoreo
+            continuo</strong> alerta de problemas antes de que los usuarios los noten.
+          </p>
 
-          <h4>3. Disponibilidad</h4>
-          <ul>
-            <li>99.9% uptime (máximo 43 minutos de inactividad por mes)</li>
-            <li>Backup automático diario de la base de datos</li>
-            <li>Recuperación ante fallos en menos de 1 hora</li>
-            <li>Monitoreo continuo de aplicación</li>
-          </ul>
+          <h3>Escalabilidad</h3>
+          <p>
+            La escalabilidad es crecer sin dolor. Tu <strong>base de datos debe manejar hasta 1 millón de registros</strong>
+            sin ralentizarse significativamente. Debes poder <strong>agregar más servidores horizontalmente</strong> cuando
+            aumenta carga. <strong>Caché (como Redis)</strong> reduce carga en base de datos almacenando datos frecuentes en
+            memoria. <strong>Optimización de queries</strong> (índices, select selectivos) mejora velocidad dramáticamente.
+          </p>
 
-          <h4>4. Escalabilidad</h4>
-          <ul>
-            <li>Base de datos debe manejar hasta 1 millón de registros</li>
-            <li>Posibilidad de agregar servidores horizontalmente</li>
-            <li>Caché para datos frecuentes (Redis)</li>
-            <li>Optimización de queries en la base de datos</li>
-          </ul>
-
-          <h4>5. Usabilidad</h4>
-          <ul>
-            <li>Interfaz intuitiva (sin necesidad de entrenamiento)</li>
-            <li>Compatible con navegadores modernos</li>
-            <li>Responsive en móvil, tablet y desktop</li>
-            <li>Accesible para usuarios con discapacidades (WCAG 2.1)</li>
-            <li>Tiempo de aprendizaje menor a 5 minutos</li>
-          </ul>
+          <h3>Usabilidad</h3>
+          <p>
+            La usabilidad es sobre experiencia del usuario. Una <strong>interfaz intuitiva</strong> no requiere manual; los
+            usuarios descubren cómo usarla explorando. <strong>Compatible con navegadores modernos</strong> (Chrome, Firefox,
+            Safari, Edge). <strong>Responsive en móvil, tablet y desktop</strong> es prácticamente obligatorio en 2025.
+            <strong>Accesible para usuarios con discapacidades</strong> (WCAG 2.1) incluye contraste adecuado, navegación por
+            teclado, y soporte para screen readers. <strong>Tiempo de aprendizaje menor a 5 minutos</strong> significa que usuarios
+            nuevos pueden ser productivos inmediatamente.
+          </p>
 
           <CodeBlock
             language="text"
@@ -245,27 +250,31 @@ Requisito: Disponibilidad
           </p>
 
           <h3>Matriz de Priorización (MoSCoW)</h3>
-          <CodeBlock
-            language="text"
-            code={`MUST HAVE (Imprescindible)
-├─ Sin esto, el proyecto no funciona
-├─ Ejemplo: Login, Catálogo, Carrito, Pago
-└─ Dedicar 60% del esfuerzo
+          <p>
+            No todos los requisitos son igual de importantes. La matriz MoSCoW (pronunciado "Moscow") ayuda a priorizar.
+            <strong>MUST HAVE</strong> son funcionalidades sin las cuales el proyecto simplemente no funciona. En un e-commerce,
+            eso es Login, Catálogo de productos, Carrito, y Pago. Debes dedicar <strong>aproximadamente 60% de tu esfuerzo</strong>
+            a estas funcionalidades críticas.
+          </p>
 
-SHOULD HAVE (Importante)
-├─ Mejorar mucho la experiencia
-├─ Ejemplo: Búsqueda avanzada, Wishlist, Reseñas
-└─ Dedicar 30% del esfuerzo
+          <p>
+            <strong>SHOULD HAVE</strong> son importantes y mejoran significativamente la experiencia, pero el proyecto funciona sin
+            ellas. Ejemplos: Búsqueda avanzada con filtros, Wishlist para guardar productos favoritos, Sistema de Reseñas de usuarios.
+            Dedica <strong>aproximadamente 30% de esfuerzo</strong> aquí.
+          </p>
 
-COULD HAVE (Deseable)
-├─ Sería lindo tenerlo
-├─ Ejemplo: Sistema de recomendaciones, Ofertas
-└─ Dedicar 10% del esfuerzo
+          <p>
+            <strong>COULD HAVE</strong> son "nice to have" - sería lindo tenerlas pero no son prioritarias. Ejemplos: Sistema de
+            recomendaciones inteligente, Ofertas personalizadas por usuario, Programa de referidos. Dedica <strong>aproximadamente 10%
+            de esfuerzo</strong> si te sobra tiempo.
+          </p>
 
-WON'T HAVE (Para futuro)
-├─ No está en este proyecto
-└─ Ejemplo: App móvil nativa, Integración con IA`}
-          />
+          <p>
+            <strong>WON'T HAVE</strong> son cosas que explícitamente NO incluirás en este proyecto. Declararlas evita discusiones
+            innecesarias. Ejemplos: App móvil nativa, Integración con IA, Sistema de pagos real (simulado es suficiente). Pueden ser
+            para futuro, pero no ahora.
+          </p>
+
 
           <h3>Tabla de Priorización por Sprint</h3>
           <Table
@@ -294,66 +303,55 @@ WON'T HAVE (Para futuro)
 
           <h3>Ejemplo: Proyecto E-commerce (JoMa)</h3>
 
-          <h4>Sprint 1: Fundación (3 semanas)</h4>
-          <CodeBlock
-            language="text"
-            code={`User Stories del Sprint 1:
+          <h3>Sprint 1: Fundación (3 semanas)</h3>
+          <p>
+            El <strong>primer sprint</strong> establece los cimientos. Comienza con <strong>Autenticación</strong>, que es crítica:
+            los usuarios pueden registrarse con email y contraseña, hacer login de forma segura, y recuperar contraseña si la olvidan.
+            Sin esto, no hay proyecto.
+          </p>
 
-US #1: Autenticación de Usuarios
-- Registrarse con email y contraseña
-- Login con validación segura
-- Recuperar contraseña por email
-- Sesión de usuario activa
+          <p>
+            Luego viene la <strong>Interfaz Principal</strong>. Creas un header con navegación clara, un footer con información,
+            un menú responsive que funciona en móviles, y aseguras que el diseño sea consistente. Esto proporciona la estructura
+            visual que todos los demás componentes usarán.
+          </p>
 
-US #2: Interfaz Principal
-- Header con navegación
-- Footer con información
-- Menú responsive para móvil
-- Diseño consistente
+          <p>
+            Finalmente, implementas el <strong>Catálogo de Productos</strong>. Mostrar un grid de productos con tarjetas que incluyan
+            imagen, nombre y precio. Agregar paginación (mostrar 12 productos por página) porque si muestras 10.000 de una vez, la
+            página será demasiado pesada. Permitir filtrar por categoría facilita al usuario encontrar lo que busca.
+          </p>
 
-US #3: Catálogo de Productos
-- Mostrar grid de productos
-- Tarjetas con imagen, nombre, precio
-- Paginación de 12 productos
-- Filtro por categoría`}
-          />
+          <h3>Sprint 2: Shopping Cart (3 semanas)</h3>
+          <p>
+            En el <strong>segundo sprint</strong> el usuario puede comprar. Implementas el <strong>Carrito de Compras</strong>: agregar
+            productos, ver carrito con cantidades, actualizar cantidades fácilmente, eliminar productos, y calcular total automáticamente.
+            Pequeños detalles como guardar carrito en localStorage hacen que si el usuario recarga, no pierda sus productos.
+          </p>
 
-          <h4>Sprint 2: Shopping Cart (3 semanas)</h4>
-          <CodeBlock
-            language="text"
-            code={`User Stories del Sprint 2:
+          <p>
+            En paralelo, desarrollas la <strong>API de Productos</strong>. GET /products retorna lista paginada de todos los productos.
+            GET /products/:id retorna detalles de un producto específico. GET /products?category=X filtra por categoría. Documentar la API
+            (en Swagger/OpenAPI) ayuda a otros a entender cómo usarla.
+          </p>
 
-US #4: Carrito de Compras
-- Agregar productos al carrito
-- Ver carrito con cantidades
-- Actualizar cantidades
-- Eliminar productos
-- Calcular total automáticamente
+          <h3>Sprint 3: Checkout y Admin (4 semanas)</h3>
+          <p>
+            El <strong>tercer sprint</strong> cierra la compra. <strong>Checkout Seguro</strong> incluye: formulario de dirección de envío,
+            simulación de pago (sin conectar a Stripe/PayPal en este proyecto), confirmación de orden con número único, y email de confirmación
+            al usuario. Después de esto, el usuario debe ver su orden como "Processing" o "Completed".
+          </p>
 
-US #5: API de Productos
-- GET /products - Lista de productos
-- GET /products/:id - Detalle
-- GET /products?category=X - Por categoría
-- Documentación de API`}
-          />
+          <p>
+            Finalmente, un <strong>Panel de Administración</strong> permite al admin: ver todas las órdenes del sistema (no solo las suyas),
+            cambiar estado de orden (Pending → Processing → Shipped), gestionar inventario (actualizar stock), y ver reportes básicos
+            (vendas hoy, productos más vendidos, etc).
+          </p>
 
-          <h4>Sprint 3: Checkout y Admin (4 semanas)</h4>
-          <CodeBlock
-            language="text"
-            code={`User Stories del Sprint 3:
-
-US #6: Checkout Seguro
-- Formulario de envío
-- Simulación de pago
-- Confirmación de orden
-- Email de confirmación
-
-US #7: Panel de Administración
-- Ver todas las órdenes
-- Cambiar estado de orden
-- Gestionar inventario
-- Ver reportes`}
-          />
+          <InfoBox type="info">
+            <strong>Tip:</strong> Cada historia de usuario debe tomar 4-8 horas de desarrollo. Si toma más, divídela en historias más pequeñas.
+            Si toma menos, combínala con otra.
+          </InfoBox>
 
           <InfoBox type="info">
             <strong>Tip:</strong> Cada historia de usuario debe tomar 4-8 horas de desarrollo.
