@@ -1,470 +1,330 @@
-import { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
 
-export function LandingKubernetes() {
-  const [activeTab, setActiveTab] = useState('fundamentales');
-  const [expandedLesson, setExpandedLesson] = useState(null);
+export const LandingKubernetes = () => {
   const navigate = useNavigate();
-  const breadcrumbs = useBreadcrumb();
+
+  const lessons = [
+    {
+      title: 'Introducción: Qué es Kubernetes',
+      description: 'Conceptos básicos, arquitectura y por qué necesitas Kubernetes',
+      icon: '☸️',
+      link: '/kubernetes/fundamentales/intro'
+    },
+    {
+      title: 'Pods: La unidad más pequeña',
+      description: 'Entiende qué es un Pod y cómo funcionan los contenedores',
+      icon: '📦',
+      link: '/kubernetes/fundamentales/pods'
+    },
+    {
+      title: 'Deployments: Gestión de réplicas',
+      description: 'Despliegue automático, escalado y actualizaciones sin downtime',
+      icon: '🚀',
+      link: '/kubernetes/fundamentales/deployments'
+    },
+    {
+      title: 'Docker vs Kubernetes',
+      description: 'Entiende cuándo usar Docker y cuándo Kubernetes',
+      icon: '🔄',
+      link: '/docker/comparacion-docker-vs-kubernetes'
+    }
+  ];
+
+  const concepts = [
+    {
+      title: 'Orquestación',
+      description: 'Gestiona automáticamente múltiples contenedores en múltiples servidores',
+      icon: '🎼'
+    },
+    {
+      title: 'Auto-escalado',
+      description: 'Aumenta o reduce réplicas automáticamente según la carga',
+      icon: '📈'
+    },
+    {
+      title: 'Alta Disponibilidad',
+      description: 'Recuperación automática ante fallos de servidores o contenedores',
+      icon: '🛡️'
+    },
+    {
+      title: 'Rolling Updates',
+      description: 'Actualiza versiones sin interrumpir el servicio',
+      icon: '🔄'
+    },
+    {
+      title: 'Balanceo de Carga',
+      description: 'Distribuye tráfico automáticamente entre réplicas',
+      icon: '⚖️'
+    },
+    {
+      title: 'Gestión de Recursos',
+      description: 'CPU, memoria y almacenamiento distribuido eficientemente',
+      icon: '⚙️'
+    }
+  ];
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-      {/* Breadcrumbs */}
-      <nav style={{ marginBottom: '2rem', fontSize: '0.9rem' }}>
-        {breadcrumbs.map((crumb, idx) => (
-          <span key={idx}>
-            {crumb.link ? (
-              <a href={crumb.link} style={{ color: '#0066cc', textDecoration: 'none', cursor: 'pointer' }}>
-                {crumb.label}
-              </a>
-            ) : (
-              <span>{crumb.label}</span>
-            )}
-            {idx < breadcrumbs.length - 1 && ' > '}
-          </span>
-        ))}
-      </nav>
-
-      {/* Hero */}
-      <div style={{
-        textAlign: 'center',
-        marginBottom: '4rem',
-        padding: '3rem 0'
-      }}>
-        <h1 style={{ fontSize: '3.5rem', margin: '0 0 1rem 0', color: '#ff006e' }}>
-          ☸️ Kubernetes
-        </h1>
-        <p style={{ fontSize: '1.3rem', color: '#666', margin: 0, lineHeight: '1.6' }}>
-          Orquestación de contenedores a escala empresarial<br/>
-          <span style={{ fontSize: '1rem', color: '#999' }}>Automatiza el despliegue, escalado y gestión de aplicaciones</span>
+    <div className="lesson-container">
+      <div className="lesson-header">
+        <h1>Kubernetes</h1>
+        <p className="lesson-intro">
+          Orquestación de contenedores a escala empresarial. Automatiza el despliegue, escalado y gestión de aplicaciones en producción
         </p>
       </div>
 
-      {/* Tabs Navigation */}
-      <div style={{
-        marginBottom: '3rem',
-        borderBottom: '2px solid #e0e0e0',
-        display: 'flex',
-        gap: '0.5rem',
-        overflowX: 'auto',
-        paddingBottom: '1rem'
-      }}>
-        {[
-          { id: 'fundamentales', label: 'Fundamentales', icon: '📖' },
-          { id: 'comparativas', label: 'Comparativas & Guías', icon: '🔄' }
-        ].map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            style={{
-              padding: '0.75rem 1.5rem',
-              border: 'none',
-              background: activeTab === tab.id ? 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)' : '#f5f5f5',
-              color: activeTab === tab.id ? '#fff' : '#333',
-              borderRadius: '8px 8px 0 0',
-              cursor: 'pointer',
-              fontWeight: activeTab === tab.id ? '600' : '500',
-              fontSize: '0.95rem',
-              transition: 'all 0.3s',
-              whiteSpace: 'nowrap',
-              borderBottom: activeTab === tab.id ? '3px solid #c2004d' : 'none'
-            }}
-            onMouseEnter={(e) => {
-              if (activeTab !== tab.id) {
-                e.currentTarget.style.backgroundColor = '#efefef';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (activeTab !== tab.id) {
-                e.currentTarget.style.backgroundColor = '#f5f5f5';
-              }
-            }}
-          >
-            {tab.icon} {tab.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Tab Content */}
-      <div style={{ marginBottom: '4rem' }}>
-        {activeTab === 'fundamentales' && (
-          <div>
-            <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>
-              Fundamentales
-            </h2>
-            <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', fontStyle: 'italic', lineHeight: '1.6' }}>
-              Comienza aquí: qué es Kubernetes, arquitectura, conceptos clave. Todo lo que necesitas saber para entender cómo Kubernetes gestiona contenedores.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {[
-                {
-                  num: 1,
-                  title: 'Introducción: Qué es Kubernetes',
-                  link: '/kubernetes/fundamentales/intro',
-                  desc: 'Conceptos básicos, arquitectura y por qué necesitas K8s',
-                  preview: 'Kubernetes es un orquestador de contenedores que automatiza el despliegue, escalado y gestión de aplicaciones. Descubre la arquitectura con Control Plane y Nodes, y conceptos clave como Pods, Deployments, Services, ConfigMaps, Secrets e Ingress.'
-                },
-                {
-                  num: 2,
-                  title: 'Pods: La unidad más pequeña',
-                  link: '/kubernetes/fundamentales/pods',
-                  desc: 'Entiende qué es un Pod y cómo funcionan',
-                  preview: 'Un Pod es la unidad más pequeña en Kubernetes. Es un contenedor (o un grupo de contenedores) empaquetado juntos que corren en el mismo Node. En 99% de los casos, un Pod = un contenedor Docker. Aprende cómo crear Pods de forma imperativa y declarativa, y entiende su ciclo de vida.'
-                },
-                {
-                  num: 3,
-                  title: 'Deployments: Gestión de réplicas',
-                  link: '/kubernetes/fundamentales/deployments',
-                  desc: 'Cómo desplegar y escalar automáticamente tu app',
-                  preview: 'Un Deployment es la forma recomendada de desplegar tu app en Kubernetes. Define cuántas réplicas quieres, qué imagen Docker usar, qué recursos necesita. Kubernetes crea y gestiona los Pods automáticamente y realiza rolling updates sin downtime.'
-                }
-              ].map((lesson) => (
-                <div key={lesson.num}>
-                  <button
-                    onClick={() => setExpandedLesson(expandedLesson === lesson.num ? null : lesson.num)}
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      gap: '1.5rem',
-                      alignItems: 'center',
-                      cursor: 'pointer',
-                      padding: '1.5rem',
-                      backgroundColor: expandedLesson === lesson.num ? '#f0f0f0' : '#f9f9f9',
-                      borderRadius: '8px',
-                      transition: 'all 0.3s',
-                      border: expandedLesson === lesson.num ? '2px solid #ff006e' : '1px solid #e0e0e0',
-                      outline: 'none'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (expandedLesson !== lesson.num) {
-                        e.currentTarget.style.backgroundColor = '#f0f0f0';
-                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 110, 0.1)';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (expandedLesson !== lesson.num) {
-                        e.currentTarget.style.backgroundColor = '#f9f9f9';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }
-                    }}
-                  >
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '50px',
-                      height: '50px',
-                      minWidth: '50px',
-                      background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-                      color: '#fff',
-                      borderRadius: '50%',
-                      fontWeight: '700',
-                      fontSize: '1.3rem'
-                    }}>
-                      {lesson.num}
-                    </div>
-                    <div style={{ flex: 1, textAlign: 'left' }}>
-                      <p style={{ margin: '0 0 0.5rem 0', fontWeight: '600', fontSize: '0.95rem', color: '#333' }}>
-                        {lesson.title}
-                      </p>
-                      <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', lineHeight: '1.5' }}>
-                        {lesson.desc}
-                      </p>
-                    </div>
-                    <div style={{
-                      fontSize: '1.2rem',
-                      color: '#ff006e',
-                      transition: 'transform 0.3s',
-                      transform: expandedLesson === lesson.num ? 'rotate(180deg)' : 'rotate(0deg)',
-                      minWidth: '24px'
-                    }}>
-                      ▼
-                    </div>
-                  </button>
-
-                  {expandedLesson === lesson.num && (
-                    <div style={{
-                      backgroundColor: '#fafafa',
-                      border: '2px solid #ff006e',
-                      borderTop: 'none',
-                      borderRadius: '0 0 8px 8px',
-                      padding: '2rem',
-                      marginBottom: '0.5rem'
-                    }}>
-                      <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: '#555', marginBottom: '1.5rem' }}>
-                        {lesson.preview}
-                      </p>
-                      <button
-                        onClick={() => navigate(lesson.link)}
-                        style={{
-                          background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-                          color: '#fff',
-                          border: 'none',
-                          padding: '0.75rem 1.5rem',
-                          fontSize: '0.9rem',
-                          fontWeight: '600',
-                          borderRadius: '6px',
-                          cursor: 'pointer',
-                          transition: 'all 0.3s'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.backgroundColor = '#c2004d';
-                          e.target.style.transform = 'translateY(-2px)';
-                          e.target.style.boxShadow = '0 4px 12px rgba(255, 0, 110, 0.3)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.background = 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)';
-                          e.target.style.transform = 'translateY(0)';
-                          e.target.style.boxShadow = 'none';
-                        }}
-                      >
-                        Ver lección completa →
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'comparativas' && (
-          <div>
-            <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#333' }}>
-              Comparativas & Guías
-            </h2>
-            <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', fontStyle: 'italic', lineHeight: '1.6' }}>
-              Entiende las diferencias entre Kubernetes y otras herramientas, y cuándo usar qué.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {[
-                {
-                  num: 1,
-                  title: 'Docker vs Kubernetes: ¿Cuál es la diferencia?',
-                  link: '/docker/comparacion-docker-vs-kubernetes',
-                  desc: 'Entiende cuándo usar Docker y cuándo Kubernetes',
-                  preview: 'Docker es un contenedor - une tu código, dependencias y configuración en una imagen. Kubernetes es un orquestador - gestiona muchos contenedores Docker en múltiples servidores. Docker es para desarrollo, testing y despliegue de contenedores individuales. Kubernetes es para producción a escala empresarial con múltiples instancias, auto-escalado y alta disponibilidad.'
-                }
-              ].map((lesson) => (
-                <div key={lesson.num}>
-                  <button
-                    onClick={() => setExpandedLesson(expandedLesson === `comp-${lesson.num}` ? null : `comp-${lesson.num}`)}
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      gap: '1.5rem',
-                      alignItems: 'center',
-                      cursor: 'pointer',
-                      padding: '1.5rem',
-                      backgroundColor: expandedLesson === `comp-${lesson.num}` ? '#f0f0f0' : '#f9f9f9',
-                      borderRadius: '8px',
-                      transition: 'all 0.3s',
-                      border: expandedLesson === `comp-${lesson.num}` ? '2px solid #ff006e' : '1px solid #e0e0e0',
-                      outline: 'none'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (expandedLesson !== `comp-${lesson.num}`) {
-                        e.currentTarget.style.backgroundColor = '#f0f0f0';
-                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 110, 0.1)';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (expandedLesson !== `comp-${lesson.num}`) {
-                        e.currentTarget.style.backgroundColor = '#f9f9f9';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }
-                    }}
-                  >
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '50px',
-                      height: '50px',
-                      minWidth: '50px',
-                      background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-                      color: '#fff',
-                      borderRadius: '50%',
-                      fontWeight: '700',
-                      fontSize: '1.3rem'
-                    }}>
-                      {lesson.num}
-                    </div>
-                    <div style={{ flex: 1, textAlign: 'left' }}>
-                      <p style={{ margin: '0 0 0.5rem 0', fontWeight: '600', fontSize: '0.95rem', color: '#333' }}>
-                        {lesson.title}
-                      </p>
-                      <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', lineHeight: '1.5' }}>
-                        {lesson.desc}
-                      </p>
-                    </div>
-                    <div style={{
-                      fontSize: '1.2rem',
-                      color: '#ff006e',
-                      transition: 'transform 0.3s',
-                      transform: expandedLesson === `comp-${lesson.num}` ? 'rotate(180deg)' : 'rotate(0deg)',
-                      minWidth: '24px'
-                    }}>
-                      ▼
-                    </div>
-                  </button>
-
-                  {expandedLesson === `comp-${lesson.num}` && (
-                    <div style={{
-                      backgroundColor: '#fafafa',
-                      border: '2px solid #ff006e',
-                      borderTop: 'none',
-                      borderRadius: '0 0 8px 8px',
-                      padding: '2rem',
-                      marginBottom: '0.5rem'
-                    }}>
-                      <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: '#555', marginBottom: '1.5rem' }}>
-                        {lesson.preview}
-                      </p>
-                      <button
-                        onClick={() => navigate(lesson.link)}
-                        style={{
-                          background: 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)',
-                          color: '#fff',
-                          border: 'none',
-                          padding: '0.75rem 1.5rem',
-                          fontSize: '0.9rem',
-                          fontWeight: '600',
-                          borderRadius: '6px',
-                          cursor: 'pointer',
-                          transition: 'all 0.3s'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.backgroundColor = '#c2004d';
-                          e.target.style.transform = 'translateY(-2px)';
-                          e.target.style.boxShadow = '0 4px 12px rgba(255, 0, 110, 0.3)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.background = 'linear-gradient(135deg, #ff006e 0%, #ffffff 100%)';
-                          e.target.style.transform = 'translateY(0)';
-                          e.target.style.boxShadow = 'none';
-                        }}
-                      >
-                        Ver comparativa completa →
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* FAQ */}
-      <div style={{ marginTop: '4rem' }}>
-        <h2 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: '#333', textAlign: 'center' }}>
-          Preguntas Frecuentes
-        </h2>
-        <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', textAlign: 'center', fontStyle: 'italic', lineHeight: '1.6' }}>
-          Respuestas rápidas a las dudas más comunes sobre Kubernetes
+      <section className="lesson-section">
+        <h2>¿Qué es Kubernetes?</h2>
+        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          <strong>Kubernetes (K8s)</strong> es un <strong>orquestador de contenedores</strong> que automatiza el despliegue, escalado y gestión de aplicaciones.
+          Mientras que Docker empaqueta tu aplicación en contenedores, Kubernetes gestiona <strong>cientos o miles de contenedores</strong> en múltiples servidores
+          de forma automática, garantizando alta disponibilidad y rendimiento óptimo.
         </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{
+          backgroundColor: '#f0f4ff',
+          border: '2px solid #9c27b0',
+          borderRadius: '8px',
+          padding: '1.5rem',
+          marginBottom: '2rem'
+        }}>
+          <h3 style={{ marginTop: 0, color: '#9c27b0' }}>¿Por qué Kubernetes?</h3>
+          <ul style={{ fontSize: '1rem', lineHeight: '1.9', marginBottom: 0 }}>
+            <li><strong>Producción a Escala:</strong> Gestiona miles de contenedores automáticamente</li>
+            <li><strong>Alta Disponibilidad:</strong> Recuperación automática ante fallos</li>
+            <li><strong>Escalabilidad:</strong> Aumenta/reduce recursos según la demanda</li>
+            <li><strong>Despliegues Seguros:</strong> Rolling updates sin downtime</li>
+            <li><strong>Estándar Industria:</strong> Usado por Google, Amazon, Microsoft y Netflix</li>
+            <li><strong>Open Source:</strong> Comunidad global y soporte empresarial</li>
+          </ul>
+        </div>
+
+        <h3>Por qué aprender Kubernetes</h3>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+          marginTop: '1.5rem'
+        }}>
           {[
-            {
-              id: 'faq-1',
-              question: '¿Cuál es la diferencia entre Kubernetes y Docker?',
-              answer: 'Docker es una plataforma de containerización que empaqueta tu aplicación y sus dependencias en un contenedor. Kubernetes es un orquestador que gestiona múltiples contenedores Docker (u otros) en múltiples servidores, proporcionando escalado automático, actualizaciones sin tiempo de inactividad y auto-recuperación. Docker es para desarrollo y despliegue individual; Kubernetes es para producción a escala empresarial.'
-            },
-            {
-              id: 'faq-2',
-              question: '¿Necesito Kubernetes para mi proyecto?',
-              answer: 'Depende de tu escala y complejidad. Si tienes una aplicación pequeña corriendo en un servidor, probablemente no lo necesites. Kubernetes es ideal cuando: necesitas alta disponibilidad, múltiples instancias, auto-escalado, o gestión centralizada de múltiples servicios. Comienza con Docker local, luego considera Kubernetes cuando tu infraestructura se complique.'
-            },
-            {
-              id: 'faq-3',
-              question: '¿Cuánto cuesta ejecutar Kubernetes?',
-              answer: 'Kubernetes en sí es open source y gratuito. El costo viene de la infraestructura (servidores/cloud). Servicios gestionados como Amazon EKS, Google GKE o Azure AKS simplifican la operación pero tienen costos. Para desarrollo puedes usar Minikube o KinD (locales y gratuitos). En producción, los costos dependen del tamaño del clúster, no de Kubernetes.'
-            },
-            {
-              id: 'faq-4',
-              question: '¿Cómo empiezo a aprender Kubernetes?',
-              answer: 'Comienza por entender Docker y contenedores, luego aprende los conceptos básicos de Kubernetes: Pods, Deployments, Services. Usa Minikube o Docker Desktop para practicar en local. Esta plataforma tiene lecciones estructuradas que te guían desde conceptos básicos hasta operación en producción. Practica construyendo ejemplos simples e incrementa la complejidad gradualmente.'
-            },
-            {
-              id: 'faq-5',
-              question: '¿Kubernetes solo funciona con Docker?',
-              answer: 'No. Kubernetes es agnóstico a contenedores. Aunque Docker es el más popular, Kubernetes también soporta otros runtimes como containerd, CRI-O, Podman y más. Lo importante es que Kubernetes orquesta contenedores, sin importar su origen. Docker es solo una opción, aunque la más común en equipos.'
-            }
-          ].map((faq) => (
-            <div key={faq.id}>
-              <button
-                onClick={() => setExpandedLesson(expandedLesson === faq.id ? null : faq.id)}
-                style={{
-                  width: '100%',
-                  textAlign: 'left',
-                  padding: '1.25rem',
-                  backgroundColor: expandedLesson === faq.id ? '#f0f0f0' : '#f9f9f9',
-                  border: expandedLesson === faq.id ? '2px solid #ff006e' : '1px solid #e0e0e0',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  outline: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '1rem'
-                }}
-                onMouseEnter={(e) => {
-                  if (expandedLesson !== faq.id) {
-                    e.currentTarget.style.backgroundColor = '#f0f0f0';
-                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 0, 110, 0.1)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (expandedLesson !== faq.id) {
-                    e.currentTarget.style.backgroundColor = '#f9f9f9';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }
-                }}
-              >
-                <span style={{
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  color: '#333',
-                  flex: 1
-                }}>
-                  {faq.question}
-                </span>
-                <div style={{
-                  fontSize: '1.2rem',
-                  color: '#ff006e',
-                  transition: 'transform 0.3s',
-                  transform: expandedLesson === faq.id ? 'rotate(180deg)' : 'rotate(0deg)',
-                  minWidth: '24px',
-                  display: 'flex',
-                  justifyContent: 'center'
-                }}>
-                  ▼
-                </div>
-              </button>
-
-              {expandedLesson === faq.id && (
-                <div style={{
-                  backgroundColor: '#fafafa',
-                  border: '2px solid #ff006e',
-                  borderTop: 'none',
-                  borderRadius: '0 0 8px 8px',
-                  padding: '1.5rem',
-                  marginBottom: '0.5rem',
-                  fontSize: '0.9rem',
-                  lineHeight: '1.7',
-                  color: '#555'
-                }}>
-                  {faq.answer}
-                </div>
-              )}
+            { icon: '💼', title: 'Demanda Laboral', desc: 'Las grandes empresas requieren engineers K8s' },
+            { icon: '📈', title: 'Carrera Premium', desc: 'Especialidad bien remunerada y en crecimiento' },
+            { icon: '🌍', title: 'Relevancia Global', desc: 'Estándar de facto para DevOps moderno' },
+            { icon: '🚀', title: 'Impacto Directo', desc: 'Tus decisiones afectan toda la infraestructura' }
+          ].map((item, idx) => (
+            <div key={idx} style={{
+              backgroundColor: '#ffffff',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              textAlign: 'center'
+            }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
+              <h4 style={{ marginBottom: '0.5rem' }}>{item.title}</h4>
+              <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>{item.desc}</p>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      <section className="lesson-section">
+        <h2>Conceptos Clave de Kubernetes</h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem'
+        }}>
+          {concepts.map((concept, idx) => (
+            <div key={idx} style={{
+              backgroundColor: '#f0f4ff',
+              border: '2px solid #9c27b0',
+              borderRadius: '8px',
+              padding: '1.5rem'
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{concept.icon}</div>
+              <h4 style={{ margin: '0 0 0.75rem 0', color: '#9c27b0' }}>{concept.title}</h4>
+              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{concept.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="lesson-section">
+        <h2>Arquitectura de Kubernetes</h2>
+        <div style={{
+          backgroundColor: '#f5f5f5',
+          border: '3px solid #9c27b0',
+          borderRadius: '8px',
+          padding: '2rem',
+          marginBottom: '2rem'
+        }}>
+          <pre style={{
+            fontSize: '0.9rem',
+            lineHeight: '1.6',
+            margin: 0,
+            overflow: 'auto'
+          }}>
+{`┌──────────────────────────────────────────────────┐
+│       ARQUITECTURA DE KUBERNETES CLUSTER         │
+├──────────────────────────────────────────────────┤
+│                                                  │
+│  ┌─────────────────────────────────────┐         │
+│  │     CONTROL PLANE (Master)          │         │
+│  ├─────────────────────────────────────┤         │
+│  │ • API Server    → REST API central  │         │
+│  │ • etcd          → Base de datos     │         │
+│  │ • Scheduler     → Asigna Pods       │         │
+│  │ • Controllers   → Gestiona estado   │         │
+│  └─────────────────────────────────────┘         │
+│              ↓ ↓ ↓                               │
+│  ┌─────────────────────────────────────┐         │
+│  │      WORKER NODES (Servidores)      │         │
+│  ├─────────────────────────────────────┤         │
+│  │ Nodo 1        Nodo 2        Nodo 3  │         │
+│  │ ┌─────────┐  ┌─────────┐  ┌──────┐ │         │
+│  │ │ Pod 🐳  │  │ Pod 🐳  │  │Pod 🐳│ │         │
+│  │ │ Pod 🐳  │  │ Pod 🐳  │  │Pod 🐳│ │         │
+│  │ └─────────┘  └─────────┘  └──────┘ │         │
+│  │ • Kubelet    (Agent en cada nodo)   │         │
+│  │ • Container Runtime (Docker, etc)   │         │
+│  └─────────────────────────────────────┘         │
+│                                                  │
+│  Todo coordenado automáticamente por K8s        │
+└──────────────────────────────────────────────────┘`}
+          </pre>
+        </div>
+
+        <h3>Docker vs Kubernetes</h3>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '2rem',
+          marginTop: '1.5rem'
+        }}>
+          <div style={{
+            backgroundColor: '#e3f2fd',
+            border: '2px solid #2196F3',
+            borderRadius: '8px',
+            padding: '1.5rem'
+          }}>
+            <h4 style={{ marginTop: 0, color: '#2196F3' }}>Docker</h4>
+            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
+              <li>Empaqueta código en contenedores</li>
+              <li>Para desarrollo y testing local</li>
+              <li>Un servidor o máquina</li>
+              <li>Gestión manual de contenedores</li>
+              <li>Perfecto para comenzar</li>
+            </ul>
+          </div>
+
+          <div style={{
+            backgroundColor: '#f3e5f5',
+            border: '2px solid #9c27b0',
+            borderRadius: '8px',
+            padding: '1.5rem'
+          }}>
+            <h4 style={{ marginTop: 0, color: '#9c27b0' }}>Kubernetes</h4>
+            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
+              <li>Orquesta contenedores Docker</li>
+              <li>Para producción a escala</li>
+              <li>Múltiples servidores (cluster)</li>
+              <li>Gestión automática completa</li>
+              <li>Necesario para empresas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="lesson-section">
+        <h2>Lecciones</h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '1.5rem',
+          marginTop: '2rem'
+        }}>
+          {lessons.map((lesson, idx) => (
+            <div key={idx} style={{
+              backgroundColor: '#ffffff',
+              border: '2px solid #ddd',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              display: 'flex',
+              flexDirection: 'column',
+              transition: 'all 0.3s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#9c27b0';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(156,39,176,0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '#ddd';
+              e.currentTarget.style.boxShadow = 'none';
+            }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
+              <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
+              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
+                {lesson.description}
+              </p>
+              <button
+                onClick={() => navigate(lesson.link)}
+                style={{
+                  backgroundColor: '#9c27b0',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '0.75rem 1.5rem',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  transition: 'background-color 0.3s'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#7b1fa2'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#9c27b0'}
+              >
+                Ver Lección →
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="lesson-section" style={{
+        backgroundColor: '#f3e5f5',
+        border: '2px solid #9c27b0',
+        borderRadius: '8px',
+        padding: '2rem'
+      }}>
+        <h2>Ruta de Aprendizaje Recomendada</h2>
+        <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          Si eres nuevo en Kubernetes, te recomendamos este orden:
+        </p>
+        <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
+          <li><strong>1. Domina Docker primero</strong> → Entiende contenedores completamente</li>
+          <li><strong>2. Introducción: Qué es Kubernetes</strong> → Aprende la arquitectura</li>
+          <li><strong>3. Pods: La unidad más pequeña</strong> → Entiende los bloques básicos</li>
+          <li><strong>4. Deployments: Gestión de réplicas</strong> → Despliegues automáticos</li>
+          <li><strong>5. Docker vs Kubernetes</strong> → Clarifica cuándo usar cada uno</li>
+          <li><strong>6. Práctica local</strong> → Usa Minikube o Docker Desktop para practicar</li>
+        </ol>
+      </section>
+
+      <section className="lesson-section" style={{
+        backgroundColor: '#fff9c4',
+        border: '2px solid #fbc02d',
+        borderRadius: '8px',
+        padding: '1.5rem'
+      }}>
+        <h3 style={{ marginTop: 0, color: '#f57f17' }}>Consejo Profesional</h3>
+        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '1rem' }}>
+          No es necesario aprender Kubernetes si estás comenzando. Primero domina Docker completamente y asegúrate de que realmente lo necesitas.
+          Kubernetes añade complejidad significativa pero es imprescindible para infraestructuras empresariales.
+        </p>
+        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: 0 }}>
+          Muchos equipos usan PaaS (como Heroku o Vercel) en lugar de Kubernetes porque gestionan la orquestación por ti.
+          Elige lo que se adapte a tu escala y necesidades reales.
+        </p>
+      </section>
     </div>
   );
-}
+};

@@ -204,7 +204,7 @@ export const modulesWithLessons = [
     name: 'Kubernetes',
     icon: '☸️',
     description: 'Orquestación de contenedores a escala empresarial',
-    landingPage: '/kubernetes',
+    landingPage: '/kubernetes/landing',
     sections: [
       {
         id: 'fundamentales',
@@ -381,6 +381,7 @@ export const modulesWithLessons = [
     name: 'SQL - Bases de Datos',
     icon: '🗄️',
     description: 'DDL, DML, JOINs, consultas complejas',
+    landingPage: '/sql/landing',
     sections: [
       {
         id: 'basicos',
@@ -569,6 +570,7 @@ export const modulesWithLessons = [
     name: 'TFC',
     icon: '🚀',
     description: 'Trabajo Fin de Ciclo integrando Java Backend, Spring Boot, Bases de Datos y más',
+    landingPage: '/proyecto/landing',
     sections: [
       {
         id: 'planificacion',
@@ -709,6 +711,7 @@ export const modulesWithLessons = [
     name: 'Metodologías & Procesos',
     icon: '📊',
     description: 'Prácticas, metodologías y procesos para desarrollo profesional',
+    landingPage: '/metodologias/landing',
     sections: [
       {
         id: 'agile-scrum',
