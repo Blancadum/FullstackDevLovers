@@ -1,6 +1,6 @@
 import { Link, useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SEO, Breadcrumb, generateBreadcrumbItems } from '../components';
+import { SEO, Breadcrumb, generateBreadcrumbItems, ProjectSectionsGrid } from '../components';
 import blancaJavaImg from '../assets/images/header/blancajava.jpeg';
 import './ModulePage.css';
 
@@ -1087,40 +1087,47 @@ export function ModulePage({ moduleId }) {
             </div>
           )}
           {content.sections ? (
-            // Si tiene secciones, mostrar tabs + cluster activo
-            <>
-              <div className="tabs-container">
-                {content.sections.map((section, idx) => (
-                  <button
-                    key={idx}
-                    className={`tab ${activeTab === idx ? 'active' : ''}`}
-                    onClick={() => setActiveTab(idx)}
-                  >
-                    {section.name}
-                  </button>
-                ))}
+            // Si es proyecto: mostrar grid de secciones
+            moduleId === 'proyecto' ? (
+              <div className="container">
+                <ProjectSectionsGrid sections={content.sections} moduleId={moduleId} />
               </div>
-
-              <section className="topics-section">
-                <h2>
-                  {content.sections[activeTab].fullName || content.sections[activeTab].name}
-                </h2>
-                <p className="section-description">{content.sections[activeTab].description}</p>
-                <div className="all-topics-list">
-                  {content.sections[activeTab].lessons.map((lesson, lessonIndex) => (
-                    <Link
-                      key={lessonIndex}
-                      to={lesson.link}
-                      className="all-topic-item"
+            ) : (
+              // Si no es proyecto: mostrar tabs + cluster activo
+              <>
+                <div className="tabs-container">
+                  {content.sections.map((section, idx) => (
+                    <button
+                      key={idx}
+                      className={`tab ${activeTab === idx ? 'active' : ''}`}
+                      onClick={() => setActiveTab(idx)}
                     >
-                      <span className="all-topic-number">{lessonIndex + 1}</span>
-                      <span className="all-topic-title">{lesson.title}</span>
-                      <span className="all-topic-arrow">→</span>
-                    </Link>
+                      {section.name}
+                    </button>
                   ))}
                 </div>
-              </section>
-            </>
+
+                <section className="topics-section">
+                  <h2>
+                    {content.sections[activeTab].fullName || content.sections[activeTab].name}
+                  </h2>
+                  <p className="section-description">{content.sections[activeTab].description}</p>
+                  <div className="all-topics-list">
+                    {content.sections[activeTab].lessons.map((lesson, lessonIndex) => (
+                      <Link
+                        key={lessonIndex}
+                        to={lesson.link}
+                        className="all-topic-item"
+                      >
+                        <span className="all-topic-number">{lessonIndex + 1}</span>
+                        <span className="all-topic-title">{lesson.title}</span>
+                        <span className="all-topic-arrow">→</span>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              </>
+            )
           ) : (
             // Si no tiene secciones, mostrar topics normalmente
             <section className="topics-section">

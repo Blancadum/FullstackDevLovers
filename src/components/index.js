@@ -55,3 +55,4 @@ export { TabsVerticalContent } from './TabsVerticalContent';
 // Nuevas categorías
 export { CasesPracticalCard } from './CasesPracticalCard';
 export { MethodologyCard } from './MethodologyCard';
+export { ProjectSectionsGrid } from './ProjectSectionsGrid';
