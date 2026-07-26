@@ -169,8 +169,7 @@ export const lessonMetadata = {
     description: 'Testing: tipos de pruebas, JUnit, TDD, caja blanca/negra, análisis de cobertura.',
     keywords: 'Pruebas, Testing, JUnit, TDD, Cobertura, Caja blanca, Caja negra, QA',
     breadcrumb: 'Entornos > Pruebas'
-  },
-};
+  }};
 
 /**
  * Obtener metadatos de una lección

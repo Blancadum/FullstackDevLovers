@@ -23,7 +23,7 @@ export function AuthorHeader() {
               className="contact-link"
               title="Enviar email"
             >
-              <span className="contact-icon">✉️</span>
+              <span className="contact-icon">️</span>
               <span>{authorConfig.email}</span>
             </a>
 
@@ -34,7 +34,7 @@ export function AuthorHeader() {
               className="contact-link"
               title="Ver perfil de LinkedIn"
             >
-              <span className="contact-icon">💼</span>
+              <span className="contact-icon"></span>
               <span>LinkedIn</span>
             </a>
           </div>

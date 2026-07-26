@@ -1,583 +1,345 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-import { Breadcrumb } from '../components/Breadcrumb';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LandingHero, SEO, KotlinThemeCard } from '../components';
+import { getModule } from '../config/modulesConfig';
+import { getTheme } from '../config/themeColors';
+import { useLandingTheme } from '../hooks/useLandingTheme';
+import { getThemeByModule } from '../config/landingThemes';
 
-export const LandingProyecto = () => {
-  const navigate = useNavigate();
-  const breadcrumbs = useBreadcrumb();
+export const LandingProyecto = () => {  const theme = getTheme('proyecto');
+  const proyectoModule = getModule('proyecto');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  const lessons = [
-    // Planificación
+  // Aplicar tema dinámico con variables CSS
+  const landingTheme = getThemeByModule('proyecto');
+  useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
+
+  if (!proyectoModule) return null;
+
+  // Schema Markup para JSON-LD
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': 'Kubernetes - Orquestación de Contenedores Empresarial',
+    'description': 'Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático y gestión de infraestructura a escala',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Fullstack Dev Lovers',
+      'url': 'https://fullstackdevlovers.com'
+    },
+    'url': 'https://fullstackdevlovers.com/cloud/kubernetes',
+    'hasPart': proyectoModule.sections.flatMap((section, idx) =>
+      section.lessons.map((lesson, lidx) => ({
+        '@type': 'LearningResource',
+        'name': lesson.title,
+        'url': `https://fullstackdevlovers.com${lesson.link}`
+      }))
+    )
+  };
+
+  const faqData = [
     {
-      title: 'Definición del Proyecto',
-      description: 'Idea, alcance y objetivos de tu Trabajo Fin de Ciclo',
-      icon: '🎯',
-      link: '/proyecto/planificacion/definicion',
-      category: 'Planificación'
+      question: '¿Qué es Kubernetes y por qué lo necesito?',
+      answer: 'Kubernetes (K8s) es un orquestador de contenedores que automatiza deployment, escalado y gestión de aplicaciones containerizadas. Mientras Docker maneja un contenedor en una máquina, Kubernetes gestiona cientos o miles de contenedores en múltiples servidores, garantizando alta disponibilidad, actualizaciones sin downtime y auto-healing automático.'
     },
     {
-      title: 'Requisitos y Especificaciones',
-      description: 'Define qué debe hacer el proyecto y cómo se evaluará',
-      icon: '📋',
-      link: '/proyecto/planificacion/requisitos',
-      category: 'Planificación'
+      question: '¿Necesito Kubernetes o Docker es suficiente?',
+      answer: 'Docker es suficiente si: (1) Tu infra es una o pocas máquinas, (2) Usas PaaS (Heroku, Vercel, AWS Elastic Beanstalk), (3) Tu equipo no tiene expertise en DevOps. Necesitas Kubernetes si: (1) Tienes múltiples servidores, (2) Necesitas auto-escalado, (3) Trabajas en startup/empresa con crecimiento rápido, (4) Usas on-premise infrastructure.'
     },
     {
-      title: 'Arquitectura y Diseño',
-      description: 'Diseño de la solución técnica y base de datos',
-      icon: '🏗️',
-      link: '/proyecto/planificacion/arquitectura',
-      category: 'Planificación'
+      question: '¿Cuál es la curva de aprendizaje de Kubernetes?',
+      answer: 'Kubernetes tiene una curva empinada. Básicos: 2-4 semanas. Profundidad media: 2-3 meses. Expertise: 6-12 meses con proyectos reales. Recomendación: domina Docker 100% primero. Aprende Kubernetes solo cuando realmente lo necesites. Un 70% de equipos pequeños están sobre-ingenierizados con K8s cuando Docker+PaaS sería suficiente.'
     },
     {
-      title: 'Ejemplos de Proyectos TFC',
-      description: '12+ proyectos viables y desarrollables',
-      icon: '💡',
-      link: '/proyecto/planificacion/ejemplos',
-      category: 'Planificación'
-    },
-    // Metodología
-    {
-      title: 'Agile y SCRUM',
-      description: 'Metodología iterativa para gestionar tu proyecto',
-      icon: '⚡',
-      link: '/proyecto/metodologia/agile-scrum',
-      category: 'Metodología'
+      question: '¿Kubernetes vs Docker Swarm vs Nomad: cuál elegir?',
+      answer: 'Docker Swarm: más simple, integrado en Docker, pero limitado. Kubernetes: estándar industria, masiva comunidad, curva empinada, pero definitivamente vale la pena. Nomad: agnóstico (no solo contenedores), flexible, pero menos comunidad. Para 99% de casos, Kubernetes es la respuesta. Es el estándar de facto.'
     },
     {
-      title: 'Sprint 1',
-      description: 'Primer sprint: features básicas y MVP',
-      icon: '🚀',
-      link: '/proyecto/metodologia/sprint-1',
-      category: 'Metodología'
+      question: '¿Puedo correr Kubernetes localmente en desarrollo?',
+      answer: 'Sí. Tienes varias opciones: (1) Minikube - VM local con K8s completo (recomendado para aprender), (2) Docker Desktop - K8s integrado en Windows/Mac, (3) Kind - Kubernetes en Docker (perfecto para testing). Para desarrollo inicial, Minikube es lo mejor. Aprendes en tu laptop sin necesidad de infraestructura cloud.'
     },
     {
-      title: 'Sprint 2',
-      description: 'Segundo sprint: features avanzadas y optimización',
-      icon: '🚀',
-      link: '/proyecto/metodologia/sprint-2',
-      category: 'Metodología'
-    },
-    // Desarrollo
-    {
-      title: 'Setup del Proyecto',
-      description: 'Configuración inicial: Git, IDE, frameworks, BD',
-      icon: '⚙️',
-      link: '/proyecto/desarrollo/setup',
-      category: 'Desarrollo'
-    },
-    {
-      title: 'Desarrollo Backend',
-      description: 'Implementación con Java, Spring Boot y APIs REST',
-      icon: '🔧',
-      link: '/proyecto/desarrollo/backend',
-      category: 'Desarrollo'
-    },
-    {
-      title: 'Base de Datos',
-      description: 'Diseño y implementación con MySQL o PostgreSQL',
-      icon: '🗄️',
-      link: '/proyecto/desarrollo/database',
-      category: 'Desarrollo'
-    },
-    {
-      title: 'APIs REST',
-      description: 'Creación de endpoints REST para frontend y móvil',
-      icon: '🌐',
-      link: '/proyecto/desarrollo/apis',
-      category: 'Desarrollo'
-    },
-    // Testing
-    {
-      title: 'Testing Unitario',
-      description: 'Pruebas de funciones individuales con JUnit',
-      icon: '🧪',
-      link: '/proyecto/testing/unitario',
-      category: 'Testing'
-    },
-    {
-      title: 'Testing de Integración',
-      description: 'Pruebas de componentes integrados y APIs',
-      icon: '🔗',
-      link: '/proyecto/testing/integracion',
-      category: 'Testing'
-    },
-    {
-      title: 'Validación Final',
-      description: 'Testing de aceptación y validación de requisitos',
-      icon: '✔️',
-      link: '/proyecto/testing/validacion',
-      category: 'Testing'
-    },
-    // Despliegue
-    {
-      title: 'Empaquetado y Build',
-      description: 'Maven/Gradle: genera JAR y WAR para producción',
-      icon: '📦',
-      link: '/proyecto/despliegue/build',
-      category: 'Despliegue'
-    },
-    {
-      title: 'Documentación',
-      description: 'README, API docs con Swagger, manual de usuario',
-      icon: '📖',
-      link: '/proyecto/despliegue/documentacion',
-      category: 'Despliegue'
-    },
-    {
-      title: 'Despliegue en Cloud',
-      description: 'Deploy a Heroku, AWS, o Azure con CI/CD',
-      icon: '☁️',
-      link: '/proyecto/despliegue/cloud',
-      category: 'Despliegue'
-    },
-    // Retos
-    {
-      title: 'REPTE 1: Especificación',
-      description: 'Define el proyecto con requisitos y criterios',
-      icon: '📋',
-      link: '/proyecto/retos/1',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 2: Especificación Técnica',
-      description: 'Arquitectura, base de datos, stack tecnológico',
-      icon: '⚙️',
-      link: '/proyecto/retos/2',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 3: Elevator Pitch',
-      description: 'Presenta tu proyecto en menos de 2 minutos',
-      icon: '🎤',
-      link: '/proyecto/retos/3',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 4: Organización Equipo',
-      description: 'Define roles, responsabilidades y comunicación',
-      icon: '👥',
-      link: '/proyecto/retos/4',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 5: Agile & SCRUM',
-      description: 'Configura Taiga y planifica sprints',
-      icon: '⚡',
-      link: '/proyecto/retos/5',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 6: Sprint 1',
-      description: 'Primer sprint: 40-50% de funcionalidad',
-      icon: '🚀',
-      link: '/proyecto/retos/6',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 7: Sprint 2',
-      description: 'Segundo sprint: 90-100% de funcionalidad',
-      icon: '🚀',
-      link: '/proyecto/retos/7',
-      category: 'Retos'
-    },
-    {
-      title: 'REPTE 8: Sprint Final',
-      description: 'Testing final, documentación y despliegue',
-      icon: '🎯',
-      link: '/proyecto/retos/8',
-      category: 'Retos'
+      question: '¿Kubernetes en cloud: AWS (EKS) vs Azure (AKS) vs Google (GKE)?',
+      answer: 'Los tres son excelentes. Google GKE es el más maduro (Google creó K8s). AWS EKS es el que usarás si estás en AWS. Azure AKS si estás en Azure. El servicio de K8s manejado abstrae la complejidad de mantener el control plane. 95% de empresas usan Kubernetes manejado, no auto-hospedado.'
     }
   ];
 
-  const concepts = [
+  const comparisonData = [
     {
-      title: 'MVP (Mínimo Viable)',
-      description: 'Entrega lo mínimo funcional para validar la idea',
-      icon: '🎯'
+      feature: 'Concepto Base',
+      kubernetes: 'Orquestación de contenedores',
+      dockerSwarm: 'Orquestación simplificada',
+      nomad: 'Orquestador agnóstico'
     },
     {
-      title: 'Iteración',
-      description: 'Ciclos cortos de desarrollo, testing y feedback',
-      icon: '🔄'
+      feature: 'Complejidad',
+      kubernetes: 'Alta (curva empinada)',
+      dockerSwarm: 'Baja (muy simple)',
+      nomad: 'Media'
     },
     {
-      title: 'Documentación',
-      description: 'README, API docs, manual de usuario profesional',
-      icon: '📖'
+      feature: 'Comunidad',
+      kubernetes: 'Masiva (CNCF)',
+      dockerSwarm: 'Pequeña',
+      nomad: 'Creciente (HashiCorp)'
     },
     {
-      title: 'Testing',
-      description: 'Pruebas automáticas desde el inicio del desarrollo',
-      icon: '✅'
+      feature: 'Escalabilidad',
+      kubernetes: '5000+ nodos',
+      dockerSwarm: '1000+ nodos',
+      nomad: '10000+ nodos'
     },
     {
-      title: 'Despliegue',
-      description: 'CI/CD: automatiza build, test y deploy a producción',
-      icon: '🚀'
+      feature: 'Auto-escalado',
+      kubernetes: 'Nativo y avanzado',
+      dockerSwarm: 'Manual/limitado',
+      nomad: 'Bueno'
     },
     {
-      title: 'Presentación',
-      description: 'Demo ejecutable y pitch convincente del proyecto',
-      icon: '🎤'
-    }
-  ];
-
-  const categories = [
-    {
-      id: 'planificacion',
-      name: 'Planificación',
-      icon: '📋',
-      color: '#ff9800',
-      lessons: 4,
-      description: 'Define tu proyecto'
+      feature: 'Rolling Updates',
+      kubernetes: 'Sofisticado (canary, blue/green)',
+      dockerSwarm: 'Básico',
+      nomad: 'Avanzado'
     },
     {
-      id: 'metodologia',
-      name: 'Metodología',
-      icon: '⚡',
-      color: '#ff9800',
-      lessons: 3,
-      description: 'Organiza el trabajo'
+      feature: 'Ecosystem',
+      kubernetes: 'Enorme (Helm, Istio, Prometheus)',
+      dockerSwarm: 'Minimal',
+      nomad: 'HashiCorp suite'
     },
     {
-      id: 'desarrollo',
-      name: 'Desarrollo',
-      icon: '💻',
-      color: '#ff9800',
-      lessons: 4,
-      description: 'Implementa la solución'
-    },
-    {
-      id: 'testing',
-      name: 'Testing',
-      icon: '✅',
-      color: '#ff9800',
-      lessons: 3,
-      description: 'Asegura la calidad'
-    },
-    {
-      id: 'despliegue',
-      name: 'Despliegue',
-      icon: '📦',
-      color: '#ff9800',
-      lessons: 3,
-      description: 'Lleva a producción'
-    },
-    {
-      id: 'retos',
-      name: '8 Retos DAW',
-      icon: '🎯',
-      color: '#ff9800',
-      lessons: 8,
-      description: 'Cumple requisitos'
+      feature: 'Adopción Industria',
+      kubernetes: 'Google, Amazon, Microsoft, Netflix',
+      dockerSwarm: 'Pocas empresas',
+      nomad: 'Empresas DevOps forward'
     }
   ];
 
   return (
     <>
-      <Breadcrumb items={breadcrumbs} />
-      <div className="lesson-container">
-      <div className="lesson-header">
-        <h1>Trabajo Fin de Ciclo (TFC)</h1>
-        <p className="lesson-intro">
-          Guía completa para desarrollar tu Trabajo Fin de Ciclo integrando Java, Spring Boot, Bases de Datos, Testing y Despliegue profesional
-        </p>
+      <SEO
+        title="Kubernetes - Orquestación de Contenedores Empresarial | Guía Completa"
+        description="Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático, alta disponibilidad y gestión de infraestructura a escala empresarial."
+        keywords="kubernetes, k8s, orquestación, contenedores, pods, deployments, devops, cloud, escalado automático"
+        url="https://fullstackdevlovers.com/cloud/kubernetes"
+        image="/og-kubernetes.png"
+      />
+
+      <script type="application/ld+json">
+        {JSON.stringify(schemaMarkup)}
+      </script>
+
+      <div className="proyecto-landing">        {/* Hero Section */}
+        <LandingHero
+          title="Proyecto: Integrador de Tecnologías"
+          subtitle="Aplicación fullstack para poner en práctica todo lo aprendido"
+          description="El proyecto integrador combina Java backend, bases de datos SQL, Spring Boot, Docker y AWS para construir una aplicación enterprise completa que simula un caso real de negocio."
+          primaryColor={landingTheme.primary}
+          darkColor={landingTheme.dark}
+          lightGradientColor={landingTheme.lightGradient}
+          primaryButtonText="Comenzar con Proyecto →"
+          primaryButtonLink="/proyecto"
+          secondaryButtonText="Ver comparativa"
+          secondaryButtonLink="#comparativa"
+          imageUrl="/src/assets/images/logos/backend.png"
+          imageAlt="Proyecto Logo"
+        />
+
+        {/* What is Kubernetes Section */}
+        <section className="proyecto-content">
+          <div className="content-container">
+            <h2>¿Qué es Kubernetes?</h2>
+            <p className="intro-text">
+              Kubernetes es un orquestador de contenedores open-source creado por Google para gestionar aplicaciones containerizadas
+              a escala. Automatiza el deployment, escalado horizontal y gestión de cientos o miles de contenedores en múltiples servidores,
+              garantizando alta disponibilidad, recuperación ante fallos y optimización de recursos.
+            </p>
+
+            {/* Key Features */}
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">🎼</div>
+                <h3>Orquestación Automática</h3>
+                <p>Gestiona automáticamente deployment y posicionamiento de contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📈</div>
+                <h3>Auto-escalado</h3>
+                <p>Aumenta o reduce replicas automáticamente según CPU y memoria</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🛡️</div>
+                <h3>Alta Disponibilidad</h3>
+                <p>Recuperación automática ante fallos de nodos y contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔄</div>
+                <h3>Rolling Updates</h3>
+                <p>Actualiza versiones sin downtime con rollback automático</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚖️</div>
+                <h3>Balanceo de Carga</h3>
+                <p>Distribuye tráfico automáticamente entre replicas</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚙️</div>
+                <h3>Gestión de Recursos</h3>
+                <p>CPU, memoria y almacenamiento distribuido eficientemente</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Learning Topics */}
+        <section className="learning-topics">
+          <div className="content-container">
+            <h2>Temas de Aprendizaje</h2>
+            <p className="intro-text">
+              Domina Kubernetes con una progresión estructurada desde conceptos básicos hasta orquestación avanzada
+            </p>
+
+            <div className="theme-cards-container">
+              {proyectoModule.sections.map((section, idx) => (
+                <KotlinThemeCard
+                  key={idx}
+                  icon={getIconForSection(section.id)}
+                  title={section.name}
+                  description={section.description}
+                  lessons={section.lessons}
+                  color={getColorForSection(idx)}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Section */}
+        <section className="comparison-section" id="comparativa">
+          <div className="content-container">
+            <h2>Kubernetes vs Docker Swarm vs Nomad</h2>
+            <p className="intro-text">
+              Comparativa detallada de Kubernetes con otras plataformas de orquestación
+            </p>
+
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    <th>Kubernetes</th>
+                    <th>Docker Swarm</th>
+                    <th>Nomad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      <td className="proyecto-col">{row.kubernetes}</td>
+                      <td>{row.dockerSwarm}</td>
+                      <td>{row.nomad}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="comparison-conclusion">
+              <p>
+                <strong>✅ Elige Kubernetes si:</strong> Trabajas en empresa con infraestructura compleja, necesitas auto-escalado sofisticado,
+                quieres estándar de facto con masiva comunidad, o tienes roadmap de crecimiento.
+              </p>
+              <p>
+                <strong>✅ Elige Docker Swarm si:</strong> Tu infra es pequeña, necesitas simplicidad extrema, o ya inversión en Docker.
+                Nota: Swarm está en mantenimiento, no recomendado para nuevo.
+              </p>
+              <p>
+                <strong>✅ Elige Nomad si:</strong> Necesitas agnóstico (no solo contenedores), trabajas con VMs/binarios también,
+                o prefieres HashiCorp stack completo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* When to Use Kubernetes */}
+        <section className="when-to-use">
+          <div className="content-container">
+            <h2>¿Cuándo Usar Kubernetes?</h2>
+
+            <div className="use-case-grid">
+              <div className="use-case">
+                <h3>✅ Ideal para:</h3>
+                <ul>
+                  <li>Múltiples servidores/cluster distribuido</li>
+                  <li>Aplicaciones que necesitan auto-escalado</li>
+                  <li>Alta disponibilidad y uptime 99.99%</li>
+                  <li>Microservicios complejos con muchos servicios</li>
+                  <li>Infraestructura empresarial crítica</li>
+                </ul>
+              </div>
+              <div className="use-case">
+                <h3>⚠️ Considera alternativas si:</h3>
+                <ul>
+                  <li>Tu equipo no tiene expertise en DevOps</li>
+                  <li>Usas PaaS (Heroku, Vercel, AWS Beanstalk)</li>
+                  <li>Tienes un único servidor o máquina</li>
+                  <li>Es startup muy pequeño sin presupuesto DevOps</li>
+                  <li>Tu aplicación es simple/monolítica</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="content-container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div className="faq-list">
+              {faqData.map((faq, idx) => (
+                <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+                  <button
+                    className="faq-summary"
+                    onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">+</span>
+                  </button>
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final Section */}
+        <section className="proyecto-cta">
+          <div className="cta-content">
+            <h2>Comienza tu Viaje en Kubernetes Hoy</h2>
+            <p>Aprende desde conceptos básicos hasta orquestación profesional a escala</p>
+            <Link to="/proyecto" className="cta-button">
+              Ir a Fundamentos de Kubernetes →
+            </Link>
+          </div>
+        </section>
       </div>
-
-      <section className="lesson-section">
-        <h2>¿Qué es un TFC?</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          El <strong>Trabajo Fin de Ciclo (TFC)</strong> es un proyecto integrador donde aplicas todo lo aprendido durante la formación. No es solo código;
-          es una <strong>demostración profesional de tus habilidades técnicas, capacidad de gestión y trabajo en equipo</strong>. Las empresas evaluarán tu TFC
-          para decidir si te contratan.
-        </p>
-
-        <div style={{
-          backgroundColor: '#fff3e0',
-          border: '2px solid #ff9800',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#ff9800' }}>Requisitos Mínimos de un TFC</h3>
-          <ul style={{ fontSize: '1rem', lineHeight: '1.9', marginBottom: 0 }}>
-            <li><strong>Backend profesional:</strong> Java + Spring Boot con APIs REST</li>
-            <li><strong>Base de datos:</strong> MySQL o PostgreSQL con diseño relacional</li>
-            <li><strong>Testing:</strong> Pruebas unitarias e integración automáticas</li>
-            <li><strong>Documentación:</strong> README, API docs con Swagger, manual de usuario</li>
-            <li><strong>Despliegue:</strong> Disponible en cloud (Heroku, AWS, Azure)</li>
-            <li><strong>Control de versiones:</strong> GitHub con commits limpios y documentados</li>
-            <li><strong>Presentación:</strong> Demo ejecutable y pitch profesional</li>
-          </ul>
-        </div>
-
-        <h3>Impacto en tu Futuro</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '1.5rem'
-        }}>
-          {[
-            { icon: '💼', title: 'Portafolio', desc: 'Tu TFC es tu mejor portafolio para entrevistas' },
-            { icon: '🎓', title: 'Certificación', desc: 'Requisito para obtener el título oficial' },
-            { icon: '🚀', title: 'Confianza', desc: 'Demuestra que puedes desarrollar un proyecto completo' },
-            { icon: '💰', title: 'Oportunidades', desc: 'Mejor posición de negociación salarial' }
-          ].map((item, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              textAlign: 'center'
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
-              <h4 style={{ marginBottom: '0.5rem' }}>{item.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>Conceptos Clave de un TFC</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {concepts.map((concept, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#fff3e0',
-              border: '2px solid #ff9800',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{concept.icon}</div>
-              <h4 style={{ margin: '0 0 0.75rem 0', color: '#ff9800' }}>{concept.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{concept.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>Ciclo Completo del TFC (3-4 meses)</h2>
-        <div style={{
-          backgroundColor: '#f5f5f5',
-          border: '3px solid #ff9800',
-          borderRadius: '8px',
-          padding: '2rem',
-          marginBottom: '2rem'
-        }}>
-          <pre style={{
-            fontSize: '0.9rem',
-            lineHeight: '1.6',
-            margin: 0,
-            overflow: 'auto'
-          }}>
-{`┌──────────────────────────────────────────────────┐
-│        CICLO COMPLETO DEL TFC (90 DÍAS)         │
-├──────────────────────────────────────────────────┤
-│                                                  │
-│  FASE 1: PLANIFICACIÓN (Semana 1-2)             │
-│  └─ Idea → Requisitos → Arquitectura            │
-│                                                  │
-│  FASE 2: SPRINT 1 (Semana 3-6)                  │
-│  └─ MVP: 40-50% features + Setup completo      │
-│                                                  │
-│  FASE 3: SPRINT 2 (Semana 7-10)                 │
-│  └─ Completar: 90-100% features + Testing      │
-│                                                  │
-│  FASE 4: FINALIZACIÓN (Semana 11-12)            │
-│  └─ Testing final → Documentación → Deploy     │
-│                                                  │
-│  FASE 5: PRESENTACIÓN (Semana 12+)              │
-│  └─ Demo ejecutable + Pitch profesional        │
-│                                                  │
-└──────────────────────────────────────────────────┘`}
-          </pre>
-        </div>
-
-        <h3>Estructura de 6 Áreas de Aprendizaje</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {categories.map((cat, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#fff3e0',
-              border: `3px solid ${cat.color}`,
-              borderRadius: '8px',
-              padding: '1.5rem',
-              textAlign: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(255,152,0,0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{cat.icon}</div>
-              <h4 style={{ margin: '0 0 0.3rem 0', color: cat.color }}>{cat.name}</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: '0 0 0.5rem 0' }}>{cat.lessons} lecciones</p>
-              <p style={{ fontSize: '0.85rem', color: '#999', margin: 0 }}>{cat.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>Todas las Lecciones</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {lessons.map((lesson, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#ff9800';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(255,152,0,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#ddd';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
-              <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
-              <p style={{ fontSize: '0.8rem', color: '#999', marginBottom: '0.5rem' }}>
-                {lesson.category}
-              </p>
-              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
-                {lesson.description}
-              </p>
-              <button
-                onClick={() => navigate(lesson.link)}
-                style={{
-                  backgroundColor: '#ff9800',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#e67e22'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#ff9800'}
-              >
-                Ver Lección →
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section" style={{
-        backgroundColor: '#fff3e0',
-        border: '2px solid #ff9800',
-        borderRadius: '8px',
-        padding: '2rem'
-      }}>
-        <h2>Ruta de Aprendizaje Recomendada</h2>
-        <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Sigue este orden para desarrollar un TFC profesional desde cero:
-        </p>
-        <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>Definición del Proyecto</strong> → Idea clara y alcance definido</li>
-          <li><strong>Requisitos y Especificaciones</strong> → Qué debe hacer tu proyecto</li>
-          <li><strong>Arquitectura y Diseño</strong> → Cómo lo vas a construir</li>
-          <li><strong>Ejemplos de Proyectos TFC</strong> → Inspírate con 12+ ideas viables</li>
-          <li><strong>Setup del Proyecto</strong> → Configura tu ambiente de desarrollo</li>
-          <li><strong>Agile y SCRUM</strong> → Organiza el trabajo en sprints</li>
-          <li><strong>Desarrollo Backend</strong> → Implementa con Java + Spring Boot</li>
-          <li><strong>Base de Datos</strong> → Diseña e implementa tu BD</li>
-          <li><strong>APIs REST</strong> → Crea endpoints para frontend</li>
-          <li><strong>Testing</strong> → Pruebas unitarias e integración</li>
-          <li><strong>Documentación</strong> → README, API docs, manual</li>
-          <li><strong>Despliegue</strong> → Publica en cloud (Heroku, AWS)</li>
-        </ol>
-      </section>
-
-      <section className="lesson-section" style={{
-        backgroundColor: '#fff9c4',
-        border: '2px solid #fbc02d',
-        borderRadius: '8px',
-        padding: '1.5rem'
-      }}>
-        <h3 style={{ marginTop: 0, color: '#f57f17' }}>Consejo Profesional</h3>
-        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-          Tu TFC es tu tarjeta de presentación ante el mundo laboral. <strong>Invierte tiempo en calidad, no en cantidad</strong>.
-          Una aplicación simple, bien hecha, con buena documentación y despliegue en producción impresiona mucho más que un proyecto
-          gigante abandonado en el repositorio.
-        </p>
-        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: 0 }}>
-          Recuerda: las empresas no solo ven el código; ven tu capacidad de comunicación, organización y profesionalismo.
-        </p>
-      </section>
-
-      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          gap: '1rem'
-        }}>
-          <a href="/metodologias/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#e0f2f1',
-            color: '#004d40',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #009688'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
-            ← Volver a Metodologías
-          </a>
-          <a href="/entornos/herramientas/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#fff3e0',
-            color: '#e65100',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #ff9800'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#ffe0b2'} onMouseOut={(e) => e.target.style.backgroundColor = '#fff3e0'}>
-            Herramientas →
-          </a>
-        </div>
-      </section>
-    </div>
     </>
   );
 };
+
+// Funciones auxiliares
+function getIconForSection(sectionId) {
+  const icons = {
+    'fundamentales': '📚',
+  };
+  return icons[sectionId] || '📄';
+}
+
+function getColorForSection(index) {
+  const colors = ['#9c27b0', '#7b1fa2'];
+  return colors[index % colors.length];
+}

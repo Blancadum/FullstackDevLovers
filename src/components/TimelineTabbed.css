@@ -44,7 +44,8 @@
   background-color: transparent;
   cursor: pointer;
   border-right: 4px solid transparent;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 3px solid;
+  border-bottom-color: var(--tab-color, transparent);
   transition: all var(--transition-fast);
   text-align: left;
   white-space: normal;
@@ -97,6 +98,8 @@
 
 .timeline-header {
   margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 4px solid var(--phase-color, #6366f1);
 }
 
 .timeline-title {
@@ -136,6 +139,7 @@
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 6px;
+  background-color: var(--bullet-color, #6366f1);
 }
 
 /* Responsive - Tablets */

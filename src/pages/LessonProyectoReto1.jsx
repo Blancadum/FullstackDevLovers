@@ -1,5 +1,6 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import './LessonProyectoReto.css';
 
 const sections = [
   {
@@ -12,14 +13,14 @@ const sections = [
         </p>
 
         <h4>Qué debes incluir:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Nombre memorable relacionado con su función</li>
           <li>Descripción breve (2 líneas máximo)</li>
           <li>Justificación basada en: tendencias, viabilidad técnica, oportunidad comercial</li>
         </ul>
 
         <h4>Tips:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Elige un proyecto que realmente te interese: pasarás 30+ horas en él</li>
           <li>Debe ser realista pero con potencial de crecimiento</li>
           <li>Investiga el mercado antes de definir el nombre</li>
@@ -38,7 +39,7 @@ const sections = [
         </p>
 
         <h4>Qué debes definir:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Tipo negocio (B2C, B2B, B2B2C, Marketplace, SaaS)</li>
           <li>Sector específico</li>
           <li>Mercado geográfico y tamaño potencial</li>
@@ -64,7 +65,7 @@ const sections = [
         </p>
 
         <h4>Pasos a seguir:</h4>
-        <ol style={{ lineHeight: '1.8' }}>
+        <ol className="reto-section-steps">
           <li>Busca estos competidores en Google, App Store, visita sus webs</li>
           <li>Analiza sus fortalezas específicas (qué hacen bien)</li>
           <li>Identifica debilidades o gaps de mercado</li>
@@ -90,7 +91,7 @@ const sections = [
         </p>
 
         <h4>Recomendaciones:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Listar 5-8 funcionalidades principales</li>
           <li>Estimación realista: 280-500 horas es el rango típico para un proyecto DAW</li>
           <li>Distribuir: 44% frontend, 42% backend, 14% BD+testing+deploy</li>
@@ -114,7 +115,7 @@ const sections = [
         </p>
 
         <h4>Qué incluir:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Desglose de costos (hardware, software, desarrollo, diseño)</li>
           <li>Cálculo de horas * tarifa realista</li>
           <li>Costos de infraestructura (hosting, BD, etc.)</li>
@@ -139,7 +140,7 @@ const sections = [
         </p>
 
         <h4>Medidas técnicas requeridas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Encriptación en tránsito: TLS 1.3+, HTTPS obligatorio</li>
           <li>Encriptación en reposo: bcrypt para contraseñas, AES-256 para datos sensibles</li>
           <li>Derechos del usuario: acceso, olvido, portabilidad, rectificación</li>
@@ -164,7 +165,7 @@ const sections = [
         </p>
 
         <h4>Qué validar:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Diferenciador clave vs competencia</li>
           <li>Viabilidad comercial y demanda real</li>
           <li>Plan de lanzamiento (MVP → beta → público)</li>

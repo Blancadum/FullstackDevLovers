@@ -1,4 +1,4 @@
-import { LessonLayout, CodeBlock, TabSection } from '../../../components';
+import { LessonLayout, CodeBlock, AccordionSection } from '../../../components';
 import { LessonNavigation } from '../../../components/LessonNavigation';
 import { useBreadcrumb } from '../../../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../../../hooks/useLessonNavigation';
@@ -23,10 +23,12 @@ export function LessonGitErroresComunes() {
           y resolverlos rápidamente. Aquí están los errores más comunes que encontrarás.
         </p>
 
-        <TabSection
-          tabs={[
+        <AccordionSection
+          items={[
             {
               label: "Commit con mensaje incorrecto",
+              icon: "️",
+              color: "#FF6B6B",
               content: (
                 <div>
                   <p>
@@ -49,6 +51,8 @@ git commit --amend -m "Agregar funcionalidad de login"`}
             },
             {
               label: "Olvidaste agregar archivos al commit",
+              icon: "",
+              color: "#FFA500",
               content: (
                 <div>
                   <p>
@@ -70,6 +74,8 @@ git commit --amend --no-edit
             },
             {
               label: "Push rechazado (rejected)",
+              icon: "",
+              color: "#FF9800",
               content: (
                 <div>
                   <p>
@@ -98,6 +104,8 @@ git push origin main`}
             },
             {
               label: "Conflicto de merge",
+              icon: "️",
+              color: "#F44336",
               content: (
                 <div>
                   <p>
@@ -130,6 +138,8 @@ git commit -m "Resolver conflicto de merge"`}
             },
             {
               label: "Cambios locales sobreescritos",
+              icon: "",
+              color: "#9C27B0",
               content: (
                 <div>
                   <p>
@@ -162,6 +172,8 @@ git diff`}
             },
             {
               label: "Revertir commit público",
+              icon: "↩️",
+              color: "#2196F3",
               content: (
                 <div>
                   <p>
@@ -188,6 +200,8 @@ git push origin main`}
             },
             {
               label: "Rama eliminada accidentalmente",
+              icon: "️",
+              color: "#4CAF50",
               content: (
                 <div>
                   <p>
@@ -217,6 +231,8 @@ git checkout -b feature def456`}
             },
             {
               label: "Archivos en gitignore pero ya trackeados",
+              icon: "",
+              color: "#00BCD4",
               content: (
                 <div>
                   <p>

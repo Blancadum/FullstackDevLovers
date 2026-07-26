@@ -1,0 +1,181 @@
+{
+  "proyecto": "FullstackDevLovers",
+  "objetivo": "Mejorar navegabilidad, spacing consistente y performance",
+  "cambios": [
+    {
+      "archivo": "src/App.css",
+      "ubicacion": ":root",
+      "accion": "Agregar variables de spacing",
+      "codigo": {
+        "agregar": "  --space-unit: 0.5rem;\n  --space-1: 0.5rem;\n  --space-2: 1rem;\n  --space-3: 1.5rem;\n  --space-4: 2rem;\n  --space-6: 3rem;\n  --space-8: 4rem;\n  --transition-fast: 0.15s ease;\n  --transition-normal: 0.2s ease;\n  --transition-slow: 0.3s ease;"
+      }
+    },
+    {
+      "archivo": "src/components/Lesson.css",
+      "ubicacion": ".lesson-navigation",
+      "accion": "Mejorar navegación entre lecciones",
+      "cambios_css": [
+        {
+          "selector": ".lesson-navigation",
+          "cambios": {
+            "gap": "1rem",
+            "margin-top": "var(--space-8)",
+            "padding-top": "var(--space-6)",
+            "border-top": "1px solid #f0f0f0"
+          }
+        },
+        {
+          "selector": ".lesson-navigation .btn",
+          "cambios": {
+            "background": "transparent",
+            "border": "1px solid #ddd",
+            "transition": "all 0.2s ease",
+            "padding": "0.75rem 1.5rem"
+          }
+        },
+        {
+          "selector": ".lesson-navigation .btn:hover",
+          "cambios": {
+            "background": "#f9f9f9",
+            "border-color": "#ff006e",
+            "color": "#ff006e"
+          }
+        }
+      ]
+    },
+    {
+      "archivo": "src/components/LessonLayout.css",
+      "ubicacion": ".lesson-body, .theory-section",
+      "accion": "Estandarizar márgenes de contenido",
+      "cambios_css": [
+        {
+          "selector": ".lesson-body > p",
+          "cambios": {
+            "margin": "var(--space-3) 0"
+          }
+        },
+        {
+          "selector": ".lesson-body > ul, .lesson-body > ol",
+          "cambios": {
+            "margin": "var(--space-4) 0",
+            "padding-left": "var(--space-8)"
+          }
+        },
+        {
+          "selector": ".theory-section",
+          "cambios": {
+            "margin": "var(--space-4) 0"
+          }
+        },
+        {
+          "selector": ".theory-section h3",
+          "cambios": {
+            "margin-top": "var(--space-4)",
+            "margin-bottom": "var(--space-3)"
+          }
+        }
+      ]
+    },
+    {
+      "archivo": "src/components/Breadcrumb.css",
+      "ubicacion": ".breadcrumb",
+      "accion": "Fijar márgenes del breadcrumb",
+      "cambios_css": [
+        {
+          "selector": ".breadcrumb",
+          "cambios": {
+            "margin": "0",
+            "padding": "var(--space-3) var(--space-6)",
+            "border-bottom": "1px solid #ccc"
+          }
+        }
+      ]
+    },
+    {
+      "archivo": "src/components/LessonSection.css",
+      "ubicacion": ".lesson-section",
+      "accion": "Márgenes y padding consistentes",
+      "cambios_css": [
+        {
+          "selector": ".lesson-section",
+          "cambios": {
+            "margin-bottom": "var(--space-8)",
+            "padding": "var(--space-6)",
+            "border-left": "4px solid #ff006e"
+          }
+        },
+        {
+          "selector": ".lesson-section h2",
+          "cambios": {
+            "margin-top": "var(--space-6)",
+            "margin-bottom": "var(--space-4)"
+          }
+        },
+        {
+          "selector": ".lesson-section h3",
+          "cambios": {
+            "margin-top": "var(--space-4)",
+            "margin-bottom": "var(--space-2)"
+          }
+        },
+        {
+          "selector": ".lesson-section p",
+          "cambios": {
+            "margin": "var(--space-3) 0"
+          }
+        }
+      ]
+    },
+    {
+      "archivo": "src/components/InfoBox.css",
+      "ubicacion": ".info-box",
+      "accion": "Espaciado consistente en infoboxes",
+      "cambios_css": [
+        {
+          "selector": ".info-box",
+          "cambios": {
+            "margin": "var(--space-6) 0",
+            "padding": "var(--space-4) var(--space-6)",
+            "border-left": "4px solid #ff006e"
+          }
+        }
+      ]
+    },
+    {
+      "archivo": "src/global.css",
+      "ubicacion": "@media (prefers-reduced-motion: reduce)",
+      "accion": "Respetar preferencia de movimiento reducido",
+      "codigo": {
+        "agregar": "@media (prefers-reduced-motion: reduce) {\n  * {\n    animation-duration: 0.01ms !important;\n    animation-iteration-count: 1 !important;\n    transition-duration: 0.01ms !important;\n  }\n}"
+      }
+    },
+    {
+      "archivo": "src/App.css",
+      "ubicacion": "@media (max-width: 768px)",
+      "accion": "Mobile: apilar navegación entre lecciones",
+      "cambios_css": [
+        {
+          "selector": ".lesson-navigation",
+          "cambios": {
+            "flex-direction": "column",
+            "gap": "var(--space-4)"
+          }
+        },
+        {
+          "selector": ".lesson-navigation .btn",
+          "cambios": {
+            "width": "100%"
+          }
+        }
+      ]
+    }
+  ],
+  "resumen": {
+    "problema_principal": "Inconsistencia de márgenes/paddings entre componentes, navegación entre lecciones poco clara, animaciones lentas en mobile",
+    "solucion": "Sistema de variables CSS para spacing, mejora de estados hover, respeto a prefers-reduced-motion",
+    "archivos_afectados": 8,
+    "prioridad": "Alta - Mejora usabilidad general",
+    "tiempo_estimado": "2-3 horas",
+    "alcance": "Incremental - no rompe estructura existente"
+  }
+}

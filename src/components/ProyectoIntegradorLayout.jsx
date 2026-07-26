@@ -61,7 +61,7 @@ export function ProyectoIntegradorLayout({ breadcrumbs }) {
               Describe tu proyecto en una o dos frases claras. No se trata de detalles técnicos, sino de explicar
               qué hace tu aplicación de forma que cualquiera pueda entenderlo.
             </p>
-            <p style={{ color: '#6b7280', fontStyle: 'italic' }}>
+            <p className="project-example-text">
               Ejemplo: Sistema de gestión de tareas colaborativo que permite a los equipos organizar su trabajo en proyectos y sprints.
             </p>
 
@@ -104,7 +104,7 @@ export function ProyectoIntegradorLayout({ breadcrumbs }) {
             <p>Revisa estos 5 criterios antes de elegir tu proyecto:</p>
             <ViabilityChecklist />
 
-            <h3 style={{ marginTop: '32px' }}>Timeline Recomendado (6 meses)</h3>
+            <h3 className="section-h3-spaced">Timeline Recomendado (6 meses)</h3>
             <p>Planifica tu proyecto en sprints de 3-4 semanas cada uno:</p>
             <TimelineTabbed />
 
@@ -129,26 +129,18 @@ export function ProyectoIntegradorLayout({ breadcrumbs }) {
             </p>
             <RequiredComponents />
 
-            <h3 style={{ marginTop: '32px' }}>Diferenciador: Lo que te Hace Único</h3>
+            <h3 className="section-h3-spaced">Diferenciador: Lo que te Hace Único</h3>
             <p>
               El diferenciador es lo que te destaca. Elige una opción que realmente agregue valor a tu proyecto:
             </p>
             <DifferentiatorOptions />
 
-            <h3 style={{ marginTop: '32px' }}>Ejemplo Práctico: Tienda Online</h3>
+            <h3 className="section-h3-spaced">Ejemplo Práctico: Tienda Online</h3>
             <p>
               Para entender mejor cómo diseñar correctamente la base de datos y las entidades,
               estudia este ejemplo de una tienda online:
             </p>
-            <pre style={{
-              backgroundColor: '#f3f4f6',
-              padding: '16px',
-              borderRadius: '8px',
-              overflow: 'auto',
-              fontSize: '12px',
-              lineHeight: '1.5',
-              border: '1px solid #e5e7eb'
-            }}>
+            <pre className="code-block-ejemplo">
 {`ENTIDADES PRINCIPALES:
 
 Usuario ← → Pedido ← → PedidoDetalle ← → Producto
@@ -242,7 +234,7 @@ RELACIONES:
 
             <InfoBox type="info">
               <strong>Herramientas recomendadas:</strong>
-              <ul style={{ marginTop: '8px' }}>
+              <ul className="infobox-tools-list">
                 <li>Backend: Railway, Render, Replit</li>
                 <li>Frontend: Vercel, Netlify</li>
                 <li>Base de Datos: Neon (PostgreSQL), PlanetScale (MySQL)</li>
@@ -272,24 +264,15 @@ RELACIONES:
               funcionalidades, diferenciadores y stack tecnológico recomendado.
             </p>
 
-            <div style={{ marginBottom: '24px' }}>
-              <label htmlFor="project-selector" style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>
+            <div className="project-selector-container">
+              <label htmlFor="project-selector" className="project-selector-label">
                 Elige un proyecto TFC:
               </label>
               <select
                 id="project-selector"
                 value={selectedProjectId || ''}
                 onChange={(e) => setSelectedProjectId(e.target.value ? parseInt(e.target.value) : null)}
-                style={{
-                  width: '100%',
-                  maxWidth: '500px',
-                  padding: '10px 12px',
-                  fontSize: '16px',
-                  border: '1px solid #ddd',
-                  borderRadius: '6px',
-                  backgroundColor: '#fff',
-                  cursor: 'pointer'
-                }}
+                className="project-selector-select"
               >
                 <option value="">-- Selecciona un proyecto --</option>
                 {ejemplosTFCData.map(project => (
@@ -301,61 +284,28 @@ RELACIONES:
             </div>
 
             {selectedProject && (
-              <div style={{
-                backgroundColor: '#f8f9fa',
-                border: '1px solid #e0e0e0',
-                borderRadius: '8px',
-                padding: '24px',
-              }}>
-                <div style={{ marginBottom: '20px' }}>
-                  <h3 style={{ margin: '0 0 8px 0' }}>{selectedProject.title}</h3>
-                  <p style={{ margin: '0 0 16px 0', color: '#666' }}>{selectedProject.subtitle}</p>
+              <div className="project-details-card">
+                <div className="project-header-section">
+                  <h3 className="project-header-title">{selectedProject.title}</h3>
+                  <p className="project-header-subtitle">{selectedProject.subtitle}</p>
 
-                  <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
-                    <span style={{
-                      backgroundColor: '#e3f2fd',
-                      color: '#1976d2',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      fontSize: '12px',
-                      fontWeight: '500'
-                    }}>
+                  <div className="project-badges-container">
+                    <span className="project-badge project-badge-category">
                       {selectedProject.category}
                     </span>
-                    <span style={{
-                      backgroundColor: '#fff3e0',
-                      color: '#f57c00',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      fontSize: '12px',
-                      fontWeight: '500'
-                    }}>
+                    <span className="project-badge project-badge-complexity">
                       {selectedProject.complexity}
                     </span>
-                    <span style={{
-                      backgroundColor: '#e8f5e9',
-                      color: '#388e3c',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      fontSize: '12px',
-                      fontWeight: '500'
-                    }}>
+                    <span className="project-badge project-badge-duration">
                       {selectedProject.duration}
                     </span>
-                    <span style={{
-                      backgroundColor: '#f3e5f5',
-                      color: '#7b1fa2',
-                      padding: '4px 10px',
-                      borderRadius: '4px',
-                      fontSize: '12px',
-                      fontWeight: '500'
-                    }}>
+                    <span className="project-badge project-badge-team">
                       Equipo: {selectedProject.teamSize}
                     </span>
                   </div>
                 </div>
 
-                <div style={{ whiteSpace: 'pre-wrap', fontFamily: 'monospace', fontSize: '14px', lineHeight: '1.6', color: '#333' }}>
+                <div className="project-content-text">
                   {selectedProject.content}
                 </div>
               </div>
@@ -371,24 +321,14 @@ RELACIONES:
   return (
     <div className="proyecto-layout">
       {breadcrumbs && breadcrumbs.length > 0 && (
-        <div style={{
-          padding: '0 20px',
-          marginTop: '0.5rem',
-          marginBottom: '0.5rem',
-          fontSize: '0.9rem',
-          color: '#7f8c8d',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
-        }}>
+        <div className="proyecto-breadcrumbs">
           {breadcrumbs.map((crumb, index) => (
-            <span key={index} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              {index > 0 && <span style={{ color: '#bdc3c7' }}>›</span>}
-              <a href={crumb.url || '#'} style={{
-                color: '#3498db',
-                textDecoration: 'none',
-                fontWeight: index === breadcrumbs.length - 1 ? 'bold' : 'normal'
-              }}>
+            <span key={index} className="proyecto-breadcrumb-item">
+              {index > 0 && <span className="proyecto-breadcrumb-separator">›</span>}
+              <a
+                href={crumb.url || '#'}
+                className={`proyecto-breadcrumb-link ${index === breadcrumbs.length - 1 ? 'active' : ''}`}
+              >
                 {crumb.label}
               </a>
             </span>

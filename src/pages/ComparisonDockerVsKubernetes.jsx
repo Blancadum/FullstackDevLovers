@@ -25,7 +25,7 @@ export function ComparisonDockerVsKubernetes() {
             marginBottom: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', fontWeight: '700' }}>
-              ⚠️ Problema Clave:
+               Problema Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
               <strong>Docker</strong> es para crear y ejecutar UNA aplicación en UN contenedor.<br/>
@@ -134,7 +134,7 @@ export function ComparisonDockerVsKubernetes() {
             marginTop: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Idea Clave:
+               Idea Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               Docker es el **contenedor** (caja).<br/>
@@ -164,7 +164,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#2496ed', fontSize: '1.3rem' }}>
-                🐳 Docker en Profundidad
+                 Docker en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -232,7 +232,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#326ce5', fontSize: '1.3rem' }}>
-                ☸️ Kubernetes en Profundidad
+                ️ Kubernetes en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -320,7 +320,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '1.5rem'
             }}>
               <h4 style={{ margin: '0 0 1rem 0', fontSize: '1rem', fontWeight: '700' }}>
-                📍 Etapa 1: Desarrollo Local (Solo Docker)
+                 Etapa 1: Desarrollo Local (Solo Docker)
               </h4>
               <p style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', lineHeight: '1.6', color: '#555' }}>
                 Tu app está en MVP. Tienes 10 usuarios. Usas <strong>solo Docker</strong>:
@@ -337,10 +337,10 @@ export function ComparisonDockerVsKubernetes() {
               }}>
                 <div>$ docker build -t my-app .</div>
                 <div>$ docker run -p 3000:3000 my-app</div>
-                <div style={{ color: '#666', marginTop: '0.5rem' }}>✓ App corriendo en tu laptop</div>
+                <div style={{ color: '#666', marginTop: '0.5rem' }}> App corriendo en tu laptop</div>
               </div>
               <p style={{ margin: 0, fontSize: '0.85rem', color: '#666' }}>
-                ✓ Docker es suficiente. Kubernetes sería overkill.
+                 Docker es suficiente. Kubernetes sería overkill.
               </p>
             </div>
 
@@ -352,7 +352,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '1.5rem'
             }}>
               <h4 style={{ margin: '0 0 1rem 0', fontSize: '1rem', fontWeight: '700' }}>
-                📈 Etapa 2: Servidor Único (Docker en Producción)
+                 Etapa 2: Servidor Único (Docker en Producción)
               </h4>
               <p style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', lineHeight: '1.6', color: '#555' }}>
                 Tienes 1000 usuarios. Renta un servidor en AWS. Usas <strong>solo Docker</strong>:
@@ -369,10 +369,10 @@ export function ComparisonDockerVsKubernetes() {
               }}>
                 <div>$ ssh user@servidor.aws.com</div>
                 <div>$ docker run -p 80:3000 my-app</div>
-                <div style={{ color: '#666', marginTop: '0.5rem' }}>✓ App corriendo en servidor AWS</div>
+                <div style={{ color: '#666', marginTop: '0.5rem' }}> App corriendo en servidor AWS</div>
               </div>
               <p style={{ margin: 0, fontSize: '0.85rem', color: '#666' }}>
-                ✓ Docker sigue siendo suficiente. Aún no necesitas Kubernetes.
+                 Docker sigue siendo suficiente. Aún no necesitas Kubernetes.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '1.5rem'
             }}>
               <h4 style={{ margin: '0 0 1rem 0', fontSize: '1rem', fontWeight: '700' }}>
-                🚀 Etapa 3: Escala Masiva (Necesitas Kubernetes)
+                 Etapa 3: Escala Masiva (Necesitas Kubernetes)
               </h4>
               <p style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', lineHeight: '1.6', color: '#555' }}>
                 Tienes 100,000 usuarios. Necesitas <strong>Docker + Kubernetes</strong>:
@@ -404,10 +404,10 @@ export function ComparisonDockerVsKubernetes() {
                 <div style={{ color: '#666' }}>kind: Deployment</div>
                 <div style={{ color: '#666' }}>spec:</div>
                 <div style={{ color: '#666', marginLeft: '1.5rem' }}>replicas: 100  ← 100 contenedores</div>
-                <div style={{ color: '#666', marginTop: '0.5rem' }}>✓ Kubernetes despliega 100 réplicas automáticamente</div>
+                <div style={{ color: '#666', marginTop: '0.5rem' }}> Kubernetes despliega 100 réplicas automáticamente</div>
               </div>
               <p style={{ margin: 0, fontSize: '0.85rem', color: '#666' }}>
-                ✓ Kubernetes escala, reinicia si falla, balancea carga, actualiza sin downtime.
+                 Kubernetes escala, reinicia si falla, balancea carga, actualiza sin downtime.
               </p>
             </div>
           </div>
@@ -420,7 +420,7 @@ export function ComparisonDockerVsKubernetes() {
             marginTop: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              📊 Resumen del Crecimiento:
+               Resumen del Crecimiento:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
               10 usuarios → Docker en laptop<br/>
@@ -450,7 +450,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#2496ed', fontSize: '1.1rem' }}>
-                ✅ Usa Docker cuando...
+                 Usa Docker cuando...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Trabajas en desarrollo local</li>
@@ -470,7 +470,7 @@ export function ComparisonDockerVsKubernetes() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#326ce5', fontSize: '1.1rem' }}>
-                ✅ Usa Kubernetes cuando...
+                 Usa Kubernetes cuando...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Múltiples apps/servicios</li>
@@ -490,7 +490,7 @@ export function ComparisonDockerVsKubernetes() {
             padding: '1.5rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Pregunta Clave:
+               Pregunta Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               ¿Necesito gestionar múltiples contenedores en múltiples máquinas automáticamente? → Kubernetes<br/>
@@ -543,10 +543,10 @@ export function ComparisonDockerVsKubernetes() {
                 padding: '1.5rem'
               }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem', color: idx % 2 === 0 ? '#2496ed' : '#326ce5' }}>
-                  ❓ {item.q}
+                   {item.q}
                 </p>
                 <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6', color: '#333' }}>
-                  ✓ {item.a}
+                   {item.a}
                 </p>
               </div>
             ))}
@@ -622,7 +622,7 @@ export function ComparisonDockerVsKubernetes() {
                   fontWeight: '600',
                   color: '#666'
                 }}>
-                  💡 {item.highlight}
+                   {item.highlight}
                 </div>
               </div>
             ))}
@@ -637,7 +637,7 @@ export function ComparisonDockerVsKubernetes() {
             textAlign: 'center'
           }}>
             <p style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: '700', color: '#1b5e20' }}>
-              ✅ Ahora lo entiendes:
+               Ahora lo entiendes:
             </p>
             <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.8', color: '#2e7d32' }}>
               <strong>Docker</strong> es la herramienta para crear contenedores.<br/>
@@ -686,7 +686,7 @@ export function ComparisonDockerVsKubernetes() {
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}>
-          🐳 Docker
+           Docker
         </a>
 
         <a href="/kubernetes" style={{
@@ -713,7 +713,7 @@ export function ComparisonDockerVsKubernetes() {
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}>
-          ☸️ Kubernetes
+          ️ Kubernetes
         </a>
       </div>
       <LessonNavigation

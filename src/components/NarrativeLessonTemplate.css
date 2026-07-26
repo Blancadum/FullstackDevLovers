@@ -1,0 +1,19 @@
+.narrative-lesson-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.narrative-concept-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.narrative-exercises {
+  margin-top: 3rem;
+}
+
+.narrative-keypoints {
+  margin-top: 3rem;
+}

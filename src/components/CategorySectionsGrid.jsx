@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
 import { moduleCategories } from '../config/moduleCategories';
 import './CategorySectionsGrid.css';
 
 export function CategorySectionsGrid({ sections, categoryId }) {
-  // Obtener color de la categoría desde moduleCategories
-  const category = moduleCategories.find(cat => cat.id === categoryId);
-  const defaultColor = category?.color || '#4ECDC4';
+  // Memoizar búsqueda de categoría para evitar búsquedas innecesarias
+  const defaultColor = useMemo(() => {
+    const category = moduleCategories.find(cat => cat.id === categoryId);
+    return category?.color || '#4ECDC4';
+  }, [categoryId]);
 
   return (
     <div className="category-sections-container">
@@ -14,7 +17,7 @@ export function CategorySectionsGrid({ sections, categoryId }) {
           <div
             key={section.id}
             className="section-card"
-            style={{ borderTopColor: section.color || defaultColor }}
+            style={{ '--section-color': section.color || defaultColor }}
           >
             <div className="card-header">
               <div className="card-icon">{section.icon}</div>

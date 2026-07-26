@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MODULE_LOGOS } from '../constants/logos';
 import './ModuleExpandable.css';
 
-export function ModuleExpandable({ moduleId, title, description, icon, sections }) {
+export function ModuleExpandable({ moduleId, title, description, icon, sections, themeColor = '#0066cc' }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const logoSrc = MODULE_LOGOS[moduleId];
 
   return (
-    <div className="module-expandable">
+    <div className="module-expandable" style={{ '--theme-color': themeColor }}>
       <div className="module-header">
         <div className="module-icon-container">
           <div className="module-icon-circle">
-            {icon && icon.includes && icon.includes('.') ? (
+            {logoSrc ? (
+              <img src={logoSrc} alt={title} className="module-logo" />
+            ) : icon && icon.includes && icon.includes('.') ? (
               <img src={icon} alt={title} className="module-logo" />
             ) : (
               icon

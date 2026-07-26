@@ -1,3 +1,45 @@
+/* Home Container */
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Componentes principales */
+.home > * {
+  width: 100%;
+}
+
+/* HeroEnhanced */
+.hero-enhanced {
+  margin-bottom: 2rem;
+}
+
+/* QuickAccessSection */
+.quick-access-section {
+  padding: 3rem 0;
+  margin-bottom: 1rem;
+}
+
+/* MenuExpandible */
+#menu {
+  padding: 3rem 0;
+  margin-bottom: 1rem;
+}
+
+/* OrientadorSection */
+#orientador {
+  padding: 3rem 0;
+  margin-bottom: 1rem;
+}
+
+/* StackDominationSection */
+.stack-domination {
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+
 .modules-list {
   display: flex;
   flex-direction: column;

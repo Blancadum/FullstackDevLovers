@@ -5,14 +5,14 @@ export const CasoRealRDS = () => {
   return (
     <div className="lesson-container">
       <div className="lesson-header">
-        <h1>🛒 Caso Real: EcommercePro - Plataforma E-Commerce</h1>
+        <h1>Caso Real: EcommercePro - Plataforma E-Commerce</h1>
         <p className="lesson-intro">
           Cómo una tienda online escaló de 1M a 100M transacciones/mes migrando a RDS Multi-AZ
         </p>
       </div>
 
       <section className="lesson-section">
-        <h2>🚨 El Problema</h2>
+        <h2>El Problema</h2>
 
         <div style={{ backgroundColor: '#fff3cd', border: '2px solid #ffc107', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
           <p style={{ marginTop: 0 }}>
@@ -32,48 +32,48 @@ export const CasoRealRDS = () => {
         </ul>
 
         <div style={{ backgroundColor: '#f8d7da', border: '2px solid #f5c6cb', padding: '1.5rem', borderRadius: '8px', marginTop: '2rem' }}>
-          <h4>📊 El Cuello de Botella</h4>
+          <h4>El Cuello de Botella</h4>
           <p><strong>La base de datos era el problema, no la aplicación:</strong></p>
           <ul>
-            <li>❌ Backup manual cada noche (30 minutos de bloqueo)</li>
-            <li>❌ Sin replicación → si BD caía, todos pierden acceso</li>
-            <li>❌ Sin índices optimizados → queries de 5+ segundos</li>
-            <li>❌ Sin caché → misma query repetida 1M veces/día</li>
-            <li>❌ Sin monitoreo → no sabían cuándo se acercaba el límite</li>
+            <li> Backup manual cada noche (30 minutos de bloqueo)</li>
+            <li> Sin replicación → si BD caía, todos pierden acceso</li>
+            <li> Sin índices optimizados → queries de 5+ segundos</li>
+            <li> Sin caché → misma query repetida 1M veces/día</li>
+            <li> Sin monitoreo → no sabían cuándo se acercaba el límite</li>
           </ul>
         </div>
       </section>
 
       <section className="lesson-section">
-        <h2>✅ La Solución: RDS PostgreSQL Multi-AZ</h2>
+        <h2>La Solución: RDS PostgreSQL Multi-AZ</h2>
 
         <h3>Por Qué RDS y No Auto-instalado</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1.5rem' }}>
           <tbody>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem', fontWeight: 'bold', width: '30%' }}>Backup automático</td>
-              <td style={{ padding: '1rem' }}>❌ Manual cada noche (riesgo de pérdida)</td>
-              <td style={{ padding: '1rem' }}>✅ Cada 5 minutos, no pierde nada</td>
+              <td style={{ padding: '1rem' }}> Manual cada noche (riesgo de pérdida)</td>
+              <td style={{ padding: '1rem' }}> Cada 5 minutos, no pierde nada</td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem', fontWeight: 'bold' }}>Multi-AZ failover</td>
-              <td style={{ padding: '1rem' }}>❌ Manual (30+ minutos de downtime)</td>
-              <td style={{ padding: '1rem' }}>✅ Automático en 1-2 minutos</td>
+              <td style={{ padding: '1rem' }}> Manual (30+ minutos de downtime)</td>
+              <td style={{ padding: '1rem' }}> Automático en 1-2 minutos</td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem', fontWeight: 'bold' }}>Read Replicas</td>
-              <td style={{ padding: '1rem' }}>❌ Difícil de mantener</td>
-              <td style={{ padding: '1rem' }}>✅ 1 click, replicación automática</td>
+              <td style={{ padding: '1rem' }}> Difícil de mantener</td>
+              <td style={{ padding: '1rem' }}> 1 click, replicación automática</td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem', fontWeight: 'bold' }}>Upgrades de versión</td>
-              <td style={{ padding: '1rem' }}>❌ Downtime de horas</td>
-              <td style={{ padding: '1rem' }}>✅ Blue/Green con 0 downtime</td>
+              <td style={{ padding: '1rem' }}> Downtime de horas</td>
+              <td style={{ padding: '1rem' }}> Blue/Green con 0 downtime</td>
             </tr>
             <tr>
               <td style={{ padding: '1rem', fontWeight: 'bold' }}>Equipo DevOps</td>
-              <td style={{ padding: '1rem' }}>❌ Necesita 2-3 ingenieros 24/7</td>
-              <td style={{ padding: '1rem' }}>✅ AWS se encarga, startup enfocada en producto</td>
+              <td style={{ padding: '1rem' }}> Necesita 2-3 ingenieros 24/7</td>
+              <td style={{ padding: '1rem' }}> AWS se encarga, startup enfocada en producto</td>
             </tr>
           </tbody>
         </table>
@@ -136,7 +136,7 @@ aws dms describe-table-statistics \\
       </section>
 
       <section className="lesson-section">
-        <h2>🔧 Optimizaciones de Queries</h2>
+        <h2>Optimizaciones de Queries</h2>
 
         <h3>Antes: Query Lenta (5 segundos)</h3>
         <CodeBlock language="sql" title="Sin índices" code={`-- Obtener todas las órdenes de un usuario con productos
@@ -204,28 +204,28 @@ public class CartService {
       </section>
 
       <section className="lesson-section">
-        <h2>📈 Resultados</h2>
+        <h2> Resultados</h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ backgroundColor: '#d4edda', border: '2px solid #28a745', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#155724' }}>Antes (MySQL on EC2)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>⏱️ <strong>Latencia checkout:</strong> 8-12 segundos</li>
-              <li>😠 <strong>Abandono carrito:</strong> 45%</li>
-              <li>❌ <strong>Disponibilidad:</strong> 99.2%</li>
-              <li>🔧 <strong>Mantenimiento:</strong> 2 DevOps full-time</li>
-              <li>📉 <strong>Conversión:</strong> $50K/mes</li>
+              <li><strong>Latencia checkout:</strong> 8-12 segundos</li>
+              <li><strong>Abandono carrito:</strong> 45%</li>
+              <li><strong>Disponibilidad:</strong> 99.2%</li>
+              <li><strong>Mantenimiento:</strong> 2 DevOps full-time</li>
+              <li><strong>Conversión:</strong> $50K/mes</li>
             </ul>
           </div>
 
           <div style={{ backgroundColor: '#d1ecf1', border: '2px solid #17a2b8', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#0c5460' }}>Después (RDS Multi-AZ)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>⚡ <strong>Latencia checkout:</strong> 300-400ms</li>
-              <li>😊 <strong>Abandono carrito:</strong> 12%</li>
-              <li>✅ <strong>Disponibilidad:</strong> 99.99%</li>
-              <li>😎 <strong>Mantenimiento:</strong> AWS se encarga</li>
-              <li>📈 <strong>Conversión:</strong> $380K/mes</li>
+              <li> <strong>Latencia checkout:</strong> 300-400ms</li>
+              <li><strong>Abandono carrito:</strong> 12%</li>
+              <li><strong>Disponibilidad:</strong> 99.99%</li>
+              <li><strong>Mantenimiento:</strong> AWS se encarga</li>
+              <li><strong>Conversión:</strong> $380K/mes</li>
             </ul>
           </div>
         </div>
@@ -259,13 +259,13 @@ public class CartService {
       </section>
 
       <section className="lesson-section" style={{ backgroundColor: '#e7f3ff', border: '2px solid #0066cc', borderRadius: '8px', padding: '2rem' }}>
-        <h2>💡 Lecciones Clave</h2>
+        <h2> Lecciones Clave</h2>
         <ul style={{ fontSize: '1rem', lineHeight: '2' }}>
-          <li>✅ <strong>Índices bien diseñados</strong> son más importantes que hardware</li>
-          <li>✅ <strong>Read Replicas + caché</strong> = 100x mejor rendimiento</li>
-          <li>✅ <strong>Multi-AZ failover</strong> previene pérdida de dinero</li>
-          <li>✅ <strong>RDS cuesta más/hora pero menos total</strong> (no pagar equipo DevOps)</li>
-          <li>✅ <strong>Performance Insights</strong> detecta problemas antes de crash</li>
+          <li><strong>Índices bien diseñados</strong> son más importantes que hardware</li>
+          <li><strong>Read Replicas + caché</strong> = 100x mejor rendimiento</li>
+          <li><strong>Multi-AZ failover</strong> previene pérdida de dinero</li>
+          <li><strong>RDS cuesta más/hora pero menos total</strong> (no pagar equipo DevOps)</li>
+          <li><strong>Performance Insights</strong> detecta problemas antes de crash</li>
         </ul>
       </section>
 

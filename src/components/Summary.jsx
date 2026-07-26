@@ -3,7 +3,6 @@ import './Summary.css';
 export function Summary({ title, content, children }) {
   const displayContent = content || children;
 
-  // Si es string, renderizar con párrafos
   const renderContent = () => {
     if (typeof displayContent === 'string') {
       return displayContent.split('\n').map((line, idx) => {
@@ -17,9 +16,9 @@ export function Summary({ title, content, children }) {
   };
 
   return (
-    <div className="summary">
+    <div className="summary-wrapper">
       <div className="summary-header">
-        <h3>📋 {title || 'Resumen'}</h3>
+        <h3 className="summary-title">{title || 'Resumen'}</h3>
       </div>
       <div className="summary-content">
         {typeof displayContent === 'string' && displayContent.includes('•') ? (

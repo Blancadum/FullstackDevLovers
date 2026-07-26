@@ -1,0 +1,297 @@
+.quick-access-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 3rem 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.quick-access-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.quick-access-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  animation: slideInCard 0.6s ease-out forwards;
+  animation-delay: calc(var(--data-delay, 0) * 0.1s);
+}
+
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-access-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-color, #9c27b0);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.quick-access-card:hover {
+  border-color: var(--card-color, #9c27b0);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) and (hover: hover) {
+  .quick-access-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .quick-access-card:hover .card-icon {
+    transform: scale(1.15) rotateZ(5deg);
+  }
+}
+
+.quick-access-card:focus-visible {
+  outline: 3px solid var(--card-color, #9c27b0);
+  outline-offset: 4px;
+}
+
+.card-icon {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  min-height: 140px;
+  transition: transform var(--transition-normal);
+}
+
+.card-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  object-position: center;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.card-logo[alt*="Cloud"],
+.card-logo[alt*="cloud"] {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 1px solid #90caf9;
+}
+
+.card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .quick-access-section {
+    padding: 2.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .quick-access-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    min-width: 110px;
+    min-height: 110px;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .card-name {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .quick-access-card {
+    padding: 1.4rem 0.9rem;
+  }
+
+  .card-icon {
+    font-size: 2.3rem;
+    min-width: 100px;
+    min-height: 100px;
+    margin-bottom: 0.7rem;
+  }
+
+  .card-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-name {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small phones (480px - 599px) */
+@media (max-width: 599px) {
+  .quick-access-section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+
+  .quick-access-card {
+    padding: 1.2rem 0.8rem;
+    border-radius: 12px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    min-width: 90px;
+    min-height: 90px;
+    margin-bottom: 0.6rem;
+  }
+
+  .card-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .card-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small phones (375px - 479px) */
+@media (max-width: 479px) {
+  .quick-access-grid {
+    gap: 0.8rem;
+  }
+
+  .quick-access-card {
+    padding: 1rem 0.7rem;
+  }
+
+  .card-icon {
+    font-size: 1.8rem;
+    min-width: 80px;
+    min-height: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-name {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tiny screens (320px - 374px) */
+@media (max-width: 374px) {
+  .quick-access-section {
+    padding: 1.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+
+  .quick-access-card {
+    padding: 0.9rem 0.6rem;
+    border-radius: 10px;
+  }
+
+  .card-icon {
+    font-size: 1.6rem;
+    min-width: 70px;
+    min-height: 70px;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-name {
+    font-size: 0.8rem;
+  }
+}

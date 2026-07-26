@@ -9,7 +9,7 @@ export function ProjectSectionsGrid({ sections, moduleId = 'proyecto' }) {
           <div
             key={section.id}
             className="project-section-card"
-            style={{ borderTopColor: section.color || '#4ECDC4' }}
+            style={{ '--section-color': section.color || '#4ECDC4' }}
           >
             <div className="section-header">
               <div className="section-icon">{section.icon}</div>

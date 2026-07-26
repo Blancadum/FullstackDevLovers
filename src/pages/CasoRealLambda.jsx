@@ -5,14 +5,14 @@ export const CasoRealLambda = () => {
   return (
     <div className="lesson-container">
       <div className="lesson-header">
-        <h1>📸 Caso Real: PhotoSharing - Plataforma de Fotos</h1>
+        <h1> Caso Real: PhotoSharing - Plataforma de Fotos</h1>
         <p className="lesson-intro">
           Cómo una startup pasó de procesar fotos en 48 horas a 5 minutos usando AWS Lambda y S3 Triggers
         </p>
       </div>
 
       <section className="lesson-section">
-        <h2>🚨 El Problema</h2>
+        <h2> El Problema</h2>
 
         <div style={{ backgroundColor: '#fff3cd', border: '2px solid #ffc107', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
           <p style={{ marginTop: 0 }}>
@@ -33,15 +33,15 @@ export const CasoRealLambda = () => {
         </ul>
 
         <div style={{ backgroundColor: '#f8d7da', border: '2px solid #f5c6cb', padding: '1.5rem', borderRadius: '8px', marginTop: '2rem' }}>
-          <h4>📊 El Cuello de Botella</h4>
+          <h4> El Cuello de Botella</h4>
           <p><strong>Procesamiento sincrónico mataba el rendimiento:</strong></p>
           <ul>
-            <li>❌ Servidor EC2 único = bottleneck absoluto</li>
-            <li>❌ Cada foto tardaba 5-10 segundos en procesarse (6 pasos secuenciales)</li>
-            <li>❌ No escalaba automáticamente → agregar EC2 tardaba 30+ minutos</li>
-            <li>❌ Cuando caía el servidor, 100K fotos se perdían de la cola</li>
-            <li>❌ Costo: $3,000/mes en EC2 24/7 (aunque idle la mayor parte)</li>
-            <li>❌ Experiencia usuario: "Cargando tu foto" durante minutos 😤</li>
+            <li> Servidor EC2 único = bottleneck absoluto</li>
+            <li> Cada foto tardaba 5-10 segundos en procesarse (6 pasos secuenciales)</li>
+            <li> No escalaba automáticamente → agregar EC2 tardaba 30+ minutos</li>
+            <li> Cuando caía el servidor, 100K fotos se perdían de la cola</li>
+            <li> Costo: $3,000/mes en EC2 24/7 (aunque idle la mayor parte)</li>
+            <li> Experiencia usuario: "Cargando tu foto" durante minutos </li>
           </ul>
         </div>
 
@@ -85,7 +85,7 @@ export const CasoRealLambda = () => {
       </section>
 
       <section className="lesson-section">
-        <h2>✅ La Solución: Lambda + S3 Triggers</h2>
+        <h2> La Solución: Lambda + S3 Triggers</h2>
 
         <h3>Por Qué Lambda y No EC2</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1.5rem' }}>
@@ -181,7 +181,7 @@ export const CasoRealLambda = () => {
         ┌────────────▼──────────────────────┐
         │ DynamoDB (Photo Index)           │
         │ Actualiza metadatos + estado     │
-        │ "PROCESSED" ✓                    │
+        │ "PROCESSED"                     │
         └──────────────────────────────────┘
                      │
         ┌────────────▼──────────────────────┐
@@ -236,7 +236,7 @@ export const CasoRealLambda = () => {
       </section>
 
       <section className="lesson-section">
-        <h2>🔧 Implementación: Lambdas en Java</h2>
+        <h2> Implementación: Lambdas en Java</h2>
 
         <h3>Lambda 1: Redimensionamiento (Paralelo)</h3>
         <CodeBlock language="java" title="ProcessPhotoThumbnail Lambda Handler" code={`import com.amazonaws.services.lambda.runtime.Context;
@@ -599,30 +599,30 @@ resources:
       </section>
 
       <section className="lesson-section">
-        <h2>📈 Resultados Reales</h2>
+        <h2> Resultados Reales</h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ backgroundColor: '#d4edda', border: '2px solid #28a745', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#155724' }}>Antes (EC2)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
               <li>⏱️ <strong>Tiempo procesamiento:</strong> 48 horas</li>
-              <li>💰 <strong>Costo mensual:</strong> $3,000 (5 EC2 t3.xlarge)</li>
-              <li>😠 <strong>Usuarios irritados:</strong> Fotos tarde</li>
-              <li>❌ <strong>Downtime:</strong> Cada falla = pérdida de datos</li>
-              <li>📊 <strong>Capacidad máx:</strong> 10M fotos/día</li>
-              <li>⚙️ <strong>Escalado:</strong> Manual (30+ minutos)</li>
+              <li> <strong>Costo mensual:</strong> $3,000 (5 EC2 t3.xlarge)</li>
+              <li> <strong>Usuarios irritados:</strong> Fotos tarde</li>
+              <li> <strong>Downtime:</strong> Cada falla = pérdida de datos</li>
+              <li> <strong>Capacidad máx:</strong> 10M fotos/día</li>
+              <li>️ <strong>Escalado:</strong> Manual (30+ minutos)</li>
             </ul>
           </div>
 
           <div style={{ backgroundColor: '#d1ecf1', border: '2px solid #17a2b8', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#0c5460' }}>Después (Lambda + S3)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>⚡ <strong>Tiempo procesamiento:</strong> 5 minutos</li>
-              <li>💰 <strong>Costo mensual:</strong> $300 (pay-per-use)</li>
-              <li>😊 <strong>Usuarios felices:</strong> Fotos al instante</li>
-              <li>✅ <strong>Durabilidad:</strong> 11-nines (AWS manejado)</li>
-              <li>📊 <strong>Capacidad máx:</strong> 1B+ fotos/día (ilimitada)</li>
-              <li>⚙️ <strong>Escalado:</strong> Automático (milisegundos)</li>
+              <li> <strong>Tiempo procesamiento:</strong> 5 minutos</li>
+              <li> <strong>Costo mensual:</strong> $300 (pay-per-use)</li>
+              <li> <strong>Usuarios felices:</strong> Fotos al instante</li>
+              <li> <strong>Durabilidad:</strong> 11-nines (AWS manejado)</li>
+              <li> <strong>Capacidad máx:</strong> 1B+ fotos/día (ilimitada)</li>
+              <li>️ <strong>Escalado:</strong> Automático (milisegundos)</li>
             </ul>
           </div>
         </div>
@@ -654,7 +654,7 @@ resources:
               <td style={{ padding: '1rem' }}>Usuarios activos mensuales</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>500K</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>2.1M</td>
-              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+320% 🚀</td>
+              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+320% </td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem' }}>Fotos subidas/día</td>
@@ -672,7 +672,7 @@ resources:
               <td style={{ padding: '1rem' }}>Ingresos (premium filters)</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>$50K/mes</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>$400K/mes</td>
-              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+700% 🚀</td>
+              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+700% </td>
             </tr>
             <tr>
               <td style={{ padding: '1rem' }}>ROI de migración</td>
@@ -729,7 +729,7 @@ resources:
       </section>
 
       <section className="lesson-section">
-        <h2>🎓 Lecciones Aprendidas</h2>
+        <h2> Lecciones Aprendidas</h2>
 
         <div style={{ backgroundColor: '#fffbea', border: '2px solid #ff9800', borderRadius: '8px', padding: '1.5rem' }}>
           <h4 style={{ marginTop: 0 }}>1. Lambda es perfecto para procesamiento asincrónico</h4>
@@ -777,16 +777,16 @@ resources:
       </section>
 
       <section className="lesson-section" style={{ backgroundColor: '#e7f3ff', border: '2px solid #0066cc', borderRadius: '8px', padding: '2rem' }}>
-        <h2>💡 Conclusión</h2>
+        <h2> Conclusión</h2>
         <p style={{ fontSize: '1.05rem', lineHeight: '1.8' }}>
           <strong>Lambda + S3 Triggers fue transformacional para PhotoSharing porque:</strong>
         </p>
         <ul style={{ fontSize: '1rem', lineHeight: '2' }}>
-          <li>✅ <strong>Velocidad:</strong> 48 horas → 5 minutos (576x más rápido)</li>
-          <li>✅ <strong>Costos:</strong> $50K/mes → $13.9K/mes (72% ahorro)</li>
-          <li>✅ <strong>Escalabilidad:</strong> De 10M a 50M+ fotos/día sin agregar servidores</li>
-          <li>✅ <strong>Confiabilidad:</strong> 11-nines durabilidad + failover automático</li>
-          <li>✅ <strong>Impacto negocio:</strong> Usuarios felices = +320% DAU, +700% revenue</li>
+          <li> <strong>Velocidad:</strong> 48 horas → 5 minutos (576x más rápido)</li>
+          <li> <strong>Costos:</strong> $50K/mes → $13.9K/mes (72% ahorro)</li>
+          <li> <strong>Escalabilidad:</strong> De 10M a 50M+ fotos/día sin agregar servidores</li>
+          <li> <strong>Confiabilidad:</strong> 11-nines durabilidad + failover automático</li>
+          <li> <strong>Impacto negocio:</strong> Usuarios felices = +320% DAU, +700% revenue</li>
         </ul>
         <p style={{ marginTop: '2rem', fontStyle: 'italic', color: '#555' }}>
           La clave: No intentar hacer todo sincrónico en el servidor. Procesamiento asincrónico

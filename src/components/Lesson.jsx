@@ -1,18 +1,26 @@
 import { Link } from 'react-router-dom';
-import { Breadcrumb, AuthorHeader } from './index';
+import { AuthorHeader } from './index';
 import { CodeBlock } from './CodeBlock';
 import { HighlightBox } from './HighlightBox';
 import { LessonSection } from './LessonSection';
 import './Lesson.css';
 
-export function Lesson({ title, breadcrumbs, children, previousLesson, nextLesson }) {
+export function Lesson({
+  title,
+  description,
+  children,
+  previousLesson,
+  nextLesson,
+  showAuthorHeader = true
+}) {
   return (
     <div className="lesson-container">
-      {breadcrumbs && <Breadcrumb items={breadcrumbs} />}
       <div className="lesson-header">
         <h1>{title}</h1>
+        {description && <p className="lesson-intro">{description}</p>}
       </div>
-      <AuthorHeader />
+
+      {showAuthorHeader && <AuthorHeader />}
 
       <div className="lesson-content">{children}</div>
 

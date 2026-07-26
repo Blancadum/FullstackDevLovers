@@ -9,19 +9,16 @@ export function LessonGitHub() {
 
   const concepts = [
     {
-      icon: '🐙',
       title: 'GitHub',
       definition: 'Plataforma de hosting para repositorios Git, colaboración y desarrollo social',
       example: 'Crear repo en github.com, clonar y hacer push'
     },
     {
-      icon: '🔀',
       title: 'Pull Requests',
       definition: 'Solicitud de revisión y merge de cambios desde una rama a otra',
       example: 'Crear PR desde feature/login a main'
     },
     {
-      icon: '🤝',
       title: 'Colaboración',
       definition: 'Trabajo en equipo con issues, discussions y code review',
       example: 'Comentar en un PR, asignar issues'

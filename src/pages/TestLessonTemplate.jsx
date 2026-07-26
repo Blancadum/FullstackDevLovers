@@ -13,7 +13,6 @@ export function TestLessonTemplate() {
 
   const concepts = [
     {
-      icon: '📚',
       title: 'Test Concept',
       definition: 'Una definición de prueba',
       example: 'Ejemplo simple'

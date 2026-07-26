@@ -1,12 +1,25 @@
 import { Link } from 'react-router-dom';
 import './CasesPracticalCard.css';
 
+const PROJECT_LOGOS = {
+  'tfc-java': '/src/assets/images/logos/pringboot.png',
+  'caso-practico-1': '/src/assets/images/logos/java-logo.png',
+  'caso-practico-2': '/src/assets/images/logos/docker-lgo.png'};
+
 export function CasesPracticalCard({ project }) {
+  const logoSrc = PROJECT_LOGOS[project.id];
+
   if (project.comingSoon) {
     return (
       <div className="case-practical-card coming-soon">
         <div className="case-header">
-          <div className="case-icon">📋</div>
+          <div className="case-icon">
+            {logoSrc ? (
+              <img src={logoSrc} alt={project.name} />
+            ) : (
+              ''
+            )}
+          </div>
           <div className="case-title-section">
             <h4>{project.name}</h4>
             <span className="coming-soon-badge">Coming Soon</span>
@@ -29,10 +42,16 @@ export function CasesPracticalCard({ project }) {
   }
 
   return (
-    <Link to={project.link} style={{ textDecoration: 'none' }}>
+    <Link to={project.link} className="case-link">
       <div className="case-practical-card">
         <div className="case-header">
-          <div className="case-icon">🏆</div>
+          <div className="case-icon">
+            {logoSrc ? (
+              <img src={logoSrc} alt={project.name} />
+            ) : (
+              ''
+            )}
+          </div>
           <div className="case-title-section">
             <h4>{project.name}</h4>
           </div>

@@ -1,0 +1,505 @@
+/* ============================================================================
+   HeroEnhanced Component
+   Componente Hero mejorado con parallax, SearchBar integrada, y CTA buttons
+   ============================================================================ */
+
+/* Animación fade-in al cargar */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================================
+   Hero Enhanced Container
+   ============================================================================ */
+.hero-enhanced {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  overflow-x: visible;
+  overflow-y: hidden;
+  margin-bottom: 3rem;
+}
+
+/* Background parallax con gradiente dinámico */
+.hero-enhanced-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120%;
+  background: linear-gradient(135deg, #ffc0e0 0%, #e6d5f0 50%, #d6e8f7 100%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  z-index: -2;
+  transition: background-position 0.1s ease-out;
+  will-change: background-position;
+}
+
+/* Overlay oscuro para mejorar contraste y legibilidad */
+.hero-enhanced-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Marco visual decorativo */
+.hero-enhanced-frame {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  border: none;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 0;
+  animation: slideInScale 0.8s ease-out;
+}
+
+/* ============================================================================
+   Hero Enhanced Container - Layout Principal
+   ============================================================================ */
+.hero-enhanced-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
+  justify-self: center;
+}
+
+/* ============================================================================
+   Sección de Contenido (Texto)
+   ============================================================================ */
+.hero-enhanced-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInDown 0.8s ease-out 0.3s both;
+}
+
+.hero-enhanced-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: #2c3e50;
+  animation: fadeInDown 0.8s ease-out 0.4s both;
+}
+
+.hero-enhanced-highlight {
+  color: #ff006e;
+  background: linear-gradient(135deg, #ff006e, #ff4081);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.hero-enhanced-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #2c3e50;
+  opacity: 0.95;
+  animation: fadeInDown 0.8s ease-out 0.5s both;
+}
+
+.hero-enhanced-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+  color: #555;
+  opacity: 0.9;
+  animation: fadeInDown 0.8s ease-out 0.6s both;
+}
+
+/* ============================================================================
+   Botones CTA
+   ============================================================================ */
+.hero-enhanced-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.hero-enhanced-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 0, 110, 0.2);
+  font-family: inherit;
+}
+
+.hero-enhanced-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 0, 110, 0.3);
+}
+
+.hero-enhanced-btn:active {
+  transform: scale(0.95);
+}
+
+/* Botón Primario */
+.hero-enhanced-btn--primary {
+  background: linear-gradient(135deg, #ff006e, #ff4081);
+  color: white;
+}
+
+.hero-enhanced-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 0, 110, 0.35);
+  background: linear-gradient(135deg, #ff4081, #ff006e);
+}
+
+/* Botón Secundario */
+.hero-enhanced-btn--secondary {
+  background: white;
+  color: #ff006e;
+  border: 2px solid #ff006e;
+}
+
+.hero-enhanced-btn--secondary:hover {
+  background: #ff006e;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 0, 110, 0.35);
+}
+
+/* ============================================================================
+   Sección de Búsqueda
+   ============================================================================ */
+.hero-enhanced-search-wrapper {
+  width: 100%;
+  padding: 2rem 0;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Integración de ClusterSearch */
+.hero-enhanced-search-wrapper .cluster-search {
+  padding: 0 2rem;
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-enhanced-search-wrapper .search-container {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-enhanced-search-wrapper .search-input {
+  background: white;
+  border: 2px solid #e9ecef;
+  font-size: 1.05rem;
+  padding: 1.2rem 3.5rem 1.2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.hero-enhanced-search-wrapper .search-input:focus {
+  border-color: #ff006e;
+  box-shadow: 0 0 0 4px rgba(255, 0, 110, 0.15), 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.hero-enhanced-search-wrapper .search-results {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid #e9ecef;
+  border-top: none;
+  width: 100%;
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-enhanced {
+    min-height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .hero-enhanced-container {
+    gap: 2.5rem;
+  }
+
+  .hero-enhanced-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-enhanced-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .hero-enhanced-description {
+    font-size: 1rem;
+  }
+
+  .hero-enhanced-frame {
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+
+  .hero-enhanced-search-wrapper {
+    padding: 1.5rem 2rem;
+  }
+}
+
+/* Tablet pequeño (768px) */
+@media (max-width: 768px) {
+  .hero-enhanced {
+    min-height: auto;
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-enhanced-container {
+    gap: 2rem;
+  }
+
+  .hero-enhanced-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-enhanced-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-enhanced-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-enhanced-buttons {
+    gap: 1rem;
+  }
+
+  .hero-enhanced-btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-enhanced-frame {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: 15px;
+  }
+
+  .hero-enhanced-search-wrapper {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .hero-enhanced-search-wrapper .search-input {
+    font-size: 1rem;
+    padding: 1rem 3rem 1rem 1.2rem;
+  }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  .hero-enhanced {
+    min-height: auto;
+    padding: 2rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-enhanced-container {
+    gap: 1.5rem;
+  }
+
+  .hero-enhanced-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-enhanced-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-enhanced-description {
+    font-size: 0.9rem;
+  }
+
+  .hero-enhanced-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .hero-enhanced-btn {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-enhanced-frame {
+    display: none; /* Marco oculto en mobile */
+  }
+
+  .hero-enhanced-search-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-enhanced-search-wrapper .search-input {
+    font-size: 0.9rem;
+    padding: 0.9rem 2.5rem 0.9rem 1rem;
+  }
+
+  .hero-enhanced-search-wrapper .search-results {
+    max-height: 350px;
+  }
+}
+
+/* Mobile pequeño (360px) */
+@media (max-width: 360px) {
+  .hero-enhanced {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .hero-enhanced-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-enhanced-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-enhanced-description {
+    font-size: 0.85rem;
+  }
+
+  .hero-enhanced-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================================
+   Dark Mode Support
+   ============================================================================ */
+@media (prefers-color-scheme: dark) {
+  .hero-enhanced-bg {
+    background: linear-gradient(135deg, #434b77 0%, #5a3a5a 50%, #3d4a6b 100%);
+  }
+
+  .hero-enhanced-title,
+  .hero-enhanced-subtitle {
+    color: #f0f0f0;
+  }
+
+  .hero-enhanced-description {
+    color: #d0d0d0;
+  }
+
+  .hero-enhanced-btn--secondary {
+    background: rgba(255, 0, 110, 0.1);
+    color: #ff6b9d;
+    border-color: #ff6b9d;
+  }
+
+  .hero-enhanced-btn--secondary:hover {
+    background: #ff6b9d;
+    color: white;
+  }
+
+  .hero-enhanced-search-wrapper .search-input {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #f0f0f0;
+  }
+
+  .hero-enhanced-search-wrapper .search-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ff006e;
+  }
+
+  .hero-enhanced-search-wrapper .search-input::placeholder {
+    color: #9ca3af;
+  }
+}
+
+/* ============================================================================
+   Reduced Motion Support
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-enhanced-title,
+  .hero-enhanced-subtitle,
+  .hero-enhanced-description,
+  .hero-enhanced-content,
+  .hero-enhanced-search-wrapper,
+  .hero-enhanced-buttons,
+  .hero-enhanced-frame {
+    animation: none;
+  }
+
+  .hero-enhanced-btn,
+  .hero-enhanced-btn:hover {
+    transition: none;
+  }
+
+  .hero-enhanced-bg {
+    background-attachment: scroll;
+  }
+}

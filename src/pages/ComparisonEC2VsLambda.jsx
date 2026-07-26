@@ -25,7 +25,7 @@ export function ComparisonEC2VsLambda() {
             marginBottom: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', fontWeight: '700' }}>
-              ⚠️ Problema Clave:
+               Problema Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
               Ambos ejecutan código, pero EC2 te da **control total** de una máquina virtual, mientras que Lambda **automatiza todo** y tú solo subes la función. Son dos extremos opuestos del espectro "servidor".
@@ -138,7 +138,7 @@ export function ComparisonEC2VsLambda() {
             marginTop: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Idea Clave:
+               Idea Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               EC2 = **Tu propia máquina** que administras todo (complejo pero flexible)<br/>
@@ -167,7 +167,7 @@ export function ComparisonEC2VsLambda() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#ff6b35', fontSize: '1.3rem' }}>
-                🖥️ Amazon EC2 en Profundidad
+                 Amazon EC2 en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -232,7 +232,7 @@ export function ComparisonEC2VsLambda() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#f39c12', fontSize: '1.3rem' }}>
-                ⚡ AWS Lambda en Profundidad
+                 AWS Lambda en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -395,7 +395,7 @@ export function ComparisonEC2VsLambda() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#ff6b35', fontSize: '1.1rem' }}>
-                ✅ Usa EC2 cuando...
+                 Usa EC2 cuando...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Tu app debe estar 24/7 funcionando</li>
@@ -416,7 +416,7 @@ export function ComparisonEC2VsLambda() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#f39c12', fontSize: '1.1rem' }}>
-                ✅ Usa Lambda cuando...
+                 Usa Lambda cuando...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Ejecutas código cuando es NECESARIO</li>
@@ -437,7 +437,7 @@ export function ComparisonEC2VsLambda() {
             padding: '1.5rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Pregunta Clave:
+               Pregunta Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               ¿Mi servidor necesita estar siempre encendido? → EC2<br/>
@@ -490,10 +490,10 @@ export function ComparisonEC2VsLambda() {
                 padding: '1.5rem'
               }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem', color: idx % 2 === 0 ? '#f39c12' : '#ff6b35' }}>
-                  ❓ {item.q}
+                   {item.q}
                 </p>
                 <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6', color: '#333' }}>
-                  ✓ {item.a}
+                   {item.a}
                 </p>
               </div>
             ))}
@@ -569,7 +569,7 @@ export function ComparisonEC2VsLambda() {
                   fontWeight: '600',
                   color: '#666'
                 }}>
-                  💡 {item.highlight}
+                   {item.highlight}
                 </div>
               </div>
             ))}
@@ -584,7 +584,7 @@ export function ComparisonEC2VsLambda() {
             textAlign: 'center'
           }}>
             <p style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: '700', color: '#1b5e20' }}>
-              ✅ Ahora lo entiendes:
+               Ahora lo entiendes:
             </p>
             <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.8', color: '#2e7d32' }}>
               <strong>EC2</strong> es tu máquina virtual personal.<br/>
@@ -633,7 +633,7 @@ export function ComparisonEC2VsLambda() {
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}>
-          🖥️ Volver a EC2
+           Volver a EC2
         </a>
 
         <a href="/aws/servicios/lambda" style={{
@@ -660,7 +660,7 @@ export function ComparisonEC2VsLambda() {
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}>
-          ⚡ Lambda
+           Lambda
         </a>
       </div>
       <LessonNavigation

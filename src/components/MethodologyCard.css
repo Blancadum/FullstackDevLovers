@@ -1,218 +1,216 @@
 .methodology-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-  border-radius: 10px;
-  border-left: 4px solid #4ECDC4;
-  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.methodology-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 
 .methodology-card.coming-soon {
-  position: relative;
-  opacity: 0.85;
-}
-
-.methodology-card.coming-soon::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 10px;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    rgba(78, 205, 196, 0.05) 10px,
-    rgba(78, 205, 196, 0.05) 20px
-  );
-  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .methodology-header {
   display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.methodology-header:hover {
+  background-color: #fafafa;
 }
 
 .methodology-icon {
-  font-size: 2rem;
   flex-shrink: 0;
-  min-width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #e9ecef;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
-  border-radius: 8px;
+  font-size: 2.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
-.methodology-title-section {
+.methodology-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.methodology-header:hover .methodology-icon {
+  transform: scale(1.05);
+}
+
+.methodology-content {
   flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.methodology-title-section h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.coming-soon-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.25rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.methodology-description {
-  margin: 0 0 1.5rem 0;
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.methodology-lessons {
-  margin-bottom: 1.5rem;
-}
-
-.methodology-lessons h5 {
-  margin: 0 0 0.8rem 0;
-  font-size: 0.9rem;
-  color: #2c3e50;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.methodology-lessons ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
 
-.methodology-lessons li {
+.methodology-content h3 {
   margin: 0;
-  padding: 0;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.lesson-link {
-  display: inline-flex;
-  align-items: center;
-  color: #4ECDC4;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  padding: 0.4rem 0;
-}
-
-.lesson-link:hover {
-  color: #2c3e50;
-  padding-left: 0.3rem;
-}
-
-.lesson-link::before {
-  content: '▶';
-  margin-right: 0.5rem;
-  font-size: 0.7rem;
-}
-
-.methodology-topics {
-  margin-bottom: 1.5rem;
-}
-
-.methodology-topics h5 {
-  margin: 0 0 0.8rem 0;
-  font-size: 0.9rem;
-  color: #2c3e50;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.methodology-topics ul {
-  list-style: none;
+.methodology-content p {
   margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.6rem;
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.methodology-topics li {
+.expand-button {
+  background: none;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
   display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.85rem;
-  color: #666;
-  line-height: 1.4;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #999999;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
 }
 
-.topic-bullet {
-  color: #4ECDC4;
-  font-weight: bold;
+.expand-button:hover {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.expand-icon {
+  font-size: 1.2rem;
+  color: inherit;
+  transition: transform 0.3s ease;
   flex-shrink: 0;
 }
 
-.methodology-footer {
-  padding-top: 1rem;
-  border-top: 1px solid #E0E0E0;
-  text-align: center;
+.expand-icon.expanded {
+  transform: rotate(180deg);
 }
 
-.info-text {
-  margin: 0;
+.methodology-lessons {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  animation: slideDown 0.3s ease;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.lesson-item:hover {
+  background-color: #f0f0f0;
+  color: var(--lesson-color, #9C27B0);
+}
+
+.lesson-chevron {
+  margin-left: auto;
+  font-size: 0.9rem;
   color: #999;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.lesson-item:hover .lesson-chevron {
+  color: var(--lesson-color, #9C27B0);
+}
+
+.lesson-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background-color: var(--lesson-color, #9C27B0);
+  color: white;
+  border-radius: 50%;
   font-size: 0.85rem;
-  font-style: italic;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lesson-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 1.8rem;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+    padding: 1rem 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .methodology-card {
-    padding: 1rem;
+  .methodology-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
   }
 
   .methodology-header {
-    gap: 0.8rem;
+    padding: 1rem;
+    gap: 1rem;
   }
 
-  .methodology-icon {
-    min-width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
+  .methodology-content h3 {
+    font-size: 1.1rem;
   }
 
-  .methodology-title-section h4 {
-    font-size: 1rem;
+  .methodology-content p {
+    font-size: 0.85rem;
   }
 
-  .methodology-title-section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .coming-soon-badge {
-    margin-top: 0.5rem;
-  }
-
-  .methodology-topics ul {
-    grid-template-columns: 1fr;
-  }
-
-  .methodology-description {
-    font-size: 0.9rem;
+  .lesson-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 }

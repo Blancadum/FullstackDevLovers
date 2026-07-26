@@ -234,7 +234,7 @@ export function EvaluacionAWS() {
                           borderLeft: `4px solid ${answers[question.id] === question.correct ? '#4CAF50' : '#f44336'}`
                         }}>
                           <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', color: answers[question.id] === question.correct ? '#2e7d32' : '#c62828' }}>
-                            {answers[question.id] === question.correct ? '✅ Correcto' : '❌ Incorrecto'}
+                            {answers[question.id] === question.correct ? ' Correcto' : ' Incorrecto'}
                           </p>
                           <p style={{ margin: 0, fontSize: '0.95rem', color: '#333' }}>
                             <strong>Explicación:</strong> {question.explanation}

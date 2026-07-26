@@ -26,7 +26,7 @@ export function ComparisonS3VsDocker() {
             marginBottom: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', fontWeight: '700' }}>
-              ⚠️ Problema Clave:
+               Problema Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
               Cuando aprendes AWS, ves "bucket" (traducido como "contenedor" en algunos idiomas). Cuando aprendes Docker, ves "container" (también traducido como "contenedor"). Tu cerebro une estos dos términos, pero son completamente diferentes.
@@ -124,7 +124,7 @@ export function ComparisonS3VsDocker() {
             marginTop: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Idea Clave:
+               Idea Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               S3 es para cuando necesitas <strong>guardar datos</strong>. Docker es para cuando necesitas <strong>ejecutar aplicaciones</strong>. Son problemas completamente diferentes.
@@ -152,7 +152,7 @@ export function ComparisonS3VsDocker() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#0066cc', fontSize: '1.3rem' }}>
-                📦 Amazon S3 en Profundidad
+                 Amazon S3 en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -215,7 +215,7 @@ export function ComparisonS3VsDocker() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#d32f2f', fontSize: '1.3rem' }}>
-                🐳 Docker en Profundidad
+                 Docker en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -386,7 +386,7 @@ export function ComparisonS3VsDocker() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#0066cc', fontSize: '1.1rem' }}>
-                ✅ Usa S3 cuando necesites...
+                 Usa S3 cuando necesites...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Guardar archivos estáticos (fotos, PDFs, videos)</li>
@@ -407,7 +407,7 @@ export function ComparisonS3VsDocker() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#d32f2f', fontSize: '1.1rem' }}>
-                ✅ Usa Docker cuando necesites...
+                 Usa Docker cuando necesites...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Empacar tu aplicación backend</li>
@@ -428,7 +428,7 @@ export function ComparisonS3VsDocker() {
             padding: '1.5rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 La Pregunta Clave:
+               La Pregunta Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               Si tu pregunta es <strong>"¿Dónde guardo esto?"</strong> → S3<br/>
@@ -454,19 +454,19 @@ export function ComparisonS3VsDocker() {
           }}>
             {[
               {
-                title: '🏠 Tu Casa',
+                title: ' Tu Casa',
                 color: '#4CAF50',
                 desc: 'Tu laptop / computadora personal',
                 ex: 'Donde escribes código'
               },
               {
-                title: '📦 Docker',
+                title: ' Docker',
                 color: '#d32f2f',
                 desc: 'Una caja hermética lista para viajar',
                 ex: 'Tu app empaquetada, lista para llevarse a cualquier lado'
               },
               {
-                title: '🏦 S3',
+                title: ' S3',
                 color: '#0066cc',
                 desc: 'Una bóveda de seguridad en el banco',
                 ex: 'Donde guardas tus archivos de forma segura en la nube'
@@ -508,15 +508,15 @@ export function ComparisonS3VsDocker() {
               color: '#333',
               lineHeight: '1.8'
             }}>
-              <div>🏠 Escribes código en tu casa (laptop)</div>
+              <div> Escribes código en tu casa (laptop)</div>
               <div>↓</div>
-              <div>📦 Lo empacan en Docker (caja hermética)</div>
+              <div> Lo empacan en Docker (caja hermética)</div>
               <div>↓</div>
-              <div>☁️ Docker corre en un servidor (AWS EC2)</div>
+              <div> Docker corre en un servidor (AWS EC2)</div>
               <div>↓</div>
-              <div>🏦 Docker guarda archivos en S3 (bóveda segura)</div>
+              <div> Docker guarda archivos en S3 (bóveda segura)</div>
               <div>↓</div>
-              <div>👥 Los usuarios acceden: Docker les sirve la app, S3 les sirve los archivos</div>
+              <div> Los usuarios acceden: Docker les sirve la app, S3 les sirve los archivos</div>
             </div>
           </div>
         </>
@@ -565,10 +565,10 @@ export function ComparisonS3VsDocker() {
                 padding: '1.5rem'
               }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem', color: idx % 2 === 0 ? '#f57f17' : '#6a1b9a' }}>
-                  ❓ {item.q}
+                   {item.q}
                 </p>
                 <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6', color: '#333' }}>
-                  ✓ {item.a}
+                   {item.a}
                 </p>
               </div>
             ))}
@@ -644,7 +644,7 @@ export function ComparisonS3VsDocker() {
                   fontWeight: '600',
                   color: '#666'
                 }}>
-                  💡 {item.highlight}
+                   {item.highlight}
                 </div>
               </div>
             ))}
@@ -659,7 +659,7 @@ export function ComparisonS3VsDocker() {
             textAlign: 'center'
           }}>
             <p style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: '700', color: '#1b5e20' }}>
-              ✅ Ahora lo entiendes:
+               Ahora lo entiendes:
             </p>
             <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.8', color: '#2e7d32' }}>
               <strong>S3</strong> es para guardar archivos.<br/>
@@ -699,7 +699,7 @@ export function ComparisonS3VsDocker() {
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = 'none';
             }}>
-              📦 Volver a S3 de AWS
+               Volver a S3 de AWS
             </a>
 
             <a href="/docker/fundamentales/intro" style={{
@@ -726,7 +726,7 @@ export function ComparisonS3VsDocker() {
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = 'none';
             }}>
-              🐳 Docker
+               Docker
             </a>
           </div>
         </>

@@ -1,5 +1,6 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import './LessonProyectoReto.css';
 
 const sections = [
   {
@@ -12,7 +13,7 @@ const sections = [
         </p>
 
         <h4>Agile (SCRUM):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Estructura: Iterativa con ciclos cortos (sprints)</li>
           <li>Cambios: Bienvenidos en cualquier momento</li>
           <li>Documentación: Mínima, enfocada</li>
@@ -22,7 +23,7 @@ const sections = [
         </ul>
 
         <h4>Traditional (Waterfall):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Estructura: Secuencial, fases lineales</li>
           <li>Cambios: Difíciles y costosos</li>
           <li>Documentación: Extensa y formal</li>
@@ -49,7 +50,7 @@ const sections = [
         </p>
 
         <h4>Herramientas principales:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Jira:</strong> Enterprise, equipos grandes, proyectos complejos - Premium</li>
           <li><strong>Taiga:</strong> Open-source, startups, equipos pequeños - Gratuito</li>
           <li><strong>Trello:</strong> Kanban simple, proyectos pequeños - Freemium</li>
@@ -58,7 +59,7 @@ const sections = [
         </ul>
 
         <h4>Características requeridas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Gestión de Sprints (planning, tracking, review)</li>
           <li>User Stories y Epics</li>
           <li>Asignación de tareas a equipo</li>
@@ -79,20 +80,20 @@ const sections = [
         </p>
 
         <h4>Concepto:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>EPIC:</strong> Gran feature que toma varios sprints (ej: "Sistema de Autenticación")</li>
           <li><strong>User Story:</strong> Pequeña unidad de trabajo completable en 1-2 días</li>
         </ul>
 
         <h4>Formato User Story (obligatorio):</h4>
-        <p style={{ backgroundColor: '#f8f9fa', padding: '1rem', borderRadius: '0.5rem', marginTop: '1rem' }}>
+        <p className="reto-code-block">
           <strong>Como</strong> [rol del usuario],<br/>
           <strong>quiero</strong> [acción/funcionalidad],<br/>
           <strong>para que</strong> [beneficio/valor].
         </p>
 
         <h4>Criterios de Aceptación (también obligatorio):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Criterio 1 (específico, medible)</li>
           <li>Criterio 2 (comprobable)</li>
           <li>Criterio 3 (no ambiguo)</li>
@@ -115,7 +116,7 @@ const sections = [
         </p>
 
         <h4>Estructura de Sprints típica (3-4 sprints):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Sprint 1:</strong> MVP inicial - Setup + funcionalidades core</li>
           <li><strong>Sprint 2:</strong> Funcionalidades principales + integración</li>
           <li><strong>Sprint 3:</strong> Features secundarias + pulido</li>
@@ -123,7 +124,7 @@ const sections = [
         </ul>
 
         <h4>Eventos del Sprint:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Sprint Planning:</strong> Inicio sprint, 2h, todo equipo</li>
           <li><strong>Daily Standup:</strong> Cada mañana, 15min, dev team + SM</li>
           <li><strong>Sprint Review:</strong> Final sprint, 1h, todo + cliente</li>
@@ -147,7 +148,7 @@ const sections = [
         </p>
 
         <h4>Product Owner (PO):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Gestiona Product Backlog (ordenado por prioridad)</li>
           <li>Define/clarifica User Stories</li>
           <li>Acepta o rechaza trabajo completado</li>
@@ -156,7 +157,7 @@ const sections = [
         </ul>
 
         <h4>Scrum Master (SM):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>NO es manager del equipo</li>
           <li>Facilita ceremonies (planning, standups, etc)</li>
           <li>Elimina impedimentos/bloques</li>
@@ -165,7 +166,7 @@ const sections = [
         </ul>
 
         <h4>Development Team:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Equipos pequeños (3-9 personas ideal)</li>
           <li>Auto-organización: deciden cómo trabajar</li>
           <li>Responsabilidad compartida de calidad</li>

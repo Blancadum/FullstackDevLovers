@@ -1,0 +1,112 @@
+/* Conceptos Section */
+.concepts-section {
+  margin-top: 2rem;
+}
+
+.concepts-title {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.concept-item {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.concept-item p {
+  margin: 0;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* Ejercicios Section */
+.exercises-section {
+  margin-top: 3rem;
+}
+
+.exercises-title {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.exercise-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.exercise-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  background-color: white;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exercise-button:hover {
+  border-color: #ff006e;
+  color: #ff006e;
+}
+
+.exercise-button.active {
+  border-color: #ff006e;
+  background-color: #ff006e;
+  color: white;
+}
+
+.exercise-content {
+  margin-top: 1.5rem;
+}
+
+/* Glosario Section */
+.glossary-section {
+  margin-top: 4rem;
+}
+
+/* Tablet - 2 columnas */
+@media (max-width: 1023px) {
+  .concepts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile - 1 columna */
+@media (max-width: 640px) {
+  .concepts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lesson Template Grid and Layout */
+.lesson-template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Lesson Template Content */
+.lesson-template-content-wrapper {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+}

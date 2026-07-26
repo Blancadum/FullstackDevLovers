@@ -1,0 +1,151 @@
+/* ==========================================
+   LANDING HERO BUTTONS - GENERALIZED STYLING
+   ========================================== */
+
+/* Container principal de botones */
+.landing-hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem auto 4rem;
+  padding: 0 2rem;
+}
+
+/* Botones base */
+.landing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 48px;
+}
+
+/* Botón primario */
+.landing-btn-primary {
+  background: var(--primary-color, #2196f3);
+  color: white;
+  border-color: var(--primary-color, #2196f3);
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.landing-btn-primary:hover {
+  background: var(--dark-color, #1976d2);
+  border-color: var(--dark-color, #1976d2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+}
+
+.landing-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Botón secundario */
+.landing-btn-secondary {
+  background: white;
+  color: var(--primary-color, #2196f3);
+  border-color: var(--primary-color, #2196f3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.landing-btn-secondary:hover {
+  background: var(--primary-color, #2196f3);
+  color: white;
+  border-color: var(--dark-color, #1976d2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.3);
+}
+
+.landing-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Botón terciario (opcional) */
+.landing-btn-tertiary {
+  background: transparent;
+  color: var(--primary-color, #2196f3);
+  border-color: var(--primary-color, #2196f3);
+  box-shadow: none;
+}
+
+.landing-btn-tertiary:hover {
+  background: var(--primary-color, #2196f3);
+  color: white;
+  border-color: var(--dark-color, #1976d2);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+  transform: translateY(-2px);
+}
+
+.landing-btn-tertiary:active {
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
+  .landing-hero-buttons {
+    gap: 0.8rem;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1.5rem;
+  }
+
+  .landing-btn {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem auto 2rem;
+    padding: 0 1rem;
+  }
+
+  .landing-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* En mobile, los botones se apilan verticalmente */
+  .landing-btn-primary,
+  .landing-btn-secondary,
+  .landing-btn-tertiary {
+    flex-shrink: 0;
+  }
+}
+
+/* ========== ACCESIBILIDAD ========== */
+
+.landing-btn:focus {
+  outline: 2px solid var(--primary-color, #2196f3);
+  outline-offset: 2px;
+}
+
+.landing-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.landing-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}

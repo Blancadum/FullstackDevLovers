@@ -1,414 +1,345 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-import { Breadcrumb } from '../components/Breadcrumb';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LandingHero, SEO, KotlinThemeCard } from '../components';
+import { getModule } from '../config/modulesConfig';
+import { getTheme } from '../config/themeColors';
+import { useLandingTheme } from '../hooks/useLandingTheme';
+import { getThemeByModule } from '../config/landingThemes';
 
-export const LandingSQL = () => {
-  const navigate = useNavigate();
-  const breadcrumbs = useBreadcrumb();
+export const LandingSQL = () => {  const theme = getTheme('sql');
+  const sqlModule = getModule('sql');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  const lessons = [
+  // Aplicar tema dinámico con variables CSS
+  const landingTheme = getThemeByModule('sql');
+  useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
+
+  if (!sqlModule) return null;
+
+  // Schema Markup para JSON-LD
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': 'Kubernetes - Orquestación de Contenedores Empresarial',
+    'description': 'Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático y gestión de infraestructura a escala',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Fullstack Dev Lovers',
+      'url': 'https://fullstackdevlovers.com'
+    },
+    'url': 'https://fullstackdevlovers.com/cloud/kubernetes',
+    'hasPart': sqlModule.sections.flatMap((section, idx) =>
+      section.lessons.map((lesson, lidx) => ({
+        '@type': 'LearningResource',
+        'name': lesson.title,
+        'url': `https://fullstackdevlovers.com${lesson.link}`
+      }))
+    )
+  };
+
+  const faqData = [
     {
-      title: 'Introducción a SQL y Bases de Datos',
-      description: 'Entiende qué es una base de datos relacional y los conceptos fundamentales de SQL',
-      icon: '📚',
-      link: '/sql/basicos/introduccion'
+      question: '¿Qué es Kubernetes y por qué lo necesito?',
+      answer: 'Kubernetes (K8s) es un orquestador de contenedores que automatiza deployment, escalado y gestión de aplicaciones containerizadas. Mientras Docker maneja un contenedor en una máquina, Kubernetes gestiona cientos o miles de contenedores en múltiples servidores, garantizando alta disponibilidad, actualizaciones sin downtime y auto-healing automático.'
     },
     {
-      title: 'DDL - Data Definition Language',
-      description: 'CREATE, ALTER, DROP: Define y modifica la estructura de tus bases de datos',
-      icon: '⚙️',
-      link: '/sql/basicos/ddl'
+      question: '¿Necesito Kubernetes o Docker es suficiente?',
+      answer: 'Docker es suficiente si: (1) Tu infra es una o pocas máquinas, (2) Usas PaaS (Heroku, Vercel, AWS Elastic Beanstalk), (3) Tu equipo no tiene expertise en DevOps. Necesitas Kubernetes si: (1) Tienes múltiples servidores, (2) Necesitas auto-escalado, (3) Trabajas en startup/empresa con crecimiento rápido, (4) Usas on-premise infrastructure.'
     },
     {
-      title: 'DML - Data Manipulation Language',
-      description: 'INSERT, UPDATE, DELETE, SELECT: Manipula y consulta datos en tus tablas',
-      icon: '✏️',
-      link: '/sql/basicos/dml'
+      question: '¿Cuál es la curva de aprendizaje de Kubernetes?',
+      answer: 'Kubernetes tiene una curva empinada. Básicos: 2-4 semanas. Profundidad media: 2-3 meses. Expertise: 6-12 meses con proyectos reales. Recomendación: domina Docker 100% primero. Aprende Kubernetes solo cuando realmente lo necesites. Un 70% de equipos pequeños están sobre-ingenierizados con K8s cuando Docker+PaaS sería suficiente.'
     },
     {
-      title: 'JOINs - Combinando Tablas',
-      description: 'INNER, LEFT, RIGHT, FULL: Relaciona datos de múltiples tablas',
-      icon: '🔗',
-      link: '/sql/avanzado/joins'
+      question: '¿Kubernetes vs Docker Swarm vs Nomad: cuál elegir?',
+      answer: 'Docker Swarm: más simple, integrado en Docker, pero limitado. Kubernetes: estándar industria, masiva comunidad, curva empinada, pero definitivamente vale la pena. Nomad: agnóstico (no solo contenedores), flexible, pero menos comunidad. Para 99% de casos, Kubernetes es la respuesta. Es el estándar de facto.'
     },
     {
-      title: 'Consultas Avanzadas',
-      description: 'GROUP BY, HAVING, Subconsultas: Análisis complejos de datos',
-      icon: '🔍',
-      link: '/sql/avanzado/consultas-avanzadas'
+      question: '¿Puedo correr Kubernetes localmente en desarrollo?',
+      answer: 'Sí. Tienes varias opciones: (1) Minikube - VM local con K8s completo (recomendado para aprender), (2) Docker Desktop - K8s integrado en Windows/Mac, (3) Kind - Kubernetes en Docker (perfecto para testing). Para desarrollo inicial, Minikube es lo mejor. Aprendes en tu laptop sin necesidad de infraestructura cloud.'
     },
     {
-      title: 'Crear y Administrar Bases de Datos',
-      description: 'Gestiona bases de datos: creación, modificación, optimización',
-      icon: '➕',
-      link: '/sql/gestion/crear-bases-datos'
-    },
-    {
-      title: 'Usuarios y Permisos',
-      description: 'Control de acceso: crea usuarios y asigna permisos específicos',
-      icon: '🔐',
-      link: '/sql/gestion/usuarios-permisos'
-    },
-    {
-      title: 'Backup y Recuperación',
-      description: 'Protege tus datos: estrategias de backup y recuperación ante fallos',
-      icon: '💾',
-      link: '/sql/gestion/backup-recuperacion'
-    },
-    {
-      title: 'SQL vs NoSQL - Comparativa',
-      description: 'Entiende las diferencias y cuándo usar cada tecnología',
-      icon: '⚖️',
-      link: '/sql/lenguajes/sql-nosql'
-    },
-    {
-      title: 'MySQL - SQL Relacional',
-      description: 'El gestor SQL más popular: instalación, configuración y uso',
-      icon: '🐬',
-      link: '/sql/lenguajes/mysql'
-    },
-    {
-      title: 'PostgreSQL - SQL Avanzado',
-      description: 'El gestor SQL más potente: características avanzadas y escalabilidad',
-      icon: '🐘',
-      link: '/sql/lenguajes/postgresql'
-    },
-    {
-      title: 'MongoDB - NoSQL Flexible',
-      description: 'Bases de datos no relacionales: documentos, escalabilidad horizontal',
-      icon: '🍃',
-      link: '/sql/lenguajes/mongodb'
+      question: '¿Kubernetes en cloud: AWS (EKS) vs Azure (AKS) vs Google (GKE)?',
+      answer: 'Los tres son excelentes. Google GKE es el más maduro (Google creó K8s). AWS EKS es el que usarás si estás en AWS. Azure AKS si estás en Azure. El servicio de K8s manejado abstrae la complejidad de mantener el control plane. 95% de empresas usan Kubernetes manejado, no auto-hospedado.'
     }
   ];
 
-  const concepts = [
+  const comparisonData = [
     {
-      title: 'Relaciones y Claves',
-      description: 'Foreign Keys, Primary Keys y relaciones entre tablas',
-      icon: '🔑'
+      feature: 'Concepto Base',
+      kubernetes: 'Orquestación de contenedores',
+      dockerSwarm: 'Orquestación simplificada',
+      nomad: 'Orquestador agnóstico'
     },
     {
-      title: 'Normalización',
-      description: 'Estructura de datos eficiente para evitar redundancia y anomalías',
-      icon: '📐'
+      feature: 'Complejidad',
+      kubernetes: 'Alta (curva empinada)',
+      dockerSwarm: 'Baja (muy simple)',
+      nomad: 'Media'
     },
     {
-      title: 'Índices',
-      description: 'Optimización de consultas mediante índices estratégicos',
-      icon: '⚡'
+      feature: 'Comunidad',
+      kubernetes: 'Masiva (CNCF)',
+      dockerSwarm: 'Pequeña',
+      nomad: 'Creciente (HashiCorp)'
     },
     {
-      title: 'Transacciones',
-      description: 'ACID: garantiza consistencia e integridad de datos',
-      icon: '🔄'
+      feature: 'Escalabilidad',
+      kubernetes: '5000+ nodos',
+      dockerSwarm: '1000+ nodos',
+      nomad: '10000+ nodos'
     },
     {
-      title: 'Vistas y Procedimientos',
-      description: 'Consultas reutilizables y lógica en la base de datos',
-      icon: '👁️'
+      feature: 'Auto-escalado',
+      kubernetes: 'Nativo y avanzado',
+      dockerSwarm: 'Manual/limitado',
+      nomad: 'Bueno'
     },
     {
-      title: 'Escalabilidad',
-      description: 'Crecimiento: replicación, particionamiento y clustering',
-      icon: '📈'
+      feature: 'Rolling Updates',
+      kubernetes: 'Sofisticado (canary, blue/green)',
+      dockerSwarm: 'Básico',
+      nomad: 'Avanzado'
+    },
+    {
+      feature: 'Ecosystem',
+      kubernetes: 'Enorme (Helm, Istio, Prometheus)',
+      dockerSwarm: 'Minimal',
+      nomad: 'HashiCorp suite'
+    },
+    {
+      feature: 'Adopción Industria',
+      kubernetes: 'Google, Amazon, Microsoft, Netflix',
+      dockerSwarm: 'Pocas empresas',
+      nomad: 'Empresas DevOps forward'
     }
   ];
 
   return (
     <>
-      <Breadcrumb items={breadcrumbs} />
-      <div className="lesson-container">
-      <div className="lesson-header">
-        <h1>SQL - Bases de Datos</h1>
-        <p className="lesson-intro">
-          Domina SQL: desde consultas básicas hasta administración profesional de bases de datos. Aprende a diseñar, optimizar y gestionar datos de forma eficiente
-        </p>
-      </div>
+      <SEO
+        title="Kubernetes - Orquestación de Contenedores Empresarial | Guía Completa"
+        description="Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático, alta disponibilidad y gestión de infraestructura a escala empresarial."
+        keywords="kubernetes, k8s, orquestación, contenedores, pods, deployments, devops, cloud, escalado automático"
+        url="https://fullstackdevlovers.com/cloud/kubernetes"
+        image="/og-kubernetes.png"
+      />
 
-      <section className="lesson-section">
-        <h2>¿Qué es SQL y por qué es importante?</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          <strong>SQL (Structured Query Language)</strong> es el lenguaje universal para gestionar <strong>bases de datos relacionales</strong>. No es un lenguaje de programación, sino un lenguaje de <strong>consulta y manipulación de datos</strong> usado por millones de desarrolladores y empresas en todo el mundo.
-        </p>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaMarkup)}
+      </script>
 
-        <div style={{
-          backgroundColor: '#f0f4ff',
-          border: '2px solid #2196F3',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#2196F3' }}>¿Por qué Aprender SQL?</h3>
-          <ul style={{ fontSize: '1rem', lineHeight: '1.9', marginBottom: 0 }}>
-            <li><strong>Industria:</strong> Todas las empresas usan bases de datos relacionales</li>
-            <li><strong>Backend Profesional:</strong> Todo desarrollador debe dominar SQL</li>
-            <li><strong>Análisis de Datos:</strong> Los analistas viven en SQL y Excel</li>
-            <li><strong>Carrera:</strong> Habilidad fundamental para cualquier posición técnica</li>
-            <li><strong>Rendimiento:</strong> Optimizar consultas es parte del trabajo diario</li>
-          </ul>
-        </div>
+      <div className="sql-landing">
+        <LandingHero
+          title="SQL: Bases de Datos Relacionales"
+          subtitle="Domina consultas y diseño de bases de datos"
+          description="SQL es el lenguaje fundamental para bases de datos relacionales como MySQL y PostgreSQL. Desde SELECT básicas hasta JOINs complejos, SQL es esencial para cualquier desarrollador backend."
+          primaryColor={landingTheme.primary}
+          darkColor={landingTheme.dark}
+          lightGradientColor={landingTheme.lightGradient}
+          imageUrl="/src/assets/images/logos/mysql.png"
+          imageAlt="SQL Logo"
+          primaryButtonText="Comenzar con SQL →"
+          primaryButtonLink="/datos/sql/introduccion"
+          secondaryButtonText="Ver comparativa"
+          secondaryButtonLink="#comparativa"
+        />
 
-        <h3>Impacto en tu Carrera</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '1.5rem'
-        }}>
-          {[
-            { icon: '💼', title: 'Requisito Base', desc: 'Todas las ofertas de empleo lo exigen' },
-            { icon: '📊', title: 'Toma de Decisiones', desc: 'Accede a datos para análisis y reporting' },
-            { icon: '⚡', title: 'Rendimiento', desc: 'Optimiza consultas para aplicaciones rápidas' },
-            { icon: '🔒', title: 'Seguridad', desc: 'Gestiona permisos y controla acceso a datos' }
-          ].map((item, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              textAlign: 'center'
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
-              <h4 style={{ marginBottom: '0.5rem' }}>{item.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>{item.desc}</p>
+        {/* What is Kubernetes Section */}
+        <section className="sql-content">
+          <div className="content-container">
+            <h2>¿Qué es Kubernetes?</h2>
+            <p className="intro-text">
+              Kubernetes es un orquestador de contenedores open-source creado por Google para gestionar aplicaciones containerizadas
+              a escala. Automatiza el deployment, escalado horizontal y gestión de cientos o miles de contenedores en múltiples servidores,
+              garantizando alta disponibilidad, recuperación ante fallos y optimización de recursos.
+            </p>
+
+            {/* Key Features */}
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">🎼</div>
+                <h3>Orquestación Automática</h3>
+                <p>Gestiona automáticamente deployment y posicionamiento de contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📈</div>
+                <h3>Auto-escalado</h3>
+                <p>Aumenta o reduce replicas automáticamente según CPU y memoria</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🛡️</div>
+                <h3>Alta Disponibilidad</h3>
+                <p>Recuperación automática ante fallos de nodos y contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔄</div>
+                <h3>Rolling Updates</h3>
+                <p>Actualiza versiones sin downtime con rollback automático</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚖️</div>
+                <h3>Balanceo de Carga</h3>
+                <p>Distribuye tráfico automáticamente entre replicas</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚙️</div>
+                <h3>Gestión de Recursos</h3>
+                <p>CPU, memoria y almacenamiento distribuido eficientemente</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>Conceptos Clave de SQL</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {concepts.map((concept, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#f0f4ff',
-              border: '2px solid #2196F3',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{concept.icon}</div>
-              <h4 style={{ margin: '0 0 0.75rem 0', color: '#2196F3' }}>{concept.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{concept.description}</p>
+        {/* Learning Topics */}
+        <section className="learning-topics">
+          <div className="content-container">
+            <h2>Temas de Aprendizaje</h2>
+            <p className="intro-text">
+              Domina Kubernetes con una progresión estructurada desde conceptos básicos hasta orquestación avanzada
+            </p>
+
+            <div className="theme-cards-container">
+              {sqlModule.sections.map((section, idx) => (
+                <KotlinThemeCard
+                  key={idx}
+                  icon={getIconForSection(section.id)}
+                  title={section.name}
+                  description={section.description}
+                  lessons={section.lessons}
+                  color={getColorForSection(idx)}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>Ciclo de Vida de una Consulta SQL</h2>
-        <div style={{
-          backgroundColor: '#f5f5f5',
-          border: '3px solid #2196F3',
-          borderRadius: '8px',
-          padding: '2rem',
-          marginBottom: '2rem'
-        }}>
-          <pre style={{
-            fontSize: '0.9rem',
-            lineHeight: '1.7',
-            margin: 0,
-            overflow: 'auto'
-          }}>
-{`┌──────────────────────────────────────────────┐
-│        CICLO DE VIDA DE UNA CONSULTA         │
-├──────────────────────────────────────────────┤
-│                                              │
-│  1️⃣  PARSING       → Verificar sintaxis      │
-│       ↓                                     │
-│  2️⃣  VALIDACIÓN    → Tablas y columnas      │
-│       ↓                                     │
-│  3️⃣  OPTIMIZACIÓN  → Plan de ejecución     │
-│       ↓                                     │
-│  4️⃣  COMPILACIÓN   → Código máquina        │
-│       ↓                                     │
-│  5️⃣  EJECUCIÓN     → Acceso a índices      │
-│       ↓                                     │
-│  6️⃣  RECUPERACIÓN  → Retorna resultados    │
-│                                              │
-│  SQL ágil = Índices buenos + Queries bien   │
-└──────────────────────────────────────────────┘`}
-          </pre>
-        </div>
-
-        <h3>Modelos de Datos: Relacional vs NoSQL</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '2rem',
-          marginTop: '1.5rem'
-        }}>
-          <div style={{
-            backgroundColor: '#e8f5e9',
-            border: '2px solid #4CAF50',
-            borderRadius: '8px',
-            padding: '1.5rem'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#4CAF50' }}>✅ SQL Relacional (Tabla)</h4>
-            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
-              <li>Estructura fija con esquema</li>
-              <li>Relaciones definidas (Foreign Keys)</li>
-              <li>Transacciones ACID garantizadas</li>
-              <li>Ideal para datos estructurados</li>
-              <li>Ejemplos: MySQL, PostgreSQL, Oracle</li>
-            </ul>
           </div>
+        </section>
 
-          <div style={{
-            backgroundColor: '#fff3e0',
-            border: '2px solid #ff9800',
-            borderRadius: '8px',
-            padding: '1.5rem'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#ff9800' }}>✅ NoSQL (Documentos/Clave-Valor)</h4>
-            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
-              <li>Esquema flexible (documentos JSON)</li>
-              <li>Sin relaciones predefinidas</li>
-              <li>Escalabilidad horizontal</li>
-              <li>Ideal para datos no estructurados</li>
-              <li>Ejemplos: MongoDB, Redis, DynamoDB</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        {/* Comparison Section */}
+        <section className="comparison-section" id="comparativa">
+          <div className="content-container">
+            <h2>Kubernetes vs Docker Swarm vs Nomad</h2>
+            <p className="intro-text">
+              Comparativa detallada de Kubernetes con otras plataformas de orquestación
+            </p>
 
-      <section className="lesson-section">
-        <h2>Lecciones</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {lessons.map((lesson, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#2196F3';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(33,150,243,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#ddd';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
-              <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
-              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
-                {lesson.description}
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    <th>Kubernetes</th>
+                    <th>Docker Swarm</th>
+                    <th>Nomad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      <td className="sql-col">{row.kubernetes}</td>
+                      <td>{row.dockerSwarm}</td>
+                      <td>{row.nomad}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="comparison-conclusion">
+              <p>
+                <strong>✅ Elige Kubernetes si:</strong> Trabajas en empresa con infraestructura compleja, necesitas auto-escalado sofisticado,
+                quieres estándar de facto con masiva comunidad, o tienes roadmap de crecimiento.
               </p>
-              <button
-                onClick={() => navigate(lesson.link)}
-                style={{
-                  backgroundColor: '#2196F3',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#1565C0'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#2196F3'}
-              >
-                Ver Lección →
-              </button>
+              <p>
+                <strong>✅ Elige Docker Swarm si:</strong> Tu infra es pequeña, necesitas simplicidad extrema, o ya inversión en Docker.
+                Nota: Swarm está en mantenimiento, no recomendado para nuevo.
+              </p>
+              <p>
+                <strong>✅ Elige Nomad si:</strong> Necesitas agnóstico (no solo contenedores), trabajas con VMs/binarios también,
+                o prefieres HashiCorp stack completo.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#e8f5ff',
-        border: '2px solid #2196F3',
-        borderRadius: '8px',
-        padding: '2rem'
-      }}>
-        <h2>Ruta de Aprendizaje Recomendada</h2>
-        <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Si eres nuevo en SQL, te recomendamos este orden para aprender de forma progresiva:
-        </p>
-        <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>Introducción a SQL y Bases de Datos</strong> → Entiende qué es una BD relacional</li>
-          <li><strong>DDL - Data Definition Language</strong> → Crea y modifica tablas</li>
-          <li><strong>DML - Data Manipulation Language</strong> → Inserta, actualiza y consulta datos</li>
-          <li><strong>JOINs - Combinando Tablas</strong> → Relaciona datos de múltiples tablas</li>
-          <li><strong>Consultas Avanzadas</strong> → GROUP BY, HAVING y subconsultas</li>
-          <li><strong>MySQL o PostgreSQL</strong> → Practica en un motor SQL real</li>
-          <li><strong>Gestión y Usuarios</strong> → Administración profesional</li>
-          <li><strong>NoSQL (MongoDB)</strong> → Entiende la alternativa moderna</li>
-        </ol>
-      </section>
+        {/* When to Use Kubernetes */}
+        <section className="when-to-use">
+          <div className="content-container">
+            <h2>¿Cuándo Usar Kubernetes?</h2>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#fff9c4',
-        border: '2px solid #fbc02d',
-        borderRadius: '8px',
-        padding: '1.5rem'
-      }}>
-        <h3 style={{ marginTop: 0, color: '#f57f17' }}>Consejo Profesional</h3>
-        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: 0 }}>
-          En la práctica profesional, pasarás más tiempo <strong>optimizando consultas lentes que escribiendo SQL</strong>.
-          Aprende a usar EXPLAIN, índices y a analizar planes de ejecución desde el inicio. Un desarrollador que escribe
-          consultas eficientes vale mucho más que uno que solo escribe código correcto.
-        </p>
-      </section>
+            <div className="use-case-grid">
+              <div className="use-case">
+                <h3>✅ Ideal para:</h3>
+                <ul>
+                  <li>Múltiples servidores/cluster distribuido</li>
+                  <li>Aplicaciones que necesitan auto-escalado</li>
+                  <li>Alta disponibilidad y uptime 99.99%</li>
+                  <li>Microservicios complejos con muchos servicios</li>
+                  <li>Infraestructura empresarial crítica</li>
+                </ul>
+              </div>
+              <div className="use-case">
+                <h3>⚠️ Considera alternativas si:</h3>
+                <ul>
+                  <li>Tu equipo no tiene expertise en DevOps</li>
+                  <li>Usas PaaS (Heroku, Vercel, AWS Beanstalk)</li>
+                  <li>Tienes un único servidor o máquina</li>
+                  <li>Es startup muy pequeño sin presupuesto DevOps</li>
+                  <li>Tu aplicación es simple/monolítica</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          gap: '1rem'
-        }}>
-          <a href="/git/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#f3e5f5',
-            color: '#4a148c',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #9c27b0'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
-            ← Volver a Git
-          </a>
-          <a href="/metodologias/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#e0f2f1',
-            color: '#004d40',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #009688'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
-            Metodologías →
-          </a>
-        </div>
-      </section>
-    </div>
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="content-container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div className="faq-list">
+              {faqData.map((faq, idx) => (
+                <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+                  <button
+                    className="faq-summary"
+                    onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">+</span>
+                  </button>
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final Section */}
+        <section className="sql-cta">
+          <div className="cta-content">
+            <h2>Comienza tu Viaje en Kubernetes Hoy</h2>
+            <p>Aprende desde conceptos básicos hasta orquestación profesional a escala</p>
+            <Link to="/datos/sql/introduccion" className="cta-button">
+              Ir a Fundamentos de Kubernetes →
+            </Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
+
+// Funciones auxiliares
+function getIconForSection(sectionId) {
+  const icons = {
+    'fundamentales': '📚',
+  };
+  return icons[sectionId] || '📄';
+}
+
+function getColorForSection(index) {
+  const colors = ['#9c27b0', '#7b1fa2'];
+  return colors[index % colors.length];
+}

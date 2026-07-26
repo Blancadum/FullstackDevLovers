@@ -1,24 +1,60 @@
+:root {
+  --space-unit: 0.5rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --navbar-height: 54px;
+  --breadcrumb-height: 36px;
+  --header-margin: 1rem;
+  --header-height: calc(var(--navbar-height) + var(--breadcrumb-height) + var(--header-margin));
+}
+
+/* App Root Layout */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: calc(var(--breadcrumb-height) + 0.5rem);
+}
+
 /* Navbar */
 .navbar {
   background-color: #ffffff;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   opacity: 1;
   pointer-events: auto;
   transition: opacity var(--transition-normal);
-  border-bottom: 1px solid #f0f0f0;
-  height: 60px;
+  border-bottom: none;
   display: flex;
   align-items: center;
   /* Safe area for notched devices */
-  padding-top: max(1rem, var(--safe-area-inset-top));
   padding-left: max(0, var(--safe-area-inset-left));
   padding-right: max(0, var(--safe-area-inset-right));
+}
+
+/* Navbar wrapper con breadcrumb */
+.navbar ~ .breadcrumb {
+  position: fixed;
+  top: 54px;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 
 .nav-container {
@@ -40,6 +76,10 @@
   letter-spacing: -0.5px;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.logo-link {
+  text-decoration: none;
 }
 
 .nav-menu {
@@ -1039,6 +1079,18 @@ footer .footer-icons .social-icon {
   footer .footer-icons .social-icon {
     width: 11px;
     height: 11px;
+  }
+}
+
+/* Mobile: apilar navegación entre lecciones */
+@media (max-width: 768px) {
+  .lesson-navigation {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lesson-navigation .btn {
+    width: 100%;
   }
 }
 

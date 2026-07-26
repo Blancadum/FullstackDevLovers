@@ -1,11 +1,14 @@
-import { Hero, QuickAccess, About, SEO } from '../components';
-import { ModulesSection } from '../components/ModulesSection';
-import { useNavbarScroll } from '../hooks/useNavbarScroll';
+import {
+  HeroEnhanced,
+  SEO,
+  QuickAccessSection,
+  MenuExpandible,
+  OrientadorSection,
+  StackDominationSection
+} from '../components';
 import './Home.css';
 
 export function Home() {
-  useNavbarScroll();
-
   return (
     <>
       <SEO
@@ -14,10 +17,16 @@ export function Home() {
         keywords="Fullstack Developer, Java Backend, Docker, AWS, DevOps, Spring Boot, SQL, Patrones de Diseño, Aprendizaje Programación"
         url="https://fullstackdevlovers.com"
       />
-      <Hero />
-      <QuickAccess />
-      <ModulesSection />
-      <About />
+      <HeroEnhanced
+        title="Fullstack Dev Lovers"
+        subtitle="Conquista Backend, DevOps y Cloud"
+        description="Java, Spring Boot, Docker, AWS y mucho más. Tu camino hacia la maestría en desarrollo"
+        searchPlaceholder="Busca una tecnología..."
+      />
+      <QuickAccessSection />
+      <MenuExpandible defaultOpen={null} />
+      <OrientadorSection />
+      <StackDominationSection />
     </>
   );
 }

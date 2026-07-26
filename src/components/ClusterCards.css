@@ -1,0 +1,423 @@
+/* ============================================================================
+   ClusterCards Component
+   Componente genérico reutilizable para grillas de tarjetas
+   Soporta: QuickAccess, Features, Metodologías, Categorías, etc.
+   ============================================================================ */
+
+.cluster-cards {
+  padding: 0;
+  background: transparent;
+  width: 100%;
+}
+
+.cluster-cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================================================
+   Header (Título + Subtítulo)
+   ============================================================================ */
+
+.cluster-cards-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.cluster-cards-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.cluster-cards-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   Grid Layout
+   ============================================================================ */
+
+.cluster-cards-grid {
+  display: grid;
+  gap: 1.8rem;
+  width: 100%;
+}
+
+/* Responsivo por número de columnas */
+.cluster-cards--3cols .cluster-cards-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cluster-cards--4cols .cluster-cards-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .cluster-cards--4cols .cluster-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .cluster-cards--4cols .cluster-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cluster-cards--6cols .cluster-cards-grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* ============================================================================
+   Card Base Styling
+   ============================================================================ */
+
+.cluster-card {
+  animation: slideInCard 0.6s ease-out forwards;
+  animation-delay: calc(var(--data-delay, 0) * 0.1s);
+  position: relative;
+  aspect-ratio: 1;
+}
+
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cluster-card-link,
+.cluster-card-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 0.6rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid var(--card-color, #9c27b0);
+  height: 100%;
+  width: 100%;
+}
+
+.cluster-card-link {
+  border: 2px solid #e0e0e0;
+}
+
+.cluster-card-button {
+  border: none;
+  border-left: 4px solid var(--card-color, #9c27b0);
+}
+
+/* Hover effects */
+.cluster-card-link:hover,
+.cluster-card-button:hover {
+  border-color: var(--card-color, #9c27b0);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  .cluster-card-link:hover,
+  .cluster-card-button:hover {
+    transform: translateY(0);
+  }
+}
+
+/* Focus visible */
+.cluster-card-link:focus-visible,
+.cluster-card-button:focus-visible {
+  outline: 3px solid var(--card-color, #9c27b0);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   Card Visual (Icon/Image)
+   ============================================================================ */
+
+.card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+/* Variante: Image */
+.cluster-cards--image .card-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+  background: white;
+  border-radius: 8px;
+  padding: 6px;
+  border: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+/* Variante: Emoji */
+.cluster-cards--emoji .card-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Variante: Icon */
+.cluster-cards--icon .card-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Variante: Logo */
+.cluster-cards--logo .card-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   Card Content (Título + Descripción)
+   ============================================================================ */
+
+.card-content {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
+  opacity: 0.85;
+  display: none;
+}
+
+.card-meta {
+  display: none;
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .cluster-cards-container {
+    padding: 0 1.5rem;
+  }
+
+  .cluster-cards-title {
+    font-size: 1.6rem;
+  }
+
+  .cluster-cards-subtitle {
+    font-size: 1rem;
+  }
+
+  .cluster-cards-grid {
+    gap: 1.2rem;
+  }
+
+  .cluster-card-link,
+  .cluster-card-button {
+    padding: 0.8rem 0.6rem;
+  }
+
+  .cluster-cards--3cols .cluster-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cluster-cards--4cols .cluster-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cluster-cards--6cols .cluster-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cluster-cards--image .card-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cluster-cards--emoji .card-emoji {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  .cluster-cards-container {
+    padding: 0 1rem;
+  }
+
+  .cluster-cards-title {
+    font-size: 1.4rem;
+  }
+
+  .cluster-cards-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .cluster-cards-grid {
+    gap: 0.9rem;
+  }
+
+  .cluster-card-link,
+  .cluster-card-button {
+    padding: 0.7rem 0.5rem;
+    border-radius: 10px;
+  }
+
+  .cluster-cards--3cols .cluster-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cluster-cards--4cols .cluster-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cluster-cards--6cols .cluster-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cluster-cards--image .card-image {
+    width: 85px;
+    height: 85px;
+  }
+
+  .cluster-cards--emoji .card-emoji {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+  }
+
+  .card-description {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tiny (320px) */
+@media (max-width: 374px) {
+  .cluster-cards-container {
+    padding: 0 0.75rem;
+  }
+
+  .cluster-cards-title {
+    font-size: 1.2rem;
+  }
+
+  .cluster-cards-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cluster-cards-grid {
+    gap: 0.7rem;
+  }
+
+  .cluster-card-link,
+  .cluster-card-button {
+    padding: 0.6rem 0.4rem;
+  }
+
+  .cluster-cards--image .card-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cluster-cards--emoji .card-emoji {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 0.8rem;
+  }
+
+  .card-description {
+    font-size: 0.7rem;
+  }
+}
+
+/* ============================================================================
+   Animation: fadeInDown (utilizada en header)
+   ============================================================================ */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   Accesibilidad
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cluster-card,
+  .cluster-cards-header {
+    animation: none;
+  }
+
+  .cluster-card-link,
+  .cluster-card-button {
+    transition: none;
+  }
+}

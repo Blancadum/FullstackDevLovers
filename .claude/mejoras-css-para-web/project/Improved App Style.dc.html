@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nocturne-e69dce6b-ab69-4163-ba46-2ccce88e48aa/styles.css">
+  <script src="_ds/nocturne-e69dce6b-ab69-4163-ba46-2ccce88e48aa/_ds_bundle.js"></script>
+</helmet>
+
+<section style="padding: 4rem 2rem; background: var(--color-bg); max-width: 1200px; margin: 0 auto;">
+  <div style="padding: 3rem;">
+    <h1 style="margin: 0 0 1rem 0; color: var(--color-text); font-size: 2rem;">📋 Mejoras de Sitio Web</h1>
+    
+    <div style="background: var(--color-neutral-900); padding: 3rem; border-left: 4px solid var(--color-accent); margin: 3rem 0;">
+      <h2 style="margin-top: 0; color: var(--color-text);">Cambios realizados</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem;">
+        <div style="padding: 2rem; background: var(--color-neutral-800); border-left: 3px solid var(--color-accent);">
+          <h3 style="margin-top: 0; color: var(--color-accent); font-size: 1.1rem;">1. Espaciado Consistente</h3>
+          <p style="color: var(--color-neutral-400); line-height: 1.6; margin: 1rem 0 0 0;">
+            Sistema de variables CSS con escala base de 0.5rem para garantizar márgenes y paddings uniformes en todos los componentes.
+          </p>
+        </div>
+
+        <div style="padding: 2rem; background: var(--color-neutral-800); border-left: 3px solid var(--color-accent);">
+          <h3 style="margin-top: 0; color: var(--color-accent); font-size: 1.1rem;">2. Navegación Mejorada</h3>
+          <p style="color: var(--color-neutral-400); line-height: 1.6; margin: 1rem 0 0 0;">
+            Botones de lección anterior/siguiente con mejor contraste y estados hover más claros para facilitar navegación.
+          </p>
+        </div>
+
+        <div style="padding: 2rem; background: var(--color-neutral-800); border-left: 3px solid var(--color-accent);">
+          <h3 style="margin-top: 0; color: var(--color-accent); font-size: 1.1rem;">3. Performance Optimizado</h3>
+          <p style="color: var(--color-neutral-400); line-height: 1.6; margin: 1rem 0 0 0;">
+            Animaciones reducidas en mobile, respeto a prefers-reduced-motion, y transiciones más rápidas (0.2s).
+          </p>
+        </div>
+
+        <div style="padding: 2rem; background: var(--color-neutral-800); border-left: 3px solid var(--color-accent);">
+          <h3 style="margin-top: 0; color: var(--color-accent); font-size: 1.1rem;">4. Componentes Pulidos</h3>
+          <p style="color: var(--color-neutral-400); line-height: 1.6; margin: 1rem 0 0 0;">
+            Botones, tarjetas e infoboxes con márgenes coherentes. Bordes izquierdos accent para consistency visual.
+          </p>
+        </div>
+
+        <div style="padding: 2rem; background: var(--color-neutral-800); border-left: 3px solid var(--color-accent);">
+          <h3 style="margin-top: 0; color: var(--color-accent); font-size: 1.1rem;">5. Mobile First</h3>
+          <p style="color: var(--color-neutral-400); line-height: 1.6; margin: 1rem 0 0 0;">
+            Navegación entre lecciones apilada en mobile. Mejor espaciado responsive en breadcrumbs y secciones.
+          </p>
+        </div>
+
+        <div style="padding: 2rem; background: var(--color-neutral-800); border-left: 3px solid var(--color-accent);">
+          <h3 style="margin-top: 0; color: var(--color-accent); font-size: 1.1rem;">6. Accesibilidad</h3>
+          <p style="color: var(--color-neutral-400); line-height: 1.6; margin: 1rem 0 0 0;">
+            Focus states con outline accent de 2px. Respeto a prefers-reduced-motion. Touch targets de 44px+.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 4rem; padding: 3rem; background: var(--color-neutral-800); border-left: 4px solid var(--color-accent);">
+        <h3 style="margin-top: 0; color: var(--color-text); font-size: 1.3rem;">Cómo implementar</h3>
+        <ol style="padding-left: 2rem; color: var(--color-neutral-400); line-height: 1.8;">
+          <li style="margin: 1rem 0;">
+            <strong style="color: var(--color-text);">En App.css:</strong> Agregar variables de espaciado (--space-1 a --space-8) al :root
+          </li>
+          <li style="margin: 1rem 0;">
+            <strong style="color: var(--color-text);">En Lesson.css:</strong> Reemplazar valores hardcodeados con variables
+          </li>
+          <li style="margin: 1rem 0;">
+            <strong style="color: var(--color-text);">En LessonLayout.css:</strong> Estandarizar márgenes de .lesson-body
+          </li>
+          <li style="margin: 1rem 0;">
+            <strong style="color: var(--color-text);">En componentes:</strong> Aplicar estilos a breadcrumb, info-box, lesson-section
+          </li>
+          <li style="margin: 1rem 0;">
+            <strong style="color: var(--color-text);">Mobile:</strong> Pilas verticales en lesson-navigation (@media max-width: 768px)
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div style="background: var(--color-neutral-900); padding: 3rem; border-left: 4px solid var(--color-accent); margin: 3rem 0;">
+      <h2 style="margin-top: 0; color: var(--color-text); font-size: 1.5rem;">Variables CSS Propuestas</h2>
+      <pre style="background: var(--color-neutral-800); border-left: 4px solid var(--color-accent); padding: 2rem; overflow-x: auto; color: var(--color-neutral-400); margin: 1rem 0; font-size: 0.9rem; line-height: 1.6; border-radius: 0;">:root {
+  --space-unit: 0.5rem;
+  --space-1: 0.5rem;      /* 8px */
+  --space-2: 1rem;        /* 16px */
+  --space-3: 1.5rem;      /* 24px */
+  --space-4: 2rem;        /* 32px */
+  --space-6: 3rem;        /* 48px */
+  --space-8: 4rem;        /* 64px */
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}</pre>
+    </div>
+
+    <div style="background: var(--color-neutral-900); padding: 3rem; border-left: 4px solid var(--color-accent); margin: 3rem 0;">
+      <h2 style="margin-top: 0; color: var(--color-text); font-size: 1.5rem;">Archivos a Actualizar</h2>
+      <ul style="padding-left: 2rem; color: var(--color-neutral-400); line-height: 1.8;">
+        <li style="margin: 1rem 0;"><code style="color: var(--color-accent); background: var(--color-neutral-800); padding: 0.3rem 0.6rem; border-radius: 0;">src/App.css</code> – Variables globales de spacing</li>
+        <li style="margin: 1rem 0;"><code style="color: var(--color-accent); background: var(--color-neutral-800); padding: 0.3rem 0.6rem; border-radius: 0;">src/components/Lesson.css</code> – Márgenes de navegación</li>
+        <li style="margin: 1rem 0;"><code style="color: var(--color-accent); background: var(--color-neutral-800); padding: 0.3rem 0.6rem; border-radius: 0;">src/components/LessonLayout.css</code> – Espaciado body y secciones</li>
+        <li style="margin: 1rem 0;"><code style="color: var(--color-accent); background: var(--color-neutral-800); padding: 0.3rem 0.6rem; border-radius: 0;">src/components/LessonSection.css</code> – Márgenes consistentes</li>
+        <li style="margin: 1rem 0;"><code style="color: var(--color-accent); background: var(--color-neutral-800); padding: 0.3rem 0.6rem; border-radius: 0;">src/components/Breadcrumb.css</code> – Margenes top/bottom</li>
+        <li style="margin: 1rem 0;"><code style="color: var(--color-accent); background: var(--color-neutral-800); padding: 0.3rem 0.6rem; border-radius: 0;">src/components/InfoBox.css</code> – Padding y margins</li>
+      </ul>
+    </div>
+
+    <div style="background: var(--color-neutral-900); padding: 3rem; border-left: 4px solid var(--color-accent); margin: 3rem 0;">
+      <h2 style="margin-top: 0; color: var(--color-text); font-size: 1.5rem;">Mejoras en Detalle</h2>
+      
+      <div style="margin-top: 2rem;">
+        <h3 style="color: var(--color-accent); font-size: 1.2rem;">1️⃣ Espaciado Consistente</h3>
+        <p style="color: var(--color-neutral-400); line-height: 1.7;">
+          Actualmente hay rupturas en márgenes entre .breadcrumb (sin margen top), .lesson-header (1rem), y .lesson-section (2rem). 
+          Con variables:
+        </p>
+        <pre style="background: var(--color-neutral-800); border-left: 3px solid var(--color-accent); padding: 1.5rem; overflow-x: auto; color: var(--color-neutral-400); margin: 1rem 0; font-size: 0.85rem;">/* Antes: inconsistente */
+.lesson-header { margin-bottom: 1rem; }
+.lesson-section { margin-bottom: 2rem; }
+
+/* Después: consistente */
+.lesson-header { margin-bottom: var(--space-4); }
+.lesson-section { margin-bottom: var(--space-8); }</pre>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <h3 style="color: var(--color-accent); font-size: 1.2rem;">2️⃣ Navegación Mejorada</h3>
+        <p style="color: var(--color-neutral-400); line-height: 1.7;">
+          Los botones anterior/siguiente necesitan mejor contraste y spacing. Agregar estados hover con color accent:
+        </p>
+        <pre style="background: var(--color-neutral-800); border-left: 3px solid var(--color-accent); padding: 1.5rem; overflow-x: auto; color: var(--color-neutral-400); margin: 1rem 0; font-size: 0.85rem;">.lesson-navigation .btn {
+  border: 1px solid var(--color-neutral-700);
+  transition: all 0.2s ease;
+}
+
+.lesson-navigation .btn:hover {
+  background: var(--color-neutral-800);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}</pre>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <h3 style="color: var(--color-accent); font-size: 1.2rem;">3️⃣ Performance & Animaciones</h3>
+        <p style="color: var(--color-neutral-400); line-height: 1.7;">
+          Reducir transiciones de 0.3s a 0.2s y respetar prefers-reduced-motion:
+        </p>
+        <pre style="background: var(--color-neutral-800); border-left: 3px solid var(--color-accent); padding: 1.5rem; overflow-x: auto; color: var(--color-neutral-400); margin: 1rem 0; font-size: 0.85rem;">@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

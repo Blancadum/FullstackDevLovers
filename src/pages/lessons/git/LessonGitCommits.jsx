@@ -174,12 +174,12 @@ git log --oneline`}
                 <h4>Ejemplos buenos vs malos</h4>
                 <CodeBlock
                   language="bash"
-                  code={`❌ BAD:
+                  code={` BAD:
 git commit -m "cambios"
 git commit -m "arreglé cosas"
 git commit -m "jeje"
 
-✓ GOOD:
+ GOOD:
 git commit -m "feat: agregar validación de email"
 git commit -m "fix: resolver error en login"
 git commit -m "docs: actualizar instrucciones de instalación"`}
@@ -322,7 +322,7 @@ git commit --amend --no-edit
 git commit --amend`}
         />
 
-        <p><strong>⚠️ Importante:</strong> Solo usa <code>--amend</code> en commits locales que NO hayas hecho push.
+        <p><strong> Importante:</strong> Solo usa <code>--amend</code> en commits locales que NO hayas hecho push.
         Si ya subiste el commit, usa <code>git revert</code> en su lugar.</p>
 
         <h2>Ver Qué Cambió: git diff</h2>
@@ -344,7 +344,7 @@ git diff archivo.js
 git show a3f9c12`}
         />
 
-        <h2>⚠️ Errores Comunes</h2>
+        <h2> Errores Comunes</h2>
 
         <h3>Error: "Changes not staged for commit"</h3>
         <p>Hiciste cambios pero olvidaste hacer <code>git add</code>:</p>

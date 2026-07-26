@@ -13,8 +13,7 @@ export function useLessonNavigation() {
     previous: null,
     previousTitle: null,
     next: null,
-    nextTitle: null,
-  };
+    nextTitle: null};
 
   return nav;
 }

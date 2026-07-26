@@ -5,14 +5,14 @@ export const CasoRealDynamoDB = () => {
   return (
     <div className="lesson-container">
       <div className="lesson-header">
-        <h1>🎮 Caso Real: MobileGameStudio - Juego Multiplayer Masivo</h1>
+        <h1> Caso Real: MobileGameStudio - Juego Multiplayer Masivo</h1>
         <p className="lesson-intro">
           Cómo una startup de juegos escaló de 100K a 1M usuarios simultáneos migrando de RDS a DynamoDB
         </p>
       </div>
 
       <section className="lesson-section">
-        <h2>🚨 El Problema</h2>
+        <h2> El Problema</h2>
 
         <div style={{ backgroundColor: '#fff3cd', border: '2px solid #ffc107', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
           <p style={{ marginTop: 0 }}>
@@ -33,20 +33,20 @@ export const CasoRealDynamoDB = () => {
         </ul>
 
         <div style={{ backgroundColor: '#f8d7da', border: '2px solid #f5c6cb', padding: '1.5rem', borderRadius: '8px', marginTop: '2rem' }}>
-          <h4>📊 El Cuello de Botella</h4>
+          <h4> El Cuello de Botella</h4>
           <p><strong>Las queries SQL no escalan con millones de jugadores</strong></p>
           <ul>
-            <li>❌ Leaderboard query: "SELECT * FROM players ORDER BY score LIMIT 100" = scan de tabla completa (1M filas)</li>
-            <li>❌ Player stats: 10,000 consultas simultáneas → RDS bottleneck</li>
-            <li>❌ Actualizaciones de score: competencia de locks en PostgreSQL</li>
-            <li>❌ Latencia: 500ms cuando necesitas 100ms para juego smooth</li>
-            <li>❌ Escalado manual: cada 100K jugadores = comprar instancia más grande (lento, caro)</li>
+            <li> Leaderboard query: "SELECT * FROM players ORDER BY score LIMIT 100" = scan de tabla completa (1M filas)</li>
+            <li> Player stats: 10,000 consultas simultáneas → RDS bottleneck</li>
+            <li> Actualizaciones de score: competencia de locks en PostgreSQL</li>
+            <li> Latencia: 500ms cuando necesitas 100ms para juego smooth</li>
+            <li> Escalado manual: cada 100K jugadores = comprar instancia más grande (lento, caro)</li>
           </ul>
         </div>
       </section>
 
       <section className="lesson-section">
-        <h2>✅ La Solución: DynamoDB con Partition Keys</h2>
+        <h2> La Solución: DynamoDB con Partition Keys</h2>
 
         <h3>Por Qué DynamoDB y No RDS</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1.5rem' }}>
@@ -254,7 +254,7 @@ Resultado: P99 latencia = 5-10ms (vs 500ms en RDS)
       </section>
 
       <section className="lesson-section">
-        <h2>🔧 Implementación: API en Java + DynamoDB</h2>
+        <h2> Implementación: API en Java + DynamoDB</h2>
 
         <h3>Service para Actualizar Score del Jugador</h3>
         <CodeBlock language="java" title="Player Score Update Service" code={`import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
@@ -514,28 +514,28 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
       </section>
 
       <section className="lesson-section">
-        <h2>📈 Resultados: Antes vs Después</h2>
+        <h2> Resultados: Antes vs Después</h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ backgroundColor: '#d4edda', border: '2px solid #28a745', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#155724' }}>Antes (RDS PostgreSQL)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>🐢 <strong>Latencia P99:</strong> 500ms</li>
-              <li>😠 <strong>Leaderboard:</strong> 10 segundos (timeout)</li>
-              <li>❌ <strong>Throttling:</strong> 5% requests rechazados en pico</li>
-              <li>💰 <strong>Costo:</strong> $25K/mes (db.r6i.4xlarge + replica)</li>
-              <li>😫 <strong>Escalado:</strong> Manual, esperar horas</li>
+              <li> <strong>Latencia P99:</strong> 500ms</li>
+              <li> <strong>Leaderboard:</strong> 10 segundos (timeout)</li>
+              <li> <strong>Throttling:</strong> 5% requests rechazados en pico</li>
+              <li> <strong>Costo:</strong> $25K/mes (db.r6i.4xlarge + replica)</li>
+              <li> <strong>Escalado:</strong> Manual, esperar horas</li>
             </ul>
           </div>
 
           <div style={{ backgroundColor: '#d1ecf1', border: '2px solid #17a2b8', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#0c5460' }}>Después (DynamoDB)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>⚡ <strong>Latencia P99:</strong> 5-10ms</li>
-              <li>😊 <strong>Leaderboard:</strong> 50ms (instantáneo)</li>
-              <li>✅ <strong>Throughput:</strong> 99.99% requests exitosos</li>
-              <li>💰 <strong>Costo:</strong> $8K/mes on-demand, $3K reservado</li>
-              <li>🎉 <strong>Escalado:</strong> Automático, instantáneo</li>
+              <li> <strong>Latencia P99:</strong> 5-10ms</li>
+              <li> <strong>Leaderboard:</strong> 50ms (instantáneo)</li>
+              <li> <strong>Throughput:</strong> 99.99% requests exitosos</li>
+              <li> <strong>Costo:</strong> $8K/mes on-demand, $3K reservado</li>
+              <li> <strong>Escalado:</strong> Automático, instantáneo</li>
             </ul>
           </div>
         </div>
@@ -623,7 +623,7 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
               <td style={{ padding: '1rem' }}>DAU (Daily Active Users)</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>200K</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>520K</td>
-              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+160% 🚀</td>
+              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+160% </td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem' }}>In-game revenue (ARPU)</td>
@@ -635,7 +635,7 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
               <td style={{ padding: '1rem' }}>Ingresos mensuales</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>$500K</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>$2.5M</td>
-              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+400% 🚀</td>
+              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>+400% </td>
             </tr>
             <tr>
               <td style={{ padding: '1rem' }}>Costo infraestructura</td>
@@ -648,7 +648,7 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
       </section>
 
       <section className="lesson-section">
-        <h2>🎓 Lecciones Aprendidas</h2>
+        <h2> Lecciones Aprendidas</h2>
 
         <div style={{ backgroundColor: '#fffbea', border: '2px solid #ff9800', borderRadius: '8px', padding: '1.5rem' }}>
           <h4 style={{ marginTop: 0 }}>1. SQL no es para juegos masivos</h4>
@@ -693,16 +693,16 @@ resource "aws_dynamodb_table_autoscaling" "players_scaling" {
       </section>
 
       <section className="lesson-section" style={{ backgroundColor: '#e7f3ff', border: '2px solid #0066cc', borderRadius: '8px', padding: '2rem' }}>
-        <h2>💡 Conclusión</h2>
+        <h2> Conclusión</h2>
         <p style={{ fontSize: '1.05rem', lineHeight: '1.8' }}>
           <strong>DynamoDB fue transformacional para MobileGameStudio</strong> porque:
         </p>
         <ul style={{ fontSize: '1rem', lineHeight: '2' }}>
-          <li>✅ <strong>Latencia garantizada:</strong> 5-10ms P99, sin importar escala</li>
-          <li>✅ <strong>Escalabilidad automática:</strong> De 100K a 1M+ usuarios sin intervención</li>
-          <li>✅ <strong>Mejor experiencia usuario:</strong> Churn -68%, revenue +400%</li>
-          <li>✅ <strong>Costos predecibles:</strong> Pay-per-request, no pagan por capacidad ociosa</li>
-          <li>✅ <strong>Simplicidad operacional:</strong> AWS maneja sharding, replicación, failover</li>
+          <li> <strong>Latencia garantizada:</strong> 5-10ms P99, sin importar escala</li>
+          <li> <strong>Escalabilidad automática:</strong> De 100K a 1M+ usuarios sin intervención</li>
+          <li> <strong>Mejor experiencia usuario:</strong> Churn -68%, revenue +400%</li>
+          <li> <strong>Costos predecibles:</strong> Pay-per-request, no pagan por capacidad ociosa</li>
+          <li> <strong>Simplicidad operacional:</strong> AWS maneja sharding, replicación, failover</li>
         </ul>
         <p style={{ marginTop: '2rem', fontStyle: 'italic', color: '#555' }}>
           La migración de RDS a DynamoDB no fue solo técnica. Fue transformacional para el negocio.

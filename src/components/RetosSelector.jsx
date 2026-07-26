@@ -10,28 +10,19 @@ export function RetosSelector() {
   return (
     <div className="retos-container">
       <div className="retos-selector">
-        <label htmlFor="reto-dropdown" style={{ display: 'block', marginBottom: '12px', fontWeight: '600' }}>
+        <label htmlFor="reto-dropdown" className="retos-selector-label">
           Selecciona un reto:
         </label>
         <select
           id="reto-dropdown"
           value={selectedRetoId || ''}
           onChange={(e) => setSelectedRetoId(e.target.value ? parseInt(e.target.value) : null)}
-          style={{
-            width: '100%',
-            maxWidth: '500px',
-            padding: '10px 12px',
-            fontSize: '16px',
-            border: '1px solid #ddd',
-            borderRadius: '6px',
-            backgroundColor: '#fff',
-            cursor: 'pointer'
-          }}
+          className="retos-selector-select"
         >
           <option value="">-- Selecciona un reto --</option>
           {retosData.map(reto => (
             <option key={reto.number} value={reto.number}>
-              🏋️ Reto {reto.number}: {reto.title}
+              ️ Reto {reto.number}: {reto.title}
             </option>
           ))}
         </select>
@@ -40,8 +31,8 @@ export function RetosSelector() {
       {selectedReto && (
         <div className="reto-content">
           <div className="reto-header">
-            <h3 style={{ margin: '0 0 8px 0' }}>🏋️ Reto {selectedReto.number}: {selectedReto.title}</h3>
-            <p style={{ margin: '0', color: '#666', fontSize: '14px' }}>{selectedReto.description}</p>
+            <h3 className="reto-header-title">️ Reto {selectedReto.number}: {selectedReto.title}</h3>
+            <p className="reto-header-description">{selectedReto.description}</p>
           </div>
 
           <div className="reto-info">
@@ -60,7 +51,7 @@ export function RetosSelector() {
           </div>
 
           <div className="reto-solution">
-            <div style={{ whiteSpace: 'pre-wrap', fontFamily: 'system-ui', fontSize: '14px', lineHeight: '1.6', color: '#333' }}>
+            <div className="reto-solution-text">
               {selectedReto.solution}
             </div>
           </div>

@@ -1,0 +1,853 @@
+/* ==========================================
+   LANDING PAGES - SHARED STYLES & COMPONENTS
+   ========================================== */
+
+/* CSS Custom Properties (Theme Variables) */
+:root {
+  --primary-color: #2196f3;
+  --dark-color: #1976d2;
+  --light-bg: #f5f5f5;
+  --text-primary: #2c3e50;
+  --text-secondary: #555;
+  --text-light: #7f8c8d;
+  --border-color: #e9ecef;
+  --hover-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-nav {
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-nav a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.breadcrumb-nav a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.breadcrumb-nav .separator {
+  color: #999;
+  margin: 0 0.5rem;
+}
+
+.breadcrumb-nav .breadcrumb-current {
+  color: #333;
+  font-weight: 600;
+}
+
+/* ========== HERO SECTION - LANDING PAGES ONLY ========== */
+.landing-hero,
+[class$="-hero"] {
+  background: linear-gradient(
+    135deg,
+    var(--light-gradient, rgba(33, 150, 243, 0.1)) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    var(--light-gradient, rgba(33, 150, 243, 0.1)) 100%
+  );
+  backdrop-filter: blur(10px);
+  padding: 2rem 2rem 3.5rem 2rem;
+  margin-bottom: 3rem;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+}
+
+.landing-hero::before,
+[class$="-hero"]::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Hero content - matches all variants: .java-hero-content, .angular-hero-content, etc */
+.landing-hero-content, [class$="-hero-content"] {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+}
+
+/* Direct h1 in hero-content - Centrado ocupando todo ancho */
+.landing-hero-content, [class$="-hero-content"] > h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  width: 100%;
+  text-align: center;
+}
+
+/* h1 inside hero-text (for older structure) */
+.hero-text h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+/* Direct subtitle in hero-content */
+.landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  width: 100%;
+}
+
+/* Subtitle in general */
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+/* Content wrapper - contiene texto e imagen en grid */
+.landing-hero-content, [class$="-hero-content"] > .hero-text,
+.landing-hero-content, [class$="-hero-content"] > .hero-icon {
+  display: inline-block;
+}
+
+/* hero-text container */
+.landing-hero-content, [class$="-hero-content"] > .hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* hero-icon container */
+.landing-hero-content, [class$="-hero-content"] > .hero-icon {
+  flex: 0 0 auto;
+  align-self: center;
+  order: 0;
+}
+
+.landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+}
+
+/* Grid layout - Título ancho, contenido 2 cols, botones ancho */
+.landing-hero-content, [class$="-hero-content"] > h1 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.landing-hero-content, [class$="-hero-content"] > .hero-text {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.landing-hero-content, [class$="-hero-content"] > .hero-icon {
+  grid-column: 2;
+  grid-row: 2 / 4;
+}
+
+/* Botones - Ocupan todo el ancho y están centrados */
+.landing-hero-content, [class$="-hero-content"] > .landing-hero-buttons {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem 0;
+}
+
+.hero-icon {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+}
+
+.hero-icon img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  min-height: 300px;
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--dark-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ========== CONTENT SECTIONS ========== */
+.landing-content,
+.learning-topics,
+.when-to-use {
+  padding: 3rem 2rem;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-container > h2 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.intro-text {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.05rem;
+  margin: 0 0 3rem 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ========== FEATURES GRID ========== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border-top: 4px solid var(--primary-color);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--hover-shadow);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 0 0 0.8rem 0;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ========== COMPARISON SECTION ========== */
+.comparison-section {
+  background: var(--light-bg);
+  padding: 3rem 2rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.comparison-table thead {
+  background: var(--light-bg);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.comparison-table th {
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.comparison-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table tr:hover td {
+  background: var(--light-bg);
+}
+
+.feature-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  background: #f0f0f0;
+}
+
+.comparison-conclusion {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.comparison-conclusion p {
+  margin: 0 0 1rem 0;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.comparison-conclusion p:last-child {
+  margin-bottom: 0;
+}
+
+.comparison-conclusion strong {
+  color: var(--primary-color);
+}
+
+/* ========== WHEN TO USE ========== */
+.when-to-use {
+  background: white;
+}
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.use-case {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.use-case h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0 0 1.2rem 0;
+}
+
+.use-case ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.use-case li {
+  padding: 0.6rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.use-case li:before {
+  content: '✓';
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+
+/* ========== FAQ SECTION ========== */
+.faq-section {
+  background: var(--light-bg);
+  padding: 3rem 2rem;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.faq-summary:hover {
+  background: var(--light-bg);
+}
+
+.faq-summary:active,
+.faq-summary:focus {
+  background: #f0f0f0;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 0;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  color: var(--primary-color);
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--light-bg);
+  border-top: 1px solid var(--border-color);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  padding: 1rem 1.5rem;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ========== CTA FINAL SECTION ========== */
+.landing-cta {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 800;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== KEYFRAMES ========== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet Large (1025px - 1024px) - Pequeños ajustes */
+@media (max-width: 1024px) {
+  [class*="-hero"] {
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] {
+    gap: 2rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > h1 {
+    font-size: 2.8rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-text .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+    max-height: 250px;
+  }
+}
+
+/* Desktop (1024px+) - 2 columns */
+@media (min-width: 1024px) {
+  .landing-hero-content, [class$="-hero-content"] {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > h1 {
+    grid-column: 1 / -1;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+    grid-column: 1;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-text {
+    grid-column: 1;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-icon {
+    grid-column: 2;
+    grid-row: 2 / 4;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .landing-hero-buttons {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 768px) {
+  [class*="-hero"] {
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > h1 {
+    font-size: 2.2rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-icon {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 100%;
+    order: -1;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+    max-height: 180px;
+    max-width: 180px;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .landing-hero-buttons {
+    grid-column: 1;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .content-container > h2 {
+    font-size: 1.8rem;
+  }
+
+  .comparison-table {
+    font-size: 0.85rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem;
+  }
+
+  .use-case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile (481px - 767px) - Ya cubierto por tablet media query arriba */
+
+/* Small Mobile (480px y menores) */
+@media (max-width: 480px) {
+  [class*="-hero"] {
+    padding: 1rem 0.75rem 1.5rem 0.75rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] {
+    gap: 1rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-text .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+    max-height: 120px;
+    max-width: 120px;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .landing-hero-buttons {
+    gap: 0.6rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-icon img {
+    max-height: 120px;
+    max-width: 120px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .comparison-table {
+    font-size: 0.75rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.5rem;
+  }
+
+  .faq-summary {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .landing-content,
+  .learning-topics,
+  .when-to-use,
+  .faq-section,
+  .landing-cta {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Extra Small (360px y menores) */
+@media (max-width: 360px) {
+  [class*="-hero"] {
+    padding: 0.75rem 0.5rem 1rem 0.5rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > h1 {
+    font-size: 1.5rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+    max-height: 100px;
+    max-width: 100px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .landing-btn-primary,
+  .landing-btn-secondary {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}

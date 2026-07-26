@@ -22,13 +22,13 @@ USUARIOS:
 - Admin: moderar, cobrar comisión
 
 FUNCIONALIDADES CORE:
-✓ Catálogo de libros con ISBN search
-✓ Búsqueda por autor, género, precio
-✓ Reviews y valoraciones
-✓ Carrito y checkout
-✓ Mensajes privados entre usuarios
-✓ Sistema de reputación (5 estrellas)
-✓ Reportes de ventas por usuario
+ Catálogo de libros con ISBN search
+ Búsqueda por autor, género, precio
+ Reviews y valoraciones
+ Carrito y checkout
+ Mensajes privados entre usuarios
+ Sistema de reputación (5 estrellas)
+ Reportes de ventas por usuario
 
 DIFERENCIADORES:
 • Integración Google Books API (info de libros)
@@ -61,13 +61,13 @@ EQUIPO: 3 personas (1 frontend + 2 backend)`
 Tienda online de equipamiento deportivo con recomendaciones personalizadas.
 
 FUNCIONALIDADES:
-✓ Catálogo de 500+ productos
-✓ Filtros avanzados (deporte, marca, precio, talla)
-✓ Carrito y checkout
-✓ Sistema de tallas (S/M/L/XL)
-✓ Reseñas de usuarios verificados
-✓ Cupones y promociones
-✓ Admin: gestión de inventario
+ Catálogo de 500+ productos
+ Filtros avanzados (deporte, marca, precio, talla)
+ Carrito y checkout
+ Sistema de tallas (S/M/L/XL)
+ Reseñas de usuarios verificados
+ Cupones y promociones
+ Admin: gestión de inventario
 
 DIFERENCIADORES:
 • Integración OpenWeather API (recomendaciones por clima)
@@ -106,13 +106,13 @@ USUARIOS:
 - Admin: reportes, configuración
 
 FUNCIONALIDADES:
-✓ Calendario de citas (doctors)
-✓ Historial médico del paciente
-✓ Diagnósticos y tratamientos
-✓ Facturación automática
-✓ SMS/Email recordatorio 24h antes
-✓ Reportes: pacientes activos, ingresos, doctores
-✓ Backup automático (datos sensibles)
+ Calendario de citas (doctors)
+ Historial médico del paciente
+ Diagnósticos y tratamientos
+ Facturación automática
+ SMS/Email recordatorio 24h antes
+ Reportes: pacientes activos, ingresos, doctores
+ Backup automático (datos sensibles)
 
 DIFERENCIADORES:
 • Integración Twilio API (SMS automáticos)
@@ -145,13 +145,13 @@ EQUIPO: 3 personas (enfoque en seguridad/datos sensibles)`
 Airbnb simplificado: listar pisos, reservar, gestionar.
 
 FUNCIONALIDADES:
-✓ Listar propiedades (dueño)
-✓ Galería de fotos + Google Maps
-✓ Reservas con calendario
-✓ Chat entre huésped y anfitrión
-✓ Pagos (simulados o Stripe)
-✓ Reseñas y ratings
-✓ Admin: validar propiedades, cobrar comisión
+ Listar propiedades (dueño)
+ Galería de fotos + Google Maps
+ Reservas con calendario
+ Chat entre huésped y anfitrión
+ Pagos (simulados o Stripe)
+ Reseñas y ratings
+ Admin: validar propiedades, cobrar comisión
 
 DIFERENCIADORES:
 • Google Maps: ubicación, distancia a POIs
@@ -184,13 +184,13 @@ EQUIPO: 3 personas`
 Red social para jugadores: compartir clips, torneos, comentar.
 
 FUNCIONALIDADES:
-✓ Perfil de usuario con stats de juegos
-✓ Feed: posts, clips de juegos, comentarios
-✓ Seguir/Unfollows
-✓ Notificaciones (nuevo seguidor, comentario)
-✓ Torneos: crear, participar, rankings
-✓ Chat grupal por equipo
-✓ Integración Twitch/YouTube (embeds)
+ Perfil de usuario con stats de juegos
+ Feed: posts, clips de juegos, comentarios
+ Seguir/Unfollows
+ Notificaciones (nuevo seguidor, comentario)
+ Torneos: crear, participar, rankings
+ Chat grupal por equipo
+ Integración Twitch/YouTube (embeds)
 
 DIFERENCIADORES:
 • Sincronización Twitch API (estadísticas)
@@ -223,12 +223,12 @@ EQUIPO: 3 personas`
 Red social para viajeros: compartir experiencias, rutas, recomendaciones.
 
 FUNCIONALIDADES:
-✓ Perfiles de viajeros
-✓ Timeline de viajes (mapa + fotos)
-✓ Crear rutas compartidas
-✓ Recomendaciones de lugares
-✓ Chat entre viajeros
-✓ Historial de destinos
+ Perfiles de viajeros
+ Timeline de viajes (mapa + fotos)
+ Crear rutas compartidas
+ Recomendaciones de lugares
+ Chat entre viajeros
+ Historial de destinos
 
 DIFERENCIADORES:
 • Google Maps: rutas interactivas
@@ -261,12 +261,12 @@ EQUIPO: 3 personas`
 Plataforma de cursos online: lecciones, ejercicios, quizzes.
 
 FUNCIONALIDADES:
-✓ Crear/editar cursos (instructores)
-✓ Lecciones con videos embebidos
-✓ Ejercicios de código (sandbox)
-✓ Quizzes automáticos
-✓ Progreso del estudiante
-✓ Certificados al completar
+ Crear/editar cursos (instructores)
+ Lecciones con videos embebidos
+ Ejercicios de código (sandbox)
+ Quizzes automáticos
+ Progreso del estudiante
+ Certificados al completar
 
 DIFERENCIADORES:
 • IDE online para ejercicios (Runner remoto)
@@ -299,12 +299,12 @@ EQUIPO: 3 personas`
 Portal de empleo con matching inteligente de candidatos.
 
 FUNCIONALIDADES:
-✓ Perfiles de candidatos (skills, experiencia)
-✓ Ofertas de trabajo por empresa
-✓ Matching automático
-✓ Candidatura y seguimiento
-✓ Chat empresa-candidato
-✓ Reportes (para recruiter)
+ Perfiles de candidatos (skills, experiencia)
+ Ofertas de trabajo por empresa
+ Matching automático
+ Candidatura y seguimiento
+ Chat empresa-candidato
+ Reportes (para recruiter)
 
 DIFERENCIADORES:
 • Algoritmo de matching (skills + experiencia)
@@ -337,12 +337,12 @@ EQUIPO: 3 personas`
 App para gestionar gastos compartidos: quién pagó, quién debe qué.
 
 FUNCIONALIDADES:
-✓ Crear grupos de gastos
-✓ Registrar gastos (quién pagó, cuánto, quiénes participan)
-✓ Cálculo automático de deudas
-✓ Liquidación (quién paga a quién)
-✓ Histórico de gastos
-✓ Notificaciones
+ Crear grupos de gastos
+ Registrar gastos (quién pagó, cuánto, quiénes participan)
+ Cálculo automático de deudas
+ Liquidación (quién paga a quién)
+ Histórico de gastos
+ Notificaciones
 
 DIFERENCIADORES:
 • Algoritmo de liquidación óptima
@@ -375,12 +375,12 @@ EQUIPO: 2 personas`
 Jira simplificado: tableros Kanban, sprints, reportes.
 
 FUNCIONALIDADES:
-✓ Crear proyectos
-✓ Tableros Kanban (To Do, In Progress, Done)
-✓ Sprints (duración configurable)
-✓ Tareas con prioridad y asignación
-✓ Comentarios en tareas
-✓ Reportes (burndown, velocity)
+ Crear proyectos
+ Tableros Kanban (To Do, In Progress, Done)
+ Sprints (duración configurable)
+ Tareas con prioridad y asignación
+ Comentarios en tareas
+ Reportes (burndown, velocity)
 
 DIFERENCIADORES:
 • Drag-drop Kanban intuitivo
@@ -413,12 +413,12 @@ EQUIPO: 3 personas`
 Red social de recetas: compartir, comentar, guardar favoritas.
 
 FUNCIONALIDADES:
-✓ Publicar recetas (ingredientes, pasos, fotos)
-✓ Búsqueda (ingrediente, tipo de comida)
-✓ Guardar favoritas
-✓ Valoraciones y comentarios
-✓ Listas de compra automáticas
-✓ Perfil de cocineros
+ Publicar recetas (ingredientes, pasos, fotos)
+ Búsqueda (ingrediente, tipo de comida)
+ Guardar favoritas
+ Valoraciones y comentarios
+ Listas de compra automáticas
+ Perfil de cocineros
 
 DIFERENCIADORES:
 • Cálculo automático de calorías
@@ -451,12 +451,12 @@ EQUIPO: 2-3 personas`
 Red social para dueños de mascotas y veterinarios.
 
 FUNCIONALIDADES:
-✓ Perfil de mascota (foto, datos, historial vet)
-✓ Feed de mascotas (fotos, aventuras)
-✓ Directorio de veterinarios/peluquerías
-✓ Agendar citas (integración calendarios)
-✓ Chat comunidad por raza/tipo
-✓ Marketplace (comida, accesorios)
+ Perfil de mascota (foto, datos, historial vet)
+ Feed de mascotas (fotos, aventuras)
+ Directorio de veterinarios/peluquerías
+ Agendar citas (integración calendarios)
+ Chat comunidad por raza/tipo
+ Marketplace (comida, accesorios)
 
 DIFERENCIADORES:
 • Geolocalización de veterinarios cercanos

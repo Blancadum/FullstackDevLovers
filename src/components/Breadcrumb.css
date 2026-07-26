@@ -1,9 +1,12 @@
 .breadcrumb {
-  background-color: #ffffff;
-  padding: 0.5rem 2rem;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 50;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-bottom: none;
+  position: static;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #e5e7eb;
 }
 
 .breadcrumb-list {
@@ -19,7 +22,7 @@
 }
 
 .breadcrumb-item {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .breadcrumb-item a {
@@ -47,7 +50,7 @@
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
   .breadcrumb {
-    padding: 0.35rem 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .breadcrumb-list {

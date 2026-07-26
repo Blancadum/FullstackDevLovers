@@ -5,14 +5,14 @@ export const CasoRealS3 = () => {
   return (
     <div className="lesson-container">
       <div className="lesson-header">
-        <h1>💾 Caso Real: DataAnalytics - Plataforma de Análisis de Datos</h1>
+        <h1>Caso Real: DataAnalytics - Plataforma de Análisis de Datos</h1>
         <p className="lesson-intro">
           Cómo una startup protegió 500TB de datos críticos con S3 + Glacier y ahorró 89% en storage
         </p>
       </div>
 
       <section className="lesson-section">
-        <h2>🚨 El Problema: Riesgo de Pérdida de Datos</h2>
+        <h2>El Problema: Riesgo de Pérdida de Datos</h2>
 
         <div style={{ backgroundColor: '#fff3cd', border: '2px solid #ffc107', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
           <p style={{ marginTop: 0 }}>
@@ -33,15 +33,15 @@ export const CasoRealS3 = () => {
         </ul>
 
         <div style={{ backgroundColor: '#f8d7da', border: '2px solid #f5c6cb', padding: '1.5rem', borderRadius: '8px', marginTop: '2rem' }}>
-          <h4>📊 El Problema Real</h4>
+          <h4>El Problema Real</h4>
           <p><strong>Storage distribuido no era confiable ni barato:</strong></p>
           <ul>
-            <li>❌ On-premise: 3-4 nines máximo (requiere equipo 24/7)</li>
-            <li>❌ Backups manuales: riesgo humano (se olvidan, se corrompen)</li>
-            <li>❌ Costo mensual: $108,000 (servidor + backups + personal + electricidad)</li>
-            <li>❌ No hay auditoría de acceso: ¿Quién accedió a qué datos? No lo saben</li>
-            <li>❌ Cumplimiento: No pueden certificar GDPR, HIPAA, SOC 2</li>
-            <li>❌ Recuperación lenta: 72+ horas para restaurar (inasceptable para SaaS)</li>
+            <li> On-premise: 3-4 nines máximo (requiere equipo 24/7)</li>
+            <li> Backups manuales: riesgo humano (se olvidan, se corrompen)</li>
+            <li> Costo mensual: $108,000 (servidor + backups + personal + electricidad)</li>
+            <li> No hay auditoría de acceso: ¿Quién accedió a qué datos? No lo saben</li>
+            <li> Cumplimiento: No pueden certificar GDPR, HIPAA, SOC 2</li>
+            <li> Recuperación lenta: 72+ horas para restaurar (inasceptable para SaaS)</li>
           </ul>
         </div>
 
@@ -85,7 +85,7 @@ export const CasoRealS3 = () => {
       </section>
 
       <section className="lesson-section">
-        <h2>✅ La Solución: S3 + Glacier Lifecycle</h2>
+        <h2> La Solución: S3 + Glacier Lifecycle</h2>
 
         <h3>Por Qué S3 + Glacier</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1.5rem' }}>
@@ -144,8 +144,8 @@ export const CasoRealS3 = () => {
         <CodeBlock language="text" title="DataAnalytics S3 + Glacier Architecture" code={`┌─────────────────────────────────────────────────────────┐
 │ Cliente DataAnalytics sube datos                        │
 │ (API POST /upload, CSV/Parquet/JSON)                    │
-└────────────────────┬────────────────────────────────────┘
-                     │
+└───────────────────┬────────────────────────────────────┘
+                    │
         ┌────────────▼──────────────────────┐
         │ S3 Standard (Acceso frecuente)    │
         │ s3://dataanalytics-prod/          │
@@ -387,7 +387,7 @@ TOTAL AWS:                        $4,350/mes
 
 ────────────────────────────────────────────────
 AHORRO: $108,000 - $4,350 = $103,650/mes
-PORCENTAJE: 96% más barato ✓
+PORCENTAJE: 96% más barato 
 ANUAL: $1.24M de ahorro
 ────────────────────────────────────────────────
 
@@ -399,7 +399,7 @@ Ahorro: 96%
       </section>
 
       <section className="lesson-section">
-        <h2>🔧 Implementación: API de Datos + S3</h2>
+        <h2>Implementación: API de Datos + S3</h2>
 
         <h3>Spring Boot Service para Subir Datos</h3>
         <CodeBlock language="java" title="DataUploadService with S3" code={`import org.springframework.stereotype.Service;
@@ -749,30 +749,30 @@ class DatasetRestorationPendingException extends RuntimeException {
       </section>
 
       <section className="lesson-section">
-        <h2>📈 Resultados: Antes vs Después</h2>
+        <h2> Resultados: Antes vs Después</h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ backgroundColor: '#d4edda', border: '2px solid #28a745', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#155724' }}>Antes (On-Premise)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>💾 <strong>Durabilidad:</strong> 99.9% (3-4 nines)</li>
-              <li>💰 <strong>Costo mensual:</strong> $108,000</li>
-              <li>😰 <strong>Confiabilidad:</strong> Miedo constante a pérdida</li>
-              <li>⚠️ <strong>Recovería:</strong> 72+ horas (manual)</li>
-              <li>❌ <strong>Cumplimiento:</strong> No certificado</li>
-              <li>📊 <strong>Escalabilidad:</strong> Limitada (física)</li>
+              <li><strong>Durabilidad:</strong> 99.9% (3-4 nines)</li>
+              <li><strong>Costo mensual:</strong> $108,000</li>
+              <li><strong>Confiabilidad:</strong> Miedo constante a pérdida</li>
+              <li><strong>Recovería:</strong> 72+ horas (manual)</li>
+              <li><strong>Cumplimiento:</strong> No certificado</li>
+              <li><strong>Escalabilidad:</strong> Limitada (física)</li>
             </ul>
           </div>
 
           <div style={{ backgroundColor: '#d1ecf1', border: '2px solid #17a2b8', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#0c5460' }}>Después (S3 + Glacier)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>💾 <strong>Durabilidad:</strong> 99.999999999% (11-nines)</li>
-              <li>💰 <strong>Costo mensual:</strong> $4,350</li>
-              <li>😎 <strong>Confiabilidad:</strong> Garantizada por AWS</li>
-              <li>⚡ <strong>Recovería:</strong> 1-5 horas (automática)</li>
-              <li>✅ <strong>Cumplimiento:</strong> SOC 2, HIPAA, GDPR, PCI</li>
-              <li>📈 <strong>Escalabilidad:</strong> Ilimitada</li>
+              <li><strong>Durabilidad:</strong> 99.999999999% (11-nines)</li>
+              <li><strong>Costo mensual:</strong> $4,350</li>
+              <li><strong>Confiabilidad:</strong> Garantizada por AWS</li>
+              <li><strong>Recovería:</strong> 1-5 horas (automática)</li>
+              <li><strong>Cumplimiento:</strong> SOC 2, HIPAA, GDPR, PCI</li>
+              <li><strong>Escalabilidad:</strong> Ilimitada</li>
             </ul>
           </div>
         </div>
@@ -933,7 +933,7 @@ class DatasetRestorationPendingException extends RuntimeException {
       </section>
 
       <section className="lesson-section">
-        <h2>🎓 Lecciones Aprendidas</h2>
+        <h2> Lecciones Aprendidas</h2>
 
         <div style={{ backgroundColor: '#fffbea', border: '2px solid #ff9800', borderRadius: '8px', padding: '1.5rem' }}>
           <h4 style={{ marginTop: 0 }}>1. Durabilidad != Disponibilidad</h4>
@@ -984,17 +984,17 @@ class DatasetRestorationPendingException extends RuntimeException {
       </section>
 
       <section className="lesson-section" style={{ backgroundColor: '#e7f3ff', border: '2px solid #0066cc', borderRadius: '8px', padding: '2rem' }}>
-        <h2>💡 Conclusión</h2>
+        <h2> Conclusión</h2>
         <p style={{ fontSize: '1.05rem', lineHeight: '1.8' }}>
           <strong>S3 + Glacier fue la solución correcta porque:</strong>
         </p>
         <ul style={{ fontSize: '1rem', lineHeight: '2' }}>
-          <li>✅ <strong>Durabilidad garantizada:</strong> 11-nines vs 3-4 nines on-premise</li>
-          <li>✅ <strong>Costo reducido 96%:</strong> $108K/mes → $4.3K/mes</li>
-          <li>✅ <strong>Seguridad mejorada:</strong> Encriptación + auditoría inmutable</li>
-          <li>✅ <strong>Cumplimiento legal:</strong> SOC 2, HIPAA, GDPR certificados</li>
-          <li>✅ <strong>Operacional simplificado:</strong> AWS maneja backups, redundancia, failover</li>
-          <li>✅ <strong>Escalabilidad ilimitada:</strong> De 50TB a 500TB sin cambiar arquitectura</li>
+          <li> <strong>Durabilidad garantizada:</strong> 11-nines vs 3-4 nines on-premise</li>
+          <li> <strong>Costo reducido 96%:</strong> $108K/mes → $4.3K/mes</li>
+          <li> <strong>Seguridad mejorada:</strong> Encriptación + auditoría inmutable</li>
+          <li> <strong>Cumplimiento legal:</strong> SOC 2, HIPAA, GDPR certificados</li>
+          <li> <strong>Operacional simplificado:</strong> AWS maneja backups, redundancia, failover</li>
+          <li> <strong>Escalabilidad ilimitada:</strong> De 50TB a 500TB sin cambiar arquitectura</li>
         </ul>
         <p style={{ marginTop: '2rem', fontStyle: 'italic', color: '#555' }}>
           La lección más importante: No compres servidores para "posible" capacidad futura.

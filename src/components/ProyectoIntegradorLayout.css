@@ -417,3 +417,155 @@
     margin: 4px 0;
   }
 }
+
+/* Breadcrumbs */
+.proyecto-breadcrumbs {
+  padding: 0 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.proyecto-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.proyecto-breadcrumb-separator {
+  color: #bdc3c7;
+}
+
+.proyecto-breadcrumb-link {
+  color: #3498db;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.proyecto-breadcrumb-link:hover {
+  color: #2980b9;
+}
+
+.proyecto-breadcrumb-link.active {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* Project Selector Section */
+.project-selector-container {
+  margin-bottom: 24px;
+}
+
+.project-selector-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.project-selector-select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Project Details Card */
+.project-details-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.project-header-section {
+  margin-bottom: 20px;
+}
+
+.project-header-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project-header-subtitle {
+  margin: 0 0 16px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.project-badges-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.project-badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.project-badge-category {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.project-badge-complexity {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.project-badge-duration {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.project-badge-team {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.project-content-text {
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Code Block Styles */
+.code-block-ejemplo {
+  background-color: #f3f4f6;
+  padding: 16px;
+  border-radius: 8px;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid #e5e7eb;
+  font-family: 'Courier New', monospace;
+}
+
+.project-example-text {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.section-h3-spaced {
+  margin-top: 32px;
+}
+
+.infobox-tools-list {
+  margin-top: 8px;
+}

@@ -9,19 +9,16 @@ export function LessonGitWorkflow() {
 
   const concepts = [
     {
-      icon: '🔀',
       title: 'Git Flow',
       definition: 'Workflow con ramas específicas: main, develop, feature, release, hotfix',
       example: 'git flow feature start nueva-feature'
     },
     {
-      icon: '📝',
       title: 'Conventional Commits',
       definition: 'Formato estándar para mensajes de commit',
       example: 'feat: agregar autenticación OAuth2'
     },
     {
-      icon: '🌿',
       title: 'Branching Strategy',
       definition: 'Estrategia para crear y manejar ramas en el proyecto',
       example: 'feature/login, bugfix/password-reset'
@@ -250,12 +247,12 @@ git checkout -b release/1.0.0
 git checkout -b release/2.1.0
 
 # Mejores prácticas
-✅ Nombres descriptivos y en minúsculas
-✅ Usar guiones para separar palabras
-✅ Una feature por rama
-✅ Eliminar rama después de mergear
-❌ No usar números como feature/1 o feature/2
-❌ No usar espacios en nombres`}
+ Nombres descriptivos y en minúsculas
+ Usar guiones para separar palabras
+ Una feature por rama
+ Eliminar rama después de mergear
+ No usar números como feature/1 o feature/2
+ No usar espacios en nombres`}
           />
         </>
       )

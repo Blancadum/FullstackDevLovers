@@ -1,5 +1,6 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import './LessonProyectoReto.css';
 
 const sections = [
   {
@@ -11,7 +12,7 @@ const sections = [
         </p>
 
         <h4>Acciones de Mejora:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Análisis de bugs reportados en Sprint Review</li>
           <li>Refactorización de código problemático</li>
           <li>Optimizaciones identificadas en retrospectiva</li>
@@ -37,7 +38,7 @@ const sections = [
         </p>
 
         <h4>Proceso de Desarrollo de Nueva Feature:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>1. Análisis y Diseño:</strong> Especificación técnica, diagramas, impacto BD</li>
           <li><strong>2. Desarrollo Backend:</strong> Controllers/Endpoints, Services, Repositorios</li>
           <li><strong>3. Tests:</strong> Unit tests, Integration tests, Test de features</li>
@@ -45,7 +46,7 @@ const sections = [
         </ul>
 
         <h4>Criterios de Aceptación:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Feature funciona como se especificó</li>
           <li>Tests pasan (70%+ coverage)</li>
           <li>No rompe features existentes</li>
@@ -65,7 +66,7 @@ const sections = [
         </p>
 
         <h4>Objetivos de Refactorización:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Eliminar duplicación de código</li>
           <li>Métodos pequeños y enfocados (menos de 20 líneas)</li>
           <li>Nombres claros y descriptivos</li>
@@ -74,7 +75,7 @@ const sections = [
         </ul>
 
         <h4>Checklist de Refactorización:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Duplicación de código eliminada</li>
           <li>Métodos pequeños y enfocados</li>
           <li>Nombres claros y descriptivos</li>
@@ -99,7 +100,7 @@ const sections = [
         </p>
 
         <h4>Pirámide de Tests (recomendado):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Unit Tests (50-60%):</strong> JUnit, Mockito, AssertJ - Lógica individual</li>
           <li><strong>Integration Tests (30-40%):</strong> TestContainers, H2 - Interacción entre componentes</li>
           <li><strong>E2E Tests (10-15%):</strong> Selenium, Cypress - Flujos completos de usuario</li>
@@ -111,7 +112,7 @@ const sections = [
         </p>
 
         <h4>Tipos de Tests Específicos:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Tests de funcionalidad: ¿Hace lo que debe?</li>
           <li>Tests de error: ¿Maneja errores correctamente?</li>
           <li>Tests de rendimiento: ¿Es suficientemente rápido?</li>
@@ -119,7 +120,7 @@ const sections = [
         </ul>
 
         <h4>Performance Targets:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Tiempo respuesta API menor a 200ms</li>
           <li>Database queries menor a 100ms</li>
           <li>Frontend load menor a 3 segundos</li>
@@ -138,7 +139,7 @@ const sections = [
         </p>
 
         <h4>Técnicas de Optimización:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Base de Datos:</strong> Índices, query optimization, connection pooling</li>
           <li><strong>Cacheo:</strong> Redis para datos frecuentes, HTTP caching</li>
           <li><strong>APIs:</strong> Pagination, compresión GZIP, lazy loading</li>
@@ -153,7 +154,7 @@ const sections = [
         </p>
 
         <h4>Targets típicos:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Tiempo respuesta API: menos de 200ms</li>
           <li>Database queries: menos de 100ms</li>
           <li>Frontend load: menos de 3 segundos</li>
@@ -174,7 +175,7 @@ const sections = [
         <h4>Formato: "WENT WELL / COULD BE BETTER / ACTION ITEMS"</h4>
 
         <h4>Fue bien:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Colaboración del equipo</li>
           <li>Herramientas utilizadas</li>
           <li>Proceso de deployment</li>
@@ -182,7 +183,7 @@ const sections = [
         </ul>
 
         <h4>Podría mejorar:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Estimación de puntos (¿realista?)</li>
           <li>Comunicación interna</li>
           <li>Testing y coverage</li>
@@ -191,7 +192,7 @@ const sections = [
         </ul>
 
         <h4>Action Items (obligatorio):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Acción concreta (NO vaga)</li>
           <li>Responsable asignado</li>
           <li>Fecha de implementación</li>

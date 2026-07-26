@@ -6,7 +6,7 @@ export function FAQ({ questions }) {
 
   return (
     <div className="faq">
-      <h3>❓ Preguntas Frecuentes</h3>
+      <h3> Preguntas Frecuentes</h3>
       <div className="faq-items">
         {questions.map((item, index) => (
           <div key={index} className="faq-item">

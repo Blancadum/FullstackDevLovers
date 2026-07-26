@@ -63,7 +63,7 @@ export function TableOfContents({ contentId = 'lesson-content' }) {
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >
-              ✕
+              
             </button>
             <h3 className="toc-drawer-title">Contenido</h3>
             <ul className="toc-list">

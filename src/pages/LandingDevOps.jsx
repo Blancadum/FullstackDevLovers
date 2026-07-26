@@ -1,363 +1,348 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-import { Breadcrumb } from '../components/Breadcrumb';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LandingHero, SEO, KotlinThemeCard } from '../components';
+import { getModule } from '../config/modulesConfig';
+import { getTheme } from '../config/themeColors';
+import { useLandingTheme } from '../hooks/useLandingTheme';
+import { getThemeByModule } from '../config/landingThemes';
 
 export const LandingDevOps = () => {
-  const navigate = useNavigate();
-  const breadcrumbs = useBreadcrumb();
+  // Aplicar tema dinámico con variables CSS
+  const landingTheme = getThemeByModule('devops');
+  useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
+  const theme = getTheme('devops');
+  const entornosModule = getModule('entornos');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  const lessons = [
+  if (!entornosModule) return null;
+
+  // Get only the devops section
+  const devopsSection = entornosModule.sections.find(s => s.id === 'devops');
+  const sectionsToShow = devopsSection ? [devopsSection] : [];
+
+  // Schema Markup para JSON-LD
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': 'DevOps - Docker, CI/CD y Despliegue Profesional',
+    'description': 'Domina DevOps: containerización con Docker, CI/CD, automatización y despliegue en cloud. Acelera tu carrera con prácticas modernas de operaciones.',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Fullstack Dev Lovers',
+      'url': 'https://fullstackdevlovers.com'
+    },
+    'url': 'https://fullstackdevlovers.com/herramientas/entornos/devops',
+    'hasPart': devopsSection ? devopsSection.lessons.map((lesson, idx) => ({
+      '@type': 'LearningResource',
+      'name': lesson.title,
+      'url': `https://fullstackdevlovers.com${lesson.link}`
+    })) : []
+  };
+
+  const faqData = [
     {
-      title: 'Docker - Containerización',
-      description: 'Empaqueta aplicaciones en contenedores para garantizar consistencia entre entornos',
-      icon: '🐳',
-      link: '/entornos/devops/docker'
+      question: '¿Qué es DevOps y por qué es importante?',
+      answer: 'DevOps es la combinación de desarrollo (Dev) y operaciones (Ops) para mejorar velocidad, calidad y confiabilidad. No es solo tecnología, es una mentalidad: que desarrolladores y ops trabajen juntos. DevOps engineers ganan 20-40% más que desarrolladores normales.'
     },
     {
-      title: 'Docker Compose - Multi-contenedor',
-      description: 'Orquesta múltiples contenedores con configuración simple en YAML',
-      icon: '🔗',
-      link: '/entornos/devops/docker-compose'
+      question: '¿DevOps vs SRE vs Platform Engineering: Cuál aprender?',
+      answer: 'DevOps es amplio (Dev + Ops colaborando). SRE (Site Reliability Engineering) es más específico (confiabilidad operacional). Platform Engineering es construir plataformas internas. Aprende DevOps primero, luego especialízate. DevOps abre puertas a SRE y Platform Engineering.'
     },
     {
-      title: 'CI/CD - Automatización',
-      description: 'Automatiza pruebas y despliegues para entregas más rápidas y seguras',
-      icon: '⚙️',
-      link: '/entornos/devops/cicd'
+      question: '¿Necesito saber programación antes de aprender DevOps?',
+      answer: 'Ayuda mucho. DevOps requiere entender desarrollo, pero no necesitas ser experto. Conocimientos básicos de scripting, Docker y conceptos de infraestructura son suficientes. La combinación Dev+Ops es lo importante.'
     },
     {
-      title: 'GitHub Actions',
-      description: 'Configura pipelines directamente en tu repositorio GitHub',
-      icon: '🤖',
-      link: '/entornos/devops/github-actions'
+      question: '¿Cuánto tiempo se tarda en dominar DevOps?',
+      answer: 'Docker básico: 1-2 semanas. CI/CD pipeline simple: 3-4 semanas. Kubernetes y orquestación: 2-3 meses. Dominio completo (infraestructura cloud, monitoring, seguridad): 6-12 meses. Pero puedes ser productivo en 2 meses.'
     },
     {
-      title: 'Despliegue en Cloud',
-      description: 'Despliega aplicaciones en Vercel, Heroku, AWS o Azure',
-      icon: '☁️',
-      link: '/entornos/devops/cloud-deployment'
+      question: '¿Docker es suficiente o necesito Kubernetes?',
+      answer: 'Docker es para una máquina. Kubernetes (K8s) orquesta múltiples contenedores en clusters. Para 1-2 aplicaciones, Docker + Docker Compose es suficiente. Kubernetes es para escala enterprise (Netflix, Google). Aprende Docker primero, Kubernetes después si lo necesitas.'
+    },
+    {
+      question: '¿Puedo ser DevOps sin cloud (AWS, Azure, GCP)?',
+      answer: 'Sí, puedes aprender DevOps on-premise (servidores locales). Pero la industria se movió a cloud. AWS domina (30% de mercado), Azure (20%), GCP (10%). Aprender cloud es prácticamente obligatorio hoy. Comienza con uno, los conceptos son similares.'
     }
   ];
 
-  const concepts = [
+  const comparisonData = [
     {
-      title: 'Containerización',
-      description: 'Empaqueta código, dependencias y ambiente en una unidad autocontenida',
-      icon: '📦'
+      feature: 'Enfoque',
+      devops: 'Colaboración Dev+Ops, automatización todo',
+      sre: 'Confiabilidad y uptime sistema',
+      platform: 'Plataforma interna para dev teams'
     },
     {
-      title: 'CI/CD',
-      description: 'Integración continua y despliegue continuo para automatizar el flujo de desarrollo',
-      icon: '🔄'
+      feature: 'Responsabilidades',
+      devops: 'CI/CD, Deploy, Monitoring, Infra',
+      sre: 'Alertas, Oncall, Post-mortems, SLOs',
+      platform: 'APIs internas, self-service, DX'
     },
     {
-      title: 'Infraestructura como Código',
-      description: 'Define toda la infraestructura en archivos versionables',
-      icon: '📄'
+      feature: 'Automatización',
+      devops: 'Builds, deploys, testing',
+      sre: 'Remediation automática, runbooks',
+      platform: 'Infrastructure provisioning'
     },
     {
-      title: 'Monitoreo y Observabilidad',
-      description: 'Supervisa aplicaciones en producción para detectar problemas rápidamente',
-      icon: '📊'
+      feature: 'Scope',
+      devops: 'Todo el ciclo desarrollo→producción',
+      sre: 'Solo confiabilidad en producción',
+      platform: 'Solo herramientas para desarrolladores'
     },
     {
-      title: 'Escalabilidad Automática',
-      description: 'Adapta recursos automáticamente según la demanda',
-      icon: '⚡'
+      feature: 'Oncall',
+      devops: 'Moderada (shared)',
+      sre: 'Alta (24/7 rotación)',
+      platform: 'Baja o ninguna'
     },
     {
-      title: 'Despliegue Zero-Downtime',
-      description: 'Actualiza aplicaciones sin interrumpir el servicio',
-      icon: '🚀'
+      feature: 'Salario Promedio',
+      devops: '$120-160K',
+      sre: '$140-180K',
+      platform: '$130-170K'
+    },
+    {
+      feature: 'Demanda',
+      devops: 'Muy alta (todas empresas)',
+      sre: 'Alta (startups+)',
+      platform: 'Media (grandes tech)'
+    },
+    {
+      feature: 'Empleabilidad',
+      devops: 'Máxima (skill universal)',
+      sre: 'Alta (especializados)',
+      platform: 'Alta (senior role)'
     }
   ];
 
   return (
     <>
-      <Breadcrumb items={breadcrumbs} />
-      <div className="lesson-container">
-      <div className="lesson-header">
-        <h1>DevOps & Deployment</h1>
-        <p className="lesson-intro">
-          Automatización, containerización y despliegue profesional. Aprende a llevar aplicaciones a producción de forma segura y eficiente
-        </p>
-      </div>
+      <SEO
+        title="DevOps - Docker, CI/CD y Despliegue Profesional | Guía Completa"
+        description="Domina DevOps: containerización con Docker, CI/CD, automatización y despliegue en cloud. Acelera tu carrera con prácticas modernas de operaciones profesionales."
+        keywords="devops, docker, ci/cd, automatización, kubernetes, despliegue, github actions, cloud, aws"
+        url="https://fullstackdevlovers.com/herramientas/entornos/devops"
+        image="/og-devops.png"
+      />
 
-      <section className="lesson-section">
-        <h2>¿Qué es DevOps?</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          <strong>DevOps</strong> es una práctica que combina desarrollo (Dev) y operaciones (Ops) para mejorar la velocidad, calidad y confiabilidad del software. No es solo tecnología; es una <strong>mentalidad y conjunto de prácticas</strong> para que los equipos trabajen más eficientemente.
-        </p>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaMarkup)}
+      </script>
 
-        <div style={{
-          backgroundColor: '#f8f9ff',
-          border: '2px solid #0066cc',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#0066cc' }}>Objetivos Principales</h3>
-          <ul style={{ fontSize: '1rem', lineHeight: '1.9', marginBottom: 0 }}>
-            <li><strong>Velocidad:</strong> Desplegar cambios rápidamente sin comprometer la calidad</li>
-            <li><strong>Confiabilidad:</strong> Minimizar errores y downtime en producción</li>
-            <li><strong>Automatización:</strong> Reducir trabajo manual y humano en procesos repetitivos</li>
-            <li><strong>Observabilidad:</strong> Monitorear y entender lo que sucede en producción</li>
-            <li><strong>Colaboración:</strong> Que desarrolladores y DevOps trabajen como un solo equipo</li>
-          </ul>
-        </div>
+      <div className="devops-landing">
+        {/* Hero Section */}
+        <LandingHero
+          title="DevOps: Despliegue Profesional Moderno"
+          subtitle="Automatización, containerización y operaciones escalables"
+          description="DevOps combina desarrollo y operaciones para acelerar entregas, mejorar calidad y escalar infraestructura. Con Docker, CI/CD y cloud, reduces tiempo de despliegue de meses a minutos, y aumentas confiabilidad de sistemas críticos. DevOps engineers son los más demandados y mejor pagados."
+          primaryColor={landingTheme.primary}
+          darkColor={landingTheme.dark}
+          lightGradientColor={landingTheme.lightGradient}
+          primaryButtonText="Comenzar con Docker →"
+          primaryButtonLink="/herramientas/entornos/devops/docker"
+          secondaryButtonText="Ver comparativa"
+          secondaryButtonLink="#comparativa"
+          imageUrl="/src/assets/images/logos/docker-lgo.png"
+          imageAlt="DevOps Logo"
+        />
 
-        <h3>Beneficios para tu Carrera</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '1.5rem'
-        }}>
-          {[
-            { icon: '💼', title: 'Alta Demanda', desc: 'Las empresas buscan desesperadamente engineers con DevOps' },
-            { icon: '💰', title: 'Mejor Salario', desc: 'DevOps engineers ganan 20-40% más que desarrolladores' },
-            { icon: '🌍', title: 'Trabajo Remoto', desc: 'La mayoría de posiciones DevOps son 100% remoto' },
-            { icon: '🚀', title: 'Impacto Directo', desc: 'Tu trabajo determina qué tan rápido la empresa innova' }
-          ].map((item, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              textAlign: 'center'
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
-              <h4 style={{ marginBottom: '0.5rem' }}>{item.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>{item.desc}</p>
+        {/* What is DevOps Section */}
+        <section className="devops-content">
+          <div className="content-container">
+            <h2>¿Qué es DevOps?</h2>
+            <p className="intro-text">
+              DevOps es una mentalidad, cultura y conjunto de prácticas que rompe la barrera entre desarrollo y operaciones.
+              Los equipos trabajan juntos para automatizar build, test, deploy y operaciones, logrando ciclos de liberación más rápidos
+              y sistemas más confiables.
+            </p>
+
+            {/* Key Features */}
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">🐳</div>
+                <h3>Containerización</h3>
+                <p>Docker empaqueta apps en contenedores portátiles y reproducibles</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔄</div>
+                <h3>CI/CD Automático</h3>
+                <p>Integración y despliegue continuo: push → test → deploy en minutos</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📈</div>
+                <h3>Escalabilidad Automática</h3>
+                <p>Adapta recursos según demanda, crece automáticamente bajo carga</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📊</div>
+                <h3>Monitoreo y Observabilidad</h3>
+                <p>Supervisa aplicaciones en tiempo real, detecta problemas al instante</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🚀</div>
+                <h3>Zero-Downtime Deployment</h3>
+                <p>Actualiza sin interrumpir el servicio, usuarios no notan cambios</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔐</div>
+                <h3>Infrastructure as Code</h3>
+                <p>Define toda infraestructura en código versionable y reproducible</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>Conceptos Clave</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {concepts.map((concept, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#f0f4f8',
-              border: '2px solid #0066cc',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{concept.icon}</div>
-              <h4 style={{ margin: '0 0 0.75rem 0', color: '#0066cc' }}>{concept.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{concept.description}</p>
+        {/* Learning Topics */}
+        <section className="learning-topics">
+          <div className="content-container">
+            <h2>Temas de Aprendizaje</h2>
+            <p className="intro-text">
+              Domina DevOps con una progresión estructurada desde containerización hasta orquestación y despliegue
+            </p>
+
+            <div className="theme-cards-container">
+              {sectionsToShow.map((section, idx) => (
+                <KotlinThemeCard
+                  key={idx}
+                  icon={getIconForSection(section.id)}
+                  title={section.name}
+                  description={section.description}
+                  lessons={section.lessons}
+                  color={getColorForSection(idx)}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>El Flujo DevOps (Ciclo Infinito)</h2>
-        <div style={{
-          backgroundColor: '#fff9e6',
-          border: '3px solid #ff9800',
-          borderRadius: '8px',
-          padding: '2rem',
-          marginBottom: '2rem'
-        }}>
-          <pre style={{
-            fontSize: '1rem',
-            lineHeight: '1.8',
-            margin: 0,
-            overflow: 'auto'
-          }}>
-{`┌─────────────────────────────────────────────────────────┐
-│                    CICLO DevOps                          │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  1️⃣  PLAN        → Requisitos y diseño                │
-│       ↓                                                │
-│  2️⃣  CODE        → Desarrollo en rama (Dev)           │
-│       ↓                                                │
-│  3️⃣  BUILD       → Compilar y empaquetar             │
-│       ↓                                                │
-│  4️⃣  TEST        → Pruebas automáticas                │
-│       ↓                                                │
-│  5️⃣  RELEASE     → Preparar para producción          │
-│       ↓                                                │
-│  6️⃣  DEPLOY      → Desplegar a producción            │
-│       ↓                                                │
-│  7️⃣  OPERATE     → Mantener en vivo                  │
-│       ↓                                                │
-│  8️⃣  MONITOR     → Observar y alertas                │
-│       ↓                                                │
-│  ↻  Feedback → Mejoras → Vuelta a PLAN              │
-│                                                         │
-│  Todo automatizado = Ciclo completo en minutos        │
-└─────────────────────────────────────────────────────────┘`}
-          </pre>
-        </div>
-
-        <h3>¿Por qué DevOps?</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '2rem',
-          marginTop: '1.5rem'
-        }}>
-          <div style={{
-            backgroundColor: '#ffe6e6',
-            border: '2px solid #d32f2f',
-            borderRadius: '8px',
-            padding: '1.5rem'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#d32f2f' }}>❌ Sin DevOps (Tradicional)</h4>
-            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
-              <li>Despliegues cada 6 meses 😫</li>
-              <li>Semanas de testing manual</li>
-              <li>Miedo a cambios en producción</li>
-              <li>Horas de downtime en deployment</li>
-              <li>Desarrolladores culpan a Ops y viceversa</li>
-              <li>Bugs llevan días en detectarse</li>
-            </ul>
           </div>
+        </section>
 
-          <div style={{
-            backgroundColor: '#e6ffe6',
-            border: '2px solid #28a745',
-            borderRadius: '8px',
-            padding: '1.5rem'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#28a745' }}>✅ Con DevOps (Moderno)</h4>
-            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
-              <li>Despliegues cada hora 🚀</li>
-              <li>Tests automáticos en minutos</li>
-              <li>Confianza en cambios pequeños</li>
-              <li>Zero-downtime deployments</li>
-              <li>Un equipo, un objetivo común</li>
-              <li>Bugs detectados en segundos</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        {/* Comparison Section */}
+        <section className="comparison-section" id="comparativa">
+          <div className="content-container">
+            <h2>DevOps vs SRE vs Platform Engineering</h2>
+            <p className="intro-text">
+              Comparativa detallada de prácticas y roles relacionados con operaciones modernas
+            </p>
 
-      <section className="lesson-section">
-        <h2>Lecciones</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {lessons.map((lesson, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#0066cc';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,102,204,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#ddd';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
-              <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
-              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
-                {lesson.description}
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    <th>DevOps</th>
+                    <th>SRE</th>
+                    <th>Platform Engineering</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      <td className="devops-col">{row.devops}</td>
+                      <td>{row.sre}</td>
+                      <td>{row.platform}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="comparison-conclusion">
+              <p>
+                <strong>✅ Elige DevOps si:</strong> Quieres combinación perfecta de desarrollo y operaciones, automatizar todo,
+                trabajar en multiple roles, tener máxima empleabilidad. DevOps es la ruta más flexible y versátil.
               </p>
-              <button
-                onClick={() => navigate(lesson.link)}
-                style={{
-                  backgroundColor: '#0066cc',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#0052a3'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#0066cc'}
-              >
-                Ver Lección →
-              </button>
+              <p>
+                <strong>✅ Elige SRE si:</strong> Te fascina la confiabilidad, estabilidad, investigar causas raíz, trabajar oncall.
+                SRE es más especializado pero mejor pagado. Requiere experiencia DevOps primero.
+              </p>
+              <p>
+                <strong>✅ Elige Platform Engineering si:</strong> Prefieres construir herramientas para developers que mantener
+                sistemas en producción. Es un rol más nuevo, muy valorado en grandes tech companies.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#e7f3ff',
-        border: '2px solid #0066cc',
-        borderRadius: '8px',
-        padding: '2rem'
-      }}>
-        <h2>¿Por dónde empezar?</h2>
-        <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Si eres nuevo en DevOps, te recomendamos este orden:
-        </p>
-        <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>Docker - Containerización</strong> → Entiende cómo empaquetar aplicaciones</li>
-          <li><strong>Docker Compose</strong> → Coordina múltiples contenedores localmente</li>
-          <li><strong>CI/CD - Automatización</strong> → Automatiza el flujo de desarrollo</li>
-          <li><strong>GitHub Actions</strong> → Implementa CI/CD en tu repositorio</li>
-          <li><strong>Despliegue en Cloud</strong> → Lleva tu aplicación a producción</li>
-        </ol>
-      </section>
+        {/* When to Use DevOps */}
+        <section className="when-to-use">
+          <div className="content-container">
+            <h2>¿Cuándo Usar DevOps?</h2>
 
-      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          gap: '1rem'
-        }}>
-          <a href="/entornos/build/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#f3e5f5',
-            color: '#4a148c',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #9c27b0'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#e1bee7'} onMouseOut={(e) => e.target.style.backgroundColor = '#f3e5f5'}>
-            ← Volver a Build Tools
-          </a>
-          <a href="/aws/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#fff3e0',
-            color: '#e65100',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #ff9800'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#ffe0b2'} onMouseOut={(e) => e.target.style.backgroundColor = '#fff3e0'}>
-            AWS →
-          </a>
-        </div>
-      </section>
-    </div>
+            <div className="use-case-grid">
+              <div className="use-case">
+                <h3>✅ Ideal para:</h3>
+                <ul>
+                  <li>Cualquier proyecto moderno</li>
+                  <li>Equipos que quieren velocidad</li>
+                  <li>Aplicaciones que necesitan escalar</li>
+                  <li>Sistemas que requieren alta disponibilidad</li>
+                  <li>Cualquier empresa que compite en velocidad</li>
+                </ul>
+              </div>
+              <div className="use-case">
+                <h3>⚠️ Considera alternativas si:</h3>
+                <ul>
+                  <li>Proyecto monolítico legacy que no se toca (aunque DevOps aún ayuda)</li>
+                  <li>Hardware on-premise sin cloud (pero Docker local funciona)</li>
+                  <li>Team muy pequeño con 1-2 desarrolladores (aún beneficia)</li>
+                  <li>Startup MVP ultra-temprano (comienza sin DevOps, después agrega)</li>
+                  <li>Proyecto único que nunca se actualiza (pero mejora calidad igual)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="content-container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div className="faq-list">
+              {faqData.map((faq, idx) => (
+                <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+                  <button
+                    className="faq-summary"
+                    onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">+</span>
+                  </button>
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final Section */}
+        <section className="devops-cta">
+          <div className="cta-content">
+            <h2>Comienza tu Viaje en DevOps Hoy</h2>
+            <p>Automatiza deployments, escala infraestructura y acelera tu carrera</p>
+            <Link to="/herramientas/entornos/devops/docker" className="cta-button">
+              Ir a Docker →
+            </Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
+
+// Funciones auxiliares
+function getIconForSection(sectionId) {
+  const icons = {
+    'devops': '🚀',
+  };
+  return icons[sectionId] || '📄';
+}
+
+function getColorForSection(index) {
+  const colors = ['#7b1fa2', '#6a1b9a'];
+  return colors[index % colors.length];
+}

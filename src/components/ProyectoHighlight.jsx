@@ -7,7 +7,7 @@ export function ProyectoHighlight() {
       <div className="container">
         <div className="proyecto-card">
           <div className="proyecto-content">
-            <div className="proyecto-badge">✨ NUEVO</div>
+            <div className="proyecto-badge"> NUEVO</div>
             <h2>TFC</h2>
             <p className="proyecto-subtitle">
               Crea tu Trabajo Fin de Ciclo
@@ -19,19 +19,19 @@ export function ProyectoHighlight() {
 
             <div className="proyecto-features">
               <div className="feature">
-                <span className="feature-icon">📋</span>
+                <span className="feature-icon"></span>
                 <span>Planificación</span>
               </div>
               <div className="feature">
-                <span className="feature-icon">⚡</span>
+                <span className="feature-icon"></span>
                 <span>3 Sprints</span>
               </div>
               <div className="feature">
-                <span className="feature-icon">🧪</span>
+                <span className="feature-icon"></span>
                 <span>Testing</span>
               </div>
               <div className="feature">
-                <span className="feature-icon">☁️</span>
+                <span className="feature-icon"></span>
                 <span>Deployment</span>
               </div>
             </div>

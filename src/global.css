@@ -4,7 +4,7 @@
   --terminal-font: 'Courier New', 'Courier', monospace;
   --code-font: 'Courier New', 'Courier', monospace;
   --base-spacing: 0.75rem;
-  --base-font-size: 0.95rem;
+  --base-font-size: 1rem;
   --base-line-height: 1.5;
 
   /* Responsive animation duration */
@@ -44,9 +44,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  /* Respect prefers-reduced-motion */
-  transition-duration: 0.01ms !important;
-  animation-duration: 0.01ms !important;
 }
 
 p {
@@ -153,6 +150,18 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Reduce animations on motion preference */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -187,7 +196,6 @@ summary:focus-visible {
 
 /* Blockquotes with less space */
 blockquote {
-  border-left: 4px solid #ff006e;
   padding-left: 0.8rem;
   margin: 0.6rem 0;
   color: #666;
@@ -268,6 +276,18 @@ img {
 
   a:focus-visible, summary:focus-visible {
     outline: 3px solid Highlight;
+  }
+}
+
+/* Respect prefers-reduced-motion for users sensitive to animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

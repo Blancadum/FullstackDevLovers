@@ -1,0 +1,15 @@
+/* Shared styles for Reto content lists */
+.reto-list {
+  line-height: 1.8;
+}
+
+.reto-section-steps {
+  line-height: 1.8;
+}
+
+.reto-code-block {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}

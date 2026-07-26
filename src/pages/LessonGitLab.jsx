@@ -9,19 +9,16 @@ export function LessonGitLab() {
 
   const concepts = [
     {
-      icon: '🦊',
       title: 'GitLab',
       definition: 'Plataforma DevOps completa con Git, CI/CD integrado y gestión de proyectos',
       example: 'Crear proyecto en gitlab.com, pipelines automáticos'
     },
     {
-      icon: '⚙️',
       title: 'CI/CD nativo',
       definition: 'Pipeline de integración continua y despliegue integrado en la plataforma',
       example: '.gitlab-ci.yml para automatizar tests y deploy'
     },
     {
-      icon: '📦',
       title: 'GitLab Container Registry',
       definition: 'Almacenar y gestionar imágenes Docker directamente en GitLab',
       example: 'Push de Docker images a registry.gitlab.com'

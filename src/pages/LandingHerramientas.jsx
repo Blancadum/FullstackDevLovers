@@ -1,247 +1,346 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-import { Breadcrumb } from '../components/Breadcrumb';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LandingHero, SEO, KotlinThemeCard } from '../components';
+import { getModule } from '../config/modulesConfig';
+import { getTheme } from '../config/themeColors';
+import { useLandingTheme } from '../hooks/useLandingTheme';
+import { getThemeByModule } from '../config/landingThemes';
 
-export const LandingHerramientas = () => {
-  const navigate = useNavigate();
-  const breadcrumbs = useBreadcrumb();
+export const LandingHerramientas = () => {  const theme = getTheme('herramientas');
+  const herramientasModule = getModule('herramientas');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  const lessons = [
+  // Aplicar tema dinámico con variables CSS
+  const landingTheme = getThemeByModule('herramientas');
+  useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
+
+  if (!herramientasModule) return null;
+
+  // Schema Markup para JSON-LD
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': 'Kubernetes - Orquestación de Contenedores Empresarial',
+    'description': 'Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático y gestión de infraestructura a escala',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Fullstack Dev Lovers',
+      'url': 'https://fullstackdevlovers.com'
+    },
+    'url': 'https://fullstackdevlovers.com/cloud/kubernetes',
+    'hasPart': herramientasModule.sections.flatMap((section, idx) =>
+      section.lessons.map((lesson, lidx) => ({
+        '@type': 'LearningResource',
+        'name': lesson.title,
+        'url': `https://fullstackdevlovers.com${lesson.link}`
+      }))
+    )
+  };
+
+  const faqData = [
     {
-      title: 'Concepto de Entorno de Desarrollo',
-      description: 'Entiende qué es un entorno de desarrollo y por qué es importante',
-      icon: '🎯',
-      link: '/entornos/herramientas/concepto'
+      question: '¿Qué es Kubernetes y por qué lo necesito?',
+      answer: 'Kubernetes (K8s) es un orquestador de contenedores que automatiza deployment, escalado y gestión de aplicaciones containerizadas. Mientras Docker maneja un contenedor en una máquina, Kubernetes gestiona cientos o miles de contenedores en múltiples servidores, garantizando alta disponibilidad, actualizaciones sin downtime y auto-healing automático.'
     },
     {
-      title: 'IDEs y Editores',
-      description: 'Herramientas: IntelliJ IDEA, Eclipse, VS Code y más',
-      icon: '💻',
-      link: '/entornos/herramientas/ides'
+      question: '¿Necesito Kubernetes o Docker es suficiente?',
+      answer: 'Docker es suficiente si: (1) Tu infra es una o pocas máquinas, (2) Usas PaaS (Heroku, Vercel, AWS Elastic Beanstalk), (3) Tu equipo no tiene expertise en DevOps. Necesitas Kubernetes si: (1) Tienes múltiples servidores, (2) Necesitas auto-escalado, (3) Trabajas en startup/empresa con crecimiento rápido, (4) Usas on-premise infrastructure.'
     },
     {
-      title: 'Codeium AI',
-      description: 'Asistente de IA para escribir código más rápido',
-      icon: '🤖',
-      link: '/entornos/herramientas/codeium'
+      question: '¿Cuál es la curva de aprendizaje de Kubernetes?',
+      answer: 'Kubernetes tiene una curva empinada. Básicos: 2-4 semanas. Profundidad media: 2-3 meses. Expertise: 6-12 meses con proyectos reales. Recomendación: domina Docker 100% primero. Aprende Kubernetes solo cuando realmente lo necesites. Un 70% de equipos pequeños están sobre-ingenierizados con K8s cuando Docker+PaaS sería suficiente.'
+    },
+    {
+      question: '¿Kubernetes vs Docker Swarm vs Nomad: cuál elegir?',
+      answer: 'Docker Swarm: más simple, integrado en Docker, pero limitado. Kubernetes: estándar industria, masiva comunidad, curva empinada, pero definitivamente vale la pena. Nomad: agnóstico (no solo contenedores), flexible, pero menos comunidad. Para 99% de casos, Kubernetes es la respuesta. Es el estándar de facto.'
+    },
+    {
+      question: '¿Puedo correr Kubernetes localmente en desarrollo?',
+      answer: 'Sí. Tienes varias opciones: (1) Minikube - VM local con K8s completo (recomendado para aprender), (2) Docker Desktop - K8s integrado en Windows/Mac, (3) Kind - Kubernetes en Docker (perfecto para testing). Para desarrollo inicial, Minikube es lo mejor. Aprendes en tu laptop sin necesidad de infraestructura cloud.'
+    },
+    {
+      question: '¿Kubernetes en cloud: AWS (EKS) vs Azure (AKS) vs Google (GKE)?',
+      answer: 'Los tres son excelentes. Google GKE es el más maduro (Google creó K8s). AWS EKS es el que usarás si estás en AWS. Azure AKS si estás en Azure. El servicio de K8s manejado abstrae la complejidad de mantener el control plane. 95% de empresas usan Kubernetes manejado, no auto-hospedado.'
     }
   ];
 
-  const tools = [
-    { title: 'IDE (Integrated Development Environment)', description: 'Entorno completo con editor, compilador y debugger', icon: '🖥️' },
-    { title: 'Editor de Código', description: 'Editor ligero y rápido para cualquier lenguaje', icon: '📝' },
-    { title: 'Terminal/Shell', description: 'Línea de comandos para ejecutar comandos y scripts', icon: '⌨️' },
-    { title: 'Compilador/Intérprete', description: 'Convierte código fuente a ejecutable', icon: '⚙️' },
-    { title: 'Debugger', description: 'Herramienta para encontrar y corregir errores', icon: '🔍' },
-    { title: 'Control de Versiones', description: 'Git y herramientas para gestionar código', icon: '🔗' },
-    { title: 'Build Tools', description: 'Maven, Gradle para compilar y empaquetar', icon: '🔨' },
-    { title: 'AI Assistants', description: 'Codeium, Copilot para autocompletar código', icon: '🤖' }
+  const comparisonData = [
+    {
+      feature: 'Concepto Base',
+      kubernetes: 'Orquestación de contenedores',
+      dockerSwarm: 'Orquestación simplificada',
+      nomad: 'Orquestador agnóstico'
+    },
+    {
+      feature: 'Complejidad',
+      kubernetes: 'Alta (curva empinada)',
+      dockerSwarm: 'Baja (muy simple)',
+      nomad: 'Media'
+    },
+    {
+      feature: 'Comunidad',
+      kubernetes: 'Masiva (CNCF)',
+      dockerSwarm: 'Pequeña',
+      nomad: 'Creciente (HashiCorp)'
+    },
+    {
+      feature: 'Escalabilidad',
+      kubernetes: '5000+ nodos',
+      dockerSwarm: '1000+ nodos',
+      nomad: '10000+ nodos'
+    },
+    {
+      feature: 'Auto-escalado',
+      kubernetes: 'Nativo y avanzado',
+      dockerSwarm: 'Manual/limitado',
+      nomad: 'Bueno'
+    },
+    {
+      feature: 'Rolling Updates',
+      kubernetes: 'Sofisticado (canary, blue/green)',
+      dockerSwarm: 'Básico',
+      nomad: 'Avanzado'
+    },
+    {
+      feature: 'Ecosystem',
+      kubernetes: 'Enorme (Helm, Istio, Prometheus)',
+      dockerSwarm: 'Minimal',
+      nomad: 'HashiCorp suite'
+    },
+    {
+      feature: 'Adopción Industria',
+      kubernetes: 'Google, Amazon, Microsoft, Netflix',
+      dockerSwarm: 'Pocas empresas',
+      nomad: 'Empresas DevOps forward'
+    }
   ];
 
   return (
     <>
-      <Breadcrumb items={breadcrumbs} />
-      <div className="lesson-container">
-      <div className="lesson-header">
-        <h1>Herramientas de Desarrollo</h1>
-        <p className="lesson-intro">
-          Domina los IDEs, editores y herramientas esenciales para ser un desarrollador productivo
-        </p>
-      </div>
+      <SEO
+        title="Kubernetes - Orquestación de Contenedores Empresarial | Guía Completa"
+        description="Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático, alta disponibilidad y gestión de infraestructura a escala empresarial."
+        keywords="kubernetes, k8s, orquestación, contenedores, pods, deployments, devops, cloud, escalado automático"
+        url="https://fullstackdevlovers.com/cloud/kubernetes"
+        image="/og-kubernetes.png"
+      />
 
-      <section className="lesson-section">
-        <h2>¿Qué son las Herramientas de Desarrollo?</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Un <strong>entorno de desarrollo profesional</strong> no es solo un editor de texto. Es un ecosistema completo de herramientas que te permiten escribir, compilar, probar y desplegar código eficientemente. Las herramientas correctas pueden <strong>multiplicar tu productividad</strong> entre 2x y 5x.
-        </p>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaMarkup)}
+      </script>
 
-        <div style={{
-          backgroundColor: '#f0f4f8',
-          border: '2px solid #0066cc',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#0066cc' }}>Herramientas Esenciales</h3>
-          <ul style={{ fontSize: '1rem', lineHeight: '1.9', marginBottom: 0 }}>
-            <li><strong>IDE:</strong> Todo integrado (IntelliJ, Eclipse, VS Code)</li>
-            <li><strong>Terminal:</strong> Para comandos y scripts</li>
-            <li><strong>Git:</strong> Control de versiones</li>
-            <li><strong>Build Tools:</strong> Maven o Gradle</li>
-            <li><strong>Debugger:</strong> Para encontrar errores</li>
-            <li><strong>AI Assistants:</strong> Para escribir código más rápido</li>
-          </ul>
-        </div>
-      </section>
+      <div className="herramientas-landing">
+        {/* Hero Section */}
+        <LandingHero
+          title="Herramientas: IDEs y Entornos"
+          subtitle="Software esencial para desarrollo profesional"
+          description="Aprende a usar las herramientas modernas: IDEs como IntelliJ y VS Code, sistemas de control de versiones, y entornos de desarrollo que mejoran tu productividad y calidad de código."
+          primaryColor={landingTheme.primary}
+          darkColor={landingTheme.dark}
+          lightGradientColor={landingTheme.lightGradient}
+          primaryButtonText="Comenzar con Herramientas →"
+          primaryButtonLink="/herramientas/entornos/herramientas/ides"
+          secondaryButtonText="Ver comparativa"
+          secondaryButtonLink="#comparativa"
+          imageUrl="/src/assets/images/logos/entornos-desarrollo.png"
+          imageAlt="Herramientas Logo"
+        />
 
-      <section className="lesson-section">
-        <h2>Herramientas Clave</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {tools.map((tool, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#f0f4f8',
-              border: '2px solid #0066cc',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{tool.icon}</div>
-              <h4 style={{ margin: '0 0 0.75rem 0', color: '#0066cc' }}>{tool.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{tool.description}</p>
+        {/* What is Kubernetes Section */}
+        <section className="herramientas-content">
+          <div className="content-container">
+            <h2>¿Qué es Kubernetes?</h2>
+            <p className="intro-text">
+              Kubernetes es un orquestador de contenedores open-source creado por Google para gestionar aplicaciones containerizadas
+              a escala. Automatiza el deployment, escalado horizontal y gestión de cientos o miles de contenedores en múltiples servidores,
+              garantizando alta disponibilidad, recuperación ante fallos y optimización de recursos.
+            </p>
+
+            {/* Key Features */}
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">🎼</div>
+                <h3>Orquestación Automática</h3>
+                <p>Gestiona automáticamente deployment y posicionamiento de contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📈</div>
+                <h3>Auto-escalado</h3>
+                <p>Aumenta o reduce replicas automáticamente según CPU y memoria</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🛡️</div>
+                <h3>Alta Disponibilidad</h3>
+                <p>Recuperación automática ante fallos de nodos y contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔄</div>
+                <h3>Rolling Updates</h3>
+                <p>Actualiza versiones sin downtime con rollback automático</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚖️</div>
+                <h3>Balanceo de Carga</h3>
+                <p>Distribuye tráfico automáticamente entre replicas</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚙️</div>
+                <h3>Gestión de Recursos</h3>
+                <p>CPU, memoria y almacenamiento distribuido eficientemente</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>IDEs más Populares</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '2rem',
-          marginTop: '1.5rem'
-        }}>
-          {[
-            { name: 'IntelliJ IDEA', best: 'Java', icon: '🔵', pros: ['Mejor autocompletar', 'Refactoring avanzado', 'Plugins abundantes'] },
-            { name: 'VS Code', best: 'Web/Polivalente', icon: '🔷', pros: ['Ligero y rápido', 'Muchas extensiones', 'Gratis y open source'] },
-            { name: 'Eclipse', best: 'Java (legacy)', icon: '🔴', pros: ['Históricamente popular', 'Muchos plugins', 'Gratis'] },
-            { name: 'Android Studio', best: 'Mobile/Android', icon: '📱', pros: ['Especializado en Android', 'Emulador integrado', 'Gratis'] }
-          ].map((ide, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{ide.icon}</div>
-              <h4 style={{ margin: '0.5rem 0' }}>{ide.name}</h4>
-              <p style={{ fontSize: '0.9rem', color: '#666', margin: '0.5rem 0' }}><strong>Mejor para:</strong> {ide.best}</p>
-              <ul style={{ fontSize: '0.9rem', marginBottom: 0 }}>
-                {ide.pros.map((pro, i) => <li key={i}>✅ {pro}</li>)}
-              </ul>
+        {/* Learning Topics */}
+        <section className="learning-topics">
+          <div className="content-container">
+            <h2>Temas de Aprendizaje</h2>
+            <p className="intro-text">
+              Domina Kubernetes con una progresión estructurada desde conceptos básicos hasta orquestación avanzada
+            </p>
+
+            <div className="theme-cards-container">
+              {herramientasModule.sections.map((section, idx) => (
+                <KotlinThemeCard
+                  key={idx}
+                  icon={getIconForSection(section.id)}
+                  title={section.name}
+                  description={section.description}
+                  lessons={section.lessons}
+                  color={getColorForSection(idx)}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>Lecciones</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {lessons.map((lesson, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#0066cc';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,102,204,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#ddd';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
-              <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
-              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
-                {lesson.description}
+        {/* Comparison Section */}
+        <section className="comparison-section" id="comparativa">
+          <div className="content-container">
+            <h2>Kubernetes vs Docker Swarm vs Nomad</h2>
+            <p className="intro-text">
+              Comparativa detallada de Kubernetes con otras plataformas de orquestación
+            </p>
+
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    <th>Kubernetes</th>
+                    <th>Docker Swarm</th>
+                    <th>Nomad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      <td className="herramientas-col">{row.kubernetes}</td>
+                      <td>{row.dockerSwarm}</td>
+                      <td>{row.nomad}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="comparison-conclusion">
+              <p>
+                <strong>✅ Elige Kubernetes si:</strong> Trabajas en empresa con infraestructura compleja, necesitas auto-escalado sofisticado,
+                quieres estándar de facto con masiva comunidad, o tienes roadmap de crecimiento.
               </p>
-              <button
-                onClick={() => navigate(lesson.link)}
-                style={{
-                  backgroundColor: '#0066cc',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#0052a3'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#0066cc'}
-              >
-                Ver Lección →
-              </button>
+              <p>
+                <strong>✅ Elige Docker Swarm si:</strong> Tu infra es pequeña, necesitas simplicidad extrema, o ya inversión en Docker.
+                Nota: Swarm está en mantenimiento, no recomendado para nuevo.
+              </p>
+              <p>
+                <strong>✅ Elige Nomad si:</strong> Necesitas agnóstico (no solo contenedores), trabajas con VMs/binarios también,
+                o prefieres HashiCorp stack completo.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#e7f3ff',
-        border: '2px solid #0066cc',
-        borderRadius: '8px',
-        padding: '2rem'
-      }}>
-        <h2>¿Qué Necesito Instalar?</h2>
-        <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>Java JDK</strong> → Para ejecutar y compilar Java</li>
-          <li><strong>IDE</strong> → IntelliJ IDEA o VS Code</li>
-          <li><strong>Git</strong> → Para control de versiones</li>
-          <li><strong>Maven o Gradle</strong> → Para gestionar dependencias</li>
-          <li><strong>Terminal/Shell</strong> → Ya viene con tu SO</li>
-          <li><strong>Codeium</strong> → Opcional pero recomendado (IA para autocompletar)</li>
-        </ol>
-      </section>
+        {/* When to Use Kubernetes */}
+        <section className="when-to-use">
+          <div className="content-container">
+            <h2>¿Cuándo Usar Kubernetes?</h2>
 
-      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          gap: '1rem'
-        }}>
-          <a href="/proyecto/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#e8f5e9',
-            color: '#1b5e20',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #4caf50'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#c8e6c9'} onMouseOut={(e) => e.target.style.backgroundColor = '#e8f5e9'}>
-            ← Volver a Proyecto
-          </a>
-          <a href="/entornos/arquitectura/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#e0f2f1',
-            color: '#004d40',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #009688'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
-            Arquitectura →
-          </a>
-        </div>
-      </section>
-    </div>
+            <div className="use-case-grid">
+              <div className="use-case">
+                <h3>✅ Ideal para:</h3>
+                <ul>
+                  <li>Múltiples servidores/cluster distribuido</li>
+                  <li>Aplicaciones que necesitan auto-escalado</li>
+                  <li>Alta disponibilidad y uptime 99.99%</li>
+                  <li>Microservicios complejos con muchos servicios</li>
+                  <li>Infraestructura empresarial crítica</li>
+                </ul>
+              </div>
+              <div className="use-case">
+                <h3>⚠️ Considera alternativas si:</h3>
+                <ul>
+                  <li>Tu equipo no tiene expertise en DevOps</li>
+                  <li>Usas PaaS (Heroku, Vercel, AWS Beanstalk)</li>
+                  <li>Tienes un único servidor o máquina</li>
+                  <li>Es startup muy pequeño sin presupuesto DevOps</li>
+                  <li>Tu aplicación es simple/monolítica</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="content-container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div className="faq-list">
+              {faqData.map((faq, idx) => (
+                <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+                  <button
+                    className="faq-summary"
+                    onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">+</span>
+                  </button>
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final Section */}
+        <section className="herramientas-cta">
+          <div className="cta-content">
+            <h2>Comienza tu Viaje en Kubernetes Hoy</h2>
+            <p>Aprende desde conceptos básicos hasta orquestación profesional a escala</p>
+            <Link to="/herramientas/entornos/herramientas/ides" className="cta-button">
+              Ir a Fundamentos de Kubernetes →
+            </Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
+
+// Funciones auxiliares
+function getIconForSection(sectionId) {
+  const icons = {
+    'fundamentales': '📚',
+  };
+  return icons[sectionId] || '📄';
+}
+
+function getColorForSection(index) {
+  const colors = ['#9c27b0', '#7b1fa2'];
+  return colors[index % colors.length];
+}

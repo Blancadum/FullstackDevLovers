@@ -1,0 +1,274 @@
+/* Flip Card - Vertical Cards with 3D Flip Effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Base */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Front */
+.flip-card-front {
+  background: white;
+  color: #2c3e50;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.card-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.card-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0066cc;
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  margin: 0 0 0.8rem 0;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  color: #bdc3c7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+/* Back */
+.flip-card-back {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c644fc 100%);
+  color: white;
+  transform: rotateY(180deg);
+  justify-content: space-between;
+}
+
+.back-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  align-self: flex-start;
+}
+
+.back-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.back-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.back-content h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.8rem 0;
+  font-weight: 700;
+  color: white;
+}
+
+.back-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  align-self: flex-end;
+  text-decoration: none;
+}
+
+.card-arrow:hover {
+  background: white;
+  color: #ff6b9d;
+  transform: translateX(4px);
+}
+
+.card-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .flip-card-front,
+  .flip-card-back {
+    padding: 1.5rem;
+  }
+
+  .flip-card-inner {
+    height: 300px;
+  }
+
+  .card-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .flip-card-inner {
+    height: 280px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: 1.2rem;
+  }
+
+  .card-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+  }
+
+  .back-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-arrow {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card-inner {
+    height: 260px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: 1rem;
+  }
+
+  .card-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.75rem;
+  }
+
+  .flip-hint {
+    display: none;
+  }
+
+  .back-content h4 {
+    font-size: 1rem;
+  }
+
+  .card-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}

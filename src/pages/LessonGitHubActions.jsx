@@ -9,37 +9,31 @@ export function LessonGitHubActions() {
 
   const concepts = [
     {
-      icon: '🤖',
       title: 'GitHub Actions',
       definition: 'Plataforma de automatización nativa de GitHub integrada en repositorios',
       example: 'Ejecutar tests, builds y despliegues directamente desde GitHub'
     },
     {
-      icon: '📋',
       title: 'Workflow',
       definition: 'Archivo YAML que define automatizaciones en .github/workflows/',
       example: 'Define triggers, jobs, steps y acciones a ejecutar'
     },
     {
-      icon: '🎯',
       title: 'Triggers',
       definition: 'Eventos que inician workflows (push, pull request, schedule)',
       example: 'on: [push, pull_request] ejecuta al hacer push o PR'
     },
     {
-      icon: '👷',
       title: 'Jobs',
       definition: 'Conjuntos de steps que se ejecutan en paralelo o secuencial',
       example: 'job build, job test, job deploy pueden correr en paralelo'
     },
     {
-      icon: '📝',
       title: 'Steps',
       definition: 'Acciones individuales dentro de un job (comandos, acciones)',
       example: 'Checkout código, setup Java, ejecutar Maven'
     },
     {
-      icon: '📦',
       title: 'Actions',
       definition: 'Componentes reutilizables (community o propias)',
       example: 'actions/checkout, actions/setup-java, docker/build-push-action'
@@ -108,12 +102,12 @@ jobs:
     deploy.yml      # Workflow para despliegue
 
 # Características clave
-✓ Gratuito para repositorios públicos
-✓ Integrado nativamente en GitHub
-✓ 2000 minutos/mes gratis en privados
-✓ Runners en cloud o self-hosted
-✓ Marketplace de acciones reutilizables
-✓ Secretos seguros integrados`}
+ Gratuito para repositorios públicos
+ Integrado nativamente en GitHub
+ 2000 minutos/mes gratis en privados
+ Runners en cloud o self-hosted
+ Marketplace de acciones reutilizables
+ Secretos seguros integrados`}
           />
         </>
       )

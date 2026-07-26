@@ -5,14 +5,14 @@ export const CasoRealEC2 = () => {
   return (
     <div className="lesson-container">
       <div className="lesson-header">
-        <h1>📱 Caso Real: StreamFlow - Plataforma de Video en Vivo</h1>
+        <h1> Caso Real: StreamFlow - Plataforma de Video en Vivo</h1>
         <p className="lesson-intro">
           Cómo una startup pasó de 100 a 500,000 usuarios concurrentes en 6 meses usando EC2 y Auto Scaling
         </p>
       </div>
 
       <section className="lesson-section">
-        <h2>🎬 El Problema</h2>
+        <h2> El Problema</h2>
 
         <div style={{ backgroundColor: '#fff3cd', border: '2px solid #ffc107', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
           <p style={{ marginTop: 0 }}>
@@ -31,19 +31,19 @@ export const CasoRealEC2 = () => {
         </ul>
 
         <div style={{ backgroundColor: '#f8f9fa', border: '1px solid #dee2e6', padding: '1.5rem', borderRadius: '8px', marginTop: '2rem' }}>
-          <h4>📊 Problema Específico</h4>
+          <h4> Problema Específico</h4>
           <p><strong>No podían predecir la carga.</strong> Los picos de usuarios ocurrían sin aviso:</p>
           <ul>
-            <li>⚠️ Nuevo streamer con millones de followers → 50,000 usuarios simultáneos en 2 minutos</li>
-            <li>⚠️ Evento especial → carga 100x normal</li>
-            <li>⚠️ No tenían capacidad para escalar rápido</li>
-            <li>⚠️ Comprar más servidores físicos tardaba semanas</li>
+            <li> Nuevo streamer con millones de followers → 50,000 usuarios simultáneos en 2 minutos</li>
+            <li> Evento especial → carga 100x normal</li>
+            <li> No tenían capacidad para escalar rápido</li>
+            <li> Comprar más servidores físicos tardaba semanas</li>
           </ul>
         </div>
       </section>
 
       <section className="lesson-section">
-        <h2>✅ La Solución: EC2 + Auto Scaling</h2>
+        <h2> La Solución: EC2 + Auto Scaling</h2>
 
         <h3>Arquitectura Implementada</h3>
         <CodeBlock language="text" title="StreamFlow Architecture" code={`┌─────────────────────────────────────────────────────┐
@@ -88,30 +88,30 @@ export const CasoRealEC2 = () => {
           <tbody>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem' }}><strong>Conexiones WebSocket</strong></td>
-              <td style={{ padding: '1rem' }}>✅ Soporta miles/instancia</td>
-              <td style={{ padding: '1rem' }}>❌ Lambda desconecta después de 15 min</td>
+              <td style={{ padding: '1rem' }}> Soporta miles/instancia</td>
+              <td style={{ padding: '1rem' }}> Lambda desconecta después de 15 min</td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem' }}><strong>Latencia streaming</strong></td>
-              <td style={{ padding: '1rem' }}>✅ &lt;2 segundos (persistente)</td>
-              <td style={{ padding: '1rem' }}>❌ 10-15 segundos (cold start)</td>
+              <td style={{ padding: '1rem' }}> &lt;2 segundos (persistente)</td>
+              <td style={{ padding: '1rem' }}> 10-15 segundos (cold start)</td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem' }}><strong>Costos (500K concurrentes)</strong></td>
-              <td style={{ padding: '1rem' }}>✅ $15,000/mes (100 EC2 t3.xlg)</td>
-              <td style={{ padding: '1rem' }}>❌ $100,000+/mes (500K × 15min × $0.0000166667)</td>
+              <td style={{ padding: '1rem' }}> $15,000/mes (100 EC2 t3.xlg)</td>
+              <td style={{ padding: '1rem' }}> $100,000+/mes (500K × 15min × $0.0000166667)</td>
             </tr>
             <tr style={{ borderBottom: '1px solid #ddd' }}>
               <td style={{ padding: '1rem' }}><strong>Escalabilidad</strong></td>
-              <td style={{ padding: '1rem' }}>✅ Predecible + elasticidad</td>
-              <td style={{ padding: '1rem' }}>❌ Impredecible con streams vivos</td>
+              <td style={{ padding: '1rem' }}> Predecible + elasticidad</td>
+              <td style={{ padding: '1rem' }}> Impredecible con streams vivos</td>
             </tr>
           </tbody>
         </table>
       </section>
 
       <section className="lesson-section">
-        <h2>🔧 Implementación Paso a Paso</h2>
+        <h2> Implementación Paso a Paso</h2>
 
         <h3>Paso 1: Launch Template</h3>
         <CodeBlock language="json" title="EC2 Launch Template JSON" code={`{
@@ -234,28 +234,28 @@ public class StreamWebSocketHandler extends TextWebSocketHandler {
       </section>
 
       <section className="lesson-section">
-        <h2>📈 Resultados Reales</h2>
+        <h2> Resultados Reales</h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           <div style={{ backgroundColor: '#d4edda', border: '2px solid #28a745', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#155724' }}>Antes (On-Premise)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
               <li>⏱️ <strong>Max capacidad:</strong> 50K usuarios</li>
-              <li>❌ <strong>Downtime:</strong> 4 horas cada mes</li>
-              <li>💰 <strong>CAPEX anual:</strong> $200K</li>
+              <li> <strong>Downtime:</strong> 4 horas cada mes</li>
+              <li> <strong>CAPEX anual:</strong> $200K</li>
               <li>⏳ <strong>Escalar:</strong> 2-4 semanas</li>
-              <li>😰 <strong>Miedo de picos:</strong> Altísimo</li>
+              <li> <strong>Miedo de picos:</strong> Altísimo</li>
             </ul>
           </div>
 
           <div style={{ backgroundColor: '#d1ecf1', border: '2px solid #17a2b8', padding: '1.5rem', borderRadius: '8px' }}>
             <h4 style={{ marginTop: 0, color: '#0c5460' }}>Después (AWS EC2)</h4>
             <ul style={{ fontSize: '0.95rem', marginBottom: 0 }}>
-              <li>⚡ <strong>Max capacidad:</strong> 500K+ usuarios</li>
-              <li>✅ <strong>Downtime:</strong> 0 horas/mes (99.99%)</li>
-              <li>💰 <strong>OPEX mensual:</strong> $15K</li>
-              <li>⚙️ <strong>Escalar:</strong> 2-3 minutos (automático)</li>
-              <li>😎 <strong>Confianza:</strong> Total - escala transparente</li>
+              <li> <strong>Max capacidad:</strong> 500K+ usuarios</li>
+              <li> <strong>Downtime:</strong> 0 horas/mes (99.99%)</li>
+              <li> <strong>OPEX mensual:</strong> $15K</li>
+              <li>️ <strong>Escalar:</strong> 2-3 minutos (automático)</li>
+              <li> <strong>Confianza:</strong> Total - escala transparente</li>
             </ul>
           </div>
         </div>
@@ -287,7 +287,7 @@ public class StreamWebSocketHandler extends TextWebSocketHandler {
               <td style={{ padding: '1rem' }}>Ingreso (Black Friday)</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>$100K</td>
               <td style={{ padding: '1rem', textAlign: 'center' }}>$1.2M</td>
-              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>12x 🚀</td>
+              <td style={{ padding: '1rem', textAlign: 'center', color: '#28a745' }}>12x </td>
             </tr>
             <tr>
               <td style={{ padding: '1rem' }}>ROI de migración</td>
@@ -300,7 +300,7 @@ public class StreamWebSocketHandler extends TextWebSocketHandler {
       </section>
 
       <section className="lesson-section">
-        <h2>🎓 Lecciones Aprendidas</h2>
+        <h2> Lecciones Aprendidas</h2>
 
         <div style={{ backgroundColor: '#fffbea', border: '2px solid #ff9800', borderRadius: '8px', padding: '1.5rem' }}>
           <h4 style={{ marginTop: 0 }}>1. El timing es crítico</h4>
@@ -321,22 +321,22 @@ public class StreamWebSocketHandler extends TextWebSocketHandler {
         <div style={{ backgroundColor: '#fffbea', border: '2px solid #ff9800', borderRadius: '8px', padding: '1.5rem', marginTop: '1rem' }}>
           <h4 style={{ marginTop: 0 }}>3. Monitoreo = paz mental</h4>
           <p>
-            Antes: "¿Qué pasará si 10K usuarios llegan hoy?" 😰<br/>
-            Después: Auto Scaling maneja automáticamente. Solo monitorea CloudWatch. 😎
+            Antes: "¿Qué pasará si 10K usuarios llegan hoy?" <br/>
+            Después: Auto Scaling maneja automáticamente. Solo monitorea CloudWatch. 
           </p>
         </div>
       </section>
 
       <section className="lesson-section" style={{ backgroundColor: '#e7f3ff', border: '2px solid #0066cc', borderRadius: '8px', padding: '2rem' }}>
-        <h2>💡 Conclusión</h2>
+        <h2> Conclusión</h2>
         <p style={{ fontSize: '1.05rem', lineHeight: '1.8' }}>
           <strong>EC2 + Auto Scaling fue la decisión correcta para StreamFlow</strong> porque:
         </p>
         <ul style={{ fontSize: '1rem', lineHeight: '2' }}>
-          <li>✅ Necesitaban <strong>conexiones persistentes (WebSocket)</strong> con baja latencia</li>
-          <li>✅ Cagas impredecibles pero <strong>sostenidas por período</strong> (streams pueden durar horas)</li>
-          <li>✅ Requería <strong>control total del servidor</strong> (Docker, configuración custom)</li>
-          <li>✅ El ROI fue <strong>inmediato</strong> (Black Friday con 10x usuarios)</li>
+          <li> Necesitaban <strong>conexiones persistentes (WebSocket)</strong> con baja latencia</li>
+          <li> Cagas impredecibles pero <strong>sostenidas por período</strong> (streams pueden durar horas)</li>
+          <li> Requería <strong>control total del servidor</strong> (Docker, configuración custom)</li>
+          <li> El ROI fue <strong>inmediato</strong> (Black Friday con 10x usuarios)</li>
         </ul>
         <p style={{ marginTop: '2rem', fontStyle: 'italic', color: '#555' }}>
           Si hubieran usado Lambda → hubieras perdido 500K usuarios en Black Friday.

@@ -79,9 +79,9 @@ B. CRITERIOS DE ACEPTACIÓN (2 puntos)
    - Mínimo 3 criterios por historia
    - Específicos y testables
    - Ejemplo:
-     ✓ El campo aceptará mínimo 2 caracteres
-     ✓ Los resultados aparecerán en <2 segundos
-     ✓ Mostrar número total de resultados
+      El campo aceptará mínimo 2 caracteres
+      Los resultados aparecerán en <2 segundos
+      Mostrar número total de resultados
 
 C. REQUISITOS FUNCIONALES (1.5 puntos)
    - Tabla: Funcionalidad | Historia de Usuario | Prioridad
@@ -199,11 +199,11 @@ D. USABILIDAD (1 punto)
    - Consistencia en interfaz
 
 CHECKLIST ENTREGA:
-☐ Wireframes documentados
-☐ Mockups en alta fidelidad
-☐ Prototipo HTML/CSS funcional
-☐ Link a Figma o archivo descargable
-☐ Documento de decisiones de diseño`
+ Wireframes documentados
+ Mockups en alta fidelidad
+ Prototipo HTML/CSS funcional
+ Link a Figma o archivo descargable
+ Documento de decisiones de diseño`
   },
 
   {
@@ -220,16 +220,16 @@ A. Análisis Agile vs Metodologías Tradicionales (4 puntos)
 
 1. Comparación Agile vs Waterfall:
    AGILE:
-   ✓ Flexible, adaptable a cambios
-   ✓ Entrega frecuente (cada sprint)
-   ✓ Cliente involucrado continuamente
-   ✓ Detección temprana de problemas
+    Flexible, adaptable a cambios
+    Entrega frecuente (cada sprint)
+    Cliente involucrado continuamente
+    Detección temprana de problemas
 
    WATERFALL:
-   ✓ Estructura clara y documentada
-   ✓ Presupuesto predecible
-   ✓ Bueno para requisitos estables
-   ✗ Inflexible a cambios
+    Estructura clara y documentada
+    Presupuesto predecible
+    Bueno para requisitos estables
+    Inflexible a cambios
 
 2. Herramientas Agile:
    - Taiga: Open-source, SCRUM/Kanban, visual
@@ -247,11 +247,11 @@ B. Planificación SCRUM (6 puntos)
    - Scrum Master: Facilita proceso
    - Development Team: Ejecuta tareas
 5. Configurar en Taiga:
-   ✓ Crear proyecto
-   ✓ Invitar equipo
-   ✓ Crear EPICs
-   ✓ Crear User Stories
-   ✓ Crear Sprints`
+    Crear proyecto
+    Invitar equipo
+    Crear EPICs
+    Crear User Stories
+    Crear Sprints`
   },
 
   {
@@ -291,12 +291,12 @@ C. SPRINT DEVELOPMENT (6 puntos)
    - Videos demostrativos (3 min por persona)
 
 ENTREGABLES:
-☐ Código en GitHub con rama develop
-☐ Base de datos funcional
-☐ Backend APIs implementadas
-☐ Frontend responsive
-☐ Tests básicos
-☐ Wiki de proyecto actualizada
+ Código en GitHub con rama develop
+ Base de datos funcional
+ Backend APIs implementadas
+ Frontend responsive
+ Tests básicos
+ Wiki de proyecto actualizada
 
 D. DEFINICIÓN SPRINT 2 (1 punto)
    - Nuevo Product Owner propone Sprint 2
@@ -328,28 +328,28 @@ US#7: Admin: crear/editar/eliminar productos
 US#8: Admin: visualizar todas las órdenes
 
 B. WEEKLY SCRUM (1 punto)
-   ✓ Reunión semanal de sincronización
-   ✓ Documentar en Wiki cada semana
-   ✓ Identificar y resolver blockers
+    Reunión semanal de sincronización
+    Documentar en Wiki cada semana
+    Identificar y resolver blockers
 
 C. SPRINT DEVELOPMENT (6 puntos)
-   ✓ Implementar funcionalidades del sprint
-   ✓ Tests unitarios e integración
-   ✓ Code review entre miembros
-   ✓ Commits claros y frecuentes
-   ✓ ~20 horas desarrollo por persona
+    Implementar funcionalidades del sprint
+    Tests unitarios e integración
+    Code review entre miembros
+    Commits claros y frecuentes
+    ~20 horas desarrollo por persona
 
 ENTREGABLES:
-☐ Carrito completamente funcional
-☐ API endpoints: cart, admin products
-☐ Panel de administración básico
-☐ Autenticación JWT completa
-☐ Tests (cobertura >70%)
-☐ Wiki actualizada
+ Carrito completamente funcional
+ API endpoints: cart, admin products
+ Panel de administración básico
+ Autenticación JWT completa
+ Tests (cobertura >70%)
+ Wiki actualizada
 
 D. DEFINICIÓN SPRINT 3 (1 punto)
-   ✓ Nuevo Product Owner propone Sprint 3
-   ✓ Prioridades: checkout, órdenes, deployment`
+    Nuevo Product Owner propone Sprint 3
+    Prioridades: checkout, órdenes, deployment`
   },
 
   {
@@ -394,7 +394,7 @@ B. SPRINT DEVELOPMENT (3 puntos)
    - Testing en producción
 
 C. DOCUMENTATION (2 puntos)
-   ✓ Wiki completo:
+    Wiki completo:
      * Arquitectura técnica
      * API documentation
      * Manual de usuario
@@ -407,11 +407,11 @@ D. TESTING & QA (3 puntos)
    □ Load testing: 100+ usuarios simultáneos
 
 E. DEPLOYMENT (2 puntos)
-   ✓ Ambiente de producción configurable
-   ✓ Backup automático de BD
-   ✓ Monitoreo de errores
-   ✓ Logs centralizados
-   ✓ Plan de rollback documentado
+    Ambiente de producción configurable
+    Backup automático de BD
+    Monitoreo de errores
+    Logs centralizados
+    Plan de rollback documentado
 
 F. PRESENTACIÓN FINAL (1 punto)
    □ Demo funcionando en producción

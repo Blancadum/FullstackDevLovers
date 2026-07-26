@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 2rem;
+  padding: 0.3rem 0.3rem;
   background: white;
   border-bottom: none;
   gap: 2rem;
@@ -16,13 +16,13 @@
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  padding-top: 60px;
+  padding-top: 0.2rem;
 }
 
 .module-header {
   background: #fafafa;
   color: #1a1a1a;
-  padding: 1rem 2rem;
+  padding: 0.3rem 0.3rem;
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -123,10 +123,9 @@
 
 .module-intro {
   background: rgba(255, 107, 107, 0.08);
-  border-left: 4px solid #ff006e;
-  padding: 1.5rem 1.5rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -209,7 +208,7 @@
 /* Large Tablet (1024px - 1399px) */
 @media (max-width: 1399px) and (min-width: 1024px) {
   .breadcrumb-section {
-    padding: 0.4rem 1.5rem;
+    padding: 0.4rem 0.5rem;
     gap: 1.5rem;
   }
 
@@ -664,7 +663,6 @@
   .module-intro {
     padding: 0.9rem;
     margin-bottom: 1rem;
-    border-left: 3px solid #ff006e;
   }
 
   .module-intro p {
@@ -879,7 +877,6 @@
   .module-intro {
     padding: 0.75rem;
     margin-bottom: 0.75rem;
-    border-left: 3px solid #ff006e;
   }
 
   .module-intro p {
@@ -1324,8 +1321,8 @@
 
 .faq-question.active {
   border-left-color: #ff006e;
-  background: #ffe0f0 !important;
-  color: #2c3e50 !important;
+  background: #ffe0f0;
+  color: #2c3e50;
 }
 
 .faq-question.active .faq-toggle::before {
@@ -1409,7 +1406,7 @@
 
 .faq-links {
   margin-top: 0.75rem;
-  padding-top: 0.75rem;
+  padding-top: 0.3rem;
   border-top: 1px solid #eee;
 }
 
@@ -1556,4 +1553,57 @@
   .lessons-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Lexicon and Test Links Section */
+.module-lexicon-test-section {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.module-lexicon-test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.module-lexicon-link,
+.module-test-link {
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.module-lexicon-link {
+  background-color: #FF9900;
+  box-shadow: 0 2px 8px rgba(255, 153, 0, 0.2);
+}
+
+.module-lexicon-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 153, 0, 0.3);
+}
+
+.module-test-link {
+  background-color: #2196F3;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+.module-test-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.3);
+}
+
+.module-link-icon {
+  font-size: 1.8rem;
 }

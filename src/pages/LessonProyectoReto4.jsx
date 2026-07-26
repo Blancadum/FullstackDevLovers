@@ -1,5 +1,6 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import './LessonProyectoReto.css';
 
 const sections = [
   {
@@ -12,7 +13,7 @@ const sections = [
         </p>
 
         <h4>Criterios de selección:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Proximidad geográfica:</strong> Facilita reuniones presenciales opcionales</li>
           <li><strong>Horarios comunes:</strong> Coincidencia de franjas laborales</li>
           <li><strong>Especialidades complementarias:</strong> No duplicar conocimientos</li>
@@ -21,7 +22,7 @@ const sections = [
         </ul>
 
         <h4>Roles recomendados:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Product Owner / Full-stack Developer</li>
           <li>Backend Developer / DevOps</li>
           <li>Frontend Developer / UI/UX Designer</li>
@@ -45,7 +46,7 @@ const sections = [
         </p>
 
         <h4>Stack de herramientas obligatorias:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Google Meet / Zoom:</strong> Reuniones sincrónicas diarias (grabadas)</li>
           <li><strong>Slack / Discord:</strong> Comunicación rápida asincrónica</li>
           <li><strong>GitHub:</strong> Code review + issues + discussions</li>
@@ -53,7 +54,7 @@ const sections = [
         </ul>
 
         <h4>Acuerdo de comunicación:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Visible profesor: Reuniones grabadas, Slack público, GitHub issues públicas</li>
           <li>Decisiones documentadas: Cada decisión registrada en GitHub o Notion</li>
           <li>Meeting minutes: Resumen escrito después cada reunión importante</li>
@@ -77,7 +78,7 @@ const sections = [
         </p>
 
         <h4>Reuniones típicas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Daily Standup:</strong> 15-20 min diarios - qué hice, qué haré, bloques</li>
           <li><strong>Pair Programming:</strong> 1-2h según necesidad - problemas complejos</li>
           <li><strong>Sprint Planning:</strong> 1h semanal/bi-semanal - tareas de la semana</li>
@@ -86,7 +87,7 @@ const sections = [
         </ul>
 
         <h4>Comunicación asincrónica:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Sincrónica: diaria 15-30 min (scrum rápido)</li>
           <li>Asincrónica: Slack respuesta en máximo 2h</li>
           <li>Semanal: revisión progreso + bloqueos</li>
@@ -109,7 +110,7 @@ const sections = [
         </p>
 
         <h4>Protocolo de escalación:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Nivel 1 (Dev):</strong> Decisión técnica entre 2 devs → código review</li>
           <li><strong>Nivel 2 (Lead):</strong> Blocker técnico → reunión urgente + tech lead decisión</li>
           <li><strong>Nivel 3 (PO):</strong> Cambio scope o conflicto no-técnico → PO final call</li>
@@ -117,7 +118,7 @@ const sections = [
         </ul>
 
         <h4>Casos específicos:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Si alguien falta 1 día: Tareas reassignadas, daily sin esa persona</li>
           <li>Si alguien falta 3+ días: Replan sprint, consideración expulsión equipo</li>
           <li>Desacuerdo técnico: Pro/con documentados, voto equipo, PO desempate</li>
@@ -141,7 +142,7 @@ const sections = [
         </p>
 
         <h4>Documentación compartida:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Specs + Requisitos:</strong> Google Docs/Notion - Actualización semanal</li>
           <li><strong>Arquitectura:</strong> Draw.io/Lucidchart - Cada sprint</li>
           <li><strong>API Documentation:</strong> Postman/Swagger - Continua</li>
@@ -149,7 +150,7 @@ const sections = [
         </ul>
 
         <h4>Expectativas de teamwork:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Todos entienden la arquitectura completa (no silos)</li>
           <li>Code review obligatorio antes de merge (2+ aprobaciones)</li>
           <li>Pair programming semanal para cross-training</li>
@@ -176,7 +177,7 @@ const sections = [
         </p>
 
         <h4>Información requerida por miembro:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Nombre y apellido</li>
           <li>Rol específico (PO, Tech Lead, Frontend Dev, Backend Dev, QA, DevOps)</li>
           <li>Horas de trabajo por semana</li>
@@ -185,7 +186,7 @@ const sections = [
         </ul>
 
         <h4>Distribución de tareas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Especialista: Cada uno es expert en su área</li>
           <li>Cross-training: Todos deben entender otras especialidades</li>
           <li>Backup: Si alguien falta, otro puede continuar</li>
@@ -211,7 +212,7 @@ const sections = [
         </p>
 
         <h4>Argumentación de selección:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Viabilidad técnica: Equipo tiene skills para ejecutarlo</li>
           <li>Complejidad equilibrada: Ni muy fácil ni imposible</li>
           <li>Oportunidad de aprendizaje: Todos aprenderán algo nuevo</li>

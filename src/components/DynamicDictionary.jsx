@@ -48,7 +48,7 @@ export function DynamicDictionary({ terms = [] }) {
   return (
     <div className="dynamic-dictionary">
       <div className="dict-header">
-        <h3>📚 Diccionario de Términos</h3>
+        <h3> Diccionario de Términos</h3>
         <p className="dict-subtitle">Haz clic en una letra para ver los términos</p>
       </div>
 

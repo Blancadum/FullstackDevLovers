@@ -25,7 +25,7 @@ export function ComparisonRDSVsDynamoDB() {
             marginBottom: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', fontWeight: '700' }}>
-              ⚠️ Problema Clave:
+               Problema Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
               RDS es <strong>SQL relacional</strong> (tablas, joins, ACID) mientras que DynamoDB es <strong>NoSQL de documentos</strong> (clave-valor, flexible, eventual consistency). Son dos modelos de datos opuestos.
@@ -138,7 +138,7 @@ export function ComparisonRDSVsDynamoDB() {
             marginTop: '2rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Idea Clave:
+               Idea Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               RDS = **Datos estructurados con relaciones** (usuarios, pedidos, productos)<br/>
@@ -167,7 +167,7 @@ export function ComparisonRDSVsDynamoDB() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#0066cc', fontSize: '1.3rem' }}>
-                🗄️ Amazon RDS en Profundidad
+                 Amazon RDS en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -238,7 +238,7 @@ export function ComparisonRDSVsDynamoDB() {
               padding: '2rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#d32f2f', fontSize: '1.3rem' }}>
-                ⚡ AWS DynamoDB en Profundidad
+                 AWS DynamoDB en Profundidad
               </h3>
 
               <div style={{ marginBottom: '1.5rem' }}>
@@ -363,7 +363,7 @@ export function ComparisonRDSVsDynamoDB() {
             </div>
 
             <p style={{ margin: '1.5rem 0 0 0', fontSize: '0.9rem', fontStyle: 'italic', color: '#666' }}>
-              ✓ Requieren relaciones complejas, integridad referencial, transacciones ACID
+               Requieren relaciones complejas, integridad referencial, transacciones ACID
             </p>
           </div>
 
@@ -417,7 +417,7 @@ export function ComparisonRDSVsDynamoDB() {
             </div>
 
             <p style={{ margin: '1.5rem 0 0 0', fontSize: '0.9rem', fontStyle: 'italic', color: '#666' }}>
-              ✓ Acceso rápido, datos flexibles, escalabilidad masiva, sin relaciones
+               Acceso rápido, datos flexibles, escalabilidad masiva, sin relaciones
             </p>
           </div>
         </>
@@ -442,7 +442,7 @@ export function ComparisonRDSVsDynamoDB() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#0066cc', fontSize: '1.1rem' }}>
-                ✅ Usa RDS cuando...
+                 Usa RDS cuando...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Datos estructurados con relaciones</li>
@@ -463,7 +463,7 @@ export function ComparisonRDSVsDynamoDB() {
               padding: '1.5rem'
             }}>
               <h3 style={{ margin: '0 0 1rem 0', color: '#d32f2f', fontSize: '1.1rem' }}>
-                ✅ Usa DynamoDB cuando...
+                 Usa DynamoDB cuando...
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8', color: '#333' }}>
                 <li>Datos flexibles y sin relaciones</li>
@@ -484,7 +484,7 @@ export function ComparisonRDSVsDynamoDB() {
             padding: '1.5rem'
           }}>
             <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem' }}>
-              💡 Pregunta Clave:
+               Pregunta Clave:
             </p>
             <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
               ¿Necesito relaciones complejas entre datos? → RDS<br/>
@@ -537,10 +537,10 @@ export function ComparisonRDSVsDynamoDB() {
                 padding: '1.5rem'
               }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: '700', fontSize: '0.95rem', color: idx % 2 === 0 ? '#0066cc' : '#d32f2f' }}>
-                  ❓ {item.q}
+                   {item.q}
                 </p>
                 <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.6', color: '#333' }}>
-                  ✓ {item.a}
+                   {item.a}
                 </p>
               </div>
             ))}
@@ -616,7 +616,7 @@ export function ComparisonRDSVsDynamoDB() {
                   fontWeight: '600',
                   color: '#666'
                 }}>
-                  💡 {item.highlight}
+                   {item.highlight}
                 </div>
               </div>
             ))}
@@ -631,7 +631,7 @@ export function ComparisonRDSVsDynamoDB() {
             textAlign: 'center'
           }}>
             <p style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: '700', color: '#1b5e20' }}>
-              ✅ Ahora lo entiendes:
+               Ahora lo entiendes:
             </p>
             <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.8', color: '#2e7d32' }}>
               <strong>RDS</strong> es para datos relacionales con SQL.<br/>
@@ -680,7 +680,7 @@ export function ComparisonRDSVsDynamoDB() {
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}>
-          🗄️ Volver a RDS
+           Volver a RDS
         </a>
 
         <a href="/aws/servicios/dynamodb" style={{
@@ -707,7 +707,7 @@ export function ComparisonRDSVsDynamoDB() {
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}>
-          ⚡ DynamoDB
+           DynamoDB
         </a>
       </div>
       <LessonNavigation

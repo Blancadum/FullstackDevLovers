@@ -5,7 +5,7 @@
 
 export const javaGlossary = [
   // A
-  { word: 'Abstract', definition: 'Modificador para crear clases base con métodos sin implementación que las subclases deben completar. ⚠️ Nota: Se confunde frecuentemente con Interface. Ver comparativa completa en la lección de Interfaces y Clases Abstractas.', link: '/java/poo/interfaces-abstractas#comparacion' },
+  { word: 'Abstract', definition: 'Modificador para crear clases base con métodos sin implementación que las subclases deben completar.  Nota: Se confunde frecuentemente con Interface. Ver comparativa completa en la lección de Interfaces y Clases Abstractas.', link: '/java/poo/interfaces-abstractas#comparacion' },
   { word: 'API', definition: 'Application Programming Interface - Interfaz para comunicarse con otras aplicaciones', link: null },
   { word: 'Array', definition: 'Estructura de datos que almacena múltiples valores del mismo tipo', link: '/java/basico/arrays' },
   { word: 'ArrayList', definition: 'Lista dinámica que crece o encoge automáticamente según necesidad', link: '/java/avanzado/colecciones' },

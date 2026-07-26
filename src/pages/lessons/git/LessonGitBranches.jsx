@@ -405,12 +405,12 @@ refactor/optimize-queries`}
                 </p>
                 <CodeBlock
                   language="bash"
-                  code={`# ❌ MALO - No hagas esto
+                  code={`#  MALO - No hagas esto
 git switch main
 git add .
 git commit -m "Agregar login"
 
-# ✅ BIEN - Haz esto
+#  BIEN - Haz esto
 git switch -c feature/login
 git add .
 git commit -m "Agregar login"`}
@@ -525,10 +525,10 @@ git fetch --prune`}
                 </p>
                 <CodeBlock
                   language="bash"
-                  code={`# ❌ INCORRECTO - Intenta crear una rama que ya existe
+                  code={`#  INCORRECTO - Intenta crear una rama que ya existe
 git branch feature/login
 
-# ✅ CORRECTO - Cambia a la rama existente
+#  CORRECTO - Cambia a la rama existente
 git switch feature/login`}
                 />
                 <p>

@@ -158,3 +158,41 @@
     font-size: 12px;
   }
 }
+
+/* Retos Selector Label */
+.retos-selector-label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.retos-selector-select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Reto Header Styles */
+.reto-header-title {
+  margin: 0 0 8px 0;
+}
+
+.reto-header-description {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Reto Solution Monospace Text */
+.reto-solution-text {
+  white-space: pre-wrap;
+  font-family: system-ui;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}

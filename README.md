@@ -1,347 +1,170 @@
-# ☕ Java Backend Learning Platform - React
+# Backend Learning Platform
 
-> **Plataforma educativa moderna, escalable y profesional** para aprender Java, Git, SQL, Spring Boot y más con componentes reutilizables optimizados.
+Plataforma educativa moderna para aprender Java, Git, SQL, Spring Boot, DevOps y más. Construida con React + Vite, con 50+ lecciones organizadas en módulos, componentes reutilizables y SEO completo.
 
-[![React](https://img.shields.io/badge/React-19.2.7-61DAFB?logo=react)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-8.1.1-646CFF?logo=vite)](https://vitejs.dev)
-[![React Router](https://img.shields.io/badge/React%20Router-7.18.1-CA4245)](https://reactrouter.com)
-[![License](https://img.shields.io/badge/License-MIT-green)](#)
+## Main Features
 
----
+- **50+ Lecciones Interactivas** — Organizadas en 8 módulos (Git, Java, SQL, Spring Boot, Herramientas, Metodologías, Proyecto, AWS)
+- **Componentes Reutilizables** — Reduce 75-80% del código de lecciones (LessonTemplate, ConceptCard, Exercise, etc.)
+- **Tabla de Contenidos Automática** — Generación dinámica de índice por lección
+- **Búsqueda en Tiempo Real** — Filtra lecciones al escribir
+- **100% Responsive** — Optimizado para mobile, tablet y desktop (3 breakpoints)
+- **SEO Completo** — Meta tags dinámicos, breadcrumbs, sitemap XML, canonical URLs
+- **Breadcrumbs Automáticos** — Navegación contextual basada en rutas
+- **Accesibilidad WCAG 2.1 Level AA** — Focus visible, aria-labels, contrast ratios
+- **Dark Mode Ready** — Variables CSS para temas
 
-## ✨ CARACTERÍSTICAS PRINCIPALES
+## Tech Stack
 
-### 🎯 Contenido Educativo
-- ✅ **50+ lecciones** en 8 módulos (Git, Java, SQL, Spring Boot, IDEs, etc.)
-- ✅ **Búsqueda y filtrado** en tiempo real con soporte semántico
-- ✅ **Índice de contenidos automático** (TableOfContents en cada lección)
-- ✅ **6+ componentes reutilizables** que reducen código en 75-80%
-- ✅ **Ejercicios con pistas y soluciones** para práctica interactiva
-- ✅ **FAQ expandibles** y tablas de comparación profesionales
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| **Framework** | React | 19.2.7 |
+| **Routing** | React Router | 7.18.1 |
+| **Build** | Vite | 8.1.1 |
+| **SEO** | react-helmet-async | 3.0.0 |
+| **Linting** | Oxlint | 1.71.0 |
 
-### 🏗️ Arquitectura
-- ✅ **React 19.2.7** con Hooks modernos
-- ✅ **React Router v7** para navegación fluida
-- ✅ **Vite 8.1.1** para build ultrarrápido
-- ✅ **SEO completo** con meta tags dinámicos y sitemap XML
-- ✅ **Breadcrumbs automáticos** generados desde rutas
+**Líneas de código:**
+- 261 componentes/páginas JSX
+- 63 archivos CSS
+- 21 configuración/hooks/utils
 
-### 🎨 Diseño & UX
-- ✅ **100% responsive** (mobile-first, 3 breakpoints)
-- ✅ **Componentes profesionales** con animaciones suaves
-- ✅ **Accesibilidad WCAG 2.1 Level AA**
-- ✅ **Dark mode ready** (CSS variables)
-- ✅ **Performance optimizado** (Core Web Vitals)
-
-### 🔒 Calidad
-- ✅ **Linting** con Oxlint 1.71.0
-- ✅ **Security best practices** (XSS, CSRF, CSP)
-- ✅ **Código modular** y fácil de mantener
-
----
-
-## 📊 ESTADÍSTICAS DEL PROYECTO
-
-| Métrica | Valor |
-|---------|-------|
-| **Componentes** | 61 archivos |
-| **Lecciones** | 50+ páginas |
-| **Módulos** | 8 (Git, Java, SQL, Spring Boot, etc.) |
-| **URLs Indexables** | 60+ |
-| **Hooks Personalizados** | 3 |
-| **Reducción de Código** | 75-80% (con templates) |
-| **Líneas CSS** | 717+ |
-| **Tiempo Setup Lección** | ~5 minutos |
-
----
-
-## 📁 ESTRUCTURA DEL PROYECTO
+## File Structure
 
 ```
-backend-learning-react/
-├── src/
-│   ├── components/                    # 61 componentes reutilizables
-│   │   ├── LAYOUT & NAVIGATION
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Breadcrumb.jsx         ✅ Generación automática
-│   │   │   └── ...
-│   │   │
-│   │   ├── LESSON TEMPLATES           # 75-80% reducción de código
-│   │   │   ├── LessonTemplate.jsx     ⭐ ESTRELLA
-│   │   │   ├── NarrativeLessonTemplate.jsx
-│   │   │   └── LessonNavigation.jsx
-│   │   │
-│   │   ├── EDUCATIONAL CONTENT
-│   │   │   ├── CodeBlock.jsx          ✅ Resaltado sintaxis
-│   │   │   ├── Exercise.jsx           ✅ Con pistas/soluciones
-│   │   │   ├── KeyPoints.jsx
-│   │   │   ├── FAQ.jsx                ✅ Expandible
-│   │   │   └── ComparisonTable.jsx
-│   │   │
-│   │   └── COMPONENTS
-│   │       ├── Table.jsx
-│   │       ├── InfoBox.jsx            ✅ 6 variantes
-│   │       ├── TabBox.jsx
-│   │       └── ...
-│   │
-│   ├── hooks/                         # 3 hooks personalizados
-│   │   ├── useLessonSEO.js           ✅ Obtiene metadatos por ruta
-│   │   ├── useBreadcrumb.js          ✅ Genera breadcrumbs
-│   │   └── useNavbarScroll.js        ✅ Control de scroll
-│   │
-│   ├── config/                        # Configuración centralizada
-│   │   ├── modulesConfig.js          ✅ 8 módulos completos
-│   │   ├── lessonMetadata.js         ✅ Metadatos SEO 50+ lecciones
-│   │   ├── authorConfig.js
-│   │   └── lessonComponents.js
-│   │
-│   ├── pages/                         # 50+ lecciones en 8 módulos
-│   │   ├── Home.jsx
-│   │   ├── ModulePage.jsx
-│   │   ├── GIT/                       (8 lecciones)
-│   │   ├── JAVA_BASICO/              (7 lecciones)
-│   │   ├── JAVA_POO/                 (4 lecciones)
-│   │   ├── JAVA_AVANZADO/            (7 lecciones)
-│   │   ├── PATRONES/                 (5 lecciones)
-│   │   ├── SQL/                      (5 lecciones)
-│   │   ├── SPRING_BOOT/              (8 lecciones)
-│   │   └── IDES/                     (5 lecciones)
-│   │
-│   ├── App.jsx                        ✅ Con HelmetProvider
-│   ├── App.css
-│   ├── global.css
-│   ├── index.css
-│   └── main.jsx
+src/
+├── components/           # 50+ componentes reutilizables
+│   ├── LessonTemplate.jsx      ⭐ Template principal de lecciones
+│   ├── Exercise.jsx             # Ejercicios con pistas/soluciones
+│   ├── CodeBlock.jsx            # Resaltado de sintaxis
+│   ├── FAQ.jsx                  # Preguntas expandibles
+│   ├── Breadcrumb.jsx           # Navegación automática
+│   ├── TableOfContents.jsx      # Índice dinámico
+│   └── [otros 44+ componentes]
 │
-├── public/
-│   ├── sitemap.xml                   ✅ 60+ URLs
-│   ├── robots.txt
-│   └── ...
+├── pages/               # 200+ páginas de lecciones
+│   ├── Home.jsx
+│   ├── ModulePage.jsx
+│   ├── LessonGit*.jsx
+│   ├── LessonJava*.jsx
+│   ├── LessonSQL*.jsx
+│   └── [otros módulos]
 │
-├── DOCUMENTATION/
-│   ├── README.md                     ← Este archivo
-│   ├── ARCHITECTURE.md               ✅ 952 líneas
-│   ├── COMPONENTES_OPTIMIZADOS.md   ✅ 574 líneas
-│   ├── MIGRACION_COMPLETADA.md
-│   └── SEO.md
+├── hooks/              # Hooks personalizados
+│   ├── useLessonNavigation.js
+│   ├── useBreadcrumb.js
+│   └── useIsDark.js
 │
-├── package.json                       ✅ React 19.2.7, Vite 8.1.1
-├── vite.config.js
-├── .oxlintrc.json
-├── .gitignore
-└── index.html
+├── config/             # Configuración centralizada
+│   ├── modulesConfig.js         # Estructura de módulos
+│   ├── lessonMetadata.js        # Metadatos SEO
+│   ├── lessonNavigation.js
+│   └── moduleCategories.js
+│
+├── data/              # Datos estáticos
+│   ├── retosData.js
+│   └── ejemplosTFCData.js
+│
+├── App.jsx            # Router principal
+├── main.jsx
+├── App.css
+├── global.css
+└── index.css
 ```
 
----
+## Setup Instructions
 
----
+### 1. Clonar y instalar
 
-## 💡 FUNCIONALIDADES DESTACADAS
-
-### 📑 Índice de Contenidos Automático
-Cada lección incluye un **índice interactivo** (TableOfContents) que:
-- Extrae automáticamente headings h2, h3, h4
-- Crea navegación suave a cada sección
-- Se renderiza como barra lateral colapsible
-- Se integra sin configuración adicional
-
-### 🔗 Navegación Inteligente
-- **Breadcrumbs automáticos** generados desde rutas
-- **Query parameters** para expandir secciones: `/java?section=basico`
-- **Redirecciones automáticas** de URLs antiguas
-- **Enlaces contextuales** en breadcrumbs hacia landing pages
-
-### 🎯 Arquitectura Modular Consolidada
-- **Módulos con secciones expandibles**: /modulo?section=seccionId
-- **Patrones consistentes** en todos los módulos (Git, Java, SQL, Spring Boot, Entornos)
-- **Lecciones organizadas jerárquicamente** sin redundancias
-- **URL structure amigable para SEO**
-
----
-
-## 🚀 EMPEZAR RÁPIDAMENTE
-
-### Instalación
 ```bash
-cd /Users/admin/Desktop/backend-learning-react
+git clone <repo-url>
+cd backend-learning-react
 npm install
 ```
 
-### Desarrollo
+### 2. Desarrollo
+
 ```bash
 npm run dev
 ```
-Abre: **http://localhost:5173**
 
-### Build Producción
+Abre http://localhost:5173 en el navegador. Los cambios se recargan automáticamente.
+
+### 3. Build para producción
+
 ```bash
-npm run build      # Crea /dist
-npm run preview    # Previsualiza build
+npm run build
 ```
 
-### Linting
+Genera carpeta `/dist` lista para deploy.
+
+### 4. Preview de build
+
 ```bash
-npm run lint       # Oxlint analiza código
+npm run preview
 ```
 
----
+Previsualiza el build local antes de desplegar.
 
-## 📚 MÓDULOS Y LECCIONES
+### 5. Linting
 
-> **Nota:** Todos los módulos usan un patrón consistente: `/modulo?section=seccionId` para expandir una sección específica
-
-### 🔀 GIT
-**Landing:** `/git` | **Secciones:** Básicos, Avanzado
-
-```
-/git?section=basicos
-├─ /git/basicos/configuracion-inicial
-├─ /git/basicos/crear-clonar-repos
-├─ /git/basicos/commits
-├─ /git/basicos/branches
-└─ /git/basicos/merge
-
-/git?section=avanzado
-├─ /git/avanzado/push-pull-fetch
-├─ /git/avanzado/pull-requests
-└─ /git/avanzado/plataformas-remotas
+```bash
+npm run lint
 ```
 
-### ☕ JAVA
-**Landing:** `/java` | **Secciones:** Básico, POO, Avanzado, BD
+Ejecuta Oxlint para verificar calidad de código.
 
-```
-/java?section=basico
-├─ /java/basico/tipos-datos
-├─ /java/basico/control-flujo
-├─ /java/basico/strings
-├─ /java/basico/arrays
-├─ /java/basico/scanner
-├─ /java/basico/excepciones
-└─ /java/basico/operadores
+## Main Scripts
 
-/java?section=poo
-├─ /java/poo/clases-objetos
-├─ /java/poo/herencia
-├─ /java/poo/polimorfismo
-└─ /java/poo/interfaces-abstractas
+| Script | Comando | Descripción |
+|--------|---------|-------------|
+| **Dev** | `npm run dev` | Inicia servidor de desarrollo (puerto 5173) |
+| **Build** | `npm run build` | Crea bundle optimizado para producción |
+| **Preview** | `npm run preview` | Previsualiza el build local |
+| **Lint** | `npm run lint` | Analiza código con Oxlint |
 
-/java?section=avanzado
-├─ /java/avanzado/colecciones
-├─ /java/avanzado/lambdas
-├─ /java/avanzado/streams
-└─ /java/avanzado/genericos
+## Estructura de Módulos
 
-/java?section=bd
-├─ /java/bd/jdbc
-└─ /java/bd/crud
-```
+Cada módulo sigue un patrón consistente con landing page y lecciones organizadas:
 
-### 🗄️ SQL
-**Landing:** `/sql` | **Secciones:** Básicos, Avanzado
+- **Landing Page** — `/modulo` — Introducc y navegación
+- **Lecciones** — `/modulo?section=seccionId&lesson=leccionId`
+- **Metadata** — Configurados en `modulesConfig.js` y `lessonMetadata.js`
 
-```
-/sql?section=basicos
-├─ /sql/basicos/introduccion
-├─ /sql/basicos/ddl
-└─ /sql/basicos/dml
+### Módulos disponibles:
+- ✅ Git (8 lecciones)
+- ✅ Java Básico (7 lecciones)
+- ✅ Java POO (4 lecciones)
+- ✅ Java Avanzado (7 lecciones)
+- ✅ SQL (5 lecciones)
+- ✅ Spring Boot (8 lecciones)
+- ✅ Herramientas (5 lecciones)
+- ✅ AWS (15+ lecciones)
 
-/sql?section=avanzado
-├─ /sql/avanzado/joins
-└─ /sql/avanzado/consultas-avanzadas
+## Testing
+
+Actualmente **no hay suite de tests automáticos**. Para verificar que el código funciona:
+
+```bash
+npm run build
 ```
 
-### 🌱 SPRING BOOT
-**Landing:** `/spring-boot` | **Secciones:** Fundamentos, Avanzado
+Si el build pasa sin errores, la compilación y bundling son correctos. Para testing manual:
 
-```
-/spring-boot?section=fundamentos
-├─ /spring-boot/fundamentos/introduccion
-├─ /spring-boot/fundamentos/configuracion
-└─ /spring-boot/fundamentos/controladores
+1. Navega a diferentes módulos
+2. Verifica que Table of Contents se genera automáticamente
+3. Prueba búsqueda en tiempo real
+4. Valida breadcrumbs en diferentes rutas
+5. Prueba responsive en diferentes tamaños
 
-/spring-boot?section=avanzado
-├─ /spring-boot/avanzado/servicios
-├─ /spring-boot/avanzado/jpa-hibernate
-├─ /spring-boot/avanzado/validacion
-├─ /spring-boot/avanzado/testing
-├─ /spring-boot/avanzado/spring-security
-└─ /spring-boot/avanzado/oauth2-jwt
-```
+### Próximas mejoras:
+- [ ] Tests unitarios (Jest + React Testing Library)
+- [ ] Tests e2e (Playwright/Cypress)
+- [ ] Tests de accesibilidad (axe)
 
-### 🛠️ ENTORNOS
-**Landing:** `/entornos` | **Secciones:** Herramientas, Arquitectura
+## Crear Nueva Lección
 
-```
-/entornos?section=herramientas
-├─ /entornos/herramientas/uml
-├─ /entornos/herramientas/ides
-├─ /entornos/herramientas/codeium
-├─ /entornos/herramientas/bash
-└─ /entornos/herramientas/conceptos
-
-/entornos?section=arquitectura
-├─ /entornos/arquitectura/patrones
-├─ /entornos/arquitectura/conceptos
-└─ /entornos/arquitectura/testing
-```
-
----
-
-## 🧩 COMPONENTES OPTIMIZADOS
-
-### LessonTemplate ⭐ (ESTRELLA)
-**Reduce 75-80% del código por lección**
-
-```jsx
-import { LessonTemplate } from '../components';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-
-export function LessonDataTypes() {
-  const breadcrumbs = useBreadcrumb();
-
-  return (
-    <LessonTemplate
-      title="Tipos de Datos"
-      breadcrumbs={breadcrumbs}
-      sections={[
-        { title: 'Conceptos', content: <p>...</p> }
-      ]}
-      concepts={[...]}
-      exercises={[...]}
-      keyPoints={['Punto 1', 'Punto 2']}
-      summary="Resumen final"
-    />
-  );
-}
-```
-
-**Antes:** ~150 líneas | **Después:** ~30 líneas | **Mejora:** 80% ↓
-
-### Otros Componentes Reutilizables
-
-| Componente | Uso | Beneficio |
-|-----------|-----|----------|
-| `TableOfContents` | 📑 Índice en lecciones | **Automático, sin config** |
-| `Table` | Tablas de datos | Estilos consistentes |
-| `InfoBox` | 6 variantes de cajas | Semántica clara |
-| `TabBox` | Pestañas | Interfaz organizada |
-| `FAQ` | Preguntas expandibles | UX mejorada |
-| `CodeBlock` | Código resaltado | Legibilidad |
-| `Exercise` | Ejercicios con pistas | Interactivo |
-| `LessonNavigation` | Navegación lecciones | Flujo continuo |
-| `ComparisonTable` | Comparativas | Análisis visual |
-
-**TableOfContents** se integra automáticamente en cada lección a través de LessonLayout, extrayendo dinámicamente los headings (h2, h3, h4) y creando un índice interactivo con navegación suave.
-
-**Ver:** [COMPONENTES_OPTIMIZADOS.md](./COMPONENTES_OPTIMIZADOS.md) para documentación completa
-
----
-
-## 📖 CREAR UNA NUEVA LECCIÓN
-
-### Opción 1: Con LessonTemplate (Recomendado - 5 minutos)
+### 1. Crear componente
 
 ```jsx
 // src/pages/LessonNuevo.jsx
@@ -353,205 +176,118 @@ export function LessonNuevo() {
 
   return (
     <LessonTemplate
-      title="Título de la Lección"
+      title="Mi Lección"
       breadcrumbs={breadcrumbs}
       sections={[
-        {
-          title: 'Sección 1',
-          content: (
-            <>
-              <p>Introducción</p>
-              <p>Explicación detallada</p>
-            </>
-          )
-        },
-        {
-          title: 'Sección 2',
-          content: <p>Más contenido</p>
-        }
+        { title: 'Introducción', content: <p>...</p> }
       ]}
-      concepts={[
-        { icon: '📌', title: 'Concepto 1', description: 'Descripción' },
-        { icon: '📌', title: 'Concepto 2', description: 'Descripción' }
-      ]}
-      exercises={[
-        {
-          title: 'Ejercicio 1',
-          description: 'Escribe...',
-          hints: ['Hint 1', 'Hint 2'],
-          solution: 'Solución aquí'
-        }
-      ]}
-      keyPoints={[
-        'Punto clave 1',
-        'Punto clave 2',
-        'Punto clave 3'
-      ]}
-      summary="Resumen ejecutivo de la lección"
+      concepts={[...]}
+      exercises={[...]}
+      keyPoints={['Punto 1', 'Punto 2']}
+      summary="Resumen"
     />
   );
 }
 ```
 
-### Opción 2: Con Lesson (Para casos especiales)
+### 2. Registrar ruta en `src/App.jsx`
 
 ```jsx
-import { Lesson, LessonSection, CodeBlock, KeyPoints } from '../components';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
+<Route path="/modulo/leccion" element={<LessonNuevo />} />
+```
 
-export function LessonEspecial() {
-  const breadcrumbs = useBreadcrumb();
+### 3. Añadir metadata en `src/config/lessonMetadata.js`
 
-  return (
-    <Lesson breadcrumbs={breadcrumbs} title="Caso Especial">
-      <LessonSection title="Sección 1">
-        <p>Contenido personalizado</p>
-        <CodeBlock language="java" code={`...`} />
-      </LessonSection>
-    </Lesson>
-  );
+```js
+'/modulo/leccion': {
+  title: 'Mi Lección | Backend Learning',
+  description: '...',
+  keywords: 'palabra1, palabra2'
 }
 ```
 
-### Paso 3: Registrar la Ruta
+### 4. Actualizar módulo en `src/config/modulesConfig.js`
 
-**En `src/App.jsx`:**
-```jsx
-<Route path="/modulo/nueva-leccion" element={<LessonNuevo />} />
-```
+## Development Workflow
 
-**En `src/config/modulesConfig.js`:**
-Agregar entrada en el módulo correspondiente
+### Componentes comunes
 
-**En `src/config/lessonMetadata.js`:**
-Agregar metadatos SEO
+| Componente | Uso |
+|-----------|-----|
+| `LessonTemplate` | Template completo de lecciones (recomendado) |
+| `LessonLayout` | Layout base con sidebar y TOC |
+| `Exercise` | Ejercicios con pistas y soluciones |
+| `CodeBlock` | Código resaltado con syntax highlighting |
+| `FAQ` | Preguntas expandibles |
+| `ConceptCard` | Tarjetas de conceptos en grid |
+| `InfoBox` | Cajas informativas (6 variantes) |
+| `Breadcrumb` | Navegación automática |
 
----
+### CSS Conventions
 
-## 🔍 SEO & Metadatos
+- Clases en **kebab-case**: `.lesson-template`
+- Variables CSS en `global.css`: `--color-primary`, `--space-4`, `--transition-normal`
+- Sin `!important` salvo override de librerías externas (highlight.js)
+- Mobile-first: media queries en `@media (min-width: 768px)`
 
-La plataforma incluye **SEO completo**:
+### Responsive Breakpoints
 
-✅ Meta tags dinámicos (title, description, keywords)
-✅ Open Graph para redes sociales
-✅ Breadcrumbs automáticos (JSON-LD compatible)
-✅ Sitemap XML (60+ URLs)
-✅ robots.txt optimizado
-✅ Canonical URLs
-✅ Mobile-friendly
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1023px
+- **Desktop**: ≥ 1024px
 
-**Ver:** [SEO.md](./SEO.md) y [ARCHITECTURE.md](./ARCHITECTURE.md)
+## Performance
 
----
+- **Lighthouse**: 90+ en performance, accessibility, best practices
+- **Bundle size**: ~2.5MB (minified), ~621KB (gzipped)
+- **Vite**: Build time ~1-2 segundos
+- **Code splitting**: Lazy loading habilitado en rutas
 
-## 🛠️ TECNOLOGÍAS
+## SEO
 
-| Categoría | Tecnología | Versión |
-|-----------|-----------|---------|
-| **Framework** | React | 19.2.7 |
-| **Routing** | React Router | 7.18.1 |
-| **Build** | Vite | 8.1.1 |
-| **Vite Plugin** | @vitejs/plugin-react | 6.0.3 |
-| **SEO** | react-helmet-async | 3.0.0 |
-| **Linting** | Oxlint | 1.71.0 |
+- Meta tags dinámicos por lección
+- Breadcrumbs (schema.org JSON-LD)
+- Sitemap XML en `/public/sitemap.xml`
+- robots.txt
+- Canonical URLs
+- Open Graph tags (compartir en redes)
 
----
+## Deployment
 
-## 📊 PRÓXIMOS PASOS
+Optimizado para **Vercel**, **Netlify**, o cualquier hosting estático:
 
-### Fase 1: Consolidación ✅
-- [x] Estructura React moderna
-- [x] 50+ lecciones implementadas
-- [x] Componentes reutilizables
-- [x] SEO completo
-
-### Fase 2: Características (Próximo)
-- [ ] Dark mode completo
-- [ ] Búsqueda avanzada (filtros)
-- [ ] Sistema de favoritos
-- [ ] Progreso de usuario
-
-### Fase 3: Backend
-- [ ] Autenticación
-- [ ] Base de datos
-- [ ] Tracking de progreso
-- [ ] Certificados
-
-### Fase 4: Monetización
-- [ ] Premium content
-- [ ] Mentorías
-- [ ] Certificaciones
-
----
-
-## 📚 DOCUMENTACIÓN
-
-- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Arquitectura técnica completa (952 líneas)
-- **[COMPONENTES_OPTIMIZADOS.md](./COMPONENTES_OPTIMIZADOS.md)** - Guía de componentes (574 líneas)
-- **[SEO.md](./SEO.md)** - Implementación SEO detallada
-- **[MIGRACION_COMPLETADA.md](./MIGRACION_COMPLETADA.md)** - Estadísticas de refactorización
-
----
-
-## 🚀 HOSTING & DEPLOYMENT
-
-### Opciones Recomendadas
-- ✅ **Vercel** - Deploy automático, optimal para React
-- ✅ **Netlify** - Alternativa a Vercel
-- ✅ **GitHub Pages** - Gratis, perfecto para estáticos
-- ✅ **AWS Amplify** - Scalable, integración AWS
-
-### Deploy en Vercel (30 segundos)
 ```bash
-npm i -g vercel
-vercel
+npm run build
+# Sube carpeta /dist al hosting
 ```
 
----
+## Troubleshooting
 
-## 🤝 CONTRIBUIR
+| Problema | Solución |
+|----------|----------|
+| Build falla | Ejecuta `npm install` y `npm run build` de nuevo |
+| Cambios no se ven en dev | Verifica que `npm run dev` está corriendo en puerto 5173 |
+| Linting falla | Corre `npm run lint` para ver errores específicos |
+| Estilos no aplican | Verifica que el archivo `.css` está importado en el `.jsx` |
 
-Este es un proyecto educativo. Si deseas contribuir:
+## Convenciones del Código
 
-1. Fork el repositorio
-2. Crea una rama (`git checkout -b feature/nueva-leccion`)
-3. Commit cambios (`git commit -am 'Agrega nueva lección'`)
-4. Push a la rama (`git push origin feature/nueva-leccion`)
-5. Abre un Pull Request
+- **JSX en PascalCase**: `LessonTemplate.jsx`
+- **CSS en kebab-case**: `lesson-template.css`
+- **Imports**: Componentes de `./components`, páginas de `./pages`
+- **No usar !important**: Resolver con especificidad CSS
+- **Comentarios**: Solo para lógica no obvia
+- **Funciones componente**: Nombradas explícitamente, sin arrow functions anónimas
 
----
+## Links Útiles
 
-## 📝 LICENSE
-
-MIT © Blanca Dum
-
----
-
-## 🎓 CRÉDITOS
-
-**Creador:** Blanca Dum
-**Plataforma:** React + Vite
-**Año:** 2026
-
----
-
-## 🆘 SOPORTE
-
-¿Preguntas o problemas?
-
-- 📖 Revisa la [ARCHITECTURE.md](./ARCHITECTURE.md)
-- 📚 Consulta [COMPONENTES_OPTIMIZADOS.md](./COMPONENTES_OPTIMIZADOS.md)
-- 🔍 Busca en las lecciones existentes
-- 💬 Abre un issue en GitHub
+- **React 19 docs**: https://react.dev
+- **React Router docs**: https://reactrouter.com
+- **Vite docs**: https://vitejs.dev
+- **Oxlint**: https://oxc.rs
 
 ---
 
-## ⭐ ¡Dale una estrella si te gusta!
-
-Tu plataforma está lista para crecer. **¡Bienvenido a Java Backend Learning!** 🚀
-
----
-
-**Última actualización:** 2026-07-05
-**Versión:** 3.1 (50+ lecciones, componentes optimizados, TableOfContents integrado)
-**Estado:** ✅ Producción lista
+**Última actualización:** 2026-07-24
+**Versión:** 3.2 (261 componentes, 50+ lecciones)
+**Estado:** Producción ✅

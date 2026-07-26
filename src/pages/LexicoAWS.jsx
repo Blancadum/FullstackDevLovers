@@ -12,7 +12,6 @@ export function LexicoAWS() {
   const lexicoTerms = [
     {
       category: 'Modelos de Servicio',
-      icon: '🏢',
       color: '#FF6B6B',
       terms: [
         {
@@ -34,7 +33,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Computación',
-      icon: '⚙️',
       color: '#4ECDC4',
       terms: [
         {
@@ -61,7 +59,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Almacenamiento & Bases de Datos',
-      icon: '🗄️',
       color: '#95E1D3',
       terms: [
         {
@@ -93,7 +90,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Networking',
-      icon: '🌐',
       color: '#FFB3BA',
       terms: [
         {
@@ -145,7 +141,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Seguridad & Gestión de Identidades',
-      icon: '🔐',
       color: '#FFD3B6',
       terms: [
         {
@@ -182,7 +177,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Monitoreo & Logs',
-      icon: '📊',
       color: '#FFAAA5',
       terms: [
         {
@@ -209,7 +203,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Despliegue & Automatización',
-      icon: '🚀',
       color: '#FF8B94',
       terms: [
         {
@@ -236,7 +229,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Conceptos Clave',
-      icon: '💡',
       color: '#FF6B9D',
       terms: [
         {
@@ -278,7 +270,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Cómputo Avanzado',
-      icon: '⚡',
       color: '#A8D8EA',
       terms: [
         {
@@ -320,7 +311,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Almacenamiento Avanzado',
-      icon: '📦',
       color: '#AA96DA',
       terms: [
         {
@@ -357,7 +347,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Networking Avanzado',
-      icon: '🌍',
       color: '#FCBAD3',
       terms: [
         {
@@ -399,7 +388,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Bases de Datos Avanzado',
-      icon: '🔑',
       color: '#FFFACD',
       terms: [
         {
@@ -446,7 +434,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Gestión de Costos',
-      icon: '💰',
       color: '#B4F8C8',
       terms: [
         {
@@ -488,7 +475,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Compliance & Gobernanza',
-      icon: '✅',
       color: '#FFB6C1',
       terms: [
         {
@@ -535,7 +521,6 @@ export function LexicoAWS() {
     },
     {
       category: 'Integraciones & Machine Learning',
-      icon: '🤖',
       color: '#DDA0DD',
       terms: [
         {
@@ -607,7 +592,7 @@ export function LexicoAWS() {
                   marginBottom: '2rem'
                 }}>
                   <label style={{ display: 'block', marginBottom: '1rem', fontWeight: '700', color: '#333', fontSize: '1.05rem' }}>
-                    📂 Selecciona una categoría:
+                     Selecciona una categoría:
                   </label>
                   <select
                     value={selectedCategory}
@@ -693,7 +678,7 @@ export function LexicoAWS() {
                           fontSize: '0.9rem',
                           color: '#333'
                         }}>
-                          <p style={{ margin: '0 0 0.3rem 0', fontWeight: '600' }}>💡 Ejemplo:</p>
+                          <p style={{ margin: '0 0 0.3rem 0', fontWeight: '600' }}> Ejemplo:</p>
                           <p style={{ margin: 0 }}>{item.example}</p>
                         </div>
                       </div>

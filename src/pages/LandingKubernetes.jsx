@@ -1,330 +1,345 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LandingHero, SEO, KotlinThemeCard } from '../components';
+import { getModule } from '../config/modulesConfig';
+import { getTheme } from '../config/themeColors';
+import { useLandingTheme } from '../hooks/useLandingTheme';
+import { getThemeByModule } from '../config/landingThemes';
 
-export const LandingKubernetes = () => {
-  const navigate = useNavigate();
+export const LandingKubernetes = () => {  const theme = getTheme('kubernetes');
+  const kubernetesModule = getModule('kubernetes');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  const lessons = [
+  // Aplicar tema dinámico con variables CSS
+  const landingTheme = getThemeByModule('kubernetes');
+  useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
+
+  if (!kubernetesModule) return null;
+
+  // Schema Markup para JSON-LD
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': 'Kubernetes - Orquestación de Contenedores Empresarial',
+    'description': 'Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático y gestión de infraestructura a escala',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Fullstack Dev Lovers',
+      'url': 'https://fullstackdevlovers.com'
+    },
+    'url': 'https://fullstackdevlovers.com/cloud/kubernetes',
+    'hasPart': kubernetesModule.sections.flatMap((section, idx) =>
+      section.lessons.map((lesson, lidx) => ({
+        '@type': 'LearningResource',
+        'name': lesson.title,
+        'url': `https://fullstackdevlovers.com${lesson.link}`
+      }))
+    )
+  };
+
+  const faqData = [
     {
-      title: 'Introducción: Qué es Kubernetes',
-      description: 'Conceptos básicos, arquitectura y por qué necesitas Kubernetes',
-      icon: '☸️',
-      link: '/kubernetes/fundamentales/intro'
+      question: '¿Qué es Kubernetes y por qué lo necesito?',
+      answer: 'Kubernetes (K8s) es un orquestador de contenedores que automatiza deployment, escalado y gestión de aplicaciones containerizadas. Mientras Docker maneja un contenedor en una máquina, Kubernetes gestiona cientos o miles de contenedores en múltiples servidores, garantizando alta disponibilidad, actualizaciones sin downtime y auto-healing automático.'
     },
     {
-      title: 'Pods: La unidad más pequeña',
-      description: 'Entiende qué es un Pod y cómo funcionan los contenedores',
-      icon: '📦',
-      link: '/kubernetes/fundamentales/pods'
+      question: '¿Necesito Kubernetes o Docker es suficiente?',
+      answer: 'Docker es suficiente si: (1) Tu infra es una o pocas máquinas, (2) Usas PaaS (Heroku, Vercel, AWS Elastic Beanstalk), (3) Tu equipo no tiene expertise en DevOps. Necesitas Kubernetes si: (1) Tienes múltiples servidores, (2) Necesitas auto-escalado, (3) Trabajas en startup/empresa con crecimiento rápido, (4) Usas on-premise infrastructure.'
     },
     {
-      title: 'Deployments: Gestión de réplicas',
-      description: 'Despliegue automático, escalado y actualizaciones sin downtime',
-      icon: '🚀',
-      link: '/kubernetes/fundamentales/deployments'
+      question: '¿Cuál es la curva de aprendizaje de Kubernetes?',
+      answer: 'Kubernetes tiene una curva empinada. Básicos: 2-4 semanas. Profundidad media: 2-3 meses. Expertise: 6-12 meses con proyectos reales. Recomendación: domina Docker 100% primero. Aprende Kubernetes solo cuando realmente lo necesites. Un 70% de equipos pequeños están sobre-ingenierizados con K8s cuando Docker+PaaS sería suficiente.'
     },
     {
-      title: 'Docker vs Kubernetes',
-      description: 'Entiende cuándo usar Docker y cuándo Kubernetes',
-      icon: '🔄',
-      link: '/docker/comparacion-docker-vs-kubernetes'
+      question: '¿Kubernetes vs Docker Swarm vs Nomad: cuál elegir?',
+      answer: 'Docker Swarm: más simple, integrado en Docker, pero limitado. Kubernetes: estándar industria, masiva comunidad, curva empinada, pero definitivamente vale la pena. Nomad: agnóstico (no solo contenedores), flexible, pero menos comunidad. Para 99% de casos, Kubernetes es la respuesta. Es el estándar de facto.'
+    },
+    {
+      question: '¿Puedo correr Kubernetes localmente en desarrollo?',
+      answer: 'Sí. Tienes varias opciones: (1) Minikube - VM local con K8s completo (recomendado para aprender), (2) Docker Desktop - K8s integrado en Windows/Mac, (3) Kind - Kubernetes en Docker (perfecto para testing). Para desarrollo inicial, Minikube es lo mejor. Aprendes en tu laptop sin necesidad de infraestructura cloud.'
+    },
+    {
+      question: '¿Kubernetes en cloud: AWS (EKS) vs Azure (AKS) vs Google (GKE)?',
+      answer: 'Los tres son excelentes. Google GKE es el más maduro (Google creó K8s). AWS EKS es el que usarás si estás en AWS. Azure AKS si estás en Azure. El servicio de K8s manejado abstrae la complejidad de mantener el control plane. 95% de empresas usan Kubernetes manejado, no auto-hospedado.'
     }
   ];
 
-  const concepts = [
+  const comparisonData = [
     {
-      title: 'Orquestación',
-      description: 'Gestiona automáticamente múltiples contenedores en múltiples servidores',
-      icon: '🎼'
+      feature: 'Concepto Base',
+      kubernetes: 'Orquestación de contenedores',
+      dockerSwarm: 'Orquestación simplificada',
+      nomad: 'Orquestador agnóstico'
     },
     {
-      title: 'Auto-escalado',
-      description: 'Aumenta o reduce réplicas automáticamente según la carga',
-      icon: '📈'
+      feature: 'Complejidad',
+      kubernetes: 'Alta (curva empinada)',
+      dockerSwarm: 'Baja (muy simple)',
+      nomad: 'Media'
     },
     {
-      title: 'Alta Disponibilidad',
-      description: 'Recuperación automática ante fallos de servidores o contenedores',
-      icon: '🛡️'
+      feature: 'Comunidad',
+      kubernetes: 'Masiva (CNCF)',
+      dockerSwarm: 'Pequeña',
+      nomad: 'Creciente (HashiCorp)'
     },
     {
-      title: 'Rolling Updates',
-      description: 'Actualiza versiones sin interrumpir el servicio',
-      icon: '🔄'
+      feature: 'Escalabilidad',
+      kubernetes: '5000+ nodos',
+      dockerSwarm: '1000+ nodos',
+      nomad: '10000+ nodos'
     },
     {
-      title: 'Balanceo de Carga',
-      description: 'Distribuye tráfico automáticamente entre réplicas',
-      icon: '⚖️'
+      feature: 'Auto-escalado',
+      kubernetes: 'Nativo y avanzado',
+      dockerSwarm: 'Manual/limitado',
+      nomad: 'Bueno'
     },
     {
-      title: 'Gestión de Recursos',
-      description: 'CPU, memoria y almacenamiento distribuido eficientemente',
-      icon: '⚙️'
+      feature: 'Rolling Updates',
+      kubernetes: 'Sofisticado (canary, blue/green)',
+      dockerSwarm: 'Básico',
+      nomad: 'Avanzado'
+    },
+    {
+      feature: 'Ecosystem',
+      kubernetes: 'Enorme (Helm, Istio, Prometheus)',
+      dockerSwarm: 'Minimal',
+      nomad: 'HashiCorp suite'
+    },
+    {
+      feature: 'Adopción Industria',
+      kubernetes: 'Google, Amazon, Microsoft, Netflix',
+      dockerSwarm: 'Pocas empresas',
+      nomad: 'Empresas DevOps forward'
     }
   ];
 
   return (
-    <div className="lesson-container">
-      <div className="lesson-header">
-        <h1>Kubernetes</h1>
-        <p className="lesson-intro">
-          Orquestación de contenedores a escala empresarial. Automatiza el despliegue, escalado y gestión de aplicaciones en producción
-        </p>
-      </div>
+    <>
+      <SEO
+        title="Kubernetes - Orquestación de Contenedores Empresarial | Guía Completa"
+        description="Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático, alta disponibilidad y gestión de infraestructura a escala empresarial."
+        keywords="kubernetes, k8s, orquestación, contenedores, pods, deployments, devops, cloud, escalado automático"
+        url="https://fullstackdevlovers.com/cloud/kubernetes"
+        image="/og-kubernetes.png"
+      />
 
-      <section className="lesson-section">
-        <h2>¿Qué es Kubernetes?</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          <strong>Kubernetes (K8s)</strong> es un <strong>orquestador de contenedores</strong> que automatiza el despliegue, escalado y gestión de aplicaciones.
-          Mientras que Docker empaqueta tu aplicación en contenedores, Kubernetes gestiona <strong>cientos o miles de contenedores</strong> en múltiples servidores
-          de forma automática, garantizando alta disponibilidad y rendimiento óptimo.
-        </p>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaMarkup)}
+      </script>
 
-        <div style={{
-          backgroundColor: '#f0f4ff',
-          border: '2px solid #9c27b0',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#9c27b0' }}>¿Por qué Kubernetes?</h3>
-          <ul style={{ fontSize: '1rem', lineHeight: '1.9', marginBottom: 0 }}>
-            <li><strong>Producción a Escala:</strong> Gestiona miles de contenedores automáticamente</li>
-            <li><strong>Alta Disponibilidad:</strong> Recuperación automática ante fallos</li>
-            <li><strong>Escalabilidad:</strong> Aumenta/reduce recursos según la demanda</li>
-            <li><strong>Despliegues Seguros:</strong> Rolling updates sin downtime</li>
-            <li><strong>Estándar Industria:</strong> Usado por Google, Amazon, Microsoft y Netflix</li>
-            <li><strong>Open Source:</strong> Comunidad global y soporte empresarial</li>
-          </ul>
-        </div>
+      <div className="kubernetes-landing">
+        <LandingHero
+          title="Kubernetes: Orquestación a Escala Empresarial"
+          subtitle="Usado por Google, Amazon, Microsoft y Netflix"
+          description=""
+          primaryColor={landingTheme.primary}
+          darkColor={landingTheme.dark}
+          lightGradientColor={landingTheme.lightGradient}
+          imageUrl="/src/assets/images/logos/kubernetes-logo.png"
+          imageAlt="Kubernetes Logo"
+          primaryButtonText="Comenzar con Kubernetes →"
+          primaryButtonLink="/cloud/kubernetes/fundamentales/intro"
+          secondaryButtonText="Ver comparativa"
+          secondaryButtonLink="#comparativa"
+        />
 
-        <h3>Por qué aprender Kubernetes</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '1.5rem'
-        }}>
-          {[
-            { icon: '💼', title: 'Demanda Laboral', desc: 'Las grandes empresas requieren engineers K8s' },
-            { icon: '📈', title: 'Carrera Premium', desc: 'Especialidad bien remunerada y en crecimiento' },
-            { icon: '🌍', title: 'Relevancia Global', desc: 'Estándar de facto para DevOps moderno' },
-            { icon: '🚀', title: 'Impacto Directo', desc: 'Tus decisiones afectan toda la infraestructura' }
-          ].map((item, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              textAlign: 'center'
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
-              <h4 style={{ marginBottom: '0.5rem' }}>{item.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#666', margin: 0 }}>{item.desc}</p>
+        {/* What is Kubernetes Section */}
+        <section className="kubernetes-content">
+          <div className="content-container">
+            <h2>¿Qué es Kubernetes?</h2>
+            <p className="intro-text">
+              Kubernetes es un orquestador de contenedores open-source creado por Google para gestionar aplicaciones containerizadas
+              a escala. Automatiza el deployment, escalado horizontal y gestión de cientos o miles de contenedores en múltiples servidores,
+              garantizando alta disponibilidad, recuperación ante fallos y optimización de recursos.
+            </p>
+
+            {/* Key Features */}
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">🎼</div>
+                <h3>Orquestación Automática</h3>
+                <p>Gestiona automáticamente deployment y posicionamiento de contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📈</div>
+                <h3>Auto-escalado</h3>
+                <p>Aumenta o reduce replicas automáticamente según CPU y memoria</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🛡️</div>
+                <h3>Alta Disponibilidad</h3>
+                <p>Recuperación automática ante fallos de nodos y contenedores</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔄</div>
+                <h3>Rolling Updates</h3>
+                <p>Actualiza versiones sin downtime con rollback automático</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚖️</div>
+                <h3>Balanceo de Carga</h3>
+                <p>Distribuye tráfico automáticamente entre replicas</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">⚙️</div>
+                <h3>Gestión de Recursos</h3>
+                <p>CPU, memoria y almacenamiento distribuido eficientemente</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>Conceptos Clave de Kubernetes</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {concepts.map((concept, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#f0f4ff',
-              border: '2px solid #9c27b0',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{concept.icon}</div>
-              <h4 style={{ margin: '0 0 0.75rem 0', color: '#9c27b0' }}>{concept.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{concept.description}</p>
+        {/* Learning Topics */}
+        <section className="learning-topics">
+          <div className="content-container">
+            <h2>Temas de Aprendizaje</h2>
+            <p className="intro-text">
+              Domina Kubernetes con una progresión estructurada desde conceptos básicos hasta orquestación avanzada
+            </p>
+
+            <div className="theme-cards-container">
+              {kubernetesModule.sections.map((section, idx) => (
+                <KotlinThemeCard
+                  key={idx}
+                  icon={getIconForSection(section.id)}
+                  title={section.name}
+                  description={section.description}
+                  lessons={section.lessons}
+                  color={getColorForSection(idx)}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>Arquitectura de Kubernetes</h2>
-        <div style={{
-          backgroundColor: '#f5f5f5',
-          border: '3px solid #9c27b0',
-          borderRadius: '8px',
-          padding: '2rem',
-          marginBottom: '2rem'
-        }}>
-          <pre style={{
-            fontSize: '0.9rem',
-            lineHeight: '1.6',
-            margin: 0,
-            overflow: 'auto'
-          }}>
-{`┌──────────────────────────────────────────────────┐
-│       ARQUITECTURA DE KUBERNETES CLUSTER         │
-├──────────────────────────────────────────────────┤
-│                                                  │
-│  ┌─────────────────────────────────────┐         │
-│  │     CONTROL PLANE (Master)          │         │
-│  ├─────────────────────────────────────┤         │
-│  │ • API Server    → REST API central  │         │
-│  │ • etcd          → Base de datos     │         │
-│  │ • Scheduler     → Asigna Pods       │         │
-│  │ • Controllers   → Gestiona estado   │         │
-│  └─────────────────────────────────────┘         │
-│              ↓ ↓ ↓                               │
-│  ┌─────────────────────────────────────┐         │
-│  │      WORKER NODES (Servidores)      │         │
-│  ├─────────────────────────────────────┤         │
-│  │ Nodo 1        Nodo 2        Nodo 3  │         │
-│  │ ┌─────────┐  ┌─────────┐  ┌──────┐ │         │
-│  │ │ Pod 🐳  │  │ Pod 🐳  │  │Pod 🐳│ │         │
-│  │ │ Pod 🐳  │  │ Pod 🐳  │  │Pod 🐳│ │         │
-│  │ └─────────┘  └─────────┘  └──────┘ │         │
-│  │ • Kubelet    (Agent en cada nodo)   │         │
-│  │ • Container Runtime (Docker, etc)   │         │
-│  └─────────────────────────────────────┘         │
-│                                                  │
-│  Todo coordenado automáticamente por K8s        │
-└──────────────────────────────────────────────────┘`}
-          </pre>
-        </div>
-
-        <h3>Docker vs Kubernetes</h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '2rem',
-          marginTop: '1.5rem'
-        }}>
-          <div style={{
-            backgroundColor: '#e3f2fd',
-            border: '2px solid #2196F3',
-            borderRadius: '8px',
-            padding: '1.5rem'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#2196F3' }}>Docker</h4>
-            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
-              <li>Empaqueta código en contenedores</li>
-              <li>Para desarrollo y testing local</li>
-              <li>Un servidor o máquina</li>
-              <li>Gestión manual de contenedores</li>
-              <li>Perfecto para comenzar</li>
-            </ul>
           </div>
+        </section>
 
-          <div style={{
-            backgroundColor: '#f3e5f5',
-            border: '2px solid #9c27b0',
-            borderRadius: '8px',
-            padding: '1.5rem'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#9c27b0' }}>Kubernetes</h4>
-            <ul style={{ fontSize: '0.95rem', lineHeight: '1.8', marginBottom: 0 }}>
-              <li>Orquesta contenedores Docker</li>
-              <li>Para producción a escala</li>
-              <li>Múltiples servidores (cluster)</li>
-              <li>Gestión automática completa</li>
-              <li>Necesario para empresas</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        {/* Comparison Section */}
+        <section className="comparison-section" id="comparativa">
+          <div className="content-container">
+            <h2>Kubernetes vs Docker Swarm vs Nomad</h2>
+            <p className="intro-text">
+              Comparativa detallada de Kubernetes con otras plataformas de orquestación
+            </p>
 
-      <section className="lesson-section">
-        <h2>Lecciones</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {lessons.map((lesson, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#9c27b0';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(156,39,176,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#ddd';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
-              <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
-              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
-                {lesson.description}
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    <th>Kubernetes</th>
+                    <th>Docker Swarm</th>
+                    <th>Nomad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      <td className="kubernetes-col">{row.kubernetes}</td>
+                      <td>{row.dockerSwarm}</td>
+                      <td>{row.nomad}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="comparison-conclusion">
+              <p>
+                <strong>✅ Elige Kubernetes si:</strong> Trabajas en empresa con infraestructura compleja, necesitas auto-escalado sofisticado,
+                quieres estándar de facto con masiva comunidad, o tienes roadmap de crecimiento.
               </p>
-              <button
-                onClick={() => navigate(lesson.link)}
-                style={{
-                  backgroundColor: '#9c27b0',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#7b1fa2'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#9c27b0'}
-              >
-                Ver Lección →
-              </button>
+              <p>
+                <strong>✅ Elige Docker Swarm si:</strong> Tu infra es pequeña, necesitas simplicidad extrema, o ya inversión en Docker.
+                Nota: Swarm está en mantenimiento, no recomendado para nuevo.
+              </p>
+              <p>
+                <strong>✅ Elige Nomad si:</strong> Necesitas agnóstico (no solo contenedores), trabajas con VMs/binarios también,
+                o prefieres HashiCorp stack completo.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#f3e5f5',
-        border: '2px solid #9c27b0',
-        borderRadius: '8px',
-        padding: '2rem'
-      }}>
-        <h2>Ruta de Aprendizaje Recomendada</h2>
-        <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Si eres nuevo en Kubernetes, te recomendamos este orden:
-        </p>
-        <ol style={{ fontSize: '1rem', lineHeight: '2', marginBottom: 0 }}>
-          <li><strong>1. Domina Docker primero</strong> → Entiende contenedores completamente</li>
-          <li><strong>2. Introducción: Qué es Kubernetes</strong> → Aprende la arquitectura</li>
-          <li><strong>3. Pods: La unidad más pequeña</strong> → Entiende los bloques básicos</li>
-          <li><strong>4. Deployments: Gestión de réplicas</strong> → Despliegues automáticos</li>
-          <li><strong>5. Docker vs Kubernetes</strong> → Clarifica cuándo usar cada uno</li>
-          <li><strong>6. Práctica local</strong> → Usa Minikube o Docker Desktop para practicar</li>
-        </ol>
-      </section>
+        {/* When to Use Kubernetes */}
+        <section className="when-to-use">
+          <div className="content-container">
+            <h2>¿Cuándo Usar Kubernetes?</h2>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#fff9c4',
-        border: '2px solid #fbc02d',
-        borderRadius: '8px',
-        padding: '1.5rem'
-      }}>
-        <h3 style={{ marginTop: 0, color: '#f57f17' }}>Consejo Profesional</h3>
-        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-          No es necesario aprender Kubernetes si estás comenzando. Primero domina Docker completamente y asegúrate de que realmente lo necesitas.
-          Kubernetes añade complejidad significativa pero es imprescindible para infraestructuras empresariales.
-        </p>
-        <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: 0 }}>
-          Muchos equipos usan PaaS (como Heroku o Vercel) en lugar de Kubernetes porque gestionan la orquestación por ti.
-          Elige lo que se adapte a tu escala y necesidades reales.
-        </p>
-      </section>
-    </div>
+            <div className="use-case-grid">
+              <div className="use-case">
+                <h3>✅ Ideal para:</h3>
+                <ul>
+                  <li>Múltiples servidores/cluster distribuido</li>
+                  <li>Aplicaciones que necesitan auto-escalado</li>
+                  <li>Alta disponibilidad y uptime 99.99%</li>
+                  <li>Microservicios complejos con muchos servicios</li>
+                  <li>Infraestructura empresarial crítica</li>
+                </ul>
+              </div>
+              <div className="use-case">
+                <h3>⚠️ Considera alternativas si:</h3>
+                <ul>
+                  <li>Tu equipo no tiene expertise en DevOps</li>
+                  <li>Usas PaaS (Heroku, Vercel, AWS Beanstalk)</li>
+                  <li>Tienes un único servidor o máquina</li>
+                  <li>Es startup muy pequeño sin presupuesto DevOps</li>
+                  <li>Tu aplicación es simple/monolítica</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="content-container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div className="faq-list">
+              {faqData.map((faq, idx) => (
+                <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+                  <button
+                    className="faq-summary"
+                    onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">+</span>
+                  </button>
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final Section */}
+        <section className="kubernetes-cta">
+          <div className="cta-content">
+            <h2>Comienza tu Viaje en Kubernetes Hoy</h2>
+            <p>Aprende desde conceptos básicos hasta orquestación profesional a escala</p>
+            <Link to="/cloud/kubernetes/fundamentales/intro" className="cta-button">
+              Ir a Fundamentos de Kubernetes →
+            </Link>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
+
+// Funciones auxiliares
+function getIconForSection(sectionId) {
+  const icons = {
+    'fundamentales': '📚',
+  };
+  return icons[sectionId] || '📄';
+}
+
+function getColorForSection(index) {
+  const colors = ['#9c27b0', '#7b1fa2'];
+  return colors[index % colors.length];
+}

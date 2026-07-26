@@ -1,5 +1,6 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import './LessonProyectoReto.css';
 
 const sections = [
   {
@@ -12,7 +13,7 @@ const sections = [
         </p>
 
         <h4>Qué debes incluir:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Frontend:</strong> Framework (React, Vue, Angular), librerías, build tools</li>
           <li><strong>Backend:</strong> Lenguaje, framework, ORM, autenticación</li>
           <li><strong>Base de Datos:</strong> SQL/NoSQL, versión, razón de elección</li>
@@ -36,7 +37,7 @@ const sections = [
         </p>
 
         <h4>Herramientas de Desarrollo:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>IDEs (VS Code, IntelliJ, Visual Studio)</li>
           <li>Control de versiones (Git + GitHub/GitLab)</li>
           <li>Testing (Jest, JUnit, Pytest)</li>
@@ -45,7 +46,7 @@ const sections = [
         </ul>
 
         <h4>Herramientas de Producción:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Hosting (AWS, Azure, DigitalOcean, Heroku)</li>
           <li>Bases de datos (PostgreSQL managed, RDS, Cloud SQL)</li>
           <li>Web servers (Nginx, Apache)</li>
@@ -71,7 +72,7 @@ const sections = [
         </p>
 
         <h4>Opciones recomendadas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Figma:</strong> Colaborativo, moderno, navegable, free - MEJOR OPCIÓN</li>
           <li><strong>Adobe XD:</strong> Integrado con Adobe, prototipado avanzado - Profesional</li>
           <li><strong>Balsamiq:</strong> Rápido, wireframes simples - Para MVPs</li>
@@ -79,7 +80,7 @@ const sections = [
         </ul>
 
         <h4>Ventajas de Figma para este proyecto:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Colaboración en equipo real-time</li>
           <li>Prototipos navegables (simula flujos reales)</li>
           <li>Components reutilizables (consistencia visual)</li>
@@ -100,7 +101,7 @@ const sections = [
         </p>
 
         <h4>Qué incluir:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Mínimo 3-5 pantallas funcionales</li>
           <li>Navegación entre pantallas (botones, enlaces funcionales)</li>
           <li>Paleta de colores corporativa coherente</li>
@@ -109,7 +110,7 @@ const sections = [
         </ul>
 
         <h4>Flujos principales a cubrir:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Flujo de usuario anónimo (navegar, ver contenido)</li>
           <li>Flujo de autenticación (login/registro)</li>
           <li>Flujo principal del negocio (compra, reserva, etc.)</li>

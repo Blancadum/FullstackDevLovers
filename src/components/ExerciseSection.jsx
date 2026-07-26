@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { CodeBlock } from './CodeBlock';
 import './ExerciseSection.css';
 
 export function ExerciseSection({ title, exercises = [] }) {
@@ -15,53 +15,29 @@ export function ExerciseSection({ title, exercises = [] }) {
 }
 
 function ExerciseItem({ number, exercise }) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <li className="exercise-item">
-      <button
-        className="exercise-header"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
+      <div className="exercise-header">
         <span className="exercise-number">Ejercicio {number}</span>
         <span className="exercise-title">{exercise.title}</span>
-        <span className={`exercise-toggle ${isOpen ? 'open' : ''}`}>▼</span>
-      </button>
+      </div>
 
-      {isOpen && (
-        <>
-          <div className="exercise-description">
-            <h4>Descripción</h4>
-            {typeof exercise.description === 'string' ? (
-              <p>{exercise.description}</p>
-            ) : (
-              exercise.description
-            )}
-          </div>
+      <div className="exercise-description">
+        {typeof exercise.description === 'string' ? (
+          <p>{exercise.description}</p>
+        ) : (
+          exercise.description
+        )}
+      </div>
 
-          {exercise.hint && (
-            <details className="exercise-hint">
-              <summary>Pista</summary>
-              {typeof exercise.hint === 'string' ? (
-                <p>{exercise.hint}</p>
-              ) : (
-                exercise.hint
-              )}
-            </details>
+      {exercise.solution && (
+        <div className="exercise-solution">
+          {typeof exercise.solution === 'string' ? (
+            <CodeBlock language="bash" code={exercise.solution} />
+          ) : (
+            exercise.solution
           )}
-
-          {exercise.solution && (
-            <details className="exercise-solution">
-              <summary>Solución</summary>
-              {typeof exercise.solution === 'string' ? (
-                <pre className="solution-code"><code>{exercise.solution}</code></pre>
-              ) : (
-                exercise.solution
-              )}
-            </details>
-          )}
-        </>
+        </div>
       )}
     </li>
   );

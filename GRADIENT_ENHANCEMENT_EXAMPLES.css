@@ -1,0 +1,315 @@
+/* ====================================================================
+   GRADIENT ENHANCEMENT EXAMPLES FOR LANDING PAGES
+   ====================================================================
+   This file contains improved gradient examples for each color theme.
+   Copy and adapt these for your landing pages.
+==================================================================== */
+
+/* ====================================================================
+   PURPLE THEME (Java, Kubernetes, BuildTools, DevOps, Bootstrap)
+==================================================================== */
+
+/* Current (Simple) */
+.purple-hero-current {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%);
+}
+
+/* Enhanced Version 1: Progressive to Primary */
+.purple-hero-enhanced-v1 {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 40%, #c984d1 70%, #9c27b0 100%);
+}
+
+/* Enhanced Version 2: Multi-stop Progressive */
+.purple-hero-enhanced-v2 {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e8b8e8 25%, #e1bee7 50%, #d1a8d1 75%, #9c27b0 100%);
+}
+
+/* Enhanced Version 3: With Decorative Angle */
+.purple-hero-enhanced-v3 {
+  background: linear-gradient(120deg, #f3e5f5 0%, #e1bee7 35%, #c984d1 65%, #9c27b0 100%);
+}
+
+/* ====================================================================
+   BLUE THEME (Docker, SQL, CSS)
+==================================================================== */
+
+/* Current (Simple) */
+.blue-hero-current {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+}
+
+/* Enhanced Version 1: Progressive to Primary */
+.blue-hero-enhanced-v1 {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 40%, #64b5f6 70%, #2196f3 100%);
+}
+
+/* Enhanced Version 2: Multi-stop Progressive */
+.blue-hero-enhanced-v2 {
+  background: linear-gradient(135deg, #e3f2fd 0%, #b3e5fc 25%, #90caf9 50%, #4fc3f7 75%, #2196f3 100%);
+}
+
+/* Enhanced Version 3: Deeper Blue Journey */
+.blue-hero-enhanced-v3 {
+  background: linear-gradient(135deg, #e3f2fd 0%, #81d4fa 35%, #4dd0e1 65%, #0097a7 100%);
+}
+
+/* ====================================================================
+   ORANGE THEME (AWS, Metodologias, Herramientas)
+==================================================================== */
+
+/* Current (Simple) */
+.orange-hero-current {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%);
+}
+
+/* Enhanced Version 1: Progressive to Primary */
+.orange-hero-enhanced-v1 {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 40%, #ffb74d 70%, #ff9800 100%);
+}
+
+/* Enhanced Version 2: Multi-stop Progressive */
+.orange-hero-enhanced-v2 {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe8b3 25%, #ffe0b2 50%, #ffb74d 75%, #ff9800 100%);
+}
+
+/* Enhanced Version 3: Deeper Orange Depth */
+.orange-hero-enhanced-v3 {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 40%, #ff9800 70%, #f57c00 100%);
+}
+
+/* ====================================================================
+   GREEN THEME (SpringBoot, Proyecto, Node.js, MongoDB)
+==================================================================== */
+
+/* SpringBoot Current */
+.green-spring-current {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 50%, #e0f2f1 100%);
+}
+
+/* SpringBoot Enhanced */
+.green-spring-enhanced {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 40%, #81c784 70%, #6db33f 100%);
+}
+
+/* Proyecto Current */
+.green-proyecto-current {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+}
+
+/* Proyecto Enhanced */
+.green-proyecto-enhanced {
+  background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 40%, #66bb6a 70%, #4caf50 100%);
+}
+
+/* Node.js Current */
+.green-nodejs-current {
+  background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #c8e6c9 100%);
+}
+
+/* Node.js Enhanced */
+.green-nodejs-enhanced {
+  background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 40%, #9ccc65 70%, #76c041 100%);
+}
+
+/* MongoDB Current */
+.green-mongodb-current {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+}
+
+/* MongoDB Enhanced */
+.green-mongodb-enhanced {
+  background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 40%, #66bb6a 70%, #13aa52 100%);
+}
+
+/* ====================================================================
+   CYAN THEME (React, TailwindCSS)
+==================================================================== */
+
+/* React Current */
+.cyan-react-current {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 50%, #81d4fa 100%);
+}
+
+/* React Enhanced */
+.cyan-react-enhanced {
+  background: linear-gradient(135deg, #e0f7fa 0%, #80deea 40%, #4dd0e1 70%, #00b8d4 100%);
+}
+
+/* TailwindCSS Current */
+.cyan-tailwind-current {
+  background: linear-gradient(135deg, #ecf9ff 0%, #b3e5fc 50%, #80deea 100%);
+}
+
+/* TailwindCSS Enhanced */
+.cyan-tailwind-enhanced {
+  background: linear-gradient(135deg, #ecf9ff 0%, #80deea 40%, #4dd0e1 70%, #0097a7 100%);
+}
+
+/* ====================================================================
+   RED/RED-ORANGE THEME (Angular, HTML, Git)
+==================================================================== */
+
+/* Angular Current */
+.red-angular-current {
+  background: linear-gradient(135deg, #ffd4e5 0%, #f4e5ff 50%, #e5f5ff 100%);
+}
+
+/* Angular Enhanced */
+.red-angular-enhanced {
+  background: linear-gradient(135deg, #ffd4e5 0%, #ff8a80 40%, #ef5350 70%, #dd0031 100%);
+}
+
+/* HTML Current */
+.red-html-current {
+  background: linear-gradient(135deg, #fce4ec 0%, #ffccb3 50%, #ffb3a1 100%);
+}
+
+/* HTML Enhanced */
+.red-html-enhanced {
+  background: linear-gradient(135deg, #fce4ec 0%, #ffb3a1 40%, #ff8a65 70%, #e44d26 100%);
+}
+
+/* Git Current */
+.red-git-current {
+  background: linear-gradient(135deg, #ffe8de 0%, #ffd4c1 50%, #ffcbb0 100%);
+}
+
+/* Git Enhanced */
+.red-git-enhanced {
+  background: linear-gradient(135deg, #ffe8de 0%, #ffb3a1 40%, #ff8a65 70%, #e8491f 100%);
+}
+
+/* ====================================================================
+   PINK THEME (Arquitectura)
+==================================================================== */
+
+/* Arquitectura Current */
+.pink-arquitectura-current {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+}
+
+/* Arquitectura Enhanced */
+.pink-arquitectura-enhanced {
+  background: linear-gradient(135deg, #fce4ec 0%, #f48fb1 40%, #ec407a 70%, #e91e63 100%);
+}
+
+/* ====================================================================
+   DECORATIVE GRADIENT OVERLAYS (Optional Enhancement)
+==================================================================== */
+
+/* Subtle Radial Overlay - Use with ::before or ::after */
+.gradient-overlay-subtle {
+  background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.1), transparent 50%),
+              radial-gradient(circle at 0% 100%, rgba(0, 0, 0, 0.05), transparent 50%);
+}
+
+/* Medium Radial Overlay */
+.gradient-overlay-medium {
+  background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.2), transparent 50%),
+              radial-gradient(circle at 0% 100%, rgba(0, 0, 0, 0.1), transparent 50%);
+}
+
+/* Directional Accent Overlay */
+.gradient-overlay-accent {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* ====================================================================
+   USAGE GUIDE
+==================================================================== */
+
+/*
+HOW TO APPLY THESE GRADIENTS:
+
+1. Simple Replacement:
+   Replace the existing linear-gradient in your hero section with one of the enhanced versions.
+
+2. For Example (Java Landing Page):
+   BEFORE:
+   .java-hero {
+     background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%);
+   }
+
+   AFTER:
+   .java-hero {
+     background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 40%, #c984d1 70%, #9c27b0 100%);
+   }
+
+3. Adding Decorative Overlay:
+   .java-hero::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.1), transparent 50%);
+     pointer-events: none;
+   }
+
+4. Testing:
+   - Always test with actual content
+   - Check contrast ratios for accessibility
+   - Preview on different screen sizes
+   - Verify button and text visibility
+
+5. Animation (Optional Enhancement):
+   @keyframes gradientShift {
+     0% { background-position: 0% 50%; }
+     50% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+   }
+
+   .animated-hero {
+     background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 40%, #c984d1 70%, #9c27b0 100%);
+     background-size: 200% 200%;
+     animation: gradientShift 15s ease infinite;
+   }
+*/
+
+/* ====================================================================
+   ACCESSIBILITY CONSIDERATIONS
+==================================================================== */
+
+/*
+- Ensure sufficient contrast between text and gradient background
+- Use WCAG AA standard: minimum 4.5:1 for normal text, 3:1 for large text
+- Consider adding semi-transparent overlays to darken gradients if needed
+- Test with vision deficiency simulators (Accessible Colors tool)
+- Avoid using color alone to convey information
+*/
+
+/* Example: Adding a Dark Overlay for Text Readability */
+.hero-with-overlay {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 40%, #c984d1 70%, #9c27b0 100%);
+  position: relative;
+}
+
+.hero-with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15); /* Adjust opacity as needed */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-with-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================================================
+   PERFORMANCE NOTES
+==================================================================== */
+
+/*
+- Simple linear gradients are GPU-accelerated and performant
+- Avoid animating gradients heavily on mobile devices
+- Use ::before/::after pseudo-elements for overlays (no extra DOM nodes)
+- Combine with background-size and background-position only if necessary
+- Test performance on low-end devices
+*/

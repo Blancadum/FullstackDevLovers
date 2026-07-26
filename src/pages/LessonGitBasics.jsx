@@ -54,8 +54,7 @@ $ git commit -m "Crea archivo app.js inicial"
 
 # 8. Ver historial de commits
 $ git log
-$ git log --oneline`,
-    },
+$ git log --oneline`},
     {
       title: 'Trabajar con ramas y merge',
       description: 'Crea rama feature, haz cambios, vuelve a main y fusiona la rama (merge).',
@@ -88,8 +87,7 @@ $ git merge feature/login
 $ ls
 
 # 9. Eliminar rama de feature (ya no la necesitas)
-$ git branch -d feature/login`,
-    },
+$ git branch -d feature/login`},
   ];
 
   const sections = [
@@ -103,8 +101,7 @@ $ git branch -d feature/login`,
           <br />
           <strong>Otros remotos:</strong> GitLab, Gitbucket, Bitbucket también usan Git.
         </InfoBox>,
-      ],
-    },
+      ]},
     {
       title: 'Flujo Básico - Configuración e Inicialización',
       level: 2,
@@ -131,8 +128,7 @@ $ git init
 # Ver estado actual
 $ git status`}
         />,
-      ],
-    },
+      ]},
     {
       title: 'El Ciclo: Cambios → Stage → Commit',
       level: 2,
@@ -148,7 +144,7 @@ $ git status`}
  *       ↓ git add
  *                    archivo.js (preparado)
  *                              ↓ git commit
- *                                          commit #abc123 ✓
+ *                                          commit #abc123 
  */
 
 # Crear/modificar archivo
@@ -167,8 +163,7 @@ $ git log --oneline`}
         <InfoBox key="info2" type="success">
           <strong>Mensajes de commit:</strong> Usa imperativo ("Agrega login" no "Agregado login"). Sé descriptivo pero conciso.
         </InfoBox>,
-      ],
-    },
+      ]},
     {
       title: 'Ramas - Desarrollo Paralelo',
       level: 2,
@@ -214,8 +209,7 @@ $ git branch -d feature/login`}
         <InfoBox key="info3" type="warning">
           <strong>Convención de nombres:</strong> feature/nombre, bugfix/nombre, hotfix/nombre, docs/nombre
         </InfoBox>,
-      ],
-    },
+      ]},
     {
       title: 'Ver Historial y Cambios',
       level: 2,
@@ -244,8 +238,7 @@ $ git diff --staged
 # Ver cambios en un archivo específico
 $ git diff archivo.js`}
         />,
-      ],
-    },
+      ]},
     {
       title: 'Deshacer Cambios - Seguro',
       level: 2,
@@ -274,8 +267,7 @@ $ git stash pop`}
         <InfoBox key="info4" type="danger">
           <strong>Regla de oro:</strong> Si ya subiste (push), NUNCA uses reset/hard. Usa revert.
         </InfoBox>,
-      ],
-    },
+      ]},
   ];
 
   const summary = 'Git es herramienta esencial para control de versiones. Domina el ciclo: cambios → stage → commit, y maneja ramas para desarrollo paralelo.';

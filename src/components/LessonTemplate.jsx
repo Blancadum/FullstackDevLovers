@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { LessonLayout, LessonSection, ConceptCard, Exercise, KeyPoints, Summary, PageAnchors, DynamicDictionary } from './index';
+import DOMPurify from 'dompurify';
+import { LessonLayout, LessonSection, ConceptCard, Exercise, KeyPoints, Summary, PageAnchors, DynamicDictionary, LessonSidebar } from './index';
+import './LessonTemplate.css';
 
 /**
  * LessonTemplate - Componente reutilizable para lecciones
@@ -25,9 +27,14 @@ export function LessonTemplate({
   exercises = [],
   keyPoints = [],
   summary = '',
-  glossary = []
+  glossary = [],
+  moduleSections = [],
+  themeColor = '#0066cc'
 }) {
   const [selectedExercise, setSelectedExercise] = useState(null);
+
+  // Generar título automático si no se proporciona
+  const finalTitle = title || (sections.length > 0 ? sections[0].title : 'Lección');
 
   // Generar anclas disponibles
   const anchors = [];
@@ -36,8 +43,7 @@ export function LessonTemplate({
   if (exercises.length > 0) anchors.push({ label: 'Ejercicios', id: 'ejercicios' });
 
   return (
-    <LessonLayout breadcrumbs={breadcrumbs} title={title}>
-      {anchors.length > 0 && <PageAnchors anchors={anchors} />}
+    <LessonLayout breadcrumbs={breadcrumbs} title={finalTitle}>
       {/* Render custom sections */}
       {sections.length > 0 && (
         <div id="contenido">
@@ -53,7 +59,7 @@ export function LessonTemplate({
                   {section.content.map((item, itemIndex) => (
                     <div key={itemIndex}>
                       {typeof item === 'string' ? (
-                        <p dangerouslySetInnerHTML={{ __html: item }} />
+                        <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item) }} />
                       ) : (
                         item
                       )}
@@ -70,23 +76,13 @@ export function LessonTemplate({
 
       {/* Render concepts grid if provided */}
       {concepts.length > 0 && (
-        <div id="conceptos" style={{ marginTop: '2rem' }}>
-          <h2 style={{ marginBottom: '1.5rem', color: '#2c3e50' }}>{conceptsLabel}</h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '3rem'
-          }}>
+        <div id="conceptos" className="concepts-section">
+          <h2 className="concepts-title">{conceptsLabel}</h2>
+          <div className="concepts-grid">
             {concepts.map((concept, index) => (
               typeof concept === 'string' ? (
-                <div key={index} style={{
-                  padding: '1.5rem',
-                  backgroundColor: '#f8f9fa',
-                  borderRadius: '8px',
-                  border: '1px solid #e9ecef'
-                }}>
-                  <p style={{ margin: 0, color: '#2c3e50', lineHeight: '1.6' }} dangerouslySetInnerHTML={{ __html: concept }} />
+                <div key={index} className="concept-item">
+                  <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(concept) }} />
                 </div>
               ) : (
                 <ConceptCard key={index} {...concept} />
@@ -98,42 +94,15 @@ export function LessonTemplate({
 
       {/* Render exercises if provided */}
       {exercises.length > 0 && (
-        <div id="ejercicios" style={{ marginTop: '3rem' }}>
-          <h2 style={{ marginBottom: '1.5rem', color: '#2c3e50' }}>Ejercicios</h2>
+        <div id="ejercicios" className="exercises-section">
+          <h2 className="exercises-title">Ejercicios</h2>
 
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '1rem',
-            marginBottom: '2rem'
-          }}>
+          <div className="exercise-buttons-container">
             {exercises.map((exercise, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedExercise(selectedExercise === index ? null : index)}
-                style={{
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '8px',
-                  border: selectedExercise === index ? '2px solid #ff006e' : '2px solid #ddd',
-                  backgroundColor: selectedExercise === index ? '#ff006e' : 'white',
-                  color: selectedExercise === index ? 'white' : '#333',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  if (selectedExercise !== index) {
-                    e.target.style.borderColor = '#ff006e';
-                    e.target.style.color = '#ff006e';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (selectedExercise !== index) {
-                    e.target.style.borderColor = '#ddd';
-                    e.target.style.color = '#333';
-                  }
-                }}
+                className={`exercise-button ${selectedExercise === index ? 'active' : ''}`}
               >
                 {exercise.title}
               </button>
@@ -141,7 +110,7 @@ export function LessonTemplate({
           </div>
 
           {selectedExercise !== null && (
-            <div style={{ marginTop: '1.5rem' }}>
+            <div className="exercise-content">
               <Exercise
                 title={exercises[selectedExercise].title}
                 description={exercises[selectedExercise].description}
@@ -154,11 +123,23 @@ export function LessonTemplate({
         </div>
       )}
 
-      {/* Puntos Clave y Resumen deshabilitados - Usuario prefiere interfaz más limpia */}
+      {/* Render key points if provided */}
+      {keyPoints.length > 0 && (
+        <div id="puntos-clave">
+          <KeyPoints keyPoints={keyPoints} />
+        </div>
+      )}
+
+      {/* Render summary if provided */}
+      {summary && (
+        <div id="resumen">
+          <Summary summary={summary} />
+        </div>
+      )}
 
       {/* Render glossary/dictionary if provided */}
       {glossary && glossary.length > 0 && (
-        <div id="diccionario" style={{ marginTop: '4rem' }}>
+        <div id="diccionario" className="glossary-section">
           <DynamicDictionary terms={glossary} />
         </div>
       )}

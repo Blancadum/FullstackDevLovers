@@ -54,37 +54,6 @@ export function SectionPage({ moduleId, sectionId }) {
         description={section.description}
         url={`https://javabackendlearning.com/${moduleId}/${sectionId}`}
       />
-      <div className="breadcrumb-section">
-        <Breadcrumb items={breadcrumbs} />
-        {module?.sections && module.sections.length > 1 && (
-          <div className="section-dropdown">
-            <div className="dropdown-toggle-container">
-              <button
-                className="dropdown-toggle"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
-                <span>Otras secciones</span>
-                <span className={`arrow ${isDropdownOpen ? 'open' : ''}`}>▼</span>
-              </button>
-              {isDropdownOpen && (
-                <div className="dropdown-menu">
-                  {module.sections.map((sec, idx) => (
-                    <a
-                      key={idx}
-                      href={`/${moduleId}/${sec.id}`}
-                      className={`dropdown-item ${sec.id === sectionId ? 'active' : ''}`}
-                      onClick={() => setIsDropdownOpen(false)}
-                    >
-                      {sec.icon && <span>{sec.icon}</span>}
-                      {sec.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
 
       <div className="section-page">
         {/* Header Section adaptado a la estructura de ModulePage */}

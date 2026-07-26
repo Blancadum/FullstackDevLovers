@@ -1,310 +1,346 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-import { Breadcrumb } from '../components/Breadcrumb';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LandingHero, SEO, KotlinThemeCard } from '../components';
+import { getModule } from '../config/modulesConfig';
+import { getTheme } from '../config/themeColors';
+import { useLandingTheme } from '../hooks/useLandingTheme';
+import { getThemeByModule } from '../config/landingThemes';
 
 export const LandingBuildTools = () => {
-  const navigate = useNavigate();
-  const breadcrumbs = useBreadcrumb();
+  // Aplicar tema dinámico con variables CSS
+  const landingTheme = getThemeByModule('build');
+  useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
+  const theme = getTheme('buildtools');
+  const buildModule = getModule('entornos');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  const lessons = [
+  if (!buildModule) return null;
+
+  // Get only the build-tools section
+  const buildSection = buildModule.sections.find(s => s.id === 'build-tools');
+  const sectionsToShow = buildSection ? [buildSection] : [];
+
+  // Schema Markup para JSON-LD
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': 'Build Tools - Maven, Gradle y Construcción de Proyectos Profesionales',
+    'description': 'Domina Maven y Gradle: automatiza compilación, testing, empaquetado y despliegue. Gestión de dependencias para proyectos Java profesionales.',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Fullstack Dev Lovers',
+      'url': 'https://fullstackdevlovers.com'
+    },
+    'url': 'https://fullstackdevlovers.com/herramientas/entornos/build',
+    'hasPart': buildSection ? buildSection.lessons.map((lesson, idx) => ({
+      '@type': 'LearningResource',
+      'name': lesson.title,
+      'url': `https://fullstackdevlovers.com${lesson.link}`
+    })) : []
+  };
+
+  const faqData = [
     {
-      title: 'Maven - Gestión de Proyectos',
-      description: 'Build tool y gestor de dependencias más popular en Java',
-      icon: '📦',
-      link: '/entornos/build/maven'
+      question: '¿Qué es un Build Tool y por qué lo necesito?',
+      answer: 'Un build tool automatiza todo el proceso de compilación, testing, empaquetado y despliegue. Sin él, compilarías manualmente cada archivo, resolverías dependencias a mano, ejecutarías tests uno por uno. Maven/Gradle hace todo con un comando: "mvn clean package".'
     },
     {
-      title: 'Gradle - Build Avanzado',
-      description: 'Build tool moderno y flexible, alternativa a Maven',
-      icon: '⚙️',
-      link: '/entornos/build/gradle'
+      question: '¿Maven vs Gradle: Cuál debo aprender?',
+      answer: 'Maven es más popular (80% de empresas Java), usa XML, curva de aprendizaje moderada. Gradle es moderno, usa Groovy/Kotlin, más flexible y rápido, preferido en Android. Aprende Maven primero (es más común), luego Gradle (es la tendencia). Ambos son valiosos.'
     },
     {
-      title: 'Gestión de Dependencias',
-      description: 'Cómo manejar librerías externas en tu proyecto',
-      icon: '🔗',
-      link: '/entornos/build/dependencias'
+      question: '¿Necesito aprender ambos Maven y Gradle?',
+      answer: 'No es estrictamente necesario en día uno. Maven domina la industria, aprende eso primero. Gradle está creciendo. Si trabajas en Android, Gradle es obligatorio. En backend Java, Maven es suficiente. Pero dominar ambos te hace más empleable.'
+    },
+    {
+      question: '¿Cuánto tiempo se tarda en dominar un Build Tool?',
+      answer: 'Lo básico (compilar, test, empaquetar) se domina en 2-3 horas. Gestión de dependencias y plugins: 1 semana. Configuración avanzada (multi-módulo, custom tasks): 2-3 semanas. El verdadero dominio viene con proyectos reales.'
+    },
+    {
+      question: '¿Puedo compilar Java sin Maven o Gradle?',
+      answer: 'Sí, técnicamente: usarías "javac" directamente. Pero es tedioso: compilar cada archivo, resolver dependencias manualmente, crear JARs... Maven/Gradle automatiza todo esto. Es como preguntarse si puedes programar sin IDE: técnicamente sí, pero es tortuga.'
+    },
+    {
+      question: '¿Maven es solo para Java?',
+      answer: 'Principalmente Java, pero Maven funciona con C#, Ruby, Scala, Clojure, etc. Gradle es agnóstico de lenguaje: Java, Kotlin, Groovy, C++, JavaScript, etc. Maven está optimizado para Java, Gradle es más general.'
     }
   ];
 
-  const tools = [
-    { title: 'Compilación', description: 'Convierte código Java a bytecode (.class)', icon: '⚙️' },
-    { title: 'Empaquetado', description: 'Crea JAR, WAR o archivos ejecutables', icon: '📦' },
-    { title: 'Testing', description: 'Ejecuta tests automáticamente', icon: '🧪' },
-    { title: 'Dependencias', description: 'Descarga e integra librerías automáticamente', icon: '🔗' },
-    { title: 'Documentación', description: 'Genera Javadoc y documentación automática', icon: '📖' },
-    { title: 'Despliegue', description: 'Automatiza deployment a repositorios', icon: '🚀' }
+  const comparisonData = [
+    {
+      feature: 'Configuración',
+      maven: 'XML (pom.xml)',
+      make: 'Makefile (script)',
+      gradle: 'Groovy/Kotlin DSL'
+    },
+    {
+      feature: 'Curva Aprendizaje',
+      maven: 'Moderada',
+      make: 'Baja (básica)',
+      gradle: 'Empinada'
+    },
+    {
+      feature: 'Velocidad',
+      maven: 'Lenta (maven-clean)',
+      make: 'Muy rápida (incremental)',
+      gradle: 'Muy rápida (caché)'
+    },
+    {
+      feature: 'Flexibilidad',
+      maven: 'Rígida (convención)',
+      make: 'Flexible (scripts shell)',
+      gradle: 'Muy flexible (DSL)'
+    },
+    {
+      feature: 'Popularidad Java',
+      maven: 'Histórica (80%+)',
+      make: 'Legado',
+      gradle: 'Moderna (creciente)'
+    },
+    {
+      feature: 'Gestión Dependencias',
+      maven: 'Excelente (Maven Central)',
+      make: 'Manual',
+      gradle: 'Excelente (Maven Central)'
+    },
+    {
+      feature: 'Ecosistema',
+      maven: 'Maduro (plugins establecidos)',
+      make: 'Ninguno',
+      gradle: 'Moderno (creciendo)'
+    },
+    {
+      feature: 'Integración CI/CD',
+      maven: 'Perfecta (Jenkins, GitLab)',
+      make: 'Básica',
+      gradle: 'Perfecta (moderno)'
+    }
   ];
 
   return (
     <>
-      <Breadcrumb items={breadcrumbs} />
-      <div className="lesson-container">
-      <div className="lesson-header">
-        <h1>Build & Herramientas</h1>
-        <p className="lesson-intro">
-          Automatiza compilación, testing y despliegue con Maven y Gradle
-        </p>
-      </div>
+      <SEO
+        title="Build Tools - Maven, Gradle y Construcción Profesional | Guía Completa"
+        description="Domina Maven y Gradle: automatiza compilación, testing, empaquetado y despliegue. Gestión de dependencias para proyectos Java profesionales escalables."
+        keywords="maven, gradle, build tools, java, compilación, testing, empaquetado, dependencias, automatización"
+        url="https://fullstackdevlovers.com/herramientas/entornos/build"
+        image="/og-build-tools.png"
+      />
 
-      <section className="lesson-section">
-        <h2>¿Qué es un Build Tool?</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Un <strong>build tool</strong> automatiza todo el proceso de transformar tu código fuente en una aplicación ejecutable. Sin él, harías manualmente:
-        </p>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaMarkup)}
+      </script>
 
-        <div style={{
-          backgroundColor: '#fff3e0',
-          border: '2px solid #ff9800',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#ff9800' }}>Sin Build Tool (❌ Tedioso):</h3>
-          <pre style={{ fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
-{`1. Compilar cada archivo Java → javac
-2. Resolver dependencias manualmente
-3. Crear carpeta de clases
-4. Empaquetar en JAR
-5. Ejecutar tests manualmente
-6. Subir a repositorio
-7. Documentar cambios`}
-          </pre>
-        </div>
+      <div className="buildtools-landing">
+        {/* Hero Section */}
+        <LandingHero
+          title="Build Tools: Automatización de Proyectos"
+          subtitle="Compila, testa y empaqueta en un comando"
+          description="Los Build Tools como Maven y Gradle automatizan todo el ciclo de vida del proyecto: compilación, testing, empaquetado, y despliegue. Eliminan tareas repetitivas y garantizan builds consistentes en todos los equipos."
+          primaryColor={landingTheme.primary}
+          darkColor={landingTheme.dark}
+          lightGradientColor={landingTheme.lightGradient}
+          primaryButtonText="Comenzar con Maven →"
+          primaryButtonLink="/herramientas/entornos/build/maven"
+          secondaryButtonText="Ver comparativa"
+          secondaryButtonLink="#comparativa"
+          imageUrl="/src/assets/images/logos/maven.png"
+          imageAlt="Build Tools Logo"
+        />
 
-        <div style={{
-          backgroundColor: '#e8f5e9',
-          border: '2px solid #28a745',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h3 style={{ marginTop: 0, color: '#28a745' }}>Con Build Tool (✅ Automático):</h3>
-          <pre style={{ fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
-{`mvn clean package  # O "gradle build"
+        {/* What is Build Tools Section */}
+        <section className="buildtools-content">
+          <div className="content-container">
+            <h2>¿Qué es un Build Tool?</h2>
+            <p className="intro-text">
+              Un Build Tool es un software que automatiza el proceso completo de transformar código fuente en una aplicación ejecutable.
+              Maneja compilación, testing, empaquetado, gestión de dependencias, documentación y despliegue.
+            </p>
 
-Automáticamente:
-✓ Compila todo el código
-✓ Descarga dependencias
-✓ Ejecuta tests
-✓ Crea JAR/WAR
-✓ Valida calidad
-✓ Genera documentación`}
-          </pre>
-        </div>
-      </section>
-
-      <section className="lesson-section">
-        <h2>Responsabilidades del Build Tool</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {tools.map((tool, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#fff3e0',
-              border: '2px solid #ff9800',
-              borderRadius: '8px',
-              padding: '1.5rem'
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{tool.icon}</div>
-              <h4 style={{ margin: '0 0 0.75rem 0', color: '#ff9800' }}>{tool.title}</h4>
-              <p style={{ fontSize: '0.95rem', color: '#555', margin: 0 }}>{tool.description}</p>
+            {/* Key Features */}
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">⚙️</div>
+                <h3>Compilación Automática</h3>
+                <p>Compila código fuente a bytecode (.class) automáticamente</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📦</div>
+                <h3>Empaquetado</h3>
+                <p>Crea JAR, WAR, o archivos ejecutables automáticamente</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🧪</div>
+                <h3>Testing Automático</h3>
+                <p>Ejecuta tests unitarios e integración en cada build</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔗</div>
+                <h3>Gestión de Dependencias</h3>
+                <p>Descarga e integra librerías automáticamente de repositorios</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📖</div>
+                <h3>Documentación</h3>
+                <p>Genera Javadoc y documentación automáticamente</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🚀</div>
+                <h3>Despliegue</h3>
+                <p>Automatiza envío a repositorios y servidores</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>Maven vs Gradle</h2>
-        <table style={{
-          width: '100%',
-          borderCollapse: 'collapse',
-          marginTop: '1.5rem',
-          backgroundColor: '#ffffff'
-        }}>
-          <thead>
-            <tr style={{ backgroundColor: '#fff3e0', borderBottom: '2px solid #ff9800' }}>
-              <th style={{ padding: '1rem', textAlign: 'left' }}>Aspecto</th>
-              <th style={{ padding: '1rem', textAlign: 'left' }}>Maven</th>
-              <th style={{ padding: '1rem', textAlign: 'left' }}>Gradle</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { aspect: 'Configuración', maven: 'XML (pom.xml)', gradle: 'Groovy/Kotlin' },
-              { aspect: 'Curva aprendizaje', maven: 'Moderada', gradle: 'Empinada' },
-              { aspect: 'Velocidad', maven: 'Más lenta', gradle: 'Más rápida' },
-              { aspect: 'Flexibilidad', maven: 'Menos', gradle: 'Muy flexible' },
-              { aspect: 'Popularidad', maven: 'Histórica', gradle: 'Moderna' },
-              { aspect: 'Android', maven: 'No recomendado', gradle: '✅ Estándar' }
-            ].map((row, idx) => (
-              <tr key={idx} style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '1rem', fontWeight: 'bold' }}>{row.aspect}</td>
-                <td style={{ padding: '1rem' }}>{row.maven}</td>
-                <td style={{ padding: '1rem' }}>{row.gradle}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+        {/* Learning Topics */}
+        <section className="learning-topics">
+          <div className="content-container">
+            <h2>Temas de Aprendizaje</h2>
+            <p className="intro-text">
+              Domina los Build Tools con una progresión estructurada desde fundamentos
+            </p>
 
-      <section className="lesson-section">
-        <h2>Estructura de Proyecto</h2>
-        <div style={{
-          backgroundColor: '#e3f2fd',
-          border: '2px solid #2196f3',
-          borderRadius: '8px',
-          padding: '1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <pre style={{
-            fontSize: '0.9rem',
-            lineHeight: '1.6',
-            margin: 0,
-            overflow: 'auto'
-          }}>
-{`mi-proyecto/
-├── pom.xml (o build.gradle)         ← Configuración
-├── src/
-│   ├── main/
-│   │   ├── java/                    ← Tu código
-│   │   │   └── com/ejemplo/App.java
-│   │   └── resources/               ← Configuraciones
-│   └── test/
-│       ├── java/                    ← Tests
-│       │   └── com/ejemplo/AppTest.java
-│       └── resources/
-└── target/                          ← Generado por Maven
-    ├── classes/                     ← .class compilados
-    └── mi-proyecto.jar              ← JAR ejecutable`}
-          </pre>
-        </div>
-      </section>
+            <div className="theme-cards-container">
+              {sectionsToShow.map((section, idx) => (
+                <KotlinThemeCard
+                  key={idx}
+                  icon={getIconForSection(section.id)}
+                  title={section.name}
+                  description={section.description}
+                  lessons={section.lessons}
+                  color={getColorForSection(idx)}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <section className="lesson-section">
-        <h2>Lecciones</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {lessons.map((lesson, idx) => (
-            <div key={idx} style={{
-              backgroundColor: '#ffffff',
-              border: '2px solid #ddd',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#ff9800';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(255,152,0,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#ddd';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{lesson.icon}</div>
-              <h3 style={{ margin: '0 0 0.75rem 0', fontSize: '1.1rem' }}>{lesson.title}</h3>
-              <p style={{ flex: 1, fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
-                {lesson.description}
+        {/* Comparison Section */}
+        <section className="comparison-section" id="comparativa">
+          <div className="content-container">
+            <h2>Maven vs Make vs Gradle</h2>
+            <p className="intro-text">
+              Comparativa detallada de los principales sistemas de construcción
+            </p>
+
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    <th>Maven</th>
+                    <th>Make</th>
+                    <th>Gradle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      <td className="buildtools-col">{row.maven}</td>
+                      <td>{row.make}</td>
+                      <td>{row.gradle}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="comparison-conclusion">
+              <p>
+                <strong>✅ Elige Maven si:</strong> Trabajas en proyectos Java empresariales, necesitas máxima compatibilidad,
+                tu equipo es tradicional, o requieres el estándar de la industria. Maven es sólido y confiable.
               </p>
-              <button
-                onClick={() => navigate(lesson.link)}
-                style={{
-                  backgroundColor: '#ff9800',
-                  color: '#ffffff',
-                  border: 'none',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  transition: 'background-color 0.3s'
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#f57c00'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#ff9800'}
-              >
-                Ver Lección →
-              </button>
+              <p>
+                <strong>✅ Elige Gradle si:</strong> Quieres flexibilidad moderna, trabajas en Android, buscas builds más rápidos,
+                o prefieres DSLs sobre XML. Gradle es el futuro.
+              </p>
+              <p>
+                <strong>⚠️ Make solo si:</strong> Trabajas en C/C++ o legacy Unix. Para Java, es obsoleto. No vale la pena.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="lesson-section" style={{
-        backgroundColor: '#fff3e0',
-        border: '2px solid #ff9800',
-        borderRadius: '8px',
-        padding: '2rem'
-      }}>
-        <h2>Comandos Esenciales (Maven)</h2>
-        <pre style={{
-          fontSize: '0.95rem',
-          lineHeight: '1.8',
-          marginBottom: 0,
-          overflow: 'auto'
-        }}>
-{`mvn clean              → Elimina carpeta target
-mvn compile            → Compila el código
-mvn test               → Ejecuta tests
-mvn package            → Crea JAR/WAR
-mvn clean package      → Limpia + compila + tests + empaqueta
-mvn install            → Instala en repositorio local
-mvn deploy             → Sube a repositorio remoto
-mvn spring-boot:run    → Ejecuta aplicación directamente`}
-        </pre>
-      </section>
+        {/* When to Use Build Tools */}
+        <section className="when-to-use">
+          <div className="content-container">
+            <h2>¿Cuándo Usar Build Tools?</h2>
 
-      <section className="lesson-section" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          gap: '1rem'
-        }}>
-          <a href="/entornos/arquitectura/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#e0f2f1',
-            color: '#004d40',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #009688'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#b2dfdb'} onMouseOut={(e) => e.target.style.backgroundColor = '#e0f2f1'}>
-            ← Volver a Arquitectura
-          </a>
-          <a href="/entornos/devops/landing" style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#fce4ec',
-            color: '#880e4f',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: '600',
-            transition: 'background-color 0.3s',
-            border: '2px solid #c2185b'
-          }} onMouseOver={(e) => e.target.style.backgroundColor = '#f8bbd0'} onMouseOut={(e) => e.target.style.backgroundColor = '#fce4ec'}>
-            DevOps →
-          </a>
-        </div>
-      </section>
-    </div>
+            <div className="use-case-grid">
+              <div className="use-case">
+                <h3>✅ Ideal para:</h3>
+                <ul>
+                  <li>Cualquier proyecto Java</li>
+                  <li>Equipos con múltiples desarrolladores</li>
+                  <li>CI/CD y automatización</li>
+                  <li>Proyectos con muchas dependencias</li>
+                  <li>Builds consistentes entre máquinas</li>
+                </ul>
+              </div>
+              <div className="use-case">
+                <h3>⚠️ Considera alternativas si:</h3>
+                <ul>
+                  <li>Script único muy simple (aunque Maven aún ayuda)</li>
+                  <li>No tienes dependencias (aunque Maven las descubre)</li>
+                  <li>Trabajas en lenguajes no-JVM (usa tool específico)</li>
+                  <li>Entorno con restricciones de red (Maven caché offline)</li>
+                  <li>Aprendiz absoluto (aunque conceptos son universales)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="content-container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div className="faq-list">
+              {faqData.map((faq, idx) => (
+                <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+                  <button
+                    className="faq-summary"
+                    onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className="faq-icon">+</span>
+                  </button>
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final Section */}
+        <section className="buildtools-cta">
+          <div className="cta-content">
+            <h2>Comienza con Build Tools Hoy</h2>
+            <p>Automatiza tu flujo de desarrollo y aumenta tu productividad</p>
+            <Link to="/herramientas/entornos/build/maven" className="cta-button">
+              Ir a Maven →
+            </Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
+
+// Funciones auxiliares
+function getIconForSection(sectionId) {
+  const icons = {
+    'build-tools': '📦',
+  };
+  return icons[sectionId] || '📄';
+}
+
+function getColorForSection(index) {
+  const colors = ['#7b1fa2', '#6a1b9a'];
+  return colors[index % colors.length];
+}

@@ -48,8 +48,7 @@ $ git commit -m "Agrega módulo de conexión a BD"
 $ git push -u origin feature/database
 
 # 6. Ver ramas en remoto
-$ git branch -r`,
-    },
+$ git branch -r`},
     {
       title: 'Resolver conflictos en merge',
       description: 'Dos personas modifican el mismo archivo. Hacer pull genera conflicto. Resolver y commit.',
@@ -82,8 +81,7 @@ $ git pull origin main
 # Completar merge
 $ git add login.js
 $ git commit -m "Resuelve conflicto en login.js: usa nueva API"
-$ git push origin main`,
-    },
+$ git push origin main`},
   ];
 
   const sections = [
@@ -97,8 +95,7 @@ $ git push origin main`,
           <br />
           <strong>Otros nombres:</strong> upstream (repo original), deploy (para deployment).
         </InfoBox>,
-      ],
-    },
+      ]},
     {
       title: 'Clonar y Comenzar a Trabajar',
       level: 2,
@@ -124,8 +121,7 @@ $ git branch -a      # Todas (locales + remotas)
 $ git switch feature/login
 # Git automáticamente crea rama local que sigue origin/feature/login`}
         />,
-      ],
-    },
+      ]},
     {
       title: 'Push y Pull - Sincronizar Local ↔ Remoto',
       level: 2,
@@ -156,8 +152,7 @@ $ git merge origin/main`}
         <InfoBox key="info2" type="success">
           <strong>Regla de oro:</strong> Siempre haz pull ANTES de push para evitar conflictos.
         </InfoBox>,
-      ],
-    },
+      ]},
     {
       title: 'Pull Requests y Flujo Colaborativo',
       level: 2,
@@ -171,8 +166,7 @@ $ git merge origin/main`}
         '6. Aprobar y merge',
         '<h3>En GitHub:</h3>',
         'Aparece botón automático "Compare & pull request" después del primer push.',
-      ],
-    },
+      ]},
     {
       title: 'Conflictos - Cuando Dos Personas Editan Mismo Archivo',
       level: 2,
@@ -193,8 +187,7 @@ $ git push origin main`}
         <InfoBox key="info3" type="warning">
           <strong>Conflictos son normales:</strong> Son parte de la colaboración. Resuélvelos cuidadosamente.
         </InfoBox>,
-      ],
-    },
+      ]},
   ];
 
   const summary = 'Git remoto permite colaboración en equipo. Usa pull antes de push, resuelve conflictos cuidadosamente y usa Pull Requests para código review.';

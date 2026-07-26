@@ -10,7 +10,7 @@ export function LexicoGeneral() {
     {
       id: 'aws',
       titulo: 'Léxico AWS',
-      icono: '☁️',
+      icono: '',
       color: '#FF9900',
       descripcion: 'Terminología completa de Amazon Web Services: IaaS, PaaS, SaaS, EC2, S3, RDS, Lambda, IAM, VPC, Security Groups, Regiones, Availability Zones y más.',
       ruta: '/aws/lexico'
@@ -18,7 +18,7 @@ export function LexicoGeneral() {
     {
       id: 'java',
       titulo: 'Léxico Java',
-      icono: '☕',
+      icono: '',
       color: '#F89917',
       descripcion: 'Conceptos fundamentales de Java: OOP, polimorfismo, herencia, interfaces, clases abstractas, generics, excepciones y patrones de diseño.',
       ruta: '/java/lexico',
@@ -27,7 +27,7 @@ export function LexicoGeneral() {
     {
       id: 'git',
       titulo: 'Léxico Git & Control de Versiones',
-      icono: '🔀',
+      icono: '',
       color: '#F1502F',
       descripcion: 'Terminología de Git: commits, branches, tags, merge, rebase, stash, rebasing, cherry-pick, pull requests y workflows de colaboración.',
       ruta: '/git/lexico',
@@ -36,7 +36,7 @@ export function LexicoGeneral() {
     {
       id: 'database',
       titulo: 'Léxico Bases de Datos',
-      icono: '🗄️',
+      icono: '',
       color: '#336791',
       descripcion: 'Conceptos SQL: JOIN, subqueries, índices, normalización, transacciones, ACID, relaciones y diseño de bases de datos relacionales.',
       ruta: '/database/lexico',

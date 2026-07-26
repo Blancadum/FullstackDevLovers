@@ -1,0 +1,310 @@
+{
+  "landingPages": [
+    {
+      "name": "Java",
+      "file": "LandingJava.css",
+      "primaryColor": "#9c27b0",
+      "darkColor": "#7b1fa2",
+      "heroGradient": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)",
+      "bgLight": "#f3e5f5",
+      "bgMedium": "#e1bee7",
+      "bgDark": "#d1c4e9"
+    },
+    {
+      "name": "Docker",
+      "file": "LandingDocker.css",
+      "primaryColor": "#2196f3",
+      "darkColor": "#1976d2",
+      "heroGradient": "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%)",
+      "bgLight": "#e3f2fd",
+      "bgMedium": "#bbdefb",
+      "bgDark": "#90caf9"
+    },
+    {
+      "name": "AWS",
+      "file": "LandingAWS.css",
+      "primaryColor": "#ff9800",
+      "darkColor": "#f57c00",
+      "heroGradient": "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%)",
+      "bgLight": "#fff3e0",
+      "bgMedium": "#ffe0b2",
+      "bgDark": "#ffcc80"
+    },
+    {
+      "name": "SQL",
+      "file": "LandingSQL.css",
+      "primaryColor": "#1976d2",
+      "darkColor": "#1565c0",
+      "heroGradient": "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%)",
+      "bgLight": "#e3f2fd",
+      "bgMedium": "#bbdefb",
+      "bgDark": "#90caf9"
+    },
+    {
+      "name": "Git",
+      "file": "LandingGit.css",
+      "primaryColor": "#e8491f",
+      "darkColor": "#c73d18",
+      "heroGradient": "linear-gradient(135deg, #ffe8de 0%, #ffd4c1 50%, #ffcbb0 100%)",
+      "bgLight": "#ffe8de",
+      "bgMedium": "#ffd4c1",
+      "bgDark": "#ffcbb0"
+    },
+    {
+      "name": "Kubernetes",
+      "file": "LandingKubernetes.css",
+      "primaryColor": "#9c27b0",
+      "darkColor": "#7b1fa2",
+      "heroGradient": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)",
+      "bgLight": "#f3e5f5",
+      "bgMedium": "#e1bee7",
+      "bgDark": "#d1c4e9"
+    },
+    {
+      "name": "SpringBoot",
+      "file": "LandingSpringBoot.css",
+      "primaryColor": "#6db33f",
+      "darkColor": "#5a9d31",
+      "heroGradient": "linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 50%, #e0f2f1 100%)",
+      "bgLight": "#e8f5e9",
+      "bgMedium": "#f1f8e9",
+      "bgDark": "#e0f2f1"
+    },
+    {
+      "name": "Metodologias",
+      "file": "LandingMetodologias.css",
+      "primaryColor": "#ff9800",
+      "darkColor": "#f57c00",
+      "heroGradient": "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%)",
+      "bgLight": "#fff3e0",
+      "bgMedium": "#ffe0b2",
+      "bgDark": "#ffcc80"
+    },
+    {
+      "name": "Proyecto",
+      "file": "LandingProyecto.css",
+      "primaryColor": "#4caf50",
+      "darkColor": "#388e3c",
+      "heroGradient": "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%)",
+      "bgLight": "#e8f5e9",
+      "bgMedium": "#c8e6c9",
+      "bgDark": "#a5d6a7"
+    },
+    {
+      "name": "Arquitectura",
+      "file": "LandingArquitectura.css",
+      "primaryColor": "#e91e63",
+      "darkColor": "#c2185b",
+      "heroGradient": "linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%)",
+      "bgLight": "#fce4ec",
+      "bgMedium": "#f8bbd0",
+      "bgDark": "#f48fb1"
+    },
+    {
+      "name": "BuildTools",
+      "file": "LandingBuildTools.css",
+      "primaryColor": "#7b1fa2",
+      "darkColor": "#6a1b9a",
+      "heroGradient": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)",
+      "bgLight": "#f3e5f5",
+      "bgMedium": "#e1bee7",
+      "bgDark": "#d1c4e9"
+    },
+    {
+      "name": "DevOps",
+      "file": "LandingDevOps.css",
+      "primaryColor": "#7b1fa2",
+      "darkColor": "#6a1b9a",
+      "heroGradient": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)",
+      "bgLight": "#f3e5f5",
+      "bgMedium": "#e1bee7",
+      "bgDark": "#d1c4e9"
+    },
+    {
+      "name": "Herramientas",
+      "file": "LandingHerramientas.css",
+      "primaryColor": "#ff9800",
+      "darkColor": "#f57c00",
+      "heroGradient": "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%)",
+      "bgLight": "#fff3e0",
+      "bgMedium": "#ffe0b2",
+      "bgDark": "#ffcc80"
+    },
+    {
+      "name": "React",
+      "file": "LandingReact.css",
+      "primaryColor": "#61dafb",
+      "darkColor": "#21b4d5",
+      "heroGradient": "linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 50%, #81d4fa 100%)",
+      "bgLight": "#e0f7fa",
+      "bgMedium": "#b3e5fc",
+      "bgDark": "#81d4fa"
+    },
+    {
+      "name": "Node.js",
+      "file": "LandingNodejs.css",
+      "primaryColor": "#76c041",
+      "darkColor": "#6ba82f",
+      "heroGradient": "linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #c8e6c9 100%)",
+      "bgLight": "#f1f8e9",
+      "bgMedium": "#e8f5e9",
+      "bgDark": "#c8e6c9"
+    },
+    {
+      "name": "Angular",
+      "file": "LandingAngular.css",
+      "primaryColor": "#dd0031",
+      "darkColor": "#b30024",
+      "heroGradient": "linear-gradient(135deg, #ffd4e5 0%, #f4e5ff 50%, #e5f5ff 100%)",
+      "bgLight": "#ffd4e5",
+      "bgMedium": "#f4e5ff",
+      "bgDark": "#e5f5ff"
+    },
+    {
+      "name": "MongoDB",
+      "file": "LandingMongoDB.css",
+      "primaryColor": "#13aa52",
+      "darkColor": "#0d8c41",
+      "heroGradient": "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%)",
+      "bgLight": "#e8f5e9",
+      "bgMedium": "#c8e6c9",
+      "bgDark": "#a5d6a7"
+    },
+    {
+      "name": "Bootstrap",
+      "file": "LandingBootstrap.css",
+      "primaryColor": "#7b1fa2",
+      "darkColor": "#6a1b9a",
+      "heroGradient": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)",
+      "bgLight": "#f3e5f5",
+      "bgMedium": "#e1bee7",
+      "bgDark": "#d1c4e9"
+    },
+    {
+      "name": "TailwindCSS",
+      "file": "LandingTailwindCSS.css",
+      "primaryColor": "#0097a7",
+      "darkColor": "#00838f",
+      "heroGradient": "linear-gradient(135deg, #ecf9ff 0%, #b3e5fc 50%, #80deea 100%)",
+      "bgLight": "#ecf9ff",
+      "bgMedium": "#b3e5fc",
+      "bgDark": "#80deea"
+    },
+    {
+      "name": "CSS",
+      "file": "LandingCSS.css",
+      "primaryColor": "#1572b6",
+      "darkColor": "#0e5e99",
+      "heroGradient": "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%)",
+      "bgLight": "#e3f2fd",
+      "bgMedium": "#bbdefb",
+      "bgDark": "#90caf9"
+    },
+    {
+      "name": "HTML",
+      "file": "LandingHTML.css",
+      "primaryColor": "#e44d26",
+      "darkColor": "#c03d1a",
+      "heroGradient": "linear-gradient(135deg, #fce4ec 0%, #ffccb3 50%, #ffb3a1 100%)",
+      "bgLight": "#fce4ec",
+      "bgMedium": "#ffccb3",
+      "bgDark": "#ffb3a1"
+    }
+  ],
+  "colorGroupings": {
+    "purpleTheme": [
+      {
+        "names": ["Java", "Kubernetes", "BuildTools", "DevOps", "Bootstrap"],
+        "primaryColor": "#9c27b0 or #7b1fa2",
+        "heroGradient": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)"
+      }
+    ],
+    "blueTheme": [
+      {
+        "names": ["Docker", "SQL", "CSS"],
+        "primaryColor": "#2196f3 or #1976d2 or #1572b6",
+        "heroGradient": "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%)"
+      }
+    ],
+    "orangeTheme": [
+      {
+        "names": ["AWS", "Metodologias", "Herramientas"],
+        "primaryColor": "#ff9800",
+        "heroGradient": "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%)"
+      }
+    ],
+    "greenTheme": [
+      {
+        "names": ["SpringBoot", "Proyecto", "Node.js", "MongoDB"],
+        "primaryColor": "#4caf50 to #76c041 to #13aa52",
+        "heroGradient": "linear-gradient(135deg, #e8f5e9 0%, variants up to #c8e6c9)"
+      }
+    ],
+    "cyanTheme": [
+      {
+        "names": ["React", "TailwindCSS"],
+        "primaryColor": "#61dafb to #0097a7",
+        "heroGradient": "linear-gradient(135deg, #e0f7fa or #ecf9ff)"
+      }
+    ],
+    "redTheme": [
+      {
+        "names": ["Angular", "HTML"],
+        "primaryColor": "#dd0031 to #e44d26",
+        "heroGradient": "linear-gradient(135deg, #ffd4e5 or #fce4ec)"
+      }
+    ],
+    "pinkTheme": [
+      {
+        "names": ["Arquitectura"],
+        "primaryColor": "#e91e63",
+        "heroGradient": "linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%)"
+      }
+    ],
+    "redOrangeTheme": [
+      {
+        "names": ["Git"],
+        "primaryColor": "#e8491f",
+        "heroGradient": "linear-gradient(135deg, #ffe8de 0%, #ffd4c1 50%, #ffcbb0 100%)"
+      }
+    ]
+  },
+  "suggestedGradientEnhancements": [
+    {
+      "landing": "Java",
+      "currentHero": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #d1c4e9 100%)",
+      "suggestedEnhanced": "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 40%, #c984d1 70%, #9c27b0 100%)",
+      "rationale": "Add primary color endpoint for visual emphasis"
+    },
+    {
+      "landing": "Docker",
+      "currentHero": "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%)",
+      "suggestedEnhanced": "linear-gradient(135deg, #e3f2fd 0%, #81d4fa 40%, #4fc3f7 70%, #2196f3 100%)",
+      "rationale": "Progressive color deepening with brand color"
+    },
+    {
+      "landing": "React",
+      "currentHero": "linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 50%, #81d4fa 100%)",
+      "suggestedEnhanced": "linear-gradient(135deg, #e0f7fa 0%, #80deea 35%, #4dd0e1 65%, #00b8d4 100%)",
+      "rationale": "Enhance cyan tones matching React brand better"
+    },
+    {
+      "landing": "AWS",
+      "currentHero": "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%)",
+      "suggestedEnhanced": "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 40%, #ffb74d 70%, #ff9800 100%)",
+      "rationale": "Deeper orange progression to primary color"
+    },
+    {
+      "landing": "Git",
+      "currentHero": "linear-gradient(135deg, #ffe8de 0%, #ffd4c1 50%, #ffcbb0 100%)",
+      "suggestedEnhanced": "linear-gradient(135deg, #ffe8de 0%, #ffb3a1 40%, #ff8a65 70%, #e8491f 100%)",
+      "rationale": "Add depth with darker oranges reflecting brand"
+    },
+    {
+      "landing": "HTML",
+      "currentHero": "linear-gradient(135deg, #fce4ec 0%, #ffccb3 50%, #ffb3a1 100%)",
+      "suggestedEnhanced": "linear-gradient(135deg, #fce4ec 0%, #ffb3a1 40%, #ff8a65 65%, #e44d26 100%)",
+      "rationale": "Stronger red-orange progression for HTML brand"
+    }
+  ]
+}

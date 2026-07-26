@@ -1,5 +1,6 @@
 import { LessonProyectoRetoGeneric } from '../components/LessonProyectoRetoGeneric';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
+import './LessonProyectoReto.css';
 
 const sections = [
   {
@@ -11,7 +12,7 @@ const sections = [
         </p>
 
         <h4>Actividades de Sprint Planning:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Sprint Planning Meeting (2-4 horas)</li>
           <li>Seleccionar stories suficientes (basado en velocidad del equipo)</li>
           <li>Desglosar stories en tareas técnicas</li>
@@ -37,7 +38,7 @@ const sections = [
         </p>
 
         <h4>Qué incluir en cada User Story:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Descripción clara: "Como X, quiero Y, para Z"</li>
           <li>Criterios de Aceptación específicos y medibles</li>
           <li>Estimación en puntos (Fibonacci: 1, 2, 3, 5, 8, 13)</li>
@@ -46,7 +47,7 @@ const sections = [
         </ul>
 
         <h4>Checklist del Backlog:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Historias ordenadas por prioridad</li>
           <li>Cada historia tiene criterios de aceptación</li>
           <li>Estimación realista</li>
@@ -66,7 +67,7 @@ const sections = [
         </p>
 
         <h4>Proceso de Desarrollo (ciclo):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>1. Crear rama feature:</strong> git checkout -b feature/story-name</li>
           <li><strong>2. Desarrollo TDD:</strong> Tests primero → Implementación → Refactorizar</li>
           <li><strong>3. Code Review:</strong> Pull request → Revisión por pares → Feedback</li>
@@ -75,7 +76,7 @@ const sections = [
         </ul>
 
         <h4>Definición de "Done":</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Código escrito y testeado</li>
           <li>Code review aprobado (2+ personas)</li>
           <li>Tests pasan (unit + integration)</li>
@@ -95,14 +96,14 @@ const sections = [
         </p>
 
         <h4>Formato de cada persona (3 preguntas):</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>¿Qué hice ayer?</li>
           <li>¿Qué haré hoy?</li>
           <li>¿Tengo bloqueadores?</li>
         </ul>
 
         <h4>Duración y reglas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>15 minutos máximo (time-boxed)</li>
           <li>Problemas complejos → reunión aparte DESPUÉS del standup</li>
           <li>Registro en Jira/Taiga del progreso</li>
@@ -121,7 +122,7 @@ const sections = [
         </p>
 
         <h4>Pipeline stages típico:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li><strong>Build:</strong> Compilar código, descargar dependencias, validar sintaxis</li>
           <li><strong>Test Automatizados:</strong> Unit tests + Integration tests, coverage mínimo 70%</li>
           <li><strong>Análisis de Código:</strong> SonarQube/Checkstyle, deuda técnica, vulnerabilidades</li>
@@ -130,7 +131,7 @@ const sections = [
         </ul>
 
         <h4>Herramientas recomendadas:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>GitHub Actions (recomendado, gratuito)</li>
           <li>GitLab CI</li>
           <li>Jenkins</li>
@@ -149,7 +150,7 @@ const sections = [
         </p>
 
         <h4>Actividades de Sprint Review:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Demostración de features completadas (DEMO funcional)</li>
           <li>Preguntas y feedback del cliente</li>
           <li>Priorización de próximos items del backlog</li>
@@ -158,7 +159,7 @@ const sections = [
         </ul>
 
         <h4>Asistentes:</h4>
-        <ul style={{ lineHeight: '1.8' }}>
+        <ul className="reto-list">
           <li>Product Owner</li>
           <li>Equipo Desarrollo</li>
           <li>Stakeholders / Cliente</li>

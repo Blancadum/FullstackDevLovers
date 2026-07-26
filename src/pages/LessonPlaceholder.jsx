@@ -1,4 +1,4 @@
-import { LessonTemplate, InfoBox } from '../components';
+import { LessonTemplate, InfoBox, LessonConceptGrid, LessonKeyPoints, LessonExercises, LessonSummary } from '../components';
 import { LessonNavigation } from '../components/LessonNavigation';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../hooks/useLessonNavigation';
@@ -14,13 +14,11 @@ const LESSON_CONTENT = {
     nextTitle: 'Sprints y Planning',
     concepts: [
       {
-        icon: '🎯',
         title: 'Product Owner',
         definition: 'Responsable del qué (requisitos, prioridades)',
         example: 'Define qué funcionalidades entrar en cada sprint'
       },
       {
-        icon: '👥',
         title: 'Scrum Master',
         definition: 'Facilitador que remueve impedimentos',
         example: 'Asegura que el equipo tenga todo lo necesario para trabajar'
@@ -67,7 +65,6 @@ const LESSON_CONTENT = {
     nextTitle: 'Nombres Significativos',
     concepts: [
       {
-        icon: '📅',
         title: 'Sprint Planning',
         definition: 'Reunión donde se planifica el sprint',
         example: '2 horas para sprint de 2 semanas'
@@ -379,8 +376,7 @@ const LESSON_CONTENT = {
         )
       }
     ]
-  },
-};
+  }};
 
 export function LessonPlaceholder() {
   const breadcrumbs = useBreadcrumb();

@@ -83,7 +83,7 @@ export function TimelineTabbed() {
             className={`timeline-tab ${activePhase === phase.id ? 'active' : ''}`}
             onClick={() => setActivePhase(phase.id)}
             style={{
-              borderBottomColor: activePhase === phase.id ? phase.color : 'transparent'
+              '--tab-color': activePhase === phase.id ? phase.color : 'transparent'
             }}
           >
             <div className="tab-label">{phase.title}</div>
@@ -95,7 +95,7 @@ export function TimelineTabbed() {
       <div className="timeline-content">
         <div
           className="timeline-header"
-          style={{ borderLeftColor: currentPhase.color }}
+          style={{ '--phase-color': currentPhase.color }}
         >
           <h3 className="timeline-title">{currentPhase.title}</h3>
           <p className="timeline-subtitle">{currentPhase.subtitle}</p>
@@ -106,7 +106,7 @@ export function TimelineTabbed() {
             <li key={index} className="timeline-item">
               <span
                 className="timeline-bullet"
-                style={{ backgroundColor: currentPhase.color }}
+                style={{ '--bullet-color': currentPhase.color }}
               />
               {item}
             </li>

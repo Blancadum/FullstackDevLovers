@@ -1,52 +1,71 @@
-.key-points {
-  background: linear-gradient(135deg, #ff006e 0%, #ffffff 100%);
+.key-points-container {
+  background: linear-gradient(135deg, #ff006e 0%, #ffc0cb 100%);
   color: white;
   border-radius: 8px;
   padding: 2rem;
   margin: 2rem 0;
+  border-left: 4px solid #ff006e;
 }
 
-.key-points h3 {
+.key-points-title {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
 }
 
-.key-points ul {
+.key-points-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.key-points li {
+.key-points-item {
   margin-bottom: 1rem;
   line-height: 1.6;
+  color: white;
 }
 
-.key-points li:last-child {
+.key-points-item:last-child {
   margin-bottom: 0;
 }
 
-.point-number {
+.key-points-number {
   font-weight: bold;
   margin-right: 0.5rem;
+  display: inline-block;
+  min-width: 1.5rem;
+  text-align: center;
 }
 
-.point-text {
+.key-points-text {
   display: inline;
 }
 
-@media (max-width: 768px) {
-  .key-points {
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .key-points-container {
+    background: linear-gradient(135deg, #7f0343 0%, #4a1729 100%);
+    border-left-color: #ff006e;
+  }
+
+  .key-points-title {
+    color: #fca5d0;
+  }
+
+  .key-points-item {
+    color: #f5d5e8;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .key-points-container {
     padding: 1.5rem;
   }
 
-  .key-points h3 {
+  .key-points-title {
     font-size: 1.1rem;
   }
-
-  .key-points li {
-    margin-bottom: 0.75rem;
-  }
-
 }

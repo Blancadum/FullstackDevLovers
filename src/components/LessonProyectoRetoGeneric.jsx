@@ -4,6 +4,7 @@ import { LessonNavigation } from './LessonNavigation';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../hooks/useLessonNavigation';
 import { PROYECTOS } from '../config/proyectosData';
+import './LessonProyectoRetoGeneric.css';
 
 /**
  * Componente genérico para todos los RETOS 1-8
@@ -46,37 +47,28 @@ export function LessonProyectoRetoGeneric({
         breadcrumbs={breadcrumbs}
         sections={sections}
       />
-      <div style={{ padding: '2rem', backgroundColor: '#f8f9fa', marginTop: '2rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h3>Selecciona un proyecto para ver detalles:</h3>
-          <select
-            value={proyectoSeleccionado}
-            onChange={(e) => setProyectoSeleccionado(e.target.value)}
-            style={{
-              padding: '0.75rem',
-              fontSize: '1rem',
-              borderRadius: '4px',
-              border: '1px solid #ddd',
-              marginBottom: '1.5rem'
-            }}
-          >
-            {proyectosList.map(p => (
-              <option key={p.value} value={p.value}>
-                {p.label}
-              </option>
-            ))}
-          </select>
+      <div className="reto-details-container">
+        <div className="reto-details-wrapper">
+          <div className="reto-project-selector">
+            <h3>Selecciona un proyecto para ver detalles:</h3>
+            <select
+              value={proyectoSeleccionado}
+              onChange={(e) => setProyectoSeleccionado(e.target.value)}
+              className="reto-select"
+            >
+              {proyectosList.map(p => (
+                <option key={p.value} value={p.value}>
+                  {p.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <div style={{
-            backgroundColor: '#fff',
-            padding: '1.5rem',
-            borderRadius: '8px',
-            border: '1px solid #e0e0e0'
-          }}>
-            <h4 style={{ marginTop: 0, color: '#1976d2' }}>
+          <div className="reto-details-card">
+            <h4>
               {proyecto.nombre} - Detalles
             </h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+            <div className="reto-details-grid">
               <div><strong>Presupuesto:</strong> ${proyecto.presupuesto}</div>
               <div><strong>Horas:</strong> {proyecto.horas}h</div>
               {proyecto.retoData && (
@@ -148,7 +140,7 @@ function renderRetoDetails(retoData, retoNumber) {
     details.push(
       <div key="1"><strong>Features:</strong> {retoData.completionMetrics.features}%</div>,
       <div key="2"><strong>Coverage:</strong> {retoData.completionMetrics.coverage}%</div>,
-      <div key="3"><strong>Status:</strong> Ready for Production ✅</div>
+      <div key="3"><strong>Status:</strong> Ready for Production </div>
     );
   }
 

@@ -10,7 +10,7 @@ export function EvaluacionGeneral() {
     {
       id: 'aws',
       titulo: 'Test AWS',
-      icono: '✅',
+      icono: '',
       color: '#2196F3',
       descripcion: '10 preguntas sobre conceptos clave de AWS: EC2, S3, RDS, Lambda, IAM, VPC, regiones, modelos de precios y servicios fundamentales. Incluye explicaciones detalladas para cada respuesta.',
       ruta: '/aws/evaluacion',
@@ -19,7 +19,7 @@ export function EvaluacionGeneral() {
     {
       id: 'java',
       titulo: 'Test Java',
-      icono: '☕',
+      icono: '',
       color: '#F89917',
       descripcion: 'Evaluación sobre fundamentos de Java: OOP, clases, interfaces, herencia, polimorfismo, excepciones y buenos prácticos. Refuerza tus conocimientos de programación.',
       ruta: '/java/evaluacion',
@@ -29,7 +29,7 @@ export function EvaluacionGeneral() {
     {
       id: 'git',
       titulo: 'Test Git',
-      icono: '🔀',
+      icono: '',
       color: '#F1502F',
       descripcion: 'Evaluación sobre Git y control de versiones: commits, branches, merge, rebase, pull requests y workflows colaborativos en equipos de desarrollo.',
       ruta: '/git/evaluacion',
@@ -39,7 +39,7 @@ export function EvaluacionGeneral() {
     {
       id: 'database',
       titulo: 'Test SQL',
-      icono: '🗄️',
+      icono: '',
       color: '#336791',
       descripcion: 'Test sobre SQL y diseño de bases de datos: SELECT, JOIN, índices, normalización, transacciones ACID y relaciones en bases de datos relacionales.',
       ruta: '/database/evaluacion',

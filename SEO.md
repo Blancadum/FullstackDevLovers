@@ -25,7 +25,7 @@ export function MiLeccion() {
         title="Título de la Lección"
         description="Descripción de 150-160 caracteres"
         keywords="keyword1, keyword2, keyword3"
-        url="https://javabackendlearning.com/ruta/leccion"
+        url="https://fullstackdevlovers.com/ruta/leccion"
       />
       <Lesson {...props}>
         {/* Contenido */}
@@ -44,18 +44,15 @@ URLs siguiendo best practices de SEO:
 
 **Ejemplos:**
 - ❌ `/lesson?id=3&section=basics`
-- ✅ `/java-fundamentos/control-flujo`
+- ✅ `/java?section=basico&lesson=control-flujo`
 
-**Rutas actuales:**
+**Rutas actuales (estructura jerárquica por categoría):**
 ```
-/git/basicos
-/git/avanzado
-/java-fundamentos/tipos-datos
-/java-fundamentos/control-flujo
-/java-poo/herencia
-/java-avanzado/colecciones
-/java-bd/jdbc
-/entornos/uml
+/backend/java?section=basico
+/backend/sql?section=basicos
+/backend/spring-boot?section=fundamentos
+/versionamiento/git?section=basicos
+/metodologias-herramientas?section=herramientas
 ```
 
 ### 3. **Metadatos de Lecciones**
@@ -107,7 +104,7 @@ Archivo que lista todas las URLs del sitio para indexación.
 
 **Registrar en Google Search Console:**
 ```
-https://javabackendlearning.com/sitemap.xml
+https://fullstackdevlovers.com/sitemap.xml
 ```
 
 ### 6. **robots.txt**
@@ -168,7 +165,7 @@ Cuando crees una nueva lección, asegúrate de:
     title={metadata.title}
     description={metadata.description}
     keywords={metadata.keywords}
-    url={`https://javabackendlearning.com/ruta/leccion`}
+    url={`https://fullstackdevlovers.com/ruta/leccion`}
   />
   ```
 
@@ -229,11 +226,11 @@ Registra estas herramientas en Google Search Console:
    1. Ir a Google Search Console
    2. Seleccionar propiedad
    3. Ir a Sitemaps
-   4. Agregar/actualizar: `https://javabackendlearning.com/sitemap.xml`
+   4. Agregar/actualizar: `https://fullstackdevlovers.com/sitemap.xml`
 
 4. **Verificar indexación:**
    ```
-   site:javabackendlearning.com
+   site:fullstackdevlovers.com
    ```
 
 ---
@@ -255,67 +252,4 @@ Registra estas herramientas en Google Search Console:
 
 ---
 
-## 📱 URLs Amigables Generadas
-
-**Página Principal:**
-```
-https://javabackendlearning.com/
-```
-
-**Módulos:**
-```
-https://javabackendlearning.com/git
-https://javabackendlearning.com/java-fundamentos
-https://javabackendlearning.com/java-poo
-https://javabackendlearning.com/java-avanzado
-https://javabackendlearning.com/java-bd
-https://javabackendlearning.com/spring-boot
-https://javabackendlearning.com/entornos
-https://javabackendlearning.com/practicas-arquitectura
-```
-
-**Lecciones (30+):**
-```
-https://javabackendlearning.com/git/basicos
-https://javabackendlearning.com/git/avanzado
-https://javabackendlearning.com/java-fundamentos/funcionamiento
-https://javabackendlearning.com/java-fundamentos/tipos-datos
-https://javabackendlearning.com/java-fundamentos/control-flujo
-...y más
-```
-
----
-
-## ⚙️ Configuración para Producción
-
-Cuando despliegues a producción:
-
-1. **Actualizar dominio en SEO.jsx:**
-   ```jsx
-   url = 'https://javabackendlearning.com'  // ← Tu dominio real
-   ```
-
-2. **Verificar en Google Search Console**
-
-3. **Agregar schema.org más rico (opcional):**
-   ```json
-   {
-     "@context": "https://schema.org",
-     "@type": "Course",
-     "name": "Java Backend Learning",
-     "provider": {
-       "@type": "Organization",
-       "name": "Java Backend Learning"
-     }
-   }
-   ```
-
-4. **Implementar analytics:**
-   - Google Analytics 4
-   - Google Search Console
-   - Hotjar (heatmaps)
-
----
-
-**Última actualización:** 2026-07-04
-**Versión:** 1.0
+**Última actualización:** 2026-07-24

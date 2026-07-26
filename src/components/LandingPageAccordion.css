@@ -1,0 +1,218 @@
+.landing-accordion-wrapper {
+  --theme-color: #2196f3;
+  --theme-light: #e3f2fd;
+  --theme-border: 2px solid #2196f3;
+}
+
+.accordion-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.accordion-item {
+  border: var(--theme-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.accordion-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background-color 0.2s;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.accordion-button:hover {
+  background-color: #f5f5f5;
+}
+
+.accordion-button.expanded {
+  background-color: var(--theme-light);
+}
+
+.accordion-icon-section {
+  font-size: 1.8rem;
+  min-width: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.accordion-text-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.accordion-title {
+  margin: 0;
+  color: var(--theme-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.accordion-description {
+  margin: 0.25rem 0 0 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+  color: var(--theme-color);
+  min-width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  background-color: #fafafa;
+  border-top: var(--theme-border);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lesson-button {
+  padding: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.lesson-button:hover {
+  background-color: var(--theme-light);
+  border-color: var(--theme-color);
+  transform: translateX(4px);
+}
+
+.lesson-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.lesson-arrow {
+  margin-left: auto;
+  color: var(--theme-color);
+  font-size: 1.2rem;
+}
+
+/* Conceptos Section */
+.concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.concept-card {
+  background-color: var(--theme-light);
+  border: var(--theme-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.concept-card:hover {
+  transform: translateY(-2px);
+}
+
+.concept-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.concept-title {
+  margin: 0 0 0.75rem 0;
+  color: var(--theme-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.concept-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Landing section styles */
+.landing-section-wrapper {
+  margin-bottom: 2rem;
+}
+
+.landing-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.landing-lesson-link {
+  --link-color: #2196f3;
+
+  color: var(--link-color);
+  margin-bottom: 0;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  transition: text-decoration 0.2s ease;
+}
+
+.landing-lesson-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .concepts-grid {
+    grid-template-columns: 1fr;
+  }
+}

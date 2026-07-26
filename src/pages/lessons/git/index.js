@@ -13,3 +13,7 @@ export { LessonGitPracticaMerge } from './LessonGitPracticaMerge';
 export { LessonGitPushPullFetch } from './LessonGitPushPullFetch';
 export { LessonGitPullRequests } from './LessonGitPullRequests';
 export { LessonGitPlataformasRemotas } from './LessonGitPlataformasRemotas';
+export { LessonGitWorkflow } from './LessonGitWorkflow';
+export { LessonGitGitHub } from './LessonGitGitHub';
+export { LessonGitGitLab } from './LessonGitGitLab';
+export { LessonGitBitbucket } from './LessonGitBitbucket';
