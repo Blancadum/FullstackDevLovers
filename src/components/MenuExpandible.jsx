@@ -47,6 +47,10 @@ export function MenuExpandible({ defaultOpen = null }) {
 
   return (
     <div id="menu" className="menu-expandible">
+      <div className="menu-expandible-header">
+        <h2>Explora Todas las Tecnologías</h2>
+        <p>Acceso rápido a cada categoría de aprendizaje con sus módulos y contenidos</p>
+      </div>
       <div className="menu-expandible-container">
         {moduleCategories.map((category) => {
           const isExpanded = expandedCategory === category.id;

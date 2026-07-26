@@ -3,6 +3,7 @@
  * Ruta: Git → Java → SQL → Spring Boot
  */
 import gitLogoImg from '../assets/images/logos/git-logo.png';
+import githubLogoImg from '../assets/images/logos/github.jpeg';
 import blancaJavaImg from '../assets/images/header/blancajava.jpeg';
 
 export const modulesWithLessons = [
@@ -255,6 +256,56 @@ export const modulesWithLessons = [
       { title: 'GitHub', link: '/control-versiones/git/avanzado/github' },
       { title: 'GitLab', link: '/control-versiones/git/avanzado/gitlab' },
       { title: 'Bitbucket', link: '/control-versiones/git/avanzado/bitbucket' },
+    ]},
+  {
+    id: 'github',
+    name: 'GitHub',
+    icon: githubLogoImg,
+    description: 'Plataforma colaborativa: repositorios, flujos de trabajo y colaboración en equipo',
+    landingPage: '/control-versiones/github',
+    sections: [
+      {
+        id: 'basicos',
+        name: 'GitHub Básicos',
+        description: 'Configuración inicial, repositorios y primeros pasos con GitHub',
+        lessons: [
+          { title: 'Qué es GitHub y por qué usarlo', link: '/control-versiones/github/basicos/intro' },
+          { title: 'Crear una cuenta y configurar perfil', link: '/control-versiones/github/basicos/crear-cuenta' },
+          { title: 'Crear y clonar repositorios en GitHub', link: '/control-versiones/github/basicos/crear-clonar-repos' },
+          { title: 'Push, Pull y sincronización', link: '/control-versiones/github/basicos/push-pull' },
+        ]},
+      {
+        id: 'colaboracion',
+        name: 'Colaboración y Flujos de Trabajo',
+        description: 'Pull requests, issues, forks y trabajo en equipo profesional',
+        lessons: [
+          { title: 'Pull Requests: crear y gestionar', link: '/control-versiones/github/colaboracion/pull-requests' },
+          { title: 'Forks y contribuciones', link: '/control-versiones/github/colaboracion/forks' },
+          { title: 'Issues y Project Boards', link: '/control-versiones/github/colaboracion/issues' },
+          { title: 'GitHub Flow: flujo de trabajo profesional', link: '/control-versiones/github/colaboracion/github-flow' },
+        ]},
+      {
+        id: 'avanzado',
+        name: 'Funcionalidades Avanzadas',
+        description: 'Actions, workflows, seguridad y automatización',
+        lessons: [
+          { title: 'GitHub Actions: automatización y CI/CD', link: '/control-versiones/github/avanzado/actions' },
+          { title: 'Protección de ramas y políticas', link: '/control-versiones/github/avanzado/branch-protection' },
+          { title: 'Seguridad y tokens personales', link: '/control-versiones/github/avanzado/seguridad' },
+        ]},
+    ],
+    lessons: [
+      { title: 'Qué es GitHub y por qué usarlo', link: '/control-versiones/github/basicos/intro' },
+      { title: 'Crear una cuenta y configurar perfil', link: '/control-versiones/github/basicos/crear-cuenta' },
+      { title: 'Crear y clonar repositorios en GitHub', link: '/control-versiones/github/basicos/crear-clonar-repos' },
+      { title: 'Push, Pull y sincronización', link: '/control-versiones/github/basicos/push-pull' },
+      { title: 'Pull Requests: crear y gestionar', link: '/control-versiones/github/colaboracion/pull-requests' },
+      { title: 'Forks y contribuciones', link: '/control-versiones/github/colaboracion/forks' },
+      { title: 'Issues y Project Boards', link: '/control-versiones/github/colaboracion/issues' },
+      { title: 'GitHub Flow: flujo de trabajo profesional', link: '/control-versiones/github/colaboracion/github-flow' },
+      { title: 'GitHub Actions: automatización y CI/CD', link: '/control-versiones/github/avanzado/actions' },
+      { title: 'Protección de ramas y políticas', link: '/control-versiones/github/avanzado/branch-protection' },
+      { title: 'Seguridad y tokens personales', link: '/control-versiones/github/avanzado/seguridad' },
     ]},
   {
     id: 'java',
@@ -729,7 +780,7 @@ export const modulesWithLessons = [
     id: 'metodologias',
     name: 'Metodologías & Procesos',
     description: 'Prácticas, metodologías y procesos para desarrollo profesional',
-    landingPage: '/herramientas/metodologias',
+    landingPage: '/metodologias',
     sections: [
       {
         id: 'agile-scrum',
@@ -737,9 +788,9 @@ export const modulesWithLessons = [
         fullName: 'Metodología Agile y SCRUM',
         description: 'Metodología ágil para gestión de proyectos iterativos',
         lessons: [
-          { title: 'Introducción a Agile', link: '/herramientas/metodologias/agile-scrum/introduccion' },
-          { title: 'SCRUM Framework', link: '/herramientas/metodologias/agile-scrum/scrum' },
-          { title: 'Sprints y Planning', link: '/herramientas/metodologias/agile-scrum/sprints' },
+          { title: 'Introducción a Agile', link: '/metodologias/agile-scrum/introduccion' },
+          { title: 'SCRUM Framework', link: '/metodologias/agile-scrum/scrum' },
+          { title: 'Sprints y Planning', link: '/metodologias/agile-scrum/sprints' },
         ]},
       {
         id: 'clean-code',
@@ -747,12 +798,12 @@ export const modulesWithLessons = [
         fullName: 'Código Limpio y Mantenible',
         description: 'Principios y prácticas para escribir código de calidad',
         lessons: [
-          { title: 'Nombres Significativos', link: '/herramientas/metodologias/clean-code/nombres' },
-          { title: 'Funciones Limpias', link: '/herramientas/metodologias/clean-code/funciones' },
-          { title: 'Estructura y Formato', link: '/herramientas/metodologias/clean-code/estructura' },
-          { title: 'SOLID y Refactorización', link: '/herramientas/metodologias/clean-code/solid' },
-          { title: 'Patrones de Diseño', link: '/herramientas/metodologias/clean-code/patrones' },
-          { title: 'Antipatrones: Qué NO Hacer', link: '/herramientas/metodologias/clean-code/antipatrones' },
+          { title: 'Nombres Significativos', link: '/metodologias/clean-code/nombres' },
+          { title: 'Funciones Limpias', link: '/metodologias/clean-code/funciones' },
+          { title: 'Estructura y Formato', link: '/metodologias/clean-code/estructura' },
+          { title: 'SOLID y Refactorización', link: '/metodologias/clean-code/solid' },
+          { title: 'Patrones de Diseño', link: '/metodologias/clean-code/patrones' },
+          { title: 'Antipatrones: Qué NO Hacer', link: '/metodologias/clean-code/antipatrones' },
         ]},
       {
         id: 'testing',
@@ -760,9 +811,9 @@ export const modulesWithLessons = [
         fullName: 'Pruebas de Software',
         description: 'Estrategias y tipos de testing para garantizar calidad',
         lessons: [
-          { title: 'Testing Unitario', link: '/herramientas/metodologias/testing/unitario' },
-          { title: 'Testing de Integración', link: '/herramientas/metodologias/testing/integracion' },
-          { title: 'Testing de Aceptación', link: '/herramientas/metodologias/testing/aceptacion' },
+          { title: 'Testing Unitario', link: '/metodologias/testing/unitario' },
+          { title: 'Testing de Integración', link: '/metodologias/testing/integracion' },
+          { title: 'Testing de Aceptación', link: '/metodologias/testing/aceptacion' },
         ]},
       {
         id: 'devops',
@@ -770,27 +821,27 @@ export const modulesWithLessons = [
         fullName: 'DevOps y CI/CD',
         description: 'Prácticas para automatización, integración y despliegue continuo',
         lessons: [
-          { title: 'Introducción a DevOps', link: '/herramientas/metodologias/devops/introduccion' },
-          { title: 'CI/CD Pipelines', link: '/herramientas/metodologias/devops/cicd' },
-          { title: 'Monitoreo y Logs', link: '/herramientas/metodologias/devops/monitoreo' },
+          { title: 'Introducción a DevOps', link: '/metodologias/devops/introduccion' },
+          { title: 'CI/CD Pipelines', link: '/metodologias/devops/cicd' },
+          { title: 'Monitoreo y Logs', link: '/metodologias/devops/monitoreo' },
         ]},
     ],
     lessons: [
-      { title: 'Introducción a Agile', link: '/herramientas/metodologias/agile-scrum/introduccion' },
-      { title: 'SCRUM Framework', link: '/herramientas/metodologias/agile-scrum/scrum' },
-      { title: 'Sprints y Planning', link: '/herramientas/metodologias/agile-scrum/sprints' },
-      { title: 'Nombres Significativos', link: '/herramientas/metodologias/clean-code/nombres' },
-      { title: 'Funciones Limpias', link: '/herramientas/metodologias/clean-code/funciones' },
-      { title: 'Estructura y Formato', link: '/herramientas/metodologias/clean-code/estructura' },
-      { title: 'SOLID y Refactorización', link: '/herramientas/metodologias/clean-code/solid' },
-      { title: 'Patrones de Diseño', link: '/herramientas/metodologias/clean-code/patrones' },
-      { title: 'Antipatrones: Qué NO Hacer', link: '/herramientas/metodologias/clean-code/antipatrones' },
-      { title: 'Testing Unitario', link: '/herramientas/metodologias/testing/unitario' },
-      { title: 'Testing de Integración', link: '/herramientas/metodologias/testing/integracion' },
-      { title: 'Testing de Aceptación', link: '/herramientas/metodologias/testing/aceptacion' },
-      { title: 'Introducción a DevOps', link: '/herramientas/metodologias/devops/introduccion' },
-      { title: 'CI/CD Pipelines', link: '/herramientas/metodologias/devops/cicd' },
-      { title: 'Monitoreo y Logs', link: '/herramientas/metodologias/devops/monitoreo' },
+      { title: 'Introducción a Agile', link: '/metodologias/agile-scrum/introduccion' },
+      { title: 'SCRUM Framework', link: '/metodologias/agile-scrum/scrum' },
+      { title: 'Sprints y Planning', link: '/metodologias/agile-scrum/sprints' },
+      { title: 'Nombres Significativos', link: '/metodologias/clean-code/nombres' },
+      { title: 'Funciones Limpias', link: '/metodologias/clean-code/funciones' },
+      { title: 'Estructura y Formato', link: '/metodologias/clean-code/estructura' },
+      { title: 'SOLID y Refactorización', link: '/metodologias/clean-code/solid' },
+      { title: 'Patrones de Diseño', link: '/metodologias/clean-code/patrones' },
+      { title: 'Antipatrones: Qué NO Hacer', link: '/metodologias/clean-code/antipatrones' },
+      { title: 'Testing Unitario', link: '/metodologias/testing/unitario' },
+      { title: 'Testing de Integración', link: '/metodologias/testing/integracion' },
+      { title: 'Testing de Aceptación', link: '/metodologias/testing/aceptacion' },
+      { title: 'Introducción a DevOps', link: '/metodologias/devops/introduccion' },
+      { title: 'CI/CD Pipelines', link: '/metodologias/devops/cicd' },
+      { title: 'Monitoreo y Logs', link: '/metodologias/devops/monitoreo' },
     ]},
   {
     id: 'mongodb',
@@ -1061,3 +1112,20 @@ export const moduleMap = new Map(modulesWithLessons.map(m => [m.id, m]));
  * @returns {object} El módulo completo o undefined
  */
 export const getModule = (moduleId) => moduleMap.get(moduleId);
+
+/**
+ * Obtener la primera lección de una sección del módulo
+ * Usado para redirigir cuando clicas en una sección en ModuleSwitch
+ * @param {string} moduleId - ID del módulo (ej: 'java')
+ * @param {string} sectionId - ID de la sección (ej: 'introduccion', 'oop')
+ * @returns {string|null} Link a la primera lección o null si no existe
+ */
+export const getFirstLessonOfSection = (moduleId, sectionId) => {
+  const module = getModule(moduleId);
+  if (!module || !module.sections) return null;
+
+  const section = module.sections.find(s => s.id === sectionId);
+  if (!section || !section.lessons || section.lessons.length === 0) return null;
+
+  return section.lessons[0].link;
+};

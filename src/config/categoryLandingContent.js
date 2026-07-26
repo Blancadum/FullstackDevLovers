@@ -870,7 +870,7 @@ export const categoryLandingContent = {
           description: 'Metodología ágil para gestión de proyectos iterativos y entregas frecuentes',
           purpose: 'Organizar equipos, entregar rápido, adaptarse a cambios. Sprints, daily standups, retrospectivas',
           logo: '/src/assets/images/logos/procesos.png',
-          learningPath: '/herramientas/metodologias',
+          learningPath: '/metodologias',
           demand: 'Fundamental'
         },
         {
@@ -878,7 +878,7 @@ export const categoryLandingContent = {
           description: 'Principios SOLID, naming, funciones pequeñas. Código que otros desarrolladores entienden',
           purpose: 'Código mantenible, reducir bugs, facilitar refactoring. Ahorra horas en debugging y maintenance',
           logo: '/src/assets/images/logos/procesos.png',
-          learningPath: '/herramientas/metodologias',
+          learningPath: '/metodologias',
           demand: 'Muy alta'
         },
         {
@@ -886,7 +886,7 @@ export const categoryLandingContent = {
           description: 'Unit testing, integration testing, TDD. Garantiza calidad y previene bugs',
           purpose: 'Deployments confiables, menos bugs en producción. Tests actúan como documentación',
           logo: '/src/assets/images/logos/procesos.png',
-          learningPath: '/herramientas/metodologias',
+          learningPath: '/metodologias',
           demand: 'Alta'
         }
       ]

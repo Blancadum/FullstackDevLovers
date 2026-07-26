@@ -1,0 +1,130 @@
+{
+  "whyReact": {
+    "title": "¿Por qué React?",
+    "subtitle": "La librería JavaScript más robusta para construir interfaces dinámicas",
+    "benefits": [
+      {
+        "icon": "⚡",
+        "title": "Componentes reutilizables",
+        "description": "Construye tu interfaz con bloques independientes y autocontenidos. Cada componente gestiona su propio estado y lógica, eliminando código duplicado y reduciendo el tiempo de desarrollo."
+      },
+      {
+        "icon": "🚀",
+        "title": "Rendimiento optimizado",
+        "description": "React utiliza un Virtual DOM que calcula eficientemente qué cambios son necesarios en la interfaz. Solo actualiza lo que realmente cambió, garantizando una experiencia de usuario fluida incluso en aplicaciones complejas."
+      },
+      {
+        "icon": "📊",
+        "title": "Gestión de estado predecible",
+        "description": "El flujo unidireccional de datos (one-way data binding) hace tu código más predecible y fácil de depurar. Entiende exactamente cómo fluyen los datos a través de tu aplicación sin comportamientos inesperados."
+      },
+      {
+        "icon": "🔗",
+        "title": "Ecosistema maduro y profesional",
+        "description": "Amplio conjunto de librerías complementarias (Redux, React Router, Next.js) y herramientas de desarrollo. Comunidad global activa garantiza soluciones rápidas y best practices consolidadas."
+      },
+      {
+        "icon": "💼",
+        "title": "Demanda laboral altísima",
+        "description": "React es la librería más solicitada en ofertas de empleo para desarrolladores frontend. Dominarla te abre puertas a empresas tech líderes y startups innovadoras en todo el mundo."
+      },
+      {
+        "icon": "🎯",
+        "title": "Curva de aprendizaje accesible",
+        "description": "No necesitas ser un experto en programación avanzada. Sus conceptos fundamentales son claros y el progreso es gradual: desde componentes simples hasta arquitecturas escalables."
+      }
+    ]
+  },
+  "whatIsReact": {
+    "title": "¿Para qué sirve React?",
+    "subtitle": "Soluciones reales que React resuelve",
+    "description": "React es una librería de JavaScript para construir interfaces de usuario interactivas y dinámicas. Se utiliza para crear aplicaciones web donde el usuario interactúa constantemente con la interfaz, generando cambios en tiempo real sin recargar la página.",
+    "useCases": [
+      {
+        "category": "Single Page Applications (SPAs)",
+        "description": "Aplicaciones que cargan una sola página HTML y actualizan dinámicamente el contenido mediante JavaScript. Ejemplos: Gmail, Twitter, Trello. React es la base ideal para este patrón."
+      },
+      {
+        "category": "Dashboards y paneles administrativos",
+        "description": "Interfaces que muestran datos en tiempo real, con gráficos, tablas interactivas y actualizaciones frecuentes. React optimiza el rendimiento en estas arquitecturas complejas."
+      },
+      {
+        "category": "Aplicaciones en tiempo real",
+        "description": "Chats, sistemas de notificaciones, plataformas colaborativas. React maneja eficientemente los cambios constantes de datos y su sincronización con el servidor."
+      },
+      {
+        "category": "Aplicaciones móviles",
+        "description": "Con React Native, reutilizas tu conocimiento de React para crear aplicaciones nativas en iOS y Android usando JavaScript. Usa el mismo paradigma en múltiples plataformas."
+      },
+      {
+        "category": "Plataformas educativas",
+        "description": "Sistemas de aprendizaje interactivo, quizzes, ejercicios de código. React facilita la construcción de experiencias inmersivas y responsive que funcionan en cualquier dispositivo."
+      }
+    ]
+  },
+  "prerequisites": {
+    "title": "Conocimientos previos para usar React",
+    "subtitle": "Fundamentos que debes dominar",
+    "description": "React es una librería de JavaScript, no es un lenguaje independiente. Para aprender React con solidez, necesitas tener una base sólida en tecnologías web fundamentales. No es obligatorio ser un experto en todas ellas, pero debes estar cómodo con los conceptos básicos. Esta plataforma te acompañará en el repaso de cualquier tema que necesites reforzar.",
+    "detailedExplanation": "React se ejecuta en el navegador y manipula el HTML. Entender cómo funcionan HTML, CSS y JavaScript es fundamental para comprender qué hace React exactamente. Git te ayudará a versionar tu código como un profesional. Aunque puedes aprender React sin Node.js, lo utilizarás en casi todos los proyectos reales. Si vienes de un bootcamp, probablemente ya conoces la mayoría de estos, así que este es un buen momento para consolidar tu conocimiento.",
+    "technologies": [
+      {
+        "id": "html5",
+        "name": "HTML5",
+        "icon": "🏗️",
+        "color": "#E34C26",
+        "description": "Estructura base de las páginas web. React genera HTML dinámicamente, así que debes entender semántica, atributos y cómo se construye el DOM."
+      },
+      {
+        "id": "css3",
+        "name": "CSS3",
+        "icon": "🎨",
+        "color": "#563D7C",
+        "description": "Estilos y presentación. React no maneja CSS por ti, necesitarás conocer Flexbox, Grid, media queries y estilos en componentes."
+      },
+      {
+        "id": "javascript",
+        "name": "JavaScript (ES6+)",
+        "icon": "⚙️",
+        "color": "#F7DF1E",
+        "description": "Es lo que React es. Debes dominar arrow functions, destructuring, spread operator, async/await, Promises y las características modernas de JS."
+      },
+      {
+        "id": "git",
+        "name": "Git & GitHub",
+        "icon": "🔧",
+        "color": "#F1502F",
+        "description": "Control de versiones. Como desarrollador, versionar tu código es no negociable. Commits limpios, ramas y pulls requests son estándar laboral."
+      },
+      {
+        "id": "nodejs",
+        "name": "Node.js & npm",
+        "icon": "🟢",
+        "color": "#68A063",
+        "description": "Gestión de dependencias y herramientas de desarrollo. Con npm instalarás React y sus librerías complementarias. Entender package.json es esencial."
+      },
+      {
+        "id": "rest-api",
+        "name": "APIs REST & HTTP",
+        "icon": "🌐",
+        "color": "#0066CC",
+        "description": "Cómo se comunican las aplicaciones web modernas. React debe conectarse a servidores, entender peticiones GET/POST y respuestas JSON es fundamental."
+      },
+      {
+        "id": "json",
+        "name": "JSON",
+        "icon": "📦",
+        "color": "#000000",
+        "description": "Formato de intercambio de datos. La mayoría de APIs devuelven JSON, y React trabaja constantemente manipulando datos en este formato."
+      },
+      {
+        "id": "dom",
+        "name": "DOM & BOM",
+        "icon": "📄",
+        "color": "#FF6B00",
+        "description": "El Modelo de Objetos del Documento. React encapsula la manipulación del DOM, pero entender cómo el navegador estructura las páginas te hace un mejor desarrollador."
+      }
+    ]
+  },
+  "importantNote": "Esta categoría (React Frontend) no dispone de archivo de criterios específicos todavía. El contenido ha sido redactado siguiendo los criterios generales de la plataforma: estructura didáctica, ejemplos claros, tono profesional y rigor educativo."
+}

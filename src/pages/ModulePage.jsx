@@ -1,6 +1,6 @@
 import { Link, useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SEO, Breadcrumb, generateBreadcrumbItems, ProjectSectionsGrid, CategorySectionsGrid } from '../components';
+import { SEO, Breadcrumb, generateBreadcrumbItems, ProjectSectionsGrid, ModuleSwitch, ModuleClusters } from '../components';
 import blancaJavaImg from '../assets/images/header/blancajava.jpeg';
 import './ModulePage.css';
 
@@ -169,61 +169,50 @@ const moduleContent = {
     description: 'Domina Java: desde fundamentos hasta patrones avanzados y persistencia de datos',
     sections: [
       {
-        id: 'basico',
-        name: 'Básico',
-        fullName: 'Java Básico',
+        id: 'introduccion',
+        name: 'Java I: Introducción',
+        fullName: 'Java I: Introducción',
         description: 'Fundamentos esenciales: tipos de datos, control de flujo, strings, arrays y excepciones.',
         lessons: [
-          { title: 'Funcionamiento Interno de Java', link: '/backend/java/basico/funcionamiento' },
-          { title: 'Tipos de Datos', link: '/backend/java/basico/tipos-datos' },
-          { title: 'Control de Flujo', link: '/backend/java/basico/control-flujo' },
-          { title: 'Strings y Texto', link: '/backend/java/basico/strings' },
-          { title: 'Arrays y Matrices', link: '/backend/java/basico/arrays' },
-          { title: 'Scanner e Entrada', link: '/backend/java/basico/scanner' },
-          { title: 'Excepciones', link: '/backend/java/basico/excepciones' },
+          { title: 'Tipos de Datos', link: '/backend/java/introduccion/tipos-datos' },
+          { title: 'Control de Flujo', link: '/backend/java/introduccion/control-flujo' },
+          { title: 'Strings y Texto', link: '/backend/java/introduccion/strings' },
+          { title: 'Arrays y Matrices', link: '/backend/java/introduccion/arrays' },
+          { title: 'Scanner e Entrada', link: '/backend/java/introduccion/scanner' },
+          { title: 'Excepciones', link: '/backend/java/introduccion/excepciones' },
+          { title: 'Operadores', link: '/backend/java/introduccion/operadores' },
         ]},
       {
-        id: 'poo',
-        name: 'POO',
-        fullName: 'Programación Orientada a Objetos',
+        id: 'oop',
+        name: 'Java II: Orientación a Objetos',
+        fullName: 'Java II: Orientación a Objetos',
         description: 'Domina los pilares de la POO: clases, herencia, polimorfismo e interfaces.',
         lessons: [
-          { title: 'Clases y Objetos', link: '/backend/java/poo/clases-objetos' },
-          { title: 'Herencia', link: '/backend/java/poo/herencia' },
-          { title: 'Polimorfismo', link: '/backend/java/poo/polimorfismo' },
-          { title: 'Interfaces y Clases Abstractas', link: '/backend/java/poo/interfaces-abstractas' },
+          { title: 'Clases y Objetos', link: '/backend/java/oop/clases-objetos' },
+          { title: 'Herencia', link: '/backend/java/oop/herencia' },
+          { title: 'Polimorfismo', link: '/backend/java/oop/polimorfismo' },
+          { title: 'Interfaces y Clases Abstractas', link: '/backend/java/oop/interfaces-abstractas' },
         ]},
       {
         id: 'avanzado',
-        name: 'Avanzado',
-        fullName: 'Java Avanzado',
-        description: 'Conceptos avanzados: colecciones, lambdas, streams y genéricos.',
+        name: 'Java III: Avanzado',
+        fullName: 'Java III: Avanzado',
+        description: 'Conceptos avanzados: colecciones, lambdas, streams, genéricos y la JVM.',
         lessons: [
+          { title: 'Fundamentos de la Máquina de Java', link: '/backend/java/avanzado/jvm' },
           { title: 'Colecciones en Java', link: '/backend/java/avanzado/colecciones' },
           { title: 'Expresiones Lambda', link: '/backend/java/avanzado/lambdas' },
           { title: 'Streams API', link: '/backend/java/avanzado/streams' },
           { title: 'Genéricos', link: '/backend/java/avanzado/genericos' },
         ]},
       {
-        id: 'bd',
-        name: 'BD',
-        fullName: 'Conexión a BD',
+        id: 'persistencia',
+        name: 'Java + BBDD',
+        fullName: 'Java + Bases de Datos',
         description: 'JDBC, CRUD y persistencia: gestiona datos en bases de datos.',
         lessons: [
-          { title: 'JDBC - Conectar a Bases de Datos', link: '/backend/java/bd/jdbc' },
-          { title: 'CRUD y Transacciones', link: '/backend/java/bd/crud' },
-        ]},
-      {
-        id: 'internals',
-        name: 'JVM',
-        fullName: 'Java Internals',
-        description: 'Entiende cómo funciona Java: JVM, memoria, compilación y garbage collection.',
-        lessons: [
-          { title: 'Cómo funciona la JVM', link: '/backend/java/internals/jvm' },
-          { title: 'Memoria: Heap y Stack', link: '/backend/java/internals/memoria' },
-          { title: 'Garbage Collection', link: '/backend/java/internals/gc' },
-          { title: 'Bytecode y Compilación', link: '/backend/java/internals/bytecode' },
-          { title: 'Threads y Concurrencia', link: '/backend/java/internals/threads' },
+          { title: 'JDBC - Conectar a Bases de Datos', link: '/backend/java/persistencia/jdbc' },
+          { title: 'CRUD y Transacciones', link: '/backend/java/persistencia/crud' },
         ]},
     ],
     topics: [],
@@ -611,9 +600,9 @@ const moduleContent = {
         fullName: 'Metodología Agile y SCRUM',
         description: 'Metodología ágil para gestión de proyectos iterativos',
         lessons: [
-          { title: 'Introducción a Agile', link: '/herramientas/metodologias/agile-scrum/introduccion' },
-          { title: 'SCRUM Framework', link: '/herramientas/metodologias/agile-scrum/scrum' },
-          { title: 'Sprints y Planning', link: '/herramientas/metodologias/agile-scrum/sprints' },
+          { title: 'Introducción a Agile', link: '/metodologias/agile-scrum/introduccion' },
+          { title: 'SCRUM Framework', link: '/metodologias/agile-scrum/scrum' },
+          { title: 'Sprints y Planning', link: '/metodologias/agile-scrum/sprints' },
         ]},
       {
         id: 'clean-code',
@@ -621,12 +610,12 @@ const moduleContent = {
         fullName: 'Código Limpio y Mantenible',
         description: 'Principios y prácticas para escribir código de calidad',
         lessons: [
-          { title: 'Nombres Significativos', link: '/herramientas/metodologias/clean-code/nombres' },
-          { title: 'Funciones Limpias', link: '/herramientas/metodologias/clean-code/funciones' },
-          { title: 'Estructura y Formato', link: '/herramientas/metodologias/clean-code/estructura' },
-          { title: 'SOLID y Refactorización', link: '/herramientas/metodologias/clean-code/solid' },
-          { title: 'Patrones de Diseño', link: '/herramientas/metodologias/clean-code/patrones' },
-          { title: 'Antipatrones: Qué NO Hacer', link: '/herramientas/metodologias/clean-code/antipatrones' },
+          { title: 'Nombres Significativos', link: '/metodologias/clean-code/nombres' },
+          { title: 'Funciones Limpias', link: '/metodologias/clean-code/funciones' },
+          { title: 'Estructura y Formato', link: '/metodologias/clean-code/estructura' },
+          { title: 'SOLID y Refactorización', link: '/metodologias/clean-code/solid' },
+          { title: 'Patrones de Diseño', link: '/metodologias/clean-code/patrones' },
+          { title: 'Antipatrones: Qué NO Hacer', link: '/metodologias/clean-code/antipatrones' },
         ]},
       {
         id: 'testing',
@@ -634,9 +623,9 @@ const moduleContent = {
         fullName: 'Pruebas de Software',
         description: 'Estrategias y tipos de testing para garantizar calidad',
         lessons: [
-          { title: 'Testing Unitario', link: '/herramientas/metodologias/testing/unitario' },
-          { title: 'Testing de Integración', link: '/herramientas/metodologias/testing/integracion' },
-          { title: 'Testing de Aceptación', link: '/herramientas/metodologias/testing/aceptacion' },
+          { title: 'Testing Unitario', link: '/metodologias/testing/unitario' },
+          { title: 'Testing de Integración', link: '/metodologias/testing/integracion' },
+          { title: 'Testing de Aceptación', link: '/metodologias/testing/aceptacion' },
         ]},
       {
         id: 'devops',
@@ -644,27 +633,27 @@ const moduleContent = {
         fullName: 'DevOps y CI/CD',
         description: 'Prácticas para automatización, integración y despliegue continuo',
         lessons: [
-          { title: 'Introducción a DevOps', link: '/herramientas/metodologias/devops/introduccion' },
-          { title: 'CI/CD Pipelines', link: '/herramientas/metodologias/devops/cicd' },
-          { title: 'Monitoreo y Logs', link: '/herramientas/metodologias/devops/monitoreo' },
+          { title: 'Introducción a DevOps', link: '/metodologias/devops/introduccion' },
+          { title: 'CI/CD Pipelines', link: '/metodologias/devops/cicd' },
+          { title: 'Monitoreo y Logs', link: '/metodologias/devops/monitoreo' },
         ]},
     ],
     topics: [],
     lessons: [
-      { title: 'Introducción a Agile', link: '/herramientas/metodologias/agile-scrum/introduccion' },
-      { title: 'SCRUM Framework', link: '/herramientas/metodologias/agile-scrum/scrum' },
-      { title: 'Sprints y Planning', link: '/herramientas/metodologias/agile-scrum/sprints' },
-      { title: 'Nombres Significativos', link: '/herramientas/metodologias/clean-code/nombres' },
-      { title: 'Funciones Limpias', link: '/herramientas/metodologias/clean-code/funciones' },
-      { title: 'Estructura y Formato', link: '/herramientas/metodologias/clean-code/estructura' },
-      { title: 'SOLID y Refactorización', link: '/herramientas/metodologias/clean-code/solid' },
-      { title: 'Patrones de Diseño', link: '/herramientas/metodologias/clean-code/patrones' },
-      { title: 'Testing Unitario', link: '/herramientas/metodologias/testing/unitario' },
-      { title: 'Testing de Integración', link: '/herramientas/metodologias/testing/integracion' },
-      { title: 'Testing de Aceptación', link: '/herramientas/metodologias/testing/aceptacion' },
-      { title: 'Introducción a DevOps', link: '/herramientas/metodologias/devops/introduccion' },
-      { title: 'CI/CD Pipelines', link: '/herramientas/metodologias/devops/cicd' },
-      { title: 'Monitoreo y Logs', link: '/herramientas/metodologias/devops/monitoreo' },
+      { title: 'Introducción a Agile', link: '/metodologias/agile-scrum/introduccion' },
+      { title: 'SCRUM Framework', link: '/metodologias/agile-scrum/scrum' },
+      { title: 'Sprints y Planning', link: '/metodologias/agile-scrum/sprints' },
+      { title: 'Nombres Significativos', link: '/metodologias/clean-code/nombres' },
+      { title: 'Funciones Limpias', link: '/metodologias/clean-code/funciones' },
+      { title: 'Estructura y Formato', link: '/metodologias/clean-code/estructura' },
+      { title: 'SOLID y Refactorización', link: '/metodologias/clean-code/solid' },
+      { title: 'Patrones de Diseño', link: '/metodologias/clean-code/patrones' },
+      { title: 'Testing Unitario', link: '/metodologias/testing/unitario' },
+      { title: 'Testing de Integración', link: '/metodologias/testing/integracion' },
+      { title: 'Testing de Aceptación', link: '/metodologias/testing/aceptacion' },
+      { title: 'Introducción a DevOps', link: '/metodologias/devops/introduccion' },
+      { title: 'CI/CD Pipelines', link: '/metodologias/devops/cicd' },
+      { title: 'Monitoreo y Logs', link: '/metodologias/devops/monitoreo' },
     ]},
   contacto: {
     title: 'Contacto',
@@ -805,13 +794,16 @@ const moduleContent = {
 
 export function ModulePage({ moduleId }) {
   const navigate = useNavigate();
+  const { sectionId } = useParams();
   const [searchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [showModuleDropdown, setShowModuleDropdown] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  // Obtener sección desde query params (ej: ?section=basico)
-  const sectionParam = searchParams.get('section');
+  // Obtener sección desde parámetro de ruta (ej: /backend/java/introduccion)
+  // o desde query params (ej: ?section=basico) para compatibilidad hacia atrás
+  const sectionParam = sectionId || searchParams.get('section');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -897,10 +889,13 @@ export function ModulePage({ moduleId }) {
             </div>
           )}
           {content.sections ? (
-            // Mostrar grid de secciones para todas las categorías
-            <div className="container">
-              <CategorySectionsGrid sections={content.sections} categoryId={moduleId} />
-            </div>
+            <>
+              {/* Mostrar secciones como cluster cards */}
+              <ModuleClusters moduleId={moduleId} />
+
+              {/* Mostrar secciones usando ModuleSwitch refactorizado */}
+              <ModuleSwitch moduleId={moduleId} />
+            </>
           ) : (
             // Si no tiene secciones, mostrar topics normalmente
             <section className="topics-section">
@@ -926,50 +921,77 @@ export function ModulePage({ moduleId }) {
           )}
 
           {content.faq && (
-            <section className="faq-section">
-              <h2> Preguntas Frecuentes</h2>
-              <div className="faq-container">
-                {content.faq.map((item, index) => (
-                  <div key={index} className="faq-item">
-                    <button
-                      className="faq-question"
-                      onClick={(e) => {
-                        const currentButton = e.currentTarget;
-                        const container = currentButton.closest('.faq-container');
-                        const allQuestions = container.querySelectorAll('.faq-question');
-
-                        allQuestions.forEach(q => {
-                          if (q !== currentButton) {
-                            q.classList.remove('active');
-                            q.nextElementSibling.classList.remove('show');
-                          }
-                        });
-
-                        currentButton.classList.toggle('active');
-                        const answer = currentButton.nextElementSibling;
-                        answer.classList.toggle('show');
+            <section style={{ padding: '3rem 2rem', background: '#f9f9f9' }}>
+              <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>
+                  Preguntas Frecuentes
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {content.faq.map((item, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        background: '#fafafa',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        border: '1px solid #e0e0e0',
+                        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)'
                       }}
                     >
-                      <span className="faq-title">{item.question}</span>
-                      <span className="faq-toggle"></span>
-                    </button>
-                    <div className="faq-answer">
-                      <p>{item.answer}</p>
-                      {item.links && item.links.length > 0 && (
-                        <div className="faq-links">
-                          <p><strong>Temas relacionados:</strong></p>
-                          <ul>
-                            {item.links.map((link, idx) => (
-                              <li key={idx}>
-                                <Link to={link.url}>{link.title}</Link>
-                              </li>
-                            ))}
-                          </ul>
+                      <button
+                        onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                        style={{
+                          width: '100%',
+                          padding: '1.2rem',
+                          background: 'white',
+                          border: 'none',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          textAlign: 'left',
+                          fontSize: '16px',
+                          transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => e.target.style.backgroundColor = '#fafafa'}
+                        onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+                      >
+                        <span style={{ flex: 1 }}>{item.question}</span>
+                        <span style={{ fontSize: '1.5rem', fontWeight: 'bold', marginLeft: '1rem', flexShrink: 0 }}>
+                          {openFaqIndex === index ? '−' : '+'}
+                        </span>
+                      </button>
+                      {openFaqIndex === index && (
+                        <div
+                          style={{
+                            padding: '1.5rem',
+                            background: '#fafafa',
+                            borderTop: '1px solid #e0e0e0',
+                            color: '#666',
+                            lineHeight: '1.8',
+                            animation: 'slideDown 0.3s ease'
+                          }}
+                        >
+                          <p>{item.answer}</p>
+                          {item.links && item.links.length > 0 && (
+                            <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e0e0e0' }}>
+                              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Temas relacionados:</p>
+                              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                                {item.links.map((link, idx) => (
+                                  <li key={idx} style={{ marginBottom: '0.5rem' }}>
+                                    <Link to={link.url} style={{ color: '#0066cc', textDecoration: 'none' }}>
+                                      {link.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </section>
           )}

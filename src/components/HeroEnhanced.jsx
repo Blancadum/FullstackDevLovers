@@ -27,6 +27,7 @@ export function HeroEnhanced({
 }) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +38,19 @@ export function HeroEnhanced({
       setTimeout(() => setIsScrolling(false), 100);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+
+    // Initial check
+    handleResize();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleAnchorClick = (anchorId) => {
@@ -75,17 +87,17 @@ export function HeroEnhanced({
             <button
               className="hero-enhanced-btn hero-enhanced-btn--primary"
               onClick={() => handleAnchorClick('#menu')}
-              aria-label="Ir a aprende ya"
+              aria-label={isMobile ? "Ir a explorar" : "Ir a aprende ya"}
             >
-              Aprende ya
+              {isMobile ? 'Go' : 'Aprende ya'}
             </button>
 
             <button
               className="hero-enhanced-btn hero-enhanced-btn--secondary"
               onClick={() => handleAnchorClick('#orientador')}
-              aria-label="Realizar test rápido"
+              aria-label={isMobile ? "Realizar test" : "Realizar test rápido"}
             >
-              Test rápido
+              {isMobile ? 'Test' : 'Test rápido'}
             </button>
           </div>
         </div>

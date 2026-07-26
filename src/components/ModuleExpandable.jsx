@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { MODULE_LOGOS } from '../constants/logos';
 import './ModuleExpandable.css';
 
-export function ModuleExpandable({ moduleId, title, description, icon, sections, themeColor = '#0066cc' }) {
+export function ModuleExpandable({ moduleId, title, description, icon, sections, themeColor = '#0066cc', basePath = '' }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const logoSrc = MODULE_LOGOS[moduleId];
+
+  // Construir ruta del módulo
+  const moduleLink = basePath ? `${basePath}/${moduleId}` : `/${moduleId}`;
 
   return (
     <div className="module-expandable" style={{ '--theme-color': themeColor }}>
@@ -22,7 +25,7 @@ export function ModuleExpandable({ moduleId, title, description, icon, sections,
           </div>
         </div>
 
-        <Link to={`/${moduleId}`} className="module-content">
+        <Link to={moduleLink} className="module-content">
           <div className="module-text">
             <h3>{title}</h3>
             <p>{description}</p>
@@ -45,7 +48,7 @@ export function ModuleExpandable({ moduleId, title, description, icon, sections,
           {sections.map((section, idx) => (
             <Link
               key={idx}
-              to={`/${moduleId}`}
+              to={`${moduleLink}/${section.id}`}
               className="lesson-link"
             >
               <span className="lesson-number">{idx + 1}</span>

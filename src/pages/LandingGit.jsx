@@ -1,4 +1,4 @@
-import { LandingPageTemplate } from '../components';
+import { LandingPageTemplate, ModuleIntroSection } from '../components';
 
 export const LandingGit = () => {
   const pageConfig = {
@@ -14,6 +14,18 @@ export const LandingGit = () => {
     primaryButtonLink: '/control-versiones/git/basico/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
+    moduleIntro: {
+      title: '¿Qué es Git?',
+      description: 'Git es el sistema de control de versiones distribuido más popular del mundo. Creado por Linus Torvalds, permite a equipos colaborar sin fricción, rastrear cada cambio en el código y volver a versiones anteriores cuando sea necesario. Es el estándar profesional en la industria.',
+      highlights: [
+        'Control de versiones distribuido: repositorio completo en tu máquina',
+        'Colaboración sin conflictos: ramas independientes para cada tarea',
+        'Historial completo: revisa cualquier cambio realizado',
+        'Estándar industrial: usado en 95%+ de proyectos profesionales',
+        'Integración perfecta: GitHub, GitLab, Bitbucket'
+      ],
+      image: '/src/assets/images/logos/git-logo.png'
+    },
     faqData: [
       {
         question: '¿Qué es Git y por qué es importante?',
@@ -40,5 +52,17 @@ export const LandingGit = () => {
     ctaSubtitle: 'Aprende desde lo básico hasta workflows profesionales'
   };
 
-  return <LandingPageTemplate moduleId="git" pageConfig={pageConfig} />;
+  return (
+    <>
+      <LandingPageTemplate moduleId="git" pageConfig={pageConfig} />
+      {pageConfig.moduleIntro && (
+        <ModuleIntroSection
+          title={pageConfig.moduleIntro.title}
+          description={pageConfig.moduleIntro.description}
+          highlights={pageConfig.moduleIntro.highlights}
+          image={pageConfig.moduleIntro.image}
+        />
+      )}
+    </>
+  );
 };

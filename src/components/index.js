@@ -46,6 +46,7 @@ export { QuickAccess } from './QuickAccess';
 export { QuickAccessSection } from './QuickAccessSection';
 export { ClusterSearch } from './ClusterSearch';
 export { ClusterCards } from './ClusterCards';
+export { ModuleClusters } from './ModuleClusters';
 export { CategoryButtons } from './CategoryButtons';
 export { ModulesSection } from './ModulesSection';
 export { ProyectoHighlight } from './ProyectoHighlight';
@@ -73,7 +74,10 @@ export { NavigationButtons } from './NavigationButtons';
 // Aliases to canonical components (see Consolidated Components)
 export { ConceptsList } from './ConceptsList';
 export { ConceptsTabbed } from './ConceptsTabbed';
-export { StackDominationSection } from './StackDominationSection';
+export { ModuleSwitch } from './ModuleSwitch';
+// Aliases para compatibilidad hacia atrás
+export { ModuleSwitch as StackSection } from './ModuleSwitch';
+export { ModuleSwitch as StackDominationSection } from './ModuleSwitch';
 
 // Proyecto Components
 export { LessonProyectoRetoGeneric } from './LessonProyectoRetoGeneric';
@@ -100,11 +104,11 @@ export { LessonKeyPoints } from './LessonKeyPoints';
 export { LessonExercises } from './LessonExercises';
 export { LessonSummary } from './LessonSummary';
 
-// Unified Landing Components (NEW)
+// Unified Landing Components
 export { LandingHero } from './LandingHero';
-export { LandingHeroButtons } from './LandingHeroButtons';
-export { LandingHeroText } from './LandingHeroText';
 export { LandingPageTemplate } from './LandingPageTemplate';
+export { ModuleIntroSection } from './ModuleIntroSection';
+export { LearningPathCard } from './LearningPathCard';
 
 // Interactive Quiz Components
 export { OrientadorSection } from './OrientadorSection';

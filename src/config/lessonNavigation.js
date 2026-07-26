@@ -494,97 +494,97 @@ export const lessonNavigationMap = {
   '/herramientas/entornos/devops/cloud-deployment': {
     previous: '/herramientas/entornos/devops/github-actions',
     previousTitle: 'GitHub Actions',
-    next: '/herramientas/metodologias/agile-scrum/introduccion',
+    next: '/metodologias/agile-scrum/introduccion',
     nextTitle: 'Introducción a Agile'
   },
 
   // Metodologías
-  '/herramientas/metodologias/agile-scrum/introduccion': {
+  '/metodologias/agile-scrum/introduccion': {
     previous: '/herramientas/entornos/devops/cloud-deployment',
     previousTitle: 'Despliegue en Cloud',
-    next: '/herramientas/metodologias/agile-scrum/scrum',
+    next: '/metodologias/agile-scrum/scrum',
     nextTitle: 'SCRUM Framework'
   },
-  '/herramientas/metodologias/agile-scrum/scrum': {
-    previous: '/herramientas/metodologias/agile-scrum/introduccion',
+  '/metodologias/agile-scrum/scrum': {
+    previous: '/metodologias/agile-scrum/introduccion',
     previousTitle: 'Introducción a Agile',
-    next: '/herramientas/metodologias/agile-scrum/sprints',
+    next: '/metodologias/agile-scrum/sprints',
     nextTitle: 'Sprints y Planning'
   },
-  '/herramientas/metodologias/agile-scrum/sprints': {
-    previous: '/herramientas/metodologias/agile-scrum/scrum',
+  '/metodologias/agile-scrum/sprints': {
+    previous: '/metodologias/agile-scrum/scrum',
     previousTitle: 'SCRUM Framework',
-    next: '/herramientas/metodologias/clean-code/nombres',
+    next: '/metodologias/clean-code/nombres',
     nextTitle: 'Nombres Significativos'
   },
-  '/herramientas/metodologias/clean-code/nombres': {
-    previous: '/herramientas/metodologias/agile-scrum/sprints',
+  '/metodologias/clean-code/nombres': {
+    previous: '/metodologias/agile-scrum/sprints',
     previousTitle: 'Sprints y Planning',
-    next: '/herramientas/metodologias/clean-code/funciones',
+    next: '/metodologias/clean-code/funciones',
     nextTitle: 'Funciones Limpias'
   },
-  '/herramientas/metodologias/clean-code/funciones': {
-    previous: '/herramientas/metodologias/clean-code/nombres',
+  '/metodologias/clean-code/funciones': {
+    previous: '/metodologias/clean-code/nombres',
     previousTitle: 'Nombres Significativos',
-    next: '/herramientas/metodologias/clean-code/estructura',
+    next: '/metodologias/clean-code/estructura',
     nextTitle: 'Estructura y Formato'
   },
-  '/herramientas/metodologias/clean-code/estructura': {
-    previous: '/herramientas/metodologias/clean-code/funciones',
+  '/metodologias/clean-code/estructura': {
+    previous: '/metodologias/clean-code/funciones',
     previousTitle: 'Funciones Limpias',
-    next: '/herramientas/metodologias/clean-code/solid',
+    next: '/metodologias/clean-code/solid',
     nextTitle: 'SOLID y Refactorización'
   },
-  '/herramientas/metodologias/clean-code/solid': {
-    previous: '/herramientas/metodologias/clean-code/estructura',
+  '/metodologias/clean-code/solid': {
+    previous: '/metodologias/clean-code/estructura',
     previousTitle: 'Estructura y Formato',
-    next: '/herramientas/metodologias/clean-code/patrones',
+    next: '/metodologias/clean-code/patrones',
     nextTitle: 'Patrones de Diseño'
   },
-  '/herramientas/metodologias/clean-code/patrones': {
-    previous: '/herramientas/metodologias/clean-code/solid',
+  '/metodologias/clean-code/patrones': {
+    previous: '/metodologias/clean-code/solid',
     previousTitle: 'SOLID y Refactorización',
-    next: '/herramientas/metodologias/clean-code/antipatrones',
+    next: '/metodologias/clean-code/antipatrones',
     nextTitle: 'Antipatrones: Qué NO Hacer'
   },
-  '/herramientas/metodologias/clean-code/antipatrones': {
-    previous: '/herramientas/metodologias/clean-code/patrones',
+  '/metodologias/clean-code/antipatrones': {
+    previous: '/metodologias/clean-code/patrones',
     previousTitle: 'Patrones de Diseño',
-    next: '/herramientas/metodologias/testing/unitario',
+    next: '/metodologias/testing/unitario',
     nextTitle: 'Testing Unitario'
   },
-  '/herramientas/metodologias/testing/unitario': {
-    previous: '/herramientas/metodologias/clean-code/antipatrones',
+  '/metodologias/testing/unitario': {
+    previous: '/metodologias/clean-code/antipatrones',
     previousTitle: 'Antipatrones: Qué NO Hacer',
-    next: '/herramientas/metodologias/testing/integracion',
+    next: '/metodologias/testing/integracion',
     nextTitle: 'Testing de Integración'
   },
-  '/herramientas/metodologias/testing/integracion': {
-    previous: '/herramientas/metodologias/testing/unitario',
+  '/metodologias/testing/integracion': {
+    previous: '/metodologias/testing/unitario',
     previousTitle: 'Testing Unitario',
-    next: '/herramientas/metodologias/testing/aceptacion',
+    next: '/metodologias/testing/aceptacion',
     nextTitle: 'Testing de Aceptación'
   },
-  '/herramientas/metodologias/testing/aceptacion': {
-    previous: '/herramientas/metodologias/testing/integracion',
+  '/metodologias/testing/aceptacion': {
+    previous: '/metodologias/testing/integracion',
     previousTitle: 'Testing de Integración',
-    next: '/herramientas/metodologias/devops/introduccion',
+    next: '/metodologias/devops/introduccion',
     nextTitle: 'Introducción a DevOps'
   },
-  '/herramientas/metodologias/devops/introduccion': {
-    previous: '/herramientas/metodologias/testing/aceptacion',
+  '/metodologias/devops/introduccion': {
+    previous: '/metodologias/testing/aceptacion',
     previousTitle: 'Testing de Aceptación',
-    next: '/herramientas/metodologias/devops/cicd',
+    next: '/metodologias/devops/cicd',
     nextTitle: 'CI/CD Pipelines'
   },
-  '/herramientas/metodologias/devops/cicd': {
-    previous: '/herramientas/metodologias/devops/introduccion',
+  '/metodologias/devops/cicd': {
+    previous: '/metodologias/devops/introduccion',
     previousTitle: 'Introducción a DevOps',
-    next: '/herramientas/metodologias/devops/monitoreo',
+    next: '/metodologias/devops/monitoreo',
     nextTitle: 'Monitoreo y Logs'
   },
-  '/herramientas/metodologias/devops/monitoreo': {
-    previous: '/herramientas/metodologias/devops/cicd',
+  '/metodologias/devops/monitoreo': {
+    previous: '/metodologias/devops/cicd',
     previousTitle: 'CI/CD Pipelines',
     next: '/backend/spring-boot/fundamentos/introduccion',
     nextTitle: 'Introducción a Spring Boot'

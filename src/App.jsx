@@ -14,6 +14,39 @@ function RedirectToSection() {
   const basePath = `/${pathParts[0]}/${pathParts[1]}`;
   return <Navigate to={`${basePath}?section=${sectionId}`} replace />;
 }
+
+// Router inteligente para Java: redirecciona rutas ambiguas
+function JavaModuleRouter() {
+  const { param } = useParams();
+  const validSectionIds = ['introduccion', 'oop', 'avanzado', 'persistencia'];
+
+  // Si es una sección válida, ir a /backend/java (el parámetro será ignorado pero la página se carga)
+  if (validSectionIds.includes(param)) {
+    return <Navigate to="/backend/java" replace />;
+  }
+
+  // Cualquier otro parámetro va a /backend/java
+  return <Navigate to="/backend/java" replace />;
+}
+
+// Componente de redirección para secciones de módulos (/backend/java/introduccion → primera lección)
+function RedirectToFirstLesson() {
+  const { moduleId, sectionId } = useParams();
+  const location = useLocation();
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const category = pathParts[0];
+  const module = pathParts[1];
+
+  const { getFirstLessonOfSection } = require('./config/modulesConfig');
+  const firstLessonLink = getFirstLessonOfSection(module, sectionId);
+
+  if (firstLessonLink) {
+    return <Navigate to={firstLessonLink} replace />;
+  }
+
+  // Fallback: ir a la página del módulo
+  return <Navigate to={`/${category}/${module}`} replace />;
+}
 import {
   LessonGitConfiguracionInicial,
   LessonGitCrearClonarRepos,
@@ -213,6 +246,11 @@ import { LandingFrontend } from './pages/LandingFrontend';
 import { LandingDatos } from './pages/LandingDatos';
 import { LandingCloud } from './pages/LandingCloud';
 import { LandingVersionamiento } from './pages/LandingVersionamiento';
+import { LandingEditores } from './pages/LandingEditores';
+import { LandingHosting } from './pages/LandingHosting';
+import { LandingIA } from './pages/LandingIA';
+import { LandingContenidos } from './pages/LandingContenidos';
+import { LandingSEO } from './pages/LandingSEO';
 import { LandingHerramientasMetodologias } from './pages/LandingHerramientasMetodologias';
 import { LexicoAWS } from './pages/LexicoAWS';
 import { LexicoGeneral } from './pages/LexicoGeneral';
@@ -283,21 +321,21 @@ function AppContent() {
           <Route path="/control-versiones/git/avanzado/bitbucket" element={<LessonGitBitbucket />} />
 
           {/* Lecciones - Java Básico */}
-          <Route path="/backend/java/basico/funcionamiento" element={<LessonJavaInternals />} />
-          <Route path="/backend/java/basico/tipos-datos" element={<LessonDataTypes />} />
-          <Route path="/backend/java/basico/control-flujo" element={<LessonControlFlow />} />
-          <Route path="/backend/java/basico/strings" element={<LessonStrings />} />
-          <Route path="/backend/java/basico/arrays" element={<LessonArrays />} />
-          <Route path="/backend/java/basico/scanner" element={<LessonScanner />} />
-          <Route path="/backend/java/basico/excepciones" element={<LessonExceptions />} />
-          <Route path="/backend/java/basico/operadores" element={<LessonJavaOperators />} />
+          <Route path="/backend/java/introduccion/funcionamiento" element={<LessonJavaInternals />} />
+          <Route path="/backend/java/introduccion/tipos-datos" element={<LessonDataTypes />} />
+          <Route path="/backend/java/introduccion/control-flujo" element={<LessonControlFlow />} />
+          <Route path="/backend/java/introduccion/strings" element={<LessonStrings />} />
+          <Route path="/backend/java/introduccion/arrays" element={<LessonArrays />} />
+          <Route path="/backend/java/introduccion/scanner" element={<LessonScanner />} />
+          <Route path="/backend/java/introduccion/excepciones" element={<LessonExceptions />} />
+          <Route path="/backend/java/introduccion/operadores" element={<LessonJavaOperators />} />
 
           {/* Lecciones - Java POO */}
-          <Route path="/backend/java/poo/clases-objetos" element={<LessonClasses />} />
-          <Route path="/backend/java/poo/clases-abstractas" element={<LessonAbstractClasses />} />
-          <Route path="/backend/java/poo/herencia" element={<LessonInheritance />} />
-          <Route path="/backend/java/poo/polimorfismo" element={<LessonPolymorphism />} />
-          <Route path="/backend/java/poo/interfaces-abstractas" element={<LessonInterfacesAbstract />} />
+          <Route path="/backend/java/oop/clases-objetos" element={<LessonClasses />} />
+          <Route path="/backend/java/oop/clases-abstractas" element={<LessonAbstractClasses />} />
+          <Route path="/backend/java/oop/herencia" element={<LessonInheritance />} />
+          <Route path="/backend/java/oop/polimorfismo" element={<LessonPolymorphism />} />
+          <Route path="/backend/java/oop/interfaces-abstractas" element={<LessonInterfacesAbstract />} />
 
           {/* Lecciones - Java Avanzado */}
           <Route path="/backend/java/avanzado/jvm" element={<LessonJavaVM />} />
@@ -307,8 +345,8 @@ function AppContent() {
           <Route path="/backend/java/avanzado/genericos" element={<LessonGenerics />} />
 
           {/* Lecciones - Conexión a BD */}
-          <Route path="/backend/java/bd/jdbc" element={<LessonJDBC />} />
-          <Route path="/backend/java/bd/crud" element={<LessonCRUD />} />
+          <Route path="/backend/java/persistencia/jdbc" element={<LessonJDBC />} />
+          <Route path="/backend/java/persistencia/crud" element={<LessonCRUD />} />
 
           {/* Lecciones - Entornos de Desarrollo */}
           <Route path="/herramientas/entornos/herramientas/concepto" element={<LessonConceptoEntornoDesarrollo />} />
@@ -415,7 +453,12 @@ function AppContent() {
           <Route path="/backend/spring-boot" element={<LandingSpringBoot />} />
           <Route path="/control-versiones/git" element={<LandingGit />} />
           <Route path="/datos/sql" element={<LandingSQLBasico />} />
-          <Route path="/herramientas/metodologias" element={<LandingMetodologias />} />
+          <Route path="/metodologias" element={<LandingMetodologias />} />
+          <Route path="/editores" element={<LandingEditores />} />
+          <Route path="/hosting" element={<LandingHosting />} />
+          <Route path="/ia" element={<LandingIA />} />
+          <Route path="/contenidos" element={<LandingContenidos />} />
+          <Route path="/seo" element={<LandingSEO />} />
           <Route path="/proyecto" element={<LandingProyecto />} />
           <Route path="/frontend/react" element={<LandingReact />} />
           <Route path="/frontend/angular" element={<LandingAngular />} />
@@ -453,7 +496,6 @@ function AppContent() {
           <Route path="/datos" element={<LandingDatos />} />
           <Route path="/cloud" element={<LandingCloud />} />
           <Route path="/control-versiones" element={<LandingVersionamiento />} />
-          <Route path="/metodologias-herramientas" element={<LandingHerramientasMetodologias />} />
 
           {/* Landing Pages - Subsecciones Entornos */}
           <Route path="/herramientas/entornos/herramientas" element={<LandingHerramientas />} />
@@ -535,27 +577,27 @@ function AppContent() {
           <Route path="/proyecto/ejemplos/:id" element={<LessonEjemplosTFC />} />
 
           {/* Lecciones - Metodologías Agile/SCRUM */}
-          <Route path="/herramientas/metodologias/agile-scrum/introduccion" element={<LessonAgileIntroduccion />} />
-          <Route path="/herramientas/metodologias/agile-scrum/scrum" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/agile-scrum/sprints" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/agile-scrum/introduccion" element={<LessonAgileIntroduccion />} />
+          <Route path="/metodologias/agile-scrum/scrum" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/agile-scrum/sprints" element={<LessonPlaceholder />} />
 
           {/* Lecciones - Clean Code */}
-          <Route path="/herramientas/metodologias/clean-code/nombres" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/clean-code/funciones" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/clean-code/estructura" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/clean-code/solid" element={<LessonSOLID />} />
-          <Route path="/herramientas/metodologias/clean-code/patrones" element={<LessonPatronesDiseno />} />
-          <Route path="/herramientas/metodologias/clean-code/antipatrones" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/clean-code/nombres" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/clean-code/funciones" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/clean-code/estructura" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/clean-code/solid" element={<LessonSOLID />} />
+          <Route path="/metodologias/clean-code/patrones" element={<LessonPatronesDiseno />} />
+          <Route path="/metodologias/clean-code/antipatrones" element={<LessonPlaceholder />} />
 
           {/* Lecciones - Testing */}
-          <Route path="/herramientas/metodologias/testing/unitario" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/testing/integracion" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/testing/aceptacion" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/testing/unitario" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/testing/integracion" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/testing/aceptacion" element={<LessonPlaceholder />} />
 
           {/* Lecciones - DevOps */}
-          <Route path="/herramientas/metodologias/devops/introduccion" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/devops/cicd" element={<LessonPlaceholder />} />
-          <Route path="/herramientas/metodologias/devops/monitoreo" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/devops/introduccion" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/devops/cicd" element={<LessonPlaceholder />} />
+          <Route path="/metodologias/devops/monitoreo" element={<LessonPlaceholder />} />
 
           {/* Lecciones - Contacto */}
           <Route path="/contacto/general/email" element={<LessonPlaceholder />} />
@@ -564,19 +606,18 @@ function AppContent() {
 
           {/* Rutas comodín para módulos (van al final) */}
           <Route path="/control-versiones/git" element={<ModulePage moduleId="git" />} />
-          <Route path="/control-versiones/git/:sectionId" element={<RedirectToSection />} />
+          <Route path="/control-versiones/git/:sectionId" element={<ModulePage moduleId="git" />} />
           <Route path="/backend/java" element={<ModulePage moduleId="java" />} />
-          <Route path="/backend/java/:sectionId" element={<RedirectToSection />} />
+          <Route path="/backend/java/:param" element={<JavaModuleRouter />} />
           <Route path="/cloud/docker" element={<ModulePage moduleId="docker" />} />
-          <Route path="/cloud/docker/:sectionId" element={<RedirectToSection />} />
+          <Route path="/cloud/docker/:sectionId" element={<ModulePage moduleId="docker" />} />
           <Route path="/herramientas/entornos" element={<ModulePage moduleId="entornos" />} />
-          <Route path="/herramientas/entornos/:sectionId" element={<RedirectToSection />} />
+          <Route path="/herramientas/entornos/:sectionId" element={<ModulePage moduleId="entornos" />} />
           <Route path="/datos/sql" element={<ModulePage moduleId="sql" />} />
-          <Route path="/datos/sql/:sectionId" element={<RedirectToSection />} />
+          <Route path="/datos/sql/:sectionId" element={<ModulePage moduleId="sql" />} />
           <Route path="/backend/spring-boot" element={<ModulePage moduleId="spring-boot" />} />
-          <Route path="/backend/spring-boot/:sectionId" element={<RedirectToSection />} />
-          <Route path="/herramientas/metodologias" element={<ModulePage moduleId="metodologias" />} />
-          <Route path="/herramientas/metodologias/:sectionId" element={<RedirectToSection />} />
+          <Route path="/backend/spring-boot/:sectionId" element={<ModulePage moduleId="spring-boot" />} />
+          <Route path="/metodologias/:sectionId" element={<RedirectToSection />} />
           <Route path="/contacto" element={<ModulePage moduleId="contacto" />} />
           <Route path="/contacto/:sectionId" element={<RedirectToSection />} />
           <Route path="/proyecto" element={<ModulePage moduleId="proyecto" />} />

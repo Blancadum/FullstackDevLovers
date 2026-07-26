@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LandingHero, SEO, KotlinThemeCard } from './index';
+import { LandingHero, SEO, ModuleSwitch, ClusterCards, ModuleIntroSection } from './index';
 import { getModule } from '../config/modulesConfig';
 import { getTheme } from '../config/themeColors';
 import { useLandingTheme } from '../hooks/useLandingTheme';
@@ -20,11 +20,13 @@ import { getThemeByModule } from '../config/landingThemes';
  *   - compareWith: Array of competing technologies for comparison table headers
  *   - seoTitle: Custom SEO title
  *   - seoDescription: Custom SEO description
+ * @param {object} moduleSwitch - Optional custom content for StackSection (module-specific configuration)
+ * @param {object} landingContent - Optional custom content for additional sections (whyReact, whatIsReact, prerequisites)
  */
-export function LandingPageTemplate({ moduleId, pageConfig = {} }) {
+export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, landingContent }) {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const theme = getTheme(moduleId);
   const module = getModule(moduleId);
-  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Apply dynamic theme
   const landingTheme = getThemeByModule(moduleId);
@@ -83,148 +85,261 @@ export function LandingPageTemplate({ moduleId, pageConfig = {} }) {
           imageAlt={config.imageAlt}
         />
 
+        {/* Module Switch - Custom content for specific landings */}
+        {moduleSwitch && (
+          <ModuleSwitch
+            moduleSwitch={moduleSwitch}
+            title={moduleSwitch.title}
+            subtitle={moduleSwitch.subtitle}
+          />
+        )}
+
+        {/* Why Module Section */}
+        {landingContent?.whyReact && (
+          <section style={{ padding: '3rem 2rem', background: 'white' }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '2rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                {landingContent.whyReact.title}
+              </h2>
+              <p style={{ fontSize: '1rem', color: 'var(--text-light)', marginBottom: '2rem' }}>
+                {landingContent.whyReact.subtitle}
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {landingContent.whyReact.benefits.map((benefit, idx) => (
+                  <li key={idx} style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: idx !== landingContent.whyReact.benefits.length - 1 ? '1px solid #e9ecef' : 'none' }}>
+                    <h3 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', margin: '0 0 0.5rem 0' }}>
+                      {benefit.title}
+                    </h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.6' }}>
+                      {benefit.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {/* What Is Module Section */}
+        {landingContent?.whatIsReact && (
+          <section style={{ padding: '3rem 2rem', background: 'var(--light-bg)' }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '2rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                {landingContent.whatIsReact.title}
+              </h2>
+              <p style={{ fontSize: '1rem', color: 'var(--text-light)', marginBottom: '2rem' }}>
+                {landingContent.whatIsReact.subtitle}
+              </p>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.8' }}>
+                {landingContent.whatIsReact.description}
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {landingContent.whatIsReact.useCases.map((useCase, idx) => (
+                  <li key={idx} style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: idx !== landingContent.whatIsReact.useCases.length - 1 ? '1px solid #e9ecef' : 'none' }}>
+                    <h3 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', margin: '0 0 0.5rem 0' }}>
+                      {useCase.title}
+                    </h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.6' }}>
+                      {useCase.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {/* Prerequisites Section */}
+        {landingContent?.prerequisites && (
+          <>
+            <section style={{ padding: '3rem 2rem', background: 'white' }}>
+              <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                <h2 style={{ fontSize: '2rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                  {landingContent.prerequisites.title}
+                </h2>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: '1.8' }}>
+                  {landingContent.prerequisites.description}
+                </p>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.8' }}>
+                  {landingContent.prerequisites.detailedExplanation}
+                </p>
+              </div>
+            </section>
+            <ClusterCards
+              cards={landingContent.prerequisites.technologies}
+              columns={4}
+              variant="logo"
+            />
+          </>
+        )}
+
+        {/* Module Intro Section */}
+        {pageConfig.moduleIntro && (
+          <ModuleIntroSection
+            title={pageConfig.moduleIntro.title}
+            description={pageConfig.moduleIntro.description}
+            highlights={pageConfig.moduleIntro.highlights}
+            image={pageConfig.moduleIntro.image}
+          />
+        )}
+
         {/* Main Content Section */}
         <section className={`${moduleId}-content`}>
-          <div className="content-container">
-            <h2>{`¿Qué es ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}?`}</h2>
-            <p className="intro-text">
-              {config.description}
-            </p>
+          {!pageConfig.moduleIntro && (
+            <>
+              <h2>{`¿Qué es ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}?`}</h2>
+              <p className="intro-text">
+                {config.description}
+              </p>
+            </>
+          )}
 
-            {/* Key Features */}
-            {pageConfig.features && (
-              <div className="features-grid">
-                {pageConfig.features.map((feature, idx) => (
-                  <div key={idx} className="feature-card">
-                    <div className="feature-icon">{feature.icon}</div>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Learning Topics Section */}
-        <section className="learning-topics">
-          <div className="content-container">
-            <h2>Temas de Aprendizaje</h2>
-            <p className="intro-text">
-              Domina {moduleId} con una progresión estructurada desde conceptos básicos hasta nivel profesional
-            </p>
-
-            <div className="theme-cards-container">
-              {module.sections.map((section, idx) => (
-                <KotlinThemeCard
-                  key={idx}
-                  icon={getIconForSection(section.id)}
-                  title={section.name}
-                  description={section.description}
-                  lessons={section.lessons}
-                  color={getColorForSection(idx)}
-                />
+          {/* Key Features */}
+          {pageConfig.features && (
+            <div className="features-grid">
+              {pageConfig.features.map((feature, idx) => (
+                <div key={idx} className="feature-card">
+                  <div className="feature-icon">{feature.icon}</div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </div>
               ))}
             </div>
-          </div>
+          )}
         </section>
 
         {/* Comparison Section - Only if comparison data exists */}
         {config.comparisonData.length > 0 && (
           <section className="comparison-section" id="comparativa">
-            <div className="content-container">
-              <h2>{config.comparisonTitle || `${moduleId} Comparison`}</h2>
-              <p className="intro-text">
-                {config.comparisonSubtitle || `Detailed comparison of ${moduleId} with other technologies`}
-              </p>
+            <h2>{config.comparisonTitle || `${moduleId} Comparison`}</h2>
+            <p className="intro-text">
+              {config.comparisonSubtitle || `Detailed comparison of ${moduleId} with other technologies`}
+            </p>
 
-              <div className="table-wrapper">
-                <table className="comparison-table">
-                  <thead>
-                    <tr>
-                      <th>Característica</th>
-                      {config.compareWith.map((tech, idx) => (
-                        <th key={idx}>{tech}</th>
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Característica</th>
+                    {config.compareWith.map((tech, idx) => (
+                      <th key={idx}>{tech}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {config.comparisonData.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="feature-name">{row.feature}</td>
+                      {config.compareWith.map((tech, tidx) => (
+                        <td key={tidx} className={tidx === 0 ? `${moduleId}-col` : ''}>
+                          {row[tech.toLowerCase().replace(/\s+/g, '')] || '—'}
+                        </td>
                       ))}
                     </tr>
-                  </thead>
-                  <tbody>
-                    {config.comparisonData.map((row, idx) => (
-                      <tr key={idx}>
-                        <td className="feature-name">{row.feature}</td>
-                        {config.compareWith.map((tech, tidx) => (
-                          <td key={tidx} className={tidx === 0 ? `${moduleId}-col` : ''}>
-                            {row[tech.toLowerCase().replace(/\s+/g, '')] || '—'}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {config.comparisonConclusion && (
-                <div className="comparison-conclusion">
-                  {config.comparisonConclusion.map((conclusion, idx) => (
-                    <p key={idx}>{conclusion}</p>
                   ))}
-                </div>
-              )}
+                </tbody>
+              </table>
             </div>
+
+            {config.comparisonConclusion && (
+              <div className="comparison-conclusion">
+                {config.comparisonConclusion.map((conclusion, idx) => (
+                  <p key={idx}>{conclusion}</p>
+                ))}
+              </div>
+            )}
           </section>
         )}
 
         {/* When to Use Section */}
         {pageConfig.whenToUse && (
           <section className="when-to-use">
-            <div className="content-container">
-              <h2>{pageConfig.whenToUseTitle || `¿Cuándo Usar ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}?`}</h2>
+            <h2>{pageConfig.whenToUseTitle || `¿Cuándo Usar ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}?`}</h2>
 
-              <div className="use-case-grid">
-                {pageConfig.whenToUse.ideal && (
-                  <div className="use-case">
-                    <h3>✅ Ideal para:</h3>
-                    <ul>
-                      {pageConfig.whenToUse.ideal.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {pageConfig.whenToUse.alternatives && (
-                  <div className="use-case">
-                    <h3>⚠️ Considera alternativas si:</h3>
-                    <ul>
-                      {pageConfig.whenToUse.alternatives.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+            <div className="use-case-grid">
+              {pageConfig.whenToUse.ideal && (
+                <div className="use-case">
+                  <h3>✅ Ideal para:</h3>
+                  <ul>
+                    {pageConfig.whenToUse.ideal.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {pageConfig.whenToUse.alternatives && (
+                <div className="use-case">
+                  <h3>⚠️ Considera alternativas si:</h3>
+                  <ul>
+                    {pageConfig.whenToUse.alternatives.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </section>
         )}
 
         {/* FAQ Section */}
         {config.faqData.length > 0 && (
-          <section className="faq-section">
-            <div className="content-container">
-              <h2>Preguntas Frecuentes</h2>
-
-              <div className="faq-list">
-                {config.faqData.map((faq, idx) => (
-                  <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
+          <section style={{ padding: '3rem 2rem', background: 'white' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center', color: 'var(--text-primary)' }}>
+                Preguntas Frecuentes
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {config.faqData.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      background: '#fafafa',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      border: '1px solid #e0e0e0',
+                      boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)'
+                    }}
+                  >
                     <button
-                      className="faq-summary"
-                      onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                      onClick={() => {
+                        const newOpenIndex = openFaqIndex === index ? null : index;
+                        setOpenFaqIndex(newOpenIndex);
+                      }}
+                      style={{
+                        width: '100%',
+                        padding: '1.2rem',
+                        background: 'white',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        textAlign: 'left',
+                        fontSize: '16px',
+                        transition: 'all 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = '#fafafa'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
                     >
-                      <span>{faq.question}</span>
-                      <span className="faq-icon">+</span>
+                      <span style={{ flex: 1 }}>{item.question}</span>
+                      <span style={{ fontSize: '1.5rem', fontWeight: 'bold', marginLeft: '1rem', flexShrink: 0 }}>
+                        {openFaqIndex === index ? '−' : '+'}
+                      </span>
                     </button>
-                    <div className="faq-answer">
-                      <p>{faq.answer}</p>
-                    </div>
+                    {openFaqIndex === index && (
+                      <div
+                        style={{
+                          padding: '1.5rem',
+                          background: '#fafafa',
+                          borderTop: '1px solid #e0e0e0',
+                          color: '#666',
+                          lineHeight: '1.8',
+                          animation: 'slideDown 0.3s ease'
+                        }}
+                      >
+                        {item.answer}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -248,23 +363,6 @@ export function LandingPageTemplate({ moduleId, pageConfig = {} }) {
 }
 
 // Helper functions
-function getIconForSection(sectionId) {
-  const icons = {
-    'fundamentales': '📚',
-    'basico': '🎯',
-    'intermedio': '⚙️',
-    'avanzado': '🚀',
-    'herramientas': '🛠️',
-    'proyectos': '📁',
-  };
-  return icons[sectionId] || '📄';
-}
-
-function getColorForSection(index) {
-  const colors = ['#9c27b0', '#7b1fa2', '#6200ea', '#5e35b1'];
-  return colors[index % colors.length];
-}
-
 function generateDefaultSchema(moduleId, module) {
   return {
     '@context': 'https://schema.org',

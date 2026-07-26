@@ -42,12 +42,13 @@
    ============================================================================ */
 .hero-enhanced {
   position: relative;
-  min-height: 100vh;
+  min-height: 50vh;
   display: grid;
   grid-template-rows: 1fr auto;
   align-items: center;
   overflow-x: visible;
   overflow-y: visible;
+  margin-top: 0;
   margin-bottom: 3rem;
 }
 
@@ -102,7 +103,7 @@
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
@@ -166,7 +167,7 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   flex-wrap: wrap;
   animation: fadeInUp 0.8s ease-out 0.7s both;
 }
@@ -225,12 +226,14 @@
    ============================================================================ */
 .hero-enhanced-search-wrapper {
   width: 100%;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   animation: fadeInUp 0.8s ease-out 0.8s both;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
+  position: relative;
+  z-index: 10;
 }
 
 /* Integración de ClusterSearch */
@@ -276,8 +279,8 @@
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .hero-enhanced {
-    min-height: auto;
-    padding: 3rem 2rem;
+    min-height: 35vh;
+    padding: 0;
   }
 
   .hero-enhanced-container {
@@ -304,15 +307,15 @@
   }
 
   .hero-enhanced-search-wrapper {
-    padding: 1.5rem 2rem;
+    padding: 0.5rem 2rem;
   }
 }
 
 /* Tablet pequeño (768px) */
 @media (max-width: 768px) {
   .hero-enhanced {
-    min-height: auto;
-    padding: 2.5rem 1.5rem;
+    min-height: 30vh;
+    padding: 0;
     margin-bottom: 2rem;
   }
 
@@ -350,7 +353,7 @@
   }
 
   .hero-enhanced-search-wrapper {
-    padding: 1.5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
   }
 
   .hero-enhanced-search-wrapper .search-input {
@@ -362,8 +365,8 @@
 /* Mobile (480px) */
 @media (max-width: 480px) {
   .hero-enhanced {
-    min-height: auto;
-    padding: 2rem 1rem;
+    min-height: 35vh;
+    padding: 0;
     margin-bottom: 1.5rem;
   }
 
@@ -384,14 +387,14 @@
   }
 
   .hero-enhanced-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.8rem;
   }
 
   .hero-enhanced-btn {
-    width: 100%;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
   }
 
   .hero-enhanced-frame {
@@ -399,7 +402,7 @@
   }
 
   .hero-enhanced-search-wrapper {
-    padding: 1.5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .hero-enhanced-search-wrapper .search-input {
@@ -415,7 +418,8 @@
 /* Mobile pequeño (360px) */
 @media (max-width: 360px) {
   .hero-enhanced {
-    padding: 1.5rem 0.75rem;
+    min-height: 30vh;
+    padding: 0;
   }
 
   .hero-enhanced-title {

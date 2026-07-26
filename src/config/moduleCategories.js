@@ -15,7 +15,7 @@ export const moduleCategories = [
   {
     id: 'frontend',
     name: 'Frontend & Desarrollo Web',
-    logoSrc: '/src/assets/images/logos/frontend.jpeg',
+    logoSrc: '/src/assets/images/logos/frontpage.png',
     color: '#F39C12',
     description: 'React, Angular, HTML, CSS, Bootstrap, Tailwind y frameworks web',
     modules: ['react', 'angular', 'html', 'css', 'bootstrap', 'tailwindcss']},
@@ -29,28 +29,32 @@ export const moduleCategories = [
   {
     id: 'versionamiento',
     name: 'Control de Versiones',
+    logoSrc: '/src/assets/images/logos/git-github.png',
     color: '#F74E1E',
     description: 'Git, control de versiones y colaboración en equipo',
-    modules: ['git']},
+    modules: ['git', 'github']},
   {
     id: 'containerizacion',
     name: 'Containerización, Orquestación & Cloud Computing',
+    logoSrc: '/src/assets/images/logos/cloud-computing.jpg',
     color: '#2496ED',
-    logo: '/src/assets/images/logos/cloud-computing.jpeg',
     description: 'Docker, Kubernetes, AWS y gestión de contenedores en la nube',
-    modules: ['docker', 'kubernetes', 'aws']},
+    modules: ['docker', 'kubernetes', 'aws'],
+    hidden: true},
   {
     id: 'herramientas',
     name: 'Herramientas & Metodologías',
+    logoSrc: '/src/assets/images/logos/procesos.png',
     color: '#9C27B0',
-    logo: '/src/assets/images/logos/procesos.png',
     description: 'Herramientas de desarrollo, patrones, testing y metodologías transversales',
     modules: ['entornos', 'metodologias'],
+    hidden: true,
     subCategories: [
       {
         id: 'agile-scrum',
         name: 'Agile/SCRUM',
         description: 'Metodología ágil para gestión de proyectos iterativos',
+        logoSrc: '/src/assets/images/logos/agile.png',
         topics: [
           'Principios Agile',
           'Roles en SCRUM (Product Owner, Scrum Master, Team)',
@@ -70,6 +74,7 @@ export const moduleCategories = [
         id: 'clean-code',
         name: 'Clean Code',
         description: 'Principios y prácticas para escribir código de calidad',
+        logoSrc: '/src/assets/images/logos/clean-code.png',
         topics: [
           'Nombres significativos',
           'Funciones pequeñas',
@@ -92,6 +97,7 @@ export const moduleCategories = [
         id: 'testing',
         name: 'Testing',
         description: 'Estrategias y tipos de testing para garantizar calidad',
+        logoSrc: '/src/assets/images/logos/testing.png',
         topics: [
           'Testing Unitario',
           'Testing de Integración',
@@ -112,6 +118,7 @@ export const moduleCategories = [
         id: 'devops',
         name: 'DevOps',
         description: 'Prácticas para automatización, integración y despliegue continuo',
+        logoSrc: '/src/assets/images/logos/devops.png',
         topics: [
           'Principios DevOps',
           'Integración Continua (CI)',
@@ -131,10 +138,29 @@ export const moduleCategories = [
     ]
   },
   {
+    id: 'ia',
+    name: 'Inteligencia Artificial',
+    logoSrc: '/src/assets/images/logos/ia.png',
+    color: '#7C3AED',
+    description: 'Machine Learning, Deep Learning, LLMs, ChatGPT y aplicaciones de IA',
+    modules: ['ia'],
+    hidden: true
+  },
+  {
+    id: 'seo',
+    name: 'SEO & Analytics',
+    logoSrc: '/src/assets/images/logos/seo.png',
+    color: '#059669',
+    description: 'Posicionamiento en buscadores, analytics y optimización web',
+    modules: ['seo'],
+    hidden: true
+  },
+  {
     id: 'casos-practicos',
     name: 'Casos Prácticos',
     color: '#FF6B35',
     description: 'Proyectos integrados y casos de uso real',
+    hidden: true,
     projects: [
       {
         id: 'tfc-java',

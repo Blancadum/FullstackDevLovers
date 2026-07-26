@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingTailwindCSS = () => {
   const pageConfig = {
     title: 'Tailwind CSS',
-    imageUrl: '/src/assets/images/logos/tailwind.png',
+    imageUrl: '/src/assets/images/logos/tailwindcss.jpg',
     imageAlt: 'Tailwind CSS',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/frontend/tailwind/basico/introduccion',

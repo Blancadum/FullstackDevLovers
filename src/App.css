@@ -24,7 +24,7 @@
 
 main {
   flex: 1;
-  padding-top: calc(var(--breadcrumb-height) + 0.5rem);
+  padding-top: 0;
 }
 
 /* Navbar */

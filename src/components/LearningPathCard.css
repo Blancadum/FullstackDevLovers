@@ -1,0 +1,266 @@
+.learning-path-section {
+  padding: 4rem 2rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.learning-path-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.learning-path-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(41, 150, 237, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.learning-path-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.learning-path-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.learning-path-header h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.learning-path-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.learning-path-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.path-level {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.level-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.08) 0%, rgba(41, 150, 237, 0.04) 100%);
+  border-radius: 12px;
+  border-left: 4px solid #2196f3;
+}
+
+.level-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2196f3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.level-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 0.75rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  border-left: 4px solid var(--tech-color, #2196f3);
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.tech-card:hover {
+  border-color: var(--tech-color, #2196f3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.tech-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.tech-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.tech-icon {
+  font-size: 2rem;
+}
+
+.tech-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.level-arrow {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  color: #2196f3;
+  opacity: 0.6;
+}
+
+.level-arrow svg {
+  width: 32px;
+  height: 32px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .learning-path-header h2 {
+    font-size: 2rem;
+  }
+
+  .technologies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .learning-path-section {
+    padding: 3rem 1rem;
+  }
+
+  .learning-path-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .learning-path-header p {
+    font-size: 1rem;
+  }
+
+  .level-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .technologies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .tech-card {
+    padding: 1rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .tech-logo-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tech-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .learning-path-section {
+    padding: 2rem 1rem;
+  }
+
+  .learning-path-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .learning-path-header p {
+    font-size: 0.95rem;
+  }
+
+  .level-badge {
+    padding: 0.75rem 1rem;
+  }
+
+  .level-title {
+    font-size: 1.1rem;
+  }
+
+  .technologies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .tech-card {
+    padding: 0.8rem 0.4rem;
+  }
+
+  .tech-logo-container {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tech-name {
+    font-size: 0.7rem;
+  }
+}

@@ -10,12 +10,13 @@ export const MODULE_LOGOS = {
   html: '/src/assets/images/logos/html-logo.png',
   css: '/src/assets/images/logos/css.png',
   bootstrap: '/src/assets/images/logos/bootstrap.jpeg',
-  tailwindcss: '/src/assets/images/logos/tailwindcss.png',
+  tailwindcss: '/src/assets/images/logos/tailwindcss.jpg',
   // Datos
   sql: '/src/assets/images/logos/mysql.png',
   mongodb: '/src/assets/images/logos/mongodb.png',
   // Versionamiento
   git: '/src/assets/images/logos/git-logo.png',
+  github: '/src/assets/images/logos/github.jpeg',
   // Cloud & Containerización
   docker: '/src/assets/images/logos/docker-lgo.png',
   kubernetes: '/src/assets/images/logos/kubernetes-logo.png',

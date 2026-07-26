@@ -7,71 +7,78 @@ export function QuickAccessSection() {
       title: 'Backend',
       icon: '/src/assets/images/logos/backend.png',
       color: '#9c27b0',
-      onClickScroll: '#menu'
+      stackCategory: 'backend'
     },
     {
       id: 'frontend',
       title: 'Frontend',
       icon: '/src/assets/images/logos/frontend.jpeg',
       color: '#61dafb',
-      onClickScroll: '#menu'
+      stackCategory: 'frontend'
     },
     {
       id: 'datos',
       title: 'Datos',
       icon: '/src/assets/images/logos/database.png',
       color: '#1976d2',
-      onClickScroll: '#menu'
+      stackCategory: 'datos'
     },
     {
       id: 'cloud',
       title: 'Cloud computing',
-      icon: '/src/assets/images/logos/cloud-computing.jpeg',
+      icon: '/src/assets/images/logos/cloud-computing.jpg',
       color: '#ff9800',
-      onClickScroll: '#menu'
+      stackCategory: 'containerizacion'
     },
     {
       id: 'versionamiento',
       title: 'Versiones',
       icon: '/src/assets/images/logos/git-logo.png',
       color: '#e8491f',
-      onClickScroll: '#menu'
+      stackCategory: 'versionamiento'
     },
     {
       id: 'metodologias',
       title: 'Metodologías',
       icon: '/src/assets/images/logos/metodologias-procesos.png',
       color: '#ff9800',
-      onClickScroll: '#menu'
+      stackCategory: 'herramientas'
     },
     {
       id: 'editores',
       title: 'Editores',
-      icon: '/src/assets/images/logos/editor.png',
+      icon: '/src/assets/images/logos/editor-texto.png',
       color: '#3f51b5',
-      onClickScroll: '#menu'
+      stackCategory: 'editores'
     },
     {
       id: 'hosting',
       title: 'Hosting',
       icon: '/src/assets/images/logos/hosting.png',
       color: '#00bcd4',
-      onClickScroll: '#menu'
+      stackCategory: 'hosting'
+    },
+    {
+      id: 'ia',
+      title: 'IA',
+      icon: '/src/assets/images/logos/ia.png',
+      color: '#9c27b0',
+      stackCategory: 'ia'
     },
     {
       id: 'contenidos',
       title: 'Contenidos',
       icon: '/src/assets/images/logos/contenidos.png',
       color: '#ff5722',
-      onClickScroll: '#menu'
+      stackCategory: 'contenidos'
     }
   ];
 
   const handleCardClick = (card) => {
-    if (card.onClickScroll) {
-      const element = document.querySelector(card.onClickScroll);
+    if (card.stackCategory) {
+      const element = document.querySelector(`#stack-category-${card.stackCategory}`);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
   };

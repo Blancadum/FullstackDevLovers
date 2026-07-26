@@ -11,7 +11,7 @@ export const LandingMetodologias = () => {
     imageUrl: '/src/assets/images/logos/procesos.png',
     imageAlt: 'Metodologías Logo',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/metodologias/agile/basico/introduccion',
+    primaryButtonLink: '/metodologias/agile-scrum/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Metodologías Ágiles',
