@@ -1,9 +1,14 @@
+/**
+ * Renders a single concept card with icon, definition, and example
+ * Can also be used as a wrapper around LessonConceptGrid variant="card"
+ * for multiple cards
+ */
 import './ConceptCard.css';
 
 export function ConceptCard({ icon, title, definition, example }) {
   return (
-    <div className="concept-card">
-      <div className="concept-icon">{icon}</div>
+    <div className="concept-card-detailed">
+      {icon && <div className="concept-icon">{icon}</div>}
       <h4>{title}</h4>
       <div className="concept-definition">
         <strong>Definición:</strong>

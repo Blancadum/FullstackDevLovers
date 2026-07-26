@@ -1,16 +1,17 @@
-import React from 'react';
-import { CategoryLandingOptimized } from '../components/CategoryLandingOptimized';
-import { categoryLandingContent } from '../config/categoryLandingContent';
-import { getTheme } from '../config/themeColors';
+import { LandingPageTemplate } from '../components';
 
 export const LandingBackend = () => {
-  const theme = getTheme('backend');
-  const content = categoryLandingContent.backend;
+  const pageConfig = {
+    title: 'Backend',
+    imageUrl: '/src/assets/images/logos/backend.png',
+    imageAlt: 'Backend',
+    primaryButtonText: 'Comenzar →',
+    primaryButtonLink: '/backend/basico/introduccion',
+    secondaryButtonText: 'Ver temas',
+    secondaryButtonLink: '#learning-topics',
+    ctaTitle: 'Domina Backend',
+    ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
+  };
 
-  return (
-    <CategoryLandingOptimized
-      content={content}
-      theme={theme}
-    />
-  );
+  return <LandingPageTemplate moduleId="backend" pageConfig={pageConfig} />;
 };

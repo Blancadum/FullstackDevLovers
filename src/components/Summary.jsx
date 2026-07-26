@@ -1,32 +1,12 @@
+/**
+ * DEPRECATED: Use LessonSummary instead
+ * This is now an alias to LessonSummary for backward compatibility
+ */
+import { LessonSummary } from './LessonSummary';
 import './Summary.css';
 
 export function Summary({ title, content, children }) {
-  const displayContent = content || children;
-
-  const renderContent = () => {
-    if (typeof displayContent === 'string') {
-      return displayContent.split('\n').map((line, idx) => {
-        if (line.trim().startsWith('•')) {
-          return <li key={idx}>{line.trim().substring(1).trim()}</li>;
-        }
-        return <p key={idx}>{line}</p>;
-      });
-    }
-    return displayContent;
-  };
-
-  return (
-    <div className="summary-wrapper">
-      <div className="summary-header">
-        <h3 className="summary-title">{title || 'Resumen'}</h3>
-      </div>
-      <div className="summary-content">
-        {typeof displayContent === 'string' && displayContent.includes('•') ? (
-          <ul>{renderContent()}</ul>
-        ) : (
-          renderContent()
-        )}
-      </div>
-    </div>
-  );
+  // Support both 'title' and 'summary' props for backward compatibility
+  const summaryText = content || children;
+  return <LessonSummary summary={summaryText} title={title || 'Resumen'} />;
 }

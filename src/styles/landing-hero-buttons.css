@@ -2,7 +2,7 @@
    LANDING HERO BUTTONS - GENERALIZED STYLING
    ========================================== */
 
-/* Container principal de botones */
+/* Container principal de botones - Responsive by default */
 .landing-hero-buttons {
   display: flex;
   justify-content: center;
@@ -13,6 +13,7 @@
   max-width: 100%;
   margin: 2rem auto 4rem;
   padding: 0 2rem;
+  flex-direction: row;
 }
 
 /* Botones base */
@@ -94,20 +95,41 @@
 
 /* ========== RESPONSIVE DESIGN ========== */
 
-@media (max-width: 768px) {
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
   .landing-hero-buttons {
-    gap: 0.8rem;
+    flex-direction: column;
+    gap: 0.75rem;
     margin: 1.5rem auto 3rem;
     padding: 0 1.5rem;
   }
 
   .landing-btn {
+    width: 100%;
     padding: 0.9rem 1.8rem;
     font-size: 0.9rem;
     min-height: 44px;
   }
 }
 
+/* Tablet Medium (481px - 768px) */
+@media (max-width: 768px) {
+  .landing-hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1.5rem;
+  }
+
+  .landing-btn {
+    width: 100%;
+    padding: 0.9rem 1.8rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+}
+
+/* Mobile (375px - 480px) */
 @media (max-width: 480px) {
   .landing-hero-buttons {
     flex-direction: column;
@@ -118,17 +140,34 @@
 
   .landing-btn {
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     font-size: 0.9rem;
     white-space: normal;
     text-align: center;
+    min-height: 44px;
   }
 
-  /* En mobile, los botones se apilan verticalmente */
   .landing-btn-primary,
   .landing-btn-secondary,
   .landing-btn-tertiary {
     flex-shrink: 0;
+  }
+}
+
+/* Small Mobile (≤375px) */
+@media (max-width: 375px) {
+  .landing-hero-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.75rem auto 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .landing-btn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    min-height: 44px;
   }
 }
 

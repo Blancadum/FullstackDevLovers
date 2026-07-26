@@ -1,16 +1,17 @@
-import React from 'react';
-import { CategoryLandingOptimized } from '../components/CategoryLandingOptimized';
-import { categoryLandingContent } from '../config/categoryLandingContent';
-import { getTheme } from '../config/themeColors';
+import { LandingPageTemplate } from '../components';
 
 export const LandingDatos = () => {
-  const theme = getTheme('datos');
-  const content = categoryLandingContent.datos;
+  const pageConfig = {
+    title: 'Datos',
+    imageUrl: '/src/assets/images/logos/datos.png',
+    imageAlt: 'Datos',
+    primaryButtonText: 'Comenzar →',
+    primaryButtonLink: '/datos/basico/introduccion',
+    secondaryButtonText: 'Ver temas',
+    secondaryButtonLink: '#learning-topics',
+    ctaTitle: 'Domina Datos',
+    ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
+  };
 
-  return (
-    <CategoryLandingOptimized
-      content={content}
-      theme={theme}
-    />
-  );
+  return <LandingPageTemplate moduleId="datos" pageConfig={pageConfig} />;
 };

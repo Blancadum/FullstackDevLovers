@@ -11,7 +11,7 @@ export { HighlightBox } from './HighlightBox';
 export { LessonSection } from './LessonSection';
 export { Lesson } from './Lesson';
 
-// Nuevos templates
+// Nuevos templates (Legacy - see Consolidated Components below)
 export { ConceptCard } from './ConceptCard';
 export { ComparisonTable } from './ComparisonTable';
 export { Exercise } from './Exercise';
@@ -29,7 +29,7 @@ export { PageTransition } from './PageTransition';
 export { AuthorHeader } from './AuthorHeader';
 export { TableOfContents } from './TableOfContents';
 
-// Lesson Components
+// Lesson Components (see Consolidated Components for canonical versions)
 export { TheorySection } from './TheorySection';
 export { ExerciseSection } from './ExerciseSection';
 export { LessonLayout } from './LessonLayout';
@@ -70,6 +70,7 @@ export { ProjectSectionsGrid } from './ProjectSectionsGrid';
 export { CategorySectionsGrid } from './CategorySectionsGrid';
 export { LandingPageAccordion } from './LandingPageAccordion';
 export { NavigationButtons } from './NavigationButtons';
+// Aliases to canonical components (see Consolidated Components)
 export { ConceptsList } from './ConceptsList';
 export { ConceptsTabbed } from './ConceptsTabbed';
 export { StackDominationSection } from './StackDominationSection';
@@ -91,7 +92,9 @@ export { MethodologyPage } from './MethodologyPage';
 export { MethodologyCard } from './MethodologyCard';
 export { KotlinThemeCard } from './KotlinThemeCard';
 
-// Unified Lesson Components (NEW)
+// CONSOLIDATED COMPONENTS (Canonical versions)
+// These are the primary components. Older versions (Exercise, Summary, KeyPoints, etc.)
+// are now aliases to these canonical versions for backward compatibility.
 export { LessonConceptGrid } from './LessonConceptGrid';
 export { LessonKeyPoints } from './LessonKeyPoints';
 export { LessonExercises } from './LessonExercises';
@@ -101,6 +104,7 @@ export { LessonSummary } from './LessonSummary';
 export { LandingHero } from './LandingHero';
 export { LandingHeroButtons } from './LandingHeroButtons';
 export { LandingHeroText } from './LandingHeroText';
+export { LandingPageTemplate } from './LandingPageTemplate';
 
 // Interactive Quiz Components
 export { OrientadorSection } from './OrientadorSection';

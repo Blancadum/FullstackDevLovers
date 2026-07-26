@@ -1,36 +1,17 @@
-import React from 'react';
-import { useBreadcrumb } from '../hooks/useBreadcrumb';
-import { CategorySectionsGrid } from '../components/CategorySectionsGrid';
-import { moduleCategories } from '../config/moduleCategories';
-import { modulesWithLessons } from '../config/modulesConfig';
-import { getTheme } from '../config/themeColors';
+import { LandingPageTemplate } from '../components';
 
 export const LandingVersionamiento = () => {
-  const breadcrumbs = useBreadcrumb();
-  const theme = getTheme('versionamiento');
-  const category = moduleCategories.find(c => c.id === 'versionamiento');
-
-  // Obtener módulos de la categoría Versionamiento
-  const modules = category.modules
-    .map(id => modulesWithLessons.find(m => m.id === id))
-    .filter(Boolean);
-
-  const categoryData = {
-    ...category,
-    modules: modules
+  const pageConfig = {
+    title: 'Versionamiento',
+    imageUrl: '/src/assets/images/logos/versionamiento.png',
+    imageAlt: 'Versionamiento',
+    primaryButtonText: 'Comenzar →',
+    primaryButtonLink: '/control-versiones/basico/introduccion',
+    secondaryButtonText: 'Ver temas',
+    secondaryButtonLink: '#learning-topics',
+    ctaTitle: 'Domina Versionamiento',
+    ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
   };
 
-  return (
-    <>
-      <div className="lesson-header" style={{ paddingTop: '1rem', marginBottom: '2rem' }}>
-        <h1>{category.name}</h1>
-        <p className="lesson-intro">{category.description}</p>
-      </div>
-
-      <CategorySectionsGrid
-        categoryData={categoryData}
-        theme={theme}
-      />
-    </>
-  );
+  return <LandingPageTemplate moduleId="versionamiento" pageConfig={pageConfig} />;
 };
