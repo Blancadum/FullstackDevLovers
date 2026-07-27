@@ -1,9 +1,14 @@
 import React from 'react';
 import { CodeBlock } from '../components/CodeBlock';
+import { SEO } from '../components/SEO';
 
 export const CasoRealS3 = () => {
   return (
     <div className="lesson-container">
+      <SEO
+        title="Caso Real: DataAnalytics - S3 + Glacier"
+        description="Cómo una startup protegió 500TB de datos críticos con S3 + Glacier y ahorró 89% en storage"
+      />
       <div className="lesson-header">
         <h1>Caso Real: DataAnalytics - Plataforma de Análisis de Datos</h1>
         <p className="lesson-intro">

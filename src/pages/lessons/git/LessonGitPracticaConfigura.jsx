@@ -54,10 +54,9 @@ git init`,
         title="Práctica: Configura tu Git"
         description="Ejercicios prácticos para configurar Git en tu sistema"
         breadcrumbs={breadcrumbs}
-        seoTitle="Práctica Git: Configura tu Git - Java Backend Learning"
+        seoTitle="Práctica Git: Configura tu Git - Fullstack Dev Lovers"
         seoDescription="Ejercicios prácticos para configurar Git correctamente en tu sistema"
         seoKeywords="git, práctica, ejercicios, configuración"
-        url="https://javabackendlearning.com/git/practicas/configura-tu-git"
       >
         <p>
           En esta práctica vamos a llevar a cabo los pasos esenciales para configurar Git en tu sistema.

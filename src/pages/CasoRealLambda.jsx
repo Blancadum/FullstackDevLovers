@@ -1,9 +1,14 @@
 import React from 'react';
 import { CodeBlock } from '../components/CodeBlock';
+import { SEO } from '../components/SEO';
 
 export const CasoRealLambda = () => {
   return (
     <div className="lesson-container">
+      <SEO
+        title="Caso Real: PhotoSharing - AWS Lambda y S3 Triggers"
+        description="Cómo una startup pasó de procesar fotos en 48 horas a 5 minutos usando AWS Lambda y S3 Triggers"
+      />
       <div className="lesson-header">
         <h1> Caso Real: PhotoSharing - Plataforma de Fotos</h1>
         <p className="lesson-intro">

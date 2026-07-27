@@ -1,9 +1,14 @@
 import React from 'react';
 import { CodeBlock } from '../components/CodeBlock';
+import { SEO } from '../components/SEO';
 
 export const CasoRealRDS = () => {
   return (
     <div className="lesson-container">
+      <SEO
+        title="Caso Real: EcommercePro - RDS Multi-AZ"
+        description="Cómo una tienda online escaló de 1M a 100M transacciones/mes migrando a RDS Multi-AZ"
+      />
       <div className="lesson-header">
         <h1>Caso Real: EcommercePro - Plataforma E-Commerce</h1>
         <p className="lesson-intro">

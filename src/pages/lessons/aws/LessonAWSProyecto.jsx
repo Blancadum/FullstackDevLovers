@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CodeBlock, LessonNavigation } from '../../../components';
+import { CodeBlock, LessonNavigation, SEO } from '../../../components';
 import { useLessonNavigation } from '../../../hooks/useLessonNavigation';
 
 export const LessonAWSProyecto = () => {
@@ -22,6 +22,10 @@ export const LessonAWSProyecto = () => {
 
   return (
     <>
+      <SEO
+        title="Proyecto Final AWS - Arquitectura del Laboratorio Guttman"
+        description="Integración completa de todos los conceptos AWS en una arquitectura de referencia para modernizar la infraestructura del Laboratorio Guttman."
+      />
       <div className="lesson-container">
       <div className="lesson-header">
         <h1>Sesión 10: Proyecto Final - Arquitectura del Laboratorio Guttman</h1>

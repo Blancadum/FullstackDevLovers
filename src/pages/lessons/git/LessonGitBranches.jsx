@@ -95,10 +95,9 @@ git pull --prune`
         title="Ramas (Branches)"
         description="Aprende a trabajar con ramas para desarrollar en paralelo"
         breadcrumbs={breadcrumbs}
-        seoTitle="Ramas en Git - Java Backend Learning"
+        seoTitle="Ramas en Git - Fullstack Dev Lovers"
         seoDescription="Guía completa sobre ramas en Git: crear, cambiar, mergear y mejores prácticas"
         seoKeywords="git, ramas, branches, feature branches, hotfix, merge"
-        url="https://javabackendlearning.com/git/basicos/branches"
       >
         {/* SECCIÓN 1: DEFINICIÓN Y FUNCIONALIDAD */}
         <h2>Definición y funcionalidad</h2>

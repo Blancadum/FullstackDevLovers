@@ -4,12 +4,7 @@ import { getModule } from '../config/modulesConfig';
 export function ModuleClusters({ moduleId }) {
   const module = getModule(moduleId);
 
-  console.log('ModuleClusters - moduleId:', moduleId);
-  console.log('ModuleClusters - module encontrado:', module);
-  console.log('ModuleClusters - tiene secciones:', module?.sections?.length);
-
   if (!module || !module.sections || module.sections.length === 0) {
-    console.log('ModuleClusters - retornando null porque no hay módulo o secciones');
     return null;
   }
 
@@ -21,8 +16,6 @@ export function ModuleClusters({ moduleId }) {
     color: '#0066cc',
     link: `${module.landingPage}/${section.id}`
   }));
-
-  console.log('ModuleClusters - cards generadas:', sectionCards);
 
   return (
     <ClusterCards

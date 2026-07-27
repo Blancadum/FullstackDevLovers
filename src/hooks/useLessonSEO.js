@@ -13,7 +13,7 @@ export function useLessonSEO() {
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
-    url: `https://javabackendlearning.com${location.pathname}`,
+    url: `https://fullstackdevlovers.com${location.pathname}`,
     breadcrumb: metadata.breadcrumb
   };
 }

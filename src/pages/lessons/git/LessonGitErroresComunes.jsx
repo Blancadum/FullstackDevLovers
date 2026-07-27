@@ -13,10 +13,9 @@ export function LessonGitErroresComunes() {
         title="Errores Comunes en Git"
         description="Soluciona los problemas más frecuentes que encontrarás usando Git"
         breadcrumbs={breadcrumbs}
-        seoTitle="Errores Comunes en Git - Soluciones - Java Backend Learning"
+        seoTitle="Errores Comunes en Git - Soluciones - Fullstack Dev Lovers"
         seoDescription="Guía práctica para resolver los errores más frecuentes en Git: merge conflicts, push rechazados, commits incorrectos"
         seoKeywords="git, errores, soluciones, troubleshooting, conflictos, merge"
-        url="https://javabackendlearning.com/git/basicos/errores-comunes"
       >
         <p>
           Incluso los desarrolladores experimentados cometen errores con Git. Lo importante es saber cómo identificarlos

@@ -89,10 +89,9 @@ git log --oneline`,
         title="Práctica: Haz tus Primeros Commits"
         description="Ejercicios prácticos para crear y gestionar commits"
         breadcrumbs={breadcrumbs}
-        seoTitle="Práctica Git: Haz tus Primeros Commits - Java Backend Learning"
+        seoTitle="Práctica Git: Haz tus Primeros Commits - Fullstack Dev Lovers"
         seoDescription="Ejercicios prácticos para crear commits con Git"
         seoKeywords="git, práctica, commits, add, log, historial"
-        url="https://javabackendlearning.com/git/practicas/haz-tus-primeros-commits"
       >
         <p>
           En esta práctica vamos a aprender a agregar cambios a Git y crear commits con mensajes claros.

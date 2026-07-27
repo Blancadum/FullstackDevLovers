@@ -45,10 +45,9 @@ git init`
         title="Configuración Inicial de Git"
         description="Aprende a configurar Git por primera vez en tu sistema"
         breadcrumbs={breadcrumbs}
-        seoTitle="Configuración Inicial de Git - Java Backend Learning"
+        seoTitle="Configuración Inicial de Git - Fullstack Dev Lovers"
         seoDescription="Guía completa para configurar Git: usuario, email y configuraciones básicas"
         seoKeywords="git, configuración, config, usuario, email, init"
-        url="https://javabackendlearning.com/git/basicos/configuracion-inicial"
       >
         <h2>Por qué configurar Git</h2>
         <p>

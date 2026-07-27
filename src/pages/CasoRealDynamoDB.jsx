@@ -1,9 +1,14 @@
 import React from 'react';
 import { CodeBlock } from '../components/CodeBlock';
+import { SEO } from '../components/SEO';
 
 export const CasoRealDynamoDB = () => {
   return (
     <div className="lesson-container">
+      <SEO
+        title="Caso Real: MobileGameStudio - RDS a DynamoDB"
+        description="Cómo una startup de juegos escaló de 100K a 1M usuarios simultáneos migrando de RDS a DynamoDB"
+      />
       <div className="lesson-header">
         <h1> Caso Real: MobileGameStudio - Juego Multiplayer Masivo</h1>
         <p className="lesson-intro">

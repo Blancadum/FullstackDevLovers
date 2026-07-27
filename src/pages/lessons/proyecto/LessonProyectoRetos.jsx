@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { LessonNavigation } from '../../../components/LessonNavigation';
+import { SEO } from '../../../components/SEO';
 import { useBreadcrumb } from '../../../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../../../hooks/useLessonNavigation';
 import { retosData } from '../../../data/retosData';
@@ -37,6 +38,10 @@ export function LessonProyectoRetos() {
 
   return (
     <>
+      <SEO
+        title={`REPTE ${reto.number}: ${reto.title}`}
+        description={reto.description}
+      />
       <div style={{ padding: '0 20px' }}>
         {breadcrumbs && breadcrumbs.length > 0 && (
           <div style={{

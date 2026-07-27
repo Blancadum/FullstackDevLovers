@@ -6,7 +6,7 @@ import { RequiredComponents } from './RequiredComponents';
 import { DifferentiatorOptions } from './DifferentiatorOptions';
 import { RetosSelector } from './RetosSelector';
 import { ejemplosTFCData } from '../data/ejemplosTFCData';
-import { InfoBox } from './index';
+import { InfoBox, SEO } from './index';
 
 export function ProyectoIntegradorLayout({ breadcrumbs }) {
   const [selectedTab, setSelectedTab] = useState('planificacion');
@@ -320,6 +320,10 @@ RELACIONES:
 
   return (
     <div className="proyecto-layout">
+      <SEO
+        title="Proyecto Integrador TFC"
+        description="Planificación, metodología, desarrollo, testing y despliegue de tu Trabajo de Fin de Ciclo"
+      />
       {breadcrumbs && breadcrumbs.length > 0 && (
         <div className="proyecto-breadcrumbs">
           {breadcrumbs.map((crumb, index) => (

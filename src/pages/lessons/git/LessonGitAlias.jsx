@@ -13,10 +13,9 @@ export function LessonGitAlias() {
         title="Configuración de Alias en Git"
         description="Crea atajos personalizados para comandos de Git"
         breadcrumbs={breadcrumbs}
-        seoTitle="Configuración de Alias en Git - Java Backend Learning"
+        seoTitle="Configuración de Alias en Git - Fullstack Dev Lovers"
         seoDescription="Aprende a crear alias personalizados en Git para acelerar tu flujo de trabajo"
         seoKeywords="git, alias, atajos, comandos personalizados"
-        url="https://javabackendlearning.com/git/basicos/alias"
       >
         <p>
           Los <strong>alias en Git</strong> son atajos personalizados que te permiten ejecutar comandos largos o complejos

@@ -47,7 +47,7 @@ git commit --amend --no-edit`
         title="Commits y Mensajes Claros"
         description="Domina los commits y escribe mensajes descriptivos"
         breadcrumbs={breadcrumbs}
-        seoTitle="Commits en Git - Java Backend Learning"
+        seoTitle="Commits en Git - Fullstack Dev Lovers"
         seoDescription="Guía completa: git add, git commit, mensajes descriptivos y buenas prácticas"
         seoKeywords="git commit, staging, add, historial"
       >

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LessonNavigation } from '../../../components/LessonNavigation';
+import { SEO } from '../../../components/SEO';
 import { useBreadcrumb } from '../../../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../../../hooks/useLessonNavigation';
 import '../../LessonProyectoLanding.css';
@@ -10,6 +11,10 @@ export function LessonProyectoLanding() {
 
   return (
     <>
+      <SEO
+        title="TFC - Trabajo Fin de Ciclo"
+        description="Una guía completa que te enseña a planificar, desarrollar, testear y desplegar un proyecto web full-stack. Basado en metodología SCRUM con 8 retos prácticos del currículo DAW."
+      />
       <div className="proyecto-landing">
       {breadcrumbs && breadcrumbs.length > 0 && (
         <div className="proyecto-landing-breadcrumbs">

@@ -841,7 +841,6 @@ export function ModulePage({ moduleId }) {
       <SEO
         title={content.title}
         description={content.description}
-        url={`https://javabackendlearning.com/${moduleId}`}
       />
       <div className="module-page">
       <div className="module-header">

@@ -108,10 +108,9 @@ git merge feature/nueva
         title="Práctica: Resuelve Conflictos de Merge"
         description="Ejercicios prácticos para integrar ramas y resolver conflictos"
         breadcrumbs={breadcrumbs}
-        seoTitle="Práctica Git: Resuelve Conflictos de Merge - Java Backend Learning"
+        seoTitle="Práctica Git: Resuelve Conflictos de Merge - Fullstack Dev Lovers"
         seoDescription="Ejercicios prácticos para hacer merge y resolver conflictos en Git"
         seoKeywords="git, práctica, merge, conflictos, integración, ramas"
-        url="https://javabackendlearning.com/git/practicas/resuelve-conflictos-de-merge"
       >
         <p>
           En esta práctica vamos a aprender a integrar ramas usando merge y cómo resolver conflictos cuando

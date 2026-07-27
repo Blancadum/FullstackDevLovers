@@ -52,7 +52,6 @@ export function SectionPage({ moduleId, sectionId }) {
       <SEO
         title={`${section.fullName || section.name} - ${module.name}`}
         description={section.description}
-        url={`https://javabackendlearning.com/${moduleId}/${sectionId}`}
       />
 
       <div className="section-page">

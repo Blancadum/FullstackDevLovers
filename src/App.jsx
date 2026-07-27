@@ -1,9 +1,212 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
 import { Header, Footer, ScrollToTop, PageTransition, AutoScrollToTop } from './components';
 import { useBreadcrumb } from './hooks/useBreadcrumb';
 import { useHeroVisible } from './hooks/useHeroVisible';
 import { Home, ModulePage, SectionPage } from './pages';
-import { SectionPageWrapper } from './pages/SectionPageWrapper';
+import './App.css';
+
+const SectionPageWrapper = lazy(() => import('./pages/SectionPageWrapper').then(m => ({ default: m.SectionPageWrapper })));
+const LessonGitConfiguracionInicial = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitConfiguracionInicial })));
+const LessonGitCrearClonarRepos = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitCrearClonarRepos })));
+const LessonGitCommits = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitCommits })));
+const LessonGitBranches = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitBranches })));
+const LessonGitMerge = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitMerge })));
+const LessonGitAlias = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitAlias })));
+const LessonGitErroresComunes = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitErroresComunes })));
+const LessonGitPracticaConfigura = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPracticaConfigura })));
+const LessonGitPracticaRepositorio = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPracticaRepositorio })));
+const LessonGitPracticaCommits = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPracticaCommits })));
+const LessonGitPracticaRamas = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPracticaRamas })));
+const LessonGitPracticaMerge = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPracticaMerge })));
+const LessonGitPushPullFetch = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPushPullFetch })));
+const LessonGitPullRequests = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPullRequests })));
+const LessonGitPlataformasRemotas = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitPlataformasRemotas })));
+const LessonGitWorkflow = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitWorkflow })));
+const LessonGitGitHub = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitGitHub })));
+const LessonGitGitLab = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitGitLab })));
+const LessonGitBitbucket = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitBitbucket })));
+const LessonAbstractClasses = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonAbstractClasses })));
+const LessonArrays = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonArrays })));
+const LessonClasses = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonClasses })));
+const LessonCollections = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonCollections })));
+const LessonControlFlow = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonControlFlow })));
+const LessonCRUD = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonCRUD })));
+const LessonDataTypes = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonDataTypes })));
+const LessonExceptions = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonExceptions })));
+const LessonGenerics = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonGenerics })));
+const LessonInheritance = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonInheritance })));
+const LessonInterfacesAbstract = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonInterfacesAbstract })));
+const LessonJavaInternals = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonJavaInternals })));
+const LessonJavaOperators = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonJavaOperators })));
+const LessonJavaVM = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonJavaVM })));
+const LessonJDBC = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonJDBC })));
+const LessonLambdas = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonLambdas })));
+const LessonPolymorphism = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonPolymorphism })));
+const LessonRefactoring = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonRefactoring })));
+const LessonScanner = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonScanner })));
+const LessonStreams = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonStreams })));
+const LessonStrings = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonStrings })));
+const LessonOAuth2JWT = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonOAuth2JWT })));
+const LessonSpringBatch = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBatch })));
+const LessonSpringBootControllers = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootControllers })));
+const LessonSpringBootIntroduccion = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootIntroduccion })));
+const LessonSpringBootJPA = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootJPA })));
+const LessonSpringBootSecurity = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootSecurity })));
+const LessonSpringBootServices = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootServices })));
+const LessonSpringBootSetup = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootSetup })));
+const LessonSpringBootTesting = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootTesting })));
+const LessonSpringBootValidation = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringBootValidation })));
+const LessonSpringSecurityAdvanced = lazy(() => import('./pages/lessons/spring-boot').then(m => ({ default: m.LessonSpringSecurityAdvanced })));
+const LessonSQLAdvanced = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLAdvanced })));
+const LessonSQLBackupRecuperacion = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLBackupRecuperacion })));
+const LessonSQLCrearBD = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLCrearBD })));
+const LessonSQLDDL = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLDDL })));
+const LessonSQLDML = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLDML })));
+const LessonSQLIntroduccion = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLIntroduccion })));
+const LessonSQLJOINs = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLJOINs })));
+const LessonSQLMongoDB = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLMongoDB })));
+const LessonSQLMySQL = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLMySQL })));
+const LessonSQLPostgreSQL = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLPostgreSQL })));
+const LessonSQLUsuariosPermisos = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLUsuariosPermisos })));
+const LessonSQLVsNoSQL = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLVsNoSQL })));
+const LessonBashShell = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonBashShell })));
+const LessonBitbucket = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonBitbucket })));
+const LessonCICD = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonCICD })));
+const LessonCloudDeployment = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonCloudDeployment })));
+const LessonCodeiumAI = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonCodeiumAI })));
+const LessonConceptoEntornoDesarrollo = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonConceptoEntornoDesarrollo })));
+const LessonDependencias = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonDependencias })));
+const LessonEclipse = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonEclipse })));
+const LessonGradle = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonGradle })));
+const LessonIDEs = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonIDEs })));
+const LessonIntelliJ = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonIntelliJ })));
+const LessonMaven = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonMaven })));
+const LessonVSCode = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonVSCode })));
+const LessonVSCodeExtensions = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonVSCodeExtensions })));
+const LessonGitHubActions = lazy(() => import('./pages/LessonGitHubActions').then(m => ({ default: m.LessonGitHubActions })));
+const LessonAgileIntroduccion = lazy(() => import('./pages/lessons/metodologias').then(m => ({ default: m.LessonAgileIntroduccion })));
+const LessonDevelopmentConcepts = lazy(() => import('./pages/lessons/metodologias').then(m => ({ default: m.LessonDevelopmentConcepts })));
+const LessonPatronesDiseno = lazy(() => import('./pages/lessons/metodologias').then(m => ({ default: m.LessonPatronesDiseno })));
+const LessonSOLID = lazy(() => import('./pages/lessons/metodologias').then(m => ({ default: m.LessonSOLID })));
+const LessonSoftwareTesting = lazy(() => import('./pages/lessons/metodologias').then(m => ({ default: m.LessonSoftwareTesting })));
+const LessonUML = lazy(() => import('./pages/lessons/metodologias').then(m => ({ default: m.LessonUML })));
+const LessonKubernetesDeployments = lazy(() => import('./pages/lessons/kubernetes').then(m => ({ default: m.LessonKubernetesDeployments })));
+const LessonKubernetesIntro = lazy(() => import('./pages/lessons/kubernetes').then(m => ({ default: m.LessonKubernetesIntro })));
+const LessonKubernetesPods = lazy(() => import('./pages/lessons/kubernetes').then(m => ({ default: m.LessonKubernetesPods })));
+const LessonKotlinGeneric = lazy(() => import('./pages/lessons/kotlin').then(m => ({ default: m.LessonKotlinGeneric })));
+const LessonKotlinIntroduccion = lazy(() => import('./pages/lessons/kotlin').then(m => ({ default: m.LessonKotlinIntroduccion })));
+const LessonKotlinVsJava = lazy(() => import('./pages/lessons/kotlin').then(m => ({ default: m.LessonKotlinVsJava })));
+const LessonDefinicionProyecto = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonDefinicionProyecto })));
+const LessonProyectoAPIs = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoAPIs })));
+const LessonProyectoAgile = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoAgile })));
+const LessonProyectoArquitectura = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoArquitectura })));
+const LessonProyectoBackend = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoBackend })));
+const LessonProyectoDatabase = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoDatabase })));
+const LessonProyectoEjemplos = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoEjemplos })));
+const LessonProyectoRequisitos = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoRequisitos })));
+const LessonProyectoRetos = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoRetos })));
+const LessonProyectoSetup = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoSetup })));
+const LessonProyectoSprint1 = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoSprint1 })));
+const LessonProyectoSprint2 = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoSprint2 })));
+const LessonProyectoTesting = lazy(() => import('./pages/lessons/proyecto').then(m => ({ default: m.LessonProyectoTesting })));
+const LessonDocker = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDocker })));
+const LessonDockerConceptos = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerConceptos })));
+const LessonDockerfile = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerfile })));
+const LessonDockerComandos = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerComandos })));
+const LessonDockerComposeNew = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerComposeNew })));
+const LessonDockerNetworking = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerNetworking })));
+const LessonDockerVolumenes = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerVolumenes })));
+const LessonDockerMultistage = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerMultistage })));
+const LessonDockerOptimizacion = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerOptimizacion })));
+const LessonDockerDebugging = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerDebugging })));
+const LessonDockerPracticas = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerPracticas })));
+const LessonDockerPython = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerPython })));
+const LessonDockerJava = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerJava })));
+const LessonDockerFrontend = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerFrontend })));
+const LessonDockerNodejs = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerNodejs })));
+const LessonDockerCompose = lazy(() => import('./pages/lessons/docker').then(m => ({ default: m.LessonDockerCompose })));
+const LessonAWSAlmacenamiento = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSAlmacenamiento })));
+const LessonAWSArquitectura = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSArquitectura })));
+const LessonAWSCloudWatch = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSCloudWatch })));
+const LessonAWSConceptos = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSConceptos })));
+const LessonAWSDeployment = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSDeployment })));
+const LessonAWSDynamoDB = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSDynamoDB })));
+const LessonAWSEC2 = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSEC2 })));
+const LessonAWSIAM = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSIAM })));
+const LessonAWSIntro = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSIntro })));
+const LessonAWSJava = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSJava })));
+const LessonAWSLambda = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSLambda })));
+const LessonAWSPricing = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSPricing })));
+const LessonAWSProyecto = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSProyecto })));
+const LessonAWSRDS = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSRDS })));
+const LessonAWSS3 = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSS3 })));
+const LessonAWSVPC = lazy(() => import('./pages/lessons/aws').then(m => ({ default: m.LessonAWSVPC })));
+const ComparisonS3VsDocker = lazy(() => import('./pages/ComparisonS3VsDocker').then(m => ({ default: m.ComparisonS3VsDocker })));
+const ComparisonEC2VsLambda = lazy(() => import('./pages/ComparisonEC2VsLambda').then(m => ({ default: m.ComparisonEC2VsLambda })));
+const ComparisonRDSVsDynamoDB = lazy(() => import('./pages/ComparisonRDSVsDynamoDB').then(m => ({ default: m.ComparisonRDSVsDynamoDB })));
+const ComparisonDockerVsKubernetes = lazy(() => import('./pages/ComparisonDockerVsKubernetes').then(m => ({ default: m.ComparisonDockerVsKubernetes })));
+const LandingKubernetes = lazy(() => import('./pages/LandingKubernetes').then(m => ({ default: m.LandingKubernetes })));
+const CasoRealEC2 = lazy(() => import('./pages/CasoRealEC2').then(m => ({ default: m.CasoRealEC2 })));
+const CasoRealRDS = lazy(() => import('./pages/CasoRealRDS').then(m => ({ default: m.CasoRealRDS })));
+const CasoRealLambda = lazy(() => import('./pages/CasoRealLambda').then(m => ({ default: m.CasoRealLambda })));
+const CasoRealS3 = lazy(() => import('./pages/CasoRealS3').then(m => ({ default: m.CasoRealS3 })));
+const CasoRealDynamoDB = lazy(() => import('./pages/CasoRealDynamoDB').then(m => ({ default: m.CasoRealDynamoDB })));
+const LandingDevOps = lazy(() => import('./pages/LandingDevOps').then(m => ({ default: m.LandingDevOps })));
+const LandingAWS = lazy(() => import('./pages/LandingAWS').then(m => ({ default: m.LandingAWS })));
+const LandingDocker = lazy(() => import('./pages/LandingDocker').then(m => ({ default: m.LandingDocker })));
+const LandingJava = lazy(() => import('./pages/LandingJava').then(m => ({ default: m.LandingJava })));
+const LandingSpringBoot = lazy(() => import('./pages/LandingSpringBoot').then(m => ({ default: m.LandingSpringBoot })));
+const LandingGit = lazy(() => import('./pages/LandingGit').then(m => ({ default: m.LandingGit })));
+const LandingGitHub = lazy(() => import('./pages/LandingGitHub').then(m => ({ default: m.LandingGitHub })));
+const LandingHerramientas = lazy(() => import('./pages/LandingHerramientas').then(m => ({ default: m.LandingHerramientas })));
+const LandingArquitectura = lazy(() => import('./pages/LandingArquitectura').then(m => ({ default: m.LandingArquitectura })));
+const LandingBuildTools = lazy(() => import('./pages/LandingBuildTools').then(m => ({ default: m.LandingBuildTools })));
+const LandingSQLBasico = lazy(() => import('./pages/LandingSQLBasico').then(m => ({ default: m.LandingSQLBasico })));
+const LandingMetodologias = lazy(() => import('./pages/LandingMetodologias').then(m => ({ default: m.LandingMetodologias })));
+const MethodologyWrapper = lazy(() => import('./pages/MethodologyWrapper').then(m => ({ default: m.MethodologyWrapper })));
+const LandingProyecto = lazy(() => import('./pages/LandingProyecto').then(m => ({ default: m.LandingProyecto })));
+const LandingReact = lazy(() => import('./pages/LandingReact').then(m => ({ default: m.LandingReact })));
+const LandingAngular = lazy(() => import('./pages/LandingAngular').then(m => ({ default: m.LandingAngular })));
+const LessonAngularGeneric = lazy(() => import('./pages/LessonAngularGeneric').then(m => ({ default: m.LessonAngularGeneric })));
+const LandingHTML = lazy(() => import('./pages/LandingHTML').then(m => ({ default: m.LandingHTML })));
+const LandingCSS = lazy(() => import('./pages/LandingCSS').then(m => ({ default: m.LandingCSS })));
+const LandingBootstrap = lazy(() => import('./pages/LandingBootstrap').then(m => ({ default: m.LandingBootstrap })));
+const LandingTailwindCSS = lazy(() => import('./pages/LandingTailwindCSS').then(m => ({ default: m.LandingTailwindCSS })));
+const LandingMongoDB = lazy(() => import('./pages/LandingMongoDB').then(m => ({ default: m.LandingMongoDB })));
+const LandingKotlin = lazy(() => import('./pages/LandingKotlin').then(m => ({ default: m.LandingKotlin })));
+const LandingNodejs = lazy(() => import('./pages/LandingNodejs').then(m => ({ default: m.LandingNodejs })));
+const LandingNodejsIntroduccion = lazy(() => import('./pages/LandingNodejsIntroduccion').then(m => ({ default: m.LandingNodejsIntroduccion })));
+const LandingNodejsNPM = lazy(() => import('./pages/LandingNodejsNPM').then(m => ({ default: m.LandingNodejsNPM })));
+const LandingNodejsModulos = lazy(() => import('./pages/LandingNodejsModulos').then(m => ({ default: m.LandingNodejsModulos })));
+const LandingNodejsEventLoop = lazy(() => import('./pages/LandingNodejsEventLoop').then(m => ({ default: m.LandingNodejsEventLoop })));
+const LandingBackend = lazy(() => import('./pages/LandingBackend').then(m => ({ default: m.LandingBackend })));
+const LandingFrontend = lazy(() => import('./pages/LandingFrontend').then(m => ({ default: m.LandingFrontend })));
+const LandingDatos = lazy(() => import('./pages/LandingDatos').then(m => ({ default: m.LandingDatos })));
+const LandingCloud = lazy(() => import('./pages/LandingCloud').then(m => ({ default: m.LandingCloud })));
+const LandingVersionamiento = lazy(() => import('./pages/LandingVersionamiento').then(m => ({ default: m.LandingVersionamiento })));
+const LandingEditores = lazy(() => import('./pages/LandingEditores').then(m => ({ default: m.LandingEditores })));
+const LandingHosting = lazy(() => import('./pages/LandingHosting').then(m => ({ default: m.LandingHosting })));
+const LandingIA = lazy(() => import('./pages/LandingIA').then(m => ({ default: m.LandingIA })));
+const LandingContenidos = lazy(() => import('./pages/LandingContenidos').then(m => ({ default: m.LandingContenidos })));
+const LandingSEO = lazy(() => import('./pages/LandingSEO').then(m => ({ default: m.LandingSEO })));
+const LandingHerramientasMetodologias = lazy(() => import('./pages/LandingHerramientasMetodologias').then(m => ({ default: m.LandingHerramientasMetodologias })));
+const LexicoAWS = lazy(() => import('./pages/LexicoAWS').then(m => ({ default: m.LexicoAWS })));
+const LexicoGeneral = lazy(() => import('./pages/LexicoGeneral').then(m => ({ default: m.LexicoGeneral })));
+const EvaluacionAWS = lazy(() => import('./pages/EvaluacionAWS').then(m => ({ default: m.EvaluacionAWS })));
+const EvaluacionGeneral = lazy(() => import('./pages/EvaluacionGeneral').then(m => ({ default: m.EvaluacionGeneral })));
+const LessonProyectoReto1 = lazy(() => import('./pages/LessonProyectoReto1').then(m => ({ default: m.LessonProyectoReto1 })));
+const LessonProyectoReto2 = lazy(() => import('./pages/LessonProyectoReto2').then(m => ({ default: m.LessonProyectoReto2 })));
+const LessonProyectoReto3 = lazy(() => import('./pages/LessonProyectoReto3').then(m => ({ default: m.LessonProyectoReto3 })));
+const LessonProyectoReto4 = lazy(() => import('./pages/LessonProyectoReto4').then(m => ({ default: m.LessonProyectoReto4 })));
+const LessonProyectoReto5 = lazy(() => import('./pages/LessonProyectoReto5').then(m => ({ default: m.LessonProyectoReto5 })));
+const LessonProyectoReto6 = lazy(() => import('./pages/LessonProyectoReto6').then(m => ({ default: m.LessonProyectoReto6 })));
+const LessonProyectoReto7 = lazy(() => import('./pages/LessonProyectoReto7').then(m => ({ default: m.LessonProyectoReto7 })));
+const LessonProyectoReto8 = lazy(() => import('./pages/LessonProyectoReto8').then(m => ({ default: m.LessonProyectoReto8 })));
+const LessonEjemplosTFC = lazy(() => import('./pages/LessonEjemplosTFC').then(m => ({ default: m.LessonEjemplosTFC })));
+const LessonPlaceholder = lazy(() => import('./pages/LessonPlaceholder').then(m => ({ default: m.LessonPlaceholder })));
+const TestLesson = lazy(() => import('./pages/TestLesson').then(m => ({ default: m.TestLesson })));
+const TestLessonTemplate = lazy(() => import('./pages/TestLessonTemplate').then(m => ({ default: m.TestLessonTemplate })));
 
 // Componente de redirección para secciones (/categoria/modulo/section → /categoria/modulo?section=section)
 function RedirectToSection() {
@@ -29,248 +232,6 @@ function JavaModuleRouter() {
   return <Navigate to="/backend/java" replace />;
 }
 
-// Componente de redirección para secciones de módulos (/backend/java/introduccion → primera lección)
-function RedirectToFirstLesson() {
-  const { moduleId, sectionId } = useParams();
-  const location = useLocation();
-  const pathParts = location.pathname.split('/').filter(Boolean);
-  const category = pathParts[0];
-  const module = pathParts[1];
-
-  const { getFirstLessonOfSection } = require('./config/modulesConfig');
-  const firstLessonLink = getFirstLessonOfSection(module, sectionId);
-
-  if (firstLessonLink) {
-    return <Navigate to={firstLessonLink} replace />;
-  }
-
-  // Fallback: ir a la página del módulo
-  return <Navigate to={`/${category}/${module}`} replace />;
-}
-import {
-  LessonGitConfiguracionInicial,
-  LessonGitCrearClonarRepos,
-  LessonGitCommits,
-  LessonGitBranches,
-  LessonGitMerge,
-  LessonGitAlias,
-  LessonGitErroresComunes,
-  LessonGitPracticaConfigura,
-  LessonGitPracticaRepositorio,
-  LessonGitPracticaCommits,
-  LessonGitPracticaRamas,
-  LessonGitPracticaMerge,
-  LessonGitPushPullFetch,
-  LessonGitPullRequests,
-  LessonGitPlataformasRemotas,
-  LessonGitWorkflow,
-  LessonGitGitHub,
-  LessonGitGitLab,
-  LessonGitBitbucket
-} from './pages/lessons/git';
-import {
-  LessonAbstractClasses,
-  LessonArrays,
-  LessonClasses,
-  LessonCollections,
-  LessonControlFlow,
-  LessonCRUD,
-  LessonDataTypes,
-  LessonExceptions,
-  LessonGenerics,
-  LessonInheritance,
-  LessonInterfacesAbstract,
-  LessonJavaInternals,
-  LessonJavaOperators,
-  LessonJavaVM,
-  LessonJDBC,
-  LessonLambdas,
-  LessonPolymorphism,
-  LessonRefactoring,
-  LessonScanner,
-  LessonStreams,
-  LessonStrings
-} from './pages/lessons/java';
-import {
-  LessonOAuth2JWT,
-  LessonSpringBatch,
-  LessonSpringBootControllers,
-  LessonSpringBootIntroduccion,
-  LessonSpringBootJPA,
-  LessonSpringBootSecurity,
-  LessonSpringBootServices,
-  LessonSpringBootSetup,
-  LessonSpringBootTesting,
-  LessonSpringBootValidation,
-  LessonSpringSecurityAdvanced
-} from './pages/lessons/spring-boot';
-import {
-  LessonSQLAdvanced,
-  LessonSQLBackupRecuperacion,
-  LessonSQLCrearBD,
-  LessonSQLDDL,
-  LessonSQLDML,
-  LessonSQLIntroduccion,
-  LessonSQLJOINs,
-  LessonSQLMongoDB,
-  LessonSQLMySQL,
-  LessonSQLPostgreSQL,
-  LessonSQLUsuariosPermisos,
-  LessonSQLVsNoSQL
-} from './pages/lessons/sql';
-import {
-  LessonBashShell,
-  LessonBitbucket,
-  LessonCICD,
-  LessonCloudDeployment,
-  LessonCodeiumAI,
-  LessonConceptoEntornoDesarrollo,
-  LessonDependencias,
-  LessonEclipse,
-  LessonGradle,
-  LessonIDEs,
-  LessonIntelliJ,
-  LessonMaven,
-  LessonVSCode,
-  LessonVSCodeExtensions
-} from './pages/lessons/herramientas';
-import { LessonGitHubActions } from './pages/LessonGitHubActions';
-import {
-  LessonAgileIntroduccion,
-  LessonDevelopmentConcepts,
-  LessonPatronesDiseno,
-  LessonSOLID,
-  LessonSoftwareTesting,
-  LessonUML
-} from './pages/lessons/metodologias';
-import {
-  LessonKubernetesDeployments,
-  LessonKubernetesIntro,
-  LessonKubernetesPods
-} from './pages/lessons/kubernetes';
-import {
-  LessonKotlinGeneric,
-  LessonKotlinIntroduccion,
-  LessonKotlinVsJava
-} from './pages/lessons/kotlin';
-import {
-  LessonDefinicionProyecto,
-  LessonProyectoAPIs,
-  LessonProyectoAgile,
-  LessonProyectoArquitectura,
-  LessonProyectoBackend,
-  LessonProyectoDatabase,
-  LessonProyectoEjemplos,
-  LessonProyectoRequisitos,
-  LessonProyectoRetos,
-  LessonProyectoSetup,
-  LessonProyectoSprint1,
-  LessonProyectoSprint2,
-  LessonProyectoTesting
-} from './pages/lessons/proyecto';
-import {
-  LessonDocker,
-  LessonDockerConceptos,
-  LessonDockerfile,
-  LessonDockerComandos,
-  LessonDockerComposeNew,
-  LessonDockerNetworking,
-  LessonDockerVolumenes,
-  LessonDockerMultistage,
-  LessonDockerOptimizacion,
-  LessonDockerDebugging,
-  LessonDockerPracticas,
-  LessonDockerPython,
-  LessonDockerJava,
-  LessonDockerFrontend,
-  LessonDockerNodejs,
-  LessonDockerCompose
-} from './pages/lessons/docker';
-import {
-  LessonAWSAlmacenamiento,
-  LessonAWSArquitectura,
-  LessonAWSCloudWatch,
-  LessonAWSConceptos,
-  LessonAWSDeployment,
-  LessonAWSDynamoDB,
-  LessonAWSEC2,
-  LessonAWSIAM,
-  LessonAWSIntro,
-  LessonAWSJava,
-  LessonAWSLambda,
-  LessonAWSPricing,
-  LessonAWSProyecto,
-  LessonAWSRDS,
-  LessonAWSS3,
-  LessonAWSVPC
-} from './pages/lessons/aws';
-import { ComparisonS3VsDocker } from './pages/ComparisonS3VsDocker';
-import { ComparisonEC2VsLambda } from './pages/ComparisonEC2VsLambda';
-import { ComparisonRDSVsDynamoDB } from './pages/ComparisonRDSVsDynamoDB';
-import { ComparisonDockerVsKubernetes } from './pages/ComparisonDockerVsKubernetes';
-import { LandingKubernetes } from './pages/LandingKubernetes';
-import { CasoRealEC2 } from './pages/CasoRealEC2';
-import { CasoRealRDS } from './pages/CasoRealRDS';
-import { CasoRealLambda } from './pages/CasoRealLambda';
-import { CasoRealS3 } from './pages/CasoRealS3';
-import { CasoRealDynamoDB } from './pages/CasoRealDynamoDB';
-import { LandingDevOps } from './pages/LandingDevOps';
-import { LandingAWS } from './pages/LandingAWS';
-import { LandingDocker } from './pages/LandingDocker';
-import { LandingJava } from './pages/LandingJava';
-import { LandingSpringBoot } from './pages/LandingSpringBoot';
-import { LandingGit } from './pages/LandingGit';
-import { LandingGitHub } from './pages/LandingGitHub';
-import { LandingHerramientas } from './pages/LandingHerramientas';
-import { LandingArquitectura } from './pages/LandingArquitectura';
-import { LandingBuildTools } from './pages/LandingBuildTools';
-import { LandingSQLBasico } from './pages/LandingSQLBasico';
-import { LandingMetodologias } from './pages/LandingMetodologias';
-import { MethodologyWrapper } from './pages/MethodologyWrapper';
-import { LandingProyecto } from './pages/LandingProyecto';
-import { LandingReact } from './pages/LandingReact';
-import { LandingAngular } from './pages/LandingAngular';
-import { LessonAngularGeneric } from './pages/LessonAngularGeneric';
-import { LandingHTML } from './pages/LandingHTML';
-import { LandingCSS } from './pages/LandingCSS';
-import { LandingBootstrap } from './pages/LandingBootstrap';
-import { LandingTailwindCSS } from './pages/LandingTailwindCSS';
-import { LandingMongoDB } from './pages/LandingMongoDB';
-import { LandingKotlin } from './pages/LandingKotlin';
-import { LandingNodejs } from './pages/LandingNodejs';
-import { LandingNodejsIntroduccion } from './pages/LandingNodejsIntroduccion';
-import { LandingNodejsNPM } from './pages/LandingNodejsNPM';
-import { LandingNodejsModulos } from './pages/LandingNodejsModulos';
-import { LandingNodejsEventLoop } from './pages/LandingNodejsEventLoop';
-import { LandingBackend } from './pages/LandingBackend';
-import { LandingFrontend } from './pages/LandingFrontend';
-import { LandingDatos } from './pages/LandingDatos';
-import { LandingCloud } from './pages/LandingCloud';
-import { LandingVersionamiento } from './pages/LandingVersionamiento';
-import { LandingEditores } from './pages/LandingEditores';
-import { LandingHosting } from './pages/LandingHosting';
-import { LandingIA } from './pages/LandingIA';
-import { LandingContenidos } from './pages/LandingContenidos';
-import { LandingSEO } from './pages/LandingSEO';
-import { LandingHerramientasMetodologias } from './pages/LandingHerramientasMetodologias';
-import { LexicoAWS } from './pages/LexicoAWS';
-import { LexicoGeneral } from './pages/LexicoGeneral';
-import { EvaluacionAWS } from './pages/EvaluacionAWS';
-import { EvaluacionGeneral } from './pages/EvaluacionGeneral';
-import { LessonProyectoReto1 } from './pages/LessonProyectoReto1';
-import { LessonProyectoReto2 } from './pages/LessonProyectoReto2';
-import { LessonProyectoReto3 } from './pages/LessonProyectoReto3';
-import { LessonProyectoReto4 } from './pages/LessonProyectoReto4';
-import { LessonProyectoReto5 } from './pages/LessonProyectoReto5';
-import { LessonProyectoReto6 } from './pages/LessonProyectoReto6';
-import { LessonProyectoReto7 } from './pages/LessonProyectoReto7';
-import { LessonProyectoReto8 } from './pages/LessonProyectoReto8';
-import { LessonEjemplosTFC } from './pages/LessonEjemplosTFC';
-import { LessonPlaceholder } from './pages/LessonPlaceholder';
-import { TestLesson } from './pages/TestLesson';
-import { TestLessonTemplate } from './pages/TestLessonTemplate';
-import './App.css';
-
 function AppContent() {
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -290,6 +251,7 @@ function AppContent() {
       <AutoScrollToTop />
       <Header currentPage={isHome ? 'home' : 'module'} breadcrumbs={shouldPassBreadcrumbs ? breadcrumbs : null} />
       <main>
+        <Suspense fallback={<div className="route-loading" />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/test" element={<TestLesson />} />
@@ -532,9 +494,6 @@ function AppContent() {
           <Route path="/backend/spring-boot/avanzado/spring-security" element={<LessonSpringBootSecurity />} />
           <Route path="/backend/spring-boot/avanzado/oauth2-jwt" element={<LessonOAuth2JWT />} />
 
-          {/* Rutas de módulo Proyecto */}
-          <Route path="/proyecto" element={<ModulePage moduleId="proyecto" />} />
-
           {/* Lecciones - Proyecto Planificación */}
           <Route path="/proyecto/planificacion/definicion" element={<LessonDefinicionProyecto />} />
           <Route path="/proyecto/planificacion/requisitos" element={<LessonProyectoRequisitos />} />
@@ -607,29 +566,23 @@ function AppContent() {
           <Route path="/contacto/general/faq" element={<LessonPlaceholder />} />
 
           {/* Rutas comodín para módulos (van al final) */}
-          <Route path="/control-versiones/git" element={<ModulePage moduleId="git" />} />
           <Route path="/control-versiones/git/:sectionId" element={<ModulePage moduleId="git" />} />
-          <Route path="/backend/java" element={<ModulePage moduleId="java" />} />
           <Route path="/backend/java/:param" element={<JavaModuleRouter />} />
-          <Route path="/cloud/docker" element={<ModulePage moduleId="docker" />} />
           <Route path="/cloud/docker/:sectionId" element={<ModulePage moduleId="docker" />} />
           <Route path="/herramientas/entornos" element={<ModulePage moduleId="entornos" />} />
           <Route path="/herramientas/entornos/:sectionId" element={<ModulePage moduleId="entornos" />} />
-          <Route path="/datos/sql" element={<ModulePage moduleId="sql" />} />
           <Route path="/datos/sql/:sectionId" element={<ModulePage moduleId="sql" />} />
-          <Route path="/backend/spring-boot" element={<ModulePage moduleId="spring-boot" />} />
           <Route path="/backend/spring-boot/:sectionId" element={<ModulePage moduleId="spring-boot" />} />
           <Route path="/metodologias/:sectionId" element={<RedirectToSection />} />
           <Route path="/contacto" element={<ModulePage moduleId="contacto" />} />
           <Route path="/contacto/:sectionId" element={<RedirectToSection />} />
-          <Route path="/proyecto" element={<ModulePage moduleId="proyecto" />} />
           <Route path="/proyecto/:sectionId" element={<RedirectToSection />} />
-          <Route path="/cloud/aws" element={<ModulePage moduleId="aws" />} />
           <Route path="/cloud/aws/:sectionId" element={<RedirectToSection />} />
 
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
       <ScrollToTop />

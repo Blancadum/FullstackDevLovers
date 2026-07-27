@@ -1,16 +1,22 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+
+const SITE_NAME = 'Fullstack Dev Lovers';
+const SITE_URL = 'https://fullstackdevlovers.com';
 
 export function SEO({
-  title = 'Java Backend Learning',
-  description = 'Ruta completa de aprendizaje en Java Backend: desde fundamentos hasta Spring Boot',
-  keywords = 'Java, Backend, Programación, Tutorial, Aprendizaje',
-  url = 'https://javabackendlearning.com',
-  image = 'https://javabackendlearning.com/og-image.png',
+  title = SITE_NAME,
+  description = 'Plataforma educativa completa para desarrolladores: Backend, Frontend, Datos, Cloud y DevOps. Ruta profesional desde cero hasta experto.',
+  keywords = 'Backend, Frontend, Cloud, DevOps, Programación, Tutorial, Aprendizaje',
+  url,
+  image = `${SITE_URL}/og-image.png`,
   type = 'website'
 }) {
-  const fullTitle = title === 'Java Backend Learning'
+  const location = useLocation();
+  const resolvedUrl = url || `${SITE_URL}${location.pathname}`;
+  const fullTitle = title === SITE_NAME
     ? title
-    : `${title} | Java Backend Learning`;
+    : `${title} | ${SITE_NAME}`;
 
   return (
     <Helmet>
@@ -26,9 +32,9 @@ export function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={resolvedUrl} />
       <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="Java Backend Learning" />
+      <meta property="og:site_name" content={SITE_NAME} />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -37,13 +43,13 @@ export function SEO({
       <meta name="twitter:image" content={image} />
 
       {/* Canonical URL */}
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={resolvedUrl} />
 
       {/* Favicon */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
       {/* Language alternates */}
-      <link rel="alternate" hrefLang="es" href={url} />
+      <link rel="alternate" hrefLang="es" href={resolvedUrl} />
     </Helmet>
   );
 }

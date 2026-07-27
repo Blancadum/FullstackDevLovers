@@ -55,10 +55,9 @@ git status`,
         title="Práctica: Crea tu Primer Repositorio"
         description="Ejercicios prácticos para crear y clonar repositorios"
         breadcrumbs={breadcrumbs}
-        seoTitle="Práctica Git: Crea tu Primer Repositorio - Java Backend Learning"
+        seoTitle="Práctica Git: Crea tu Primer Repositorio - Fullstack Dev Lovers"
         seoDescription="Ejercicios prácticos para crear y gestionar repositorios Git"
         seoKeywords="git, práctica, repositorio, init, clone"
-        url="https://javabackendlearning.com/git/practicas/crea-tu-primer-repositorio"
       >
         <p>
           En esta práctica vamos a crear nuestro primer repositorio Git tanto local como clonando uno remoto.

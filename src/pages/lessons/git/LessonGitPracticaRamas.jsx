@@ -95,10 +95,9 @@ git push origin --delete feature/login`,
         title="Práctica: Trabaja con Ramas"
         description="Ejercicios prácticos para crear y gestionar ramas"
         breadcrumbs={breadcrumbs}
-        seoTitle="Práctica Git: Trabaja con Ramas - Java Backend Learning"
+        seoTitle="Práctica Git: Trabaja con Ramas - Fullstack Dev Lovers"
         seoDescription="Ejercicios prácticos para crear y gestionar ramas en Git"
         seoKeywords="git, práctica, ramas, branch, checkout, merge"
-        url="https://javabackendlearning.com/git/practicas/trabaja-con-ramas"
       >
         <p>
           En esta práctica vamos a aprender a trabajar con ramas, que son fundamentales para desarrollar

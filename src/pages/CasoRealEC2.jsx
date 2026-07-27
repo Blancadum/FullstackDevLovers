@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { CodeBlock } from '../components/CodeBlock';
+import { SEO } from '../components/SEO';
 
 export const CasoRealEC2 = () => {
   return (
     <div className="lesson-container">
+      <SEO
+        title="Caso Real: StreamFlow - EC2 y Auto Scaling"
+        description="Cómo una startup pasó de 100 a 500,000 usuarios concurrentes en 6 meses usando EC2 y Auto Scaling"
+      />
       <div className="lesson-header">
         <h1> Caso Real: StreamFlow - Plataforma de Video en Vivo</h1>
         <p className="lesson-intro">

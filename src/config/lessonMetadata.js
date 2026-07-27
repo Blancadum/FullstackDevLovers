@@ -176,8 +176,8 @@ export const lessonMetadata = {
  */
 export function getMetadataForLesson(pathname) {
   return lessonMetadata[pathname] || {
-    title: 'Java Backend Learning',
-    description: 'Ruta completa de aprendizaje en Java Backend',
-    keywords: 'Java, Backend, Programación'
+    title: 'Fullstack Dev Lovers',
+    description: 'Plataforma educativa completa para desarrolladores: Backend, Frontend, Datos, Cloud y DevOps',
+    keywords: 'Backend, Frontend, Cloud, DevOps, Programación'
   };
 }

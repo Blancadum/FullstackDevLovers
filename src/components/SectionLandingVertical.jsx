@@ -27,7 +27,6 @@ export function SectionLandingVertical({
       <SEO
         title={`${section.fullName || section.name} - ${module.name}`}
         description={section.description}
-        url={`https://javabackendlearning.com/${module.id}/${section.id}`}
       />
       <div className="breadcrumb-section">
         <Breadcrumb items={breadcrumbs} />

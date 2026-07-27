@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LessonNavigation } from '../components/LessonNavigation';
+import { SEO } from '../components/SEO';
 import { useBreadcrumb } from '../hooks/useBreadcrumb';
 import { useLessonNavigation } from '../hooks/useLessonNavigation';
 import { retosData } from '../data/retosData';
@@ -11,6 +12,10 @@ export function LessonProyectoRetosIndex() {
 
   return (
     <>
+      <SEO
+        title="Retos DAW"
+        description="Los 8 retos que evalúan cada fase de tu proyecto integrador. Guía completa con especificaciones y soluciones para cada reto del currículo."
+      />
       <div style={{ padding: '2rem' }}>
         {breadcrumbs && breadcrumbs.length > 0 && (
           <div style={{

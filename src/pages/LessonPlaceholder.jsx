@@ -323,9 +323,9 @@ const LESSON_CONTENT = {
           <>
             <h3>Cómo Contactarnos</h3>
             <ul style={{ fontSize: '0.95rem', lineHeight: '1.8' }}>
-              <li><strong>Email:</strong> info@javabackendlearning.com</li>
-              <li><strong>Twitter:</strong> @javabackendlearn</li>
-              <li><strong>GitHub:</strong> github.com/javabackendlearning</li>
+              <li><strong>Email:</strong> info@fullstackdevlovers.com</li>
+              <li><strong>Twitter:</strong> @fullstackdevlovers</li>
+              <li><strong>GitHub:</strong> github.com/fullstackdevlovers</li>
               <li><strong>Discord:</strong> [Servidor de comunidad]</li>
             </ul>
             <InfoBox type="info">

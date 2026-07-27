@@ -52,10 +52,9 @@ git branch -a`
         title="Crear y Clonar Repositorios"
         description="Aprende a inicializar repositorios nuevos y clonar existentes"
         breadcrumbs={breadcrumbs}
-        seoTitle="Crear y Clonar Repositorios Git - Java Backend Learning"
+        seoTitle="Crear y Clonar Repositorios Git - Fullstack Dev Lovers"
         seoDescription="Guía completa: git init, git clone y cómo trabajar con repositorios locales y remotos"
         seoKeywords="git init, git clone, repositorio, github"
-        url="https://javabackendlearning.com/git/basicos/crear-clonar-repos"
       >
         <h2>¿Qué es un Repositorio?</h2>
         <p>
