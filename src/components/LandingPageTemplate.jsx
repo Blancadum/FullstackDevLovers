@@ -187,29 +187,19 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
           </>
         )}
 
-        {/* Module Intro Section */}
-        {pageConfig.moduleIntro && (
+        {/* Module Intro Section - usa moduleIntro si se define, si no cae en el título/descripción ya calculados */}
+        {(pageConfig.moduleIntro || config.description) && (
           <ModuleIntroSection
-            title={pageConfig.moduleIntro.title}
-            description={pageConfig.moduleIntro.description}
-            highlights={pageConfig.moduleIntro.highlights}
-            image={pageConfig.moduleIntro.image}
+            title={pageConfig.moduleIntro?.title || `¿Qué es ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}?`}
+            description={pageConfig.moduleIntro?.description || config.description}
+            highlights={pageConfig.moduleIntro?.highlights}
+            image={pageConfig.moduleIntro?.image}
           />
         )}
 
-        {/* Main Content Section */}
-        <section className={`${moduleId}-content`}>
-          {!pageConfig.moduleIntro && (
-            <>
-              <h2>{`¿Qué es ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}?`}</h2>
-              <p className="intro-text">
-                {config.description}
-              </p>
-            </>
-          )}
-
-          {/* Key Features */}
-          {pageConfig.features && (
+        {/* Key Features */}
+        {pageConfig.features && (
+          <section className={`${moduleId}-content`}>
             <div className="features-grid">
               {pageConfig.features.map((feature, idx) => (
                 <div key={idx} className="feature-card">
@@ -219,8 +209,8 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
                 </div>
               ))}
             </div>
-          )}
-        </section>
+          </section>
+        )}
 
         {/* Comparison Section - Only if comparison data exists */}
         {config.comparisonData.length > 0 && (

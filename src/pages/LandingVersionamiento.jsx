@@ -12,7 +12,21 @@ export const LandingVersionamiento = () => {
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Control de Versiones',
-    ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
+    ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional',
+    faqData: [
+      {
+        question: '¿Git y GitHub son lo mismo?',
+        answer: 'No. Git es el sistema de control de versiones que corre en tu ordenador; GitHub es una plataforma online que aloja repositorios Git y añade colaboración, pull requests y CI/CD sobre esa base.'
+      },
+      {
+        question: '¿Necesito aprender la línea de comandos de Git o basta con un cliente visual?',
+        answer: 'Conviene dominar la línea de comandos primero: te da control total y entiendes qué hace realmente cada acción. Después, un cliente visual (o el integrado en tu editor) puede acelerar tu día a día.'
+      },
+      {
+        question: '¿Qué pasa si tengo un conflicto de merge, es grave?',
+        answer: 'No, es normal y ocurre constantemente en equipos. Se resuelve editando el archivo en conflicto para decidir qué cambios conservar y luego confirmando el merge. Lo cubrimos con ejercicios prácticos.'
+      }
+    ]
   };
 
   const categoryCluster = [

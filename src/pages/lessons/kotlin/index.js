@@ -1,3 +1,11 @@
 export { LessonKotlinGeneric } from './LessonKotlinGeneric';
 export { LessonKotlinIntroduccion } from './LessonKotlinIntroduccion';
 export { LessonKotlinVsJava } from './LessonKotlinVsJava';
+export { LessonKotlinSintaxis } from './LessonKotlinSintaxis';
+export { LessonKotlinNullSafety } from './LessonKotlinNullSafety';
+export { LessonKotlinExtensionFunctions } from './LessonKotlinExtensionFunctions';
+export { LessonKotlinLambdas } from './LessonKotlinLambdas';
+export { LessonKotlinCorrutinas } from './LessonKotlinCorrutinas';
+export { LessonKotlinClasesObjetos } from './LessonKotlinClasesObjetos';
+export { LessonKotlinScopeFunctions } from './LessonKotlinScopeFunctions';
+export { LessonKotlinDsls } from './LessonKotlinDsls';

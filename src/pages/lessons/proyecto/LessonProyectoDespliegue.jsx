@@ -203,7 +203,7 @@ export function LessonProyectoBuild() {
   return (
     <>
       <LessonTemplate
-        title="Despliegue en Cloud"
+        title="Empaquetado y Build"
         breadcrumbs={breadcrumbs}
         concepts={concepts}
         sections={sections}

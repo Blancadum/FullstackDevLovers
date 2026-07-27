@@ -12,7 +12,21 @@ export const LandingContenidos = () => {
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina la Creación de Contenidos',
-    ctaSubtitle: 'Comparte tu conocimiento con el mundo'
+    ctaSubtitle: 'Comparte tu conocimiento con el mundo',
+    faqData: [
+      {
+        question: '¿Por qué un desarrollador debería aprender a crear contenido?',
+        answer: 'Escribir y explicar lo que aprendes consolida tu conocimiento, construye tu marca profesional y suele abrir oportunidades laborales que el código por sí solo no genera.'
+      },
+      {
+        question: '¿Qué formato es mejor para empezar: blog o vídeo?',
+        answer: 'El blog suele ser más accesible para empezar: no requiere edición de vídeo y es más fácil de iterar. El vídeo tiene mayor alcance pero exige más tiempo de producción.'
+      },
+      {
+        question: '¿Necesito ser un experto en un tema antes de escribir sobre él?',
+        answer: 'No. Documentar lo que estás aprendiendo (aunque seas principiante) suele ser tan valioso como el contenido de un experto, porque conecta mejor con otros principiantes.'
+      }
+    ]
   };
 
   return <LandingPageTemplate moduleId="contenidos" pageConfig={pageConfig} />;

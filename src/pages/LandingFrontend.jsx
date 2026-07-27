@@ -13,6 +13,24 @@ export const LandingFrontend = () => {
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Frontend',
     ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional',
+    faqData: [
+      {
+        question: '¿Por dónde empiezo si no sé nada de programación web?',
+        answer: 'Por HTML y CSS. Son la base de cualquier página: estructura y estilo. Sin ellos, frameworks como React no tienen sentido.'
+      },
+      {
+        question: '¿React o Angular? ¿Cuál debería aprender?',
+        answer: 'React es más flexible y el más demandado en el mercado actual; Angular es un framework más completo y opinado, habitual en aplicaciones empresariales grandes. Empezar por React suele ser más rápido para conseguir tu primer proyecto funcionando.'
+      },
+      {
+        question: '¿Necesito saber Node.js para hacer frontend?',
+        answer: 'No es obligatorio, pero ayuda: las herramientas modernas de frontend (bundlers, gestores de paquetes) corren sobre Node.js, y conocerlo facilita entender cómo funciona tu entorno de desarrollo.'
+      },
+      {
+        question: '¿Bootstrap o Tailwind CSS?',
+        answer: 'Bootstrap ofrece componentes ya hechos y es más rápido para prototipar; Tailwind da más control granular sobre el diseño con clases utilitarias. Muchos equipos modernos prefieren Tailwind por su flexibilidad.'
+      }
+    ],
     learningPath: {
       title: 'Tu Ruta de Aprendizaje Frontend',
       description: 'Progresa de forma estructurada desde los fundamentos hasta proyectos profesionales',

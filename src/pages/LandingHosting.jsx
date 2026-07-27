@@ -12,7 +12,21 @@ export const LandingHosting = () => {
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Hosting y Despliegue',
-    ctaSubtitle: 'Lleva tus aplicaciones a producción con confianza'
+    ctaSubtitle: 'Lleva tus aplicaciones a producción con confianza',
+    faqData: [
+      {
+        question: '¿Vercel/Netlify o AWS para mi primer proyecto?',
+        answer: 'Para un proyecto personal o frontend, Vercel o Netlify son mucho más simples: conectas tu repositorio y despliegan automáticamente. AWS tiene sentido cuando necesitas control total sobre infraestructura backend, bases de datos o escalado avanzado.'
+      },
+      {
+        question: '¿Cuánto cuesta desplegar una aplicación real?',
+        answer: 'Muchas plataformas (Vercel, Netlify, Heroku, el Free Tier de AWS) ofrecen niveles gratuitos suficientes para proyectos pequeños o de aprendizaje. Los costes aparecen al escalar tráfico, almacenamiento o cómputo.'
+      },
+      {
+        question: '¿Necesito saber Docker para desplegar?',
+        answer: 'No siempre. Plataformas como Vercel o Netlify no lo requieren. Pero si despliegas en AWS o cualquier infraestructura propia, containerizar con Docker simplifica mucho el proceso y lo hace reproducible.'
+      }
+    ]
   };
 
   return <LandingPageTemplate moduleId="hosting" pageConfig={pageConfig} />;
