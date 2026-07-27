@@ -15,5 +15,10 @@ export const LandingDatos = () => {
     ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
   };
 
-  return <LandingPageTemplate moduleId="datos" pageConfig={pageConfig} />;
+  const categoryCluster = [
+    { id: 'sql', title: 'SQL', icon: '/images/logos/mysql.png', link: '/datos/sql' },
+    { id: 'mongodb', title: 'MongoDB', icon: '/images/logos/mongodb.png', link: '/datos/mongodb' }
+  ];
+
+  return <LandingPageTemplate moduleId="datos" pageConfig={pageConfig} categoryCluster={categoryCluster} />;
 };

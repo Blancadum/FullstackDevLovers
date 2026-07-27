@@ -94,13 +94,21 @@
   animation: slideInScale 0.8s ease-out;
 }
 
+/* Desktop: reducir altura para no ocupar todo el above the fold */
+@media (min-width: 1025px) {
+  .hero-enhanced-frame {
+    bottom: auto;
+    height: 60%;
+  }
+}
+
 /* ============================================================================
    Hero Enhanced Container - Layout Principal
    ============================================================================ */
 .hero-enhanced-container {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem 2rem;
@@ -124,7 +132,7 @@
 }
 
 .hero-enhanced-title {
-  font-size: 3.5rem;
+  font-size: clamp(1.8rem, 0.3rem + 5vw, 3.5rem);
   font-weight: 800;
   margin: 0;
   letter-spacing: -1px;
@@ -143,7 +151,7 @@
 }
 
 .hero-enhanced-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.56rem + 1.47vw, 1.5rem);
   font-weight: 600;
   margin: 0;
   color: #2c3e50;
@@ -152,7 +160,7 @@
 }
 
 .hero-enhanced-description {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 0.72rem + 0.59vw, 1.1rem);
   line-height: 1.8;
   margin: 0;
   color: #555;
@@ -165,6 +173,7 @@
    ============================================================================ */
 .hero-enhanced-buttons {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 0.5rem;
@@ -173,8 +182,12 @@
 }
 
 .hero-enhanced-btn {
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 2rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border: none;
   border-radius: 8px;
@@ -182,6 +195,7 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
   box-shadow: 0 4px 15px rgba(255, 0, 110, 0.2);
   font-family: inherit;
 }
@@ -236,12 +250,12 @@
   z-index: 10;
 }
 
-/* Integración de ClusterSearch */
+/* Integración de ClusterSearch - mismo ancho que ClusterCards (max-width: 1200px) */
 .hero-enhanced-search-wrapper .cluster-search {
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   background: transparent;
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
 }
 
 .hero-enhanced-search-wrapper .search-container {
@@ -287,16 +301,8 @@
     gap: 2.5rem;
   }
 
-  .hero-enhanced-title {
-    font-size: 2.8rem;
-  }
-
-  .hero-enhanced-subtitle {
-    font-size: 1.3rem;
-  }
-
-  .hero-enhanced-description {
-    font-size: 1rem;
+  .hero-enhanced-btn {
+    height: 3.25rem;
   }
 
   .hero-enhanced-frame {
@@ -323,23 +329,12 @@
     gap: 2rem;
   }
 
-  .hero-enhanced-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-enhanced-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-enhanced-description {
-    font-size: 0.95rem;
-  }
-
   .hero-enhanced-buttons {
     gap: 1rem;
   }
 
   .hero-enhanced-btn {
+    height: 3.25rem;
     padding: 0.9rem 2rem;
     font-size: 0.95rem;
   }

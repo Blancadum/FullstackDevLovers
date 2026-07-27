@@ -15,5 +15,11 @@ export const LandingCloud = () => {
     ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
   };
 
-  return <LandingPageTemplate moduleId="cloud" pageConfig={pageConfig} />;
+  const categoryCluster = [
+    { id: 'docker', title: 'Docker', icon: '/images/logos/docker-lgo.png', link: '/cloud/docker' },
+    { id: 'kubernetes', title: 'Kubernetes', icon: '/images/logos/kubernetes-logo.png', link: '/cloud/kubernetes' },
+    { id: 'aws', title: 'AWS', icon: '/images/logos/aws.png', link: '/cloud/aws' }
+  ];
+
+  return <LandingPageTemplate moduleId="cloud" pageConfig={pageConfig} categoryCluster={categoryCluster} />;
 };

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './FAQ.css';
 
-export function FAQ({ questions = [] }) {
+export function FAQ({ title = 'Preguntas Frecuentes', questions = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   if (!questions || questions.length === 0) {
@@ -9,28 +9,30 @@ export function FAQ({ questions = [] }) {
   }
 
   return (
-    <div className="faq">
-      <h3>Preguntas Frecuentes</h3>
-      <div className="faq-items">
-        {questions.map((item, index) => (
-          <div key={index} className="faq-item">
-            <button
-              className={`faq-question ${openIndex === index ? 'active' : ''}`}
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              type="button"
-              aria-expanded={openIndex === index}
-            >
-              <span>{item.question}</span>
-              <span className="faq-icon">{openIndex === index ? '−' : '+'}</span>
-            </button>
-            {openIndex === index && (
-              <div className="faq-answer" role="region">
-                {item.answer}
-              </div>
-            )}
-          </div>
-        ))}
+    <section className="faq-section">
+      <div className="faq-container">
+        {title && <h2 className="faq-title">{title}</h2>}
+        <div className="faq-list">
+          {questions.map((item, index) => (
+            <div key={index} className="faq-item">
+              <button
+                className="faq-question"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                type="button"
+                aria-expanded={openIndex === index}
+              >
+                <span className="faq-question-text">{item.question}</span>
+                <span className="faq-icon">{openIndex === index ? '−' : '+'}</span>
+              </button>
+              {openIndex === index && (
+                <div className="faq-answer" role="region">
+                  {item.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

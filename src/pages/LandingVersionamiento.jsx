@@ -15,5 +15,10 @@ export const LandingVersionamiento = () => {
     ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
   };
 
-  return <LandingPageTemplate moduleId="versionamiento" pageConfig={pageConfig} />;
+  const categoryCluster = [
+    { id: 'git', title: 'Git', icon: '/images/logos/git-logo.png', link: '/control-versiones/git' },
+    { id: 'github', title: 'GitHub', icon: '/images/logos/github.jpeg', link: '/control-versiones/github' }
+  ];
+
+  return <LandingPageTemplate moduleId="versionamiento" pageConfig={pageConfig} categoryCluster={categoryCluster} />;
 };

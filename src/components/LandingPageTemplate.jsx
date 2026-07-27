@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { LandingHero, SEO, ModuleSwitch, ClusterCards, ModuleIntroSection } from './index';
+import { LandingHero, SEO, ModuleSwitch, ClusterCards, ModuleIntroSection, FAQ } from './index';
 import { getModule } from '../config/modulesConfig';
 import { getTheme } from '../config/themeColors';
 import { useLandingTheme } from '../hooks/useLandingTheme';
@@ -22,9 +22,9 @@ import { getThemeByModule } from '../config/landingThemes';
  *   - seoDescription: Custom SEO description
  * @param {object} moduleSwitch - Optional custom content for StackSection (module-specific configuration)
  * @param {object} landingContent - Optional custom content for additional sections (whyReact, whatIsReact, prerequisites)
+ * @param {array} categoryCluster - Optional cards linking to sub-technologies (for category-level landings, e.g. Backend -> Java, Kotlin, Node.js)
  */
-export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, landingContent }) {
-  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, landingContent, categoryCluster }) {
   const theme = getTheme(moduleId);
   const module = getModule(moduleId);
 
@@ -32,7 +32,9 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
   const landingTheme = getThemeByModule(moduleId);
   useLandingTheme(landingTheme.primary, landingTheme.dark, landingTheme.lightGradient);
 
-  if (!module) return null;
+  // Category-level landings (Backend, Frontend...) don't map to a single module in
+  // modulesConfig.js - they rely on pageConfig + categoryCluster instead of module data.
+  if (!module && !pageConfig.title) return null;
 
   // Default configuration from theme/module
   const config = {
@@ -85,14 +87,26 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
           imageAlt={config.imageAlt}
         />
 
-        {/* Module Switch - Custom content for specific landings */}
-        {moduleSwitch && (
+        {/* Category cluster - links to sub-technologies (category-level landings only) */}
+        {categoryCluster && categoryCluster.length > 0 && (
+          <ClusterCards
+            title="Explora las tecnologías"
+            cards={categoryCluster}
+            columns={4}
+            variant="image"
+          />
+        )}
+
+        {/* Module Switch - Custom content for specific landings, or auto-generated topics from the module's own sections */}
+        {moduleSwitch ? (
           <ModuleSwitch
             moduleSwitch={moduleSwitch}
             title={moduleSwitch.title}
             subtitle={moduleSwitch.subtitle}
           />
-        )}
+        ) : module?.sections?.length > 0 ? (
+          <ModuleSwitch moduleId={moduleId} title="Temas del curso" />
+        ) : null}
 
         {/* Why Module Section */}
         {landingContent?.whyReact && (
@@ -282,70 +296,7 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
         )}
 
         {/* FAQ Section */}
-        {config.faqData.length > 0 && (
-          <section style={{ padding: '3rem 2rem', background: 'white' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center', color: 'var(--text-primary)' }}>
-                Preguntas Frecuentes
-              </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {config.faqData.map((item, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      background: '#fafafa',
-                      borderRadius: '8px',
-                      overflow: 'hidden',
-                      border: '1px solid #e0e0e0',
-                      boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)'
-                    }}
-                  >
-                    <button
-                      onClick={() => {
-                        const newOpenIndex = openFaqIndex === index ? null : index;
-                        setOpenFaqIndex(newOpenIndex);
-                      }}
-                      style={{
-                        width: '100%',
-                        padding: '1.2rem',
-                        background: 'white',
-                        border: 'none',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        textAlign: 'left',
-                        fontSize: '16px',
-                        transition: 'all 0.2s ease'
-                      }}
-                      onMouseEnter={(e) => e.target.style.backgroundColor = '#fafafa'}
-                      onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
-                    >
-                      <span style={{ flex: 1 }}>{item.question}</span>
-                      <span style={{ fontSize: '1.5rem', fontWeight: 'bold', marginLeft: '1rem', flexShrink: 0 }}>
-                        {openFaqIndex === index ? '−' : '+'}
-                      </span>
-                    </button>
-                    {openFaqIndex === index && (
-                      <div
-                        style={{
-                          padding: '1.5rem',
-                          background: '#fafafa',
-                          borderTop: '1px solid #e0e0e0',
-                          color: '#666',
-                          lineHeight: '1.8',
-                          animation: 'slideDown 0.3s ease'
-                        }}
-                      >
-                        {item.answer}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        {config.faqData.length > 0 && <FAQ questions={config.faqData} />}
 
         {/* CTA Final Section */}
         <section className={`${moduleId}-cta`}>

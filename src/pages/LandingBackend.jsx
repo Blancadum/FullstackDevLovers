@@ -15,5 +15,12 @@ export const LandingBackend = () => {
     ctaSubtitle: 'Aprende desde lo básico hasta nivel profesional'
   };
 
-  return <LandingPageTemplate moduleId="backend" pageConfig={pageConfig} />;
+  const categoryCluster = [
+    { id: 'java', title: 'Java', icon: '/images/logos/java-logo.png', link: '/backend/java' },
+    { id: 'kotlin', title: 'Kotlin', icon: '/images/logos/kotlin.png', link: '/backend/kotlin' },
+    { id: 'nodejs', title: 'Node.js', icon: '/images/logos/nodejs.png', link: '/backend/nodejs' },
+    { id: 'spring-boot', title: 'Spring Boot', icon: '/images/logos/pringboot.png', link: '/backend/spring-boot' }
+  ];
+
+  return <LandingPageTemplate moduleId="backend" pageConfig={pageConfig} categoryCluster={categoryCluster} />;
 };

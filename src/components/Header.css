@@ -1,4 +1,6 @@
 /* App Header - Single fixed header containing navbar and breadcrumb */
+/* width/margin rompen el margen lateral que body aplica en desktop/anchos grandes,
+   para que el header ocupe todo el ancho real del viewport */
 .app-header {
   position: static;
   top: 0;
@@ -7,7 +9,8 @@
   z-index: 100;
   background-color: #ffffff;
   box-shadow: none;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   transition: box-shadow 0.3s ease;
 }
 
@@ -22,7 +25,7 @@
 /* Navbar Section */
 .app-header .navbar {
   background-color: #ffffff;
-  padding: 0.75rem 0;
+  padding: 0.4rem 0;
   position: static;
   border: none;
   box-shadow: none;
@@ -49,7 +52,7 @@
 
 .app-header .logo {
   color: #ff006e;
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 1.12rem + 0.58vw, 1.7rem);
   font-weight: 700;
   margin: 0;
   font-family: Arial, sans-serif;
@@ -92,7 +95,7 @@
 .app-header .breadcrumb {
   background-color: #f3f4f6;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 1rem;
   border: none;
   position: static;
   display: flex;
@@ -142,7 +145,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .app-header .breadcrumb {
-    padding: 0.4rem 0.8rem;
+    padding: 0.3rem 0.8rem;
   }
 
   .app-header .breadcrumb-list {
@@ -160,9 +163,5 @@
 
   .app-header .nav-container {
     padding: 0 1rem;
-  }
-
-  .app-header .logo {
-    font-size: 1.4rem;
   }
 }

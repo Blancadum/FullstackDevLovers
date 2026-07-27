@@ -9,8 +9,8 @@
   --transition-fast: 0.15s ease;
   --transition-normal: 0.2s ease;
   --transition-slow: 0.3s ease;
-  --navbar-height: 54px;
-  --breadcrumb-height: 36px;
+  --navbar-height: 44px;
+  --breadcrumb-height: 28px;
   --header-margin: 1rem;
   --header-height: calc(var(--navbar-height) + var(--breadcrumb-height) + var(--header-margin));
 }

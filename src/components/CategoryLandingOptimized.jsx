@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { SEO, FlipCard } from './index';
+import { SEO, FlipCard, FAQ } from './index';
 import './CategoryLandingOptimized.css';
 
 export const CategoryLandingOptimized = ({ content, theme }) => {
-  const [openFaqIndex, setOpenFaqIndex] = useState(null);
-
   if (!content) return null;
 
   return (
@@ -164,30 +162,7 @@ export const CategoryLandingOptimized = ({ content, theme }) => {
 
       {/* FAQ Section */}
       {content.faqs && content.faqs.length > 0 && (
-      <section className="faq-section">
-        <div className="container">
-          <h2>Preguntas frecuentes</h2>
-
-          <div className="faq-list">
-            {content.faqs.map((faq, idx) => (
-              <div key={idx} className={`faq-item ${openFaqIndex === idx ? 'open' : ''}`}>
-                <button
-                  className="faq-summary"
-                  onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
-                >
-                  <span>{faq.question}</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                {openFaqIndex === idx && (
-                  <div className="faq-answer">
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        <FAQ title="Preguntas frecuentes" questions={content.faqs} />
       )}
 
       {/* CTA Final Section */}

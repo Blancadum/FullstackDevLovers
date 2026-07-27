@@ -220,6 +220,7 @@ import { LandingDocker } from './pages/LandingDocker';
 import { LandingJava } from './pages/LandingJava';
 import { LandingSpringBoot } from './pages/LandingSpringBoot';
 import { LandingGit } from './pages/LandingGit';
+import { LandingGitHub } from './pages/LandingGitHub';
 import { LandingHerramientas } from './pages/LandingHerramientas';
 import { LandingArquitectura } from './pages/LandingArquitectura';
 import { LandingBuildTools } from './pages/LandingBuildTools';
@@ -452,6 +453,7 @@ function AppContent() {
           <Route path="/backend/java" element={<LandingJava />} />
           <Route path="/backend/spring-boot" element={<LandingSpringBoot />} />
           <Route path="/control-versiones/git" element={<LandingGit />} />
+          <Route path="/control-versiones/github" element={<LandingGitHub />} />
           <Route path="/datos/sql" element={<LandingSQLBasico />} />
           <Route path="/metodologias" element={<LandingMetodologias />} />
           <Route path="/editores" element={<LandingEditores />} />

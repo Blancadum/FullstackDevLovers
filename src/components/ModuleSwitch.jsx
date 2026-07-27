@@ -13,7 +13,7 @@ const CATEGORY_LANDING_ROUTES = {
   datos: '/datos',
   versionamiento: '/control-versiones',
   containerizacion: '/cloud',
-  herramientas: '/metodologias-herramientas'
+  herramientas: '/metodologias'
 };
 
 /**
@@ -23,7 +23,7 @@ const CATEGORY_LANDING_ROUTES = {
  * Props:
  *  - moduleSwitch (optional): Custom content configuration. If not provided, uses moduleCategories
  *  - moduleId (optional): Si se proporciona, muestra solo las secciones de ese módulo
- *  - title (optional): Custom title. Default: "Un stack para dominar el mundo"
+ *  - title (optional): Custom title. Default: "Un stack para conquistar el mundo"
  *  - subtitle (optional): Custom subtitle. Default: Generic stack message
  */
 export function ModuleSwitch({ moduleSwitch, moduleId, title, subtitle }) {
@@ -52,8 +52,8 @@ export function ModuleSwitch({ moduleSwitch, moduleId, title, subtitle }) {
   }
 
   // Títulos por defecto si no se proporcionan
-  const defaultTitle = "Un stack para dominar el mundo";
-  const defaultSubtitle = "Conquista todas las tecnologías que necesitas para dominar el mundo del desarrollo. Desde Backend hasta Cloud, aquí está el stack completo.";
+  const defaultTitle = "Un stack para conquistar el mundo";
+  const defaultSubtitle = "Conquista todas las tecnologías que necesitas para conquistar el mundo del desarrollo. Desde Backend hasta Cloud, aquí está el stack completo.";
 
   const displayTitle = title || defaultTitle;
   const displaySubtitle = subtitle || defaultSubtitle;
