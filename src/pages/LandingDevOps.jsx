@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingDevOps = () => {
   const pageConfig = {
     title: 'DevOps',
-    imageUrl: '/src/assets/images/logos/devops.png',
+    imageUrl: '/images/logos/devops.png',
     imageAlt: 'DevOps',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/devops/basico/introduccion',

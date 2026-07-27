@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingNodejsModulos = () => {
   const pageConfig = {
     title: 'Node.js Módulos',
-    imageUrl: '/src/assets/images/logos/nodejs-modulos.png',
+    imageUrl: '/images/logos/nodejs.png',
     imageAlt: 'Node.js Módulos',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/backend/nodejs/basico/modulos',

@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import './CasesPracticalCard.css';
 
 const PROJECT_LOGOS = {
-  'tfc-java': '/src/assets/images/logos/pringboot.png',
-  'caso-practico-1': '/src/assets/images/logos/java-logo.png',
-  'caso-practico-2': '/src/assets/images/logos/docker-lgo.png'};
+  'tfc-java': '/images/logos/pringboot.png',
+  'caso-practico-1': '/images/logos/java-logo.png',
+  'caso-practico-2': '/images/logos/docker-lgo.png'};
 
 export function CasesPracticalCard({ project }) {
   const logoSrc = PROJECT_LOGOS[project.id];

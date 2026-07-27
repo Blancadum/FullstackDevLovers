@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingNodejsEventLoop = () => {
   const pageConfig = {
     title: 'Node.js Event Loop',
-    imageUrl: '/src/assets/images/logos/nodejs-event-loop.png',
+    imageUrl: '/images/logos/nodejs.png',
     imageAlt: 'Node.js Event Loop',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/backend/nodejs/basico/event-loop',

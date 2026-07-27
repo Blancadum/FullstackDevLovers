@@ -9,7 +9,7 @@ export const LandingAWS = () => {
     seoDescription: 'Aprende AWS: EC2, RDS, S3, Lambda, DynamoDB, VPC e IAM. Domina la plataforma cloud más demandada en empresas Fortune 500.',
     keywords: 'aws, cloud, ec2, s3, rds, lambda, dynamodb, iam, vpc, cloud computing',
     image: '/og-aws.png',
-    imageUrl: '/src/assets/images/logos/aws.png',
+    imageUrl: '/images/logos/aws.png',
     imageAlt: 'AWS Logo',
     primaryButtonText: 'Comenzar con AWS →',
     primaryButtonLink: '/cloud/aws/fundamentales/intro',

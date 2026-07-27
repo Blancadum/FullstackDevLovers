@@ -9,7 +9,7 @@ export const LandingDocker = () => {
     seoDescription: 'Aprende Docker: contenerización, imágenes, Dockerfile, Docker Compose y orquestación. Domina la tecnología esencial para deployment moderno y CI/CD.',
     keywords: 'docker, containerización, dockerfile, docker compose, contenedores, deployment, devops, ci/cd',
     image: '/og-docker.png',
-    imageUrl: '/src/assets/images/logos/docker-lgo.png',
+    imageUrl: '/images/logos/docker-lgo.png',
     imageAlt: 'Docker Logo',
     primaryButtonText: 'Comenzar con Docker →',
     primaryButtonLink: '/cloud/docker/fundamentales/intro',

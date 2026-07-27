@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingNodejsIntroduccion = () => {
   const pageConfig = {
     title: 'Node.js Introducción',
-    imageUrl: '/src/assets/images/logos/nodejs-introduccion.png',
+    imageUrl: '/images/logos/nodejs.png',
     imageAlt: 'Node.js Introducción',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/backend/nodejs/basico/introduccion',

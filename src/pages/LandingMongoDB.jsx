@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingMongoDB = () => {
   const pageConfig = {
     title: 'MongoDB',
-    imageUrl: '/src/assets/images/logos/mongodb.png',
+    imageUrl: '/images/logos/mongodb.png',
     imageAlt: 'MongoDB',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/datos/mongodb/basico/introduccion',

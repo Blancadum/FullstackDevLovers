@@ -5,7 +5,7 @@ export const LandingEditores = () => {
     title: 'Editores de Código: Herramientas Profesionales',
     subtitle: 'VS Code, IntelliJ IDEA, Eclipse: domina tu entorno de desarrollo',
     description: 'Los editores de código son la base de tu trabajo como desarrollador. Aprende a configurar y dominar VS Code para web, IntelliJ IDEA para backend con Java, y Eclipse para desarrollo empresarial. Optimiza tu productividad con extensiones, atajos y mejores prácticas.',
-    imageUrl: '/src/assets/images/logos/editor-texto.png',
+    imageUrl: '/images/logos/editor-texto.png',
     imageAlt: 'Editores de Código',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/editores/vscode/basico/introduccion',

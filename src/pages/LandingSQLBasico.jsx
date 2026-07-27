@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingSQLBasico = () => {
   const pageConfig = {
     title: 'SQL Básico',
-    imageUrl: '/src/assets/images/logos/sql-basico.png',
+    imageUrl: '/images/logos/database.png',
     imageAlt: 'SQL Básico',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/datos/sql/basico/introduccion',

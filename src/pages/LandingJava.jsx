@@ -13,7 +13,7 @@ export const LandingJava = () => {
     primaryButtonLink: '/backend/java/basico/funcionamiento',
     secondaryButtonText: 'Ver comparativa',
     secondaryButtonLink: '#comparativa',
-    imageUrl: '/src/assets/images/logos/java-logo.png',
+    imageUrl: '/images/logos/java-logo.png',
     imageAlt: 'Java Logo',
     seoTitle: 'Java - Programación Orientada a Objetos Profesional | Guía Completa',
     seoDescription: 'Aprende Java: JVM, POO, colecciones, lambdas, concurrencia y desarrollo backend empresarial. Domina el lenguaje más demandado en empresas Fortune 500.',

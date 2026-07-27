@@ -5,7 +5,7 @@ export const LandingHerramientas = () => {
     title: 'Herramientas & Metodologías: Trabaja como Profesional',
     subtitle: 'Agile, Clean Code, Testing, DevOps: mejora tu craft de desarrollo',
     description: 'Las herramientas y metodologías transforman buenos desarrolladores en excepcionales. Aprende Agile y SCRUM para gestión de proyectos, Clean Code para escribir código mantenible, Testing para garantizar calidad y DevOps para despliegue continuo.',
-    imageUrl: '/src/assets/images/logos/procesos.png',
+    imageUrl: '/images/logos/procesos.png',
     imageAlt: 'Herramientas & Metodologías',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/metodologias/agile-scrum/introduccion',

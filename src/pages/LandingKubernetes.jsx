@@ -9,7 +9,7 @@ export const LandingKubernetes = () => {
     seoDescription: 'Aprende Kubernetes: orquestación, Pods, Deployments, escalado automático, alta disponibilidad y gestión de infraestructura a escala empresarial.',
     keywords: 'kubernetes, k8s, orquestación, contenedores, pods, deployments, devops, cloud, escalado automático',
     image: '/og-kubernetes.png',
-    imageUrl: '/src/assets/images/logos/kubernetes-logo.png',
+    imageUrl: '/images/logos/kubernetes-logo.png',
     imageAlt: 'Kubernetes Logo',
     primaryButtonText: 'Comenzar con Kubernetes →',
     primaryButtonLink: '/cloud/kubernetes/fundamentales/intro',

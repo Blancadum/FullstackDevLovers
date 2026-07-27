@@ -8,35 +8,35 @@ export const moduleCategories = [
   {
     id: 'backend',
     name: 'Backend & Aplicaciones',
-    logoSrc: '/src/assets/images/logos/backend.png',
+    logoSrc: '/images/logos/backend.png',
     color: '#0066cc',
     description: 'Java, Kotlin, Node.js, Spring Boot y desarrollo backend/móvil',
     modules: ['java', 'kotlin', 'nodejs', 'spring-boot']},
   {
     id: 'frontend',
     name: 'Frontend & Desarrollo Web',
-    logoSrc: '/src/assets/images/logos/frontpage.png',
+    logoSrc: '/images/logos/frontpage.png',
     color: '#F39C12',
     description: 'React, Angular, HTML, CSS, Bootstrap, Tailwind y frameworks web',
     modules: ['react', 'angular', 'html', 'css', 'bootstrap', 'tailwindcss']},
   {
     id: 'datos',
     name: 'Datos & Almacenamiento',
-    logoSrc: '/src/assets/images/logos/database.png',
+    logoSrc: '/images/logos/database.png',
     color: '#FF6B6B',
     description: 'SQL, MongoDB y bases de datos relacionales y NoSQL',
     modules: ['sql', 'mongodb']},
   {
     id: 'versionamiento',
     name: 'Control de Versiones',
-    logoSrc: '/src/assets/images/logos/git-github.png',
+    logoSrc: '/images/logos/git-github.png',
     color: '#F74E1E',
     description: 'Git, control de versiones y colaboración en equipo',
     modules: ['git', 'github']},
   {
     id: 'containerizacion',
     name: 'Containerización, Orquestación & Cloud Computing',
-    logoSrc: '/src/assets/images/logos/cloud-computing.jpg',
+    logoSrc: '/images/logos/cloud-computing.jpg',
     color: '#2496ED',
     description: 'Docker, Kubernetes, AWS y gestión de contenedores en la nube',
     modules: ['docker', 'kubernetes', 'aws'],
@@ -44,7 +44,7 @@ export const moduleCategories = [
   {
     id: 'herramientas',
     name: 'Herramientas & Metodologías',
-    logoSrc: '/src/assets/images/logos/procesos.png',
+    logoSrc: '/images/logos/procesos.png',
     color: '#9C27B0',
     description: 'Herramientas de desarrollo, patrones, testing y metodologías transversales',
     modules: ['entornos', 'metodologias'],
@@ -54,7 +54,7 @@ export const moduleCategories = [
         id: 'agile-scrum',
         name: 'Agile/SCRUM',
         description: 'Metodología ágil para gestión de proyectos iterativos',
-        logoSrc: '/src/assets/images/logos/agile.png',
+        logoSrc: '/images/logos/agile.png',
         topics: [
           'Principios Agile',
           'Roles en SCRUM (Product Owner, Scrum Master, Team)',
@@ -74,7 +74,7 @@ export const moduleCategories = [
         id: 'clean-code',
         name: 'Clean Code',
         description: 'Principios y prácticas para escribir código de calidad',
-        logoSrc: '/src/assets/images/logos/clean-code.png',
+        logoSrc: '/images/logos/clean-code.png',
         topics: [
           'Nombres significativos',
           'Funciones pequeñas',
@@ -97,7 +97,7 @@ export const moduleCategories = [
         id: 'testing',
         name: 'Testing',
         description: 'Estrategias y tipos de testing para garantizar calidad',
-        logoSrc: '/src/assets/images/logos/testing.png',
+        logoSrc: '/images/logos/testing.png',
         topics: [
           'Testing Unitario',
           'Testing de Integración',
@@ -118,7 +118,7 @@ export const moduleCategories = [
         id: 'devops',
         name: 'DevOps',
         description: 'Prácticas para automatización, integración y despliegue continuo',
-        logoSrc: '/src/assets/images/logos/devops.png',
+        logoSrc: '/images/logos/devops.png',
         topics: [
           'Principios DevOps',
           'Integración Continua (CI)',
@@ -140,7 +140,7 @@ export const moduleCategories = [
   {
     id: 'ia',
     name: 'Inteligencia Artificial',
-    logoSrc: '/src/assets/images/logos/ia.png',
+    logoSrc: '/images/logos/ia.png',
     color: '#7C3AED',
     description: 'Machine Learning, Deep Learning, LLMs, ChatGPT y aplicaciones de IA',
     modules: ['ia'],
@@ -149,7 +149,7 @@ export const moduleCategories = [
   {
     id: 'seo',
     name: 'SEO & Analytics',
-    logoSrc: '/src/assets/images/logos/seo.png',
+    logoSrc: '/images/logos/seo.png',
     color: '#059669',
     description: 'Posicionamiento en buscadores, analytics y optimización web',
     modules: ['seo'],

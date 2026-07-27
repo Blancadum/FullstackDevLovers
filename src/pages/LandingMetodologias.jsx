@@ -8,7 +8,7 @@ export const LandingMetodologias = () => {
     seoTitle: 'Metodologías Ágiles y Procesos de Desarrollo | Guía Completa',
     seoDescription: 'Domina Agile, Scrum, Kanban y metodologías modernas de desarrollo. Mejores prácticas en gestión de proyectos de software.',
     keywords: 'metodologias, agile, scrum, kanban, procesos, desarrollo, software',
-    imageUrl: '/src/assets/images/logos/procesos.png',
+    imageUrl: '/images/logos/procesos.png',
     imageAlt: 'Metodologías Logo',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/metodologias/agile-scrum/introduccion',

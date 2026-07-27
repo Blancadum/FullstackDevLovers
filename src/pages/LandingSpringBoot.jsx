@@ -8,7 +8,7 @@ export const LandingSpringBoot = () => {
     seoTitle: 'Spring Boot - Framework Backend Profesional | Guía Completa',
     seoDescription: 'Aprende Spring Boot: APIs REST, JPA, transacciones, seguridad y arquitectura de microservicios. Domina el framework más demandado en Java.',
     keywords: 'spring boot, java, apis rest, microservicios, backend, jpa, transacciones',
-    imageUrl: '/src/assets/images/logos/backend.png',
+    imageUrl: '/images/logos/backend.png',
     imageAlt: 'Spring Boot Logo',
     primaryButtonText: 'Comenzar con Spring Boot →',
     primaryButtonLink: '/backend/spring-boot/basico/introduccion',

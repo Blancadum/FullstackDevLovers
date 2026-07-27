@@ -5,70 +5,70 @@ export function QuickAccessSection() {
     {
       id: 'backend',
       title: 'Backend',
-      icon: '/src/assets/images/logos/backend.png',
+      icon: '/images/logos/backend.png',
       color: '#9c27b0',
       stackCategory: 'backend'
     },
     {
       id: 'frontend',
       title: 'Frontend',
-      icon: '/src/assets/images/logos/frontend.jpeg',
+      icon: '/images/logos/frontend.jpeg',
       color: '#61dafb',
       stackCategory: 'frontend'
     },
     {
       id: 'datos',
       title: 'Datos',
-      icon: '/src/assets/images/logos/database.png',
+      icon: '/images/logos/database.png',
       color: '#1976d2',
       stackCategory: 'datos'
     },
     {
       id: 'cloud',
       title: 'Cloud computing',
-      icon: '/src/assets/images/logos/cloud-computing.jpg',
+      icon: '/images/logos/cloud-computing.jpg',
       color: '#ff9800',
       stackCategory: 'containerizacion'
     },
     {
       id: 'versionamiento',
       title: 'Versiones',
-      icon: '/src/assets/images/logos/git-logo.png',
+      icon: '/images/logos/git-logo.png',
       color: '#e8491f',
       stackCategory: 'versionamiento'
     },
     {
       id: 'metodologias',
       title: 'Metodologías',
-      icon: '/src/assets/images/logos/metodologias-procesos.png',
+      icon: '/images/logos/metodologias-procesos.png',
       color: '#ff9800',
       stackCategory: 'herramientas'
     },
     {
       id: 'editores',
       title: 'Editores',
-      icon: '/src/assets/images/logos/editor-texto.png',
+      icon: '/images/logos/editor-texto.png',
       color: '#3f51b5',
       stackCategory: 'editores'
     },
     {
       id: 'hosting',
       title: 'Hosting',
-      icon: '/src/assets/images/logos/hosting.png',
+      icon: '/images/logos/hosting.png',
       color: '#00bcd4',
       stackCategory: 'hosting'
     },
     {
       id: 'ia',
       title: 'IA',
-      icon: '/src/assets/images/logos/ia.png',
+      icon: '/images/logos/ia.png',
       color: '#9c27b0',
       stackCategory: 'ia'
     },
     {
       id: 'contenidos',
       title: 'Contenidos',
-      icon: '/src/assets/images/logos/contenidos.png',
+      icon: '/images/logos/contenidos.png',
       color: '#ff5722',
       stackCategory: 'contenidos'
     }

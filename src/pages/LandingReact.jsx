@@ -3,7 +3,7 @@ import { LandingPageTemplate, ModuleIntroSection } from '../components';
 export const LandingReact = () => {
   const pageConfig = {
     title: 'React',
-    imageUrl: '/src/assets/images/logos/react.png',
+    imageUrl: '/images/logos/react.png',
     imageAlt: 'React',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/frontend/react/basico/introduccion',
@@ -21,7 +21,7 @@ export const LandingReact = () => {
         'Comunidad global activa con miles de recursos',
         'Empleabilidad altísima en la industria tech'
       ],
-      image: '/src/assets/images/logos/react.png'
+      image: '/images/logos/react.png'
     }
   };
 
@@ -33,7 +33,7 @@ export const LandingReact = () => {
       {
         id: 'react-learning',
         name: 'React',
-        logoSrc: '/src/assets/images/logos/react.png',
+        logoSrc: '/images/logos/react.png',
         color: '#61DAFB',
         description: 'Aprende React desde lo básico hasta nivel profesional',
         modules: ['react']
@@ -120,7 +120,7 @@ export const LandingReact = () => {
         {
           id: 'html5',
           title: 'HTML5',
-          logo: '/src/assets/images/logos/html-logo.png',
+          logo: '/images/logos/html-logo.png',
           color: '#E34C26',
           description: 'Estructura base de las páginas web. React genera HTML dinámicamente.',
           link: '/frontend/html'
@@ -128,7 +128,7 @@ export const LandingReact = () => {
         {
           id: 'css3',
           title: 'CSS3',
-          logo: '/src/assets/images/logos/css.png',
+          logo: '/images/logos/css.png',
           color: '#563D7C',
           description: 'Estilos y presentación. Flexbox, Grid, media queries y estilos en componentes.',
           link: '/frontend/css'
@@ -136,14 +136,14 @@ export const LandingReact = () => {
         {
           id: 'javascript',
           title: 'JavaScript (ES6+)',
-          logo: '/src/assets/images/logos/js.png',
+          logo: '/images/logos/js.png',
           color: '#F7DF1E',
           description: 'Arrow functions, destructuring, spread operator, async/await, Promises.'
         },
         {
           id: 'git',
           title: 'Git & GitHub',
-          logo: '/src/assets/images/logos/git-logo.png',
+          logo: '/images/logos/git-logo.png',
           color: '#F1502F',
           description: 'Control de versiones. Commits limpios, ramas y pulls requests.',
           link: '/control-versiones/git'
@@ -151,7 +151,7 @@ export const LandingReact = () => {
         {
           id: 'nodejs',
           title: 'Node.js & npm',
-          logo: '/src/assets/images/logos/nodejs.png',
+          logo: '/images/logos/nodejs.png',
           color: '#68A063',
           description: 'Gestión de dependencias y herramientas de desarrollo. package.json esencial.',
           link: '/backend/nodejs'
@@ -159,21 +159,21 @@ export const LandingReact = () => {
         {
           id: 'rest-api',
           title: 'APIs REST & HTTP',
-          logo: '/src/assets/images/logos/api-rest.png',
+          logo: '/images/logos/api-rest.png',
           color: '#0066CC',
           description: 'GET/POST, respuestas JSON. Conexión servidor-cliente.'
         },
         {
           id: 'json',
           title: 'JSON',
-          logo: '/src/assets/images/logos/json.jpeg',
+          logo: '/images/logos/json.jpeg',
           color: '#000000',
           description: 'Formato de intercambio de datos. APIs devuelven JSON.'
         },
         {
           id: 'dom',
           title: 'DOM & BOM',
-          logo: '/src/assets/images/logos/dom.png',
+          logo: '/images/logos/dom.png',
           color: '#FF6B00',
           description: 'Modelo de Objetos del Documento. Cómo el navegador estructura las páginas.'
         }

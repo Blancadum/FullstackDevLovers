@@ -12,7 +12,7 @@ export const categoryLandingContent = {
     metaTitle: 'Backend & Aplicaciones: Java, Spring Boot, Node.js | Fullstack Dev Lovers',
     metaDescription: 'Domina desarrollo backend con Java, Kotlin, Spring Boot y Node.js. Roadmap completo, comparativas técnicas y oportunidades laborales.',
     metaKeywords: 'backend development, java tutorial, spring boot, node.js, kotlin, api rest, desarrollo backend',
-    ogImage: '/src/assets/images/logos/backend.png',
+    ogImage: '/images/logos/backend.png',
 
     hero: {
       title: 'Backend & Aplicaciones',
@@ -51,7 +51,7 @@ export const categoryLandingContent = {
           name: 'Java',
           description: 'Lenguaje robusto y escalable, usado en 90% de empresas Fortune 500',
           purpose: 'Sistemas empresariales, aplicaciones de banca, seguros y finanzas. Infraestructura crítica que debe funcionar 24/7',
-          logo: '/src/assets/images/logos/java-logo.png',
+          logo: '/images/logos/java-logo.png',
           learningPath: '/backend/java',
           demand: 'Muy alta'
         },
@@ -59,7 +59,7 @@ export const categoryLandingContent = {
           name: 'Spring Boot',
           description: 'Framework Java que simplifica desarrollo de aplicaciones empresariales',
           purpose: 'APIs REST, microservicios, aplicaciones web profesionales. Acelera desarrollo 10x comparado con Java puro',
-          logo: '/src/assets/images/logos/backend.png',
+          logo: '/images/logos/backend.png',
           learningPath: '/backend/spring-boot',
           demand: 'Muy alta'
         },
@@ -67,7 +67,7 @@ export const categoryLandingContent = {
           name: 'Node.js',
           description: 'JavaScript en servidor. Ideal para startups y aplicaciones en tiempo real',
           purpose: 'Aplicaciones de tiempo real, APIs rápidas, startups con ritmo acelerado. Excelente para MVP y prototipado',
-          logo: '/src/assets/images/logos/nodejs.png',
+          logo: '/images/logos/nodejs.png',
           learningPath: '/backend/nodejs',
           demand: 'Alta'
         },
@@ -75,7 +75,7 @@ export const categoryLandingContent = {
           name: 'Kotlin',
           description: 'Lenguaje moderno que corre en la JVM. Más conciso que Java, igual de poderoso',
           purpose: 'Desarrollo Android moderno, aplicaciones JVM contemporáneas. Menos código, más seguridad que Java',
-          logo: '/src/assets/images/logos/kotlin.png',
+          logo: '/images/logos/kotlin.png',
           learningPath: '/backend/kotlin',
           demand: 'Creciente'
         }
@@ -186,7 +186,7 @@ export const categoryLandingContent = {
     metaTitle: 'Frontend & Desarrollo Web: React, Angular, HTML, CSS | Fullstack Dev Lovers',
     metaDescription: 'Domina desarrollo frontend con React, Angular, HTML, CSS y Tailwind. Desde diseño responsivo hasta aplicaciones interactivas modernas.',
     metaKeywords: 'frontend development, react tutorial, angular, html css, web development, responsive design',
-    ogImage: '/src/assets/images/logos/frontend.jpeg',
+    ogImage: '/images/logos/frontend.jpeg',
 
     hero: {
       title: 'Frontend & Desarrollo Web',
@@ -225,7 +225,7 @@ export const categoryLandingContent = {
           name: 'React',
           description: 'Librería JavaScript más popular. Componentes reutilizables y gestión de estado eficiente',
           purpose: 'Aplicaciones web interactivas modernas. Startups tech, fintechs, plataformas SaaS. Componentes reutilizables y performance',
-          logo: '/src/assets/images/logos/react.png',
+          logo: '/images/logos/react.png',
           learningPath: '/frontend/react',
           demand: 'Muy alta'
         },
@@ -233,7 +233,7 @@ export const categoryLandingContent = {
           name: 'Angular',
           description: 'Framework completo empresarial. Usado en grandes corporaciones y bancos',
           purpose: 'Grandes aplicaciones empresariales con equipos grandes. Estructura garantizada, TypeScript integrado, excelente para corporaciones',
-          logo: '/src/assets/images/logos/angular-logo.jpeg',
+          logo: '/images/logos/angular-logo.jpeg',
           learningPath: '/frontend/angular',
           demand: 'Alta'
         },
@@ -241,7 +241,7 @@ export const categoryLandingContent = {
           name: 'HTML & CSS',
           description: 'Fundamentos web. Dominarlos es esencial antes de frameworks',
           purpose: 'Base de toda página web. HTML estructura contenido, CSS lo estiliza. Necesario antes de cualquier framework',
-          logo: '/src/assets/images/logos/html-logo.png',
+          logo: '/images/logos/html-logo.png',
           learningPath: '/frontend/html',
           demand: 'Fundamental'
         },
@@ -249,7 +249,7 @@ export const categoryLandingContent = {
           name: 'Tailwind CSS',
           description: 'Framework de utilidades CSS. Desarrollo rápido y diseños consistentes',
           purpose: 'Construcción rápida de interfaces hermosas. Evita escribir CSS puro. Ideal para prototipado y MVPs',
-          logo: '/src/assets/images/logos/tailwindcss.png',
+          logo: '/images/logos/tailwindcss.png',
           learningPath: '/frontend/tailwindcss',
           demand: 'Creciente'
         },
@@ -257,7 +257,7 @@ export const categoryLandingContent = {
           name: 'Bootstrap',
           description: 'Framework CSS más popular. Componentes prediseñados y responsive',
           purpose: 'Construcción rápida de sitios web profesionales. Componentes prediseñados, grid system robusto, compatible con todos los navegadores',
-          logo: '/src/assets/images/logos/bootstrap.jpeg',
+          logo: '/images/logos/bootstrap.jpeg',
           learningPath: '/frontend/bootstrap',
           demand: 'Alta'
         }
@@ -358,7 +358,7 @@ export const categoryLandingContent = {
     metaTitle: 'Bases de Datos: SQL, MongoDB, DynamoDB | Fullstack Dev Lovers',
     metaDescription: 'Domina gestión de datos con SQL, MongoDB, PostgreSQL y DynamoDB. Diseño de bases de datos, optimización de queries y NoSQL.',
     metaKeywords: 'sql tutorial, mongodb, database, postgresql, dynamodb, database design',
-    ogImage: '/src/assets/images/logos/database.png',
+    ogImage: '/images/logos/database.png',
 
     hero: {
       title: 'Datos & Almacenamiento',
@@ -397,7 +397,7 @@ export const categoryLandingContent = {
           name: 'SQL (PostgreSQL)',
           description: 'Relacional maduro. Estándar en empresas. Transacciones ACID garantizadas',
           purpose: 'Datos estructurados, relaciones complejas, finanzas. Apps empresariales donde integridad es critica',
-          logo: '/src/assets/images/logos/database.png',
+          logo: '/images/logos/database.png',
           learningPath: '/datos/sql',
           demand: 'Muy alta'
         },
@@ -405,7 +405,7 @@ export const categoryLandingContent = {
           name: 'MongoDB',
           description: 'NoSQL flexible. JSON-like. Ideal para datos no estructurados',
           purpose: 'Startups, datos cambiantes, prototipado rápido. Documentos JSON nativos, sin schema rígido',
-          logo: '/src/assets/images/logos/mongodb.png',
+          logo: '/images/logos/mongodb.png',
           learningPath: '/datos/mongodb',
           demand: 'Alta'
         },
@@ -413,7 +413,7 @@ export const categoryLandingContent = {
           name: 'DynamoDB',
           description: 'Servicio AWS serverless. Escalado automático. Caro pero confiable',
           purpose: 'Apps serverless en AWS, escalado automático. IoT, mobile backends, aplicaciones con picos de carga',
-          logo: '/src/assets/images/logos/aws.png',
+          logo: '/images/logos/aws.png',
           learningPath: '/cloud/aws',
           demand: 'Creciente'
         }
@@ -509,7 +509,7 @@ export const categoryLandingContent = {
     metaTitle: 'Control de Versiones: Git, GitHub, GitLab | Fullstack Dev Lovers',
     metaDescription: 'Domina Git y control de versiones. Aprende workflows, branching strategies y colaboración en equipo con GitHub y GitLab.',
     metaKeywords: 'git tutorial, github, gitlab, control de versiones, colaboracion desarrollo',
-    ogImage: '/src/assets/images/logos/git-logo.png',
+    ogImage: '/images/logos/git-logo.png',
 
     hero: {
       title: 'Control de Versiones',
@@ -548,7 +548,7 @@ export const categoryLandingContent = {
           name: 'Git',
           description: 'Sistema de control de versiones distribuido. Estándar de la industria desde hace 15 años',
           purpose: 'Gestionar código en equipo sin perder cambios. Historial completo, rollback, ramas para features paralelos',
-          logo: '/src/assets/images/logos/git-logo.png',
+          logo: '/images/logos/git-logo.png',
           learningPath: '/control-versiones/git',
           demand: 'Fundamental'
         },
@@ -556,7 +556,7 @@ export const categoryLandingContent = {
           name: 'GitHub',
           description: 'Plataforma colaborativa. Estándar en open source y empresas tech',
           purpose: 'Compartir código público/privado, colaboración en equipo. Pull requests, code review, integración con CI/CD',
-          logo: '/src/assets/images/logos/git-logo.png',
+          logo: '/images/logos/git-logo.png',
           learningPath: '/control-versiones/git',
           demand: 'Muy alta'
         },
@@ -564,7 +564,7 @@ export const categoryLandingContent = {
           name: 'GitLab',
           description: 'Alternativa empresarial con CI/CD integrado. Popular en grandes organizaciones',
           purpose: 'Empresas con requisitos de privacidad. CI/CD, issue tracking, wiki. Solución all-in-one on-premise',
-          logo: '/src/assets/images/logos/git-logo.png',
+          logo: '/images/logos/git-logo.png',
           learningPath: '/control-versiones/git',
           demand: 'Alta'
         }
@@ -664,7 +664,7 @@ export const categoryLandingContent = {
     metaTitle: 'Docker, Kubernetes & AWS | Containerización y Cloud Computing | Fullstack Dev Lovers',
     metaDescription: 'Domina Docker, Kubernetes y AWS. Aprende a containerizar aplicaciones, orquestar microservicios y desplegar en la nube.',
     metaKeywords: 'docker tutorial, kubernetes, aws, containerizacion, cloud computing, microservicios',
-    ogImage: '/src/assets/images/logos/cloud-computing.jpeg',
+    ogImage: '/images/logos/cloud-computing.jpeg',
 
     hero: {
       title: 'Containerización, Orquestación & Cloud',
@@ -703,7 +703,7 @@ export const categoryLandingContent = {
           name: 'Docker',
           description: 'Containerización. Empaca tu app con todas sus dependencias. Corre igual en laptop y producción',
           purpose: 'Eliminar "funciona en mi máquina". Deployment consistente. Microservicios, desarrollo local realista',
-          logo: '/src/assets/images/logos/docker-lgo.png',
+          logo: '/images/logos/docker-lgo.png',
           learningPath: '/cloud/docker',
           demand: 'Muy alta'
         },
@@ -711,7 +711,7 @@ export const categoryLandingContent = {
           name: 'Kubernetes',
           description: 'Orquestación de containers. Gestiona miles de containers automáticamente',
           purpose: 'Escalar automáticamente con demanda. Self-healing, rollouts sin downtime. Infraestructura cloud nativa',
-          logo: '/src/assets/images/logos/kubernetes-logo.png',
+          logo: '/images/logos/kubernetes-logo.png',
           learningPath: '/cloud/kubernetes',
           demand: 'Muy alta'
         },
@@ -719,7 +719,7 @@ export const categoryLandingContent = {
           name: 'AWS',
           description: 'Plataforma cloud más grande. EC2, Lambda, RDS, S3. Domina aquí y trasladate a Azure/GCP',
           purpose: 'Infraestructura mundial, escalado automático, paga lo que usas. Desde startups a Fortune 500',
-          logo: '/src/assets/images/logos/aws.png',
+          logo: '/images/logos/aws.png',
           learningPath: '/cloud/aws',
           demand: 'Excepcional'
         }
@@ -830,7 +830,7 @@ export const categoryLandingContent = {
     metaTitle: 'Metodologías Agile, Clean Code, Testing | Fullstack Dev Lovers',
     metaDescription: 'Domina Agile/SCRUM, Clean Code, Testing y mejores prácticas de desarrollo. Soft skills y patrones profesionales.',
     metaKeywords: 'agile scrum, clean code, testing, desarrollo software, metodologias, patrones diseno',
-    ogImage: '/src/assets/images/logos/procesos.png',
+    ogImage: '/images/logos/procesos.png',
 
     hero: {
       title: 'Herramientas & Metodologías',
@@ -869,7 +869,7 @@ export const categoryLandingContent = {
           name: 'Agile & SCRUM',
           description: 'Metodología ágil para gestión de proyectos iterativos y entregas frecuentes',
           purpose: 'Organizar equipos, entregar rápido, adaptarse a cambios. Sprints, daily standups, retrospectivas',
-          logo: '/src/assets/images/logos/procesos.png',
+          logo: '/images/logos/procesos.png',
           learningPath: '/metodologias',
           demand: 'Fundamental'
         },
@@ -877,7 +877,7 @@ export const categoryLandingContent = {
           name: 'Clean Code',
           description: 'Principios SOLID, naming, funciones pequeñas. Código que otros desarrolladores entienden',
           purpose: 'Código mantenible, reducir bugs, facilitar refactoring. Ahorra horas en debugging y maintenance',
-          logo: '/src/assets/images/logos/procesos.png',
+          logo: '/images/logos/procesos.png',
           learningPath: '/metodologias',
           demand: 'Muy alta'
         },
@@ -885,7 +885,7 @@ export const categoryLandingContent = {
           name: 'Software Testing',
           description: 'Unit testing, integration testing, TDD. Garantiza calidad y previene bugs',
           purpose: 'Deployments confiables, menos bugs en producción. Tests actúan como documentación',
-          logo: '/src/assets/images/logos/procesos.png',
+          logo: '/images/logos/procesos.png',
           learningPath: '/metodologias',
           demand: 'Alta'
         }

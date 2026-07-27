@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingKotlin = () => {
   const pageConfig = {
     title: 'Kotlin',
-    imageUrl: '/src/assets/images/logos/kotlin.png',
+    imageUrl: '/images/logos/kotlin.png',
     imageAlt: 'Kotlin',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/backend/kotlin/basico/introduccion',

@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingHTML = () => {
   const pageConfig = {
     title: 'HTML',
-    imageUrl: '/src/assets/images/logos/html.png',
+    imageUrl: '/images/logos/html-logo.png',
     imageAlt: 'HTML',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/frontend/html/basico/introduccion',

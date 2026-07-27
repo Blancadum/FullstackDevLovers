@@ -8,7 +8,7 @@ export const LandingGit = () => {
     seoTitle: 'Git - Control de Versiones Profesional | Guía Completa',
     seoDescription: 'Domina Git: versionado distribuido, ramas, merge, pull requests y workflows profesionales. Sistema de control de versiones más usado en el mundo.',
     keywords: 'git, control de versiones, github, gitlab, bitbucket, versionado, colaboración',
-    imageUrl: '/src/assets/images/logos/git-logo.png',
+    imageUrl: '/images/logos/git-logo.png',
     imageAlt: 'Git Logo',
     primaryButtonText: 'Comenzar con Git →',
     primaryButtonLink: '/control-versiones/git/basico/introduccion',
@@ -24,7 +24,7 @@ export const LandingGit = () => {
         'Estándar industrial: usado en 95%+ de proyectos profesionales',
         'Integración perfecta: GitHub, GitLab, Bitbucket'
       ],
-      image: '/src/assets/images/logos/git-logo.png'
+      image: '/images/logos/git-logo.png'
     },
     faqData: [
       {

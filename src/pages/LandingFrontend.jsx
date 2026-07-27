@@ -5,7 +5,7 @@ export const LandingFrontend = () => {
     title: 'Frontend: Construye Interfaces Modernas',
     subtitle: 'De HTML & CSS hasta React y Angular: domina el desarrollo web profesional',
     description: 'Frontend es el arte de crear experiencias de usuario excepcionales. Aprende desde los fundamentos (HTML, CSS, JavaScript) hasta los frameworks modernos (React, Angular) y herramientas profesionales. Conviértete en un desarrollador frontend altamente demandado.',
-    imageUrl: '/src/assets/images/logos/frontpage.png',
+    imageUrl: '/images/logos/frontpage.png',
     imageAlt: 'Frontend',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/frontend/react/basico/introduccion',
@@ -24,21 +24,21 @@ export const LandingFrontend = () => {
             {
               id: 'html',
               name: 'HTML5',
-              logo: '/src/assets/images/logos/html-logo.png',
+              logo: '/images/logos/html-logo.png',
               color: '#E34C26',
               link: '/frontend/html'
             },
             {
               id: 'css',
               name: 'CSS3',
-              logo: '/src/assets/images/logos/css.png',
+              logo: '/images/logos/css.png',
               color: '#563D7C',
               link: '/frontend/css'
             },
             {
               id: 'js',
               name: 'JavaScript',
-              logo: '/src/assets/images/logos/js.png',
+              logo: '/images/logos/js.png',
               color: '#F7DF1E',
               link: '/frontend/javascript'
             }
@@ -51,14 +51,14 @@ export const LandingFrontend = () => {
             {
               id: 'react',
               name: 'React',
-              logo: '/src/assets/images/logos/react.png',
+              logo: '/images/logos/react.png',
               color: '#61DAFB',
               link: '/frontend/react'
             },
             {
               id: 'angular',
               name: 'Angular',
-              logo: '/src/assets/images/logos/angular-logo.jpeg',
+              logo: '/images/logos/angular-logo.jpeg',
               color: '#DD0031',
               link: '/frontend/angular'
             }
@@ -71,14 +71,14 @@ export const LandingFrontend = () => {
             {
               id: 'bootstrap',
               name: 'Bootstrap',
-              logo: '/src/assets/images/logos/bootstrap.jpeg',
+              logo: '/images/logos/bootstrap.jpeg',
               color: '#7952B3',
               link: '/frontend/bootstrap'
             },
             {
               id: 'tailwind',
               name: 'Tailwind CSS',
-              logo: '/src/assets/images/logos/tailwindcss.jpg',
+              logo: '/images/logos/tailwindcss.jpg',
               color: '#06B6D4',
               link: '/frontend/tailwindcss'
             }
@@ -91,14 +91,14 @@ export const LandingFrontend = () => {
             {
               id: 'nodejs',
               name: 'Node.js',
-              logo: '/src/assets/images/logos/nodejs.png',
+              logo: '/images/logos/nodejs.png',
               color: '#68A063',
               link: '/backend/nodejs'
             },
             {
               id: 'git',
               name: 'Git',
-              logo: '/src/assets/images/logos/git-logo.png',
+              logo: '/images/logos/git-logo.png',
               color: '#F1502F',
               link: '/control-versiones/git'
             }

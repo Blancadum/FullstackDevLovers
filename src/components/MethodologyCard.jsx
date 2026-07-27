@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './MethodologyCard.css';
 
 const METHODOLOGY_LOGOS = {
-  'agile-scrum': '/src/assets/images/logos/procesos.png',
-  'clean-code': '/src/assets/images/logos/procesos.png',
-  'testing': '/src/assets/images/logos/procesos.png',
-  'devops': '/src/assets/images/logos/aws.png'
+  'agile-scrum': '/images/logos/procesos.png',
+  'clean-code': '/images/logos/procesos.png',
+  'testing': '/images/logos/procesos.png',
+  'devops': '/images/logos/aws.png'
 };
 
 export function MethodologyCard({ methodology, themeColor = '#9C27B0' }) {

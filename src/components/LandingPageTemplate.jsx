@@ -43,7 +43,7 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
     primaryButtonLink: pageConfig.primaryButtonLink || `/${module?.category}/${moduleId}/basico/introduccion`,
     secondaryButtonText: pageConfig.secondaryButtonText || 'Ver comparativa',
     secondaryButtonLink: pageConfig.secondaryButtonLink || '#comparativa',
-    imageUrl: pageConfig.imageUrl || `/src/assets/images/logos/${moduleId}-logo.png`,
+    imageUrl: pageConfig.imageUrl || `/images/logos/${moduleId}-logo.png`,
     imageAlt: pageConfig.imageAlt || `${moduleId} Logo`,
     seoTitle: pageConfig.seoTitle || `${theme?.title || moduleId} - Guía Completa | Fullstack Dev Lovers`,
     seoDescription: pageConfig.seoDescription || pageConfig.description || module?.description,

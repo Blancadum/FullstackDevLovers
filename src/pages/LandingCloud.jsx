@@ -5,7 +5,7 @@ export const LandingCloud = () => {
     title: 'Cloud Computing: Infraestructura en la Nube',
     subtitle: 'Docker, Kubernetes, AWS: domina la containerización y orquestación',
     description: 'Cloud Computing es el futuro del desarrollo. Aprende a containerizar aplicaciones con Docker, orquestar con Kubernetes y desplegar en AWS. Construye infraestructura escalable, resiliente y profesional en la nube.',
-    imageUrl: '/src/assets/images/logos/cloud-computing.jpg',
+    imageUrl: '/images/logos/cloud-computing.jpg',
     imageAlt: 'Cloud Computing',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/cloud/docker/basico/introduccion',

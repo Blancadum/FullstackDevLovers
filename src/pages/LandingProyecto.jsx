@@ -3,8 +3,8 @@ import { LandingPageTemplate } from '../components';
 export const LandingProyecto = () => {
   const pageConfig = {
     title: 'Proyecto Final',
-    imageUrl: '/src/assets/images/logos/proyecto.png',
-    imageAlt: 'Proyecto Final',
+    imageUrl: null,
+    imageAlt: null,
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/proyecto/basico/introduccion',
     secondaryButtonText: 'Ver temas',

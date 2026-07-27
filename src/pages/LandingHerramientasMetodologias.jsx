@@ -5,7 +5,7 @@ export const LandingHerramientasMetodologias = () => {
     title: 'Herramientas y Metodologías: Excelencia en Desarrollo',
     subtitle: 'Clean Code, Testing, DevOps y Agile: convierte-te en un profesional completo',
     description: 'Combina las mejores herramientas y metodologías para escribir código excepcional. Domina Clean Code para mantener código limpio, Testing para garantizar calidad, Agile para gestionar proyectos y DevOps para despliegue profesional.',
-    imageUrl: '/src/assets/images/logos/procesos.png',
+    imageUrl: '/images/logos/procesos.png',
     imageAlt: 'Herramientas y Metodologías',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/metodologias/clean-code/introduccion',

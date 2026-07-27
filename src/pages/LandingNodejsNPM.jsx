@@ -3,7 +3,7 @@ import { LandingPageTemplate } from '../components';
 export const LandingNodejsNPM = () => {
   const pageConfig = {
     title: 'NPM',
-    imageUrl: '/src/assets/images/logos/nodejs-npm.png',
+    imageUrl: '/images/logos/npm-node.png',
     imageAlt: 'NPM',
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/backend/nodejs/basico/npm',

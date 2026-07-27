@@ -8,7 +8,7 @@ export const LandingSQL = () => {
     seoTitle: 'SQL - Bases de Datos Relacionales | Guía Completa',
     seoDescription: 'Domina SQL: SELECT, JOINs, transacciones y optimización. Aprende la habilidad más demandada en backend development.',
     keywords: 'sql, bases de datos, postgresql, mysql, consultas, transacciones, normalizacion',
-    imageUrl: '/src/assets/images/logos/database.png',
+    imageUrl: '/images/logos/database.png',
     imageAlt: 'SQL Logo',
     primaryButtonText: 'Comenzar con SQL →',
     primaryButtonLink: '/datos/sql/basico/introduccion',

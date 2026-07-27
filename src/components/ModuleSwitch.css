@@ -201,7 +201,7 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .stack-grid {
-    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 

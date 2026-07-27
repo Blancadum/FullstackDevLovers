@@ -3,8 +3,8 @@ import { LandingPageTemplate } from '../components';
 export const LandingArquitectura = () => {
   const pageConfig = {
     title: 'Arquitectura de Software',
-    imageUrl: '/src/assets/images/logos/arquitectura.png',
-    imageAlt: 'Arquitectura de Software',
+    imageUrl: null,
+    imageAlt: null,
     primaryButtonText: 'Comenzar →',
     primaryButtonLink: '/arquitectura/basico/introduccion',
     secondaryButtonText: 'Ver temas',
