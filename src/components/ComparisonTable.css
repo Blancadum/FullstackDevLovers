@@ -170,12 +170,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .comparison-row {
-    background: #1e293b;
-  }
-
-  .comparison-column p {
-    color: #cbd5e1;
-  }
-}

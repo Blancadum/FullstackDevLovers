@@ -89,35 +89,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .faq h3 {
-    color: #e2e8f0;
-  }
-
-  .faq-item {
-    border-color: #334155;
-  }
-
-  .faq-question {
-    background: #1e293b;
-    color: #e2e8f0;
-  }
-
-  .faq-question:hover {
-    background: #334155;
-  }
-
-  .faq-question.active {
-    background: #ff006e;
-    color: white;
-  }
-
-  .faq-answer {
-    background: #0f172a;
-    color: #cbd5e1;
-  }
-}
-
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
   .faq {

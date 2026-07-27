@@ -291,26 +291,6 @@ img {
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-  }
-
-  blockquote {
-    border-left-color: #ff006e;
-    color: #999;
-  }
-
-  .terminal,
-  .console,
-  .shell {
-    background-color: #0d0d0d;
-    color: #d4d4d4;
-  }
-}
-
 /* Landscape orientation - optimize for shorter height */
 @media (orientation: landscape) and (max-height: 600px) {
   body {

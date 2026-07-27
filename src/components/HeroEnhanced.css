@@ -441,50 +441,6 @@
 }
 
 /* ============================================================================
-   Dark Mode Support
-   ============================================================================ */
-@media (prefers-color-scheme: dark) {
-  .hero-enhanced-bg {
-    background: linear-gradient(135deg, #434b77 0%, #5a3a5a 50%, #3d4a6b 100%);
-  }
-
-  .hero-enhanced-title,
-  .hero-enhanced-subtitle {
-    color: #f0f0f0;
-  }
-
-  .hero-enhanced-description {
-    color: #d0d0d0;
-  }
-
-  .hero-enhanced-btn--secondary {
-    background: rgba(255, 0, 110, 0.1);
-    color: #ff6b9d;
-    border-color: #ff6b9d;
-  }
-
-  .hero-enhanced-btn--secondary:hover {
-    background: #ff6b9d;
-    color: white;
-  }
-
-  .hero-enhanced-search-wrapper .search-input {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #f0f0f0;
-  }
-
-  .hero-enhanced-search-wrapper .search-input:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #ff006e;
-  }
-
-  .hero-enhanced-search-wrapper .search-input::placeholder {
-    color: #9ca3af;
-  }
-}
-
-/* ============================================================================
    Reduced Motion Support
    ============================================================================ */
 @media (prefers-reduced-motion: reduce) {

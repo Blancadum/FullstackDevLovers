@@ -43,22 +43,6 @@
   display: inline;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .key-points-container {
-    background: linear-gradient(135deg, #7f0343 0%, #4a1729 100%);
-    border-left-color: #ff006e;
-  }
-
-  .key-points-title {
-    color: #fca5d0;
-  }
-
-  .key-points-item {
-    color: #f5d5e8;
-  }
-}
-
 /* Mobile */
 @media (max-width: 640px) {
   .key-points-container {

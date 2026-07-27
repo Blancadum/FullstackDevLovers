@@ -19,12 +19,6 @@
   color: var(--theme-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  .concepts-list li {
-    color: #ccc;
-  }
-}
-
 @media (max-width: 768px) {
   .concepts-list {
     padding: 0 1rem;

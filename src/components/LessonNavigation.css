@@ -106,31 +106,3 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .lesson-navigation {
-    border-top-color: #444;
-  }
-
-  .nav-previous {
-    background-color: #1b5e20;
-    color: #c8e6c9;
-    border-color: #66bb6a;
-  }
-
-  .nav-previous:hover {
-    background-color: #2e7d32;
-    border-color: #81c784;
-  }
-
-  .nav-next {
-    background-color: #e65100;
-    color: #fff3e0;
-    border-color: #ffb74d;
-  }
-
-  .nav-next:hover {
-    background-color: #bf360c;
-    border-color: #ffb74d;
-  }
-}

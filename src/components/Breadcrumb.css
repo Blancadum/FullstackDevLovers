@@ -153,24 +153,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .breadcrumb {
-    background-color: #1e293b;
-  }
-
-  .breadcrumb-item a {
-    color: #9ca3af;
-  }
-
-  .breadcrumb-item a:hover {
-    color: #d1d5db;
-  }
-
-  .breadcrumb-current {
-    color: #cbd5e1;
-  }
-
-  .breadcrumb-item:not(:last-child)::after {
-    color: #475569;
-  }
-}

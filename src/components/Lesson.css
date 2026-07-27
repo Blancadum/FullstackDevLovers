@@ -25,7 +25,6 @@
   margin: 0.5rem 0 0 0;
 }
 
-
 .lesson-content {
   margin-bottom: 2rem;
 }
@@ -57,21 +56,6 @@
 
 .lesson-navigation > div:first-child:empty + .btn {
   margin-left: auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  .lesson-header {
-    border-bottom-color: #334155;
-  }
-
-  .lesson-header h1 {
-    color: #e2e8f0;
-  }
-
-
-  .lesson-navigation {
-    border-top-color: #334155;
-  }
 }
 
 /* Tablet (768px and below) */

@@ -108,36 +108,6 @@
   display: none;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .author-header {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    border-color: #334155;
-  }
-
-  .author-header:hover {
-    border-color: #a5b4fc;
-  }
-
-  .author-name {
-    color: #e2e8f0;
-  }
-
-  .author-bio {
-    color: #cbd5e1;
-  }
-
-  .contact-link {
-    color: #a5b4fc;
-    background: rgba(255, 107, 107, 0.2);
-  }
-
-  .contact-link:hover {
-    color: #c4b5fd;
-    background: rgba(255, 107, 107, 0.3);
-  }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .author-header {

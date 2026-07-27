@@ -54,37 +54,3 @@
   color: #7f1d1d;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .highlight-box {
-    background-color: #0f172a;
-  }
-
-  .highlight-box.info {
-    background-color: #0f172a;
-    border-left-color: #0ea5e9;
-    color: #60a5fa;
-  }
-
-  .highlight-box.warning {
-    background-color: #0f172a;
-    border-left-color: #f59e0b;
-    color: #f59e0b;
-  }
-
-  .highlight-box.success {
-    background-color: #0f172a;
-    border-left-color: #10b981;
-    color: #10b981;
-  }
-
-  .highlight-box.danger {
-    background-color: #0f172a;
-    border-left-color: #ef4444;
-    color: #ef4444;
-  }
-
-  .highlight-box code {
-    background: rgba(255, 255, 255, 0.1);
-  }
-}

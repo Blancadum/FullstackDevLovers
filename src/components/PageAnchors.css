@@ -40,23 +40,6 @@
   transform: translateY(0);
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .page-anchors-tag {
-    background-color: #1e293b;
-    color: #60a5fa;
-    border-color: #334155;
-  }
-
-  .page-anchors-tag:hover,
-  .page-anchors-tag:focus {
-    background-color: #0EA5E9;
-    color: #ffffff;
-    border-color: #0EA5E9;
-    box-shadow: 0 4px 8px rgba(14, 165, 233, 0.3);
-  }
-}
-
 /* Mobile */
 @media (max-width: 640px) {
   .page-anchors-container {
