@@ -102,7 +102,7 @@ git push -u origin main`}
             estructura introducción/conceptos/ejemplos/resumen y marcado de afirmaciones no garantizadas con TODO-verificar). */}
       </LessonLayout>
 
-      <LessonNavigation previous={nav.previous} next={nav.next} />
+      <LessonNavigation previousLink={nav.previous} previousTitle={nav.previousTitle} nextLink={nav.next} nextTitle={nav.nextTitle} />
     </>
   );
 }

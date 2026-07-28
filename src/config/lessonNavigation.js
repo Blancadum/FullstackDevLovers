@@ -1214,6 +1214,446 @@ export const lessonNavigationMap = {
     previousTitle: 'Formulario de Contacto',
     next: null,
     nextTitle: null
+  },
+
+  // React - Fundamentos
+  '/frontend/react/fundamentos/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/frontend/react/fundamentos/jsx-componentes',
+    nextTitle: 'JSX y Componentes'
+  },
+  '/frontend/react/fundamentos/jsx-componentes': {
+    previous: '/frontend/react/fundamentos/introduccion',
+    previousTitle: 'Introducción a React',
+    next: '/frontend/react/fundamentos/props-estado',
+    nextTitle: 'Props y Estado'
+  },
+  '/frontend/react/fundamentos/props-estado': {
+    previous: '/frontend/react/fundamentos/jsx-componentes',
+    previousTitle: 'JSX y Componentes',
+    next: '/frontend/react/hooks/usestate',
+    nextTitle: 'useState Hook'
+  },
+
+  // React - Hooks
+  '/frontend/react/hooks/usestate': {
+    previous: '/frontend/react/fundamentos/props-estado',
+    previousTitle: 'Props y Estado',
+    next: '/frontend/react/hooks/useeffect',
+    nextTitle: 'useEffect Hook'
+  },
+  '/frontend/react/hooks/useeffect': {
+    previous: '/frontend/react/hooks/usestate',
+    previousTitle: 'useState Hook',
+    next: '/frontend/react/hooks/custom',
+    nextTitle: 'Hooks personalizados'
+  },
+  '/frontend/react/hooks/custom': {
+    previous: '/frontend/react/hooks/useeffect',
+    previousTitle: 'useEffect Hook',
+    next: null,
+    nextTitle: null
+  },
+
+  // github - navegación
+  '/control-versiones/github/basicos/intro': {
+    previous: null,
+    previousTitle: null,
+    next: '/control-versiones/github/basicos/crear-cuenta',
+    nextTitle: 'Crear una cuenta y configurar perfil'
+  },
+  '/control-versiones/github/basicos/crear-cuenta': {
+    previous: '/control-versiones/github/basicos/intro',
+    previousTitle: 'Qué es GitHub y por qué usarlo',
+    next: '/control-versiones/github/basicos/crear-clonar-repos',
+    nextTitle: 'Crear y clonar repositorios en GitHub'
+  },
+  '/control-versiones/github/basicos/crear-clonar-repos': {
+    previous: '/control-versiones/github/basicos/crear-cuenta',
+    previousTitle: 'Crear una cuenta y configurar perfil',
+    next: '/control-versiones/github/basicos/push-pull',
+    nextTitle: 'Push, Pull y sincronización'
+  },
+  '/control-versiones/github/basicos/push-pull': {
+    previous: '/control-versiones/github/basicos/crear-clonar-repos',
+    previousTitle: 'Crear y clonar repositorios en GitHub',
+    next: '/control-versiones/github/colaboracion/pull-requests',
+    nextTitle: 'Pull Requests: crear y gestionar'
+  },
+  '/control-versiones/github/colaboracion/pull-requests': {
+    previous: '/control-versiones/github/basicos/push-pull',
+    previousTitle: 'Push, Pull y sincronización',
+    next: '/control-versiones/github/colaboracion/forks',
+    nextTitle: 'Forks y contribuciones'
+  },
+  '/control-versiones/github/colaboracion/forks': {
+    previous: '/control-versiones/github/colaboracion/pull-requests',
+    previousTitle: 'Pull Requests: crear y gestionar',
+    next: '/control-versiones/github/colaboracion/issues',
+    nextTitle: 'Issues y Project Boards'
+  },
+  '/control-versiones/github/colaboracion/issues': {
+    previous: '/control-versiones/github/colaboracion/forks',
+    previousTitle: 'Forks y contribuciones',
+    next: '/control-versiones/github/colaboracion/github-flow',
+    nextTitle: 'GitHub Flow: flujo de trabajo profesional'
+  },
+  '/control-versiones/github/colaboracion/github-flow': {
+    previous: '/control-versiones/github/colaboracion/issues',
+    previousTitle: 'Issues y Project Boards',
+    next: '/control-versiones/github/avanzado/actions',
+    nextTitle: 'GitHub Actions: automatización y CI/CD'
+  },
+  '/control-versiones/github/avanzado/actions': {
+    previous: '/control-versiones/github/colaboracion/github-flow',
+    previousTitle: 'GitHub Flow: flujo de trabajo profesional',
+    next: '/control-versiones/github/avanzado/branch-protection',
+    nextTitle: 'Protección de ramas y políticas'
+  },
+  '/control-versiones/github/avanzado/branch-protection': {
+    previous: '/control-versiones/github/avanzado/actions',
+    previousTitle: 'GitHub Actions: automatización y CI/CD',
+    next: '/control-versiones/github/avanzado/seguridad',
+    nextTitle: 'Seguridad y tokens personales'
+  },
+  '/control-versiones/github/avanzado/seguridad': {
+    previous: '/control-versiones/github/avanzado/branch-protection',
+    previousTitle: 'Protección de ramas y políticas',
+    next: null,
+    nextTitle: null
+  },
+
+  // kotlin - navegación
+  '/backend/kotlin/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/backend/kotlin/kotlin-vs-java',
+    nextTitle: 'Kotlin vs Java'
+  },
+  '/backend/kotlin/kotlin-vs-java': {
+    previous: '/backend/kotlin/introduccion',
+    previousTitle: 'Introducción a Kotlin',
+    next: '/backend/kotlin/sintaxis',
+    nextTitle: 'Sintaxis básica'
+  },
+  '/backend/kotlin/sintaxis': {
+    previous: '/backend/kotlin/kotlin-vs-java',
+    previousTitle: 'Kotlin vs Java',
+    next: '/backend/kotlin/null-safety',
+    nextTitle: 'Null Safety'
+  },
+  '/backend/kotlin/null-safety': {
+    previous: '/backend/kotlin/sintaxis',
+    previousTitle: 'Sintaxis básica',
+    next: '/backend/kotlin/extension-functions',
+    nextTitle: 'Funciones de Extensión'
+  },
+  '/backend/kotlin/extension-functions': {
+    previous: '/backend/kotlin/null-safety',
+    previousTitle: 'Null Safety',
+    next: '/backend/kotlin/lambdas',
+    nextTitle: 'Lambdas y Funciones Literales'
+  },
+  '/backend/kotlin/lambdas': {
+    previous: '/backend/kotlin/extension-functions',
+    previousTitle: 'Funciones de Extensión',
+    next: '/backend/kotlin/corrutinas',
+    nextTitle: 'Corrutinas'
+  },
+  '/backend/kotlin/corrutinas': {
+    previous: '/backend/kotlin/lambdas',
+    previousTitle: 'Lambdas y Funciones Literales',
+    next: '/backend/kotlin/clases-objetos',
+    nextTitle: 'Clases y Objetos'
+  },
+  '/backend/kotlin/clases-objetos': {
+    previous: '/backend/kotlin/corrutinas',
+    previousTitle: 'Corrutinas',
+    next: '/backend/kotlin/scope-functions',
+    nextTitle: 'Scope Functions'
+  },
+  '/backend/kotlin/scope-functions': {
+    previous: '/backend/kotlin/clases-objetos',
+    previousTitle: 'Clases y Objetos',
+    next: '/backend/kotlin/dsls',
+    nextTitle: 'DSLs en Kotlin'
+  },
+  '/backend/kotlin/dsls': {
+    previous: '/backend/kotlin/scope-functions',
+    previousTitle: 'Scope Functions',
+    next: null,
+    nextTitle: null
+  },
+
+  // nodejs - navegación
+  '/backend/nodejs/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/backend/nodejs/npm',
+    nextTitle: 'NPM y gestión de paquetes'
+  },
+  '/backend/nodejs/npm': {
+    previous: '/backend/nodejs/introduccion',
+    previousTitle: 'Introducción a Node.js',
+    next: '/backend/nodejs/modulos',
+    nextTitle: 'Módulos y require/import'
+  },
+  '/backend/nodejs/modulos': {
+    previous: '/backend/nodejs/npm',
+    previousTitle: 'NPM y gestión de paquetes',
+    next: '/backend/nodejs/event-loop',
+    nextTitle: 'Event Loop y asincronía'
+  },
+  '/backend/nodejs/event-loop': {
+    previous: '/backend/nodejs/modulos',
+    previousTitle: 'Módulos y require/import',
+    next: '/backend/nodejs/http',
+    nextTitle: 'HTTP y servidores nativos'
+  },
+  '/backend/nodejs/http': {
+    previous: '/backend/nodejs/event-loop',
+    previousTitle: 'Event Loop y asincronía',
+    next: '/backend/nodejs/express',
+    nextTitle: 'Express.js - Framework web'
+  },
+  '/backend/nodejs/express': {
+    previous: '/backend/nodejs/http',
+    previousTitle: 'HTTP y servidores nativos',
+    next: '/backend/nodejs/routing',
+    nextTitle: 'Routing y middleware'
+  },
+  '/backend/nodejs/routing': {
+    previous: '/backend/nodejs/express',
+    previousTitle: 'Express.js - Framework web',
+    next: '/backend/nodejs/rest-apis',
+    nextTitle: 'APIs REST'
+  },
+  '/backend/nodejs/rest-apis': {
+    previous: '/backend/nodejs/routing',
+    previousTitle: 'Routing y middleware',
+    next: '/backend/nodejs/bases-datos',
+    nextTitle: 'Conexión a bases de datos'
+  },
+  '/backend/nodejs/bases-datos': {
+    previous: '/backend/nodejs/rest-apis',
+    previousTitle: 'APIs REST',
+    next: '/backend/nodejs/sequelize',
+    nextTitle: 'Sequelize y ORMs'
+  },
+  '/backend/nodejs/sequelize': {
+    previous: '/backend/nodejs/bases-datos',
+    previousTitle: 'Conexión a bases de datos',
+    next: '/backend/nodejs/transacciones',
+    nextTitle: 'Gestión de transacciones'
+  },
+  '/backend/nodejs/transacciones': {
+    previous: '/backend/nodejs/sequelize',
+    previousTitle: 'Sequelize y ORMs',
+    next: '/backend/nodejs/jwt',
+    nextTitle: 'Autenticación y JWT'
+  },
+  '/backend/nodejs/jwt': {
+    previous: '/backend/nodejs/transacciones',
+    previousTitle: 'Gestión de transacciones',
+    next: '/backend/nodejs/testing',
+    nextTitle: 'Testing en Node.js'
+  },
+  '/backend/nodejs/testing': {
+    previous: '/backend/nodejs/jwt',
+    previousTitle: 'Autenticación y JWT',
+    next: '/backend/nodejs/despliegue',
+    nextTitle: 'Despliegue y producción'
+  },
+  '/backend/nodejs/despliegue': {
+    previous: '/backend/nodejs/testing',
+    previousTitle: 'Testing en Node.js',
+    next: null,
+    nextTitle: null
+  },
+
+  // html - navegación
+  '/frontend/html/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/frontend/html/estructura',
+    nextTitle: 'Estructura básica de un documento'
+  },
+  '/frontend/html/estructura': {
+    previous: '/frontend/html/introduccion',
+    previousTitle: 'Introducción a HTML',
+    next: '/frontend/html/etiquetas',
+    nextTitle: 'Etiquetas y elementos'
+  },
+  '/frontend/html/etiquetas': {
+    previous: '/frontend/html/estructura',
+    previousTitle: 'Estructura básica de un documento',
+    next: '/frontend/html/formularios',
+    nextTitle: 'Formularios HTML'
+  },
+  '/frontend/html/formularios': {
+    previous: '/frontend/html/etiquetas',
+    previousTitle: 'Etiquetas y elementos',
+    next: '/frontend/html/validacion',
+    nextTitle: 'Validación de formularios'
+  },
+  '/frontend/html/validacion': {
+    previous: '/frontend/html/formularios',
+    previousTitle: 'Formularios HTML',
+    next: null,
+    nextTitle: null
+  },
+
+  // css - navegación
+  '/frontend/css/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/frontend/css/selectores',
+    nextTitle: 'Selectores y propiedades'
+  },
+  '/frontend/css/selectores': {
+    previous: '/frontend/css/introduccion',
+    previousTitle: 'Introducción a CSS',
+    next: '/frontend/css/box-model',
+    nextTitle: 'Modelo de caja (Box Model)'
+  },
+  '/frontend/css/box-model': {
+    previous: '/frontend/css/selectores',
+    previousTitle: 'Selectores y propiedades',
+    next: '/frontend/css/flexbox',
+    nextTitle: 'Flexbox - Layouts flexibles'
+  },
+  '/frontend/css/flexbox': {
+    previous: '/frontend/css/box-model',
+    previousTitle: 'Modelo de caja (Box Model)',
+    next: '/frontend/css/grid',
+    nextTitle: 'CSS Grid - Layouts avanzados'
+  },
+  '/frontend/css/grid': {
+    previous: '/frontend/css/flexbox',
+    previousTitle: 'Flexbox - Layouts flexibles',
+    next: '/frontend/css/responsive',
+    nextTitle: 'Diseño responsivo'
+  },
+  '/frontend/css/responsive': {
+    previous: '/frontend/css/grid',
+    previousTitle: 'CSS Grid - Layouts avanzados',
+    next: null,
+    nextTitle: null
+  },
+
+  // angular - navegación
+  '/frontend/angular/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/frontend/angular/componentes',
+    nextTitle: 'Componentes y Templates'
+  },
+  '/frontend/angular/componentes': {
+    previous: '/frontend/angular/introduccion',
+    previousTitle: 'Introducción a Angular',
+    next: '/frontend/angular/data-binding',
+    nextTitle: 'Data Binding'
+  },
+  '/frontend/angular/data-binding': {
+    previous: '/frontend/angular/componentes',
+    previousTitle: 'Componentes y Templates',
+    next: '/frontend/angular/servicios',
+    nextTitle: 'Servicios en Angular'
+  },
+  '/frontend/angular/servicios': {
+    previous: '/frontend/angular/data-binding',
+    previousTitle: 'Data Binding',
+    next: '/frontend/angular/dependency-injection',
+    nextTitle: 'Inyección de dependencias'
+  },
+  '/frontend/angular/dependency-injection': {
+    previous: '/frontend/angular/servicios',
+    previousTitle: 'Servicios en Angular',
+    next: '/frontend/angular/httpclient',
+    nextTitle: 'HttpClient y APIs'
+  },
+  '/frontend/angular/httpclient': {
+    previous: '/frontend/angular/dependency-injection',
+    previousTitle: 'Inyección de dependencias',
+    next: null,
+    nextTitle: null
+  },
+
+  // bootstrap - navegación
+  '/frontend/bootstrap/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/frontend/bootstrap/grid',
+    nextTitle: 'Sistema de Grid'
+  },
+  '/frontend/bootstrap/grid': {
+    previous: '/frontend/bootstrap/introduccion',
+    previousTitle: 'Introducción a Bootstrap',
+    next: '/frontend/bootstrap/componentes',
+    nextTitle: 'Componentes básicos'
+  },
+  '/frontend/bootstrap/componentes': {
+    previous: '/frontend/bootstrap/grid',
+    previousTitle: 'Sistema de Grid',
+    next: '/frontend/bootstrap/botones-formularios',
+    nextTitle: 'Botones y formularios'
+  },
+  '/frontend/bootstrap/botones-formularios': {
+    previous: '/frontend/bootstrap/componentes',
+    previousTitle: 'Componentes básicos',
+    next: '/frontend/bootstrap/navbars',
+    nextTitle: 'Navbars y menús'
+  },
+  '/frontend/bootstrap/navbars': {
+    previous: '/frontend/bootstrap/botones-formularios',
+    previousTitle: 'Botones y formularios',
+    next: '/frontend/bootstrap/cards',
+    nextTitle: 'Cards y layouts'
+  },
+  '/frontend/bootstrap/cards': {
+    previous: '/frontend/bootstrap/navbars',
+    previousTitle: 'Navbars y menús',
+    next: null,
+    nextTitle: null
+  },
+
+  // tailwindcss - navegación
+  '/frontend/tailwindcss/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/frontend/tailwindcss/utilities',
+    nextTitle: 'Utility Classes'
+  },
+  '/frontend/tailwindcss/utilities': {
+    previous: '/frontend/tailwindcss/introduccion',
+    previousTitle: 'Introducción a Tailwind CSS',
+    next: '/frontend/tailwindcss/responsive',
+    nextTitle: 'Responsive Design'
+  },
+  '/frontend/tailwindcss/responsive': {
+    previous: '/frontend/tailwindcss/utilities',
+    previousTitle: 'Utility Classes',
+    next: '/frontend/tailwindcss/componentes',
+    nextTitle: 'Creación de componentes'
+  },
+  '/frontend/tailwindcss/componentes': {
+    previous: '/frontend/tailwindcss/responsive',
+    previousTitle: 'Responsive Design',
+    next: '/frontend/tailwindcss/customizacion',
+    nextTitle: 'Customización'
+  },
+  '/frontend/tailwindcss/customizacion': {
+    previous: '/frontend/tailwindcss/componentes',
+    previousTitle: 'Creación de componentes',
+    next: '/frontend/tailwindcss/temas',
+    nextTitle: 'Temas y configuración'
+  },
+  '/frontend/tailwindcss/temas': {
+    previous: '/frontend/tailwindcss/customizacion',
+    previousTitle: 'Customización',
+    next: null,
+    nextTitle: null
   }};
 
 /**

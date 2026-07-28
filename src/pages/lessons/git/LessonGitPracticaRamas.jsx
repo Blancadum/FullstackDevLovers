@@ -148,7 +148,7 @@ git push origin --delete feature/login`,
         </div>
       </LessonLayout>
 
-      <LessonNavigation previous={nav.previous} next={nav.next} />
+      <LessonNavigation previousLink={nav.previous} previousTitle={nav.previousTitle} nextLink={nav.next} nextTitle={nav.nextTitle} />
     </>
   );
 }

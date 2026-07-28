@@ -19,8 +19,12 @@ export function Header({ currentPage, breadcrumbs }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Sticky solo cuando ya se ha hecho scroll Y el hero ha desaparecido del viewport
+  // (en páginas sin hero, isHeroVisible cae a false enseguida y se comporta como antes)
+  const shouldStick = isScrolled && !isHeroVisible;
+
   return (
-    <header className={`app-header ${isScrolled ? 'sticky' : ''}`}>
+    <header className={`app-header ${shouldStick ? 'sticky' : ''}`}>
       {/* Navbar */}
       <nav className="navbar">
         <div className="nav-container">

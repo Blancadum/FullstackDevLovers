@@ -8,8 +8,8 @@ export function useHeroVisible() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Buscar el elemento Hero en el DOM
-    const heroElement = document.querySelector('[class*="-hero"]');
+    // Buscar el elemento Hero en el DOM (Home usa .hero-enhanced, las landings usan .landing-hero)
+    const heroElement = document.querySelector('.hero-enhanced, [class$="-hero"]');
 
     if (!heroElement) {
       setIsVisible(false);

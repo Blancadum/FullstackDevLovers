@@ -6,7 +6,7 @@ export const LandingHTML = () => {
     imageUrl: '/images/logos/html-logo.png',
     imageAlt: 'HTML',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '#learning-topics',
+    primaryButtonLink: '/frontend/html/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina HTML',

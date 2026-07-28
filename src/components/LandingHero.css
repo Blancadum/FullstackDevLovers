@@ -79,7 +79,6 @@
   width: 100%;
   padding: 0 2rem;
   align-items: flex-start;
-  min-height: 100%;
 }
 
 /* Text section - left column */
@@ -151,8 +150,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 3.25rem;
-  padding: 0 2.5rem;
+  height: 2.75rem;
+  padding: 0 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -249,7 +248,7 @@
   }
 
   .hero-text-section {
-    padding: 2rem 1.5rem;
+    padding: 2rem 0;
   }
 
   .hero-text-section h1 {
@@ -263,6 +262,7 @@
   }
 
   .landing-btn {
+    height: 3.25rem;
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
   }
@@ -282,7 +282,7 @@
   }
 
   .hero-text-section {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
   }
 
   .hero-text-section h1 {
@@ -304,6 +304,7 @@
   }
 
   .landing-btn {
+    height: 3.25rem;
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
   }
@@ -323,7 +324,7 @@
   }
 
   .hero-text-section {
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 0;
   }
 
   .hero-text-section h1 {
@@ -344,6 +345,7 @@
   }
 
   .landing-btn {
+    height: 3.25rem;
     flex: 1;
     padding: 0.8rem 1.2rem;
     font-size: 0.85rem;
@@ -357,6 +359,7 @@
   }
 
   .landing-btn {
+    height: 3.25rem;
     padding: 0.7rem 0.65rem;
     font-size: 0.75rem;
   }
@@ -390,6 +393,7 @@
   }
 
   .landing-btn {
+    height: 3.25rem;
     padding: 0.7rem 0.5rem;
     font-size: 0.7rem;
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { LandingHero, SEO, ModuleSwitch, ClusterCards, ModuleIntroSection, FAQ } from './index';
 import { getModule } from '../config/modulesConfig';
 import { getTheme } from '../config/themeColors';
@@ -24,7 +23,7 @@ import { getThemeByModule } from '../config/landingThemes';
  * @param {object} landingContent - Optional custom content for additional sections (whyReact, whatIsReact, prerequisites)
  * @param {array} categoryCluster - Optional cards linking to sub-technologies (for category-level landings, e.g. Backend -> Java, Kotlin, Node.js)
  */
-export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, landingContent, categoryCluster }) {
+export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, landingContent, categoryCluster, beforeFaq }) {
   const theme = getTheme(moduleId);
   const module = getModule(moduleId);
 
@@ -285,19 +284,11 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
           </section>
         )}
 
+        {/* Extra content before FAQ (ej. LearningPathCard) - permite mantener FAQ como última sección real */}
+        {beforeFaq}
+
         {/* FAQ Section */}
         {config.faqData.length > 0 && <FAQ questions={config.faqData} />}
-
-        {/* CTA Final Section */}
-        <section className={`${moduleId}-cta`}>
-          <div className="cta-content">
-            <h2>{pageConfig.ctaTitle || `Comienza tu Viaje con ${moduleId.charAt(0).toUpperCase() + moduleId.slice(1)}`}</h2>
-            <p>{pageConfig.ctaSubtitle || 'Aprende desde conceptos básicos hasta nivel profesional'}</p>
-            <Link to={config.primaryButtonLink} className="cta-button">
-              {config.primaryButtonText}
-            </Link>
-          </div>
-        </section>
       </div>
     </>
   );

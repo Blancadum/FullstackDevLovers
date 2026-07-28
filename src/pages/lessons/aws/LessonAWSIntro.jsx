@@ -532,15 +532,17 @@ $ $25-100 USD/mes para aplicación pequeña`}
 • Costos: Paga solo por lo que usas, máquinas apagadas son gratis`;
 
   return (
-    <LessonTemplate
-      title="AWS: Introducción a Amazon Web Services"
-      subtitle="Cómo AWS permite desplegar y escalar aplicaciones profesionales en la nube"
-      sections={sections}
-      concepts={concepts}
-      keyPoints={keyPoints}
-      summary={summary}
-      breadcrumbs={breadcrumbs}
-      navigation={<LessonNavigation {...nav} />}
-    />
+    <>
+      <LessonTemplate
+        title="AWS: Introducción a Amazon Web Services"
+        subtitle="Cómo AWS permite desplegar y escalar aplicaciones profesionales en la nube"
+        sections={sections}
+        concepts={concepts}
+        keyPoints={keyPoints}
+        summary={summary}
+        breadcrumbs={breadcrumbs}
+      />
+      <LessonNavigation previousLink={nav.previous} previousTitle={nav.previousTitle} nextLink={nav.next} nextTitle={nav.nextTitle} />
+    </>
   );
 }

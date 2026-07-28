@@ -222,7 +222,7 @@ BREAKING CHANGE: cambiado endpoint de /api/login a /api/auth/login`}
 
         <ExerciseSection title="Prácticas" exercises={exercises} />
 
-        <LessonNavigation prev={nav.prev} next={nav.next} />
+        <LessonNavigation previousLink={nav.previous} previousTitle={nav.previousTitle} nextLink={nav.next} nextTitle={nav.nextTitle} />
       </LessonLayout>
     </>
   );

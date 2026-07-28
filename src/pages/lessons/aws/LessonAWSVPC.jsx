@@ -898,7 +898,7 @@ ssh -i key.pem ec2-user@PRIVATE_IP_EC2_PRIVADA  # Timeout (privada sin acceso)`}
       breadcrumbs={breadcrumbs}
       sections={sections}
     >
-      <LessonNavigation current={nav.current} items={nav.items} />
+      <LessonNavigation previousLink={nav.previous} previousTitle={nav.previousTitle} nextLink={nav.next} nextTitle={nav.nextTitle} />
     </LessonTemplate>
   );
 }

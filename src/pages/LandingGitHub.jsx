@@ -7,7 +7,7 @@ export const LandingGitHub = () => {
     imageUrl: '/images/logos/github.jpeg',
     imageAlt: 'GitHub',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '#learning-topics',
+    primaryButtonLink: '/control-versiones/github/basicos/intro',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina GitHub',

@@ -8,7 +8,7 @@ export const LandingFrontend = () => {
     imageUrl: '/images/logos/frontpage.png',
     imageAlt: 'Frontend',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '#learning-topics',
+    primaryButtonLink: '/frontend/html/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Frontend',
@@ -127,15 +127,18 @@ export const LandingFrontend = () => {
   };
 
   return (
-    <>
-      <LandingPageTemplate moduleId="frontend" pageConfig={pageConfig} />
-      {pageConfig.learningPath && (
-        <LearningPathCard
-          title={pageConfig.learningPath.title}
-          description={pageConfig.learningPath.description}
-          levels={pageConfig.learningPath.levels}
-        />
-      )}
-    </>
+    <LandingPageTemplate
+      moduleId="frontend"
+      pageConfig={pageConfig}
+      beforeFaq={
+        pageConfig.learningPath && (
+          <LearningPathCard
+            title={pageConfig.learningPath.title}
+            description={pageConfig.learningPath.description}
+            levels={pageConfig.learningPath.levels}
+          />
+        )
+      }
+    />
   );
 };

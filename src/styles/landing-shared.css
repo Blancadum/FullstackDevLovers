@@ -328,40 +328,6 @@
   text-align: center;
 }
 
-.cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.cta-content h2 {
-  font-size: 2.2rem;
-  margin: 0 0 0.5rem 0;
-  font-weight: 800;
-}
-
-.cta-content p {
-  font-size: 1.1rem;
-  margin: 0 0 2rem 0;
-  opacity: 0.95;
-}
-
-.cta-button {
-  display: inline-block;
-  background: white;
-  color: var(--primary-color);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
 /* ========== KEYFRAMES ========== */
 @keyframes slideDown {
   from {
@@ -393,14 +359,6 @@
 
   .use-case-grid {
     grid-template-columns: 1fr;
-  }
-
-  .cta-content h2 {
-    font-size: 1.6rem;
-  }
-
-  .cta-content p {
-    font-size: 1rem;
   }
 
   .breadcrumb-nav {
@@ -472,7 +430,7 @@
 
 /* Extra Small (≤375px) - Minimal phones and watch-size devices */
 @media (max-width: 375px) {
-  [class*="-hero"] {
+  [class$="-hero"] {
     padding: 0.75rem 0.5rem 1rem 0.5rem;
     min-height: 280px;
   }
@@ -481,26 +439,26 @@
     gap: 0.75rem;
   }
 
-  .landing-hero-content, [class$="-hero-content"] > h1 {
+  .landing-hero-content > h1, [class$="-hero-content"] > h1 {
     font-size: 1.6rem;
     line-height: 1.1;
   }
 
-  .landing-hero-content, [class$="-hero-content"] > .hero-subtitle {
+  .landing-hero-content > .hero-subtitle, [class$="-hero-content"] > .hero-subtitle {
     font-size: 0.9rem;
   }
 
-  .landing-hero-content, [class$="-hero-content"] > .hero-text .hero-description {
+  .landing-hero-content > .hero-text .hero-description, [class$="-hero-content"] > .hero-text .hero-description {
     font-size: 0.85rem;
     line-height: 1.5;
   }
 
-  .landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+  .landing-hero-content > .hero-icon img, [class$="-hero-content"] > .hero-icon img {
     max-height: 100px;
     max-width: 100px;
   }
 
-  .landing-hero-content, [class$="-hero-content"] > .landing-hero-buttons {
+  .landing-hero-content > .landing-hero-buttons, [class$="-hero-content"] > .landing-hero-buttons {
     gap: 0.5rem;
   }
 
@@ -522,11 +480,11 @@
 
 /* Extra Extra Small (≤360px) */
 @media (max-width: 360px) {
-  .landing-hero-content, [class$="-hero-content"] > h1 {
+  .landing-hero-content > h1, [class$="-hero-content"] > h1 {
     font-size: 1.5rem;
   }
 
-  .landing-hero-content, [class$="-hero-content"] > .hero-icon img {
+  .landing-hero-content > .hero-icon img, [class$="-hero-content"] > .hero-icon img {
     max-height: 110px;
     max-width: 110px;
   }

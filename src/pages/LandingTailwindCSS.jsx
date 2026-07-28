@@ -6,7 +6,7 @@ export const LandingTailwindCSS = () => {
     imageUrl: '/images/logos/tailwindcss.jpg',
     imageAlt: 'Tailwind CSS',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '#learning-topics',
+    primaryButtonLink: '/frontend/tailwindcss/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Tailwind CSS',

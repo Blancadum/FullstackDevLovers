@@ -8,7 +8,7 @@ export const LandingHosting = () => {
     imageUrl: '/images/logos/cloud-computing.jpg',
     imageAlt: 'Hosting y Despliegue',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '#learning-topics',
+    primaryButtonLink: '/herramientas/entornos/devops/cloud-deployment',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Hosting y Despliegue',
