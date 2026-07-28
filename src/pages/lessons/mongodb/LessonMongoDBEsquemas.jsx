@@ -141,8 +141,7 @@ referenciando al cliente por su _id.`
           <InfoBox type="warning" title="El límite de 16 MB por documento">
             Todo documento de MongoDB tiene un tamaño máximo de 16 MB. Si un documento crece sin control
             (por ejemplo, anidando un historial ilimitado), es una señal clara de que esa información debería
-            vivir en su propia colección. {/* TODO-verificar: confirma el límite exacto de tamaño de
-            documento en la versión de MongoDB que uses en producción */}
+            vivir en su propia colección.
           </InfoBox>
         </LessonSection>
 

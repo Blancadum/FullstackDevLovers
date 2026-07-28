@@ -164,10 +164,9 @@ db.pedidos.aggregate([
             Aislamiento, Durabilidad). MongoDB, al distribuir datos entre varios servidores, prioriza por
             defecto el modelo <strong>BASE</strong> (Basically Available, Soft state, Eventually
             consistent), aunque también soporta transacciones ACID multi-documento para los casos que las
-            necesitan.
+            necesitan: desde MongoDB 4.0 en réplicas (replica sets) y desde MongoDB 4.2 también en clusters
+            shardeados.
           </p>
-          {/* TODO-verificar: confirma desde qué versión concreta de MongoDB se soportan transacciones
-              ACID multi-documento y sus limitaciones actuales antes de dar el dato como definitivo */}
         </LessonSection>
 
         <LessonSection title="Escalabilidad: vertical vs horizontal">

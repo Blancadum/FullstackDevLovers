@@ -43,6 +43,7 @@ export function ModuleSwitch({ moduleSwitch, moduleId, title, subtitle }) {
         description: module.description,
         color: '#0066cc',
         modules: [moduleId],
+        landingPage: module.landingPage,
         virtualSections: module.sections // Marcar como secciones virtuales
       }
     ];
@@ -133,7 +134,7 @@ export function ModuleSwitch({ moduleSwitch, moduleId, title, subtitle }) {
                       style={{ '--theme-color': category.color }}
                     >
                       <Link
-                        to={`${module.landingPage || `/${moduleId}`}/${section.id}`}
+                        to={`${category.landingPage || `/${moduleId}`}/${section.id}`}
                         className="module-content"
                       >
                         <div className="module-text">

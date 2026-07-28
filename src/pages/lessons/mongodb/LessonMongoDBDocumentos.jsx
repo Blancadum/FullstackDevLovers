@@ -126,8 +126,9 @@ db.usuarios.insertOne({ _id: "user_carlos", nombre: "Carlos" });`}
           />
           <InfoBox type="info" title="¿Qué es un ObjectId?">
             Un <code>ObjectId</code> es un identificador de 12 bytes generado a partir del timestamp de
-            creación, información de la máquina y un contador. Es único con altísima probabilidad, sin
-            necesidad de coordinarse con el servidor como haría un <code>AUTO_INCREMENT</code>.
+            creación, un valor aleatorio único por proceso y un contador incremental. Es único con
+            altísima probabilidad, sin necesidad de coordinarse con el servidor como haría un{' '}
+            <code>AUTO_INCREMENT</code>.
           </InfoBox>
         </LessonSection>
 
