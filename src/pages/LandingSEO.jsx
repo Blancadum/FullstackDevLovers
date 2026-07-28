@@ -8,7 +8,7 @@ export const LandingSEO = () => {
     imageUrl: '/images/logos/seo.png',
     imageAlt: 'SEO & Analytics',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/seo/fundamentos/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina SEO y Analytics',

@@ -6,7 +6,7 @@ export const LandingNodejs = () => {
     imageUrl: '/images/logos/nodejs.png',
     imageAlt: 'Node.js',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/backend/nodejs/basico/introduccion',
+    primaryButtonLink: '/backend/nodejs/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Node.js',

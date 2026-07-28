@@ -668,6 +668,92 @@ export const lessonNavigationMap = {
     nextTitle: 'Introducción a Spring Boot'
   },
 
+  // MongoDB - Introducción
+  '/datos/mongodb/introduccion': {
+    previous: null,
+    previousTitle: null,
+    next: '/datos/mongodb/comparativa',
+    nextTitle: 'MongoDB vs SQL - Comparativa'
+  },
+  '/datos/mongodb/comparativa': {
+    previous: '/datos/mongodb/introduccion',
+    previousTitle: 'Introducción a MongoDB y NoSQL',
+    next: '/datos/mongodb/documentos',
+    nextTitle: 'Documentos y Colecciones'
+  },
+  '/datos/mongodb/documentos': {
+    previous: '/datos/mongodb/comparativa',
+    previousTitle: 'MongoDB vs SQL - Comparativa',
+    next: '/datos/mongodb/operaciones/create',
+    nextTitle: 'Insertar Documentos (Create)'
+  },
+
+  // MongoDB - Operaciones Básicas
+  '/datos/mongodb/operaciones/create': {
+    previous: '/datos/mongodb/documentos',
+    previousTitle: 'Documentos y Colecciones',
+    next: '/datos/mongodb/operaciones/read',
+    nextTitle: 'Consultar Documentos (Read)'
+  },
+  '/datos/mongodb/operaciones/read': {
+    previous: '/datos/mongodb/operaciones/create',
+    previousTitle: 'Insertar Documentos (Create)',
+    next: '/datos/mongodb/operaciones/update',
+    nextTitle: 'Actualizar Documentos (Update)'
+  },
+  '/datos/mongodb/operaciones/update': {
+    previous: '/datos/mongodb/operaciones/read',
+    previousTitle: 'Consultar Documentos (Read)',
+    next: '/datos/mongodb/operaciones/delete',
+    nextTitle: 'Eliminar Documentos (Delete)'
+  },
+  '/datos/mongodb/operaciones/delete': {
+    previous: '/datos/mongodb/operaciones/update',
+    previousTitle: 'Actualizar Documentos (Update)',
+    next: '/datos/mongodb/consultas/filtros',
+    nextTitle: 'Filtros y Operadores de Consulta'
+  },
+
+  // MongoDB - Consultas Avanzadas
+  '/datos/mongodb/consultas/filtros': {
+    previous: '/datos/mongodb/operaciones/delete',
+    previousTitle: 'Eliminar Documentos (Delete)',
+    next: '/datos/mongodb/consultas/agregacion',
+    nextTitle: 'Agregación con Pipeline'
+  },
+  '/datos/mongodb/consultas/agregacion': {
+    previous: '/datos/mongodb/consultas/filtros',
+    previousTitle: 'Filtros y Operadores de Consulta',
+    next: '/datos/mongodb/consultas/indexacion',
+    nextTitle: 'Indexación y Optimización'
+  },
+  '/datos/mongodb/consultas/indexacion': {
+    previous: '/datos/mongodb/consultas/agregacion',
+    previousTitle: 'Agregación con Pipeline',
+    next: '/datos/mongodb/modelado/esquemas',
+    nextTitle: 'Esquemas en MongoDB'
+  },
+
+  // MongoDB - Modelado de Datos
+  '/datos/mongodb/modelado/esquemas': {
+    previous: '/datos/mongodb/consultas/indexacion',
+    previousTitle: 'Indexación y Optimización',
+    next: '/datos/mongodb/modelado/relaciones',
+    nextTitle: 'Relaciones: Embedding vs Referencing'
+  },
+  '/datos/mongodb/modelado/relaciones': {
+    previous: '/datos/mongodb/modelado/esquemas',
+    previousTitle: 'Esquemas en MongoDB',
+    next: '/datos/mongodb/modelado/validacion',
+    nextTitle: 'Validación de Documentos'
+  },
+  '/datos/mongodb/modelado/validacion': {
+    previous: '/datos/mongodb/modelado/relaciones',
+    previousTitle: 'Relaciones: Embedding vs Referencing',
+    next: null,
+    nextTitle: null
+  },
+
   // Spring Boot - Fundamentos
   '/backend/spring-boot/fundamentos/introduccion': {
     previous: '/datos/sql/lenguajes/mongodb',

@@ -11,7 +11,7 @@ export const LandingGit = () => {
     imageUrl: '/images/logos/git-logo.png',
     imageAlt: 'Git Logo',
     primaryButtonText: 'Comenzar con Git →',
-    primaryButtonLink: '/control-versiones/git/basico/introduccion',
+    primaryButtonLink: '/control-versiones/git/basicos/configuracion-inicial',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     moduleIntro: {

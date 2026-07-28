@@ -10,7 +10,7 @@ export function LessonKotlinScopeFunctions() {
   const keyPoints = [
     'Las scope functions (let, run, with, apply, also) ejecutan un bloque de código en el contexto de un objeto',
     'Se diferencian en dos cosas: cómo se referencia al objeto dentro del bloque (this o it) y qué devuelven',
-    'let y apply usan it; run, with y apply también dan acceso como this (apply y with usan this)',
+    'let y also usan it; run, with y apply dan acceso al objeto como this',
     'let, run y with devuelven el resultado del bloque lambda; apply y also devuelven siempre el propio objeto',
     'apply se usa mucho para configurar un objeto recién creado; also para efectos secundarios como logging',
     'let combinado con el safe call (?.) es el patrón habitual para ejecutar código solo si algo no es null',

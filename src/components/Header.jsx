@@ -42,8 +42,8 @@ export function Header({ currentPage, breadcrumbs }) {
         </div>
       </nav>
 
-      {/* Breadcrumb */}
-      <SimpleBreadcrumb />
+      {/* Breadcrumb - oculto en Home (reservado para futuras noticias/novedades) */}
+      {!isHome && <SimpleBreadcrumb />}
     </header>
   );
 }

@@ -6,7 +6,7 @@ export const LandingSQLBasico = () => {
     imageUrl: '/images/logos/database.png',
     imageAlt: 'SQL Básico',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/datos/sql/basico/introduccion',
+    primaryButtonLink: '/datos/sql/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina SQL Básico',

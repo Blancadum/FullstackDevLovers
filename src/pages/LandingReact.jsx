@@ -6,7 +6,7 @@ export const LandingReact = () => {
     imageUrl: '/images/logos/react.png',
     imageAlt: 'React',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/frontend/react/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina React',

@@ -75,7 +75,7 @@ export function LessonTestingUnitario() {
             <li><code>@DisplayName</code>: da un nombre descriptivo al test en los informes.</li>
             <li><code>assertEquals(esperado, actual)</code>: compara dos valores.</li>
             <li><code>assertTrue(condicion)</code> / <code>assertFalse(condicion)</code>: comprueban booleanos.</li>
-            <li><code>assertThrows(Excepcion.class, () -&gt; { ... })</code>: comprueba que se lanza una excepción.</li>
+            <li><code>assertThrows(Excepcion.class, () -&gt; codigoQueLanzaExcepcion())</code>: comprueba que se lanza una excepción.</li>
           </ul>
           <CodeBlock
             language="java"

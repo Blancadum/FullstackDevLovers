@@ -112,9 +112,10 @@ Frente a los hilos tradicionales, las corrutinas son mucho más ligeras en memor
         <InfoBox type="info" title="Requiere una librería">
           Las corrutinas forman parte del lenguaje (la palabra clave <code>suspend</code> es nativa), pero
           para usarlas en un proyecto real necesitas añadir la dependencia{' '}
-          <code>kotlinx-coroutines-core</code> {/* TODO-verificar: confirmar versión recomendada actual de kotlinx-coroutines-core */}
-          . En un proyecto Spring Boot con Kotlin suele venir ya incluida a través de{' '}
-          <code>spring-boot-starter</code>.
+          <code>kotlinx-coroutines-core</code> (versión estable actual: <code>1.11.0</code>). No viene
+          incluida en <code>spring-boot-starter</code> por defecto: si eliges el stack reactivo con
+          WebFlux, Spring Initializr sí la añade (junto a <code>kotlinx-coroutines-reactor</code>) para
+          integrar corrutinas con Spring.
         </InfoBox>
 
         <LessonSection title="Funciones suspend">

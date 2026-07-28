@@ -8,7 +8,7 @@ export const LandingFrontend = () => {
     imageUrl: '/images/logos/frontpage.png',
     imageAlt: 'Frontend',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/frontend/react/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Frontend',

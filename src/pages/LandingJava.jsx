@@ -10,7 +10,7 @@ export const LandingJava = () => {
     subtitle: 'Usado por 87% de Fortune 500',
     description: 'Java es el estándar de la industria para desarrollo backend empresarial a escala. Con la JVM, orientación a objetos profunda, ecosistema maduro, y herramientas como Spring Boot, Java permite construir sistemas de misión crítica que procesan millones de transacciones diarias.',
     primaryButtonText: 'Comenzar con Java →',
-    primaryButtonLink: '/backend/java/basico/funcionamiento',
+    primaryButtonLink: '/backend/java/introduccion/funcionamiento',
     secondaryButtonText: 'Ver comparativa',
     secondaryButtonLink: '#comparativa',
     imageUrl: '/images/logos/java-logo.png',

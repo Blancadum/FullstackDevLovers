@@ -56,9 +56,9 @@ export class AppModule {}`}
 
         <InfoBox type="info" title="Componentes standalone">
           En proyectos modernos basados en componentes <em>standalone</em>, en lugar de{' '}
-          <code>HttpClientModule</code> se habilita <code>provideHttpClient()</code> en el arranque de la
-          aplicación.
-          {/* TODO-verificar: confirmar sintaxis exacta y disponibilidad según la versión de Angular usada en el curso */}
+          <code>HttpClientModule</code> se habilita <code>provideHttpClient()</code> (importado de{' '}
+          <code>@angular/common/http</code>) en el array <code>providers</code> de{' '}
+          <code>bootstrapApplication()</code>, dentro de <code>main.ts</code>.
         </InfoBox>
 
         <h2>Hacer una petición GET desde un servicio</h2>

@@ -8,7 +8,7 @@ export const LandingHosting = () => {
     imageUrl: '/images/logos/cloud-computing.jpg',
     imageAlt: 'Hosting y Despliegue',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/hosting/vercel/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Hosting y Despliegue',

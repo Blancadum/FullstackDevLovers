@@ -6,7 +6,7 @@ export const LandingAngular = () => {
     imageUrl: '/images/logos/angular-logo.jpeg',
     imageAlt: 'Angular',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/frontend/angular/basico/introduccion',
+    primaryButtonLink: '/frontend/angular/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Angular',

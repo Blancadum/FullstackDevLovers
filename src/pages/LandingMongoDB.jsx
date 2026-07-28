@@ -6,7 +6,7 @@ export const LandingMongoDB = () => {
     imageUrl: '/images/logos/mongodb.png',
     imageAlt: 'MongoDB',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/datos/mongodb/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina MongoDB',

@@ -6,7 +6,7 @@ export const LandingCSS = () => {
     imageUrl: '/images/logos/css.png',
     imageAlt: 'CSS',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/frontend/css/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina CSS',

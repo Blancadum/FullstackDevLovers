@@ -8,7 +8,7 @@ export const LandingCloud = () => {
     imageUrl: '/images/logos/cloud-computing.jpg',
     imageAlt: 'Cloud Computing',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/cloud/docker/basico/introduccion',
+    primaryButtonLink: '/cloud/docker/fundamentales/intro',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Cloud Computing',

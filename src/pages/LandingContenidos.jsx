@@ -8,7 +8,7 @@ export const LandingContenidos = () => {
     imageUrl: '/images/logos/contenidos.png',
     imageAlt: 'Contenidos Educativos',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/contenidos/blog/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina la Creación de Contenidos',

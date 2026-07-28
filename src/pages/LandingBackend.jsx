@@ -8,7 +8,7 @@ export const LandingBackend = () => {
     imageUrl: '/images/logos/backend.png',
     imageAlt: 'Backend',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/backend/java/basico/introduccion',
+    primaryButtonLink: '/backend/java/introduccion/funcionamiento',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Backend',

@@ -132,7 +132,8 @@ fun main() {
 
     println(original)          // Producto(nombre=Teclado, precio=50.0)
     println(copia)             // Producto(nombre=Teclado, precio=40.0)
-    println(original == copia) // false, equals() compara por contenido`}
+    println(original == copia) // false, equals() compara por contenido
+}`}
           />
         </LessonSection>
 

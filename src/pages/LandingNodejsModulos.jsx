@@ -6,7 +6,7 @@ export const LandingNodejsModulos = () => {
     imageUrl: '/images/logos/nodejs.png',
     imageAlt: 'Node.js Módulos',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/backend/nodejs/basico/modulos',
+    primaryButtonLink: '/backend/nodejs/modulos',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Node.js Módulos',

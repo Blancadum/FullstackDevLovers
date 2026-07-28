@@ -6,7 +6,7 @@ export const LandingBootstrap = () => {
     imageUrl: '/images/logos/bootstrap.jpeg',
     imageAlt: 'Bootstrap',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/frontend/bootstrap/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Bootstrap',

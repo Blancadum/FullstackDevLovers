@@ -6,7 +6,7 @@ export const LandingDevOps = () => {
     imageUrl: '/images/logos/devops.png',
     imageAlt: 'DevOps',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/devops/basico/introduccion',
+    primaryButtonLink: '/herramientas/entornos/devops/docker',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina DevOps',

@@ -6,7 +6,7 @@ export const LandingNodejsNPM = () => {
     imageUrl: '/images/logos/npm-node.png',
     imageAlt: 'NPM',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/backend/nodejs/basico/npm',
+    primaryButtonLink: '/backend/nodejs/npm',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina NPM',

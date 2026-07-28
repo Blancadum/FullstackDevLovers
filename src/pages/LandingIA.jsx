@@ -8,7 +8,7 @@ export const LandingIA = () => {
     imageUrl: '/images/logos/ia.png',
     imageAlt: 'Inteligencia Artificial',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/ia/claude-api/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Inteligencia Artificial',

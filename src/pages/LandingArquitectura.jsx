@@ -6,7 +6,7 @@ export const LandingArquitectura = () => {
     imageUrl: null,
     imageAlt: null,
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/arquitectura/basico/introduccion',
+    primaryButtonLink: '/herramientas/entornos/arquitectura/uml',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Arquitectura de Software',

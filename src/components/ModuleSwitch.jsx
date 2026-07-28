@@ -133,7 +133,7 @@ export function ModuleSwitch({ moduleSwitch, moduleId, title, subtitle }) {
                       style={{ '--theme-color': category.color }}
                     >
                       <Link
-                        to={`/${moduleId}/${section.id}`}
+                        to={`${module.landingPage || `/${moduleId}`}/${section.id}`}
                         className="module-content"
                       >
                         <div className="module-text">

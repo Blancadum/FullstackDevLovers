@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import hljs from 'highlight.js/lib/core';
 import bash from 'highlight.js/lib/languages/bash';
+import css from 'highlight.js/lib/languages/css';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
 import groovy from 'highlight.js/lib/languages/groovy';
 import ini from 'highlight.js/lib/languages/ini';
@@ -16,6 +17,7 @@ import { useIsDark } from '../hooks/useIsDark';
 import './CodeBlock.css';
 
 hljs.registerLanguage('bash', bash);
+hljs.registerLanguage('css', css);
 hljs.registerLanguage('dockerfile', dockerfile);
 hljs.registerLanguage('groovy', groovy);
 hljs.registerLanguage('hcl', ini);

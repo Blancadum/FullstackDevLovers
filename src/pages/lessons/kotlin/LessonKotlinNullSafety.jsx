@@ -97,7 +97,7 @@ El resultado es que el NullPointerException, tan habitual en Java, deja de ser u
             code={`val nombre: String = "Ana"
 // nombre = null           // Error de compilación: String no admite null
 
-val apodo: String? = "Anita"
+var apodo: String? = "Anita"
 apodo = null               // OK: String? sí admite null
 
 // El compilador te obliga a comprobar antes de usar un tipo nullable

@@ -6,7 +6,7 @@ export const LandingNodejsEventLoop = () => {
     imageUrl: '/images/logos/nodejs.png',
     imageAlt: 'Node.js Event Loop',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/backend/nodejs/basico/event-loop',
+    primaryButtonLink: '/backend/nodejs/event-loop',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Node.js Event Loop',

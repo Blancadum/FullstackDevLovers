@@ -26,6 +26,17 @@ const LessonGitWorkflow = lazy(() => import('./pages/lessons/git').then(m => ({ 
 const LessonGitGitHub = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitGitHub })));
 const LessonGitGitLab = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitGitLab })));
 const LessonGitBitbucket = lazy(() => import('./pages/lessons/git').then(m => ({ default: m.LessonGitBitbucket })));
+const LessonGitHubIntro = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubIntro })));
+const LessonGitHubCrearCuenta = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubCrearCuenta })));
+const LessonGitHubCrearClonarRepos = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubCrearClonarRepos })));
+const LessonGitHubPushPull = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubPushPull })));
+const LessonGitHubPullRequests = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubPullRequests })));
+const LessonGitHubForks = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubForks })));
+const LessonGitHubIssues = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubIssues })));
+const LessonGitHubFlow = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubFlow })));
+const LessonGitHubCiCdActions = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubCiCdActions })));
+const LessonGitHubBranchProtection = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubBranchProtection })));
+const LessonGitHubSeguridad = lazy(() => import('./pages/lessons/github').then(m => ({ default: m.LessonGitHubSeguridad })));
 const LessonAbstractClasses = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonAbstractClasses })));
 const LessonArrays = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonArrays })));
 const LessonClasses = lazy(() => import('./pages/lessons/java').then(m => ({ default: m.LessonClasses })));
@@ -70,6 +81,19 @@ const LessonSQLMySQL = lazy(() => import('./pages/lessons/sql').then(m => ({ def
 const LessonSQLPostgreSQL = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLPostgreSQL })));
 const LessonSQLUsuariosPermisos = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLUsuariosPermisos })));
 const LessonSQLVsNoSQL = lazy(() => import('./pages/lessons/sql').then(m => ({ default: m.LessonSQLVsNoSQL })));
+const LessonMongoDBIntroduccion = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBIntroduccion })));
+const LessonMongoDBComparativa = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBComparativa })));
+const LessonMongoDBDocumentos = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBDocumentos })));
+const LessonMongoDBCreate = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBCreate })));
+const LessonMongoDBRead = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBRead })));
+const LessonMongoDBUpdate = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBUpdate })));
+const LessonMongoDBDelete = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBDelete })));
+const LessonMongoDBFiltros = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBFiltros })));
+const LessonMongoDBAgregacion = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBAgregacion })));
+const LessonMongoDBIndexacion = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBIndexacion })));
+const LessonMongoDBEsquemas = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBEsquemas })));
+const LessonMongoDBRelaciones = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBRelaciones })));
+const LessonMongoDBValidacion = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBValidacion })));
 const LessonBashShell = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonBashShell })));
 const LessonBitbucket = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonBitbucket })));
 const LessonCICD = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonCICD })));
@@ -200,6 +224,12 @@ const LandingMetodologias = lazy(() => import('./pages/LandingMetodologias').the
 const MethodologyWrapper = lazy(() => import('./pages/MethodologyWrapper').then(m => ({ default: m.MethodologyWrapper })));
 const LandingProyecto = lazy(() => import('./pages/LandingProyecto').then(m => ({ default: m.LandingProyecto })));
 const LandingReact = lazy(() => import('./pages/LandingReact').then(m => ({ default: m.LandingReact })));
+const LessonReactIntroduccion = lazy(() => import('./pages/lessons/react').then(m => ({ default: m.LessonReactIntroduccion })));
+const LessonReactJSXComponentes = lazy(() => import('./pages/lessons/react').then(m => ({ default: m.LessonReactJSXComponentes })));
+const LessonReactPropsEstado = lazy(() => import('./pages/lessons/react').then(m => ({ default: m.LessonReactPropsEstado })));
+const LessonReactUseState = lazy(() => import('./pages/lessons/react').then(m => ({ default: m.LessonReactUseState })));
+const LessonReactUseEffect = lazy(() => import('./pages/lessons/react').then(m => ({ default: m.LessonReactUseEffect })));
+const LessonReactHooksPersonalizados = lazy(() => import('./pages/lessons/react').then(m => ({ default: m.LessonReactHooksPersonalizados })));
 const LandingAngular = lazy(() => import('./pages/LandingAngular').then(m => ({ default: m.LandingAngular })));
 const LessonAngularIntroduccion = lazy(() => import('./pages/lessons/angular').then(m => ({ default: m.LessonAngularIntroduccion })));
 const LessonAngularComponentes = lazy(() => import('./pages/lessons/angular').then(m => ({ default: m.LessonAngularComponentes })));
@@ -207,10 +237,33 @@ const LessonAngularDataBinding = lazy(() => import('./pages/lessons/angular').th
 const LessonAngularServicios = lazy(() => import('./pages/lessons/angular').then(m => ({ default: m.LessonAngularServicios })));
 const LessonAngularDependencyInjection = lazy(() => import('./pages/lessons/angular').then(m => ({ default: m.LessonAngularDependencyInjection })));
 const LessonAngularHttpclient = lazy(() => import('./pages/lessons/angular').then(m => ({ default: m.LessonAngularHttpclient })));
+const LessonHTMLIntroduccion = lazy(() => import('./pages/lessons/html').then(m => ({ default: m.LessonHTMLIntroduccion })));
+const LessonHTMLEstructura = lazy(() => import('./pages/lessons/html').then(m => ({ default: m.LessonHTMLEstructura })));
+const LessonHTMLEtiquetas = lazy(() => import('./pages/lessons/html').then(m => ({ default: m.LessonHTMLEtiquetas })));
+const LessonHTMLFormularios = lazy(() => import('./pages/lessons/html').then(m => ({ default: m.LessonHTMLFormularios })));
+const LessonHTMLValidacion = lazy(() => import('./pages/lessons/html').then(m => ({ default: m.LessonHTMLValidacion })));
+const LessonCSSIntroduccion = lazy(() => import('./pages/lessons/css').then(m => ({ default: m.LessonCSSIntroduccion })));
+const LessonCSSSelectores = lazy(() => import('./pages/lessons/css').then(m => ({ default: m.LessonCSSSelectores })));
+const LessonCSSBoxModel = lazy(() => import('./pages/lessons/css').then(m => ({ default: m.LessonCSSBoxModel })));
+const LessonCSSFlexbox = lazy(() => import('./pages/lessons/css').then(m => ({ default: m.LessonCSSFlexbox })));
+const LessonCSSGrid = lazy(() => import('./pages/lessons/css').then(m => ({ default: m.LessonCSSGrid })));
+const LessonCSSResponsive = lazy(() => import('./pages/lessons/css').then(m => ({ default: m.LessonCSSResponsive })));
 const LandingHTML = lazy(() => import('./pages/LandingHTML').then(m => ({ default: m.LandingHTML })));
 const LandingCSS = lazy(() => import('./pages/LandingCSS').then(m => ({ default: m.LandingCSS })));
 const LandingBootstrap = lazy(() => import('./pages/LandingBootstrap').then(m => ({ default: m.LandingBootstrap })));
+const LessonBootstrapIntroduccion = lazy(() => import('./pages/lessons/bootstrap').then(m => ({ default: m.LessonBootstrapIntroduccion })));
+const LessonBootstrapGrid = lazy(() => import('./pages/lessons/bootstrap').then(m => ({ default: m.LessonBootstrapGrid })));
+const LessonBootstrapComponentes = lazy(() => import('./pages/lessons/bootstrap').then(m => ({ default: m.LessonBootstrapComponentes })));
+const LessonBootstrapBotonesFormularios = lazy(() => import('./pages/lessons/bootstrap').then(m => ({ default: m.LessonBootstrapBotonesFormularios })));
+const LessonBootstrapNavbars = lazy(() => import('./pages/lessons/bootstrap').then(m => ({ default: m.LessonBootstrapNavbars })));
+const LessonBootstrapCards = lazy(() => import('./pages/lessons/bootstrap').then(m => ({ default: m.LessonBootstrapCards })));
 const LandingTailwindCSS = lazy(() => import('./pages/LandingTailwindCSS').then(m => ({ default: m.LandingTailwindCSS })));
+const LessonTailwindIntroduccion = lazy(() => import('./pages/lessons/tailwindcss').then(m => ({ default: m.LessonTailwindIntroduccion })));
+const LessonTailwindUtilities = lazy(() => import('./pages/lessons/tailwindcss').then(m => ({ default: m.LessonTailwindUtilities })));
+const LessonTailwindResponsive = lazy(() => import('./pages/lessons/tailwindcss').then(m => ({ default: m.LessonTailwindResponsive })));
+const LessonTailwindComponentes = lazy(() => import('./pages/lessons/tailwindcss').then(m => ({ default: m.LessonTailwindComponentes })));
+const LessonTailwindCustomizacion = lazy(() => import('./pages/lessons/tailwindcss').then(m => ({ default: m.LessonTailwindCustomizacion })));
+const LessonTailwindTemas = lazy(() => import('./pages/lessons/tailwindcss').then(m => ({ default: m.LessonTailwindTemas })));
 const LandingMongoDB = lazy(() => import('./pages/LandingMongoDB').then(m => ({ default: m.LandingMongoDB })));
 const LandingKotlin = lazy(() => import('./pages/LandingKotlin').then(m => ({ default: m.LandingKotlin })));
 const LandingNodejs = lazy(() => import('./pages/LandingNodejs').then(m => ({ default: m.LandingNodejs })));
@@ -218,6 +271,16 @@ const LandingNodejsIntroduccion = lazy(() => import('./pages/LandingNodejsIntrod
 const LandingNodejsNPM = lazy(() => import('./pages/LandingNodejsNPM').then(m => ({ default: m.LandingNodejsNPM })));
 const LandingNodejsModulos = lazy(() => import('./pages/LandingNodejsModulos').then(m => ({ default: m.LandingNodejsModulos })));
 const LandingNodejsEventLoop = lazy(() => import('./pages/LandingNodejsEventLoop').then(m => ({ default: m.LandingNodejsEventLoop })));
+const LessonNodejsHttp = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsHttp })));
+const LessonNodejsExpress = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsExpress })));
+const LessonNodejsRouting = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsRouting })));
+const LessonNodejsRestApis = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsRestApis })));
+const LessonNodejsBasesDatos = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsBasesDatos })));
+const LessonNodejsSequelize = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsSequelize })));
+const LessonNodejsTransacciones = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsTransacciones })));
+const LessonNodejsJwt = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsJwt })));
+const LessonNodejsTesting = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsTesting })));
+const LessonNodejsDespliegue = lazy(() => import('./pages/lessons/nodejs').then(m => ({ default: m.LessonNodejsDespliegue })));
 const LandingBackend = lazy(() => import('./pages/LandingBackend').then(m => ({ default: m.LandingBackend })));
 const LandingFrontend = lazy(() => import('./pages/LandingFrontend').then(m => ({ default: m.LandingFrontend })));
 const LandingDatos = lazy(() => import('./pages/LandingDatos').then(m => ({ default: m.LandingDatos })));
@@ -305,6 +368,23 @@ function AppContent() {
           <Route path="/control-versiones/git/avanzado/github" element={<LessonGitGitHub />} />
           <Route path="/control-versiones/git/avanzado/gitlab" element={<LessonGitGitLab />} />
           <Route path="/control-versiones/git/avanzado/bitbucket" element={<LessonGitBitbucket />} />
+
+          {/* Lecciones - GitHub Básicos */}
+          <Route path="/control-versiones/github/basicos/intro" element={<LessonGitHubIntro />} />
+          <Route path="/control-versiones/github/basicos/crear-cuenta" element={<LessonGitHubCrearCuenta />} />
+          <Route path="/control-versiones/github/basicos/crear-clonar-repos" element={<LessonGitHubCrearClonarRepos />} />
+          <Route path="/control-versiones/github/basicos/push-pull" element={<LessonGitHubPushPull />} />
+
+          {/* Lecciones - GitHub Colaboración */}
+          <Route path="/control-versiones/github/colaboracion/pull-requests" element={<LessonGitHubPullRequests />} />
+          <Route path="/control-versiones/github/colaboracion/forks" element={<LessonGitHubForks />} />
+          <Route path="/control-versiones/github/colaboracion/issues" element={<LessonGitHubIssues />} />
+          <Route path="/control-versiones/github/colaboracion/github-flow" element={<LessonGitHubFlow />} />
+
+          {/* Lecciones - GitHub Avanzado */}
+          <Route path="/control-versiones/github/avanzado/actions" element={<LessonGitHubCiCdActions />} />
+          <Route path="/control-versiones/github/avanzado/branch-protection" element={<LessonGitHubBranchProtection />} />
+          <Route path="/control-versiones/github/avanzado/seguridad" element={<LessonGitHubSeguridad />} />
 
           {/* Lecciones - Java Básico */}
           <Route path="/backend/java/introduccion/funcionamiento" element={<LessonJavaInternals />} />
@@ -448,6 +528,12 @@ function AppContent() {
           <Route path="/seo" element={<LandingSEO />} />
           <Route path="/proyecto" element={<LandingProyecto />} />
           <Route path="/frontend/react" element={<LandingReact />} />
+          <Route path="/frontend/react/fundamentos/introduccion" element={<LessonReactIntroduccion />} />
+          <Route path="/frontend/react/fundamentos/jsx-componentes" element={<LessonReactJSXComponentes />} />
+          <Route path="/frontend/react/fundamentos/props-estado" element={<LessonReactPropsEstado />} />
+          <Route path="/frontend/react/hooks/usestate" element={<LessonReactUseState />} />
+          <Route path="/frontend/react/hooks/useeffect" element={<LessonReactUseEffect />} />
+          <Route path="/frontend/react/hooks/custom" element={<LessonReactHooksPersonalizados />} />
           <Route path="/frontend/angular" element={<LandingAngular />} />
           <Route path="/frontend/angular/introduccion" element={<LessonAngularIntroduccion />} />
           <Route path="/frontend/angular/componentes" element={<LessonAngularComponentes />} />
@@ -456,9 +542,32 @@ function AppContent() {
           <Route path="/frontend/angular/dependency-injection" element={<LessonAngularDependencyInjection />} />
           <Route path="/frontend/angular/httpclient" element={<LessonAngularHttpclient />} />
           <Route path="/frontend/html" element={<LandingHTML />} />
+          <Route path="/frontend/html/introduccion" element={<LessonHTMLIntroduccion />} />
+          <Route path="/frontend/html/estructura" element={<LessonHTMLEstructura />} />
+          <Route path="/frontend/html/etiquetas" element={<LessonHTMLEtiquetas />} />
+          <Route path="/frontend/html/formularios" element={<LessonHTMLFormularios />} />
+          <Route path="/frontend/html/validacion" element={<LessonHTMLValidacion />} />
           <Route path="/frontend/css" element={<LandingCSS />} />
+          <Route path="/frontend/css/introduccion" element={<LessonCSSIntroduccion />} />
+          <Route path="/frontend/css/selectores" element={<LessonCSSSelectores />} />
+          <Route path="/frontend/css/box-model" element={<LessonCSSBoxModel />} />
+          <Route path="/frontend/css/flexbox" element={<LessonCSSFlexbox />} />
+          <Route path="/frontend/css/grid" element={<LessonCSSGrid />} />
+          <Route path="/frontend/css/responsive" element={<LessonCSSResponsive />} />
           <Route path="/frontend/bootstrap" element={<LandingBootstrap />} />
+          <Route path="/frontend/bootstrap/introduccion" element={<LessonBootstrapIntroduccion />} />
+          <Route path="/frontend/bootstrap/grid" element={<LessonBootstrapGrid />} />
+          <Route path="/frontend/bootstrap/componentes" element={<LessonBootstrapComponentes />} />
+          <Route path="/frontend/bootstrap/botones-formularios" element={<LessonBootstrapBotonesFormularios />} />
+          <Route path="/frontend/bootstrap/navbars" element={<LessonBootstrapNavbars />} />
+          <Route path="/frontend/bootstrap/cards" element={<LessonBootstrapCards />} />
           <Route path="/frontend/tailwindcss" element={<LandingTailwindCSS />} />
+          <Route path="/frontend/tailwindcss/introduccion" element={<LessonTailwindIntroduccion />} />
+          <Route path="/frontend/tailwindcss/utilities" element={<LessonTailwindUtilities />} />
+          <Route path="/frontend/tailwindcss/responsive" element={<LessonTailwindResponsive />} />
+          <Route path="/frontend/tailwindcss/componentes" element={<LessonTailwindComponentes />} />
+          <Route path="/frontend/tailwindcss/customizacion" element={<LessonTailwindCustomizacion />} />
+          <Route path="/frontend/tailwindcss/temas" element={<LessonTailwindTemas />} />
           <Route path="/datos/mongodb" element={<LandingMongoDB />} />
           <Route path="/backend/kotlin" element={<LandingKotlin />} />
           <Route path="/backend/kotlin/introduccion" element={<LessonKotlinIntroduccion />} />
@@ -476,6 +585,16 @@ function AppContent() {
           <Route path="/backend/nodejs/npm" element={<LandingNodejsNPM />} />
           <Route path="/backend/nodejs/modulos" element={<LandingNodejsModulos />} />
           <Route path="/backend/nodejs/event-loop" element={<LandingNodejsEventLoop />} />
+          <Route path="/backend/nodejs/http" element={<LessonNodejsHttp />} />
+          <Route path="/backend/nodejs/express" element={<LessonNodejsExpress />} />
+          <Route path="/backend/nodejs/routing" element={<LessonNodejsRouting />} />
+          <Route path="/backend/nodejs/rest-apis" element={<LessonNodejsRestApis />} />
+          <Route path="/backend/nodejs/bases-datos" element={<LessonNodejsBasesDatos />} />
+          <Route path="/backend/nodejs/sequelize" element={<LessonNodejsSequelize />} />
+          <Route path="/backend/nodejs/transacciones" element={<LessonNodejsTransacciones />} />
+          <Route path="/backend/nodejs/jwt" element={<LessonNodejsJwt />} />
+          <Route path="/backend/nodejs/testing" element={<LessonNodejsTesting />} />
+          <Route path="/backend/nodejs/despliegue" element={<LessonNodejsDespliegue />} />
 
           {/* Landing Pages - Categorías Superiores */}
           <Route path="/backend" element={<LandingBackend />} />
@@ -503,6 +622,21 @@ function AppContent() {
           <Route path="/datos/sql/lenguajes/mysql" element={<LessonSQLMySQL />} />
           <Route path="/datos/sql/lenguajes/postgresql" element={<LessonSQLPostgreSQL />} />
           <Route path="/datos/sql/lenguajes/mongodb" element={<LessonSQLMongoDB />} />
+
+          {/* Lecciones - MongoDB */}
+          <Route path="/datos/mongodb/introduccion" element={<LessonMongoDBIntroduccion />} />
+          <Route path="/datos/mongodb/comparativa" element={<LessonMongoDBComparativa />} />
+          <Route path="/datos/mongodb/documentos" element={<LessonMongoDBDocumentos />} />
+          <Route path="/datos/mongodb/operaciones/create" element={<LessonMongoDBCreate />} />
+          <Route path="/datos/mongodb/operaciones/read" element={<LessonMongoDBRead />} />
+          <Route path="/datos/mongodb/operaciones/update" element={<LessonMongoDBUpdate />} />
+          <Route path="/datos/mongodb/operaciones/delete" element={<LessonMongoDBDelete />} />
+          <Route path="/datos/mongodb/consultas/filtros" element={<LessonMongoDBFiltros />} />
+          <Route path="/datos/mongodb/consultas/agregacion" element={<LessonMongoDBAgregacion />} />
+          <Route path="/datos/mongodb/consultas/indexacion" element={<LessonMongoDBIndexacion />} />
+          <Route path="/datos/mongodb/modelado/esquemas" element={<LessonMongoDBEsquemas />} />
+          <Route path="/datos/mongodb/modelado/relaciones" element={<LessonMongoDBRelaciones />} />
+          <Route path="/datos/mongodb/modelado/validacion" element={<LessonMongoDBValidacion />} />
 
           {/* Lecciones - Spring Boot Fundamentos */}
           <Route path="/backend/spring-boot/fundamentos/introduccion" element={<LessonSpringBootIntroduccion />} />
@@ -590,11 +724,13 @@ function AppContent() {
 
           {/* Rutas comodín para módulos (van al final) */}
           <Route path="/control-versiones/git/:sectionId" element={<ModulePage moduleId="git" />} />
+          <Route path="/control-versiones/github/:sectionId" element={<ModulePage moduleId="github" />} />
           <Route path="/backend/java/:sectionId" element={<ModulePage moduleId="java" />} />
           <Route path="/cloud/docker/:sectionId" element={<ModulePage moduleId="docker" />} />
           <Route path="/herramientas/entornos" element={<ModulePage moduleId="entornos" />} />
           <Route path="/herramientas/entornos/:sectionId" element={<ModulePage moduleId="entornos" />} />
           <Route path="/datos/sql/:sectionId" element={<ModulePage moduleId="sql" />} />
+          <Route path="/datos/mongodb/:sectionId" element={<ModulePage moduleId="mongodb" />} />
           <Route path="/backend/spring-boot/:sectionId" element={<ModulePage moduleId="spring-boot" />} />
           <Route path="/metodologias/:sectionId" element={<RedirectToSection />} />
           <Route path="/contacto" element={<ModulePage moduleId="contacto" />} />

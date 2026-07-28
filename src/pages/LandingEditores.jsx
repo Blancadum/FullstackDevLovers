@@ -8,7 +8,7 @@ export const LandingEditores = () => {
     imageUrl: '/images/logos/editor-texto.png',
     imageAlt: 'Editores de Código',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/editores/vscode/basico/introduccion',
+    primaryButtonLink: '#learning-topics',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Editores Profesionales',

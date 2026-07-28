@@ -8,7 +8,7 @@ export const LandingBuildTools = () => {
     imageUrl: '/images/logos/entornos-desarrollo.png',
     imageAlt: 'Build Tools',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/herramientas/entornos/basico/introduccion',
+    primaryButtonLink: '/herramientas/entornos/build/bash',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Build Tools',

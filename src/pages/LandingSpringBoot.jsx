@@ -11,7 +11,7 @@ export const LandingSpringBoot = () => {
     imageUrl: '/images/logos/backend.png',
     imageAlt: 'Spring Boot Logo',
     primaryButtonText: 'Comenzar con Spring Boot →',
-    primaryButtonLink: '/backend/spring-boot/basico/introduccion',
+    primaryButtonLink: '/backend/spring-boot/fundamentos/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Spring Boot',

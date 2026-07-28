@@ -6,7 +6,7 @@ export const LandingKotlin = () => {
     imageUrl: '/images/logos/kotlin.png',
     imageAlt: 'Kotlin',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/backend/kotlin/basico/introduccion',
+    primaryButtonLink: '/backend/kotlin/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Kotlin',

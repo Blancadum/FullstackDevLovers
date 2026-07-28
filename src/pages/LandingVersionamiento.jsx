@@ -8,7 +8,7 @@ export const LandingVersionamiento = () => {
     imageUrl: '/images/logos/git-github.png',
     imageAlt: 'Control de Versiones',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/control-versiones/git/basico/introduccion',
+    primaryButtonLink: '/control-versiones/git/basicos/configuracion-inicial',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Control de Versiones',

@@ -6,7 +6,7 @@ export const LandingProyecto = () => {
     imageUrl: null,
     imageAlt: null,
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/proyecto/basico/introduccion',
+    primaryButtonLink: '/proyecto/planificacion/definicion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Proyecto Final',

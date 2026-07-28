@@ -112,7 +112,7 @@ aws cloudfront create-invalidation \\
 }`}
           />
           <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
-            Los <code>CachePolicyId</code> del ejemplo corresponden a las políticas administradas <code>CachingOptimized</code> y <code>CachingDisabled</code> de AWS. {/* TODO-verificar: confirmar el ID exacto vigente en la consola de CloudFront antes de usarlo en producción */}
+            Los <code>CachePolicyId</code> del ejemplo corresponden a las políticas administradas <code>CachingOptimized</code> y <code>CachingDisabled</code> de AWS.
           </p>
         </LessonSection>
 

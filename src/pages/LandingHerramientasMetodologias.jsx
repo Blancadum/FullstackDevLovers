@@ -8,7 +8,7 @@ export const LandingHerramientasMetodologias = () => {
     imageUrl: '/images/logos/procesos.png',
     imageAlt: 'Herramientas y Metodologías',
     primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '/metodologias/clean-code/introduccion',
+    primaryButtonLink: '/metodologias/agile-scrum/introduccion',
     secondaryButtonText: 'Ver temas',
     secondaryButtonLink: '#learning-topics',
     ctaTitle: 'Domina Excelencia en Desarrollo',
