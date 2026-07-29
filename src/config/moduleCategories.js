@@ -147,6 +147,15 @@ export const moduleCategories = [
     hidden: true
   },
   {
+    id: 'ciberseguridad',
+    name: 'Ciberseguridad',
+    logoSrc: '/images/logos/ciberseguridad.png',
+    color: '#DC2626',
+    description: 'Fundamentos de seguridad web, OWASP Top 10, autenticación y buenas prácticas para desarrolladores',
+    modules: ['ciberseguridad'],
+    hidden: true
+  },
+  {
     id: 'seo',
     name: 'SEO & Analytics',
     logoSrc: '/images/logos/seo.png',

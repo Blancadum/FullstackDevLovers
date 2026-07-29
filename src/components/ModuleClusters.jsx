@@ -14,7 +14,7 @@ export function ModuleClusters({ moduleId }) {
     title: section.fullName || section.name,
     icon: '📚', // Icono por defecto para secciones
     color: '#0066cc',
-    link: `${module.landingPage}/${section.id}`
+    link: `#${section.id}`
   }));
 
   return (

@@ -2,29 +2,33 @@ import { LandingPageTemplate } from '../components';
 
 export const LandingIA = () => {
   const pageConfig = {
-    title: 'Inteligencia Artificial: Integra IA en tus Aplicaciones',
-    subtitle: 'Claude API, OpenAI, Modelos de Lenguaje: construye con IA',
-    description: 'La Inteligencia Artificial revoluciona el desarrollo. Aprende a integrar modelos de lenguaje como Claude en tus aplicaciones, crear chatbots inteligentes, automatizar procesos con IA y construir soluciones impulsadas por aprendizaje automático. Desde APIs hasta fine-tuning, domina el futuro del desarrollo.',
+    title: 'Inteligencia Artificial: 3 Rutas de Aprendizaje',
+    subtitle: 'Desde IA Generativa hasta Agentes Autónomos y Enterprise',
+    description: 'La Inteligencia Artificial revoluciona el desarrollo. Aprende en 3 rutas progresivas: 🟢 Básico (APIs, Prompting, Casos Prácticos), 🟡 Intermedio (Agentes, OpenClaw, Hermes), 🔴 Avanzado (Producción, soul.md, MCP). Integra IA desde cero hasta soluciones empresariales.',
     imageUrl: '/images/logos/ia.png',
     imageAlt: 'Inteligencia Artificial',
-    primaryButtonText: 'Comenzar →',
-    primaryButtonLink: '#learning-topics',
-    secondaryButtonText: 'Ver temas',
+    primaryButtonText: 'Comenzar: Nivel Básico →',
+    primaryButtonLink: '/ia/basico/fundamentos/que-es-ia-generativa',
+    secondaryButtonText: 'Ver todas las rutas',
     secondaryButtonLink: '#learning-topics',
-    ctaTitle: 'Domina Inteligencia Artificial',
-    ctaSubtitle: 'Construye el futuro con AI integrada',
+    ctaTitle: 'Domina Inteligencia Artificial en 3 Niveles',
+    ctaSubtitle: 'De API calls a agentes autónomos en producción',
     faqData: [
       {
-        question: '¿Necesito saber machine learning para integrar IA en mis apps?',
-        answer: 'No para empezar. Integrar modelos de lenguaje como Claude vía API es principalmente trabajo de backend: llamadas HTTP, gestión de prompts y manejo de respuestas. El machine learning "desde cero" es un campo aparte, más orientado a investigación.'
+        question: '¿Cuál es la diferencia entre los 3 niveles?',
+        answer: '🟢 Básico: Integración de APIs (Claude, OpenAI), Prompt Engineering, Chatbots. 🟡 Intermedio: Agentes autónomos (OpenClaw, Hermes), Reasoning Loops, Arquitectura. 🔴 Avanzado: soul.md, memory.md, MCP, Despliegue en Producción con monitoreo.'
       },
       {
-        question: '¿Qué necesito saber antes de empezar con IA aplicada?',
-        answer: 'Con conocimientos básicos de backend (llamadas a APIs, JSON, autenticación) ya puedes empezar a integrar modelos de lenguaje en tus aplicaciones. No hace falta matemáticas avanzadas para este enfoque práctico.'
+        question: '¿Por dónde empiezo?',
+        answer: 'Comienza en Nivel Básico (🟢) incluso si ya integras APIs. Entenderás qué es la IA generativa, los LLMs y cómo funcionan los prompts. Luego avanza a Intermedio cuando quieras construir agentes autónomos.'
       },
       {
-        question: '¿Qué es el fine-tuning y cuándo lo necesito?',
-        answer: 'Es el proceso de especializar un modelo ya entrenado con tus propios datos para una tarea concreta. La mayoría de aplicaciones no lo necesitan al principio: primero se explora con prompting y APIs, y el fine-tuning se reserva para casos muy específicos.'
+        question: '¿Puedo saltar directamente a Intermedio o Avanzado?',
+        answer: 'Sí si ya conoces APIs de IA y Prompt Engineering. Pero recomendamos la progresión: el Nivel Básico establece fundamentos, Intermedio introduce agentes, y Avanzado te prepara para producción enterprise.'
+      },
+      {
+        question: '¿Qué herramientas cubro?',
+        answer: 'Claude API, OpenAI API, OpenClaw (desarrollo real-time), Hermes (automatización 24/7), Model Context Protocol (MCP) para integraciones. Todo con ejemplos prácticos y casos reales.'
       }
     ]
   };

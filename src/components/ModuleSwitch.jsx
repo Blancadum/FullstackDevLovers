@@ -130,6 +130,7 @@ export function ModuleSwitch({ moduleSwitch, moduleId, title, subtitle }) {
                   {category.virtualSections.map((section) => (
                     <div
                       key={section.id}
+                      id={section.id}
                       className="module-expandable"
                       style={{ '--theme-color': category.color }}
                     >

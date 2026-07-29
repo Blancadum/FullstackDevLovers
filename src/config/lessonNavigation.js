@@ -1654,6 +1654,352 @@ export const lessonNavigationMap = {
     previousTitle: 'Customización',
     next: null,
     nextTitle: null
+  },
+
+  // IA - Fundamentos de IA Aplicada
+  '/ia/fundamentos/que-es-ia-generativa': {
+    previous: null,
+    previousTitle: null,
+    next: '/ia/fundamentos/modelos-lenguaje-llms',
+    nextTitle: 'Modelos de Lenguaje (LLMs): cómo funcionan'
+  },
+  '/ia/fundamentos/modelos-lenguaje-llms': {
+    previous: '/ia/fundamentos/que-es-ia-generativa',
+    previousTitle: 'Qué es la IA generativa y para qué sirve',
+    next: '/ia/fundamentos/ia-vs-ml-vs-deep-learning',
+    nextTitle: 'IA vs Machine Learning vs Deep Learning'
+  },
+  '/ia/fundamentos/ia-vs-ml-vs-deep-learning': {
+    previous: '/ia/fundamentos/modelos-lenguaje-llms',
+    previousTitle: 'Modelos de Lenguaje (LLMs): cómo funcionan',
+    next: '/ia/apis/claude-api-primeros-pasos',
+    nextTitle: 'Claude API: primeros pasos'
+  },
+
+  // IA - Integrando APIs de IA
+  '/ia/apis/claude-api-primeros-pasos': {
+    previous: '/ia/fundamentos/ia-vs-ml-vs-deep-learning',
+    previousTitle: 'IA vs Machine Learning vs Deep Learning',
+    next: '/ia/apis/openai-api-primeros-pasos',
+    nextTitle: 'OpenAI API: primeros pasos'
+  },
+  '/ia/apis/openai-api-primeros-pasos': {
+    previous: '/ia/apis/claude-api-primeros-pasos',
+    previousTitle: 'Claude API: primeros pasos',
+    next: '/ia/apis/autenticacion-api-keys',
+    nextTitle: 'Autenticación y gestión de API Keys'
+  },
+  '/ia/apis/autenticacion-api-keys': {
+    previous: '/ia/apis/openai-api-primeros-pasos',
+    previousTitle: 'OpenAI API: primeros pasos',
+    next: '/ia/apis/respuestas-streaming',
+    nextTitle: 'Manejo de respuestas y streaming'
+  },
+  '/ia/apis/respuestas-streaming': {
+    previous: '/ia/apis/autenticacion-api-keys',
+    previousTitle: 'Autenticación y gestión de API Keys',
+    next: '/ia/prompt-engineering/fundamentos-prompt-engineering',
+    nextTitle: 'Fundamentos de Prompt Engineering'
+  },
+
+  // IA - Prompt Engineering
+  '/ia/prompt-engineering/fundamentos-prompt-engineering': {
+    previous: '/ia/apis/respuestas-streaming',
+    previousTitle: 'Manejo de respuestas y streaming',
+    next: '/ia/prompt-engineering/tecnicas-avanzadas-prompting',
+    nextTitle: 'Técnicas avanzadas de prompting'
+  },
+  '/ia/prompt-engineering/tecnicas-avanzadas-prompting': {
+    previous: '/ia/prompt-engineering/fundamentos-prompt-engineering',
+    previousTitle: 'Fundamentos de Prompt Engineering',
+    next: '/ia/prompt-engineering/system-prompts-roles',
+    nextTitle: 'System prompts y roles'
+  },
+  '/ia/prompt-engineering/system-prompts-roles': {
+    previous: '/ia/prompt-engineering/tecnicas-avanzadas-prompting',
+    previousTitle: 'Técnicas avanzadas de prompting',
+    next: '/ia/casos-practicos/construir-chatbot',
+    nextTitle: 'Construir un chatbot con IA'
+  },
+
+  // IA - Casos Prácticos
+  '/ia/casos-practicos/construir-chatbot': {
+    previous: '/ia/prompt-engineering/system-prompts-roles',
+    previousTitle: 'System prompts y roles',
+    next: '/ia/casos-practicos/rag-basico',
+    nextTitle: 'RAG (Retrieval-Augmented Generation) básico'
+  },
+  '/ia/casos-practicos/rag-basico': {
+    previous: '/ia/casos-practicos/construir-chatbot',
+    previousTitle: 'Construir un chatbot con IA',
+    next: '/ia/casos-practicos/automatizacion-tareas',
+    nextTitle: 'Automatización de tareas con IA'
+  },
+  '/ia/casos-practicos/automatizacion-tareas': {
+    previous: '/ia/casos-practicos/rag-basico',
+    previousTitle: 'RAG (Retrieval-Augmented Generation) básico',
+    next: null,
+    nextTitle: null
+  },
+
+  // Ciberseguridad - Fundamentos de Ciberseguridad
+  '/ciberseguridad/fundamentos/que-es-ciberseguridad': {
+    previous: null,
+    previousTitle: null,
+    next: '/ciberseguridad/fundamentos/principios-cia',
+    nextTitle: 'Principios CIA: Confidencialidad, Integridad, Disponibilidad'
+  },
+  '/ciberseguridad/fundamentos/principios-cia': {
+    previous: '/ciberseguridad/fundamentos/que-es-ciberseguridad',
+    previousTitle: 'Qué es la ciberseguridad y por qué importa en desarrollo web',
+    next: '/ciberseguridad/fundamentos/tipos-amenazas-vectores-ataque',
+    nextTitle: 'Tipos de amenazas y vectores de ataque comunes'
+  },
+  '/ciberseguridad/fundamentos/tipos-amenazas-vectores-ataque': {
+    previous: '/ciberseguridad/fundamentos/principios-cia',
+    previousTitle: 'Principios CIA: Confidencialidad, Integridad, Disponibilidad',
+    next: '/ciberseguridad/owasp/owasp-top-10-introduccion',
+    nextTitle: 'OWASP Top 10: introducción y visión general'
+  },
+
+  // Ciberseguridad - Seguridad Web: OWASP Top 10
+  '/ciberseguridad/owasp/owasp-top-10-introduccion': {
+    previous: '/ciberseguridad/fundamentos/tipos-amenazas-vectores-ataque',
+    previousTitle: 'Tipos de amenazas y vectores de ataque comunes',
+    next: '/ciberseguridad/owasp/inyeccion-sql-prevencion',
+    nextTitle: 'Inyección SQL: cómo prevenirla'
+  },
+  '/ciberseguridad/owasp/inyeccion-sql-prevencion': {
+    previous: '/ciberseguridad/owasp/owasp-top-10-introduccion',
+    previousTitle: 'OWASP Top 10: introducción y visión general',
+    next: '/ciberseguridad/owasp/xss-cross-site-scripting',
+    nextTitle: 'XSS (Cross-Site Scripting)'
+  },
+  '/ciberseguridad/owasp/xss-cross-site-scripting': {
+    previous: '/ciberseguridad/owasp/inyeccion-sql-prevencion',
+    previousTitle: 'Inyección SQL: cómo prevenirla',
+    next: '/ciberseguridad/owasp/csrf-cross-site-request-forgery',
+    nextTitle: 'CSRF (Cross-Site Request Forgery)'
+  },
+  '/ciberseguridad/owasp/csrf-cross-site-request-forgery': {
+    previous: '/ciberseguridad/owasp/xss-cross-site-scripting',
+    previousTitle: 'XSS (Cross-Site Scripting)',
+    next: '/ciberseguridad/autenticacion/autenticacion-autorizacion',
+    nextTitle: 'Autenticación y Autorización: conceptos clave'
+  },
+
+  // Ciberseguridad - Autenticación y Comunicación Segura
+  '/ciberseguridad/autenticacion/autenticacion-autorizacion': {
+    previous: '/ciberseguridad/owasp/csrf-cross-site-request-forgery',
+    previousTitle: 'CSRF (Cross-Site Request Forgery)',
+    next: '/ciberseguridad/autenticacion/jwt-tokens-seguros',
+    nextTitle: 'JWT: tokens seguros'
+  },
+  '/ciberseguridad/autenticacion/jwt-tokens-seguros': {
+    previous: '/ciberseguridad/autenticacion/autenticacion-autorizacion',
+    previousTitle: 'Autenticación y Autorización: conceptos clave',
+    next: '/ciberseguridad/autenticacion/https-tls-funcionamiento',
+    nextTitle: 'HTTPS y TLS: cómo funciona'
+  },
+  '/ciberseguridad/autenticacion/https-tls-funcionamiento': {
+    previous: '/ciberseguridad/autenticacion/jwt-tokens-seguros',
+    previousTitle: 'JWT: tokens seguros',
+    next: '/ciberseguridad/autenticacion/gestion-segura-contrasenas',
+    nextTitle: 'Gestión segura de contraseñas (hashing, bcrypt, salts)'
+  },
+  '/ciberseguridad/autenticacion/gestion-segura-contrasenas': {
+    previous: '/ciberseguridad/autenticacion/https-tls-funcionamiento',
+    previousTitle: 'HTTPS y TLS: cómo funciona',
+    next: '/ciberseguridad/buenas-practicas/sanitizacion-validacion-inputs',
+    nextTitle: 'Sanitización y validación de inputs'
+  },
+
+  // Ciberseguridad - Buenas Prácticas y Herramientas
+  '/ciberseguridad/buenas-practicas/sanitizacion-validacion-inputs': {
+    previous: '/ciberseguridad/autenticacion/gestion-segura-contrasenas',
+    previousTitle: 'Gestión segura de contraseñas (hashing, bcrypt, salts)',
+    next: '/ciberseguridad/buenas-practicas/gestion-secretos-variables-entorno',
+    nextTitle: 'Gestión de secretos y variables de entorno'
+  },
+  '/ciberseguridad/buenas-practicas/gestion-secretos-variables-entorno': {
+    previous: '/ciberseguridad/buenas-practicas/sanitizacion-validacion-inputs',
+    previousTitle: 'Sanitización y validación de inputs',
+    next: '/ciberseguridad/buenas-practicas/seguridad-apis-rest-checklist',
+    nextTitle: 'Seguridad en APIs REST y checklist de producción'
+  },
+  '/ciberseguridad/buenas-practicas/seguridad-apis-rest-checklist': {
+    previous: '/ciberseguridad/buenas-practicas/gestion-secretos-variables-entorno',
+    previousTitle: 'Gestión de secretos y variables de entorno',
+    next: null,
+    nextTitle: null
+  },
+
+  // IA - Nivel Básico
+  '/ia/basico/fundamentos/que-es-ia-generativa': {
+    previous: null,
+    previousTitle: null,
+    next: '/ia/basico/fundamentos/modelos-lenguaje-llms',
+    nextTitle: 'Modelos de Lenguaje (LLMs): cómo funcionan'
+  },
+  '/ia/basico/fundamentos/modelos-lenguaje-llms': {
+    previous: '/ia/basico/fundamentos/que-es-ia-generativa',
+    previousTitle: 'Qué es la IA generativa y para qué sirve',
+    next: '/ia/basico/fundamentos/ia-vs-ml-vs-deep-learning',
+    nextTitle: 'IA vs Machine Learning vs Deep Learning'
+  },
+  '/ia/basico/fundamentos/ia-vs-ml-vs-deep-learning': {
+    previous: '/ia/basico/fundamentos/modelos-lenguaje-llms',
+    previousTitle: 'Modelos de Lenguaje (LLMs): cómo funcionan',
+    next: '/ia/basico/apis/claude-api-primeros-pasos',
+    nextTitle: 'Claude API: primeros pasos'
+  },
+  '/ia/basico/apis/claude-api-primeros-pasos': {
+    previous: '/ia/basico/fundamentos/ia-vs-ml-vs-deep-learning',
+    previousTitle: 'IA vs Machine Learning vs Deep Learning',
+    next: '/ia/basico/apis/openai-api-primeros-pasos',
+    nextTitle: 'OpenAI API: primeros pasos'
+  },
+  '/ia/basico/apis/openai-api-primeros-pasos': {
+    previous: '/ia/basico/apis/claude-api-primeros-pasos',
+    previousTitle: 'Claude API: primeros pasos',
+    next: '/ia/basico/apis/autenticacion-api-keys',
+    nextTitle: 'Autenticación y gestión de API Keys'
+  },
+  '/ia/basico/apis/autenticacion-api-keys': {
+    previous: '/ia/basico/apis/openai-api-primeros-pasos',
+    previousTitle: 'OpenAI API: primeros pasos',
+    next: '/ia/basico/apis/respuestas-streaming',
+    nextTitle: 'Manejo de respuestas y streaming'
+  },
+  '/ia/basico/apis/respuestas-streaming': {
+    previous: '/ia/basico/apis/autenticacion-api-keys',
+    previousTitle: 'Autenticación y gestión de API Keys',
+    next: '/ia/basico/prompt-engineering/fundamentos-prompt-engineering',
+    nextTitle: 'Fundamentos de Prompt Engineering'
+  },
+  '/ia/basico/prompt-engineering/fundamentos-prompt-engineering': {
+    previous: '/ia/basico/apis/respuestas-streaming',
+    previousTitle: 'Manejo de respuestas y streaming',
+    next: '/ia/basico/prompt-engineering/tecnicas-avanzadas-prompting',
+    nextTitle: 'Técnicas avanzadas de prompting'
+  },
+  '/ia/basico/prompt-engineering/tecnicas-avanzadas-prompting': {
+    previous: '/ia/basico/prompt-engineering/fundamentos-prompt-engineering',
+    previousTitle: 'Fundamentos de Prompt Engineering',
+    next: '/ia/basico/prompt-engineering/system-prompts-roles',
+    nextTitle: 'System prompts y roles'
+  },
+  '/ia/basico/prompt-engineering/system-prompts-roles': {
+    previous: '/ia/basico/prompt-engineering/tecnicas-avanzadas-prompting',
+    previousTitle: 'Técnicas avanzadas de prompting',
+    next: '/ia/basico/casos-practicos/construir-chatbot',
+    nextTitle: 'Construir un chatbot con IA'
+  },
+  '/ia/basico/casos-practicos/construir-chatbot': {
+    previous: '/ia/basico/prompt-engineering/system-prompts-roles',
+    previousTitle: 'System prompts y roles',
+    next: '/ia/basico/casos-practicos/rag-basico',
+    nextTitle: 'RAG (Retrieval-Augmented Generation) básico'
+  },
+  '/ia/basico/casos-practicos/rag-basico': {
+    previous: '/ia/basico/casos-practicos/construir-chatbot',
+    previousTitle: 'Construir un chatbot con IA',
+    next: '/ia/basico/casos-practicos/automatizacion-tareas',
+    nextTitle: 'Automatización de tareas con IA'
+  },
+  '/ia/basico/casos-practicos/automatizacion-tareas': {
+    previous: '/ia/basico/casos-practicos/rag-basico',
+    previousTitle: 'RAG (Retrieval-Augmented Generation) básico',
+    next: '/ia/intermedio/agentes/fundamentos-agentes',
+    nextTitle: '🟡 Nivel Intermedio: Fundamentos de Agentes de IA'
+  },
+
+  // IA - Nivel Intermedio
+  '/ia/intermedio/agentes/fundamentos-agentes': {
+    previous: '/ia/basico/casos-practicos/automatizacion-tareas',
+    previousTitle: '🟢 Nivel Básico: Automatización de tareas',
+    next: '/ia/intermedio/agentes/arquitectura-agente',
+    nextTitle: 'Arquitectura de un Agente: 7 Pilares'
+  },
+  '/ia/intermedio/agentes/arquitectura-agente': {
+    previous: '/ia/intermedio/agentes/fundamentos-agentes',
+    previousTitle: 'Fundamentos de Agentes de IA',
+    next: '/ia/intermedio/agentes/openclaw-realtime',
+    nextTitle: 'OpenClaw: Asistente en Tiempo Real'
+  },
+  '/ia/intermedio/agentes/openclaw-realtime': {
+    previous: '/ia/intermedio/agentes/arquitectura-agente',
+    previousTitle: 'Arquitectura de un Agente: 7 Pilares',
+    next: '/ia/intermedio/agentes/hermes-orquestacion',
+    nextTitle: 'Hermes: Orquestación Agéntica Completa'
+  },
+  '/ia/intermedio/agentes/hermes-orquestacion': {
+    previous: '/ia/intermedio/agentes/openclaw-realtime',
+    previousTitle: 'OpenClaw: Asistente en Tiempo Real',
+    next: '/ia/intermedio/agentes/comparativa-herramientas',
+    nextTitle: 'Comparativa: OpenClaw vs Hermes vs Otros'
+  },
+  '/ia/intermedio/agentes/comparativa-herramientas': {
+    previous: '/ia/intermedio/agentes/hermes-orquestacion',
+    previousTitle: 'Hermes: Orquestación Agéntica Completa',
+    next: '/ia/intermedio/agentes/construir-agente',
+    nextTitle: 'Construcción Paso a Paso de un Agente'
+  },
+  '/ia/intermedio/agentes/construir-agente': {
+    previous: '/ia/intermedio/agentes/comparativa-herramientas',
+    previousTitle: 'Comparativa: OpenClaw vs Hermes vs Otros',
+    next: '/ia/intermedio/agentes/errores-reintentos',
+    nextTitle: 'Manejo de Errores y Reintentos'
+  },
+  '/ia/intermedio/agentes/errores-reintentos': {
+    previous: '/ia/intermedio/agentes/construir-agente',
+    previousTitle: 'Construcción Paso a Paso de un Agente',
+    next: '/ia/intermedio/agentes/caso-practico-soporte',
+    nextTitle: 'Caso Práctico: Agente de Atención al Cliente'
+  },
+  '/ia/intermedio/agentes/caso-practico-soporte': {
+    previous: '/ia/intermedio/agentes/errores-reintentos',
+    previousTitle: 'Manejo de Errores y Reintentos',
+    next: '/ia/avanzado/enterprise/quick-start-agentes',
+    nextTitle: '🔴 Nivel Avanzado: Guía de Inicio Rápido'
+  },
+
+  // IA - Nivel Avanzado
+  '/ia/avanzado/enterprise/quick-start-agentes': {
+    previous: '/ia/intermedio/agentes/caso-practico-soporte',
+    previousTitle: '🟡 Nivel Intermedio: Caso Práctico Soporte',
+    next: '/ia/avanzado/enterprise/configuracion-soul',
+    nextTitle: 'Configuración Avanzada: soul.md'
+  },
+  '/ia/avanzado/enterprise/configuracion-soul': {
+    previous: '/ia/avanzado/enterprise/quick-start-agentes',
+    previousTitle: 'Guía de Inicio Rápido: Instalación y Setup',
+    next: '/ia/avanzado/enterprise/gestion-memoria',
+    nextTitle: 'Gestión de Memoria: memory.md'
+  },
+  '/ia/avanzado/enterprise/gestion-memoria': {
+    previous: '/ia/avanzado/enterprise/configuracion-soul',
+    previousTitle: 'Configuración Avanzada: soul.md',
+    next: '/ia/avanzado/enterprise/mcp-protocol',
+    nextTitle: 'Model Context Protocol (MCP)'
+  },
+  '/ia/avanzado/enterprise/mcp-protocol': {
+    previous: '/ia/avanzado/enterprise/gestion-memoria',
+    previousTitle: 'Gestión de Memoria: memory.md',
+    next: '/ia/avanzado/enterprise/faq-tecnica',
+    nextTitle: 'FAQ Técnica Completa'
+  },
+  '/ia/avanzado/enterprise/faq-tecnica': {
+    previous: '/ia/avanzado/enterprise/mcp-protocol',
+    previousTitle: 'Model Context Protocol (MCP)',
+    next: '/ia/avanzado/enterprise/despliegue-produccion',
+    nextTitle: 'Despliegue en Producción'
+  },
+  '/ia/avanzado/enterprise/despliegue-produccion': {
+    previous: '/ia/avanzado/enterprise/faq-tecnica',
+    previousTitle: 'FAQ Técnica Completa',
+    next: null,
+    nextTitle: null
   }};
 
 /**

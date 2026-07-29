@@ -88,23 +88,29 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
 
         {/* Category cluster - links to sub-technologies (category-level landings only) */}
         {categoryCluster && categoryCluster.length > 0 && (
-          <ClusterCards
-            title="Explora las tecnologías"
-            cards={categoryCluster}
-            columns={4}
-            variant="image"
-          />
+          <div id="learning-topics">
+            <ClusterCards
+              title="Explora las tecnologías"
+              cards={categoryCluster}
+              columns={4}
+              variant="image"
+            />
+          </div>
         )}
 
         {/* Module Switch - Custom content for specific landings, or auto-generated topics from the module's own sections */}
         {moduleSwitch ? (
-          <ModuleSwitch
-            moduleSwitch={moduleSwitch}
-            title={moduleSwitch.title}
-            subtitle={moduleSwitch.subtitle}
-          />
+          <div id="learning-topics">
+            <ModuleSwitch
+              moduleSwitch={moduleSwitch}
+              title={moduleSwitch.title}
+              subtitle={moduleSwitch.subtitle}
+            />
+          </div>
         ) : module?.sections?.length > 0 ? (
-          <ModuleSwitch moduleId={moduleId} title="Temas del curso" />
+          <div id="learning-topics">
+            <ModuleSwitch moduleId={moduleId} title="Temas del curso" />
+          </div>
         ) : null}
 
         {/* Why Module Section */}
@@ -284,8 +290,14 @@ export function LandingPageTemplate({ moduleId, pageConfig = {}, moduleSwitch, l
           </section>
         )}
 
-        {/* Extra content before FAQ (ej. LearningPathCard) - permite mantener FAQ como última sección real */}
-        {beforeFaq}
+        {/* Extra content before FAQ (ej. LearningPathCard) - permite mantener FAQ como última sección real.
+            Si no hay categoryCluster/moduleSwitch (ninguno reservó #learning-topics todavía), el ancla del
+            botón "Ver temas" recae aquí. */}
+        {beforeFaq && (
+          <div id={(categoryCluster && categoryCluster.length > 0) || moduleSwitch || module?.sections?.length > 0 ? undefined : 'learning-topics'}>
+            {beforeFaq}
+          </div>
+        )}
 
         {/* FAQ Section */}
         {config.faqData.length > 0 && <FAQ questions={config.faqData} />}

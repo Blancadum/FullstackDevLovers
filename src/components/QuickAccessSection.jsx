@@ -66,6 +66,13 @@ export function QuickAccessSection() {
       link: '/ia'
     },
     {
+      id: 'ciberseguridad',
+      title: 'Ciberseguridad',
+      icon: '/images/logos/ciberseguridad.png',
+      color: '#DC2626',
+      link: '/ciberseguridad'
+    },
+    {
       id: 'contenidos',
       title: 'Contenidos',
       icon: '/images/logos/contenidos.png',

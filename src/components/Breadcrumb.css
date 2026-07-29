@@ -120,10 +120,6 @@
     font-size: 0.65rem;
   }
 
-  .breadcrumb-current {
-    font-size: 0.65rem;
-  }
-
   .breadcrumb-item:not(:last-child)::after {
     margin-left: 0.1rem;
   }

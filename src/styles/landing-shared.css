@@ -81,6 +81,7 @@
 .btn-primary:hover,
 .landing-btn-primary:hover {
   background: var(--dark-color);
+  color: white;
   border-color: var(--dark-color);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);

@@ -1,3 +1,5 @@
+import { CodeBlock } from './CodeBlock';
+
 /**
  * Componente reutilizable para mostrar ejercicios en lesson pages
  */
@@ -20,7 +22,7 @@ export const LessonExercises = ({ exercises = [], title = 'Ejercicios' }) => {
               </summary>
               <div style={{ marginTop: '1rem' }}>
                 {typeof exercise.solution === 'string' ? (
-                  <p>{exercise.solution}</p>
+                  <CodeBlock language={exercise.language || 'text'} code={exercise.solution} />
                 ) : (
                   exercise.solution
                 )}

@@ -94,6 +94,49 @@ const LessonMongoDBIndexacion = lazy(() => import('./pages/lessons/mongodb').the
 const LessonMongoDBEsquemas = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBEsquemas })));
 const LessonMongoDBRelaciones = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBRelaciones })));
 const LessonMongoDBValidacion = lazy(() => import('./pages/lessons/mongodb').then(m => ({ default: m.LessonMongoDBValidacion })));
+const LessonIAQueEsIAGenerativa = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAQueEsIAGenerativa })));
+const LessonIAModelosLenguajeLLMs = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAModelosLenguajeLLMs })));
+const LessonIAVsMLVsDeepLearning = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAVsMLVsDeepLearning })));
+const LessonIAClaudeAPIPrimerosPasos = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAClaudeAPIPrimerosPasos })));
+const LessonIAOpenAIAPIPrimerosPasos = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAOpenAIAPIPrimerosPasos })));
+const LessonIAAutenticacionAPIKeys = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAAutenticacionAPIKeys })));
+const LessonIARespuestasStreaming = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIARespuestasStreaming })));
+const LessonIAFundamentosPromptEngineering = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAFundamentosPromptEngineering })));
+const LessonIATecnicasAvanzadasPrompting = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIATecnicasAvanzadasPrompting })));
+const LessonIASystemPromptsRoles = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIASystemPromptsRoles })));
+const LessonIAConstruirChatbot = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAConstruirChatbot })));
+const LessonIARAGBasico = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIARAGBasico })));
+const LessonIAAutomatizacionTareas = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAAutomatizacionTareas })));
+// Nivel Intermedio: Agentes
+const LessonIAFundamentosAgentes = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAFundamentosAgentes })));
+const LessonIAArquitecturaAgente = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAArquitecturaAgente })));
+const LessonIAOpenClawRealtime = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAOpenClawRealtime })));
+const LessonIAHermesOrquestacion = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAHermesOrquestacion })));
+const LessonIAComparativaHerramientas = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAComparativaHerramientas })));
+const LessonIAConstruirAgentePasoAPaso = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAConstruirAgentePasoAPaso })));
+const LessonIAManejoerroresReintentos = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAManejoerroresReintentos })));
+const LessonIACasoSoporteCliente = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIACasoSoporteCliente })));
+// Nivel Avanzado: Enterprise
+const LessonIAQuickStartAgentes = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAQuickStartAgentes })));
+const LessonIAConfiguracionSoul = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAConfiguracionSoul })));
+const LessonIAGestionMemoria = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAGestionMemoria })));
+const LessonIAModelContextProtocol = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAModelContextProtocol })));
+const LessonIAFAQTecnica = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIAFAQTecnica })));
+const LessonIADespliegueProduccion = lazy(() => import('./pages/lessons/ia').then(m => ({ default: m.LessonIADespliegueProduccion })));
+const LessonCiberseguridadQueEsCiberseguridad = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadQueEsCiberseguridad })));
+const LessonCiberseguridadPrincipiosCIA = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadPrincipiosCIA })));
+const LessonCiberseguridadTiposAmenazasVectoresAtaque = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadTiposAmenazasVectoresAtaque })));
+const LessonCiberseguridadOwaspTop10Introduccion = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadOwaspTop10Introduccion })));
+const LessonCiberseguridadInyeccionSQLPrevencion = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadInyeccionSQLPrevencion })));
+const LessonCiberseguridadXSS = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadXSS })));
+const LessonCiberseguridadCSRF = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadCSRF })));
+const LessonCiberseguridadAutenticacionAutorizacion = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadAutenticacionAutorizacion })));
+const LessonCiberseguridadJWTTokensSeguros = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadJWTTokensSeguros })));
+const LessonCiberseguridadHTTPSTLSFuncionamiento = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadHTTPSTLSFuncionamiento })));
+const LessonCiberseguridadGestionSeguraContrasenas = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadGestionSeguraContrasenas })));
+const LessonCiberseguridadSanitizacionValidacionInputs = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadSanitizacionValidacionInputs })));
+const LessonCiberseguridadGestionSecretosVariablesEntorno = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadGestionSecretosVariablesEntorno })));
+const LessonCiberseguridadSeguridadAPIsRestChecklist = lazy(() => import('./pages/lessons/ciberseguridad').then(m => ({ default: m.LessonCiberseguridadSeguridadAPIsRestChecklist })));
 const LessonBashShell = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonBashShell })));
 const LessonBitbucket = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonBitbucket })));
 const LessonCICD = lazy(() => import('./pages/lessons/herramientas').then(m => ({ default: m.LessonCICD })));
@@ -289,6 +332,7 @@ const LandingVersionamiento = lazy(() => import('./pages/LandingVersionamiento')
 const LandingEditores = lazy(() => import('./pages/LandingEditores').then(m => ({ default: m.LandingEditores })));
 const LandingHosting = lazy(() => import('./pages/LandingHosting').then(m => ({ default: m.LandingHosting })));
 const LandingIA = lazy(() => import('./pages/LandingIA').then(m => ({ default: m.LandingIA })));
+const LandingCiberseguridad = lazy(() => import('./pages/LandingCiberseguridad').then(m => ({ default: m.LandingCiberseguridad })));
 const LandingContenidos = lazy(() => import('./pages/LandingContenidos').then(m => ({ default: m.LandingContenidos })));
 const LandingSEO = lazy(() => import('./pages/LandingSEO').then(m => ({ default: m.LandingSEO })));
 const LandingHerramientasMetodologias = lazy(() => import('./pages/LandingHerramientasMetodologias').then(m => ({ default: m.LandingHerramientasMetodologias })));
@@ -313,8 +357,11 @@ function RedirectToSection() {
   const { sectionId } = useParams();
   const location = useLocation();
   const pathParts = location.pathname.split('/').filter(Boolean);
-  // Toma los dos primeros segmentos (categoria/modulo)
-  const basePath = `/${pathParts[0]}/${pathParts[1]}`;
+  // :sectionId es siempre el último segmento de la ruta; el resto forma la base del módulo.
+  // Bug corregido: asumir siempre "los dos primeros segmentos" rompía módulos con URL plana
+  // de un solo segmento (ej. /metodologias/:sectionId, /proyecto/:sectionId), generando un
+  // redirect a sí mismo (bucle/página en blanco) en lugar de aterrizar en la landing del módulo.
+  const basePath = `/${pathParts.slice(0, -1).join('/')}`;
   return <Navigate to={`${basePath}?section=${sectionId}`} replace />;
 }
 
@@ -524,6 +571,7 @@ function AppContent() {
           <Route path="/editores" element={<LandingEditores />} />
           <Route path="/hosting" element={<LandingHosting />} />
           <Route path="/ia" element={<LandingIA />} />
+          <Route path="/ciberseguridad" element={<LandingCiberseguridad />} />
           <Route path="/contenidos" element={<LandingContenidos />} />
           <Route path="/seo" element={<LandingSEO />} />
           <Route path="/proyecto" element={<LandingProyecto />} />
@@ -638,6 +686,49 @@ function AppContent() {
           <Route path="/datos/mongodb/modelado/relaciones" element={<LessonMongoDBRelaciones />} />
           <Route path="/datos/mongodb/modelado/validacion" element={<LessonMongoDBValidacion />} />
 
+          {/* Lecciones - IA Fundamentos */}
+          <Route path="/ia/fundamentos/que-es-ia-generativa" element={<LessonIAQueEsIAGenerativa />} />
+          <Route path="/ia/fundamentos/modelos-lenguaje-llms" element={<LessonIAModelosLenguajeLLMs />} />
+          <Route path="/ia/fundamentos/ia-vs-ml-vs-deep-learning" element={<LessonIAVsMLVsDeepLearning />} />
+
+          {/* Lecciones - IA APIs */}
+          <Route path="/ia/apis/claude-api-primeros-pasos" element={<LessonIAClaudeAPIPrimerosPasos />} />
+          <Route path="/ia/apis/openai-api-primeros-pasos" element={<LessonIAOpenAIAPIPrimerosPasos />} />
+          <Route path="/ia/apis/autenticacion-api-keys" element={<LessonIAAutenticacionAPIKeys />} />
+          <Route path="/ia/apis/respuestas-streaming" element={<LessonIARespuestasStreaming />} />
+
+          {/* Lecciones - IA Prompt Engineering */}
+          <Route path="/ia/prompt-engineering/fundamentos-prompt-engineering" element={<LessonIAFundamentosPromptEngineering />} />
+          <Route path="/ia/prompt-engineering/tecnicas-avanzadas-prompting" element={<LessonIATecnicasAvanzadasPrompting />} />
+          <Route path="/ia/prompt-engineering/system-prompts-roles" element={<LessonIASystemPromptsRoles />} />
+
+          {/* Lecciones - IA Casos Prácticos */}
+          <Route path="/ia/casos-practicos/construir-chatbot" element={<LessonIAConstruirChatbot />} />
+          <Route path="/ia/casos-practicos/rag-basico" element={<LessonIARAGBasico />} />
+          <Route path="/ia/casos-practicos/automatizacion-tareas" element={<LessonIAAutomatizacionTareas />} />
+
+          {/* Lecciones - Ciberseguridad Fundamentos */}
+          <Route path="/ciberseguridad/fundamentos/que-es-ciberseguridad" element={<LessonCiberseguridadQueEsCiberseguridad />} />
+          <Route path="/ciberseguridad/fundamentos/principios-cia" element={<LessonCiberseguridadPrincipiosCIA />} />
+          <Route path="/ciberseguridad/fundamentos/tipos-amenazas-vectores-ataque" element={<LessonCiberseguridadTiposAmenazasVectoresAtaque />} />
+
+          {/* Lecciones - Ciberseguridad OWASP */}
+          <Route path="/ciberseguridad/owasp/owasp-top-10-introduccion" element={<LessonCiberseguridadOwaspTop10Introduccion />} />
+          <Route path="/ciberseguridad/owasp/inyeccion-sql-prevencion" element={<LessonCiberseguridadInyeccionSQLPrevencion />} />
+          <Route path="/ciberseguridad/owasp/xss-cross-site-scripting" element={<LessonCiberseguridadXSS />} />
+          <Route path="/ciberseguridad/owasp/csrf-cross-site-request-forgery" element={<LessonCiberseguridadCSRF />} />
+
+          {/* Lecciones - Ciberseguridad Autenticación */}
+          <Route path="/ciberseguridad/autenticacion/autenticacion-autorizacion" element={<LessonCiberseguridadAutenticacionAutorizacion />} />
+          <Route path="/ciberseguridad/autenticacion/jwt-tokens-seguros" element={<LessonCiberseguridadJWTTokensSeguros />} />
+          <Route path="/ciberseguridad/autenticacion/https-tls-funcionamiento" element={<LessonCiberseguridadHTTPSTLSFuncionamiento />} />
+          <Route path="/ciberseguridad/autenticacion/gestion-segura-contrasenas" element={<LessonCiberseguridadGestionSeguraContrasenas />} />
+
+          {/* Lecciones - Ciberseguridad Buenas Prácticas */}
+          <Route path="/ciberseguridad/buenas-practicas/sanitizacion-validacion-inputs" element={<LessonCiberseguridadSanitizacionValidacionInputs />} />
+          <Route path="/ciberseguridad/buenas-practicas/gestion-secretos-variables-entorno" element={<LessonCiberseguridadGestionSecretosVariablesEntorno />} />
+          <Route path="/ciberseguridad/buenas-practicas/seguridad-apis-rest-checklist" element={<LessonCiberseguridadSeguridadAPIsRestChecklist />} />
+
           {/* Lecciones - Spring Boot Fundamentos */}
           <Route path="/backend/spring-boot/fundamentos/introduccion" element={<LessonSpringBootIntroduccion />} />
           <Route path="/backend/spring-boot/fundamentos/configuracion" element={<LessonSpringBootSetup />} />
@@ -733,6 +824,8 @@ function AppContent() {
           <Route path="/datos/mongodb/:sectionId" element={<ModulePage moduleId="mongodb" />} />
           <Route path="/backend/spring-boot/:sectionId" element={<ModulePage moduleId="spring-boot" />} />
           <Route path="/metodologias/:sectionId" element={<RedirectToSection />} />
+          <Route path="/ia/:sectionId" element={<RedirectToSection />} />
+          <Route path="/ciberseguridad/:sectionId" element={<RedirectToSection />} />
           <Route path="/contacto" element={<ModulePage moduleId="contacto" />} />
           <Route path="/contacto/:sectionId" element={<RedirectToSection />} />
           <Route path="/proyecto/:sectionId" element={<RedirectToSection />} />

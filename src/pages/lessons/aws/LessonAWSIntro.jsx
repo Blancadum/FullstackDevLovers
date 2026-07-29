@@ -58,7 +58,7 @@ export function LessonAWSIntro() {
       content: (
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
           <button
-            onClick={() => navigate('/aws/lexico')}
+            onClick={() => navigate('/cloud/aws/lexico')}
             style={{
               backgroundColor: '#FF9900',
               color: '#ffffff',
@@ -92,7 +92,7 @@ export function LessonAWSIntro() {
           </button>
 
           <button
-            onClick={() => navigate('/aws/evaluacion')}
+            onClick={() => navigate('/cloud/aws/evaluacion')}
             style={{
               backgroundColor: '#2196F3',
               color: '#ffffff',

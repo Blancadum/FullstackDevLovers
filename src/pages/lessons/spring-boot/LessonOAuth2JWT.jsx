@@ -354,7 +354,6 @@ localStorage.setItem('accessToken', accessToken);`}
         concepts={concepts}
         exercises={exercises}
         keyPoints={keyPoints}
-        response={response}
         sections={sections}
         summary={summary}
       />
